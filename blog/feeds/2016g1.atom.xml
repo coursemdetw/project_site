@@ -1,5 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-03-15T23:00:00+08:00</updated><entry><title>Pyquino 日誌 - 106/03/15</title><link href="http://project.mde.tw/blog/pyquino-ri-zhi-1060315.html" rel="alternate"></link><published>2017-03-15T23:00:00+08:00</published><updated>2017-03-15T23:00:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-03-15:/blog/pyquino-ri-zhi-1060315.html</id><summary type="html">&lt;ol&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-03-31T23:00:00+08:00</updated><entry><title>Pyquino 日誌 - 106/03/31</title><link href="http://project.mde.tw/blog/pyquino-ri-zhi-1060331.html" rel="alternate"></link><published>2017-03-31T23:00:00+08:00</published><updated>2017-03-31T23:00:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-03-31:/blog/pyquino-ri-zhi-1060331.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;開發日誌&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;採用plugin設計&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pypot&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;開發日誌&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;採用plugin設計&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pypot&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;開發日誌
+＝＝＝&lt;/p&gt;
+&lt;h2&gt;採用plugin方式設計&lt;/h2&gt;
+&lt;p&gt;使用模組的方式設計，目前還沒有想到主介面要設計的樣式或者格式，目前的想法是想要使用把pybot拆開使用，要找BUG也比較不會動到主程式導致許多Bug出現。&lt;/p&gt;
+&lt;p&gt;-pybot安裝方法&lt;/p&gt;
+&lt;p&gt;[pypot library][http://poppy-project.github.io/pypot/] &lt;/p&gt;
+&lt;p&gt;[poppy-humanoid][https://github.com/poppy-project/poppy-humanoid]&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+pip install pypot poppy_humanoid
+&lt;/pre&gt;
+
+&lt;p&gt;使用github安裝&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+python setup.py install
+&lt;/pre&gt;
+
+&lt;p&gt;測試Lib&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+from pypot.vrep import from_vrep
+from poppy_humanoid import PoppyHumanoid
+&lt;/pre&gt;
+
+&lt;p&gt;-馬達(Dynamixel motors control)部分&lt;/p&gt;
+&lt;p&gt;pypot使用Dynamixel提供的馬達來做控制的函式庫做控制，在說明文件裡面有提供註冊馬達的方法，這部分還在看相關文件說明。&lt;/p&gt;
+&lt;h2&gt;pypot&lt;/h2&gt;
+&lt;p&gt;針對文件說明檔寫了一個小型的介面還來控制poppy_humanoid&lt;/p&gt;
+&lt;p&gt;[倉儲位置][https://github.com/kmolLin/Pyquino_plugin]&lt;/p&gt;
+&lt;p&gt;打破一般傳統需要先進行開檔的動作(sceane)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/plugin/useCommandtoUse.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;進行頭部馬達的控制分別進行45度&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/plugin/turnHead45.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;做了一個小介面把功能鍵放入介面裡面，這個功能是把每顆馬達目前的位置旋轉角度全部回傳&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/plugin/machine_motor.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;利用亂數在左手臂上面進行位置(IK)，給他座標後，他會自己判斷哪些馬達要移動到端點座標的方法，猜想這部分是使用Vrep內建的IK去算出來的，但是也不確定是不是套入公式帶出解，這部分要看code才會知道&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/plugin/machine_motor.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;h2&gt;目標&lt;/h2&gt;
+&lt;p&gt;自定義馬達，自定義機構，利用同樣的方式進行，看看是否可以達成同樣的目標。
+自定義這邊我可能先使用四連桿機構或八連桿機構進行馬達控制，先不論外部控制的部分，先從內部下手，把模擬出來的控制方法和每顆馬達控制的轉速和扭距都畫出來，在做實體來驗證機構。&lt;/p&gt;</content><category term="Pyquino"></category></entry><entry><title>Pyquino 日誌 - 106/03/15</title><link href="http://project.mde.tw/blog/pyquino-ri-zhi-1060315.html" rel="alternate"></link><published>2017-03-15T23:00:00+08:00</published><updated>2017-03-15T23:00:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-03-15:/blog/pyquino-ri-zhi-1060315.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;開發日誌&lt;/p&gt;
 &lt;ul&gt;
