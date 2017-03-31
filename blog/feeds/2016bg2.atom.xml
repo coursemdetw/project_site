@@ -65,7 +65,7 @@
 &lt;h2&gt;瀏覽提示&lt;/h2&gt;
 &lt;p&gt;在比例滑桿左側加入一個提示 icon，一到上方可以有瀏覽提示。&lt;/p&gt;
 &lt;p&gt;可能之後會提供其他狀態列沒說明的功能。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0329_01.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0331_01.png"&gt;&lt;/p&gt;
 &lt;h2&gt;新的存檔格式&lt;/h2&gt;
 &lt;p&gt;之後會參考 fossil 的 Database 方式提供&lt;strong&gt;更具規劃的&lt;/strong&gt;存檔格式，並且可以紀錄版次。&lt;/p&gt;
 &lt;p&gt;使用 SQL 檔案格式的話要將 peewee 套件加回來，結構會參考 PythonCAD 的處理方式。&lt;/p&gt;</content><category term="Kmol"></category><category term="Pyslvs"></category></entry><entry><title>40323230日誌 - 106/03/29</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1060329.html" rel="alternate"></link><published>2017-03-29T21:00:00+08:00</published><updated>2017-03-29T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-03-29:/blog/40323230ri-zhi-1060329.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
