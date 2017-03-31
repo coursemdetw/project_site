@@ -128,7 +128,7 @@ from poppy_humanoid import PoppyHumanoid
 
 &lt;h1&gt;Pyslvs 開發進度&lt;/h1&gt;
 &lt;h2&gt;瀏覽提示&lt;/h2&gt;
-&lt;p&gt;在比例滑桿左側加入一個提示 icon，一到上方可以有瀏覽提示。&lt;/p&gt;
+&lt;p&gt;在比例滑桿左側加入一個提示 icon，滑鼠移到上方可以有瀏覽提示。&lt;/p&gt;
 &lt;p&gt;可能之後會提供其他狀態列沒說明的功能。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0331_01.png"&gt;&lt;/p&gt;
 &lt;h2&gt;新的存檔格式&lt;/h2&gt;
