@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://project.mde.tw/blog/</loc>
-<lastmod>2017-04-03T21:29:47-00:00</lastmod>
+<lastmod>2017-04-03T21:31:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/archives.html</loc>
-<lastmod>2017-04-03T21:29:47-00:00</lastmod>
+<lastmod>2017-04-03T21:31:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/tags.html</loc>
-<lastmod>2017-04-03T21:29:47-00:00</lastmod>
+<lastmod>2017-04-03T21:31:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/categories.html</loc>
-<lastmod>2017-04-03T21:29:47-00:00</lastmod>
+<lastmod>2017-04-03T21:31:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -53,8 +53,22 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://project.mde.tw/blog/40323230ri-zhi-1060403.html</loc>
+<lastmod>2017-04-03T21:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://project.mde.tw/blog/pyquino-ri-zhi-1060331.html</loc>
 <lastmod>2017-03-31T23:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://project.mde.tw/blog/40323230ri-zhi-1060331.html</loc>
+<lastmod>2017-03-31T21:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -2259,14 +2273,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://project.mde.tw/blog/tag/kmol.html</loc>
-<lastmod>2017-03-29T21:00:00+08:06</lastmod>
+<lastmod>2017-04-03T21:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/tag/pyslvs.html</loc>
-<lastmod>2017-03-29T21:00:00+08:06</lastmod>
+<lastmod>2017-04-03T21:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
