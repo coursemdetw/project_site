@@ -194,7 +194,8 @@
 <p>在Vrep裡面的環境設定部份加上一個child script，Non-threaded child script進行程式碼的溝通，這個部分主要把pypot和vrep進行溝通，不需要額外設定別的馬達。</p>
 <p><img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/plugin/addnew.PNG?raw=true" /></p>
 <p>程式碼如下</p>
-<pre class="brush: Lua">
+<p>(註記: lua brush 名稱要使用小寫)</p>
+<pre class="brush: lua">
 -- DO NOT WRITE CODE OUTSIDE OF THE if-then-end SECTIONS BELOW!!
 
 if (sim_call_type==sim_childscriptcall_initialization) then

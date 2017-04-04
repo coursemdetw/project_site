@@ -120,7 +120,8 @@
 <v t="amd.20160309123311.1" a="E"><vh>處理錯誤</vh>
 <v t="amd.20160309123318.1" a="E"><vh>@path content</vh>
 <v t="amd.20160309123402.1"><vh>@@edit 40323130_20160301.md</vh></v>
-<v t="amd.20160309123451.1"><vh>@edit 40323143_20160309.md</vh></v>
+<v t="amd.20160309123451.1"><vh>@@edit 40323143_20160309.md</vh></v>
+<v t="yen.20170404153352.1"><vh>@@edit 40323123_20170403.md</vh></v>
 </v>
 </v>
 </v>
@@ -940,6 +941,38 @@ Tags:
 <t tx="amd.20160309123311.1"></t>
 <t tx="amd.20160309123318.1"></t>
 <t tx="amd.20160309123402.1"></t>
+<t tx="amd.20160309123451.1">@language md
+Title: 40323143 - 說明如何參與協同機械設計專題網誌編寫
+Date: 2016-03-09 12:00
+Category: 2016g1
+Tags: 範例
+Author: 40323143
+
+只要是具備協同權限的用戶, 都可以在機械設計專題網誌中貢獻內容
+
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+這裡為 40323130 所寫的文章主要內容
+
+本機械設計專題網誌的架構包含近端與遠端的資料檢視設計, 專案資料以 Leo Editor 進行管理.
+
+以下教學影片示範從 &lt;http://project.mde.tw&gt; 機械設計專題網誌中取得倉儲的網址後, 可以利用 git clone 複製倉儲資料, 之後:
+
+1. 利用 git checkout gh-pages 將工作目錄指到 Github pages 的對應分支內容
+2. 以 Leo Editor 開啟 users 目錄下的 user_template.leo 檔案
+3. 根據自己的帳號, 修改 .md 檔案存檔的名稱, 目的在透過加入帳號與時間註記, 避免 content 目錄中的檔案彼此複寫
+4. 在 .md 的 Title 標題中, 冠上自己的帳號, 主要也是避免 Pelican 將 .md 根據標題轉成 html 時, 產生檔案複寫
+5. 本系統的 Pelican 分為近端與遠端轉檔按鈕, 因此若要在近端檢查時, 與要推送到 Github 時採用不同轉檔按鈕
+6. 為了簡化 git 指令的 add, commit 與 push, 加入 ungit, 只要啟動隨身系統候, 再利用 start_ungit.bat 開啟, 就可以在瀏覽器中簡化改版過程
+
+Vimeo:
+
+&lt;iframe src="https://player.vimeo.com/video/157247703" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/157247703"&gt;2016project_1&lt;/a&gt; from &lt;a href="https://vimeo.com/user24079973"&gt;虎尾科大機械設計工程&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+Youtube:
+
+&lt;iframe width="420" height="315" src="https://www.youtube.com/embed/hQR1wxALifU" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</t>
 <t tx="amd.20160309141114.1">execute-script predefines:
 
 c: The commander of the present outline.
@@ -1486,5 +1519,153 @@ def domake():
 make = threading.Thread(target=domake)
 make.start()</t>
 <t tx="yen.20170215004706.1">目的在救回 About</t>
+<t tx="yen.20170404153352.1">@language md
+Title: Pyquino 日誌 - 106/04/03
+Date: 2017-04-03 23:00
+Category: 2016g1
+Tags: Pyquino
+Author: 40323123
+
+
+1. 開發日誌
+    
+    * pypot使用方法
+    
+    * 討論
+    
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+開發日誌
+＝＝＝
+
+實作部分
+---
+
+-步驟一
+
+製作一個.ttt，必須要組裝好而且要進行組立完成
+
+-步驟二
+
+在Vrep裡面的環境設定部份加上一個child script，Non-threaded child script進行程式碼的溝通，這個部分主要把pypot和vrep進行溝通，不需要額外設定別的馬達。
+
+![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/plugin/addnew.PNG?raw=true)
+
+程式碼如下
+
+(註記: lua brush 名稱要使用小寫)
+
+&lt;pre class="brush: lua"&gt;
+-- DO NOT WRITE CODE OUTSIDE OF THE if-then-end SECTIONS BELOW!!
+
+if (sim_call_type==sim_childscriptcall_initialization) then
+  simSetScriptAttribute(sim_handle_self,sim_childscriptattribute_automaticcascadingcalls,false)
+end
+
+
+if (sim_call_type==sim_childscriptcall_actuation) then
+  if not firstTimeHere93846738 then
+    firstTimeHere93846738=0
+  end
+  simSetScriptAttribute(sim_handle_self,sim_scriptattribute_executioncount,firstTimeHere93846738)
+  firstTimeHere93846738=firstTimeHere93846738+1
+
+------------------------------------------------------------------------------
+
+
+-- Check the end of the script for some explanations!
+  if (simGetScriptExecutionCount()==0) then
+
+  end
+
+  simHandleChildScripts(sim_call_type)
+
+  local currentTime=simGetSimulationTime()
+
+  simSetFloatSignal('CurrentTime',currentTime)
+
+end
+
+
+if (sim_call_type==sim_childscriptcall_sensing) then
+  simHandleChildScripts(sim_call_type)
+end
+
+
+if (sim_call_type==sim_childscriptcall_cleanup) then
+
+  -- Put some restoration code here
+
+end
+
+&lt;/pre&gt;
+
+-步驟三
+
+製作一份每個軸(joint)上面馬達的json格式檔，這邊的馬達選用基本上都是使用dynamixel motors公司所販售的，這間公司的馬達每顆都含有力回饋、熱回饋、等多種感測器在馬達上面。
+
+json格式表，可以設定的部分
+
+&lt;ul&gt;
+&lt;li&gt;控制器(controller)
+&lt;li&gt;連線方式(串列通訊方式)  這邊還要看可不可以改成Arduino來使用
+&lt;li&gt;是否要同步運作(sync)可以連同模擬器一起進行real time控制
+&lt;li&gt;設定馬達群組(Group)
+&lt;li&gt;針對每顆馬達設計它的極限角度以及型號
+&lt;/ul&gt;
+
+&lt;pre class="brush: python"&gt;
+{
+  "controllers": {
+    "my_dxl_controller": {
+      "sync_read": true,
+      "protocol": 2,
+      "attached_motors": [
+        "base"
+      ],
+      "port": "/dev/ttyAMA0",
+      "syncloop": "LightDxlController"
+    }
+  },
+  "motorgroups": {
+    "base": [
+      "m1"
+    ]
+  },
+  "motors": {
+    "m1": {
+      "offset": 0.0,
+      "type": "XL-320",
+      "id": 1,
+      "angle_limit": [
+        -90.0,
+        90.0
+      ],
+      "orientation": "direct"
+    }
+  }
+}
+&lt;/pre&gt;
+
+-步驟四
+
+這部分可以使用我寫好的小外掛來做，下載我倉儲系統裡面的小型外掛，可以利用圖形化介面進行Vrep內部的控制，還有一些會凍結畫面的小BUG，我再進行處理，已經可以使用自訂的方法進行內部Vrep控制。
+
+![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/plugin/gui.PNG?raw=true)
+
+![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/plugin/45angle.PNG?raw=true)
+
+-討論部分
+
+1.實體同步控制部分還在想要怎麼進行測試，光是控制器的選用或馬達選用，這邊都有待討論，還在和開發的相關人員問是否可以使用Arduino之類的控制器進行控制，這部分要等待他們回覆。
+
+2.因為沒有實體部分可以進行測試，只能用Vrep內部的機器，在群組馬達的部分我還是不太理解他是怎麼區分的，範例檔裡面的那隻poppy因為太過複雜，無法理解他是如何定義他的馬達群組方法。
+
+3.目前我都還無法控制由我們自己組裝的機器，像是最簡單的單軸選轉的部分，我沒辦法使用他的lib進行Vrep內部的模擬，這邊可能是我們組的方法有錯或者是內部那根軸影響到實際模擬，這邊還需要討論。
+
+
+
+
+</t>
 </tnodes>
 </leo_file>
