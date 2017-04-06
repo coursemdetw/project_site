@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>40323230日誌 - 106/03/25 - 機械設計專題 (虎尾科大MDE)</title>
+    <title>40323203&05&06日誌 - Measuring Two Midpoint - 機械設計專題 (虎尾科大MDE)</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -10,22 +10,21 @@
 
 
 
-<link rel="canonical" href="http://project.mde.tw/blog/40323230ri-zhi-1060325.html">
+<link rel="canonical" href="http://project.mde.tw/blog/403232030506ri-zhi-measuring-two-midpoint.html">
 
-        <meta name="author" content="40323230" />
-        <meta name="keywords" content="Kmol,Pyslvs" />
-        <meta name="description" content="Pyslvs 開發進度： 面板工具提示 演算法結果校正" />
+        <meta name="author" content="40323205" />
+        <meta name="keywords" content="Kmol & OpenCV & Python" />
+        <meta name="description" content="以某一物體中心點當基準點，測量各物體中心點到基準點距離。" />
 
         <meta property="og:site_name" content="機械設計專題 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="40323230日誌 - 106/03/25"/>
-        <meta property="og:url" content="http://project.mde.tw/blog/40323230ri-zhi-1060325.html"/>
-        <meta property="og:description" content="Pyslvs 開發進度： 面板工具提示 演算法結果校正"/>
-        <meta property="article:published_time" content="2017-03-25" />
-            <meta property="article:section" content="2016bg2" />
-            <meta property="article:tag" content="Kmol" />
-            <meta property="article:tag" content="Pyslvs" />
-            <meta property="article:author" content="40323230" />
+        <meta property="og:title" content="40323203&amp;05&amp;06日誌 - Measuring Two Midpoint"/>
+        <meta property="og:url" content="http://project.mde.tw/blog/403232030506ri-zhi-measuring-two-midpoint.html"/>
+        <meta property="og:description" content="以某一物體中心點當基準點，測量各物體中心點到基準點距離。"/>
+        <meta property="article:published_time" content="2017-04-06" />
+            <meta property="article:section" content="2016g3" />
+            <meta property="article:tag" content="Kmol & OpenCV & Python" />
+            <meta property="article:author" content="40323205" />
 
 
     <!-- Bootstrap -->
@@ -105,13 +104,13 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                     <li><a href="/blog/pages/about/">About</a></li>
-                        <li class="active">
+                        <li >
                             <a href="http://project.mde.tw/blog/category/2016bg2.html">2016bg2</a>
                         </li>
                         <li >
                             <a href="http://project.mde.tw/blog/category/2016g1.html">2016g1</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="http://project.mde.tw/blog/category/2016g3.html">2016g3</a>
                         </li>
                         <li >
@@ -146,10 +145,10 @@
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://project.mde.tw/blog/40323230ri-zhi-1060325.html"
+                    <a href="http://project.mde.tw/blog/403232030506ri-zhi-measuring-two-midpoint.html"
                        rel="bookmark"
-                       title="Permalink to 40323230日誌 - 106/03/25">
-                        40323230日誌 - 106/03/25
+                       title="Permalink to 40323203&05&06日誌 - Measuring Two Midpoint">
+                        40323203&05&06日誌 -  Measuring Two Midpoint
                     </a>
                 </h1>
             </header>
@@ -159,39 +158,237 @@
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-03-25T21:00:00+08:00"> 週六 25 三月 2017</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-04-06T21:30:00+08:00"> 週四 06 四月 2017</time>
     </span>
             <span class="label label-default">By</span>
-            <a href="http://project.mde.tw/blog/author/40323230.html"><i class="fa fa-user"></i> 40323230</a>
+            <a href="http://project.mde.tw/blog/author/40323205.html"><i class="fa fa-user"></i> 40323205</a>
 
 
 
 <span class="label label-default">Tags</span>
-	<a href="http://project.mde.tw/blog/tag/kmol.html">Kmol</a>
-        /
-	<a href="http://project.mde.tw/blog/tag/pyslvs.html">Pyslvs</a>
+	<a href="http://project.mde.tw/blog/tag/kmol-opencv-python.html">Kmol & OpenCV & Python</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>Pyslvs 開發進度：</p>
-<ul>
-<li>面板工具提示</li>
-<li>演算法結果校正</li>
-</ul>
+                <p>以某一物體中心點當基準點，測量各物體中心點到基準點距離。</p>
 
 
-<h1>Pyslvs 開發進度</h1>
-<h2>面板工具提示</h2>
-<p>為了讓 GUI 特色更易懂，在面板的按鈕上加入工具提示，滑鼠游標指到上方會出現功能說明。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0325_01.png" /></p>
-<p>三角求解器的加入鈕也有對應顯示，不用進對話視窗就能看三角形的設計。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0325_02.png" /></p>
-<h2>演算法結果校正</h2>
-<p>之前的演算法結果是多代入一次 Solvespace 的 kernel 做定位，可是無法辨識是否為反轉四連桿。</p>
-<p>現在有三角求解器可以拆開結果（因為是固定形狀和參數很好分辨），比對頂點的位置後決定是否反轉。</p>
-<p>驗證後合併功能就正常了，不會有路徑在下方卻將呆鍊生成在上方的情況。</p>
-<p>另外發現差分演算法雖然快速，但是誤差滿大，有時候某些角度範圍會讓 Solvespace 的 kernel 求解回傳失敗（不過求解成功的片段路徑會符合要求）。</p>
-<p>其他兩個演算法時間雖然較久，但是不容易發生上述情形。</p>
+<h3>★範例所使用的圖檔下載位置</h3>
+
+<p><a href="http://imgur.com/DUKNwkZ"> http://imgur.com/DUKNwkZ </a>
+</br></p>
+<h3>★程式範例執行</h3>
+
+<pre class="brush: python">
+#以圖片最左矩形寬作為依據的距離測量
+from scipy.spatial import distance as dist
+from imutils import perspective
+from imutils import contours
+from PIL import Image
+import numpy as np
+import argparse
+import imutils
+import cv2
+
+def midpoint(ptA, ptB):
+    return ((ptA[0] + ptB[0]) * 0.5, (ptA[1] + ptB[1]) * 0.5)
+
+ap = argparse.ArgumentParser()
+ap.add_argument("-w", "--width", type=float, required=True)
+args = vars(ap.parse_args())
+
+#剪裁圖片→只留基準物
+imgC = Image.open("A.png")
+cut = imgC.crop((0, 0, 200, 200))
+cut.save("AA.png")
+
+imgC = cv2.imread("AA.png", 1)
+grayC = cv2.cvtColor(imgC, cv2.COLOR_BGR2GRAY)
+blurredC = cv2.GaussianBlur(grayC, (5, 5), 0)
+threshC = cv2.threshold(blurredC, 60, 255, cv2.THRESH_BINARY)[1]
+
+cntsC = cv2.findContours(threshC.copy(), cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE)
+cntsC = cntsC[0] if imutils.is_cv2() else cntsC[1]
+(cntsC, _) = contours.sort_contours(cntsC)
+
+for b in cntsC:
+    # 辨識基準物中心點
+    M = cv2.moments(b)
+    cX = int(M["m10"] / M["m00"])
+    cY = int(M["m01"] / M["m00"])
+    #print (cX ,cY)→基準物中心點座標
+
+#讀取圖檔→灰階→模糊
+#cv2.GaussianBlur模糊程度可以用3x3, 5x5, 7x7
+img = cv2.imread("A.png", 1)
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+thresh = cv2.threshold(blurred, 60, 255, cv2.THRESH_BINARY)[1]
+
+#進行輪廓偵測
+cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE)
+cnts = cnts[0] if imutils.is_cv2() else cnts[1]
+(cnts, _) = contours.sort_contours(cnts)
+refObj = None
+
+# loop over the contours
+for c in cnts:
+
+    cv2.drawContours(img, [c], -1, (220, 255, 250), 1)
+    cv2.circle(img, (cX, cY), 6, (255, 255, 255), -1)
+    cv2.putText(img, "datummark", (cX - 20, cY - 20),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 220), 2)
+
+    # 計算輪廓旋轉邊界
+    gear7 = cv2.minAreaRect(c)
+    gear7 = cv2.cv.BoxPoints(gear7) if imutils.is_cv2() else cv2.boxPoints(gear7)
+    gear7 = np.array(gear7, dtype="int")
+
+    # 計算輪廓旋轉邊界
+    gear7C = cv2.minAreaRect(c)
+    gear7C = cv2.cv.BoxPoints(gear7C) if imutils.is_cv2() else cv2.boxPoints(gear7C)
+    gear7C = np.array(gear7C, dtype="int")
+
+    # 重新設定邊界角落座標的順序, 由左上 右上 右下 左下, 順時針方向繞
+    gear7 = perspective.order_points(gear7)
+    gear7C = perspective.order_points(gear7C)
+
+
+    M = cv2.moments(c)
+    PcX = int(M["m10"] / M["m00"])
+    PcY = int(M["m01"] / M["m00"])
+    #PcX = np.average(gear7[:, 0])
+    #PcY = np.average(gear7[:, 1])
+    print (PcX ,PcY)
+
+# 以左邊邊界輪廓當基準, 當參考對象
+    if refObj is None:
+        # 計算物品左右邊界的中點
+        (tl, tr, br, bl) = gear7C
+        (tlblX, tlblY) = midpoint(tl, bl)
+        (trbrX, trbrY) = midpoint(tr, br)
+
+        # 用座標法計算兩物體中心距離
+        D = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
+        refObj = (gear7C, (cX, cY), D / args["width"]/2.54)
+        continue
+
+    orig = img.copy()
+
+     # 基準物的四個角&中心點 測量物的四個角&中心點 點到點的距離
+    cv2.circle(orig, (int(PcX), int(PcY)), 5, (240, 0, 150), -1)
+    cv2.circle(orig, (int(cX), int(cY)), 5, (240, 0, 150), -1)
+    cv2.line(orig, (int(PcX), int(PcY)), (int(cX), int(cY)), (240, 0, 150), 2)
+
+    #用座標距離法算出圖中的座標距離，並和實際的距離做比值，求出待測實際距離
+    D = dist.euclidean((PcX, PcY), (cX, cY)) / refObj[2]
+    (mX, mY) = midpoint((PcX, PcY), (cX, cY))
+    cv2.putText(orig, "{:.2f}mm".format(D), (int(mX), int(mY - 10)),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.55, (240, 0, 100), 2)
+        # "{:.1f}in" 取到小數點第一位
+
+
+    cv2.imshow("Image", orig)
+    cv2.waitKey(0)
+</pre>
+
+<p></br>
+<h3>★範例執行結果</h3>
+</br>
+<img src="http://i.imgur.com/kxyw1rh.png">
+</br>
+</br>
+<img src="http://i.imgur.com/klbtZqj.png">
+</br>
+</br>
+<img src="http://i.imgur.com/7bUpPuP.png">
+</br>
+</br>
+<img src="http://i.imgur.com/MLNXMs1.png">
+</br>
+</br>
+<img src="http://i.imgur.com/eOWssxf.png">
+</br>
+</br></p>
+<h3>★細部程式介紹</h3>
+
+<p>【PIL裁剪圖片】
+</br>
+</br>
+◎範例程式：
+</br></p>
+<pre class="brush: bash">
+
+#導入pillow
+from PIL import Image
+
+#載入原始圖片
+img = Image.open("A1.png")
+
+#從左上角開始裁剪200*200的圖片，再以B1檔名存取
+cut = img.crop((0, 0, 200, 200))
+cut.save("B1.png")
+
+</pre>
+
+<p></br>
+</br>
+◎結果：
+</br>
+</br>
+<img src="http://i.imgur.com/xRMtwvc.png">
+</br>
+</br>
+【cv2.moments】→取物品重心座標
+</br>
+</br>
+◎使用格式：
+</br>
+</br>
+<img src="http://i.imgur.com/fVTe5ux.png">
+</br>
+</br>
+◎範例程式：
+</br>
+</br></p>
+<pre class="brush: python">
+
+from imutils import contours
+import imutils
+import cv2
+
+image = cv2.imread("A1.png")
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+cnts = cv2.findContours(gray.copy(), 1, 2)
+cnts = cnts[0] if imutils.is_cv2() else cnts[1]
+(cnts,_) = contours.sort_contours(cnts)
+
+for c in cnts:
+    M = cv2.moments(c)
+    cX = int(M["m10"] / M["m00"])
+    cY = int(M["m01"] / M["m00"])
+
+    print (cX,cY)
+
+    cv2.drawContours(image, [c], -1, (0, 255, 0), 2)
+    cv2.circle(image, (cX, cY), 7, (0, 255, 255), -1)
+
+    cv2.imshow("Image", image)
+    cv2.waitKey(0)    
+
+</pre>
+
+<p></br>
+</br>
+◎結果：
+</br>
+</br>
+<img src="http://i.imgur.com/Q6sEf2K.png">
+</br>
+</br></p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -203,8 +400,8 @@
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'projectmdetw'; // required: replace example with your forum shortname
 
-                    var disqus_identifier = '40323230ri-zhi-1060325';
-                var disqus_url = 'http://project.mde.tw/blog/40323230ri-zhi-1060325.html';
+                    var disqus_identifier = '403232030506ri-zhi-measuring-two-midpoint';
+                var disqus_url = 'http://project.mde.tw/blog/403232030506ri-zhi-measuring-two-midpoint.html';
 
             var disqus_config = function () {
                 this.language = "en";
