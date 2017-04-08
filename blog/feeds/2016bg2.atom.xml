@@ -71,7 +71,8 @@ QMessageBox.aboutQt(self)
 &lt;p&gt;多連桿 template 將會提供一個參數表加入現成點，然後用新的三角形建立當前位置形成的實體。&lt;/p&gt;
 &lt;p&gt;新的三角形 PPP 提供三個已知點，求解器回傳三角形的三邊長，Pyslvs 利用三邊長建立實體。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0408_04.png" /&gt;&lt;/p&gt;
-&lt;p&gt;template 的功能尚未加入，預計明天完成四連桿和八連桿的表單。&lt;/p&gt;</summary><category term="Kmol"></category><category term="Pyslvs"></category></entry><entry><title>40323230日誌 - 106/04/04</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1060404.html" rel="alternate"></link><published>2017-04-04T21:00:00+08:00</published><updated>2017-04-04T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-04-04:blog/40323230ri-zhi-1060404.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
+&lt;p&gt;上述的 template 的功能尚未加入，預計明天完成四連桿和八連桿的表單。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0408_05.png" /&gt;&lt;/p&gt;</summary><category term="Kmol"></category><category term="Pyslvs"></category></entry><entry><title>40323230日誌 - 106/04/04</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1060404.html" rel="alternate"></link><published>2017-04-04T21:00:00+08:00</published><updated>2017-04-04T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-04-04:blog/40323230ri-zhi-1060404.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;匯入檔案功能（Import）&lt;/li&gt;
 &lt;/ul&gt;
