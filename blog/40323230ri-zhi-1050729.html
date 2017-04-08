@@ -162,7 +162,7 @@
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-07-29T19:00:00+08:00"> 週五 29 七月 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-07-29T19:00:00+08:00"> Fri 29 July 2016</time>
     </span>
             <span class="label label-default">By</span>
             <a href="http://project.mde.tw/blog/author/40323230.html"><i class="fa fa-user"></i> 40323230</a>
@@ -202,96 +202,79 @@
 <p>由於這些函式都未有對應名稱，所以都是自己編名的，例如<code>equal_angle( )</code>。</p>
 <h1>解題成功</h1>
 <p><img src="http://i.imgur.com/XddGS1n.jpg" ></p>
-<p>使用的是下列程式碼，在SciTE中解題成功：</p>
-<pre class="brush: python">
-#鍊條解題：18齒與30齒的鏈條，上下外切線長為200。
-#小圓圓心為原點，大圓圓心在X軸上，求四個切點的座標
-from slvs import *
-from math import *
-sys = System(500)
-g = 1
-
-#相關參數
-n0 = 20 #鍊條長度(mm)
+<p>使用的是下列程式碼，在SciTE中解題成功：鏈鏈
+<pre class="brush: python"></p>
+<h1>鍊條解題：18齒與30齒的鏈條，上下外切線長為200。</h1>
+<h1>小圓圓心為原點，大圓圓心在X軸上，求四個切點的座標</h1>
+<p>from slvs import <em>
+from math import </em>
+sys鏈= System(500)
+g = 1</p>
+<h1>相關參數</h1>
+<p>n0 = 20 #鍊條長度(mm)
 n1 = 18 #小輪齒數(t)
-n2 = 30 #大輪齒數(t)
-#邊長為a的的正n邊形外接圓半徑為：
-#R=a/(2*sin(pi/n)) or R=(a/2)*csc(pi/n)
-R1 = n0/(2*sin(pi/n1))
-R2 = n0/(2*sin(pi/n2))
-
-#開始繪圖
-
-#原點Point0
-p0 = sys.add_param(0.0)
+n2 = 30 #大輪齒數(t)</p>
+<h1>邊長為a的的正n邊形外接圓半徑為：</h1>
+<h1>R=a/(2<em>sin(pi/n)) or R=(a/2)</em>csc(pi/n)</h1>
+<p>R1 = n0/(2<em>sin(pi/n1))
+R2 = n0/(2</em>sin(pi/n2))</p>
+<h1>開始繪圖</h1>
+<h1>原點Point0</h1>
+<p>p0 = sys.add_param(0.0)
 p1 = sys.add_param(0.0)
 p2 = sys.add_param(0.0)
-Point0 = Point3d(p0, p1, p2)
-
-
-#XY法線
-qw, qx, qy, qz = Slvs_MakeQuaternion(1, 0, 0, 0, 1, 0)
+Point0 = Point3d(p0, p1, p2)</p>
+<h1>XY法線</h1>
+<p>qw, qx, qy, qz = Slvs_MakeQuaternion(1, 0, 0, 0, 1, 0)
 p3 = sys.add_param(qw)
 p4 = sys.add_param(qx)
 p5 = sys.add_param(qy)
 p6 = sys.add_param(qz)
-Normal1 = Normal3d(p3, p4, p5, p6)
-
-#工作平面
-Workplane1 = Workplane(Point0, Normal1)
-
-#3D版的Point0=>Point1
-p7 = sys.add_param(0.0)
+Normal1 = Normal3d(p3, p4, p5, p6)</p>
+<h1>工作平面</h1>
+<p>Workplane1 = Workplane(Point0, Normal1)</p>
+<h1>3D版的Point0=&gt;Point1</h1>
+<p>p7 = sys.add_param(0.0)
 p8 = sys.add_param(0.0)
 Point1 = Point2d(Workplane1, p7, p8)
-Constraint.dragged(Workplane1, Point1)
-
-#Point2
-p9 = sys.add_param(0.0)
+Constraint.dragged(Workplane1, Point1)</p>
+<h1>Point2</h1>
+<p>p9 = sys.add_param(0.0)
 p10 = sys.add_param(200.0)
-Point2 = Point2d(Workplane1, p9, p10)
-
-#上端外切線的兩個點Point3和Point4
-p11 = sys.add_param(0.0)
+Point2 = Point2d(Workplane1, p9, p10)</p>
+<h1>上端外切線的兩個點Point3和Point4</h1>
+<p>p11 = sys.add_param(0.0)
 p12 = sys.add_param(500.0)
 Point3 = Point2d(Workplane1, p11, p12)
 p13 = sys.add_param(500.0)
 p14 = sys.add_param(500.0)
-Point4 = Point2d(Workplane1, p13, p14)
-
-#下端外切線的兩個點Point5和Point6
-p15 = sys.add_param(0.0)
+Point4 = Point2d(Workplane1, p13, p14)</p>
+<h1>下端外切線的兩個點Point5和Point6</h1>
+<p>p15 = sys.add_param(0.0)
 p16 = sys.add_param(-500.0)
 Point5 = Point2d(Workplane1, p15, p16)
 p17 = sys.add_param(500.0)
 p18 = sys.add_param(-500.0)
-Point6 = Point2d(Workplane1, p17, p18)
-
-#外切線
-Line1 = LineSegment2d(Workplane1, Point3, Point4)
-Line2 = LineSegment2d(Workplane1, Point5, Point6)
-
-#圓弧
-Arc1 = ArcOfCircle(Workplane1, Normal1, Point1, Point3, Point5)
-Constraint.diameter(R1*2, Workplane1, Arc1)
+Point6 = Point2d(Workplane1, p17, p18)</p>
+<h1>外切線</h1>
+<p>Line1 = LineSegment2d(Workplane1, Point3, Point4)
+Line2 = LineSegment2d(Workplane1, Point5, Point6)</p>
+<h1>圓弧</h1>
+<p>Arc1 = ArcOfCircle(Workplane1, Normal1, Point1, Point3, Point5)
+Constraint.diameter(R1<em>2, Workplane1, Arc1)
 Arc2 = ArcOfCircle(Workplane1, Normal1, Point2, Point6, Point4)
-Constraint.diameter(R2*2, Workplane1, Arc2)
-
-#X軸Line0
-Line0 = LineSegment2d(Workplane1, Point1, Point2)
-Constraint.horizontal(Workplane1, Line0)
-
-#約束
-Constraint.tangent(Arc1, Line1, False)
+Constraint.diameter(R2</em>2, Workplane1, Arc2)</p>
+<h1>X軸Line0</h1>
+<p>Line0 = LineSegment2d(Workplane1, Point1, Point2)
+Constraint.horizontal(Workplane1, Line0)</p>
+<h1>約束</h1>
+<p>Constraint.tangent(Arc1, Line1, False)
 Constraint.tangent(Arc2, Line1, False)
 Constraint.tangent(Arc2, Line2, True)
-Constraint.distance(200.0, Workplane1, Point3, Point4)
-
-#以下解題
-
-sys.solve()
-
-if (sys.result == SLVS_RESULT_OKAY):
+Constraint.distance(200.0, Workplane1, Point3, Point4)</p>
+<h1>以下解題</h1>
+<p>sys.solve()</p>
+<p>if (sys.result == SLVS_RESULT_OKAY):
     print ("兩點座標：")
     print(("(%.3f %.3f %.3f)")%(sys.get_param(7).val, sys.get_param(8).val, sys.get_param(2).val))
     print(("(%.3f %.3f %.3f)\n")%(sys.get_param(9).val, sys.get_param(10).val, sys.get_param(2).val))
@@ -329,8 +312,7 @@ elif (sys.result == SLVS_RESULT_TOO_MANY_UNKNOWNS):
     print ("solve failed")
     print ("SLVS_RESULT_TOO_MANY_UNKNOWNS")
     print ("%d DOF" % sys.dof)
-</pre>
-
+</pre></p>
 <p>弧與直線相切的函式只能鎖住一頭（布林值調整鎖住頭或尾），所以要下兩次。</p>
 <p>不過由於Solvespace對約束的要求十分嚴謹，所以只要下了衝突約束或是重複約束，前者會顯示<code>SLVS_RESULT_INCONSISTENT</code>，後者會顯示<code>SLVS_RESULT_DIDNT_CONVERGE</code>，就得重新檢查寫的程式。</p>
 <p>以下是圖解法比對（其實已經記錄在上面的程式中供比對），兩者使用的資料庫函式應該是一樣的。</p>
@@ -394,6 +376,11 @@ elif (sys.result == SLVS_RESULT_TOO_MANY_UNKNOWNS):
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/40323230ri-zhi-1060408.html">
+                            40323230日誌 - 106/04/08
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/403232030506ri-zhi-measuring-two-midpoint.html">
                             40323203&05&06日誌 -  Measuring Two Midpoint
                         </a>
@@ -406,11 +393,6 @@ elif (sys.result == SLVS_RESULT_TOO_MANY_UNKNOWNS):
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/40323230ri-zhi-1060404.html">
                             40323230日誌 - 106/04/04
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyquino-ri-zhi-1060403.html">
-                            Pyquino 日誌 - 106/04/03
                         </a>
                     </li>
                 </ul>

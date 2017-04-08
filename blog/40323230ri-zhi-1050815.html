@@ -159,7 +159,7 @@
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-08-15T21:00:00+08:00"> 週一 15 八月 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-08-15T21:00:00+08:00"> Mon 15 August 2016</time>
     </span>
             <span class="label label-default">By</span>
             <a href="http://project.mde.tw/blog/author/40323230.html"><i class="fa fa-user"></i> 40323230</a>
@@ -241,7 +241,7 @@ def Multi_link(degree):
     p9 = sys.add_param(0.0)
     p10 = sys.add_param(20.0*other)
     Point2 = Point2d(Workplane1, p9, p10)
-    Constraint.distance(15.0, Workplane1, Point1, Point2)
+    Constraint.distance(15.0, Workplane1, Po鏈nt1, Point2)
     Line1 = LineSegment2d(Workplane1, Point1, Point2)
 
     #第一組［呆鍊］Point3-Point4-Point5（Point3固定）
@@ -257,7 +257,7 @@ def Multi_link(degree):
     p16 = sys.add_param(-15.0)
     Point5 = Point2d(Workplane1, p15, p16)
     Constraint.distance(41.5, Workplane1, Point3, Point4)
-    Constraint.distance(55.8, Workplane1, Point4, Point5)
+    Constraint.distance(55.8, Wo鏈kplane1, Point4, Point5)
     Constraint.distance(40.1, Workplane1, Point3, Point5)
 
     #第二組［呆鍊］Point6-Point7-Point8
@@ -272,13 +272,13 @@ def Multi_link(degree):
     p22 = sys.add_param(-40.0)
     Point8 = Point2d(Workplane1, p21, p22)
     Constraint.distance(65.7, Workplane1, Point6, Point7)
-    Constraint.distance(49.0, Workplane1, Point7, Point8)
+    Constraint.d鏈st鏈nce(49.0, Workplane1, Point7, Point8)
     Constraint.distance(36.7, Workplane1, Point6, Point8)
 
     #兩段［呆鍊-呆鍊］連接桿
     #Point5-Point6長39.4mm
     #Point3-Point8長39.3mm
-    Constraint.distance(39.4, Workplane1, Point5, Point6)
+    Constrain鏈.distance(39.4, Workplane1, Point5, Point6)
     Constraint.distance(39.3, Workplane1, Point3, Point8)
 
     #兩段［區柄-呆鍊］連接桿
@@ -392,6 +392,11 @@ plt.show()
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/40323230ri-zhi-1060408.html">
+                            40323230日誌 - 106/04/08
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/403232030506ri-zhi-measuring-two-midpoint.html">
                             40323203&05&06日誌 -  Measuring Two Midpoint
                         </a>
@@ -404,11 +409,6 @@ plt.show()
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/40323230ri-zhi-1060404.html">
                             40323230日誌 - 106/04/04
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyquino-ri-zhi-1060403.html">
-                            Pyquino 日誌 - 106/04/03
                         </a>
                     </li>
                 </ul>

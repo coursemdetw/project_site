@@ -162,7 +162,7 @@
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-07-27T19:00:00+08:00"> 週三 27 七月 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-07-27T19:00:00+08:00"> Wed 27 July 2016</time>
     </span>
             <span class="label label-default">By</span>
             <a href="http://project.mde.tw/blog/author/40323230.html"><i class="fa fa-user"></i> 40323230</a>
@@ -191,85 +191,70 @@
 <p>計算題目，並一邊利用SciTE的偵錯窗來檢查之前寫的函式資料。</p>
 <p><img src="http://i.imgur.com/tfgUIVX.jpg" ></p>
 <p>之前的題目：</p>
-<p><a href="http://chiamingyen.github.io/kmolab/blog/zi-xing-che-chuan-dong-2d-lian-tiao-hui-tu-er.html" title="chiamingyen.github.io">http://chiamingyen.github.io/kmolab/blog/zi-xing-che-chuan-dong-2d-lian-tiao-hui-tu-er.html</a></p>
+<p><a href="http://chiamingyen.github.io/kmolab/blog/zi-xing-che-chuan-dong-2d-lian-tiao-hui-tu-er.html" title="chiamingyen.gi鏈hub.io">http://chiamingyen.github.io/kmolab/blog/zi-xing-che-chuan-dong-2d-lian-tiao-hui-tu-er.html</a></p>
 <p>規劃了一支程式來計算鍊輪的點座標（半成品）：</p>
-<pre class="brush: python">
-#鍊條解題：18齒與30齒的鏈條，上下外切線長為200。
-#小圓圓心為原點，大圓圓心在X軸上，求四個切點的座標
-from slvs import *
-from math import *
-sys = System(500)
-g = 1
-
-#相關參數
-n0 = 20 #鍊條長度(mm)
+<p><pre鏈class="brush: python"></p>
+<h1>鍊條解題：18齒與30齒的鏈條，上下外切線長為200。</h1>
+<h1>小圓圓心為原點，大圓圓心在X軸上，求四個切點的座標</h1>
+<p>from slvs import <em>
+from math import </em>
+sys = Syst鏈m(500)
+g = 1</p>
+<h1>相關參數</h1>
+<p>n0 = 20 #鍊條長度(mm)
 n1 = 18 #小輪齒數(t)
-n2 = 30 #大輪齒數(t)
-#邊長為a的的正n邊形外接圓半徑為：
-#R=a/(2*sin(pi/n)) or R=(a/2)*csc(pi/n)
-R1 = n0/(2*sin(pi/n1))
-R2 = n0/(2*sin(pi/n2))
-
-#開始繪圖
-
-#原點Point0
-p0 = sys.add_param(0.0)
+n2 = 30 #大輪齒數(t)</p>
+<h1>邊長為a的的正n邊形外接圓半徑為：</h1>
+<h1>R=a/(2<em>sin(pi/n)) or R=(a/2)</em>csc(pi/n)</h1>
+<p>R1 = n0/(2<em>sin(pi/n1))
+R2 = n0/(2</em>sin(pi/n2))</p>
+<h1>開始繪圖</h1>
+<h1>原點Point0</h1>
+<p>p0 = sys.add_param(0.0)
 p1 = sys.add_param(0.0)
 p2 = sys.add_param(0.0)
-Point0 = Point3d(p0, p1, p2)
-
-#XY法線
-qw, qx, qy, qz = Slvs_MakeQuaternion(1, 0, 0, 0, 1, 0)
+Point0 = Point3d(p0, p1, p2)</p>
+<h1>XY法線</h1>
+<p>qw, qx, qy, qz = Slvs_MakeQuaternion(1, 0, 0, 0, 1, 0)
 p3 = sys.add_param(qw)
 p4 = sys.add_param(qx)
 p5 = sys.add_param(qy)
 p6 = sys.add_param(qz)
-Normal1 = Normal3d(p3, p4, p5, p6, sys)
-
-#工作平面
-Workplane1 = Workplane(Point0, Normal1)
-
-#3D版的Point0=>Point1
-Point1 = Point2d(Workplane1, p0, p1)
-
-#小圓
-p7 = sys.add_param(R1)
+Normal1 = Normal3d(p3, p4, p5, p6, sys)</p>
+<h1>工作平面</h1>
+<p>Workplane1 = Workplane(Point0, Normal1)</p>
+<h1>3D版的Point0=&gt;Point1</h1>
+<p>Point1 = Point2d(Workplane1, p0, p1)</p>
+<h1>小圓</h1>
+<p>p7 = sys.add_param(R1)
 Distance1 = Distance(Workplane1, p7)
-Circle1 = Circle(Workplane1, Normal1, Point1, Distance1)
-
-#Point2
-p8 = sys.add_param(500.0)
+Circle1 = Circle(Workplane1, Normal1, Point1, Distance1)</p>
+<h1>Point2</h1>
+<p>p8 = sys.add_param(500.0)
 p9 = sys.add_param(0.0)
-Point2 = Point2d(Workplane1, p7, p8)
-
-#大圓
-p10 = sys.add_param(R2)
+Point2 = Point2d(Workplane1, p7, p8)</p>
+<h1>大圓</h1>
+<p>p10 = sys.add_param(R2)
 Distance2 = Distance(Workplane1, p10)
-Circle2 = Circle(Workplane1, Normal1, Point2, Distance2)
-
-#上端外切線的兩個點Point3和Point4
-p11 = sys.add_param(300.0)
+Circle2 = Circle(Workplane1, Normal1, Point2, Distance2)</p>
+<h1>上端外切線的兩個點Point3和Point4</h1>
+<p>p11 = sys.add_param(300.0)
 p12 = sys.add_param(500.0)
 Point3 = Point2d(Workplane1, p11, p12)
 p13 = sys.add_param(500.0)
 p14 = sys.add_param(500.0)
-Point4 = Point2d(Workplane1, p13, p14)
-
-#下端外切線的兩個點Point5和Point6
-p15 = sys.add_param(300.0)
+Point4 = Point2d(Workplane1, p13, p14)</p>
+<h1>下端外切線的兩個點Point5和Point6</h1>
+<p>p15 = sys.add_param(300.0)
 p16 = sys.add_param(-500.0)
 Point5 = Point2d(Workplane1, p15, p16)
 p17 = sys.add_param(500.0)
 p18 = sys.add_param(-500.0)
-Point6 = Point2d(Workplane1, p17, p18)
-
-...
-
-#以下解題
-
-sys.solve()
-
-if (sys.result == SLVS_RESULT_OKAY):
+Point6 = Point2d(Workplane1, p17, p18)</p>
+<p>...</p>
+<h1>以下解題</h1>
+<p>sys.solve()</p>
+<p>if (sys.result == SLVS_RESULT_OKAY):
     print ("兩點座標：")
     print(("(%.3f %.3f %.3f)")%(sys.get_param(0).val, sys.get_param(1).val, sys.get_param(2).val))
     print(("(%.3f %.3f %.3f)\n")%(sys.get_param(8).val, sys.get_param(9).val, sys.get_param(2).val))
@@ -284,8 +269,7 @@ if (sys.result == SLVS_RESULT_OKAY):
     print ("%d DOF" % sys.dof)
 else:
     print ("solve failed")
-</pre>
-
+</pre></p>
 <p>但是在使用畫線並約束與圓相切的指令時，之前臆測的程式碼卻沒有這個功能，於是去倉儲搜尋函式名稱。</p>
 <p>發現某些Solvespace的功能並沒有轉給CDemo使用，之前<code>DOC.txt</code>簡介只是說明出本體支援的功能。</p>
 <hr>
@@ -357,6 +341,11 @@ public:
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/40323230ri-zhi-1060408.html">
+                            40323230日誌 - 106/04/08
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/403232030506ri-zhi-measuring-two-midpoint.html">
                             40323203&05&06日誌 -  Measuring Two Midpoint
                         </a>
@@ -369,11 +358,6 @@ public:
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/40323230ri-zhi-1060404.html">
                             40323230日誌 - 106/04/04
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyquino-ri-zhi-1060403.html">
-                            Pyquino 日誌 - 106/04/03
                         </a>
                     </li>
                 </ul>
