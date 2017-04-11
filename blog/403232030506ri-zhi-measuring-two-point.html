@@ -14,13 +14,13 @@
 
         <meta name="author" content="40323205" />
         <meta name="keywords" content="Kmol & OpenCV & Python" />
-        <meta name="description" content="以某一物體重心當基準點，測量各物體重心到基準點距離。" />
+        <meta name="description" content="以最左物體重心當基準點，測量各物體重心到基準點距離。" />
 
         <meta property="og:site_name" content="機械設計專題 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="40323203&amp;05&amp;06日誌 - Measuring Two Point"/>
         <meta property="og:url" content="http://project.mde.tw/blog/403232030506ri-zhi-measuring-two-point.html"/>
-        <meta property="og:description" content="以某一物體重心當基準點，測量各物體重心到基準點距離。"/>
+        <meta property="og:description" content="以最左物體重心當基準點，測量各物體重心到基準點距離。"/>
         <meta property="article:published_time" content="2017-04-06" />
             <meta property="article:section" content="2016g3" />
             <meta property="article:tag" content="Kmol & OpenCV & Python" />
@@ -158,7 +158,7 @@
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-04-06T21:30:00+08:00"> 四 06 四月 2017</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-04-06T21:30:00+08:00"> 週四 06 四月 2017</time>
     </span>
             <span class="label label-default">By</span>
             <a href="http://project.mde.tw/blog/author/40323205.html"><i class="fa fa-user"></i> 40323205</a>
@@ -170,7 +170,7 @@
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>以某一物體重心當基準點，測量各物體重心到基準點距離。</p>
+                <p>以最左物體重心當基準點，測量各物體重心到基準點距離。</p>
 
 
 <h3>★範例所使用的圖檔下載位置</h3>
@@ -180,7 +180,6 @@
 <h3>★程式範例執行</h3>
 
 <pre class="brush: python">
-# 以圖片最左矩形寬作為依據的距離測量
 from scipy.spatial import distance as dist
 from imutils import perspective
 from imutils import contours
@@ -218,7 +217,6 @@ for b in cntsC:
     M = cv2.moments(b)
     cX = int(M["m10"] / M["m00"])
     cY = int(M["m01"] / M["m00"])
-    #print (cX ,cY)→基準物重心座標
 
 # 讀取圖檔→灰階→模糊
 # cv2.GaussianBlur模糊程度可以用3x3, 5x5, 7x7
@@ -251,26 +249,23 @@ for c in cnts:
     gear7C = cv2.cv.BoxPoints(gear7C) if imutils.is_cv2() else cv2.boxPoints(gear7C)
     gear7C = np.array(gear7C, dtype="int")
 
-    # 重新設定邊界角落座標的順序, 由左上 右上 右下 左下, 順時針方向繞
     gear7 = perspective.order_points(gear7)
     gear7C = perspective.order_points(gear7C)
 
-
+    # 辨識物體重心
     M = cv2.moments(c)
     PcX = int(M["m10"] / M["m00"])
     PcY = int(M["m01"] / M["m00"])
-    # PcX = np.average(gear7[:, 0])
-    # PcY = np.average(gear7[:, 1])
     print (PcX ,PcY)
 
-    # 以左邊邊界輪廓當基準, 當參考對象
+
     if refObj is None:
-        # 計算物品左右邊界的中點
+        # 計算基準物的中點
         (tl, tr, br, bl) = gear7C
         (tlblX, tlblY) = midpoint(tl, bl)
         (trbrX, trbrY) = midpoint(tr, br)
 
-        # 用座標法計算兩物體中心距離
+        # 用座標法計算兩物體重心距離
         # 單位換算成mm
         D = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
         refObj = (gear7C, (cX, cY), D / args["width"] / 2.54 / 100)
@@ -278,7 +273,7 @@ for c in cnts:
 
     orig = img.copy()
 
-     # 基準物的四個角&中心點 測量物的四個角&中心點 點到點的距離
+     # 基準物和測量物中心點&點到點的距離
     cv2.circle(orig, (int(PcX), int(PcY)), 5, (240, 0, 150), -1)
     cv2.circle(orig, (int(cX), int(cY)), 5, (240, 0, 150), -1)
     cv2.line(orig, (int(PcX), int(PcY)), (int(cX), int(cY)), (240, 0, 150), 2)
@@ -440,6 +435,11 @@ for c in cnts:
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/403232030506ri-zhi-wu-ti-biao-hao-zui-da-chang-kuan-zhong-xin-ju-li.html">
+                            40323203&05&06日誌 -  物體標號+最大長寬+重心距離
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/40323230ri-zhi-1060410.html">
                             40323230日誌 - 106/04/10
                         </a>
@@ -452,11 +452,6 @@ for c in cnts:
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/40323230ri-zhi-1060409.html">
                             40323230日誌 - 106/04/09
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/40323230ri-zhi-1060408.html">
-                            40323230日誌 - 106/04/08
                         </a>
                     </li>
                 </ul>
