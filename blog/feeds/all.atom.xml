@@ -97,7 +97,7 @@
 &lt;/ul&gt;
 &lt;p&gt;目前 Windows 的 PyQt 5.8 沒有支援 Anaconda，可能得日後更新才會解決問題。&lt;/p&gt;
 &lt;p&gt;而且使用一般的 Python 編譯，Pyslvs 的體積可以減少很多（377MB &amp;gt; 88MB）&lt;/p&gt;
-&lt;p&gt;以下是自行編譯分布與主程式可執行檔&lt;/p&gt;
+&lt;p&gt;以下是自行編譯分部程式庫與主程式可執行檔&lt;/p&gt;
 &lt;h1&gt;環境與安裝套件&lt;/h1&gt;
 &lt;p&gt;本篇介紹需要使用的工具與其安裝方法。&lt;/p&gt;
 &lt;h2&gt;Git&lt;/h2&gt;
