@@ -375,7 +375,17 @@
 <li>Ubuntu 的 Python 3.5 命名為 <code>py35</code>。</li>
 <li>Windows 的 Python 3.6 命名為 <code>py36w</code>。</li>
 </ul>
-<p>並在 <code>core/calculation</code>/<code>calculation.py</code> 中加入名稱。</p>
+<p>並在 <code>core/calculation</code>/<code>calculation.py</code> 中加入匯入名稱。</p>
+<pre class="brush: python">
+if py_nm=='36w':
+    from ..kernel.py36w.slvs import *
+    from ..kernel.pyslvs_generate.py36w import tinycadlib
+    from ..kernel.pyslvs_generate.py36w.planarlinkage import build_planar
+    from ..kernel.pyslvs_generate.py36w.rga import Genetic
+    from ..kernel.pyslvs_generate.py36w.firefly import Firefly
+    from ..kernel.pyslvs_generate.py36w.de import DiffertialEvolution
+</pre>
+
 <h2>演算法函式庫</h2>
 <p>進入 <code>core/kernel/pyslvs_generate/pyslvs_generate</code> 資料夾。</p>
 <blockquote>
