@@ -93,8 +93,8 @@ def __pos__(obj): return +obj
 def __neg__(obj): return -obj
 def __eq__(a, b): return a==b
 def __ne__(a, b): return a!=b
-def __lt__(a, b): return a&lt;b
-def __le__(a, b): return a&lt;=b
+def __lt__(a, b): return a\&lt;b
+def __le__(a, b): return a\&lt;=b
 def __gt__(a, b): return a&gt;b
 def __ge__(a, b): return a&gt;=b
 def __contains__(a, b): return a in b
