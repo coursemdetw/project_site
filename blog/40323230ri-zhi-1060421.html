@@ -189,12 +189,12 @@
 <p>程式碼如下：</p>
 <pre class="brush: python">
 if e!=SystemExit:
-        import logging
-        logging.basicConfig(filename='PyslvsLogFile.log', filemode='w',
-            format='%(asctime)s | %(message)s', level=logging.INFO)
-        logging.exception("Exception Happened.")
-        print('{}\n{}'.format(type(e), e))
-        exit(1)
+    import logging
+    logging.basicConfig(filename='PyslvsLogFile.log', filemode='w',
+        format='%(asctime)s | %(message)s', level=logging.INFO)
+    logging.exception("Exception Happened.")
+    print('{}\n{}'.format(type(e), e))
+    exit(1)
 </pre>
 
 <p>舊有的紀錄檔會被複寫。</p>
@@ -311,6 +311,11 @@ endif
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/python-operator.html">
+                            Python Operator
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/40323230ri-zhi-1060421.html">
                             40323230日誌 - 106/04/21
                         </a>
@@ -323,11 +328,6 @@ endif
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/403232030506ri-zhi-wu-ti-biao-hao-zui-da-chang-kuan-zhong-xin-ju-li.html">
                             40323203&05&06日誌 -  物體標號+最大長寬+重心距離
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/40323230ri-zhi-1060410.html">
-                            40323230日誌 - 106/04/10
                         </a>
                     </li>
                 </ul>

@@ -50,7 +50,56 @@
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_02.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_03.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_04.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_05.png"&gt;&lt;/p&gt;</content><category term="Leo Editor"></category><category term="Pandoc"></category></entry><entry><title>40323230日誌 - 106/04/21</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1060421.html" rel="alternate"></link><published>2017-04-21T21:00:00+08:00</published><updated>2017-04-21T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-04-21:/blog/40323230ri-zhi-1060421.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_05.png"&gt;&lt;/p&gt;</content><category term="Leo Editor"></category><category term="Pandoc"></category></entry><entry><title>Python Operator</title><link href="http://project.mde.tw/blog/python-operator.html" rel="alternate"></link><published>2017-04-22T21:00:00+08:00</published><updated>2017-04-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-04-22:/blog/python-operator.html</id><summary type="html">&lt;p&gt;Python 運算子的自訂&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Python 運算子的自訂&lt;/p&gt;
+
+
+&lt;h1&gt;Python Operator&lt;/h1&gt;
+&lt;p&gt;參考資料：&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://docs.python.org/3/library/operator.html"&gt;https://docs.python.org/3/library/operator.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在 object 中，使用 Operator functions 可以定義或重新定義使用運算子的行為。&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class A:
+    def __init__(self):
+        self.c = 10
+    def __add__(self, b): return self.c+b
+
+a = A()
+print(a+20)
+#回傳 30
+&lt;/pre&gt;
+
+&lt;p&gt;因此可應用為：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class Point:
+    def __init__(self):
+        self.x = 0.
+        self.y = 0.
+    def __add__(self, b): return Point(self.x+b.x, self.y+b.y)
+&lt;/pre&gt;
+
+&lt;p&gt;兩點相加即為兩者 x 與 y 座標總和。&lt;/p&gt;
+&lt;p&gt;一些可迭代物件的運算子對應如下：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+def __add__(a, b): return a+b
+def __sub__(a, b): return a-b
+def __mul__(a, b): return a*b
+def __truediv__(a, b): return a/b
+def __mod__(a, b): return a%b
+def __pow__(a, b): return a**b
+def __invert__(obj): return ~obj
+def __pos__(obj): return +obj
+def __neg__(obj): return -obj
+def __eq__(a, b): return a==b
+def __ne__(a, b): return a!=b
+def __lt__(a, b): return a&lt;b
+def __le__(a, b): return a&lt;=b
+def __gt__(a, b): return a&gt;b
+def __ge__(a, b): return a&gt;=b
+def __contains__(a, b): return a in b
+def __getitem__(a, b): return a[b]
+&lt;/pre&gt;</content><category term="Python3"></category></entry><entry><title>40323230日誌 - 106/04/21</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1060421.html" rel="alternate"></link><published>2017-04-21T21:00:00+08:00</published><updated>2017-04-21T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-04-21:/blog/40323230ri-zhi-1060421.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;偵錯輸出&lt;/li&gt;
 &lt;li&gt;編譯自動偵測版本&lt;/li&gt;
@@ -69,12 +118,12 @@
 &lt;p&gt;程式碼如下：&lt;/p&gt;
 &lt;pre class="brush: python"&gt;
 if e!=SystemExit:
-        import logging
-        logging.basicConfig(filename='PyslvsLogFile.log', filemode='w',
-            format='%(asctime)s | %(message)s', level=logging.INFO)
-        logging.exception("Exception Happened.")
-        print('{}\n{}'.format(type(e), e))
-        exit(1)
+    import logging
+    logging.basicConfig(filename='PyslvsLogFile.log', filemode='w',
+        format='%(asctime)s | %(message)s', level=logging.INFO)
+    logging.exception("Exception Happened.")
+    print('{}\n{}'.format(type(e), e))
+    exit(1)
 &lt;/pre&gt;
 
 &lt;p&gt;舊有的紀錄檔會被複寫。&lt;/p&gt;
