@@ -73,9 +73,9 @@ print(a+20)
 &lt;p&gt;因此可應用為：&lt;/p&gt;
 &lt;pre class="brush: python"&gt;
 class Point:
-    def __init__(self):
-        self.x = 0.
-        self.y = 0.
+    def __init__(self, x=0., y=0.):
+        self.x = x
+        self.y = y
     def __add__(self, b): return Point(self.x+b.x, self.y+b.y)
 &lt;/pre&gt;
 
@@ -93,10 +93,6 @@ def __pos__(obj): return +obj
 def __neg__(obj): return -obj
 def __eq__(a, b): return a==b
 def __ne__(a, b): return a!=b
-def __lt__(a, b): return a\&lt;b
-def __le__(a, b): return a\&lt;=b
-def __gt__(a, b): return a&gt;b
-def __ge__(a, b): return a&gt;=b
 def __contains__(a, b): return a in b
 def __getitem__(a, b): return a[b]
 &lt;/pre&gt;</content><category term="Python3"></category></entry><entry><title>40323230日誌 - 106/04/21</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1060421.html" rel="alternate"></link><published>2017-04-21T21:00:00+08:00</published><updated>2017-04-21T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-04-21:/blog/40323230ri-zhi-1060421.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;

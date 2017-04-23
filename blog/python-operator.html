@@ -194,9 +194,9 @@ print(a+20)
 <p>因此可應用為：</p>
 <pre class="brush: python">
 class Point:
-    def __init__(self):
-        self.x = 0.
-        self.y = 0.
+    def __init__(self, x=0., y=0.):
+        self.x = x
+        self.y = y
     def __add__(self, b): return Point(self.x+b.x, self.y+b.y)
 </pre>
 
@@ -214,10 +214,6 @@ def __pos__(obj): return +obj
 def __neg__(obj): return -obj
 def __eq__(a, b): return a==b
 def __ne__(a, b): return a!=b
-def __lt__(a, b): return a\<b
-def __le__(a, b): return a\<=b
-def __gt__(a, b): return a>b
-def __ge__(a, b): return a>=b
 def __contains__(a, b): return a in b
 def __getitem__(a, b): return a[b]
 </pre>
