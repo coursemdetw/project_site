@@ -50,7 +50,200 @@
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_02.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_03.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_04.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_05.png"&gt;&lt;/p&gt;</content><category term="Leo Editor"></category><category term="Pandoc"></category></entry><entry><title>Python Operator</title><link href="http://project.mde.tw/blog/python-operator.html" rel="alternate"></link><published>2017-04-22T21:00:00+08:00</published><updated>2017-04-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-04-22:/blog/python-operator.html</id><summary type="html">&lt;p&gt;Python 運算子的自訂&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_05.png"&gt;&lt;/p&gt;</content><category term="Leo Editor"></category><category term="Pandoc"></category></entry><entry><title>40323230日誌 - 106/04/24</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1060424.html" rel="alternate"></link><published>2017-04-24T21:00:00+08:00</published><updated>2017-04-24T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-04-24:/blog/40323230ri-zhi-1060424.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;呆鍊偵測合併功能&lt;/li&gt;
+&lt;li&gt;設立儲存用資料格式&lt;/li&gt;
+&lt;li&gt;GUI 讀取偵錯輸出&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;呆鍊偵測合併功能&lt;/li&gt;
+&lt;li&gt;設立儲存用資料格式&lt;/li&gt;
+&lt;li&gt;GUI 讀取偵錯輸出&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Pyslvs 開發進度&lt;/h1&gt;
+&lt;h2&gt;呆鍊偵測合併功能&lt;/h2&gt;
+&lt;p&gt;當建立呆鍊時，預設會啟用移除重複連桿的選項。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0424_01.png"&gt;&lt;/p&gt;
+&lt;p&gt;此選項會在建立呆鍊前自動移除衝突的連桿，並且能良好配合 Undo Redo 功能。&lt;/p&gt;
+&lt;p&gt;如果效果不錯，可以延用到建立連桿，自動將衝突項目解決。&lt;/p&gt;
+&lt;h2&gt;設立儲存用資料格式&lt;/h2&gt;
+&lt;p&gt;新的資料存取方式是為了取代 Python 的 dict，用自訂的 class 處理座標和約束儲存的工作。&lt;/p&gt;
+&lt;p&gt;使用 decorator 的 &lt;code&gt;@property&lt;/code&gt; 防止錯誤的資料寫入。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class VPoint:
+    def __init__(self, x=0., y=0., fix=False):
+        self.set(x, y, fix)
+        self._cx = self._x
+        self._cy = self._y
+    @property
+    def x(self): return self._x
+    @property
+    def y(self): return self._y
+    @x.setter
+    def x(self, x): self._x = x
+    @y.setter
+    def y(self, y): self._y = y
+    @property
+    def fix(self): return self._fix
+    @property
+    def cx(self): return self._cx
+    @property
+    def cy(self): return self._cy
+
+    def set(self, x=0., y=0., fix=False):
+        self._x = x
+        self._y = y
+        self._fix = fix
+
+    def move(self, x=0., y=0.):
+        self._cx = x
+        self._cy = y
+
+    def reset(self):
+        self._x = self._cx
+        self._y = self._cy
+
+    def __str__(self): return "Point x={v.x} y={v.y} fix={v.fix} cx={v.cx} cy={v.cy}".format(v=self)
+
+class VLine:
+    def __init__(self, start=0, end=0, len=0.): self.set(start, end, len)
+    @property
+    def start(self): return self._start
+    @property
+    def end(self): return self._end
+    @property
+    def len(self): return self._len
+
+    def set(self, start=VPoint(), end=VPoint(), len=0.):
+        self._start = start
+        self._end = end
+        self._len = len
+
+    def __contains__(self, point): return point==self._start or point==self._end
+    def __str__(self): return "Line start={v.start} end={v.end} len={v.len}".format(v=self)
+
+class VChain:
+    def __init__(self, p1=VPoint(), p2=0, p3=0, p1p2=0., p2p3=0., p1p3=0.): self.set(p1, p2, p3, p1p2, p2p3, p1p3)
+    @property
+    def p1(self): return self._p1
+    @property
+    def p2(self): return self._p2
+    @property
+    def p3(self): return self._p3
+    @property
+    def p1p2(self): return self._p1p2
+    @property
+    def p2p3(self): return self._p2p3
+    @property
+    def p1p3(self): return self._p1p3
+
+    def set(self, p1=0, p2=0, p3=0, p1p2=0., p2p3=0., p1p3=0.):
+        self._p1 = p1
+        self._p2 = p2
+        self._p3 = p3
+        self._p1p2 = p1p2
+        self._p2p3 = p2p3
+        self._p1p3 = p1p3
+
+    def __contains__(self, point): return point==self._p1 or point==self._p2 or point==self._p3
+    def __str__(self):
+        return "Chain p1={v.p1} p2={v.p2} p3={v.p3} p1p2={v.p1p2} p2p3={v.p2p3} p1p3={v.p1p3}".format(v=self)
+
+class VShaft:
+    def __init__(self, cen=0, ref=0, start=0., end=360., demo=0., isParallelogram=False): self.set(cen, ref, start, end, demo, isParallelogram)
+    @property
+    def cen(self): return self._cen
+    @property
+    def ref(self): return self._ref
+    @property
+    def start(self): return self._start
+    @property
+    def end(self): return self._end
+    @property
+    def demo(self): return self._demo
+    @demo.setter
+    def demo(self, demo): self._demo = demo
+    @property
+    def isParallelogram(self): return self._isParallelogram
+
+    def set(self, cen=0, ref=0, start=0., end=360., demo=0., isParallelogram=False):
+        self._cen = cen
+        self._ref = ref
+        self._start = start
+        self._end = end
+        self._demo = demo
+        self._isParallelogram = isParallelogram
+
+    def drive(self, demo):
+        if demo&gt;self._start and self._end&gt;demo: self._demo = demo
+
+    def __contains__(self, point): return point==self._cen or point==self._ref
+    def __str__(self):
+        return "Shaft cen={v.cen} ref={v.ref} start={v.start}, end={v.end} demo={v.demo} isParallelogram={v.isParallelogram}".format(v=self)
+
+class VSlider:
+    def __init___(self, cen=0, start=0, end=0): self.set(cen, start, end)
+    @property
+    def cen(self): return self._cen
+    @property
+    def start(self): return self._start
+    @property
+    def end(self): return self._end
+
+    def set(self, cen=0, start=0, end=0):
+        self._cen = cen
+        self._start = start
+        self._end = end
+
+    def __contains__(self, point): return point==self._cen or point==self._start or point==self._end
+    def __str__(self):
+        return "Slider cen={v.cen} start={v.start} end={v.end}".format(v=self)
+
+class VRod(VSlider):
+    def __init__(self, cen=0, start=0, end=0, pos=0.): self.set(cen, start, end, pos)
+    @property
+    def pos(self): return self._pos
+
+    def set(self, cen=0, start=0, end=0, pos=0.):
+        super(VRod, self).set(cen, start, end)
+        self._pos = pos
+
+    def __str__(self):
+        return "Rod cen={v.cen} start={v.start} end={v.end} pos={v.pos}".format(v=self)
+&lt;/pre&gt;
+
+&lt;h2&gt;GUI 讀取偵錯輸出&lt;/h2&gt;
+&lt;p&gt;在選項中可以偵測並開啟 &lt;code&gt;PyslvsLogFile.log&lt;/code&gt; 日誌檔案，並且將寫入方式改為 append，不會清除之前的紀錄。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0424_02.png"&gt;&lt;/p&gt;
+&lt;p&gt;點選後可以開啟內容，若沒有檔案則會跳出提示。&lt;/p&gt;
+&lt;p&gt;由尾端開始，最多顯示 1000 個字元。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0424_03.png"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;PMKS&lt;/p&gt;
+&lt;p&gt;最近在讀 PMKS 符號式的部份，不過對照 C# 原始碼只能稍微理解大概，之後也需要釐清其中數學式的運算方法。&lt;/p&gt;
+&lt;p&gt;其中的程式有整個模組可以計算牛頓力學的部份（包含輸出圖表），不過礙於不太能理解 C#，只能用 Visual Studio 慢慢找到需要的功能，不像 C++ 能快速理解其功能或註釋。&lt;/p&gt;
+&lt;p&gt;這部份期望的是可以得到&lt;strong&gt;即時運算出路徑的能力&lt;/strong&gt;、&lt;strong&gt;以 GUI 套用 PMKS 改善部份網頁執行的不便&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Solvespace kernel&lt;/p&gt;
+&lt;p&gt;今天重新看了一下舊的 Solvespace 原始碼，基礎系統 System 類型中並沒有移除實體或約束的功能，每次更改都需要重新計算，是滿可惜的地方，而且處理方面不像 PMKS 有效率，可能之後會將後者作為處理 calculation 的 kernel。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;演算法&lt;/p&gt;
+&lt;p&gt;連接的原始碼倉儲已更新四連桿的 py 檔，如果可以六連桿的部份應該能放在一起。&lt;/p&gt;
+&lt;p&gt;不過當前的 Cython kernel 沒有回傳運算進度的功能（如大廠分析軟體的方式顯示&lt;strong&gt;發散&lt;/strong&gt;和&lt;strong&gt;收斂&lt;/strong&gt;進度），雖然可能會造成執行效率降低。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;程式&lt;/p&gt;
+&lt;p&gt;會找個時間教一下學弟計算機概論和物件導向程式的部份（C++ 和 Python），盡量讓&lt;strong&gt;需要程式處理的組員&lt;/strong&gt;能夠連接 Python API 和讓 2、3 人以上有看懂 C++ 的能力。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</content><category term="Kmol"></category><category term="Pyslvs"></category></entry><entry><title>Python Operator</title><link href="http://project.mde.tw/blog/python-operator.html" rel="alternate"></link><published>2017-04-22T21:00:00+08:00</published><updated>2017-04-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-04-22:/blog/python-operator.html</id><summary type="html">&lt;p&gt;Python 運算子的自訂&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;Python 運算子的自訂&lt;/p&gt;
 
 
