@@ -50,7 +50,56 @@
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_02.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_03.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_04.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_05.png"&gt;&lt;/p&gt;</content><category term="Leo Editor"></category><category term="Pandoc"></category></entry><entry><title>40323230日誌 - 106/04/24</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1060424.html" rel="alternate"></link><published>2017-04-24T21:00:00+08:00</published><updated>2017-04-24T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-04-24:/blog/40323230ri-zhi-1060424.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_05.png"&gt;&lt;/p&gt;</content><category term="Leo Editor"></category><category term="Pandoc"></category></entry><entry><title>40323230日誌 - 106/04/26</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1060426.html" rel="alternate"></link><published>2017-04-26T21:00:00+08:00</published><updated>2017-04-26T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-04-26:/blog/40323230ri-zhi-1060426.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;三角求解器格式&lt;/li&gt;
+&lt;li&gt;偵測合併功能&lt;/li&gt;
+&lt;li&gt;加入四連桿步幅範例&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;三角求解器格式&lt;/li&gt;
+&lt;li&gt;偵測合併功能&lt;/li&gt;
+&lt;li&gt;加入四連桿步幅範例&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Pyslvs 開發進度&lt;/h1&gt;
+&lt;h2&gt;三角求解器格式&lt;/h2&gt;
+&lt;p&gt;如上次更新的資料格式，求解器改用 class Direction 取代 dict 儲存資料。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class Direction:
+    ITEM = ['merge', 'p1', 'p2', 'p3', 'len1', 'len2', 'angle', 'other']
+    def __init__(self, **Args):
+        if not Args.get('Type', False) is False:
+            self._type = Args['Type']
+            del Args['Type']
+        self.__dict__.update(Args)
+    @property
+    def Type(self): return self._type
+    @Type.setter
+    def Type(self, Type): self._type = Type
+
+    def set(self, name, value):
+        if name in self.ITEM: self.__dict__.update({name:value})
+    def get(self, name, elseObject=None): return getattr(self, name) if hasattr(self, name) else elseObject
+    def items(self): return {t:getattr(self, t) for t in self.ITEM if hasattr(self, t)}
+
+    def __str__(self): return "{}".format(self.items())
+&lt;/pre&gt;
+
+&lt;p&gt;建立方法如下：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+Direction(p1=(-60, 0), p2=(0, 0), len1=30, angle=50)
+&lt;/pre&gt;
+
+&lt;p&gt;相關視窗處理皆測試完畢。&lt;/p&gt;
+&lt;h2&gt;偵測合併功能&lt;/h2&gt;
+&lt;p&gt;連桿與呆鍊的自動合併功能已開發完畢，預設啟用該選項。&lt;/p&gt;
+&lt;p&gt;新增或修改實體時會移除共用 2 點（連桿對連桿、連桿對呆鍊）或是共用 3 點（呆鍊對呆鍊）的實體。&lt;/p&gt;
+&lt;h2&gt;加入四連桿步幅範例&lt;/h2&gt;
+&lt;p&gt;新增以下範例：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0426_01.png"&gt;&lt;/p&gt;</content><category term="Kmol"></category><category term="Pyslvs"></category></entry><entry><title>40323230日誌 - 106/04/24</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1060424.html" rel="alternate"></link><published>2017-04-24T21:00:00+08:00</published><updated>2017-04-24T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-04-24:/blog/40323230ri-zhi-1060424.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;呆鍊偵測合併功能&lt;/li&gt;
 &lt;li&gt;設立儲存用資料格式&lt;/li&gt;
