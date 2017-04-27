@@ -50,7 +50,26 @@
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_02.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_03.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_04.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_05.png"&gt;&lt;/p&gt;</content><category term="Leo Editor"></category><category term="Pandoc"></category></entry><entry><title>40323230日誌 - 106/04/26</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1060426.html" rel="alternate"></link><published>2017-04-26T21:00:00+08:00</published><updated>2017-04-26T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-04-26:/blog/40323230ri-zhi-1060426.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_05.png"&gt;&lt;/p&gt;</content><category term="Leo Editor"></category><category term="Pandoc"></category></entry><entry><title>40323230日誌 - 106/04/27</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1060427.html" rel="alternate"></link><published>2017-04-27T21:00:00+08:00</published><updated>2017-04-27T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-04-27:/blog/40323230ri-zhi-1060427.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;演算法收斂圖&lt;/li&gt;
+&lt;li&gt;三角求解器的失敗解&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;演算法收斂圖&lt;/li&gt;
+&lt;li&gt;三角求解器的失敗解&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Pyslvs 開發進度&lt;/h1&gt;
+&lt;h2&gt;演算法收斂圖&lt;/h2&gt;
+&lt;p&gt;加入 matplotlib 繪出的收斂圖。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0427_01.png"&gt;&lt;/p&gt;
+&lt;p&gt;其中因為用到了 matplotlib 的檔案，導致 PyInstaller 會包到整個 Python 模組，甚至比 Windows 版大更多，考慮把 matplotlib 換成其他方式呈現，或是其他減少體積的解決辦法。&lt;/p&gt;
+&lt;p&gt;由於之後速度分析也要使用圖表，所以解決繪圖問題為當務之急。&lt;/p&gt;
+&lt;h1&gt;三角求解器的失敗解&lt;/h1&gt;
+&lt;p&gt;有時會發生演算法回傳尺寸使三角求解器出錯，暫時先加上警告，之後會查看原因。&lt;/p&gt;</content><category term="Kmol"></category><category term="Pyslvs"></category></entry><entry><title>40323230日誌 - 106/04/26</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1060426.html" rel="alternate"></link><published>2017-04-26T21:00:00+08:00</published><updated>2017-04-26T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-04-26:/blog/40323230ri-zhi-1060426.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;三角求解器格式&lt;/li&gt;
 &lt;li&gt;偵測合併功能&lt;/li&gt;
