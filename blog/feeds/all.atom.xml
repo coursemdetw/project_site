@@ -66,8 +66,9 @@
 &lt;h2&gt;演算法收斂圖&lt;/h2&gt;
 &lt;p&gt;加入 matplotlib 繪出的收斂圖。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0427_01.png"&gt;&lt;/p&gt;
-&lt;p&gt;其中因為用到了 matplotlib 的檔案，導致 PyInstaller 會包到整個 Python 模組，甚至比 Windows 版大更多，考慮把 matplotlib 換成其他方式呈現，或是其他減少體積的解決辦法。&lt;/p&gt;
+&lt;p&gt;其中因為用到了 matplotlib 的檔案，導致 Ubuntu 的 PyInstaller 會包到整個 Python 模組，甚至比 Windows 版大更多，考慮把 matplotlib 換成其他方式呈現，或是其他減少體積的解決辦法。&lt;/p&gt;
 &lt;p&gt;由於之後速度分析也要使用圖表，所以解決繪圖問題為當務之急。&lt;/p&gt;
+&lt;p&gt;另外可能得改進 Path solving 面板空間需求的問題。&lt;/p&gt;
 &lt;h1&gt;三角求解器的失敗解&lt;/h1&gt;
 &lt;p&gt;有時會發生演算法回傳尺寸使三角求解器出錯，暫時先加上警告，之後會查看原因。&lt;/p&gt;</content><category term="Kmol"></category><category term="Pyslvs"></category></entry><entry><title>40323230日誌 - 106/04/26</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1060426.html" rel="alternate"></link><published>2017-04-26T21:00:00+08:00</published><updated>2017-04-26T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-04-26:/blog/40323230ri-zhi-1060426.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
 &lt;ul&gt;
