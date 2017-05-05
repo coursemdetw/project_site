@@ -50,7 +50,29 @@
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_02.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_03.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_04.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_05.png"&gt;&lt;/p&gt;</content><category term="Leo Editor"></category><category term="Pandoc"></category></entry><entry><title>40323230日誌 - 106/05/01</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1060501.html" rel="alternate"></link><published>2017-05-01T21:00:00+08:00</published><updated>2017-05-01T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-05-01:/blog/40323230ri-zhi-1060501.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_05.png"&gt;&lt;/p&gt;</content><category term="Leo Editor"></category><category term="Pandoc"></category></entry><entry><title>40323230日誌 - 106/05/05</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1060505.html" rel="alternate"></link><published>2017-05-05T21:00:00+08:00</published><updated>2017-05-05T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-05-05:/blog/40323230ri-zhi-1060505.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;XML 格式與演算法設定&lt;/li&gt;
+&lt;li&gt;QChart 調整&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;XML 格式與演算法設定&lt;/li&gt;
+&lt;li&gt;QChart 調整&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Pyslvs 開發進度&lt;/h1&gt;
+&lt;h2&gt;XML 格式與演算法設定&lt;/h2&gt;
+&lt;p&gt;修正之前測試不完全的分支清單，可以加入演算法的解（包含其設定）。&lt;/p&gt;
+&lt;p&gt;新增與刪除結果也支援復原重做功能了。&lt;/p&gt;
+&lt;p&gt;讀入檔案的演算法結果後，可以複製其設定來修改。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0505_01.png"&gt;&lt;/p&gt;
+&lt;p&gt;設定中增加控制代數和回傳收斂百分比，並有重設為預設值的按鈕。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0505_03.png"&gt;&lt;/p&gt;
+&lt;h2&gt;QChart 調整&lt;/h2&gt;
+&lt;p&gt;補強圖表的顯示方式，盡量讓不同子代數能在同個圖表有更完整的呈現方式。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0501_02.png"&gt;&lt;/p&gt;</content><category term="Kmol"></category><category term="Pyslvs"></category></entry><entry><title>40323230日誌 - 106/05/01</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1060501.html" rel="alternate"></link><published>2017-05-01T21:00:00+08:00</published><updated>2017-05-01T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-05-01:/blog/40323230ri-zhi-1060501.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;關於 Windows 平台的測試&lt;/li&gt;
 &lt;li&gt;XML 格式 - &lt;strong&gt;計畫中&lt;/strong&gt;&lt;/li&gt;
