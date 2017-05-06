@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Created by Leo: http://leoeditor.com/leo_toc.html -->
+<?xml-stylesheet ekr_test?>
 <leo_file xmlns:leo="http://leoeditor.com/namespaces/leo-python-editor/1.1" >
 <leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
 <globals body_outline_ratio="0.5" body_secondary_ratio="0.5">
@@ -276,7 +277,7 @@
 <v t="ahshoe.20170421211950.1"><vh>@edit 40323230_20170421.md</vh></v>
 <v t="ahshoe.20170423000038.1"><vh>@edit 40323230_20170422.md</vh></v>
 </v>
-<v t="ahshoe.20170424234232.1" a="E"><vh>w10</vh>
+<v t="ahshoe.20170424234232.1"><vh>w10</vh>
 <v t="ahshoe.20170424234249.1"><vh>@edit 40323230_20170424.md</vh></v>
 <v t="ahshoe.20170426225306.1"><vh>@edit 40323230_20170426.md</vh></v>
 <v t="ahshoe.20170427204511.1"><vh>@edit 40323230_20170427.md</vh></v>
@@ -286,6 +287,7 @@
 <v t="40323230.20170501225220.2" a="E"><vh>w11</vh>
 <v t="40323230.20170501225220.3"><vh>@edit 40323230_20170501.md</vh></v>
 <v t="ahshoe.20170506012416.1"><vh>@edit 40323230_20170505.md</vh></v>
+<v t="40323230.20170507010845.2"><vh>@edit 40323230_20170506.md</vh></v>
 </v>
 </v>
 </v>
