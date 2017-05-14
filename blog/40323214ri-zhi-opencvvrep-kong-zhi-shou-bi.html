@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>40323214日誌- Opencv&Vrep 執行範例2 - 機械設計專題 (虎尾科大MDE)</title>
+    <title>40323214日誌- Opencv&Vrep 控制手臂 - 機械設計專題 (虎尾科大MDE)</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -10,17 +10,17 @@
 
 
 
-<link rel="canonical" href="http://project.mde.tw/blog/40323214ri-zhi-opencvvrep-zhi-xing-fan-li-2.html">
+<link rel="canonical" href="http://project.mde.tw/blog/40323214ri-zhi-opencvvrep-kong-zhi-shou-bi.html">
 
         <meta name="author" content="40323214" />
         <meta name="keywords" content="OpenCv" />
 
         <meta property="og:site_name" content="機械設計專題 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="40323214日誌- Opencv&amp;Vrep 執行範例2"/>
-        <meta property="og:url" content="http://project.mde.tw/blog/40323214ri-zhi-opencvvrep-zhi-xing-fan-li-2.html"/>
+        <meta property="og:title" content="40323214日誌- Opencv&amp;Vrep 控制手臂"/>
+        <meta property="og:url" content="http://project.mde.tw/blog/40323214ri-zhi-opencvvrep-kong-zhi-shou-bi.html"/>
         <meta property="og:description" content=""/>
-        <meta property="article:published_time" content="2017-04-27" />
+        <meta property="article:published_time" content="2017-05-15" />
             <meta property="article:section" content="2016g3" />
             <meta property="article:tag" content="OpenCv" />
             <meta property="article:author" content="40323214" />
@@ -146,10 +146,10 @@
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://project.mde.tw/blog/40323214ri-zhi-opencvvrep-zhi-xing-fan-li-2.html"
+                    <a href="http://project.mde.tw/blog/40323214ri-zhi-opencvvrep-kong-zhi-shou-bi.html"
                        rel="bookmark"
-                       title="Permalink to 40323214日誌- Opencv&Vrep 執行範例2">
-                        40323214日誌- Opencv&Vrep 執行範例2
+                       title="Permalink to 40323214日誌- Opencv&Vrep 控制手臂">
+                        40323214日誌- Opencv&Vrep 控制手臂
                     </a>
                 </h1>
             </header>
@@ -159,7 +159,7 @@
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-04-27T23:00:00+08:00"> Thu 27 April 2017</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-05-15T01:30:00+08:00"> 週一 15 五月 2017</time>
     </span>
             <span class="label label-default">By</span>
             <a href="http://project.mde.tw/blog/author/40323214.html"><i class="fa fa-user"></i> 40323214</a>
@@ -173,157 +173,71 @@
                 </div>
                 <!-- PELICAN_END_SUMMARY -->
 
-<h3>一.在onshape上繪製機台</h3>
+<h3>一.環境建立</h3>
 
 <h4>
-1.繪製機台柱子。
+1.在V-rep部分，導入bg2組別的3D-printer及手臂模組，藉此完成從辨識到控制手臂夾取物件的流程。
 </br>
 </br>
-<img src="http://i.imgur.com/3eBrYWp.png">
+<img src="http://i.imgur.com/aIiKTJw.png">
 </br>
 </br>
-2.繪製底板。
+2.機台(左)與手臂(右)座標設定。
 </br>
 </br>
-<img src="http://i.imgur.com/uJ0zKBK.png">
+<img src="http://i.imgur.com/6Ne6dpm.png">
 </br>
 </br>
-3.繪製頂板。
+3.攝影機座標設定與角度設定。
 </br>
 </br>
-<img src="http://i.imgur.com/mS2vJil.png">
+<img src="http://i.imgur.com/emsULIX.png">
 </br>
 </br>
-4.繪製攝影機。
+4.建立底面(由於辨識時背景需要全黑)。
 </br>
 </br>
-<img src="http://i.imgur.com/ihrUaRn.png">
+<img src="http://i.imgur.com/Fi8wuSU.png">
 </br>
 </br>
-5.組合圖。
+5.建立光源，為了使物體不會有陰影，影響辨識成果。
 </br>
 </br>
-<img src="http://i.imgur.com/mvogjoz.png">
+<img src="http://i.imgur.com/5a6P3DF.png">
 </br>
 </br>
-6.將組合圖匯出為STL檔。
+<img src="http://i.imgur.com/9LRZUNu.png">
 </br>
 </br>
-<img src="http://i.imgur.com/0QF662G.png">
+<img src="http://i.imgur.com/yGnDpaf.png">
 </br>
 </br>
-</h4>
+6.最後將機台與手臂部分的可辨識部分隱藏，只留下夾爪可辨識即可。
+</br>
+</br>
+<h3>二.Python程式</h3>
+<h4>
+將下面程式存成py檔至建立的資料夾。
+</br>
+</br>
 
-<p></br>
-<h3>二.將機台導入Vrep並調整環境</h3>
-<h4>
-1.開啟vrep，導入繪製的機台
-</br>
-</br>
-以下是導入過程。
-</br>
-</br>
-(1)點選File-&gt;Import-&gt;Mesh..。
-</br>
-接著點選自己的STL檔案，選擇1:1mlliimeter，點選確定。
-</br>
-</br>
-<img src="http://i.imgur.com/UD4lVjf.png">
-</br>
-</br>
-(2)導入後改變物體座標(X:0 Y:0 Z:0.32)。
-</br>
-</br>
-<img src="http://i.imgur.com/SpTLytn.png">
-</br>
-</br>
-(3)點選物體，利用下列步驟將攝影機與機台分開。
-</br>
-點選物體-&gt;Grouping/Merging-&gt;Divide selected shapes。
-</br>
-</br>
-<img src="http://i.imgur.com/5AKPG4d.png">
-</br>
-</br>
-攝影機與機台分開後的樣子。
-</br>
-</br>
-<img src="http://i.imgur.com/ASYeNST.png">
-</br>
-</br>
-2.建立攝影機並調整環境參數
-</br>
-</br>
-(1)建立攝影機。
-</br>
-</br>
-<img src="http://i.imgur.com/eT0yaBt.png">
-</br>
-</br>
-(2)將攝影機與繪製的攝影機同動，再調整攝影機座標與角度。
-</br>
-</br>
-<img src="http://i.imgur.com/OIHscuG.png">
-</br>
-</br>
-(3)調整攝影機參數。
-</br>
-</br>
-<img src="http://i.imgur.com/MxpPQqQ.png">
-</br>
-</br>
-(4)建立文件對應到攝影機上。
-</br>
-</br>
-<img src="http://i.imgur.com/pMgMbE3.png">
-</br>
-</br>
-(5)最後增加投影幕對應攝影機。
-</br>
-</br>
-<img src="http://i.imgur.com/gxy1bg2.png">
-</br>
-</br>
-3.建立拍攝對象
-</br>
-</br>
-(1)建立一薄型方體(作為基準目標)。
-</br>
-</br>
-<img src="http://i.imgur.com/Z3e0aeP.png">
-</br>
-</br>
-(2)建立兩個偵測目標(a為圓柱b為方柱)。
-</br>
-a.座標尺寸。
-</br>
-</br>
-<img src="http://i.imgur.com/2GPtQtu.png">
-</br>
-</br>
-b.座標尺寸。
-</br>
-</br>
-<img src="http://i.imgur.com/7QtHyk9.png">
-</br>
-</br>
-另外記得要開啟物體的可偵測性。
-</br>
-</br>
-</h4>
-<h3>三.執行Python程式</h3>
-<h4>
-將下列程式存檔於資料夾中。
-</br>
-</br></p>
 <pre class="brush: python">
 
-#導入函式庫
-from matplotlib import pyplot as plt
-import vrep
-import sys
-import cv2
+import matplotlib
+matplotlib.use("TkAgg")
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg,NavigationToolbar2TkAgg
+from matplotlib.figure import Figure
+import matplotlib.animation as animation
+from matplotlib import style
 import numpy as np
+from matplotlib import pyplot, rcParams
+import serial
+import sys
+import vrep
+import math
+import time
+from matplotlib import pyplot as plt
+import cv2
 import time
 from PIL import Image
 from scipy.spatial import distance as dist
@@ -331,6 +245,12 @@ from imutils import perspective
 from imutils import contours
 import argparse
 import imutils
+
+
+
+
+
+
 
 
 vrep.simxFinish(-1) #終止所有連接
@@ -346,7 +266,7 @@ else:
     print('Connection not successful')
     sys.exit('Could not connect')
 #保存參考相機
-_, camhandle = vrep.simxGetObjectHandle(clientID, 'Vision_sensor', vrep.simx_opmode_oneshot_wait)
+_, camhandle = vrep.simxGetObjectHandle(clientID, 'Vision_sensor1', vrep.simx_opmode_oneshot_wait)
 #啟動相機電源
 _, resolution, image = vrep.simxGetVisionSensorImage(clientID, camhandle, 0, vrep.simx_opmode_streaming)
 time.sleep(1)
@@ -359,7 +279,7 @@ img = np.rot90(img,2)
 img = np.fliplr(img)
 img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)   
 cv2.imwrite("B.png", img)
-vrep.simxStopSimulation(clientID, vrep.simx_opmode_oneshot_wait)
+#vrep.simxStopSimulation(clientID, vrep.simx_opmode_oneshot_wait)
 
 
 
@@ -393,7 +313,7 @@ def order_points_old(pts):
 ###剪裁圖片→只留基準物 (用於重心距離量測)###
 
 imgC = Image.open("B.png")
-cut = imgC.crop((0, 0, 100, 100))
+cut = imgC.crop((0, 0, 200, 200))
 cut.save("AA.png")
 
 #讀取圖檔→灰階→模糊
@@ -572,26 +492,101 @@ for c in cnts:
         # "{:.2f}in" 取到小數點第二位
 
 
-    cv2.imshow("Image", orig)
+    #cv2.imshow("Image", orig)
+
     cv2.waitKey(0)
+
+
+
+deg = math.pi/180
+
+
+errorCode,Catch=vrep.simxGetObjectHandle(clientID,'catch',vrep.simx_opmode_oneshot_wait)
+
+if errorCode == -1:
+    print('Can not find Catch')
+    sys.exit()            
+
+#開爪60度    
+errorCode=vrep.simxSetJointTargetPosition(clientID,Catch,60*deg, vrep.simx_opmode_oneshot)
+
+#計算手臂轉軸度數
+r=D*10
+x= (94+18-(10*dimB)/2)/2.4
+z = ((math.pow(math.pow(r,2)-math.pow(94,2),0.5)-21)/3)
+
+#print(x,z)
+#print(r)
+
+errorCode2,Joint2=vrep.simxGetObjectHandle(clientID,'joint2',vrep.simx_opmode_oneshot_wait)
+errorCode3,Joint3=vrep.simxGetObjectHandle(clientID,'joint3',vrep.simx_opmode_oneshot_wait)
+
+#計算之值帶入 控制手臂
+errorCode1=vrep.simxSetJointTargetPosition(clientID,Joint2,x*deg, vrep.simx_opmode_oneshot)
+errorCode3=vrep.simxSetJointTargetPosition(clientID,Joint3,z*deg, vrep.simx_opmode_oneshot)
+
+time.sleep(10) #停10秒執行下一行程式
+#夾取物件
+errorCode,Catch=vrep.simxGetObjectHandle(clientID,'catch',vrep.simx_opmode_oneshot_wait)
+errorCode=vrep.simxSetJointTargetPosition(clientID,Catch,0*deg, vrep.simx_opmode_oneshot)
+
+time.sleep(5)#停5秒執行下一行程式
+
+errorCode2,Joint2=vrep.simxGetObjectHandle(clientID,'joint2',vrep.simx_opmode_oneshot_wait)
+errorCode3,Joint3=vrep.simxGetObjectHandle(clientID,'joint3',vrep.simx_opmode_oneshot_wait)
+
+#手臂回歸原點
+errorCode1=vrep.simxSetJointTargetPosition(clientID,Joint2,0, vrep.simx_opmode_oneshot)
+errorCode3=vrep.simxSetJointTargetPosition(clientID,Joint3,0, vrep.simx_opmode_oneshot)
+
 
 </pre>
 
-<p></br>
+</br>
+</br>
+在上述程式中計算手臂移動度數的部分將在下面做解釋。
+</br>
+#計算手臂轉軸度數
+</br>
+r=D*10
+</br>
+x= (94+18-(10*dimB)/2)/2.4
+</br>
+z = ((math.pow(math.pow(r,2)-math.pow(94,2),0.5)-21)/3)
+</br>
+</br>
+(1)我們利用三角形畢氏定理，將辨識出來的D值與已知的夾爪和物體的距離(X軸)做計算，獲得夾爪與物體重心的高度差距離(Z軸)。
+</br>
+</br>
+(2)由於辨識出的D值單位是公分，而我們需要的單位是公厘，故在定義斜邊長r時，將D值乘以10。
+</br>
+</br>
+(3)x為X軸向的度數。由於在進行Z軸與X軸向手臂運動時，會互相影響，所以在計算時，夾爪與物體距離94須加上誤差值18(大約x值給30度)時的誤差距離，並減掉dimb(須乘以10換成公厘)(物體寬度)的一半(避免碰撞到物體)，最後將值除以每走一度往前2.4公厘的距離，得到x度。
+</br>
+</br>
+(4)z為Z軸向的度數。利用畢氏定理(r^2減X^2等於Z^2)計算出Z軸重心距離，將距離減掉21(X軸前行30度的誤差值)，再除以Z軸每走一度往下3公厘的距離，得到z度。
+</br>
 </br>
 </h4>
-</br>
-<h3>四.執行結果</h3>
+
+<p></br>
+<h3>三.執行結果</h3>
 </br>
 <h4>
-在系統管理員下，到程式的路徑，執行Python test2.py -w (數字)，即可看到程式結果。
+在系統管理員下，到程式的路徑，執行Python control-1.py -w 18，即可看到程式結果。
 </br>
 </br>
-<img src="http://i.imgur.com/wyBRqI4.png">
+<img src="http://i.imgur.com/tMPsxE6.png">
 </br>
 </br>
-<iframe src="https://player.vimeo.com/video/215008238" width="640" height="361" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/215008238">Vrep與Opencv結果</a> from <a href="https://vimeo.com/user45009540">吳信褘</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<img src="http://i.imgur.com/A7qKlKs.png">
+</br>
+</br>
+<img src="http://i.imgur.com/auqZMXR.png">
+</br>
+</br>
+<iframe src="https://player.vimeo.com/video/217392215" width="640" height="361" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/217392215">夾取成功.mp4</a> from <a href="https://vimeo.com/user45009540">吳信褘</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 </br>
 </br>
 </h4></p>
@@ -606,8 +601,8 @@ for c in cnts:
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'projectmdetw'; // required: replace example with your forum shortname
 
-                    var disqus_identifier = '40323214ri-zhi-opencvvrep-zhi-xing-fan-li-2';
-                var disqus_url = 'http://project.mde.tw/blog/40323214ri-zhi-opencvvrep-zhi-xing-fan-li-2.html';
+                    var disqus_identifier = '40323214ri-zhi-opencvvrep-kong-zhi-shou-bi';
+                var disqus_url = 'http://project.mde.tw/blog/40323214ri-zhi-opencvvrep-kong-zhi-shou-bi.html';
 
             var disqus_config = function () {
                 this.language = "en";
@@ -645,6 +640,11 @@ for c in cnts:
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/40323214ri-zhi-opencvvrep-kong-zhi-shou-bi.html">
+                            40323214日誌- Opencv&Vrep 控制手臂
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/40323230ri-zhi-1060506.html">
                             40323230日誌 - 106/05/06
                         </a>
@@ -657,11 +657,6 @@ for c in cnts:
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/40323230ri-zhi-1060501.html">
                             40323230日誌 - 106/05/01
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/40323230ri-zhi-1060430.html">
-                            40323230日誌 - 106/04/30
                         </a>
                     </li>
                 </ul>
