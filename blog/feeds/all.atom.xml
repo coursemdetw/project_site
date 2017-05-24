@@ -42,7 +42,22 @@
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_02.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_03.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_04.png" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_05.png" /&gt;&lt;/p&gt;</summary><category term="Leo Editor"></category><category term="Pandoc"></category></entry><entry><title>40323214日誌- Opencv&amp;Vrep 控制手臂</title><link href="http://project.mde.tw/blog/40323214ri-zhi-opencvvrep-kong-zhi-shou-bi.html" rel="alternate"></link><updated>2017-05-15T01:30:00+08:00</updated><author><name>40323214</name></author><id>tag:project.mde.tw,2017-05-15:blog/40323214ri-zhi-opencvvrep-kong-zhi-shou-bi.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0315_05.png" /&gt;&lt;/p&gt;</summary><category term="Leo Editor"></category><category term="Pandoc"></category></entry><entry><title>G2書面內容</title><link href="http://project.mde.tw/blog/g2shu-mian-nei-rong.html" rel="alternate"></link><updated>2017-05-24T14:00:00+08:00</updated><author><name>40323250</name></author><id>tag:project.mde.tw,2017-05-24:blog/g2shu-mian-nei-rong.html</id><summary type="html">&lt;p&gt;以下為Paper部分內容
+&lt;/p&gt;
+&lt;p&gt;中文摘要 : &lt;/p&gt;
+&lt;p&gt;本研究針對3D Printer在虛擬模擬列印上，在初期我們使用Solvespace研究八連桿機構，並透過3D Printer列印出零件來驗證，但過程中時常發生列印件有翹曲或者是堵料等狀況，小組討論時想到許多車、銑加工都可以透過CNC來模擬整個過程，而較少有研究完整模擬3D Printer列印狀況的軟體，我們就逐漸往這方面思考，最後發現一套名為 V-rep 的機器人模擬軟體，在看過這套軟體所製作出的成果影片後開始著手朝向模擬列印的目標研究。 
+由於Solvespace早已於2013年7月份，公開解幾合約束的程式庫，所以大家也討論，若可以自己寫一套簡單的平面機構與尺寸合成的程式，就能輔助驗證連桿機構，所以衍生出Pyslvs這個套件的開發。
+中文關鍵字：虛擬模擬列印、連桿機構、虛實整合
+英文關鍵字：3D Printer, V-rep, Solvespace, Virtual Printer simulation&lt;/p&gt;
+&lt;p&gt;英文摘要 : &lt;/p&gt;
+&lt;p&gt;The research is against Virtual Printing Simulation on Delta 3D Printer. In the beginning, we researched eight-linkage mechanism by Solvespace. We used 3D Printer to print components, but it usually happened problems during the printing, like warping and blocking material. We thought that CNC can simulate the whole process, but it seldom researched 3D Printer simulation. And we gradually thought to there. Finally, we found an application of Robot simulation called V-rep. After viewing the achievements, we started to research the Print Simulation. 
+Solvespace early opened a database of solving geometric constraints, therefore we discussed to program a simple application of plane mechanism and dimensional synthesis. It can assist to test the mechanism, so Pyslvs was derived.&lt;/p&gt;
+&lt;p&gt;研究動機 :&lt;/p&gt;
+&lt;p&gt;一開始我們透過Solvespace研究八連桿機構，並利用 3D Printer 印製零件組裝，但是在印製的過程時常出現問題，導致花費許多時間和材料。 &lt;/p&gt;
+&lt;p&gt;經過討論想到如果有一套能夠模擬 3D 列印的軟體，先經過這套軟體的模擬可以降低錯誤的發生率，也可以提升印製的品質。&lt;/p&gt;
+&lt;p&gt;結論 :&lt;/p&gt;
+&lt;p&gt;當自己設計的機構能使用自己寫的程式來驗證，並能透過虛擬列印零件、組立完成加以模擬，完全不用消耗任何實體資源，能夠替我們省下許多修正錯誤的時間。 &lt;/p&gt;
+&lt;p&gt;若在未來能持續往這方面發展，並將模擬驗證的誤差控制在範圍內時，大部分的機械式系統將會迅速的向上發展。&lt;/p&gt;</summary><category term="Paper"></category></entry><entry><title>40323214日誌- Opencv&amp;Vrep 控制手臂</title><link href="http://project.mde.tw/blog/40323214ri-zhi-opencvvrep-kong-zhi-shou-bi.html" rel="alternate"></link><updated>2017-05-15T01:30:00+08:00</updated><author><name>40323214</name></author><id>tag:project.mde.tw,2017-05-15:blog/40323214ri-zhi-opencvvrep-kong-zhi-shou-bi.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
 &lt;h3&gt;一.環境建立&lt;/h3&gt;
 
