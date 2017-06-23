@@ -13,7 +13,7 @@
 <link rel="canonical" href="http://project.mde.tw/blog/40323230ri-zhi-1060210.html">
 
         <meta name="author" content="40323230" />
-        <meta name="keywords" content="Kmol,Pyslvs" />
+        <meta name="keywords" content="Pyslvs" />
         <meta name="description" content="Pyslvs 開發進度： Slider 功能修正 容量縮減 防呆措施 轉出 3D 模型" />
 
         <meta property="og:site_name" content="機械設計專題 (虎尾科大MDE)" />
@@ -23,7 +23,6 @@
         <meta property="og:description" content="Pyslvs 開發進度： Slider 功能修正 容量縮減 防呆措施 轉出 3D 模型"/>
         <meta property="article:published_time" content="2017-02-10" />
             <meta property="article:section" content="2016bg2" />
-            <meta property="article:tag" content="Kmol" />
             <meta property="article:tag" content="Pyslvs" />
             <meta property="article:author" content="40323230" />
 
@@ -161,7 +160,7 @@
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-02-10T21:00:00+08:00"> Fri 10 February 2017</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-02-10T21:00:00+08:00"> 五 10 二月 2017</time>
     </span>
             <span class="label label-default">By</span>
             <a href="http://project.mde.tw/blog/author/40323230.html"><i class="fa fa-user"></i> 40323230</a>
@@ -169,8 +168,6 @@
 
 
 <span class="label label-default">Tags</span>
-	<a href="http://project.mde.tw/blog/tag/kmol.html">Kmol</a>
-        /
 	<a href="http://project.mde.tw/blog/tag/pyslvs.html">Pyslvs</a>
     
 </footer><!-- /.post-info -->                    </div>
@@ -187,18 +184,18 @@
 <h1>Pyslvs 開發進度</h1>
 <h2>Slider 功能修正</h2>
 <p>將滑塊功能從 1 連桿上的 1 點改成 2 點間的 1 點定義。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0210_01.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0210_01.png"></p>
 <p>只是 Solvespace kernel 處理上仍有些不妥，若是如上圖旋轉中心與這 2 點共線，<strong>會讓 Point3 在一定距離內被鎖到旋轉中心上，因為這樣也符合條件。</strong></p>
 <h2>容量縮減</h2>
 <p>讓許多對話方塊共用同 ui，如一般的新增／編輯視窗共用。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0210_02.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0210_02.png"></p>
 <p>所有的警告視窗都刪除，替代成防呆措施或 QMessageBox（如：未存檔警告）。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0210_03.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0210_03.png"></p>
 <p>Windows 編譯時複製的 kernel 也改成只複製 py35w 的，不過減量效果較有限，從 386 MB 縮減到 377 MB。</p>
 <h2>防呆措施</h2>
 <p>實體和模擬的警告視窗都移除了，改成符合條件才會允許建立或修改這些約束。</p>
 <p>例如下圖中的新增視窗 start 和 end 選到了相同的節點，OK 鈕就會變成 Disable 狀態。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0210_04.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0210_04.png"></p>
 <h2>轉出 3D 模型</h2>
 <p>由於目前暫時沒有 Solvespace Surface 功能的程式庫，最近會先嘗試做出 OBJ 的轉檔功能。</p>
 <p>Solvespace 格式 import 只支援自己的 *.slvs 檔比較可惜，必要的話得看一下原始碼的內容作編譯。</p>
@@ -247,6 +244,11 @@
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/compiling-v-rep-34.html">
+                            Compiling V-rep 3.4
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/zhuan-ti-mo-ban-shuo-ming.html">
                             專題模板說明
                         </a>
@@ -264,11 +266,6 @@
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/40323230ri-zhi-1060506.html">
                             40323230日誌 - 106/05/06
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/40323230ri-zhi-1060505.html">
-                            40323230日誌 - 106/05/05
                         </a>
                     </li>
                 </ul>
