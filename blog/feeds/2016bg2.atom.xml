@@ -1,9 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-06-23T21:00:00+08:00</updated><entry><title>Compiling V-rep 3.4</title><link href="http://project.mde.tw/blog/compiling-v-rep-34.html" rel="alternate"></link><published>2017-06-23T21:00:00+08:00</published><updated>2017-06-23T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-06-23:/blog/compiling-v-rep-34.html</id><summary type="html">&lt;p&gt;編譯 Vrep 程式庫&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;編譯 Vrep 程式庫&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-06-25T21:00:00+08:00</updated><entry><title>PyZMQ Local testing</title><link href="http://project.mde.tw/blog/pyzmq-local-testing.html" rel="alternate"></link><published>2017-06-25T21:00:00+08:00</published><updated>2017-06-25T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-06-25:/blog/pyzmq-local-testing.html</id><summary type="html">&lt;p&gt;ZeroMQ 本機程式測試&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;ZeroMQ 本機程式測試&lt;/p&gt;
 
 
-&lt;h1&gt;編譯 Vrep 程式庫&lt;/h1&gt;
+&lt;h1&gt;ZeroMQ&lt;/h1&gt;
+&lt;p&gt;安裝 Python ZMQ 套件。&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+$sudo pip3 install pyzmq
+&lt;/pre&gt;
+
+&lt;p&gt;接著測試以下範例程式。&lt;/p&gt;
+&lt;h1&gt;範例程式&lt;/h1&gt;
+&lt;p&gt;參考來源：&lt;a href="http://blog.ez2learn.com/2011/12/31/transport-lib-of-new-era-zeromq/"&gt;http://blog.ez2learn.com/2011/12/31/transport-lib-of-new-era-zeromq/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;將以上來源的範例程式測試並由 Python 2 轉成 Python 3，目標為分配 9 組隨機的加法計算式給客戶端運算，並回傳結果至伺服端。&lt;/p&gt;
+&lt;p&gt;客戶端（&lt;code&gt;rep.py&lt;/code&gt;）：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+import os
+import zmq
+
+context = zmq.Context()
+socket = context.socket(zmq.REP)
+socket.connect("tcp://localhost:7788")
+print('Worker {} is running ...'.format(os.getpid()))
+
+while True:
+    # receive request
+    a, b = socket.recv_multipart()
+    a = int(a)
+    b = int(b)
+    print('Compute {} + {} and send response'.format(a, b))
+    socket.send_string(str(a + b))
+&lt;/pre&gt;
+
+&lt;p&gt;伺服端（&lt;code&gt;req.py&lt;/code&gt;）：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+import zmq
+import random
+import time
+
+context = zmq.Context()
+socket = context.socket(zmq.REQ)
+socket.bind("tcp://*:7788")
+
+# wait all worker connected
+time.sleep(1)
+
+for i in range(9):
+    a = random.randint(0, 100)
+    b = random.randint(0, 100)
+    print('Compute {} + {} ...'.format(a, b))
+
+    # send request to peer
+    socket.send_multipart([str(a).encode("utf-8"), str(b).encode("utf-8")])
+    # receive response from peer
+    rep = socket.recv().decode("utf-8")
+    print(' = {}'.format(rep))
+&lt;/pre&gt;
+
+&lt;p&gt;此時先啟動 4 組客戶端程式，接著再啟動伺服端程式。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_06_25.png"&gt;&lt;/p&gt;
+&lt;p&gt;可以發現，每個客戶端程式接收了 2 組計算式（第一組接收 3 組），完成 9 組加法計算。&lt;/p&gt;</content><category term="V-rep"></category></entry><entry><title>Compiling V-rep 3.4</title><link href="http://project.mde.tw/blog/compiling-v-rep-34.html" rel="alternate"></link><published>2017-06-23T21:00:00+08:00</published><updated>2017-06-23T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-06-23:/blog/compiling-v-rep-34.html</id><summary type="html">&lt;p&gt;編譯 V-rep 程式庫&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;編譯 V-rep 程式庫&lt;/p&gt;
+
+
+&lt;h1&gt;編譯 V-rep 程式庫&lt;/h1&gt;
 &lt;p&gt;本流程採用 Ubuntu 系統。&lt;/p&gt;
 &lt;h2&gt;環境需求&lt;/h2&gt;
 &lt;ul&gt;
