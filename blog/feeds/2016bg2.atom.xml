@@ -59,7 +59,7 @@ for i in range(9):
 
 &lt;p&gt;此時先啟動 4 組客戶端程式，接著再啟動伺服端程式。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_06_25.png"&gt;&lt;/p&gt;
-&lt;p&gt;可以發現，每個客戶端程式接收了 2 組計算式（第一組接收 3 組），完成 9 組加法計算。&lt;/p&gt;</content><category term="V-rep"></category></entry><entry><title>Compiling V-rep 3.4</title><link href="http://project.mde.tw/blog/compiling-v-rep-34.html" rel="alternate"></link><published>2017-06-23T21:00:00+08:00</published><updated>2017-06-23T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-06-23:/blog/compiling-v-rep-34.html</id><summary type="html">&lt;p&gt;編譯 V-rep 程式庫&lt;/p&gt;
+&lt;p&gt;可以發現，每個客戶端程式接收了 2 組計算式（第一組接收 3 組），完成 9 組加法計算。&lt;/p&gt;</content><category term="ZMQ"></category></entry><entry><title>Compiling V-rep 3.4</title><link href="http://project.mde.tw/blog/compiling-v-rep-34.html" rel="alternate"></link><published>2017-06-23T21:00:00+08:00</published><updated>2017-06-23T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-06-23:/blog/compiling-v-rep-34.html</id><summary type="html">&lt;p&gt;編譯 V-rep 程式庫&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;編譯 V-rep 程式庫&lt;/p&gt;
 
 
