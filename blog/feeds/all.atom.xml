@@ -4,7 +4,7 @@
 
 
 &lt;h1&gt;ZeroMQ&lt;/h1&gt;
-&lt;p&gt;安裝 Python ZMQ 套件。&lt;/p&gt;
+&lt;p&gt;安裝 Python ZMQ 套件，安裝前必須先裝過 Cython 套件。&lt;/p&gt;
 &lt;pre class="brush: bash"&gt;
 $sudo pip3 install pyzmq
 &lt;/pre&gt;
