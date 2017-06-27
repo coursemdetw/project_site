@@ -1,5 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-06-25T21:00:00+08:00</updated><entry><title>PyZMQ Local testing</title><link href="http://project.mde.tw/blog/pyzmq-local-testing.html" rel="alternate"></link><published>2017-06-25T21:00:00+08:00</published><updated>2017-06-25T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-06-25:/blog/pyzmq-local-testing.html</id><summary type="html">&lt;p&gt;ZeroMQ 本機程式測試&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-06-27T21:00:00+08:00</updated><entry><title>Python-Solvespace 編譯整理</title><link href="http://project.mde.tw/blog/python-solvespace-bian-yi-zheng-li.html" rel="alternate"></link><published>2017-06-27T21:00:00+08:00</published><updated>2017-06-27T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-06-27:/blog/python-solvespace-bian-yi-zheng-li.html</id><summary type="html">&lt;p&gt;整理 Python-Solvespace 端口的編譯流程&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;整理 Python-Solvespace 端口的編譯流程&lt;/p&gt;
+
+
+&lt;h1&gt;Python 位置提供&lt;/h1&gt;
+&lt;p&gt;利用 Python 的 sysconfig 模組，可以取得 Python 相關路徑的位置，進而回傳至 Makefile 以供編譯參數使用。&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+$python3 -m sysconfig
+&gt;python -m sysconfig
+&lt;/pre&gt;
+
+&lt;p&gt;以 Windows 平台的 Python 3.5 為例，得到數值如下：&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+Platform: "win-amd64"
+Python version: "3.5"
+Current installation scheme: "nt"
+
+Paths:
+        data = "C:\Users\...\Python35"
+        include = "C:\Users\...\Python35\Include"
+        platinclude = "C:\Users\...\Python35\Include"
+        platlib = "C:\Users\...\Python35\Lib\site-packages"
+        platstdlib = "C:\Users\...\Python35\Lib"
+        purelib = "C:\Users\...\Python35\Lib\site-packages"
+        scripts = "C:\Users\...\Python35\Scripts"
+        stdlib = "C:\Users\...\Python35\Lib"
+
+Variables:
+        BINDIR = "C:\Users\...\Python35"
+        BINLIBDEST = "C:\Users\...\Python35\Lib"
+        ...
+&lt;/pre&gt;
+
+&lt;p&gt;其中不同平台得到的路徑會不太一樣，如 Ubuntu 得到的變數種類更多。&lt;/p&gt;
+&lt;p&gt;這些變數可以透過下列 Python 程式得到。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+from distutils import sysconfig
+print(sysconfig.get_config_var('BINDIR'))
+#C:\Users\...\Python35
+&lt;/pre&gt;
+
+&lt;p&gt;因此，在 Makefile 的指令中，可以以一行式得到路徑參數：&lt;/p&gt;
+&lt;pre class="brush: Makefile"&gt;
+    g++ -shared -o _slvs.pyd $^ -L. -l:libslvs.so \
+-L$(shell python -c "from distutils import sysconfig;print(sysconfig.get_config_var('BINDIR'))")\libs \
+-lPython$(shell python -c "from distutils import sysconfig;print(sysconfig.get_config_var('VERSION'))") \
+-Wl,--output-def,libslvs.def,--out-implib,libslvs.lib
+
+#同於：
+    g++ -shared -o _slvs.pyd $^ -L. -l:libslvs.so \
+-LC:\Users\...\Python35\libs \
+-lPython35 \
+-Wl,--output-def,libslvs.def,--out-implib,libslvs.lib
+&lt;/pre&gt;
+
+&lt;p&gt;藉此，可免去使用 Python 腳本產生 Makefile 不便的過程。&lt;/p&gt;
+&lt;h1&gt;Windows 平台的 Python 設定&lt;/h1&gt;
+&lt;p&gt;由於之前換過 Python 版本，導致 Windows 平台的原始碼和編譯器設定必須一起更動。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;libpython3x.a&lt;/code&gt; 沒有提供。&lt;/p&gt;
+&lt;p&gt;這個問題在最近的 Python 3.5、3.6 中都已提供，不須要手動製作。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;原始碼與編譯器&lt;/p&gt;
+&lt;p&gt;必須修改 &lt;code&gt;include\pyconfig.h&lt;/code&gt; 和 &lt;code&gt;Lib\distutils\cygwinccompiler.py&lt;/code&gt;，否則會導致 SWIG 製作的端口會有錯誤。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;math.h&lt;/code&gt; 與 &lt;code&gt;pyconfig.h&lt;/code&gt; 衝突&lt;/p&gt;
+&lt;p&gt;修改 &lt;code&gt;pyconfig.h&lt;/code&gt; 的 &lt;code&gt;#define hypot _hypot&lt;/code&gt;，只要改 GCC Compiler 的部分即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;上述問題的解決方案都寫在 &lt;code&gt;exposed&lt;/code&gt; 資料夾的 &lt;code&gt;Readme.md&lt;/code&gt; 中，若是使用 Windows 平台新安裝的 Python，就必須注意調整。&lt;/p&gt;
+&lt;p&gt;而 Ubuntu 平台則無需調整。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>PyZMQ Local testing</title><link href="http://project.mde.tw/blog/pyzmq-local-testing.html" rel="alternate"></link><published>2017-06-25T21:00:00+08:00</published><updated>2017-06-25T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-06-25:/blog/pyzmq-local-testing.html</id><summary type="html">&lt;p&gt;ZeroMQ 本機程式測試&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;ZeroMQ 本機程式測試&lt;/p&gt;
 
 
