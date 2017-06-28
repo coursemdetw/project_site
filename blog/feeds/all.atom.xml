@@ -72,7 +72,136 @@ print(sysconfig.get_config_var('BINDIR'))
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;上述問題的解決方案都寫在 &lt;code&gt;exposed&lt;/code&gt; 資料夾的 &lt;code&gt;Readme.md&lt;/code&gt; 中，若是使用 Windows 平台新安裝的 Python，就必須注意調整。&lt;/p&gt;
-&lt;p&gt;而 Ubuntu 平台則無需調整。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>PyZMQ Local testing</title><link href="http://project.mde.tw/blog/pyzmq-local-testing.html" rel="alternate"></link><published>2017-06-25T21:00:00+08:00</published><updated>2017-06-25T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-06-25:/blog/pyzmq-local-testing.html</id><summary type="html">&lt;p&gt;ZeroMQ 本機程式測試&lt;/p&gt;
+&lt;p&gt;而 Ubuntu 平台則無需調整。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>Sphinx 樣板</title><link href="http://project.mde.tw/blog/sphinx-yang-ban.html" rel="alternate"></link><published>2017-06-27T21:00:00+08:00</published><updated>2017-06-27T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-06-27:/blog/sphinx-yang-ban.html</id><summary type="html">&lt;p&gt;利用 Sphinx 模組建立 HTML 說明文件&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;利用 Sphinx 模組建立 HTML 說明文件&lt;/p&gt;
+
+
+&lt;h1&gt;Sphinx&lt;/h1&gt;
+&lt;p&gt;透過 pip 安裝 Python 的 Sphinx 模組。&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+$sudo pip3 install sphinx -U
+&lt;/pre&gt;
+
+&lt;p&gt;接著建立一個預定存放文章的資料夾，並在此處用終端機建立 Sphinx 專案。&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+$sphinx-quickstart
+&lt;/pre&gt;
+
+&lt;p&gt;這時會開始做專案設定，中括號的選項為預設值，大略如下所示。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Root path for the documentation [.]:&lt;/p&gt;
+&lt;p&gt;文件的根目錄。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Separate source and build directories (y/n) [n]: &lt;strong&gt;y&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;是否分開原始碼和建置目錄，這裡做分開比較好查看內容。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Name prefix for templates and static dir [_]:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;templates&lt;/code&gt; 和 &lt;code&gt;static&lt;/code&gt; 資料夾的前綴符號。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Author name(s): &lt;strong&gt;作者&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;設定作者名字。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Project version [] / Project release []:&lt;/p&gt;
+&lt;p&gt;此專案的套件版本和發行版本。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Project language [en]: &lt;strong&gt;zh_TW&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;專案語系，會影響網站中「目錄」、「本頁」、「快速搜尋」字樣的顯示語言。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Source file suffix [.rst]:&lt;/p&gt;
+&lt;p&gt;支援原始碼的副檔名，在未安裝附加套件前，Sphinx 只會轉換 reStructuredText (rST) 的語法，之後可以增加 Markdown。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Name of your master document (without suffix) [index]:&lt;/p&gt;
+&lt;p&gt;首頁的檔案名稱，不包含副檔名，預設轉換後對應「index.html」。如果上面的副檔名維持預設的 .rst，會比較好轉換。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Do you want to use the epub builder (y/n) [n]:&lt;/p&gt;
+&lt;p&gt;增加 epub 電子書格式的支援。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Please indicate if you want to use one of the following Sphinx extensions:&lt;/p&gt;
+&lt;p&gt;以下都是 Sphinx 擴充功能的開關，不過若是以後要啟用，也可以直接修改 &lt;code&gt;conf.py&lt;/code&gt; 文件變更設定。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;autodoc&lt;/li&gt;
+&lt;li&gt;doctest&lt;/li&gt;
+&lt;li&gt;intersphinx&lt;/li&gt;
+&lt;li&gt;todo&lt;/li&gt;
+&lt;li&gt;coverage&lt;/li&gt;
+&lt;li&gt;imgmath / mathjax（擇一）&lt;/li&gt;
+&lt;li&gt;ifconfig&lt;/li&gt;
+&lt;li&gt;viewcode&lt;/li&gt;
+&lt;li&gt;githubpages&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create Makefile? (y/n) [y]:&lt;/p&gt;
+&lt;p&gt;生成 Makefile 以便直接轉檔。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create Windows command file? (y/n) [y]: &lt;strong&gt;n&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;若 Windows 平台沒裝 GNU 工具，可以透過批次檔轉檔。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Makefile&lt;/h2&gt;
+&lt;p&gt;接下來，修改專案根目錄中的 &lt;code&gt;Makefile&lt;/code&gt;，將 SPHINXBUILD 這個參數的值改成 sphinx-build，以解決在 Ubuntu 平台會呼叫成 Python 2 的問題。&lt;/p&gt;
+&lt;p&gt;Makefile 中也能設定輸入輸出的目錄。&lt;/p&gt;
+&lt;h2&gt;增加 Markdown 支援&lt;/h2&gt;
+&lt;p&gt;上述提及 Sphinx 沒有 Markdown 語法的支援，因此必須額外增加一個模組幫忙解析。&lt;/p&gt;
+&lt;p&gt;安裝另一個 Python 模組 recommonmark。&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+$sudo pip3 install recommonmark
+&lt;/pre&gt;
+
+&lt;p&gt;編輯 &lt;code&gt;source&lt;/code&gt; 目錄下的 &lt;code&gt;conf.py&lt;/code&gt; 文件，這裡是紀錄設定的腳本檔案。&lt;/p&gt;
+&lt;p&gt;找到關於 source_suffix 的設定，改成如下：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+# The suffix(es) of source filenames.
+# You can specify multiple suffix as a list of string:
+#
+# source_suffix = ['.rst', '.md']
+from recommonmark.parser import CommonMarkParser
+source_parsers = {
+    '.md': CommonMarkParser,
+}
+source_suffix = ['.rst', '.md']
+&lt;/pre&gt;
+
+&lt;p&gt;這樣就同時支援 reStructuredText 和 Markdown 語法了。&lt;/p&gt;
+&lt;h2&gt;index 目錄&lt;/h2&gt;
+&lt;p&gt;預設的 index 目錄為 reStructuredText 語法，這邊注意如果大小標題的底線沒有超出標題文字長度（全形字元為 2 格），轉換時會發生 &lt;strong&gt;Title underline is short&lt;/strong&gt; 警告，甚至可能會跳過本章的標題，造成目錄空白。&lt;/p&gt;
+&lt;p&gt;其中包含章節的結構樹如下：&lt;/p&gt;
+&lt;pre class="brush: text"&gt;
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+&lt;/pre&gt;
+
+&lt;p&gt;其中 maxdepth 為目錄顯示最多的層級數；caption 為目錄上方的文字顯示。&lt;/p&gt;
+&lt;p&gt;可以添加文件名稱到底下，讓 Sphinx 排序不同檔案的章節順序，如下：&lt;/p&gt;
+&lt;pre class="brush: text"&gt;
+.. toctree::
+   :maxdepth: 2
+   :caption: 目錄:
+
+   setup
+   environment
+&lt;/pre&gt;
+
+&lt;p&gt;這裡添加檔名即可，只要是支援的副檔名即可。&lt;/p&gt;
+&lt;h2&gt;編出 HTML&lt;/h2&gt;
+&lt;p&gt;接下來，透過 Makefile 生成 HTML 文件，這部份也類似 Pandoc 的流程。&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+$make html
+&lt;/pre&gt;
+
+&lt;p&gt;接著進入 &lt;code&gt;build&lt;/code&gt; 資料夾，用網頁瀏覽器開啟 &lt;code&gt;index.html&lt;/code&gt; 檢視成果。&lt;/p&gt;</content><category term="Sphinx"></category></entry><entry><title>PyZMQ Local testing</title><link href="http://project.mde.tw/blog/pyzmq-local-testing.html" rel="alternate"></link><published>2017-06-25T21:00:00+08:00</published><updated>2017-06-25T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-06-25:/blog/pyzmq-local-testing.html</id><summary type="html">&lt;p&gt;ZeroMQ 本機程式測試&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;ZeroMQ 本機程式測試&lt;/p&gt;
 
 
