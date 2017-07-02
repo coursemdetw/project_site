@@ -37,6 +37,10 @@
 </v>
 <v t="ahshoe.20170316194819.1"><vh>@edit 40323230_20170315.md</vh></v>
 </v>
+<v t="40323230.20170702203721.1" a="E"><vh>pyslvs-manual-sphinx</vh>
+<v t="40323230.20170702203756.1"><vh>@edit pyslvs_setup.md</vh></v>
+<v t="40323230.20170702204057.1"><vh>@edit pyslvs_interface.md</vh></v>
+</v>
 <v t="ahshoe.20170119214040.1"><vh>2016 Summer Vacation</vh>
 <v t="amd.20160106093531.1"><vh>w1</vh>
 <v t="leo.20160702131016.1"><vh>@edit 40323230_20160702.md</vh></v>
@@ -290,7 +294,7 @@
 </v>
 </v>
 <v t="ahshoe.20170623230534.1" a="E"><vh>2017 Summer Vacation</vh>
-<v t="ahshoe.20170623230621.1" a="E"><vh>w0</vh>
+<v t="ahshoe.20170623230621.1"><vh>w0</vh>
 <v t="ahshoe.20170623230725.1"><vh>@edit 40323230_20170623.md</vh></v>
 <v t="ahshoe.20170625223107.1"><vh>@edit 40323230_20170625.md</vh></v>
 </v>
@@ -342,6 +346,7 @@ sudo pip3 install markdown
 
 </t>
 <t tx="40323230.20170501225220.2"></t>
+<t tx="40323230.20170702203721.1"></t>
 <t tx="ahshoe.20160821213649.1"></t>
 <t tx="ahshoe.20160828214004.1"></t>
 <t tx="ahshoe.20160902195148.1"></t>
