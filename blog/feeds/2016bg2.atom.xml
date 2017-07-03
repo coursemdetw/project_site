@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-02T21:00:00+08:00</updated><entry><title>Pyslvs 手冊：安裝</title><link href="http://project.mde.tw/blog/pyslvs-shou-ce-an-zhuang.html" rel="alternate"></link><published>2017-07-02T21:00:00+08:00</published><updated>2017-07-02T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-02:/blog/pyslvs-shou-ce-an-zhuang.html</id><summary type="html">&lt;h1&gt;安裝&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-02T21:00:00+08:00</updated><entry><title>Pyslvs 手冊：安裝</title><link href="http://project.mde.tw/blog/pyslvs-shou-ce-an-zhuang.html" rel="alternate"></link><published>2017-07-02T21:00:00+08:00</published><updated>2017-07-02T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-02:/blog/pyslvs-shou-ce-an-zhuang.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+&lt;h1&gt;安裝&lt;/h1&gt;
 &lt;p&gt;以下將介紹如何在不同作業系統中運行 Pyslvs 套件。&lt;/p&gt;
 &lt;h2&gt;Windows 平台&lt;/h2&gt;
 &lt;p&gt;Windows 平台的版本為可獨立執行檔案，下載後雙擊即可啟動 Pyslvs。&lt;/p&gt;
@@ -13,54 +15,9 @@
 &lt;p&gt;接著透過指令啟動 Pyslvs。&lt;/p&gt;
 &lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pyslvs
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><content type="html">&lt;h1&gt;安裝&lt;/h1&gt;
-&lt;p&gt;以下將介紹如何在不同作業系統中運行 Pyslvs 套件。&lt;/p&gt;
-&lt;h2&gt;Windows 平台&lt;/h2&gt;
-&lt;p&gt;Windows 平台的版本為可獨立執行檔案，下載後雙擊即可啟動 Pyslvs。&lt;/p&gt;
-&lt;h2&gt;Ubuntu 平台&lt;/h2&gt;
-&lt;p&gt;Ubuntu 平台上採用 Debian package 安裝。&lt;/p&gt;
-&lt;p&gt;透過 dpkg 套件將安裝檔的內容複製到系統中。&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo dpkg -i pyslvs_vX.X_ubuntu_x64.deb
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</content><category term="pyslvs-manual-sphinx"></category></entry><entry><title>Pyslvs 手冊：介面</title><link href="http://project.mde.tw/blog/pyslvs-shou-ce-jie-mian.html" rel="alternate"></link><published>2017-07-02T21:00:00+08:00</published><updated>2017-07-02T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-02:/blog/pyslvs-shou-ce-jie-mian.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
-&lt;p&gt;接著透過指令啟動 Pyslvs。&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pyslvs
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</content><category term="pyslvs-manual-sphinx"></category></entry><entry><title>Pyslvs 手冊：介面</title><link href="http://project.mde.tw/blog/pyslvs-shou-ce-jie-mian.html" rel="alternate"></link><published>2017-07-02T21:00:00+08:00</published><updated>2017-07-02T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-02:/blog/pyslvs-shou-ce-jie-mian.html</id><summary type="html">&lt;h1&gt;介面&lt;/h1&gt;
-&lt;p&gt;主畫面的上方為功能表列 (Menu bar)、右側為畫布 (Canvas)；左方則有各式功能的分頁欄 (Tab widgets)。&lt;/p&gt;
-&lt;p&gt;功能表列涵蓋大部分的功能，然而一些有關各項目的細部操作，則必須在對應的分頁欄中選取或設定。以下小節將為主畫面中不同區域的功能名稱做簡單的介紹。&lt;/p&gt;
-&lt;h2&gt;功能表列 (Menu bar)&lt;/h2&gt;
-&lt;p&gt;功能表列中根據不同的功能分類，如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;檔案 (File)&lt;/p&gt;
-&lt;p&gt;建立新的工作簿、開啟既有的工作簿、參考範例，或是不同檔案格式的匯入與匯出功能。&lt;/p&gt;
-&lt;p&gt;另外還有調整視窗縮放的指令，而功能表列在全螢幕模式仍會顯示。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;編輯 (Edit)&lt;/p&gt;
-&lt;p&gt;復原與重做功能、一些輔助編輯機構節點的指令。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;繪製 (Draw)&lt;/p&gt;
-&lt;p&gt;建立、編輯、刪除機構實體的功能，還有更新當前座標至原始座標的指令。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;模擬 (Simulation)&lt;/p&gt;
-&lt;p&gt;建立、編輯、刪除機構約束的功能。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;路徑 (Path)&lt;/p&gt;
-&lt;p&gt;路徑追蹤功能的相關指令與顯示設定。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;選項 (Options)&lt;/p&gt;
-&lt;p&gt;檢視方式調整以及工作簿相關資訊。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;說明 (Help)&lt;/p&gt;
-&lt;p&gt;本套件的相關網站與套件資訊 …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h1&gt;介面&lt;/h1&gt;
+&lt;h1&gt;介面&lt;/h1&gt;
 &lt;p&gt;主畫面的上方為功能表列 (Menu bar)、右側為畫布 (Canvas)；左方則有各式功能的分頁欄 (Tab widgets)。&lt;/p&gt;
 &lt;p&gt;功能表列涵蓋大部分的功能，然而一些有關各項目的細部操作，則必須在對應的分頁欄中選取或設定。以下小節將為主畫面中不同區域的功能名稱做簡單的介紹。&lt;/p&gt;
 &lt;h2&gt;功能表列 (Menu bar)&lt;/h2&gt;
