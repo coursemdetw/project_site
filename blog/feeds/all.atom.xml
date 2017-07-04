@@ -1,5 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-02T21:00:00+08:00</updated><entry><title>Pyslvs 手冊：安裝</title><link href="http://project.mde.tw/blog/pyslvs-shou-ce-an-zhuang.html" rel="alternate"></link><published>2017-07-02T21:00:00+08:00</published><updated>2017-07-02T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-02:/blog/pyslvs-shou-ce-an-zhuang.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-04T21:00:00+08:00</updated><entry><title>平面連桿演算法使用參數</title><link href="http://project.mde.tw/blog/ping-mian-lian-gan-yan-suan-fa-shi-yong-can-shu.html" rel="alternate"></link><published>2017-07-04T21:00:00+08:00</published><updated>2017-07-04T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-04:/blog/ping-mian-lian-gan-yan-suan-fa-shi-yong-can-shu.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;解析 &lt;code&gt;planarlinkage.pyx&lt;/code&gt; 輸入項目用途&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Version 0.8 開發方向&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;解析 &lt;code&gt;planarlinkage.pyx&lt;/code&gt; 輸入項目用途&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Version 0.8 開發方向&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;參數用途&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;planarlinkage.pyx&lt;/code&gt; 中的 &lt;code&gt;build_planar&lt;/code&gt; 為函式用途的物件類型，此函式接收參數時會針對平面連桿做數值的處理，並且&lt;strong&gt;會計算適應值&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;由於此函式物件原本是設計給四連桿，若是改為八連桿，勢必要做部份調整，以搭配演算法運算。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+mechanismParams = {
+    'Driving':'A',
+    'Follower':'D',
+    'Link':'L0,L1,L2,L3,L4',
+    'Target':'E',
+    'ExpressionName':'PLAP,PLLP,PLLP',
+    'Expression':'A,L0,a0,D,B,B,L1,L2,D,C,B,L3,L4,C,E',
+    'targetPath':path,
+    'constraint':[{'driver':'L0', 'follower':'L2', 'connect':'L1'}],
+    'VARS':9,
+    'formula':['PLAP','PLLP']}
+mechanismObj = build_planar(mechanismParams)
+&lt;/pre&gt;
+
+&lt;p&gt;對應於下表：&lt;/p&gt;
+&lt;style type="text/css"&gt;
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+.tg td{font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+.tg th{font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+.tg .tg-yw4l{vertical-align:top}
+&lt;/style&gt;
+
+&lt;table class="tg"&gt;
+  &lt;tr&gt;
+    &lt;th class="tg-yw4l"&gt;參數名稱&lt;/th&gt;
+    &lt;th class="tg-yw4l"&gt;說明&lt;/th&gt;
+    &lt;th class="tg-yw4l"&gt;輸入項目&lt;/th&gt;
+    &lt;th class="tg-yw4l"&gt;Python 類別&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-yw4l"&gt;Driving&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;主動固定節點&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;節點代碼名稱&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;String&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-yw4l"&gt;Follower&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;從動固定節點&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;節點代碼名稱&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;String&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-yw4l"&gt;Link&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;連接桿&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;連桿代碼名稱，逗號分隔&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;String&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-yw4l"&gt;Target&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;目標節點&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;節點代碼名稱&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;String&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-yw4l"&gt;ExpressionName&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;堆疊機構的三角形&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;三角形表示式，逗號分隔&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;String&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-yw4l"&gt;Expression&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;參數排序&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;全部代碼名稱，逗號分隔&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;String&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-yw4l"&gt;targetPath&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;路徑&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;路徑點座標集&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;Tuple [Float]&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-yw4l"&gt;constraint&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;driver：主動桿&lt;br&gt;follower：從動桿&lt;br&gt;connect：連接桿&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;三組連桿代碼名稱&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;Dictionary [String]&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-yw4l"&gt;VARS&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;參數數目&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;四連桿變數共9個&lt;br&gt;（八連桿變數共18個）&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;Integer&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-yw4l"&gt;formula&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;方程式名稱&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;對應 tinycadlab 的定義&lt;/td&gt;
+    &lt;td class="tg-yw4l"&gt;List [String]&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;其中，雖然有些部份針對四連桿做設計，但是透過修改 &lt;code&gt;'ExpressionName'&lt;/code&gt; 和 &lt;code&gt;'Expression'&lt;/code&gt; 就可以改變三角形堆疊的方式，也意味著可以透過 Pyslvs 的三角迭代器輸入三角形的樣式，將其他種類的連桿套用演算法合成尺寸。&lt;/p&gt;
+&lt;p&gt;不過這個函式只有一個 Follower 的設定，若有其他從動的固定節點，得修改函式才能計算。&lt;/p&gt;
+&lt;p&gt;而目前看來，要套用八連桿的演算法，修改給定的參數應該就能達成。&lt;/p&gt;
+&lt;h1&gt;Version 0.8 目標&lt;/h1&gt;
+&lt;p&gt;可能得處理一下 Cython 執行序的問題，當前除了動用系統強制砍掉程序，似乎沒有中止演算法的方式，是否要在 Cython 中增加檢查停止的機制？&lt;/p&gt;
+&lt;p&gt;接下來 Version 0.8 的目標如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;改善演算法的設定介面，如手動設定族群或機率的功能。&lt;/li&gt;
+&lt;li&gt;會融入 Qt 網路引擎和 PyZMQ 進行本機分散運算的測試。&lt;/li&gt;
+&lt;/ol&gt;</content><category term="Pyslvs"></category></entry><entry><title>Pyslvs 手冊：安裝</title><link href="http://project.mde.tw/blog/pyslvs-shou-ce-an-zhuang.html" rel="alternate"></link><published>2017-07-02T21:00:00+08:00</published><updated>2017-07-02T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-02:/blog/pyslvs-shou-ce-an-zhuang.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
 &lt;h1&gt;安裝&lt;/h1&gt;
 &lt;p&gt;以下將介紹如何在不同作業系統中運行 Pyslvs 套件。&lt;/p&gt;
