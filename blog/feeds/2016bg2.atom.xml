@@ -1,5 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-05T21:00:00+08:00</updated><entry><title>演算法設定介面</title><link href="http://project.mde.tw/blog/yan-suan-fa-she-ding-jie-mian.html" rel="alternate"></link><published>2017-07-05T21:00:00+08:00</published><updated>2017-07-05T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-05:/blog/yan-suan-fa-she-ding-jie-mian.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-06T21:00:00+08:00</updated><entry><title>Travis CI 模擬編譯</title><link href="http://project.mde.tw/blog/travis-ci-mo-ni-bian-yi.html" rel="alternate"></link><published>2017-07-06T21:00:00+08:00</published><updated>2017-07-06T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-06:/blog/travis-ci-mo-ni-bian-yi.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;使用 Travis CI 服務在遠端虛擬機編譯測試&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5"&gt;&lt;img alt="Build Status" src="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5.svg"&gt;&lt;/a&gt;&lt;/p&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;使用 Travis CI 服務在遠端虛擬機編譯測試&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5"&gt;&lt;img alt="Build Status" src="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5.svg"&gt;&lt;/a&gt;&lt;/p&gt;
+
+
+&lt;h1&gt;Travis CI&lt;/h1&gt;
+&lt;p&gt;Github 等較知名的倉儲管理系統或非營利組織 Pypi 成為各種程式的集散地，週邊衍生出一些提供第三方編譯認證的服務，讓個人電腦不用因為測試其他平台環境，而需要增加更多虛擬機檔案。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://travis-ci.org/"&gt;Travis CI&lt;/a&gt; 提供 Github 倉儲直接連接的功能，能針對帳戶內的倉儲的每個 branch 做&lt;strong&gt;編譯測試&lt;/strong&gt;與&lt;strong&gt;單元測試&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;在欲使用測試服務的分支根目錄中新建一個 &lt;code&gt;.travis.yml&lt;/code&gt; 檔案，內容即為使用的虛擬機環境。&lt;/p&gt;
+&lt;p&gt;目前為 Pyslvs 編寫的環境如下：&lt;/p&gt;
+&lt;pre class="brush: yml"&gt;
+dist: trusty
+sudo: required
+language: python
+
+python:
+- 3.4
+- 3.5
+
+before_install:
+- pip install -r requirements.txt
+- pip install pyinstaller
+
+install:
+ - sudo apt update
+ - sudo apt -y install python3-pyqt5
+
+script:
+ - make
+
+before_cache:
+  - rm -rf $HOME/.cache/pip/log
+cache:
+  directories:
+    - $HOME/.cache/pip
+&lt;/pre&gt;
+
+&lt;p&gt;在未註明作業系統的情況下，使用的是 linux，另外也有 OSX 與 Windows 的選擇，不過相關檔案和指令就必須增加辨識以調整之。&lt;/p&gt;
+&lt;p&gt;當套件提供者使用 Trusty 時，會使用 Ubuntu 14.04 的作業系統執行，不過大部分的編譯工具都已內建，並且可以指定版本。&lt;/p&gt;
+&lt;p&gt;若是沒有安裝（如 Qt 等函式庫），則可以使用 &lt;code&gt;install&lt;/code&gt; 指令集在虛擬機裝自己想要使用的套件，安裝套件必須將 sudo 選項啟用。&lt;/p&gt;
+&lt;p&gt;Python 3 比較需要注意的是，雖然為 Ubuntu 14.04，但是調用 Python 選項後，整台電腦只會有一個 Python 版本，因此不用特別註明 pip3。&lt;/p&gt;
+&lt;p&gt;由於上面的檔案中&lt;strong&gt;條列&lt;/strong&gt;了 Python，因此會建立 2 台虛擬機，分別上 Python 3.4 與 3.5（目前可以支援到最新的 3.7 測試版）。&lt;/p&gt;
+&lt;p&gt;若是想針對各種混搭的環境測試，可以使用 &lt;code&gt;matrix&lt;/code&gt; 選項，建立更多不同種環境的虛擬機，更詳細的設定則可以參考&lt;a href="https://docs.travis-ci.com/"&gt;說明頁面&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;目前在這個服務中已經成功編譯 Solvespace 端口和 Pyslvs。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_07_06.png"&gt;&lt;/p&gt;
+&lt;p&gt;虛擬機在 &lt;code&gt;script&lt;/code&gt; 的指令都回傳 0 或是錯誤時會自動關機，留下 log 供參考。&lt;/p&gt;
+&lt;p&gt;Travis CI 會在&lt;strong&gt;每次更新倉儲&lt;/strong&gt;時編譯，類似 gh-pages，不過因為要幫所有虛擬機開機，所以會過一段時間才會有結果。&lt;/p&gt;
+&lt;p&gt;編譯後可以透過 commit 後的綠點圖示查看結果，或是使用 Shields.io 製作 Readme 的動態標籤。&lt;/p&gt;
+&lt;h1&gt;Shields.io&lt;/h1&gt;
+&lt;p&gt;&lt;a href="http://shields.io/"&gt;Shields.io&lt;/a&gt; 是 Javascript 寫成的 SVG 圖示服務，其中連結了各大倉儲網站，能夠蒐集並呈現不同的數據。&lt;/p&gt;
+&lt;p&gt;透過修改網址的參數就能改變 badges 的設定，基本上可以直接參考網站上的範例就能添加 badges，追蹤倉儲的一些統計數據。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>演算法設定介面</title><link href="http://project.mde.tw/blog/yan-suan-fa-she-ding-jie-mian.html" rel="alternate"></link><published>2017-07-05T21:00:00+08:00</published><updated>2017-07-05T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-05:/blog/yan-suan-fa-she-ding-jie-mian.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;增加不同演算法的進階設定&lt;/p&gt;
 &lt;/li&gt;
