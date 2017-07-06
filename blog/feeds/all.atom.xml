@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-06T21:00:00+08:00</updated><entry><title>Travis CI 模擬編譯</title><link href="http://project.mde.tw/blog/travis-ci-mo-ni-bian-yi.html" rel="alternate"></link><published>2017-07-06T21:00:00+08:00</published><updated>2017-07-06T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-06:/blog/travis-ci-mo-ni-bian-yi.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;使用 Travis CI 服務在遠端虛擬機編譯測試&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5"&gt;&lt;img alt="Build Status" src="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5.svg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Pyslvs Build Status: &lt;a href="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5"&gt;&lt;img alt="Build Status" src="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5.svg"&gt;&lt;/a&gt;&lt;/p&gt;
 </summary><content type="html">&lt;ul&gt;
 &lt;li&gt;使用 Travis CI 服務在遠端虛擬機編譯測試&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5"&gt;&lt;img alt="Build Status" src="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5.svg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Pyslvs Build Status: &lt;a href="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5"&gt;&lt;img alt="Build Status" src="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5.svg"&gt;&lt;/a&gt;&lt;/p&gt;
 
 
 &lt;h1&gt;Travis CI&lt;/h1&gt;
@@ -54,7 +54,7 @@ cache:
 &lt;p&gt;編譯後可以透過 commit 後的綠點圖示查看結果，或是使用 Shields.io 製作 Readme 的動態標籤。&lt;/p&gt;
 &lt;h1&gt;Shields.io&lt;/h1&gt;
 &lt;p&gt;&lt;a href="http://shields.io/"&gt;Shields.io&lt;/a&gt; 是 Javascript 寫成的 SVG 圖示服務，其中連結了各大倉儲網站，能夠蒐集並呈現不同的數據。&lt;/p&gt;
-&lt;p&gt;透過修改網址的參數就能改變 badges 的設定，基本上可以直接參考網站上的範例就能添加 badges，追蹤倉儲的一些統計數據。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>演算法設定介面</title><link href="http://project.mde.tw/blog/yan-suan-fa-she-ding-jie-mian.html" rel="alternate"></link><published>2017-07-05T21:00:00+08:00</published><updated>2017-07-05T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-05:/blog/yan-suan-fa-she-ding-jie-mian.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;透過修改網址的參數就能改變 badges 的設定，基本上可以直接參考網站上的範例就能添加 badges，追蹤倉儲的一些統計數據。&lt;/p&gt;</content><category term="Pyslvs"></category><category term="Travis"></category></entry><entry><title>演算法設定介面</title><link href="http://project.mde.tw/blog/yan-suan-fa-she-ding-jie-mian.html" rel="alternate"></link><published>2017-07-05T21:00:00+08:00</published><updated>2017-07-05T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-05:/blog/yan-suan-fa-she-ding-jie-mian.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;增加不同演算法的進階設定&lt;/p&gt;
 &lt;/li&gt;
