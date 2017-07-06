@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-06T21:00:00+08:00</updated><entry><title>Travis CI 模擬編譯</title><link href="http://project.mde.tw/blog/travis-ci-mo-ni-bian-yi.html" rel="alternate"></link><published>2017-07-06T21:00:00+08:00</published><updated>2017-07-06T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-06:/blog/travis-ci-mo-ni-bian-yi.html</id><summary type="html">&lt;ul&gt;
-&lt;li&gt;使用 Travis CI 服務在遠端虛擬機編譯測試&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;使用 Travis CI 服務在遠端虛擬機編譯測試&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;Pyslvs Build Status: &lt;a href="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5"&gt;&lt;img alt="Build Status" src="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5.svg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
-&lt;li&gt;使用 Travis CI 服務在遠端虛擬機編譯測試&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;使用 Travis CI 服務在遠端虛擬機編譯測試&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;Pyslvs Build Status: &lt;a href="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5"&gt;&lt;img alt="Build Status" src="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5.svg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 
 
 &lt;h1&gt;Travis CI&lt;/h1&gt;
