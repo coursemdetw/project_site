@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-06T21:00:00+08:00</updated><entry><title>Travis CI 模擬編譯</title><link href="http://project.mde.tw/blog/travis-ci-mo-ni-bian-yi.html" rel="alternate"></link><published>2017-07-06T21:00:00+08:00</published><updated>2017-07-06T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-06:/blog/travis-ci-mo-ni-bian-yi.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-10T21:00:00+08:00</updated><entry><title>ZMQ 與 Cython 遇到的瓶頸</title><link href="http://project.mde.tw/blog/zmq-yu-cython-yu-dao-de-ping-jing.html" rel="alternate"></link><published>2017-07-10T21:00:00+08:00</published><updated>2017-07-10T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-10:/blog/zmq-yu-cython-yu-dao-de-ping-jing.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;ZMQ 傳輸類型&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;ZMQ 傳輸類型&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;ZMQ 傳輸類型&lt;/h1&gt;
+&lt;p&gt;測試了 Python 演算法單機開多個程式分散計算適應值，但是比純 Python 慢 12 倍左右。&lt;/p&gt;
+&lt;p&gt;透過 PyZMQ 的 socket 傳輸，看了官方的說明文件，似乎是 byte 類型較快，許多數字計算的範例則是先轉成文字解碼後才傳輸，而目前是用 Python Object，是最慢的一種，但是會保留所需的格式。&lt;/p&gt;
+&lt;p&gt;計算適應值需要傳輸下列項目：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;連桿類型（未來加入八連桿後）&lt;/li&gt;
+&lt;li&gt;參數值（計算適應值）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但是不知道演算法流程也改成 Cython 後，傳輸的部份是否仍有加速的空間。&lt;/p&gt;
+&lt;p&gt;而改成 Cython 的方式還在研究中。&lt;/p&gt;</content><category term="Pyslvs"></category><category term="Travis"></category></entry><entry><title>Travis CI 模擬編譯</title><link href="http://project.mde.tw/blog/travis-ci-mo-ni-bian-yi.html" rel="alternate"></link><published>2017-07-06T21:00:00+08:00</published><updated>2017-07-06T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-06:/blog/travis-ci-mo-ni-bian-yi.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;使用 Travis CI 服務在遠端虛擬機編譯測試&lt;/p&gt;
 &lt;/li&gt;
