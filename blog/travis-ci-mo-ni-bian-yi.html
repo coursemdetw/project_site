@@ -95,7 +95,10 @@
 <body>
 <style>
 p {
-  font-size: 14pt;
+  font-size: 12pt;
+}
+li {
+  font-size: 12pt;
 }
 </style>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -206,12 +209,54 @@ python:
 - 3.5
 
 before_install:
-- pip install -r requirements.txt
-- pip install pyinstaller
+  #SIP
+  - cd ..
+  - curl -L -O "https://sourceforge.net/projects/pyqt/files/sip/sip-4.19.3/sip-4.19.3.tar.gz"
+  - tar -xvf sip-4.19.3.tar.gz
+  - cd sip-4.19.3
+  - python configure.py
+  - sudo make install
+  #Qt5
+  - sudo add-apt-repository -y "ppa:beineri/opt-qt59-trusty"
+  - sudo apt-get update -qq
+  - sudo apt-get install qt59-meta-full qt59charts-no-lgpl
+  - QTDIR="/opt/qt59"
+  - PATH="$QTDIR/bin:$PATH"
+  - source /opt/qt59/bin/qt59-env.sh
+  - qmake -v
+  #PyQt5
+  - cd ..
+  - curl -L -O "https://sourceforge.net/projects/pyqt/files/PyQt5/PyQt-5.9/PyQt5_gpl-5.9.tar.gz"
+  - tar -xvf PyQt5_gpl-5.9.tar.gz
+  - cd PyQt5_gpl-5.9
+  - python configure.py --confirm-license
+  - sudo make install
+  #QScintilla
+  - cd ..
+  - curl -L -O "https://sourceforge.net/projects/pyqt/files/QScintilla2/QScintilla-2.10.1/QScintilla_gpl-2.10.1.tar.gz"
+  - tar -xvf QScintilla_gpl-2.10.1.tar.gz
+  - cd QScintilla_gpl-2.10.1
+  - cd Qt4Qt5
+  - qmake qscintilla.pro
+  - sudo make install
+  - cd ../designer-Qt4Qt5
+  - qmake designer.pro
+  - sudo make install
+  - cd ../Python
+  - python configure.py --pyqt=PyQt5
+  - sudo make install
+  #PyQtChart
+  - cd ../..
+  - curl -L -O "https://sourceforge.net/projects/pyqt/files/PyQtChart/PyQtChart-5.9/PyQtChart_gpl-5.9.tar.gz"
+  - tar -xvf PyQtChart_gpl-5.9.tar.gz
+  - cd PyQtChart_gpl-5.9
+  - python configure.py
+  - sudo make install
+  - cd $TRAVIS_BUILD_DIR
 
 install:
- - sudo apt update
- - sudo apt -y install python3-pyqt5
+  - pip install -r requirements.txt
+  - pip install pyinstaller
 
 script:
  - make
@@ -282,6 +327,11 @@ cache:
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/ba-lian-gan-yan-suan-fa.html">
+                            八連桿演算法
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/zmq-yu-cython-yu-dao-de-ping-jing.html">
                             ZMQ 與 Cython 遇到的瓶頸
                         </a>
@@ -299,11 +349,6 @@ cache:
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/ping-mian-lian-gan-yan-suan-fa-shi-yong-can-shu.html">
                             平面連桿演算法使用參數
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-shou-ce-an-zhuang.html">
-                            Pyslvs 手冊：安裝
                         </a>
                     </li>
                 </ul>

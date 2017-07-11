@@ -1,5 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-10T21:00:00+08:00</updated><entry><title>ZMQ 與 Cython 遇到的瓶頸</title><link href="http://project.mde.tw/blog/zmq-yu-cython-yu-dao-de-ping-jing.html" rel="alternate"></link><published>2017-07-10T21:00:00+08:00</published><updated>2017-07-10T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-10:/blog/zmq-yu-cython-yu-dao-de-ping-jing.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-11T21:00:00+08:00</updated><entry><title>八連桿演算法</title><link href="http://project.mde.tw/blog/ba-lian-gan-yan-suan-fa.html" rel="alternate"></link><published>2017-07-11T21:00:00+08:00</published><updated>2017-07-11T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-11:/blog/ba-lian-gan-yan-suan-fa.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;設定並測試八連桿演算法&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;設定並測試八連桿演算法&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;八連桿演算法&lt;/h1&gt;
+&lt;p&gt;稍微理解 Cython 程式碼後，透過原先的 Cython API，可以將四連桿的設定轉變為八連桿的設定。&lt;/p&gt;
+&lt;p&gt;以下是兩者的比對：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+mechanismParams_4Bar = { #No 'targetPath'
+    'Driving':'A',
+    'Follower':'D',
+    'Link':'L0,L1,L2,L3,L4',
+    'Target':'E',
+    'ExpressionName':'PLAP,PLLP,PLLP',
+    'Expression':'A,L0,a0,D,B,B,L1,L2,D,C,B,L3,L4,C,E',
+    'constraint':[{'driver':'L0', 'follower':'L2', 'connect':'L1'}],
+    'formula':['PLAP','PLLP']}
+mechanismParams_4Bar['VARS'] = len(set(mechanismParams_4Bar['Expression'].split(',')))-2
+mechanismParams_8Bar = { #No 'targetPath'
+    'Driving':'A',
+    'Follower':'B',
+    'Link':'L0,L1,L2,L3,L4,L5,L6,L7,L8,L9,L10',
+    'Target':'H',
+    'ExpressionName':'PLAP,PLLP,PLLP,PLLP,PLLP,PLLP',
+    'Expression':'A,L0,a0,B,C,B,L2,L1,C,D,B,L4,L3,D,E,C,L5,L6,B,F,F,L8,L7,E,G,F,L9,L10,G,H',
+    'constraint':[{'driver':'L0', 'follower':'L2', 'connect':'L1'}],
+    'formula':['PLAP','PLLP']}
+mechanismParams_8Bar['VARS'] = len(set(mechanismParams_8Bar['Expression'].split(',')))-2
+&lt;/pre&gt;
+
+&lt;p&gt;其中一些項目可由部份內容得知，如 VARS 為不包含「求解值」與「角度」的所有代號，便可由 Expression 使用 set type 解析出現的代號，並扣除得知。&lt;/p&gt;
+&lt;p&gt;再來是演算法須得知的參數：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+mechanismParams = self.mechanismParams_4Bar if self.FourBar.isChecked() else self.mechanismParams_8Bar
+link_q = mechanismParams['VARS']-7
+upper = [self.Settings['AxMax'], self.Settings['AyMax'], self.Settings['DxMax'], self.Settings['DyMax'],
+    self.Settings['IMax'], self.Settings['LMax'], self.Settings['FMax']]+[self.Settings['LMax']]*link_q
+lower = [self.Settings['AxMin'], self.Settings['AyMin'], self.Settings['DxMin'], self.Settings['DyMin'],
+    self.Settings['IMin'], self.Settings['LMin'], self.Settings['FMin']]+[self.Settings['LMin']]*link_q
+mechanismParams['targetPath'] = tuple((e['x'], e['y']) for e in self.path)
+p = len(self.path)
+GenerateData = {
+    'nParm':p+mechanismParams['VARS'],
+    'upper':upper+[self.Settings['AMax']]*p,
+    'lower':lower+[self.Settings['AMin']]*p,
+    'maxGen':self.Settings['maxGen'],
+    'report':int(self.Settings['maxGen']*self.Settings['report']/100)}
+&lt;/pre&gt;
+
+&lt;p&gt;由 GUI 取得連桿類型後，經測試發現 upper 與 lower 的長度必須與 VARS 的數值相等，因此調整中間連桿的設定。&lt;/p&gt;
+&lt;p&gt;上述的設定可以適應四連桿與八連桿的資料輸入，其他參數則是由 GUI 設定。&lt;/p&gt;
+&lt;p&gt;合併結果的部份，由於還未寫辨識固定鍊的函式，所以目前機構皆用連桿連接。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_07_11_01.png"&gt;&lt;/p&gt;
+&lt;p&gt;上圖為套用四連桿相從設定的結果（差分演化法），不過速度方面很意外的沒有落後太多，大約在 3 至 10 秒之間。&lt;/p&gt;
+&lt;p&gt;推測可能是八連桿的路徑較多變，因此在幾代內稍微調整染色體即可符合，不過若是路徑點較多，也可能需要較久的時間。&lt;/p&gt;
+&lt;p&gt;以下為一個八連桿演算法的範例（差分演化法，12 個路徑點，花費 10.5008 秒），之後會加入內建範例中。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_07_11_02.png"&gt;&lt;/p&gt;
+&lt;p&gt;以下為此範例的適應值收斂圖。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_07_11_03.png"&gt;&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>ZMQ 與 Cython 遇到的瓶頸</title><link href="http://project.mde.tw/blog/zmq-yu-cython-yu-dao-de-ping-jing.html" rel="alternate"></link><published>2017-07-10T21:00:00+08:00</published><updated>2017-07-10T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-10:/blog/zmq-yu-cython-yu-dao-de-ping-jing.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;ZMQ 傳輸類型&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul&gt;
@@ -16,7 +78,7 @@
 &lt;li&gt;參數值（計算適應值）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;但是不知道演算法流程也改成 Cython 後，傳輸的部份是否仍有加速的空間。&lt;/p&gt;
-&lt;p&gt;而改成 Cython 的方式還在研究中。&lt;/p&gt;</content><category term="Pyslvs"></category><category term="Travis"></category></entry><entry><title>Travis CI 模擬編譯</title><link href="http://project.mde.tw/blog/travis-ci-mo-ni-bian-yi.html" rel="alternate"></link><published>2017-07-06T21:00:00+08:00</published><updated>2017-07-06T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-06:/blog/travis-ci-mo-ni-bian-yi.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;而改成 Cython 的方式還在研究中。&lt;/p&gt;</content><category term="Pyslvs"></category><category term="ZMQ"></category></entry><entry><title>Travis CI 模擬編譯</title><link href="http://project.mde.tw/blog/travis-ci-mo-ni-bian-yi.html" rel="alternate"></link><published>2017-07-06T21:00:00+08:00</published><updated>2017-07-06T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-06:/blog/travis-ci-mo-ni-bian-yi.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;使用 Travis CI 服務在遠端虛擬機編譯測試&lt;/p&gt;
 &lt;/li&gt;
@@ -49,12 +111,54 @@ python:
 - 3.5
 
 before_install:
-- pip install -r requirements.txt
-- pip install pyinstaller
+  #SIP
+  - cd ..
+  - curl -L -O "https://sourceforge.net/projects/pyqt/files/sip/sip-4.19.3/sip-4.19.3.tar.gz"
+  - tar -xvf sip-4.19.3.tar.gz
+  - cd sip-4.19.3
+  - python configure.py
+  - sudo make install
+  #Qt5
+  - sudo add-apt-repository -y "ppa:beineri/opt-qt59-trusty"
+  - sudo apt-get update -qq
+  - sudo apt-get install qt59-meta-full qt59charts-no-lgpl
+  - QTDIR="/opt/qt59"
+  - PATH="$QTDIR/bin:$PATH"
+  - source /opt/qt59/bin/qt59-env.sh
+  - qmake -v
+  #PyQt5
+  - cd ..
+  - curl -L -O "https://sourceforge.net/projects/pyqt/files/PyQt5/PyQt-5.9/PyQt5_gpl-5.9.tar.gz"
+  - tar -xvf PyQt5_gpl-5.9.tar.gz
+  - cd PyQt5_gpl-5.9
+  - python configure.py --confirm-license
+  - sudo make install
+  #QScintilla
+  - cd ..
+  - curl -L -O "https://sourceforge.net/projects/pyqt/files/QScintilla2/QScintilla-2.10.1/QScintilla_gpl-2.10.1.tar.gz"
+  - tar -xvf QScintilla_gpl-2.10.1.tar.gz
+  - cd QScintilla_gpl-2.10.1
+  - cd Qt4Qt5
+  - qmake qscintilla.pro
+  - sudo make install
+  - cd ../designer-Qt4Qt5
+  - qmake designer.pro
+  - sudo make install
+  - cd ../Python
+  - python configure.py --pyqt=PyQt5
+  - sudo make install
+  #PyQtChart
+  - cd ../..
+  - curl -L -O "https://sourceforge.net/projects/pyqt/files/PyQtChart/PyQtChart-5.9/PyQtChart_gpl-5.9.tar.gz"
+  - tar -xvf PyQtChart_gpl-5.9.tar.gz
+  - cd PyQtChart_gpl-5.9
+  - python configure.py
+  - sudo make install
+  - cd $TRAVIS_BUILD_DIR
 
 install:
- - sudo apt update
- - sudo apt -y install python3-pyqt5
+  - pip install -r requirements.txt
+  - pip install pyinstaller
 
 script:
  - make
