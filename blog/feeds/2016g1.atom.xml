@@ -1,5 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-04-09T23:00:00+08:00</updated><entry><title>Pyquino 日誌 - 106/04/09</title><link href="http://project.mde.tw/blog/pyquino-ri-zhi-1060409.html" rel="alternate"></link><published>2017-04-09T23:00:00+08:00</published><updated>2017-04-09T23:00:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-04-09:/blog/pyquino-ri-zhi-1060409.html</id><summary type="html">&lt;ol&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-13T23:00:00+08:00</updated><entry><title>Opencv動態偵測</title><link href="http://project.mde.tw/blog/opencvdong-tai-zhen-ce.html" rel="alternate"></link><published>2017-07-13T23:00:00+08:00</published><updated>2017-07-13T23:00:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-13:/blog/opencvdong-tai-zhen-ce.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;討論項目&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;影像辨識部分&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;硬體規劃部分&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;討論項目&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;影像辨識部分&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;硬體規劃部分&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;h1&gt;討論事項&lt;/h1&gt;
+&lt;p&gt;-影像辨識&lt;/p&gt;
+&lt;p&gt;採用工具，使用 opencv 函式庫來輔助開發，採用二值化影像，須有一個好的調值工具來進行顏色選擇，這邊採用的方法是使用試誤法來對顏色進行二值化，確定大致上形狀後，利用 opencv 找取面積的形心，視為中心點，以求得那點的座標。&lt;/p&gt;
+&lt;h3&gt;中心點&lt;/h3&gt;
+
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/opencv/opencv.JPG?raw=true"&gt;&lt;/p&gt;
+&lt;h3&gt;中心資料&lt;/h3&gt;
+
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/opencv/centerdata.JPG?raw=true"&gt;&lt;/p&gt;
+&lt;h3&gt;利用excel繪製&lt;/h3&gt;
+
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/opencv/data.JPG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;接下來會優先開發針對物件顏色條值設定，可能會開發一套小型的GUI來進行輔助抓取、追蹤等設定。&lt;/p&gt;
+&lt;p&gt;-關於地磁計&lt;/p&gt;
+&lt;p&gt;在開發過程中，意外的需要花些時間才能得到正確的值，主要原因為:市面上的地磁計、六軸感測器、九軸感測器…等，都是測量加速度後，積分回去得到的值，這部分尚未解決，還需要一些時間來判斷，值的正確性與否。&lt;/p&gt;
+&lt;p&gt;關於題目提到的部分，使用凸輪來達成3D軌跡不太理解意思，是使用感測器將(X Y Z)三維空間的三個值繪製成3D曲線，再將連桿機構設計成可以三維空間運動個器材 ?&lt;/p&gt;</content><category term="Opencv"></category></entry><entry><title>Pyquino 日誌 - 106/04/09</title><link href="http://project.mde.tw/blog/pyquino-ri-zhi-1060409.html" rel="alternate"></link><published>2017-04-09T23:00:00+08:00</published><updated>2017-04-09T23:00:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-04-09:/blog/pyquino-ri-zhi-1060409.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;開發日誌&lt;/p&gt;
 &lt;ul&gt;
