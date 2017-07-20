@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-14T23:00:00+08:00</updated><entry><title>Opencv動態偵測 - 106/07/14</title><link href="http://project.mde.tw/blog/opencvdong-tai-zhen-ce-1060714.html" rel="alternate"></link><published>2017-07-14T23:00:00+08:00</published><updated>2017-07-14T23:00:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-14:/blog/opencvdong-tai-zhen-ce-1060714.html</id><summary type="html">&lt;ol&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-20T20:00:00+08:00</updated><entry><title>modelica - 106/07/20</title><link href="http://project.mde.tw/blog/modelica-1060720.html" rel="alternate"></link><published>2017-07-20T20:00:00+08:00</published><updated>2017-07-20T20:00:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-20:/blog/modelica-1060720.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;討論項目&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;modelica&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;gyro&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;討論項目&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;modelica&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;gyro&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;-modelica&lt;/p&gt;
+&lt;p&gt;modelica是一種基於方程式的程式語言，可以方便表達如機械、電氣、電子、控制、熱能等有方程式的子組件的複雜系統，目前可以在github上找到由modelica協會所提供的標準函式庫，使用語言為modelica&lt;/p&gt;
+&lt;h3&gt;簡介&lt;/h3&gt;
+
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/modelica/overview.JPG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;上圖為單支六軸機械手臂，可分為六顆馬達分別控制不同的方向，訊號(pathplanning)讀進去控制器，分別控制每顆馬達的轉動量，右圖為美顆馬達轉動的頻率及方向等訊號，每個轉軸又可在分為馬達轉速、 減速器再透過馬達回受到控制器，以方便進行運算補正值。&lt;/p&gt;
+&lt;p&gt;左下方為modelica軟體中畫出的方塊圖，可以利用這樣的表示法加上數學公式就可以建構出模擬的系統，來控制機台，可透過modelica來反推出每個軸的誤差量是多少，系統穩不穩定。&lt;/p&gt;
+&lt;p&gt;modelica 目前卡關在不知道該如何動他的函式庫，曾經有考慮過用openmodelica來進行，不過端口貌似是使用利用ZMQ來控制openmodelica軟體，而不像是solvespace等可以編成的動態連結資料庫，官方所提供的技術文件不會太難懂，只是牽扯到後面的大量運算，要改寫成python的方法有些許困難。&lt;/p&gt;
+&lt;p&gt;-gyro&lt;/p&gt;
+&lt;h3&gt;外觀&lt;/h3&gt;
+
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/opencv/gyro.JPG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;礙於要使用在腳上進行測量資料，牽著一條線移動難免造成移動困難等問題，更換了一塊MCU來進行裝置開發，這塊裝置可以透過wifi晶片進行網路上傳資料，但是這種晶片目前都無法新增ssl連線，整體的規範尚未訂定完成，目前採用http連線，由MCU為server端，利用內網來進行取值得動作。&lt;/p&gt;
+&lt;p&gt;目前地磁計最大的問題在於Z軸部分，由於是使用積分出來的值，加上我們位處八樓，積分出來的值，都還是無法使用的，這部分還在解決，目前想法是使用卡爾曼濾波，把非必要的值濾掉。&lt;/p&gt;
+&lt;p&gt;pyslvs取值計算這部分，經過討論打算使用老師所寫的flask來進行，取到人類腳的步伏值，上傳到flask中，再點選是否要進行運算出連桿機構，這部分還有許多地方需要討論。&lt;/p&gt;</content><category term="Opencv"></category></entry><entry><title>Opencv動態偵測 - 106/07/14</title><link href="http://project.mde.tw/blog/opencvdong-tai-zhen-ce-1060714.html" rel="alternate"></link><published>2017-07-14T23:00:00+08:00</published><updated>2017-07-14T23:00:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-14:/blog/opencvdong-tai-zhen-ce-1060714.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;討論項目&lt;/p&gt;
 &lt;ul&gt;
