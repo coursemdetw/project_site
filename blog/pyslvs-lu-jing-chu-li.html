@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>40323218日誌 - 105/07/11 - 機械設計專題 (虎尾科大MDE)</title>
+    <title>Pyslvs 路徑處理 - 機械設計專題 (虎尾科大MDE)</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -10,21 +10,21 @@
 
 
 
-<link rel="canonical" href="http://project.mde.tw/blog/40323218ri-zhi-1050711.html">
+<link rel="canonical" href="http://project.mde.tw/blog/pyslvs-lu-jing-chu-li.html">
 
-        <meta name="author" content="40323218" />
-        <meta name="keywords" content="Kmol" />
-        <meta name="description" content="V-rep" />
+        <meta name="author" content="40323230" />
+        <meta name="keywords" content="Pyslvs" />
+        <meta name="description" content="Pyslvs 開發進度 支援匯入與處理演算法路徑 簡單處理演算法路徑座標點功能 演算法名詞解釋 模組授權整理" />
 
         <meta property="og:site_name" content="機械設計專題 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="40323218日誌 - 105/07/11"/>
-        <meta property="og:url" content="http://project.mde.tw/blog/40323218ri-zhi-1050711.html"/>
-        <meta property="og:description" content="V-rep"/>
-        <meta property="article:published_time" content="2016-07-11" />
+        <meta property="og:title" content="Pyslvs 路徑處理"/>
+        <meta property="og:url" content="http://project.mde.tw/blog/pyslvs-lu-jing-chu-li.html"/>
+        <meta property="og:description" content="Pyslvs 開發進度 支援匯入與處理演算法路徑 簡單處理演算法路徑座標點功能 演算法名詞解釋 模組授權整理"/>
+        <meta property="article:published_time" content="2017-07-20" />
             <meta property="article:section" content="2016bg2" />
-            <meta property="article:tag" content="Kmol" />
-            <meta property="article:author" content="40323218" />
+            <meta property="article:tag" content="Pyslvs" />
+            <meta property="article:author" content="40323230" />
 
 
     <!-- Bootstrap -->
@@ -156,10 +156,10 @@ li {
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://project.mde.tw/blog/40323218ri-zhi-1050711.html"
+                    <a href="http://project.mde.tw/blog/pyslvs-lu-jing-chu-li.html"
                        rel="bookmark"
-                       title="Permalink to 40323218日誌 - 105/07/11">
-                        40323218日誌 - 105/07/11
+                       title="Permalink to Pyslvs 路徑處理">
+                        Pyslvs 路徑處理
                     </a>
                 </h1>
             </header>
@@ -169,50 +169,68 @@ li {
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-07-11T20:37:00+08:00"> Mon 11 July 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-07-20T21:00:00+08:00"> Thu 20 July 2017</time>
     </span>
             <span class="label label-default">By</span>
-            <a href="http://project.mde.tw/blog/author/40323218.html"><i class="fa fa-user"></i> 40323218</a>
+            <a href="http://project.mde.tw/blog/author/40323230.html"><i class="fa fa-user"></i> 40323230</a>
 
 
 
 <span class="label label-default">Tags</span>
-	<a href="http://project.mde.tw/blog/tag/kmol.html">Kmol</a>
+	<a href="http://project.mde.tw/blog/tag/pyslvs.html">Pyslvs</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>V-rep</p>
+                <p>Pyslvs 開發進度</p>
+<ul>
+<li>
+<p>支援匯入與處理演算法路徑</p>
+</li>
+<li>
+<p>簡單處理演算法路徑座標點功能</p>
+</li>
+<li>
+<p>演算法名詞解釋</p>
+</li>
+<li>
+<p>模組授權整理</p>
+</li>
+</ul>
 
 
-<h4>嘗試四連桿機構</h4>
-
-<p><br></p>
-<h1><h3>理想狀態：</h3></h1>
-<h1><br></h1>
-<h3>前期嘗試：</h3>
-
-<p><br>
-<img src="http://coursemdetw.github.io/project_site_files/files/2016spring/g2/40323218/before.gif" weight=600 >
-<br>
-<h3>前期階級排列：</h3>
-<br>
-<img src="http://coursemdetw.github.io/project_site_files/files/2016spring/g2/40323218/step10.png" weight=600 >
-<br>
-<h3>查詢資料：</h3>
-<br>
-<img src="http://coursemdetw.github.io/project_site_files/files/2016spring/g2/40323218/step11.png" weight=600 >
-<br>
-<h3>(在兩個dynamic item之間不能有static item)</h3>
-<br>
-<h3>修改後：</h3>
-<br>
-<img src="http://coursemdetw.github.io/project_site_files/files/2016spring/g2/40323218/step12.png" weight=600 >
-<br>
-<img src="http://coursemdetw.github.io/project_site_files/files/2016spring/g2/40323218/after.gif" weight=600 >
-<br>
-<h3>未來嘗試：製作搖擺機構</h3>
-<br>
-<h3>參考網站：http://www.coppeliarobotics.com/helpFiles/en/jointDescription.htm </h3></p>
+<h1>讀取方式</h1>
+<p>讀取的格式有 CSV 逗號分隔ˊ值與 Microsoft Office Excel 試算表，前者使用 Python 內建模組讀取，後者使用 openpyxl 模組讀取。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_07_20_01.png"></p>
+<p>所有讀入值只會取到小數 4 位，而其中若為非正確格式，會跳出警告視窗並取消讀入。</p>
+<p>另外若是有 Pyslvs 現成的路徑數據，可以複製到剪貼簿後直接用右鍵選單貼上。</p>
+<h1>路徑處理</h1>
+<p>路徑處理功能可以做簡單的座標點修正，目前有移動與指定點縮放功能。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_07_20_02.png"></p>
+<p>之後會加入以下功能：</p>
+<ol>
+<li>
+<p>模糊化：協助減少點數目。</p>
+</li>
+<li>
+<p>旋轉：沿著參考點（或圖形中心）旋轉路徑。</p>
+</li>
+</ol>
+<h1>演算法名詞解釋</h1>
+<p>Pyslvs 之後會在設定介面中加入三種演算法名詞解釋，協助使用者變動參數。</p>
+<h1>模組授權整理</h1>
+<p>Made by [Qt5] and Python IDE <a href="http://eric-ide.python-projects.org/">Eric 6</a>.</p>
+<p>Including Python module:</p>
+<ul>
+<li><a href="https://riverbankcomputing.com/software/sip/download">SIP</a> (GPLv2, GPLv3)</li>
+<li><a href="https://riverbankcomputing.com/software/qscintilla/download">QScintilla2</a> (GPLv3)</li>
+<li><a href="https://www.riverbankcomputing.com/software/pyqt/download5">PyQt5</a>, <a href="https://www.riverbankcomputing.com/software/pyqtchart/download">PyQtChart</a> (GPLv3)</li>
+<li><a href="https://pypi.python.org/pypi/dxfwrite/">dxfwrite</a> (MIT)</li>
+<li><a href="http://www.numpy.org/">numpy</a> (BSD 3-Clause)</li>
+<li><a href="http://cython.org/">Cython</a> (Apache 2.0)</li>
+<li><a href="http://zeromq.org/bindings:python">PyZMQ</a> (New BSD 3-Clause, LGPL, Apache)</li>
+<li><a href="http://openpyxl.readthedocs.io/">openpyxl</a> (MIT)</li>
+</ul>
+<p>Pyslvs is under <a href="https://github.com/KmolYuan/Pyslvs-PyQt5/blob/master/LICENSE">GNU Affero General Public License v3</a>.</p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -224,8 +242,8 @@ li {
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'projectmdetw'; // required: replace example with your forum shortname
 
-                    var disqus_identifier = '40323218ri-zhi-1050711';
-                var disqus_url = 'http://project.mde.tw/blog/40323218ri-zhi-1050711.html';
+                    var disqus_identifier = 'pyslvs-lu-jing-chu-li';
+                var disqus_url = 'http://project.mde.tw/blog/pyslvs-lu-jing-chu-li.html';
 
             var disqus_config = function () {
                 this.language = "en";
