@@ -191,7 +191,7 @@ li {
 <h1>Pyslvs 開發進度</h1>
 <h2>演算法收斂圖</h2>
 <p>加入 matplotlib 繪出的收斂圖。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0427_01.png"></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0427_01.png" /></p>
 <p>其中因為用到了 matplotlib 的檔案，導致 Ubuntu 的 PyInstaller 會包到整個 Python 模組，甚至比 Windows 版大更多，考慮把 matplotlib 換成其他方式呈現，或是其他減少體積的解決辦法。</p>
 <p>目前首選應該是同為 Qt 附屬的 QChart，對應到套件 <a href="https://www.riverbankcomputing.com/software/pyqtchart/download/" title="riverbankcomputing.com">PyQtChart 5.8</a>，安裝這個 Python 的 bundle 後即可使用，雙平台皆可安裝（Linux 版仍要手動 build），體積相對不會太大，能製作更美觀的圖表。</p>
 <p>由於之後速度分析也要使用圖表，所以解決繪圖問題為當務之急。</p>
@@ -243,6 +243,11 @@ li {
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/python-basic-and-install-eric6.html">
+                            Python basic and install eric6
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyslvs-lu-jing-chu-li.html">
                             Pyslvs 路徑處理
                         </a>
@@ -260,11 +265,6 @@ li {
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/opencvdong-tai-zhen-ce-1060714.html">
                             Opencv動態偵測 - 106/07/14
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/opencvdong-tai-zhen-ce.html">
-                            Opencv動態偵測
                         </a>
                     </li>
                 </ul>
