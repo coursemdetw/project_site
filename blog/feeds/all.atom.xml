@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-21T20:00:00+08:00</updated><entry><title>modelica - 106/07/21</title><link href="http://project.mde.tw/blog/modelica-1060721.html" rel="alternate"></link><published>2017-07-21T20:00:00+08:00</published><updated>2017-07-21T20:00:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-21:/blog/modelica-1060721.html</id><summary type="html">&lt;ol&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-22T21:00:00+08:00</updated><entry><title>Pyslvs 演算法結果預覽</title><link href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-jie-guo-yu-lan.html" rel="alternate"></link><published>2017-07-22T21:00:00+08:00</published><updated>2017-07-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-22:/blog/pyslvs-yan-suan-fa-jie-guo-yu-lan.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;演算法結果動態預覽&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;路徑模糊化&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;演算法結果動態預覽&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;路徑模糊化&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;動態預覽&lt;/h1&gt;
+&lt;p&gt;所有演算法的有效合成結果皆可在彈出視窗中預覽。&lt;/p&gt;
+&lt;p&gt;滑鼠游標懸至結果上方可以呈現數據，點擊一下可以套用設定，點擊兩下可以在視窗中呈現動態預覽。&lt;/p&gt;
+&lt;iframe width="854" height="480" src="https://www.youtube.com/embed/QeA_2BZYotA" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h1&gt;路徑模糊化&lt;/h1&gt;
+&lt;p&gt;若在 Pyslvs 中有一現成路徑的點資料，可以透過剪貼簿將路徑追蹤的結果複製下來，貼到路徑解題的清單中。&lt;/p&gt;
+&lt;p&gt;由於數據量較大，不利於演算法驗證，可以使用處理工具的「模糊化」將點數目減少。&lt;/p&gt;
+&lt;iframe width="854" height="480" src="https://www.youtube.com/embed/gudE4DRbWVo" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="Pyslvs"></category></entry><entry><title>modelica - 106/07/21</title><link href="http://project.mde.tw/blog/modelica-1060721.html" rel="alternate"></link><published>2017-07-21T20:00:00+08:00</published><updated>2017-07-21T20:00:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-21:/blog/modelica-1060721.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;討論項目&lt;/p&gt;
 &lt;ul&gt;
@@ -76,7 +104,7 @@
 
 
 &lt;h1&gt;讀取方式&lt;/h1&gt;
-&lt;p&gt;讀取的格式有 CSV 逗號分隔ˊ值與 Microsoft Office Excel 試算表，前者使用 Python 內建模組讀取，後者使用 openpyxl 模組讀取。&lt;/p&gt;
+&lt;p&gt;讀取的格式有 CSV 逗號分隔值與 Microsoft Office Excel 試算表，前者使用 Python 內建模組讀取，後者使用 openpyxl 模組讀取。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_07_20_01.png"&gt;&lt;/p&gt;
 &lt;p&gt;所有讀入值只會取到小數 4 位，而其中若為非正確格式，會跳出警告視窗並取消讀入。&lt;/p&gt;
 &lt;p&gt;另外若是有 Pyslvs 現成的路徑數據，可以複製到剪貼簿後直接用右鍵選單貼上。&lt;/p&gt;
