@@ -1,50 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-23T21:00:00+08:00</updated><entry><title>Pyslvs 的 ZMQ 防止連線中斷</title><link href="http://project.mde.tw/blog/pyslvs-de-zmq-fang-zhi-lian-xian-zhong-duan.html" rel="alternate"></link><published>2017-07-23T21:00:00+08:00</published><updated>2017-07-23T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-23:/blog/pyslvs-de-zmq-fang-zhi-lian-xian-zhong-duan.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;改善 Server  突然關閉的狀況&lt;/li&gt;
-&lt;/ul&gt;
-</summary><content type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;改善 Server  突然關閉的狀況&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;h1&gt;ZMQ 防止連線中斷&lt;/h1&gt;
-&lt;p&gt;使用 PyZMQ 提供的 Poll 類型檢測連線狀況：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Client&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-import zmq
-context = zmq.Context()
-
-socket_port = "tcp://localhost:8000"
-
-socket = context.socket(zmq.REQ)
-socket.bind(socket_port)
-poll = zmq.Poller()
-poll.register(self.socket, zmq.POLLIN)
-while True:
-    if socket.closed: #Reconnecting
-        socket = context.socket(zmq.REQ)
-        socket.bind(socket_port)
-        poll.register(socket, zmq.POLLIN)
-    socket.send_string("Hello!")
-    while True:
-        socks = dict(poll.poll(100))
-        if socks.get(socket)==zmq.POLLIN:
-            """Connected."""
-            return socket.recv()
-        else:
-            """Connection interrupt."""
-            socket.setsockopt(zmq.LINGER, 0)
-            socket.close()
-            poll.unregister(socket) #Socket will be deleted.
-            return my_fun()
-&lt;/pre&gt;
-
-&lt;p&gt;上面的程式碼中，若是沒有關閉 socket 或是斷線沒有重新連接，ZMQ 皆會回傳 Exception。&lt;/p&gt;
-&lt;p&gt;主要是解決 Server 中途斷線導致程式中斷，會自行運算彌補。&lt;/p&gt;
-&lt;p&gt;不過如果全部 Server 離線，Client 端仍會繼續等待 Server 連進來，會想辦法解決。&lt;/p&gt;
-&lt;p&gt;再來就是 Python 執行速度問題，Python 演算法要再改寫並優化，接下來會針對三種演算法加以改良。&lt;/p&gt;</content><category term="Pyslvs"></category><category term="ZMQ"></category></entry><entry><title>Pyslvs 演算法結果預覽</title><link href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-jie-guo-yu-lan.html" rel="alternate"></link><published>2017-07-22T21:00:00+08:00</published><updated>2017-07-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-22:/blog/pyslvs-yan-suan-fa-jie-guo-yu-lan.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-22T21:00:00+08:00</updated><entry><title>Pyslvs 演算法結果預覽</title><link href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-jie-guo-yu-lan.html" rel="alternate"></link><published>2017-07-22T21:00:00+08:00</published><updated>2017-07-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-22:/blog/pyslvs-yan-suan-fa-jie-guo-yu-lan.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;演算法結果動態預覽&lt;/p&gt;
@@ -72,7 +27,69 @@ while True:
 &lt;h1&gt;路徑模糊化&lt;/h1&gt;
 &lt;p&gt;若在 Pyslvs 中有一現成路徑的點資料，可以透過剪貼簿將路徑追蹤的結果複製下來，貼到路徑解題的清單中。&lt;/p&gt;
 &lt;p&gt;由於數據量較大，不利於演算法驗證，可以使用處理工具的「模糊化」將點數目減少。&lt;/p&gt;
-&lt;iframe width="854" height="480" src="https://www.youtube.com/embed/gudE4DRbWVo" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="Pyslvs"></category></entry><entry><title>modelica - 106/07/21</title><link href="http://project.mde.tw/blog/modelica-1060721.html" rel="alternate"></link><published>2017-07-21T20:00:00+08:00</published><updated>2017-07-21T20:00:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-21:/blog/modelica-1060721.html</id><summary type="html">&lt;ol&gt;
+&lt;iframe width="854" height="480" src="https://www.youtube.com/embed/gudE4DRbWVo" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="Pyslvs"></category></entry><entry><title>chrono - 106/07/23</title><link href="http://project.mde.tw/blog/chrono-1060723.html" rel="alternate"></link><published>2017-07-21T20:00:00+08:00</published><updated>2017-07-21T20:00:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-21:/blog/chrono-1060723.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;討論項目&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;chrono 討論事宜&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;幾個小型範例&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;討論項目&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;chrono 討論事宜&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;幾個小型範例&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;-chrono 討論事宜&lt;/p&gt;
+&lt;p&gt;chrono 是一款開源的多重物理引擎，支援多種模擬方法。&lt;/p&gt;
+&lt;p&gt;V-rep 與 chrono ODE(open dynamic system) ，目前市面上開源的模擬引擎，有非常多種可以進行模擬，相對高階的模擬是 V-rep 並且支援圖形化介面進行模擬，也有反向運動學等工具，進行推算設計出的機台的數學方程式。&lt;/p&gt;
+&lt;p&gt;在 chrono 中有提到，他們並沒有開發圖形化介面給使用者使用，而是純粹的 C++ kernel for user，使用者可以使用 C++ 或者其他語言使用核心進行計算模擬分析，同時也支援 swig 轉出 python 端口進行控制，作者群有說明，並沒有所有的函式庫都包含於 python 端，有部份的方式是給純 C++ 的使用者。&lt;/p&gt;
+&lt;p&gt;討論事宜:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;是否要繼續使用 chrono 或者從頭研究 V-rep&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;編譯過程，目前是參考官網所提供的方式使用 Cmake 來進行， Win 的部份是使用 VS 進行編譯，Linux 系統目前尚未編譯成功，這部份還需要測試以及研究。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;-小型範例&lt;/p&gt;
+&lt;p&gt;chrono 的操作方式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;建立系統 (NSC or SC)&lt;/li&gt;
+&lt;li&gt;建立物件(ChBody())&lt;/li&gt;
+&lt;li&gt;設定軸物件(ChCylinderShape)&lt;/li&gt;
+&lt;li&gt;設定旋轉對(ChLinkLockRevolute())&lt;/li&gt;
+&lt;li&gt;將上方所有物件都加入系統(system.add())&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;上方的座標系統都是使用向量表示，包括建模型以及設定相關物件位置、軸的相關位置、物件生成位置，都是使用向量來進行運算。&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://api.projectchrono.org/3.0.0/coordinate_transformations.html"&gt;chrono向量表示法&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;&lt;a href="http://api.projectchrono.org/3.0.0/coordinate_transformations.html#manual_ChQuaternion"&gt;chrono Quaternions&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;&lt;a href="http://api.projectchrono.org/3.0.0/rigid_bodies.html"&gt;Rigid Bodies&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://api.projectchrono.org/3.0.0/collision_shapes.html"&gt;collision_shapes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://api.projectchrono.org/3.0.0/visualization_assets.html"&gt;visualization_assets&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://api.projectchrono.org/3.0.0/simulation_system.html"&gt;Somulation System&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;單擺系統&lt;/p&gt;
+&lt;p&gt;建立兩個連桿，進行單擺運動，設重力為 9.8 向下，設定時間進行模擬，並回傳數值。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/modelica/testconfig.JPG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;物件建立&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/modelica/objectbuild.JPG?raw=true"&gt;&lt;/p&gt;</content><category term="chrono"></category></entry><entry><title>modelica - 106/07/21</title><link href="http://project.mde.tw/blog/modelica-1060721.html" rel="alternate"></link><published>2017-07-21T20:00:00+08:00</published><updated>2017-07-21T20:00:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-21:/blog/modelica-1060721.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;討論項目&lt;/p&gt;
 &lt;ul&gt;
