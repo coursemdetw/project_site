@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-22T21:00:00+08:00</updated><entry><title>Pyslvs 演算法結果預覽</title><link href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-jie-guo-yu-lan.html" rel="alternate"></link><published>2017-07-22T21:00:00+08:00</published><updated>2017-07-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-22:/blog/pyslvs-yan-suan-fa-jie-guo-yu-lan.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-23T21:00:00+08:00</updated><entry><title>Pyslvs 的 ZMQ 防止連線中斷</title><link href="http://project.mde.tw/blog/pyslvs-de-zmq-fang-zhi-lian-xian-zhong-duan.html" rel="alternate"></link><published>2017-07-23T21:00:00+08:00</published><updated>2017-07-23T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-23:/blog/pyslvs-de-zmq-fang-zhi-lian-xian-zhong-duan.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;改善 Server  突然關閉的狀況&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;改善 Server  突然關閉的狀況&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;ZMQ 防止連線中斷&lt;/h1&gt;
+&lt;p&gt;使用 PyZMQ 提供的 Poll 類型檢測連線狀況：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Client&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+import zmq
+context = zmq.Context()
+
+socket_port = "tcp://localhost:8000"
+
+socket = context.socket(zmq.REQ)
+socket.bind(socket_port)
+poll = zmq.Poller()
+poll.register(self.socket, zmq.POLLIN)
+while True:
+    if socket.closed: #Reconnecting
+        socket = context.socket(zmq.REQ)
+        socket.bind(socket_port)
+        poll.register(socket, zmq.POLLIN)
+    socket.send_string("Hello!")
+    while True:
+        socks = dict(poll.poll(100))
+        if socks.get(socket)==zmq.POLLIN:
+            """Connected."""
+            return socket.recv()
+        else:
+            """Connection interrupt."""
+            socket.setsockopt(zmq.LINGER, 0)
+            socket.close()
+            poll.unregister(socket) #Socket will be deleted.
+            return my_fun()
+&lt;/pre&gt;
+
+&lt;p&gt;上面的程式碼中，若是沒有關閉 socket 或是斷線沒有重新連接，ZMQ 皆會回傳 Exception。&lt;/p&gt;
+&lt;p&gt;主要是解決 Server 中途斷線導致程式中斷，會自行運算彌補。&lt;/p&gt;
+&lt;p&gt;不過如果全部 Server 離線，Client 端仍會繼續等待 Server 連進來，會想辦法解決。&lt;/p&gt;
+&lt;p&gt;再來就是 Python 執行速度問題，Python 演算法要再改寫並優化，接下來會針對三種演算法加以改良。&lt;/p&gt;</content><category term="Pyslvs"></category><category term="ZMQ"></category></entry><entry><title>Pyslvs 演算法結果預覽</title><link href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-jie-guo-yu-lan.html" rel="alternate"></link><published>2017-07-22T21:00:00+08:00</published><updated>2017-07-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-22:/blog/pyslvs-yan-suan-fa-jie-guo-yu-lan.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;演算法結果動態預覽&lt;/p&gt;
