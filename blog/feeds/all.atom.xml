@@ -1,33 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-22T21:00:00+08:00</updated><entry><title>Pyslvs 演算法結果預覽</title><link href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-jie-guo-yu-lan.html" rel="alternate"></link><published>2017-07-22T21:00:00+08:00</published><updated>2017-07-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-22:/blog/pyslvs-yan-suan-fa-jie-guo-yu-lan.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;演算法結果動態預覽&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;路徑模糊化&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</summary><content type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;演算法結果動態預覽&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;路徑模糊化&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;h1&gt;動態預覽&lt;/h1&gt;
-&lt;p&gt;所有演算法的有效合成結果皆可在彈出視窗中預覽。&lt;/p&gt;
-&lt;p&gt;滑鼠游標懸至結果上方可以呈現數據，點擊一下可以套用設定，點擊兩下可以在視窗中呈現動態預覽。&lt;/p&gt;
-&lt;iframe width="854" height="480" src="https://www.youtube.com/embed/QeA_2BZYotA" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
-
-&lt;h1&gt;路徑模糊化&lt;/h1&gt;
-&lt;p&gt;若在 Pyslvs 中有一現成路徑的點資料，可以透過剪貼簿將路徑追蹤的結果複製下來，貼到路徑解題的清單中。&lt;/p&gt;
-&lt;p&gt;由於數據量較大，不利於演算法驗證，可以使用處理工具的「模糊化」將點數目減少。&lt;/p&gt;
-&lt;iframe width="854" height="480" src="https://www.youtube.com/embed/gudE4DRbWVo" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="Pyslvs"></category></entry><entry><title>chrono - 106/07/23</title><link href="http://project.mde.tw/blog/chrono-1060723.html" rel="alternate"></link><published>2017-07-21T20:00:00+08:00</published><updated>2017-07-21T20:00:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-21:/blog/chrono-1060723.html</id><summary type="html">&lt;ol&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-23T23:30:00+08:00</updated><entry><title>chrono - 106/07/23</title><link href="http://project.mde.tw/blog/chrono-1060723.html" rel="alternate"></link><published>2017-07-23T23:30:00+08:00</published><updated>2017-07-23T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-23:/blog/chrono-1060723.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;討論項目&lt;/p&gt;
 &lt;ul&gt;
@@ -89,7 +61,35 @@
 &lt;p&gt;建立兩個連桿，進行單擺運動，設重力為 9.8 向下，設定時間進行模擬，並回傳數值。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/modelica/testconfig.JPG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;物件建立&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/modelica/objectbuild.JPG?raw=true"&gt;&lt;/p&gt;</content><category term="chrono"></category></entry><entry><title>modelica - 106/07/21</title><link href="http://project.mde.tw/blog/modelica-1060721.html" rel="alternate"></link><published>2017-07-21T20:00:00+08:00</published><updated>2017-07-21T20:00:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-21:/blog/modelica-1060721.html</id><summary type="html">&lt;ol&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/modelica/objectbuild.JPG?raw=true"&gt;&lt;/p&gt;</content><category term="chrono"></category></entry><entry><title>Pyslvs 演算法結果預覽</title><link href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-jie-guo-yu-lan.html" rel="alternate"></link><published>2017-07-22T21:00:00+08:00</published><updated>2017-07-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-22:/blog/pyslvs-yan-suan-fa-jie-guo-yu-lan.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;演算法結果動態預覽&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;路徑模糊化&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;演算法結果動態預覽&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;路徑模糊化&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;動態預覽&lt;/h1&gt;
+&lt;p&gt;所有演算法的有效合成結果皆可在彈出視窗中預覽。&lt;/p&gt;
+&lt;p&gt;滑鼠游標懸至結果上方可以呈現數據，點擊一下可以套用設定，點擊兩下可以在視窗中呈現動態預覽。&lt;/p&gt;
+&lt;iframe width="854" height="480" src="https://www.youtube.com/embed/QeA_2BZYotA" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h1&gt;路徑模糊化&lt;/h1&gt;
+&lt;p&gt;若在 Pyslvs 中有一現成路徑的點資料，可以透過剪貼簿將路徑追蹤的結果複製下來，貼到路徑解題的清單中。&lt;/p&gt;
+&lt;p&gt;由於數據量較大，不利於演算法驗證，可以使用處理工具的「模糊化」將點數目減少。&lt;/p&gt;
+&lt;iframe width="854" height="480" src="https://www.youtube.com/embed/gudE4DRbWVo" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="Pyslvs"></category></entry><entry><title>modelica - 106/07/21</title><link href="http://project.mde.tw/blog/modelica-1060721.html" rel="alternate"></link><published>2017-07-21T20:00:00+08:00</published><updated>2017-07-21T20:00:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-21:/blog/modelica-1060721.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;討論項目&lt;/p&gt;
 &lt;ul&gt;
