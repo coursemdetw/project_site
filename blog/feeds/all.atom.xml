@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-23T23:30:00+08:00</updated><entry><title>chrono - 106/07/23</title><link href="http://project.mde.tw/blog/chrono-1060723.html" rel="alternate"></link><published>2017-07-23T23:30:00+08:00</published><updated>2017-07-23T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-23:/blog/chrono-1060723.html</id><summary type="html">&lt;ol&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-24T21:00:00+08:00</updated><entry><title>Pyslvs 演算法圖表</title><link href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-tu-biao.html" rel="alternate"></link><published>2017-07-24T21:00:00+08:00</published><updated>2017-07-24T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-24:/blog/pyslvs-yan-suan-fa-tu-biao.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;新增 fitness - time 圖表&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;新增 fitness - time 圖表&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;時間收斂圖&lt;/h1&gt;
+&lt;p&gt;新增了時間收斂圖，以時間為 x 軸分析結果，由於以前篩選資料時沒納入時間，所以稍微改了一下程式結構。&lt;/p&gt;
+&lt;p&gt;不過可能是只取整數的關係，圖表呈現如下：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_07_24_01.png"&gt;&lt;/p&gt;
+&lt;p&gt;經調整 Cython 中的時間值後，將 &lt;code&gt;int&lt;/code&gt; 改成 &lt;code&gt;double&lt;/code&gt; 以合理化。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_07_24_02.png"&gt;&lt;/p&gt;
+&lt;p&gt;之後可能在增加代數 - 時間的圖表，以比較運算得出的時間差。&lt;/p&gt;</content><category term="Pyslvs"></category><category term="ZMQ"></category></entry><entry><title>chrono - 106/07/23</title><link href="http://project.mde.tw/blog/chrono-1060723.html" rel="alternate"></link><published>2017-07-23T23:30:00+08:00</published><updated>2017-07-23T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-23:/blog/chrono-1060723.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;討論項目&lt;/p&gt;
 &lt;ul&gt;
