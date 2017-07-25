@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>40323218日誌 - 105/07/14 - 機械設計專題 (虎尾科大MDE)</title>
+    <title>Python basic "The Calculate" - 機械設計專題 (虎尾科大MDE)</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -10,21 +10,21 @@
 
 
 
-<link rel="canonical" href="http://project.mde.tw/blog/40323218ri-zhi-1050714.html">
+<link rel="canonical" href="http://project.mde.tw/blog/python-basic-the-calculate.html">
 
-        <meta name="author" content="40323218" />
-        <meta name="keywords" content="Kmol" />
-        <meta name="description" content="V-rep" />
+        <meta name="author" content="40423152" />
+        <meta name="keywords" content="暑期學習" />
+        <meta name="description" content="在實驗室已重新灌window系統的電腦上安裝以及撰寫計算機程式" />
 
         <meta property="og:site_name" content="機械設計專題 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="40323218日誌 - 105/07/14"/>
-        <meta property="og:url" content="http://project.mde.tw/blog/40323218ri-zhi-1050714.html"/>
-        <meta property="og:description" content="V-rep"/>
-        <meta property="article:published_time" content="2016-07-14" />
-            <meta property="article:section" content="2016bg2" />
-            <meta property="article:tag" content="Kmol" />
-            <meta property="article:author" content="40323218" />
+        <meta property="og:title" content="Python basic &#34;The Calculate&#34;"/>
+        <meta property="og:url" content="http://project.mde.tw/blog/python-basic-the-calculate.html"/>
+        <meta property="og:description" content="在實驗室已重新灌window系統的電腦上安裝以及撰寫計算機程式"/>
+        <meta property="article:published_time" content="2017-07-25" />
+            <meta property="article:section" content="2017" />
+            <meta property="article:tag" content="暑期學習" />
+            <meta property="article:author" content="40423152" />
 
 
     <!-- Bootstrap -->
@@ -115,7 +115,7 @@ li {
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                     <li><a href="/blog/pages/about/">About</a></li>
-                        <li class="active">
+                        <li >
                             <a href="http://project.mde.tw/blog/category/2016bg2.html">2016bg2</a>
                         </li>
                         <li >
@@ -124,7 +124,7 @@ li {
                         <li >
                             <a href="http://project.mde.tw/blog/category/2016g3.html">2016g3</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="http://project.mde.tw/blog/category/2017.html">2017</a>
                         </li>
                         <li >
@@ -156,10 +156,10 @@ li {
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://project.mde.tw/blog/40323218ri-zhi-1050714.html"
+                    <a href="http://project.mde.tw/blog/python-basic-the-calculate.html"
                        rel="bookmark"
-                       title="Permalink to 40323218日誌 - 105/07/14">
-                        40323218日誌 - 105/07/14
+                       title="Permalink to Python basic "The Calculate"">
+                        Python basic "The Calculate"
                     </a>
                 </h1>
             </header>
@@ -169,107 +169,164 @@ li {
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-07-14T20:37:00+08:00"> Thu 14 July 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-07-25T09:00:00+08:00"> Tue 25 July 2017</time>
     </span>
             <span class="label label-default">By</span>
-            <a href="http://project.mde.tw/blog/author/40323218.html"><i class="fa fa-user"></i> 40323218</a>
+            <a href="http://project.mde.tw/blog/author/40423152.html"><i class="fa fa-user"></i> 40423152</a>
 
 
 
 <span class="label label-default">Tags</span>
-	<a href="http://project.mde.tw/blog/tag/kmol.html">Kmol</a>
+	<a href="http://project.mde.tw/blog/tag/shu-qi-xue-xi.html">暑期學習</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>V-rep</p>
+                <p>在實驗室已重新灌window系統的電腦上安裝以及撰寫計算機程式</p>
 
 
-<h2>翻譯文章重點</h2>
+<p>有上次的經驗這次安裝過程快了很多</p>
+<p>不過實驗室的電腦所鳩收到的網路速度沒有破過200kB </p>
+<p>所以安裝Qt的過程是從昨天開始</p>
+<p>讓電腦在實驗室跑了一天</p>
+<p>今日安裝完成後</p>
+<p>學長有教學關於class的概念</p>
+<pre class="brush: python">
+class dog:
+    def __init__(self):
+        print("GG!")
 
-<p><br>
-<h2>原文章網址：</h2>
-<p><a href="http://www.coppeliarobotics.com/helpFiles/en/buildingAModelTutorial.htm ">http://www.coppeliarobotics.com/helpFiles/en/buildingAModelTutorial.htm </a></p> 
-<br>
-<h2>Building the visible shapes：</h2>
-<br>
-<h3>1. Automatic mesh division：<br>
-[Menu bar --&gt; Edit --&gt; Grouping/Merging --&gt; Divide selected shapes]<br>
-(自動分割物件，有時候會無作用)<br>
-[Menu bar --&gt; Edit -&gt; Grouping/Merging --&gt; Merge selected shapes]<br>(使選擇的物件組合在一起)</h3>
-<br>
-<h3>2. Extract the convex hull：<br>
-[Menu bar --&gt; Edit --&gt; Morph selection into convex shapes]<br>
-(使物件轉換成convex hull)</h3>
-<br>
-<h3>3. Decimate the mesh：<br>
-[Menu bar --&gt; Edit --&gt; Decimate selected shape...]<br>
-(減少mesh三角形量)</h3>
-<br>
-<h3>4. Remove the inside of the mesh：<br>
-[Menu bar --&gt; Edit --&gt; Extract inside of selected shape]<br>
-(此功能是基於視覺傳感器，可以依靠設定得到更多或更少滿意的結果。)</h3>
-<br>
-<h3>上述功能沒有先後順序(除了第一項應該先嘗試)，主要取決於我們如何嘗試精簡mesh。</h3>
-<br>
-<h3>下圖說明上述功能應用到imported mesh（沒有第一項）：</h3>
-<br>
-<img src="http://coursemdetw.github.io/project_site_files/files/2016spring/g2/40323218/vrep1.png" weight=600 >
-<br>
-<h3>再來我們要分割imported mesh，有兩種方式可使用。<br><br>
-1. Automatic mesh division：跟上面一樣
-<br>
-2. Manual mesh division：這使用 triangle edit mode (左邊功能列第六個)，選擇你要的物體的三角形，再點 Extract shape，他會投影物件出來，再把原先選擇的三角形刪除。</h3>
-<br>
-<h2>Building the joints</h2><br>
-<h3>再來我們要創建 joint，先 import mesh，使用 triangle edit mode 使物件三角形化。</h3>
-<img src="http://coursemdetw.github.io/project_site_files/files/2016spring/g2/40323218/vrep2.png" weight=600 >
-<br>
-<h3>我們需要使 joint 在圓心中間，所以我們點選圓形的三角形，點選 Extract cylinder 或 Extract shape ，他會在選擇的三角形上投影一個圓形出來。</h3>
-<br>
-<h3> 右鍵→Add→Joint→Revolute(創建一個Revolute joint)，
-再來我們點Revolute joint、Ctrl點投影的圓型，點 Position/Translation 按鈕，然後在 Object/item position section裡，我們點 Apply to selection (使兩物體位置相同)。再來我們點Orientation/Rotation 按鈕，然後在Object/item orientation section裡，我們點 Apply to selection(使兩物體坐標軸相同)。</h3>
-<br>
-<img src="http://coursemdetw.github.io/project_site_files/files/2016spring/g2/40323218/vrep3.png" weight=600 >
-<img src="http://coursemdetw.github.io/project_site_files/files/2016spring/g2/40323218/vrep4.png" weight=600 >
-<br>
-<h2>Building the dynamic shapes</h2>
-<br>
-<h3>如果我們想要使 Robot 作動，那麼我們就需要適當地創建/配置形狀。形狀可以是：<br><br>
-1. dynamic or static：<br>
-dynamic 是動態，如果這個形狀是動態的，它將會有重量會往下掉，也會對力/力矩造成影響。<br>
-static是靜態，他跟 dynamic 相反，他會固定在位置上或隨著
-運動移動。<br><br>
-2. respondable or non-respondable：<br>
-respondable shape 是會跟其他的 respondable shape 造成碰撞效應，他們或其對撞機，將會影響其運動(如果它們是動態的) 。<br>non-respondable shapes 是相反，他們不會造成碰撞運動。</h3>
-<br>
-<h3>respondable shape應盡可能簡單，以允許快速和穩定的模擬。一個物理引擎將能夠模擬以下5種不同程度的速度和穩定的形狀：</h3>
-<br>
-<h3>1. Pure shapes：<br>
- [Menu bar --&gt; Add --&gt; Primitive shape]<br>
-一個Pure shapes是穩定的，並由物理引擎非常有效地處理。Pure shapes在幾何限制：大部分長方體，圓柱體或球體。<br>
-<br>
-2. Pure compound shapes：<br>
- [Menu bar --&gt; Edit --&gt; Grouping/Merging --&gt; Group selected shapes]<br>
-它是由多個Pure shape組合而成的，功能跟Pure shape雷同。
-<br>
-<br>
-3. Convex shapes：<br>
-[Menu bar --&gt; Add --&gt; Convex hull of selection] <br>
-[Menu bar --&gt; Edit --&gt; Morph selection into convex shapes]<br>
-Convex shapes會有點不太穩定，當物理引擎處理時需要多一點點計算時間。它允許一個比純形狀更一般的幾何形狀（唯一的要求：它必須是 convex）。
-<br>
-<br>
-4. Compound convex shapes, or convex decomposed shapes<br>
- [Menu bar --&gt; Edit --&gt; Grouping/Merging --&gt; Group selected shapes]<br>
-[Menu bar --&gt; Add --&gt; Convex decomposition of selection...]<br>
-[Menu bar --&gt; Edit --&gt; Morph selection into its convex decomposition...]<br>
-它是由多個convex shapes組合而成的，功能跟convex shapes雷同。
-<br>
-<br>
-5. Random shapes：<br>
-一個Random shapes是一個形狀不是convex也不是pure。它一般具有性能差（計算速度和穩定性）。盡可能地避免使用隨機的形狀。</h3>
-<br>
-<h3>因此，優先順序是：pure shapes → pure compound shapes → convex shapes → compound convex shapes → random shapes。</h3><br></p>
+    def walk(self, x):
+        print("walk %d"%x)
+
+class black_dog(dog):
+    def __init__(self, a):
+        print(a)
+
+    def black_dog_walk(self, x):
+        print("black dog walk %d"%x)
+
+    def walk(self, x):
+        super(black_dog, self).walk(x)
+        self.black_dog_walk(x)
+
+BD = black_dog(10)
+BD.walk(5)
+</pre>
+
+<p>以上列的狗狗與黑狗跑幾步來說明</p>
+<p>"繼承"程式的概念</p>
+<p>並簡單展示了列應字串的基礎程式</p>
+<pre class="brush: python">
+# -*- coding: utf-8 -*-
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
+from Ui_test import Ui_MainWindow
+
+class MainWindow(QMainWindow, Ui_MainWindow):
+    def __init__(self, parent=None):
+        super(MainWindow, self).__init__(parent)
+        self.setupUi(self)
+
+    @pyqtSlot()
+    def on_AButton_clicked(self):
+        print("Hello world!")
+
+if __name__=='__main__':
+    import sys
+    app = QApplication(sys.argv)
+    run = MainWindow()
+    run.show()
+    sys.exit(app.exec_())
+
+</pre>
+
+<p>所有程式基礎最愛用字眼"Hello World"</p>
+<p>學長出了一個計算機的功課</p>
+<p>不過只要求我寫出有加法的即可</p>
+<p>但由於不熟悉</p>
+<p>只寫出部分功能</p>
+<pre class="brush: python">
+
+# -*- coding: utf-8 -*-
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
+from Ui_cal import Ui_MainWindow
+
+
+class MainWindow(QMainWindow, Ui_MainWindow): 
+    def __init__(self, parent=None):
+        super(MainWindow, self).__init__(parent)
+        self.setupUi(self)
+        self.floatMod = False
+
+    @pyqtSlot()
+    def on_one_clicked(self): self.add_num(1)
+    @pyqtSlot()
+    def on_seven_clicked(self): self.add_num(7)
+    @pyqtSlot()
+    def on_three_clicked(self): self.add_num(3)
+    @pyqtSlot()
+    def on_four_clicked(self): self.add_num(4)
+    @pyqtSlot()
+    def on_nine_clicked(self): self.add_num(9)
+    @pyqtSlot()
+    def on_six_clicked(self): self.add_num(6)
+    @pyqtSlot()
+    def on_five_clicked(self): self.add_num(5)
+    @pyqtSlot()
+    def on_two_clicked(self): self.add_num(2)
+    @pyqtSlot()
+    def on_eight_clicked(self): self.add_num(8)
+    @pyqtSlot()
+    def on_zero_clicked(self): self.add_num(0)
+
+    def add_num(self, x):
+        val = self.lcd.value()
+        if val==0:
+            self.lcd.display(x)
+        elif self.floatMod:
+            float_len = len(str(val).split('.')[-1])
+            self.lcd.display(val+x*10**-float_len)
+        else:
+            self.lcd.display(val*10+x)
+
+    @pyqtSlot()
+    def on_plus_clicked(self):
+        """
+        Slot documentation goes here.
+        """
+        # TODO: not implemented yet
+        raise NotImplementedError
+
+    @pyqtSlot()
+    def on_equal_clicked(self):
+        """
+        Slot documentation goes here.
+        """
+        # TODO: not implemented yet
+        raise NotImplementedError
+
+    @pyqtSlot()
+    def on_dot_clicked(self):
+        if self.floatMod==False:
+            self.floatMod = True
+
+if __name__=='__main__':
+    import sys
+    app = QApplication(sys.argv)
+    run = MainWindow()
+    run.show()
+    sys.exit(app.exec_())
+
+</pre>
+
+<p>最大重要問題</p>
+<p>小數點(del)屬Python的語言</p>
+<p>故不能取del為名稱</p>
+<p>程式圖樣</p>
+<p><a href="http://imgur.com/4TrCFzp"><img src="http://i.imgur.com/4TrCFzp.png" title="source: imgur.com" /></a></p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -281,8 +338,8 @@ Convex shapes會有點不太穩定，當物理引擎處理時需要多一點點�
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'projectmdetw'; // required: replace example with your forum shortname
 
-                    var disqus_identifier = '40323218ri-zhi-1050714';
-                var disqus_url = 'http://project.mde.tw/blog/40323218ri-zhi-1050714.html';
+                    var disqus_identifier = 'python-basic-the-calculate';
+                var disqus_url = 'http://project.mde.tw/blog/python-basic-the-calculate.html';
 
             var disqus_config = function () {
                 this.language = "en";

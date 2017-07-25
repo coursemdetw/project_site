@@ -1,6 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-21T09:00:00+08:00</updated><entry><title>Python basic and install eric6</title><link href="http://project.mde.tw/blog/python-basic-and-install-eric6.html" rel="alternate"></link><published>2017-07-21T09:00:00+08:00</published><updated>2017-07-21T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-07-21:/blog/python-basic-and-install-eric6.html</id><summary type="html">&lt;p&gt;暑假期間對於 python 最基礎的認識以及安裝編輯器&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;暑假期間對於 python 最基礎的認識以及安裝編輯器&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-25T09:00:00+08:00</updated><entry><title>Python basic "The Calculate"</title><link href="http://project.mde.tw/blog/python-basic-the-calculate.html" rel="alternate"></link><published>2017-07-25T09:00:00+08:00</published><updated>2017-07-25T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-07-25:blog/python-basic-the-calculate.html</id><summary type="html">&lt;p&gt;在實驗室已重新灌window系統的電腦上安裝以及撰寫計算機程式&lt;/p&gt;
+
+
+&lt;p&gt;有上次的經驗這次安裝過程快了很多&lt;/p&gt;
+&lt;p&gt;不過實驗室的電腦所鳩收到的網路速度沒有破過200kB &lt;/p&gt;
+&lt;p&gt;所以安裝Qt的過程是從昨天開始&lt;/p&gt;
+&lt;p&gt;讓電腦在實驗室跑了一天&lt;/p&gt;
+&lt;p&gt;今日安裝完成後&lt;/p&gt;
+&lt;p&gt;學長有教學關於class的概念&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class dog:
+    def __init__(self):
+        print("GG!")
+
+    def walk(self, x):
+        print("walk %d"%x)
+
+class black_dog(dog):
+    def __init__(self, a):
+        print(a)
+
+    def black_dog_walk(self, x):
+        print("black dog walk %d"%x)
+
+    def walk(self, x):
+        super(black_dog, self).walk(x)
+        self.black_dog_walk(x)
+
+BD = black_dog(10)
+BD.walk(5)
+&lt;/pre&gt;
+
+&lt;p&gt;以上列的狗狗與黑狗跑幾步來說明&lt;/p&gt;
+&lt;p&gt;"繼承"程式的概念&lt;/p&gt;
+&lt;p&gt;並簡單展示了列應字串的基礎程式&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+# -*- coding: utf-8 -*-
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
+from Ui_test import Ui_MainWindow
+
+class MainWindow(QMainWindow, Ui_MainWindow):
+    def __init__(self, parent=None):
+        super(MainWindow, self).__init__(parent)
+        self.setupUi(self)
+
+    @pyqtSlot()
+    def on_AButton_clicked(self):
+        print("Hello world!")
+
+if __name__=='__main__':
+    import sys
+    app = QApplication(sys.argv)
+    run = MainWindow()
+    run.show()
+    sys.exit(app.exec_())
+
+&lt;/pre&gt;
+
+&lt;p&gt;所有程式基礎最愛用字眼"Hello World"&lt;/p&gt;
+&lt;p&gt;學長出了一個計算機的功課&lt;/p&gt;
+&lt;p&gt;不過只要求我寫出有加法的即可&lt;/p&gt;
+&lt;p&gt;但由於不熟悉&lt;/p&gt;
+&lt;p&gt;只寫出部分功能&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+
+# -*- coding: utf-8 -*-
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
+from Ui_cal import Ui_MainWindow
+
+
+class MainWindow(QMainWindow, Ui_MainWindow): 
+    def __init__(self, parent=None):
+        super(MainWindow, self).__init__(parent)
+        self.setupUi(self)
+        self.floatMod = False
+
+    @pyqtSlot()
+    def on_one_clicked(self): self.add_num(1)
+    @pyqtSlot()
+    def on_seven_clicked(self): self.add_num(7)
+    @pyqtSlot()
+    def on_three_clicked(self): self.add_num(3)
+    @pyqtSlot()
+    def on_four_clicked(self): self.add_num(4)
+    @pyqtSlot()
+    def on_nine_clicked(self): self.add_num(9)
+    @pyqtSlot()
+    def on_six_clicked(self): self.add_num(6)
+    @pyqtSlot()
+    def on_five_clicked(self): self.add_num(5)
+    @pyqtSlot()
+    def on_two_clicked(self): self.add_num(2)
+    @pyqtSlot()
+    def on_eight_clicked(self): self.add_num(8)
+    @pyqtSlot()
+    def on_zero_clicked(self): self.add_num(0)
+
+    def add_num(self, x):
+        val = self.lcd.value()
+        if val==0:
+            self.lcd.display(x)
+        elif self.floatMod:
+            float_len = len(str(val).split('.')[-1])
+            self.lcd.display(val+x*10**-float_len)
+        else:
+            self.lcd.display(val*10+x)
+
+    @pyqtSlot()
+    def on_plus_clicked(self):
+        """
+        Slot documentation goes here.
+        """
+        # TODO: not implemented yet
+        raise NotImplementedError
+
+    @pyqtSlot()
+    def on_equal_clicked(self):
+        """
+        Slot documentation goes here.
+        """
+        # TODO: not implemented yet
+        raise NotImplementedError
+
+    @pyqtSlot()
+    def on_dot_clicked(self):
+        if self.floatMod==False:
+            self.floatMod = True
+
+if __name__=='__main__':
+    import sys
+    app = QApplication(sys.argv)
+    run = MainWindow()
+    run.show()
+    sys.exit(app.exec_())
+
+&lt;/pre&gt;
+
+&lt;p&gt;最大重要問題&lt;/p&gt;
+&lt;p&gt;小數點(del)屬Python的語言&lt;/p&gt;
+&lt;p&gt;故不能取del為名稱&lt;/p&gt;
+&lt;p&gt;程式圖樣&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://imgur.com/4TrCFzp"&gt;&lt;img src="http://i.imgur.com/4TrCFzp.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>Python basic and install eric6</title><link href="http://project.mde.tw/blog/python-basic-and-install-eric6.html" rel="alternate"></link><published>2017-07-21T09:00:00+08:00</published><updated>2017-07-21T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-07-21:blog/python-basic-and-install-eric6.html</id><summary type="html">&lt;p&gt;暑假期間對於 python 最基礎的認識以及安裝編輯器&lt;/p&gt;
 
 
 &lt;p&gt;今日安裝好&lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;3.6.2、Qt、PyQt以及Eric6 並請教學長關於Python的基礎。&lt;/p&gt;
@@ -9,8 +153,7 @@
 &lt;p&gt;&lt;a href="http://imgur.com/3rNThMi"&gt;&lt;img src="http://i.imgur.com/3rNThMi.jpg" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;iframe src="https://player.vimeo.com/video/226420771" width="640" height="985" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;&lt;a href="https://vimeo.com/226420771"&gt;錄製_2017_07_21_15_41_35_686.mp4&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>轉換基準的 Pull Requests</title><link href="http://project.mde.tw/blog/zhuan-huan-ji-zhun-de-pull-requests.html" rel="alternate"></link><published>2016-12-16T09:00:00+08:00</published><updated>2016-12-16T09:00:00+08:00</updated><author><name>scrum1</name></author><id>tag:project.mde.tw,2016-12-16:/blog/zhuan-huan-ji-zhun-de-pull-requests.html</id><summary type="html">&lt;p&gt;在 &lt;a href="yi-pull-requests-can-yu-wang-zhi-bian-ji.html"&gt;"以 Pull Requests 參與網誌編輯"&lt;/a&gt;文章中, scrum-1 學員已經成功利用 pull requests 機制參與機械設計專題網誌的編寫.&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;在 &lt;a href="yi-pull-requests-can-yu-wang-zhi-bian-ji.html"&gt;"以 Pull Requests 參與網誌編輯"&lt;/a&gt;文章中, scrum-1 學員已經成功利用 pull requests 機制參與機械設計專題網誌的編寫.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/226420771"&gt;錄製_2017_07_21_15_41_35_686.mp4&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>轉換基準的 Pull Requests</title><link href="http://project.mde.tw/blog/zhuan-huan-ji-zhun-de-pull-requests.html" rel="alternate"></link><published>2016-12-16T09:00:00+08:00</published><updated>2016-12-16T09:00:00+08:00</updated><author><name>scrum1</name></author><id>tag:project.mde.tw,2016-12-16:blog/zhuan-huan-ji-zhun-de-pull-requests.html</id><summary type="html">&lt;p&gt;在 &lt;a href="yi-pull-requests-can-yu-wang-zhi-bian-ji.html"&gt;"以 Pull Requests 參與網誌編輯"&lt;/a&gt;文章中, scrum-1 學員已經成功利用 pull requests 機制參與機械設計專題網誌的編寫.&lt;/p&gt;
 
 
 &lt;p&gt;此一利用 pull requests 參與倉儲改版的流程為:&lt;/p&gt;
@@ -31,8 +174,7 @@
 &lt;p&gt;根據下圖, 轉換基準的合併要求可以直接在線上進行, 不會產生衝突:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://coursemdetw.github.io/project_site_files/files/4042/scrum1/scrum-1_gh-pages_switching_base-2.png" width="600" /&gt;&lt;/p&gt;
 &lt;p&gt;最後, 如下圖所示, scrum-1 具有同意此一"轉換基準版本合併請求"的權限:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://coursemdetw.github.io/project_site_files/files/4042/scrum1/scrum-1_gh-pages_switching_base-3.png" width="600" /&gt;&lt;/p&gt;</content><category term="4042g1"></category><category term="Leo Editor"></category><category term="樣板"></category></entry><entry><title>以 Pull Requests 參與網誌編輯</title><link href="http://project.mde.tw/blog/yi-pull-requests-can-yu-wang-zhi-bian-ji.html" rel="alternate"></link><published>2016-12-15T09:00:00+08:00</published><updated>2016-12-15T09:00:00+08:00</updated><author><name>scrum1</name></author><id>tag:project.mde.tw,2016-12-15:/blog/yi-pull-requests-can-yu-wang-zhi-bian-ji.html</id><summary type="html">&lt;p&gt;&lt;a href="https://help.github.com/articles/about-pull-requests/"&gt;Pull Requests&lt;/a&gt; 是一種間接 git 倉儲改版的模式. 在此展示如何利用 github 的拉回請求, 以及 Leo Editor 專案檔案的建立, 對機械設計專題網誌新增文章.&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;a href="https://help.github.com/articles/about-pull-requests/"&gt;Pull Requests&lt;/a&gt; 是一種間接 git 倉儲改版的模式. 在此展示如何利用 github 的拉回請求, 以及 Leo Editor 專案檔案的建立, 對機械設計專題網誌新增文章.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://coursemdetw.github.io/project_site_files/files/4042/scrum1/scrum-1_gh-pages_switching_base-3.png" width="600" /&gt;&lt;/p&gt;</summary><category term="4042g1"></category><category term="Leo Editor"></category><category term="樣板"></category></entry><entry><title>以 Pull Requests 參與網誌編輯</title><link href="http://project.mde.tw/blog/yi-pull-requests-can-yu-wang-zhi-bian-ji.html" rel="alternate"></link><published>2016-12-15T09:00:00+08:00</published><updated>2016-12-15T09:00:00+08:00</updated><author><name>scrum1</name></author><id>tag:project.mde.tw,2016-12-15:blog/yi-pull-requests-can-yu-wang-zhi-bian-ji.html</id><summary type="html">&lt;p&gt;&lt;a href="https://help.github.com/articles/about-pull-requests/"&gt;Pull Requests&lt;/a&gt; 是一種間接 git 倉儲改版的模式. 在此展示如何利用 github 的拉回請求, 以及 Leo Editor 專案檔案的建立, 對機械設計專題網誌新增文章.&lt;/p&gt;
 
 
 &lt;h3&gt;Fork 倉儲&lt;/h3&gt;
@@ -58,4 +200,4 @@
 &lt;h3&gt;網誌提交推送&lt;/h3&gt;
 &lt;p&gt;一旦 scrum-1 學員完成 .md 的文章原始檔案編輯, 且透過近端 local-pelican 按鈕轉為 pelican 網誌 html 系統之後, 可以利用支援 IPv4 的 https-server 按鈕或支援 IPv6 的 ipv6-https-server 按鈕, 在近端以 https 檢視網誌後, 直接提交推送到 scrum-1 的 project_site 倉儲後進行 pull requests, 由於拉回請求的過程, 管理者除了必須納入 scrum-1 所新增的 .md 檔案外, 其餘都必須先在近端用 local-pelican 按鈕轉檔檢驗, 因此 scrum-1 無需在 pull requests 的流程中提交 gh-pages-pelican 按鈕所產生的遠端格式版本(多了 disqus 留言系統), 可以直接提交近端版本即可.&lt;/p&gt;
 &lt;p&gt;但是負責審核 pull requests 的管理學員, 除了在近端檢查機械設計專題的網誌改版內容之外, 必須記得在提交推送到 project_site 倉儲 gh-pages 分支之前, 利用 gh-pages-pelican 按鈕, 將 .md 檔案轉為遠端網誌格式, 否則 disqus 留言系統將無法正確呈現.&lt;/p&gt;
-&lt;p&gt;最後, scrum-1 學員一旦完成互刻 project_site 倉儲 gh-pages 分支的提交推送後, 即可針對 gh-pages 分支, 新增 pull requests, 接下來就是 project_site 倉儲管理端審核請求, 以及納入改版內容的流程.&lt;/p&gt;</content><category term="4042g1"></category><category term="Leo Editor"></category><category term="樣板"></category></entry></feed>
+&lt;p&gt;最後, scrum-1 學員一旦完成互刻 project_site 倉儲 gh-pages 分支的提交推送後, 即可針對 gh-pages 分支, 新增 pull requests, 接下來就是 project_site 倉儲管理端審核請求, 以及納入改版內容的流程.&lt;/p&gt;</summary><category term="4042g1"></category><category term="Leo Editor"></category><category term="樣板"></category></entry></feed>
