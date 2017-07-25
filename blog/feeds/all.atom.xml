@@ -98,8 +98,10 @@
 &lt;p&gt;Linux 部份可以直接利用 consol 進行編譯&lt;/p&gt;
 &lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
 2
-3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;+ cd 進入資料夾
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;+ cd 進入資料夾
 + 使用 **make** command
+
     ![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/chronoBuild/linuxbuild/build.JPG?raw=true)
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
