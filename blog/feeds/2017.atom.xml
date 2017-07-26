@@ -1,5 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-25T09:00:00+08:00</updated><entry><title>Python basic "The Calculate"</title><link href="http://project.mde.tw/blog/python-basic-the-calculate.html" rel="alternate"></link><published>2017-07-25T09:00:00+08:00</published><updated>2017-07-25T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-07-25:blog/python-basic-the-calculate.html</id><summary type="html">&lt;p&gt;在實驗室已重新灌window系統的電腦上安裝以及撰寫計算機程式&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-26T09:00:00+08:00</updated><entry><title>Python basic "The Calculate" simple ver.</title><link href="http://project.mde.tw/blog/python-basic-the-calculate-simple-ver.html" rel="alternate"></link><published>2017-07-26T09:00:00+08:00</published><updated>2017-07-26T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-07-26:blog/python-basic-the-calculate-simple-ver.html</id><summary type="html">&lt;p&gt;寫好了精簡版本的計算機程式&lt;/p&gt;
+
+
+&lt;p&gt;昨日的計算機程式今日改了介面並在學長的幫助下完成了&lt;/p&gt;
+&lt;p&gt;啟動程式&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
+from cal import MainWindow
+
+if __name__=='__main__':
+    import sys
+    app = QApplication(sys.argv)
+    run = MainWindow()
+    run.show()
+    sys.exit(app.exec_())
+
+&lt;/pre&gt;
+
+&lt;p&gt;計算主要程式&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+# -*- coding: utf-8 -*-
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
+from Ui_cal import Ui_MainWindow
+
+class MainWindow(QMainWindow, Ui_MainWindow): 
+    def __init__(self, parent=None):
+        super(MainWindow, self).__init__(parent)
+        self.setupUi(self)
+
+    @pyqtSlot()
+    def on_plusButton_clicked(self):
+        A = self.doubleSpinBoxA.value()
+        B = self.doubleSpinBoxB.value()
+        self.listWidget.addItem(str(A+B))
+
+    @pyqtSlot()
+    def on_clearButton_clicked(self):
+        for i in range(self.listWidget.count()):
+            self.listWidget.takeItem(0)
+
+    @pyqtSlot()
+    def on_minusButton_clicked(self):
+        A = self.doubleSpinBoxA.value()
+        B = self.doubleSpinBoxB.value()
+        self.listWidget.addItem(str(A-B))
+
+    @pyqtSlot()
+    def on_divButton_clicked(self):
+        try:
+            A = self.doubleSpinBoxA.value()
+            B = self.doubleSpinBoxB.value()
+            self.listWidget.addItem(str(A/B))
+        except: self.listWidget.addItem("Error!!")
+
+    @pyqtSlot()
+    def on_crossButton_clicked(self):
+        A = self.doubleSpinBoxA.value()
+        B = self.doubleSpinBoxB.value()
+        self.listWidget.addItem(str(A*B))
+
+&lt;/pre&gt;
+
+&lt;p&gt;經過詢問之後知道了&lt;font color=#0000FF&gt;self&lt;/font&gt;的用法&lt;/p&gt;
+&lt;p&gt;是代表在&lt;font color=#5500DD&gt;Mainwindow&lt;/font&gt;視窗底下中的圖塊&lt;/p&gt;
+&lt;p&gt;在完成後學長提出關於&lt;font color=#FF0000&gt;除零錯誤&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;我還想了一下並不是很懂為什麼會有bug&lt;/p&gt;
+&lt;p&gt;原來是因為會得出無限大的答案&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/227038029" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/227038029"&gt;錄製_2017_07_26_17_05_10_483&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>Python basic "The Calculate"</title><link href="http://project.mde.tw/blog/python-basic-the-calculate.html" rel="alternate"></link><published>2017-07-25T09:00:00+08:00</published><updated>2017-07-25T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-07-25:blog/python-basic-the-calculate.html</id><summary type="html">&lt;p&gt;在實驗室已重新灌window系統的電腦上安裝以及撰寫計算機程式&lt;/p&gt;
 
 
 &lt;p&gt;有上次的經驗這次安裝過程快了很多&lt;/p&gt;
