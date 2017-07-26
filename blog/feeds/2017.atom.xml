@@ -3,7 +3,7 @@
 
 
 &lt;p&gt;有上次的經驗這次安裝過程快了很多&lt;/p&gt;
-&lt;p&gt;不過實驗室的電腦所鳩收到的網路速度沒有破過200kB &lt;/p&gt;
+&lt;p&gt;不過實驗室的電腦所接收到的網路速度沒有破過200kB &lt;/p&gt;
 &lt;p&gt;所以安裝Qt的過程是從昨天開始&lt;/p&gt;
 &lt;p&gt;讓電腦在實驗室跑了一天&lt;/p&gt;
 &lt;p&gt;今日安裝完成後&lt;/p&gt;
@@ -11,7 +11,7 @@
 &lt;pre class="brush: python"&gt;
 class dog:
     def __init__(self):
-        print("GG!")
+        print("bark!")
 
     def walk(self, x):
         print("walk %d"%x)
@@ -33,6 +33,8 @@ BD.walk(5)
 
 &lt;p&gt;以上列的狗狗與黑狗跑幾步來說明&lt;/p&gt;
 &lt;p&gt;"繼承"程式的概念&lt;/p&gt;
+&lt;p&gt;如中間段的&lt;font color=#0000FF&gt;class black_dog(dog):&lt;/font&gt;即是以黑色狗狗繼承一開始dog的函式&lt;/p&gt;
+&lt;p&gt;但由於blackdog底下沒有執行dog函式中列印字串的功能 故bark不會被列印出來&lt;/p&gt;
 &lt;p&gt;並簡單展示了列應字串的基礎程式&lt;/p&gt;
 &lt;pre class="brush: python"&gt;
 # -*- coding: utf-8 -*-
