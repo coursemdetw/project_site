@@ -24,6 +24,7 @@
 <v t="yen.20161215091547.1" a="E"><vh>@path content/4042/</vh>
 <v t="yen.20161215091727.1"><vh>@edit 20170721.md</vh></v>
 <v t="leo.20170725172806.1"><vh>@edit 20170725.md</vh></v>
+<v t="leo.20170726163842.1"><vh>@edit 20170726.md</vh></v>
 </v>
 </v>
 <v t="yen.20161215102513.1"><vh>@button https server</vh></v>
