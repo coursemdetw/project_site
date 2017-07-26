@@ -13,7 +13,7 @@
 <link rel="canonical" href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-tu-biao.html">
 
         <meta name="author" content="40323230" />
-        <meta name="keywords" content="Pyslvs,ZMQ" />
+        <meta name="keywords" content="Pyslvs" />
         <meta name="description" content="Pyslvs 開發進度 新增 fitness - time 圖表" />
 
         <meta property="og:site_name" content="機械設計專題 (虎尾科大MDE)" />
@@ -24,7 +24,6 @@
         <meta property="article:published_time" content="2017-07-24" />
             <meta property="article:section" content="2016bg2" />
             <meta property="article:tag" content="Pyslvs" />
-            <meta property="article:tag" content="ZMQ" />
             <meta property="article:author" content="40323230" />
 
 
@@ -179,8 +178,6 @@ li {
 
 <span class="label label-default">Tags</span>
 	<a href="http://project.mde.tw/blog/tag/pyslvs.html">Pyslvs</a>
-        /
-	<a href="http://project.mde.tw/blog/tag/zmq.html">ZMQ</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -193,9 +190,9 @@ li {
 <h1>時間收斂圖</h1>
 <p>新增了時間收斂圖，以時間為 x 軸分析結果，由於以前篩選資料時沒納入時間，所以稍微改了一下程式結構。</p>
 <p>不過可能是只取整數的關係，圖表呈現如下：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_07_24_01.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_07_24_01.png"></p>
 <p>經調整 Cython 中的時間值後，將 <code>int</code> 改成 <code>double</code> 以合理化。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_07_24_02.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_07_24_02.png"></p>
 <p>之後可能在增加代數 - 時間的圖表，以比較運算得出的時間差。</p>
             </div>
             <!-- /.entry-content -->
@@ -242,6 +239,11 @@ li {
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-zi-xun.html">
+                            Pyslvs 演算法資訊
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/python-basic-the-calculate-simple-ver.html">
                             Python basic "The Calculate" simple ver.
                         </a>
@@ -259,11 +261,6 @@ li {
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/python-basic-the-calculate.html">
                             Python basic "The Calculate"
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-tu-biao.html">
-                            Pyslvs 演算法圖表
                         </a>
                     </li>
                 </ul>
