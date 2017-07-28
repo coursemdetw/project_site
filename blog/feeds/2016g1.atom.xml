@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-25T23:30:00+08:00</updated><entry><title>chrono核心編譯流程(Linux)</title><link href="http://project.mde.tw/blog/chronohe-xin-bian-yi-liu-cheng-linux.html" rel="alternate"></link><published>2017-07-25T23:30:00+08:00</published><updated>2017-07-25T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-25:/blog/chronohe-xin-bian-yi-liu-cheng-linux.html</id><summary type="html">&lt;ol&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-28T23:30:00+08:00</updated><entry><title>討論事項</title><link href="http://project.mde.tw/blog/tao-lun-shi-xiang.html" rel="alternate"></link><published>2017-07-28T23:30:00+08:00</published><updated>2017-07-28T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-28:/blog/tao-lun-shi-xiang.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;討論項目&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;討論項目&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;h1&gt;討論事項&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;OpenModelica Jmodelica&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;上面兩套軟體目前編寫都是使用C++來進行編寫，想從原始的 modelica standard library 進行開發，理解完解法，從建模開始到輸出成圖表，原因為提供的 library 都是使用 python2.7 來進行開發，不知道何時才會支援 python3 ，因此有這樣的想法。
+或者有別的表示法，如 20-sim ，來輔助開發使用相關的技術以及資料。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;chrono project &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;為一套使用 C++ 進行編寫的 Open Sourcce C++ library for multi-physics simulation 有 python3 端口可以使用，似乎這是最符合我們使用的，如果只做他的介面當然沒有問題，只是核心的技術，都不理解，這部分我還在猶豫是否真的要單純軟體，而核心技術完全不碰。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;使用 ODE (open dynamic Engine) 使用最原始的引擎來進行模擬，如果要使用，需要自己將整個資料結構做清楚，包括建模機制等，這部分還有待討論&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最糟的選擇是，從 arduino 部分得到資料，顯示到圖表，並可以支援多種裝置，包括不一樣的控制板等，走同樣的協定到主控端進行回授獲控制，如 MIT 做的種菜裝置，利用感測器回授，植物的狀況，針對不同的機器進行澆水、施肥、等動作 (Cyber phydical system) ，這可能就是所謂的燒錢計畫。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</content><category term="question"></category></entry><entry><title>chrono核心編譯流程(Linux)</title><link href="http://project.mde.tw/blog/chronohe-xin-bian-yi-liu-cheng-linux.html" rel="alternate"></link><published>2017-07-25T23:30:00+08:00</published><updated>2017-07-25T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-25:/blog/chronohe-xin-bian-yi-liu-cheng-linux.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;討論項目&lt;/p&gt;
 &lt;ul&gt;
