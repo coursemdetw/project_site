@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-29T21:00:00+08:00</updated><entry><title>Pyslvs 演算法中斷機制</title><link href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-zhong-duan-ji-zhi.html" rel="alternate"></link><published>2017-07-29T21:00:00+08:00</published><updated>2017-07-29T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-29:/blog/pyslvs-yan-suan-fa-zhong-duan-ji-zhi.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-30T21:00:00+08:00</updated><entry><title>Pyslvs 演算法中斷機制 - (2)</title><link href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-zhong-duan-ji-zhi-2.html" rel="alternate"></link><published>2017-07-30T21:00:00+08:00</published><updated>2017-07-30T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-30:/blog/pyslvs-yan-suan-fa-zhong-duan-ji-zhi-2.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;演算法中斷機制 - 符號標示&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;演算法中斷機制 - 符號標示&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;演算法中斷機制 - 符號標示&lt;/h1&gt;
+&lt;p&gt;新增三種圖示標示結果是否被中斷。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_07_30_01.png"&gt;&lt;/p&gt;
+&lt;p&gt;並增加相關資訊至右側。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_07_30_02.png"&gt;&lt;/p&gt;
+&lt;p&gt;目前平行運算的連線方式還不知道較佳的解法，可能會先推四連桿和八連桿的速度圖表，供演算法結果和三角迭代器計算。&lt;/p&gt;
+&lt;p&gt;上述功能會放在預覽視窗或是新的按鈕中。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>Pyslvs 演算法中斷機制</title><link href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-zhong-duan-ji-zhi.html" rel="alternate"></link><published>2017-07-29T21:00:00+08:00</published><updated>2017-07-29T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-07-29:/blog/pyslvs-yan-suan-fa-zhong-duan-ji-zhi.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;演算法中斷機制&lt;/li&gt;
 &lt;/ul&gt;
