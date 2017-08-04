@@ -9,6 +9,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+<!-- for LaTeX equations -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
 
 <link rel="canonical" href="http://project.mde.tw/blog/40323230ri-zhi-1060105.html">
 
@@ -195,7 +217,7 @@ li {
 <h1>Pyslvs 編譯進度</h1>
 <h2>界面調整 - 面板</h2>
 <p>當初構想的清單原本也是置頂的視窗，但是後來發現在 Windows 中開啟會導致清單視窗 crash，所以將一些額外的面板合併到點座標的分頁去。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0105_01.jpg"></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0105_01.jpg" /></p>
 <p>不過這些面板插入分頁後排版不太人性化，之後還會再修正。</p>
 <h2>編譯 - Makefile</h2>
 <p>最後還是統一兩個版本都使用 Makefile 來編譯，方便 Windows 可攜的版本下指令，只要使用下列語句即可分辨平台：</p>

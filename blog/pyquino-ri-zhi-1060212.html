@@ -9,6 +9,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+<!-- for LaTeX equations -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
 
 <link rel="canonical" href="http://project.mde.tw/blog/pyquino-ri-zhi-1060212.html">
 
@@ -209,7 +231,7 @@ li {
 <p>這部分還沒開始整理，下個禮拜會慢慢的把code整理以及加上註解，讓所有人都可以知道如何使用這部分的程式來和機器溝通，Vrep的介面會根據老師想要模擬的部分來進行設計，可能就是包括機器的移動和Gcode模擬，這部分會和老師在討論。</p>
 <h1>機器設計</h1>
 <p>我先設計了一台小三軸來進行輔助控制和設計，如果直接動到真正3D列印機上面可能會有非預期的整合問題出現，打算先用自己設計的機器和韌體進行控制。</p>
-<p><img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/machine.PNG?raw=true"></p>
+<p><img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/machine.PNG?raw=true" /></p>
 <h2>規劃</h2>
 <p>-使用控制板Arduino Mega2560 + ramps1.4(擴充版) </p>
 <p>-馬達(42步進馬達)</p>

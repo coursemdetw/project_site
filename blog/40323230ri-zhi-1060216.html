@@ -9,6 +9,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+<!-- for LaTeX equations -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
 
 <link rel="canonical" href="http://project.mde.tw/blog/40323230ri-zhi-1060216.html">
 
@@ -194,15 +216,15 @@ li {
 <h2>節點關聯查詢</h2>
 <p>鏈增一個面板，會顯示與個別節點相關的連桿、呆鍊等等。</p>
 <p>因為在刪除該節點時會把相關項目移掉免得出錯，所以就增加這個功能方便使用者檢視它們的關係。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0216_01.png"></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0216_01.png" /></p>
 <h2>複製點</h2>
 <p>在滑鼠右鍵選單中增加複製點的功能。</p>
 <p>會新增一個與目標數據一樣的節點，初始顏色是橘色。</p>
 <h2>取代點</h2>
 <p>類似一般 IDE 的搜尋取代，可以把一個節點的所有關聯<strong>完全轉移</strong>到另一個點上，但是如果發生約束衝突會導致解決失敗。</p>
 <p>這個功能也支援復原。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0216_02.png"></p>
-<hr>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0216_02.png" /></p>
+<hr />
 <p>準備再新增批次移動的功能供使用者調整選取的節點，可以將這些點平移到指定的增量。</p>
             </div>
             <!-- /.entry-content -->

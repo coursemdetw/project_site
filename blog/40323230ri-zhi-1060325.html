@@ -9,6 +9,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+<!-- for LaTeX equations -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
 
 <link rel="canonical" href="http://project.mde.tw/blog/40323230ri-zhi-1060325.html">
 
@@ -191,9 +213,9 @@ li {
 <h1>Pyslvs 開發進度</h1>
 <h2>面板工具提示</h2>
 <p>為了讓 GUI 特色更易懂，在面板的按鈕上加入工具提示，滑鼠游標指到上方會出現功能說明。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0325_01.png"></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0325_01.png" /></p>
 <p>三角求解器的加入鈕也有對應顯示，不用進對話視窗就能看三角形的設計。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0325_02.png"></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0325_02.png" /></p>
 <h2>演算法結果校正</h2>
 <p>之前的演算法結果是多代入一次 Solvespace 的 kernel 做定位，可是無法辨識是否為反轉四連桿。</p>
 <p>現在有三角求解器可以拆開結果（因為是固定形狀和參數很好分辨），比對頂點的位置後決定是否反轉。</p>
