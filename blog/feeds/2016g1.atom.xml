@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-06T23:30:00+08:00</updated><entry><title>Pyquino 改版更新</title><link href="http://project.mde.tw/blog/pyquino-gai-ban-geng-xin.html" rel="alternate"></link><published>2017-08-06T23:30:00+08:00</published><updated>2017-08-06T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-08-06:/blog/pyquino-gai-ban-geng-xin.html</id><summary type="html">&lt;ol&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-07T23:30:00+08:00</updated><entry><title>Pyquino 更新進度</title><link href="http://project.mde.tw/blog/pyquino-geng-xin-jin-du.html" rel="alternate"></link><published>2017-08-07T23:30:00+08:00</published><updated>2017-08-07T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-08-07:/blog/pyquino-geng-xin-jin-du.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;目前完成項目&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;預計新增項目&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;目前完成項目&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;預計新增項目&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;h2&gt;完成項目&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;新增樹狀圖顯示各個元件內所包含的項目&lt;/li&gt;
+&lt;li&gt;新增表單進行填寫元件名稱以及範圍限制&lt;/li&gt;
+&lt;li&gt;新增移除表單方法，以及設計子項目&lt;/li&gt;
+&lt;li&gt;增加使用者更改物件名稱功能&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/treeForm.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/treelist.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;h2&gt;預計新增項目&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;將會增加新增元件按鈕，提供圖示的方法以顯示各元件在圖形化操作，使用者可進行圖形化操作每個元件的順序，以實現虛實整合，達成雙邊控制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;增加自訂元件的圖示，方便辨識元件差別&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;透過感測器資料，繪製成圖表。&lt;/li&gt;
+&lt;li&gt;透過 xml 儲存自訂元件庫資料。&lt;/li&gt;
+&lt;/ol&gt;</content><category term="pyquino"></category></entry><entry><title>Pyquino 改版更新</title><link href="http://project.mde.tw/blog/pyquino-gai-ban-geng-xin.html" rel="alternate"></link><published>2017-08-06T23:30:00+08:00</published><updated>2017-08-06T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-08-06:/blog/pyquino-gai-ban-geng-xin.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;預計更新項目&lt;/p&gt;
 &lt;/li&gt;
