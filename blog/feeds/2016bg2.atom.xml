@@ -33,7 +33,7 @@ static Slvs_Constraint Slvs_MakeConstraint(Slvs_hConstraint h,
                                            bool other2)
 &lt;/pre&gt;
 
-&lt;p&gt;將最後 4 個項目移除：&lt;/p&gt;
+&lt;p&gt;將最後 4 個項目移除並展開指令：&lt;/p&gt;
 &lt;pre class="brush: c"&gt;
 static inline Slvs_Constraint Slvs_MakeConstraint(Slvs_hConstraint h,
                                                   Slvs_hGroup group,
