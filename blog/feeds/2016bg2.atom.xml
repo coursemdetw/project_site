@@ -1,5 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-04T12:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 08/04</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0804.html" rel="alternate"></link><published>2017-08-04T12:00:00+08:00</published><updated>2017-08-04T12:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-04:/blog/pyslvs-kai-fa-jin-du-0804.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-08T12:00:00+08:00</updated><entry><title>Python-Solvespace update to Solvespace version 2.3</title><link href="http://project.mde.tw/blog/python-solvespace-update-to-solvespace-version-23.html" rel="alternate"></link><published>2017-08-08T12:00:00+08:00</published><updated>2017-08-08T12:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-08:/blog/python-solvespace-update-to-solvespace-version-23.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;端口更新至 Solvespace 2.3 (Ubuntu only)&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;端口更新至 Solvespace 2.3 (Ubuntu only)&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;em&gt;註：&lt;a href="https://github.com/solvespace/solvespace"&gt;官方&lt;/a&gt; 抑或 &lt;a href="https://github.com/whitequark/solvespace"&gt;whitequark&lt;/a&gt; 提供的原始碼中，並沒有再提供獨立編譯 solver 的流程，只有圖形化使用者介面 (GUI) 和命令列介面 (CLI) 的版本。&lt;/em&gt;&lt;/p&gt;
+&lt;h1&gt;端口更新&lt;/h1&gt;
+&lt;p&gt;已將 Solvespace 2.3 的 solver 原始碼更新至倉儲中。&lt;/p&gt;
+&lt;p&gt;在 Ubuntu 平台測試編譯成功後，將此程式庫連結至 cdemo 編譯，測試無誤。&lt;/p&gt;
+&lt;p&gt;至於 Windows 平台發現原始碼似乎沒有與介面分離得很徹底，可能要處理 &lt;code&gt;platform/w32util.cpp&lt;/code&gt; 的問題。&lt;/p&gt;
+&lt;h2&gt;SWIG 端口測試&lt;/h2&gt;
+&lt;p&gt;先嘗試將 &lt;code&gt;slvs_python.hpp&lt;/code&gt; 與 &lt;code&gt;slvs.i&lt;/code&gt; 移至目錄中，修改路徑後編譯測試。&lt;/p&gt;
+&lt;p&gt;接著發現 Slvs_MakeConstraint 函式簡化了輸入的 argument。&lt;/p&gt;
+&lt;pre class="brush: c++"&gt;
+static Slvs_Constraint Slvs_MakeConstraint(Slvs_hConstraint h,
+                                           Slvs_hGroup group,
+                                           int type,
+                                           Slvs_hEntity wrkpl,
+                                           double valA,
+                                           Slvs_hEntity ptA,
+                                           Slvs_hEntity ptB,
+                                           Slvs_hEntity entityA,
+                                           Slvs_hEntity entityB,
+                                           Slvs_hEntity entityC,
+                                           Slvs_hEntity entityD,
+                                           bool other,
+                                           bool other2)
+&lt;/pre&gt;
+
+&lt;p&gt;將最後 4 個項目移除：&lt;/p&gt;
+&lt;pre class="brush: c"&gt;
+static inline Slvs_Constraint Slvs_MakeConstraint(Slvs_hConstraint h,
+                                                  Slvs_hGroup group,
+                                                  int type,
+                                                  Slvs_hEntity wrkpl,
+                                                  double valA,
+                                                  Slvs_hEntity ptA,
+                                                  Slvs_hEntity ptB,
+                                                  Slvs_hEntity entityA,
+                                                  Slvs_hEntity entityB)
+&lt;/pre&gt;
+
+&lt;p&gt;連同改正 &lt;code&gt;slvs_python.hpp&lt;/code&gt; 與 &lt;code&gt;slvs.i&lt;/code&gt; 的內容後，發現 &lt;code&gt;System::solve()&lt;/code&gt; 函式的 wrapper 發生無法轉換類型的情況。&lt;/p&gt;
+&lt;pre&gt;
+result = sys.solve()
+...
+return _slvs.System_solve(self, hg)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'System_solve'.
+Possible C/C++ prototypes are:
+    System::solve(Slvs_hGroup)
+    System::solve()
+&lt;/pre&gt;
+
+&lt;p&gt;位於 System 類型的 solve 方法只是指定群組求解，沒有給定群組的話就使用預設群組。&lt;/p&gt;
+&lt;p&gt;解決之道是分離成兩個函式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;System::solveFor(Slvs_hGroup)&lt;/code&gt;
+    指定群組求解，輸入群組數值（非指標）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;System::solve()&lt;/code&gt;
+    使用預設群組。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如此一來，新版的 Solvespace solver 已通過測試，需要再建立 Windows 編譯流程後才能完全更新倉儲和連動至 Pyslvs。&lt;/p&gt;
+&lt;p&gt;不過 Windows 遭遇了一些平台問題，官方後來使用 Visual studio 為基礎寫的輔助函式，某些在 MinGW 中會出現一些錯誤。&lt;/p&gt;
+&lt;p&gt;另外，稍微閱讀了一下以前 Python-Solvespace 作者的 &lt;code&gt;slvs_python.hpp&lt;/code&gt; 標頭檔，似乎還有很多供 Python 方便使用物件化的函式和方法，是否要為其製作 API，供 Solvespace 官方或 whitequark 參考？&lt;/p&gt;</content><category term="Solvespace"></category></entry><entry><title>Pyslvs 開發進度 - 08/04</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0804.html" rel="alternate"></link><published>2017-08-04T12:00:00+08:00</published><updated>2017-08-04T12:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-04:/blog/pyslvs-kai-fa-jin-du-0804.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;新版 Solvespace 獨立 solver 編譯成功&lt;/li&gt;
 &lt;li&gt;長時演算模式&lt;/li&gt;
