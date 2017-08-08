@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-08T12:00:00+08:00</updated><entry><title>Python-Solvespace update to Solvespace version 2.3</title><link href="http://project.mde.tw/blog/python-solvespace-update-to-solvespace-version-23.html" rel="alternate"></link><published>2017-08-08T12:00:00+08:00</published><updated>2017-08-08T12:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-08:/blog/python-solvespace-update-to-solvespace-version-23.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-08T12:00:00+08:00</updated><entry><title>Python-Solvespace update to Solvespace version 2.3</title><link href="http://project.mde.tw/blog/python-solvespace-update-to-solvespace-version-23.html" rel="alternate"></link><published>2017-08-08T12:00:00+08:00</published><updated>2017-08-08T12:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-08:/blog/python-solvespace-update-to-solvespace-version-23.html</id><summary type="html">&lt;p&gt;測試並改良 Python-Solvespace wrapper：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;端口更新至 Solvespace 2.3 (Ubuntu only)&lt;/li&gt;
 &lt;/ul&gt;
-</summary><content type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;測試並改良 Python-Solvespace wrapper：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;端口更新至 Solvespace 2.3 (Ubuntu only)&lt;/li&gt;
 &lt;/ul&gt;
