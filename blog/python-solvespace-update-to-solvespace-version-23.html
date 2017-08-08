@@ -261,17 +261,17 @@ Possible C/C++ prototypes are:
 <p>解決之道是分離成兩個函式：</p>
 <ul>
 <li>
-<p><code>System::solveFor(Slvs_hGroup)</code>
-    指定群組求解，輸入群組數值（非指標）。</p>
+<p><code>System::solveFor(Slvs_hGroup)</code>：</p>
+<p>指定群組求解，輸入群組數值（非指標）。</p>
 </li>
 <li>
-<p><code>System::solve()</code>
-    使用預設群組。</p>
+<p><code>System::solve()</code>：</p>
+<p>使用預設群組。</p>
 </li>
 </ul>
 <p>如此一來，新版的 Solvespace solver 已通過測試，需要再建立 Windows 編譯流程後才能完全更新倉儲和連動至 Pyslvs。</p>
 <p>不過 Windows 遭遇了一些平台問題，官方後來使用 Visual studio 為基礎寫的輔助函式，某些在 MinGW 中會出現一些錯誤。</p>
-<p>另外，稍微閱讀了一下以前 Python-Solvespace 作者的 <code>slvs_python.hpp</code> 標頭檔，似乎還有很多供 Python 方便使用物件化的函式和方法，是否要為其製作 API，供 Solvespace 官方或 whitequark 參考？</p>
+<p>另外，稍微閱讀了一下以前 Python-Solvespace 作者的 <code>slvs_python.hpp</code> 標頭檔，似乎還有很多供 Python 方便使用物件化的函式和方法，是否要為其製作 API 說明文件（例如簡單的 Github Wiki），供 Solvespace 官方或 whitequark 參考？</p>
             </div>
             <!-- /.entry-content -->
     <hr/>
