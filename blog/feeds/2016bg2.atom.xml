@@ -1,5 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-08T21:00:00+08:00</updated><entry><title>Python-Solvespace Update - Ubuntu</title><link href="http://project.mde.tw/blog/python-solvespace-update-ubuntu.html" rel="alternate"></link><published>2017-08-08T21:00:00+08:00</published><updated>2017-08-08T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-08:/blog/python-solvespace-update-ubuntu.html</id><summary type="html">&lt;p&gt;測試並改良 Python-Solvespace wrapper：&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-09T21:00:00+08:00</updated><entry><title>Python-Solvespace Update - Windows</title><link href="http://project.mde.tw/blog/python-solvespace-update-windows.html" rel="alternate"></link><published>2017-08-09T21:00:00+08:00</published><updated>2017-08-09T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-09:/blog/python-solvespace-update-windows.html</id><summary type="html">&lt;p&gt;測試並改良 Python-Solvespace wrapper：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;端口更新相容至 Windows 平台&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;測試並改良 Python-Solvespace wrapper：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;端口更新相容至 Windows 平台&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;端口更新&lt;/h1&gt;
+&lt;p&gt;在 Windows 平台由於使用 MinGW 編譯，因此不會用到 Visual studio 的工具。&lt;/p&gt;
+&lt;p&gt;在編譯流程的測試上，也須要更多設定。&lt;/p&gt;
+&lt;h2&gt;平台差異&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Define &lt;code&gt;WIN32&lt;/code&gt;：&lt;/p&gt;
+&lt;p&gt;大部分 C++ 的 Windows 腳本要求都放在此定義中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Define &lt;code&gt;_USE_MATH_DEFINES&lt;/code&gt;：&lt;/p&gt;
+&lt;p&gt;加入此值表示使用 &lt;code&gt;cmath&lt;/code&gt; 的內容。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;加入 &lt;code&gt;platform/platform.cpp&lt;/code&gt;：&lt;/p&gt;
+&lt;p&gt;切換成 &lt;code&gt;platform/w32util.cpp&lt;/code&gt; 後，其中會用到 &lt;code&gt;platform/platform.cpp&lt;/code&gt; 的 &lt;code&gt;Platform::Narrow(wchar_t)&lt;/code&gt; 函式。&lt;/p&gt;
+&lt;p&gt;因此會加入 &lt;code&gt;platform.o&lt;/code&gt; 的編譯需求。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;加入 &lt;code&gt;config.h&lt;/code&gt;：&lt;/p&gt;
+&lt;p&gt;原先的 &lt;code&gt;config.h&lt;/code&gt; 有紀錄一些設定：Solvespace 版本、安裝位置、GL 函式庫版本，不過是透過 CMake 填入樣板 &lt;code&gt;config.h.in&lt;/code&gt; 產生的。&lt;/p&gt;
+&lt;p&gt;顯然之後配置 CMake list 的時候沒有為獨立 solver 做切割。&lt;/p&gt;
+&lt;p&gt;在 &lt;code&gt;platform/platform.cpp&lt;/code&gt; 只是 &lt;code&gt;FindLocalResourceDir&lt;/code&gt; 函式需要用到 &lt;code&gt;UNIX_DATADIR&lt;/code&gt; 而載入，因此修改 CMake 的 template，有定義 &lt;code&gt;UNIX_DATADIR&lt;/code&gt; 即可，路徑亂給也不會用到。&lt;/p&gt;
+&lt;p&gt;標頭檔不需要寫給編譯器看，只要放著即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;綜上述要求，Makefile 執行時會先做這些步驟：&lt;/p&gt;
+&lt;pre class="brush: Makefile"&gt;
+ifeq ($(OS), Windows_NT)
+    CFLAGS += -DWIN32 -D_USE_MATH_DEFINES
+    OFILES += $(OBJDIR)/w32util.o $(OBJDIR)/platform.o
+else
+    OFILES += $(OBJDIR)/unixutil.o
+endif
+&lt;/pre&gt;
+
+&lt;p&gt;提醒一下，由於設定了 Makefile 的 VPATH 參數，相當於 Python 的 &lt;code&gt;sys.path&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;有紀錄 &lt;code&gt;src&lt;/code&gt; 和 &lt;code&gt;src/platform&lt;/code&gt;，可以用 &lt;code&gt;%&lt;/code&gt; 符號來在這些區域中搜尋原始碼，不過要注意撞名問題。&lt;/p&gt;
+&lt;p&gt;因此可以從 &lt;code&gt;$(OBJDIR)/%.o: %.cpp $(OBJDIR)&lt;/code&gt; 這個 target 中抓到 &lt;code&gt;$(OBJDIR)/platform.o&lt;/code&gt; 的位置 &lt;code&gt;src/platform/platform.cpp&lt;/code&gt;。&lt;/p&gt;
+&lt;pre class="brush: Makefile"&gt;
+VPATH = src src/platform
+&lt;/pre&gt;
+
+&lt;p&gt;同理，若存在其他目錄的原始碼，想用 &lt;code&gt;%.cpp&lt;/code&gt; 轉 &lt;code&gt;%.o&lt;/code&gt; 的指令寫簡單一點，就必須把目錄加到 VPATH。&lt;/p&gt;
+&lt;h2&gt;編譯測試&lt;/h2&gt;
+&lt;p&gt;原本想讓 &lt;code&gt;platform/w32util.cpp&lt;/code&gt; 簡單一點，不使用 &lt;code&gt;platform/platform.cpp&lt;/code&gt;，於是切斷了 &lt;code&gt;InitPlatform&lt;/code&gt; 函式的連結，改成類 Unix 平台的方式回傳，沒想到編譯出來後，Python 載入動態函式庫會馬上卡死無法執行，而且也不會回報錯誤。&lt;/p&gt;
+&lt;p&gt;因此只好連同編譯 &lt;code&gt;platform/platform.cpp&lt;/code&gt;，不過又遇到 &lt;code&gt;LoadResource&lt;/code&gt; 函式中使用的 &lt;code&gt;FindResourceW&lt;/code&gt; 函式有類型轉換問題。&lt;/p&gt;
+&lt;pre class="brush: c"&gt;
+HRSRC hres = FindResourceW(NULL, Widen(name).c_str(), RT_RCDATA);
+&lt;/pre&gt;
+
+&lt;pre&gt;
+cannot convert 'LPSTR {aka char*}' to 'LPCWSTR {aka const wchar_t*}' for argument '3' to
+'HRSRC__* FindResourceW(HMODULE, LPCWSTR, LPCWSTR)'
+&lt;/pre&gt;
+
+&lt;p&gt;指的是第 3 個參數 &lt;code&gt;RT_RCDATA&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;據測應該是 &lt;code&gt;Windows.h&lt;/code&gt; 的函式，因此上網查詢此函式的接收值。&lt;/p&gt;
+&lt;p&gt;其中為 &lt;code&gt;FindResource&lt;/code&gt;、&lt;code&gt;FindResourceW&lt;/code&gt;、&lt;code&gt;FindResourceA&lt;/code&gt; 的原型，只差在編碼不同，&lt;code&gt;FindResourceW&lt;/code&gt; 是 UTF 的形式。&lt;/p&gt;
+&lt;pre class="brush: c"&gt;
+HRSRC WINAPI FindResource(
+  _In_opt_ HMODULE hModule,
+  _In_     LPCTSTR lpName,
+  _In_     LPCTSTR lpType
+);
+&lt;/pre&gt;
+
+&lt;p&gt;其中有列出 &lt;code&gt;lpType&lt;/code&gt; 第 3 個參數可以使用的對象，但是其中明明就有 &lt;code&gt;RT_RCDATA&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;出於無奈，搜尋使用此函式的原始碼，發現都不是 solver 的，加上 &lt;code&gt;#if !defined(LIBRARY)&lt;/code&gt; 的要求後，編譯 solver 就不會用到。&lt;/p&gt;
+&lt;p&gt;最後終於編譯成功了，而且測試用的 Python script 可以正常執行。&lt;/p&gt;
+&lt;p&gt;還在考慮如何收拾目錄中編譯後的檔案，讓程式庫不會跟暫存的檔案混在一起，整理之後應該就能整合進 Pyslvs 了。&lt;/p&gt;</content><category term="Solvespace"></category></entry><entry><title>Python-Solvespace Update - Ubuntu</title><link href="http://project.mde.tw/blog/python-solvespace-update-ubuntu.html" rel="alternate"></link><published>2017-08-08T21:00:00+08:00</published><updated>2017-08-08T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-08:/blog/python-solvespace-update-ubuntu.html</id><summary type="html">&lt;p&gt;測試並改良 Python-Solvespace wrapper：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;端口更新至 Solvespace 2.3 (Ubuntu only)&lt;/li&gt;
 &lt;/ul&gt;
