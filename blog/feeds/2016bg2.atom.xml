@@ -20,9 +20,7 @@
 &lt;p&gt;Kubuntu debian 安裝包大小：78.3 MB&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Python 3.5&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;*Qt 5.9.1&lt;/p&gt;
-&lt;ul&gt;
+&lt;li&gt;Qt 5.9.1&lt;/li&gt;
 &lt;li&gt;PyQt 5.9&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;em&gt;Ubuntu 可能受因於支援 desktop 系統，有較多的 Python 相依套件，目前似乎只能給 KDE 環境使用。&lt;/em&gt;&lt;/p&gt;
@@ -32,9 +30,7 @@
 &lt;p&gt;Windows 獨立可執行檔案：37.2 MB&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Python 3.5&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;*Qt 5.9.1&lt;/p&gt;
-&lt;ul&gt;
+&lt;li&gt;Qt 5.9.1&lt;/li&gt;
 &lt;li&gt;PyQt 5.9&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
