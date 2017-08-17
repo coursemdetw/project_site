@@ -9,6 +9,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+<!-- for LaTeX equations -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
 
 <link rel="canonical" href="http://project.mde.tw/blog/slvs-cheng-shi-ku-han-shi.html">
 
@@ -172,7 +194,7 @@ li {
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-08-17T12:00:00+08:00"> Wed 17 August 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-08-17T12:00:00+08:00"> 三 17 八月 2016</time>
     </span>
             <span class="label label-default">By</span>
             <a href="http://project.mde.tw/blog/author/40323230.html"><i class="fa fa-user"></i> 40323230</a>
@@ -318,15 +340,27 @@ sys.get_param(0).val
 </ol>
 <p>根據這些關係，在約束時必須判斷其分類以填入。</p>
 <p>輸入值後方加入<code>, sys</code>，以傳入系統清單<code>sys</code>中（也許有<code>sys2</code>或<code>sys3</code>等等）；亦可用<code>sys.add_</code>加入以下支援的實體，而取出的編號取決於註冊的順序。</p>
-<div class="highlight"><pre><span></span>add_param( )
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>add_param( )
 add_point2d( )
 add_point3d( )
 add_entity( )
 </pre></div>
-
+</td></tr></table>
 
 <p>取出時亦同（函數中加上編號就能指定）：</p>
-<div class="highlight"><pre><span></span>get_Point2d( )
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>get_Point2d( )
 get_Point3d( )
 get_LineSegment2d( )
 get_LineSegment3d( )
@@ -337,7 +371,7 @@ get_Cubic( )
 get_Circle( )
 get_ArcOfCircle( )
 </pre></div>
-
+</td></tr></table>
 
 <h2><a name="Point"></a>Point</h2>
 <p><code>SLVS_E_POINT_IN_3D</code></p>
@@ -377,11 +411,13 @@ Normal3d(Workplane wrkpl)
 <p>可以想像這個四元數代表一個通過原點的平面。</p>
 <p>這個平面跟三個向量相關：基礎向量<code>U</code>和<code>V</code>在平面上、而法線<code>N</code>則垂直它，相當於<code>[ U V N ]'</code>。</p>
 <p>因此U、N、N都有單位長度，而他們都正交，所以：</p>
-<div class="highlight"><pre><span></span>U cross V = N
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>U cross V = N
 V cross N = U
 N cross U = V
 </pre></div>
-
+</td></tr></table>
 
 <p>轉換函式<code>Slvs_Quaternion</code>提供了在<code>U</code>、<code>V</code>、<code>N</code>和單位四元數之間轉換。</p>
 <p>單位四元數只有三個自由度，但是要在四個參數中指定。因此一個額外的約束產生了，就是：</p>
@@ -403,7 +439,14 @@ plane = Workplane(c, normal)
 
 <p>這個公式在製作2D平面時非常方便。</p>
 <p>以下是不同平面參考：</p>
-<div class="highlight"><pre><span></span>XY平面：[1 0 0], [0 1 0]
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span>XY平面：[1 0 0], [0 1 0]
 MakeQuaternion(1, 0, 0, 0, 1, 0)
 
 YZ平面：[0 1 0], [0 0 1]
@@ -412,7 +455,7 @@ MakeQuaternion(0, 1, 0, 0, 0, 1)
 XZ平面：[1 0 0], [0 0 1]
 MakeQuaternion(1, 0, 0, 0, 0, 1)
 </pre></div>
-
+</td></tr></table>
 
 <h2><a name="Distance"></a>Distance</h2>
 <p><code>SLVS_E_DISTANCE</code></p>
@@ -861,28 +904,28 @@ sys.set_dragged(Point p)
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/python-basic-the-calculate-simple-ver.html">
-                            Python basic "The Calculate" simple ver.
+                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0810.html">
+                            Pyslvs 開發進度 - 08/10
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/chronohe-xin-bian-yi-liu-cheng-linux.html">
-                            chrono核心編譯流程(Linux)
+                        <a href="http://project.mde.tw/blog/python-solvespace-update-windows.html">
+                            Python-Solvespace Update - Windows
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/chronohe-xin-bian-yi-liu-cheng-win.html">
-                            chrono核心編譯流程(WIn)
+                        <a href="http://project.mde.tw/blog/python-solvespace-update-ubuntu.html">
+                            Python-Solvespace Update - Ubuntu
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/python-basic-the-calculate.html">
-                            Python basic "The Calculate"
+                        <a href="http://project.mde.tw/blog/pyquino-geng-xin-jin-du.html">
+                            Pyquino 更新進度
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-tu-biao.html">
-                            Pyslvs 演算法圖表
+                        <a href="http://project.mde.tw/blog/pyquino-gai-ban-geng-xin.html">
+                            Pyquino 改版更新
                         </a>
                     </li>
                 </ul>

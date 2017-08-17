@@ -9,6 +9,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+<!-- for LaTeX equations -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
 
 <link rel="canonical" href="http://project.mde.tw/blog/40323230ri-zhi-1060225.html">
 
@@ -169,7 +191,7 @@ li {
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-02-25T21:00:00+08:00"> Sat 25 February 2017</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-02-25T21:00:00+08:00"> 六 25 二月 2017</time>
     </span>
             <span class="label label-default">By</span>
             <a href="http://project.mde.tw/blog/author/40323230.html"><i class="fa fa-user"></i> 40323230</a>
@@ -191,13 +213,13 @@ li {
 <h2>slvs 格式</h2>
 <p>更新組合圖的輸出。</p>
 <p>使用一隻仿生獸的腳來當範例。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0225_01.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0225_01.png"></p>
 <p>輸出選項新增了「建立資料夾」的選項，不用再預先新增資料夾了。預設是工作簿的名稱。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0225_04.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0225_04.png"></p>
 <p>接著會分別輸出零件檔（目前只有連桿和呆練）。若有勾選，會產生組合圖的檔案。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0225_02.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0225_02.png"></p>
 <p>在 Solvespace 開啟的組合檔，第一個線架構圖層已經生成了，可以使用滑鼠拉動，但是若是包含滑塊或伸縮桿，並不會有這兩者的約束。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0225_03.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0225_03.png"></p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -243,28 +265,28 @@ li {
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/python-basic-the-calculate-simple-ver.html">
-                            Python basic "The Calculate" simple ver.
+                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0810.html">
+                            Pyslvs 開發進度 - 08/10
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/chronohe-xin-bian-yi-liu-cheng-linux.html">
-                            chrono核心編譯流程(Linux)
+                        <a href="http://project.mde.tw/blog/python-solvespace-update-windows.html">
+                            Python-Solvespace Update - Windows
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/chronohe-xin-bian-yi-liu-cheng-win.html">
-                            chrono核心編譯流程(WIn)
+                        <a href="http://project.mde.tw/blog/python-solvespace-update-ubuntu.html">
+                            Python-Solvespace Update - Ubuntu
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/python-basic-the-calculate.html">
-                            Python basic "The Calculate"
+                        <a href="http://project.mde.tw/blog/pyquino-geng-xin-jin-du.html">
+                            Pyquino 更新進度
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-tu-biao.html">
-                            Pyslvs 演算法圖表
+                        <a href="http://project.mde.tw/blog/pyquino-gai-ban-geng-xin.html">
+                            Pyquino 改版更新
                         </a>
                     </li>
                 </ul>

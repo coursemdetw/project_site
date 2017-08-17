@@ -9,6 +9,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+<!-- for LaTeX equations -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
 
 <link rel="canonical" href="http://project.mde.tw/blog">
         <meta name="author" content="KMOL" />
@@ -147,159 +169,126 @@ li {
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="http://project.mde.tw/blog/pyslvs-lu-jing-chu-li.html">Pyslvs 路徑處理</a></h2>
+                <h2><a href="http://project.mde.tw/blog/tao-lun-shi-xiang.html">討論事項</a></h2>
+                <div class="summary"><ol>
+<li>討論項目</li>
+</ol>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/tao-lun-shi-xiang.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-diao-zheng.html">Pyslvs 演算法調整</a></h2>
                 <div class="summary"><p>Pyslvs 開發進度</p>
 <ul>
-<li>
-<p>支援匯入與處理演算法路徑</p>
-</li>
-<li>
-<p>簡單處理演算法路徑座標點功能</p>
-</li>
-<li>
-<p>演算法名詞解釋</p>
-</li>
-<li>
-<p>模組授權整理</p>
-</li>
+<li>運算進度條</li>
+<li>不同演算法參數調整</li>
+<li>tinycadlib 更新</li>
 </ul>
 
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-lu-jing-chu-li.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-diao-zheng.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://project.mde.tw/blog/modelica-1060720.html">modelica - 106/07/20</a></h2>
+                <h2><a href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-zi-xun.html">Pyslvs 演算法資訊</a></h2>
+                <div class="summary"><p>Pyslvs 開發進度</p>
+<ul>
+<li>新增演算法資訊</li>
+<li>Qt QSplitter 說明</li>
+<li>其他 Kernel 利用可能性</li>
+</ul>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-zi-xun.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/python-basic-the-calculate-simple-ver.html">Python basic "The Calculate" simple ver.</a></h2>
+                <div class="summary"><p>寫好了精簡版本的計算機程式</p>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/python-basic-the-calculate-simple-ver.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/chronohe-xin-bian-yi-liu-cheng-linux.html">chrono核心編譯流程(Linux)</a></h2>
+                <div class="summary"><ol>
+<li>
+<p>討論項目</p>
+<ul>
+<li>Linux 編譯流程</li>
+</ul>
+</li>
+</ol>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/chronohe-xin-bian-yi-liu-cheng-linux.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/chronohe-xin-bian-yi-liu-cheng-win.html">chrono核心編譯流程(WIn)</a></h2>
+                <div class="summary"><ol>
+<li>
+<p>討論項目</p>
+<ul>
+<li>windows 編譯流程</li>
+</ul>
+</li>
+</ol>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/chronohe-xin-bian-yi-liu-cheng-win.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/python-basic-the-calculate.html">Python basic "The Calculate"</a></h2>
+                <div class="summary"><p>在實驗室已重新灌window系統的電腦上安裝以及撰寫計算機程式</p>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/python-basic-the-calculate.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-tu-biao.html">Pyslvs 演算法圖表</a></h2>
+                <div class="summary"><p>Pyslvs 開發進度</p>
+<ul>
+<li>新增 fitness - time 圖表</li>
+</ul>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-tu-biao.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/chrono-1060723.html">chrono - 106/07/23</a></h2>
                 <div class="summary"><ol>
 <li>
 <p>討論項目</p>
 <ul>
 <li>
-<p>modelica</p>
+<p>chrono 討論事宜</p>
 </li>
 <li>
-<p>gyro</p>
+<p>幾個小型範例</p>
 </li>
 </ul>
 </li>
 </ol>
 
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/modelica-1060720.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/chrono-1060723.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://project.mde.tw/blog/pyslvs-tong-yi-bian-yi-liu-cheng.html">Pyslvs 統一編譯流程</a></h2>
-                <div class="summary"><ul>
-<li>單一 Makefile 完成 kernel 編譯</li>
-</ul>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-tong-yi-bian-yi-liu-cheng.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/opencvdong-tai-zhen-ce-1060714.html">Opencv動態偵測 - 106/07/14</a></h2>
-                <div class="summary"><ol>
-<li>
-<p>討論項目</p>
+                <h2><a href="http://project.mde.tw/blog/pyslvs-de-zmq-fang-zhi-lian-xian-zhong-duan.html">Pyslvs 的 ZMQ 防止連線中斷</a></h2>
+                <div class="summary"><p>Pyslvs 開發進度</p>
 <ul>
-<li>
-<p>影像辨識工具開發</p>
-</li>
-<li>
-<p>步伐測量</p>
-</li>
-</ul>
-</li>
-</ol>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/opencvdong-tai-zhen-ce-1060714.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/opencvdong-tai-zhen-ce.html">Opencv動態偵測</a></h2>
-                <div class="summary"><ol>
-<li>
-<p>討論項目</p>
-<ul>
-<li>
-<p>影像辨識部分</p>
-</li>
-<li>
-<p>硬體規劃部分</p>
-</li>
-</ul>
-</li>
-</ol>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/opencvdong-tai-zhen-ce.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/ba-lian-gan-yan-suan-fa.html">八連桿演算法</a></h2>
-                <div class="summary"><ul>
-<li>設定並測試八連桿演算法</li>
+<li>改善 Server  突然關閉的狀況</li>
 </ul>
 
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/ba-lian-gan-yan-suan-fa.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/zmq-yu-cython-yu-dao-de-ping-jing.html">ZMQ 與 Cython 遇到的瓶頸</a></h2>
-                <div class="summary"><ul>
-<li>ZMQ 傳輸類型</li>
-</ul>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/zmq-yu-cython-yu-dao-de-ping-jing.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/travis-ci-mo-ni-bian-yi.html">Travis CI 模擬編譯</a></h2>
-                <div class="summary"><ul>
-<li>
-<p>使用 Travis CI 服務在遠端虛擬機編譯測試</p>
-</li>
-<li>
-<p>Pyslvs Build Status: <a href="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5"><img alt="Build Status" src="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5.svg" /></a></p>
-</li>
-</ul>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/travis-ci-mo-ni-bian-yi.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/yan-suan-fa-she-ding-jie-mian.html">演算法設定介面</a></h2>
-                <div class="summary"><ul>
-<li>
-<p>增加不同演算法的進階設定</p>
-</li>
-<li>
-<p>八連桿模式預定</p>
-</li>
-</ul>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/yan-suan-fa-she-ding-jie-mian.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/ping-mian-lian-gan-yan-suan-fa-shi-yong-can-shu.html">平面連桿演算法使用參數</a></h2>
-                <div class="summary"><ul>
-<li>
-<p>解析 <code>planarlinkage.pyx</code> 輸入項目用途</p>
-</li>
-<li>
-<p>Version 0.8 開發方向</p>
-</li>
-</ul>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/ping-mian-lian-gan-yan-suan-fa-shi-yong-can-shu.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-de-zmq-fang-zhi-lian-xian-zhong-duan.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -379,6 +368,10 @@ li {
                             href="http://project.mde.tw/blog/index35.html">35</a></li>
                     <li class=""><a
                             href="http://project.mde.tw/blog/index36.html">36</a></li>
+                    <li class=""><a
+                            href="http://project.mde.tw/blog/index37.html">37</a></li>
+                    <li class=""><a
+                            href="http://project.mde.tw/blog/index38.html">38</a></li>
                 <li class="next"><a
                         href="http://project.mde.tw/blog/index3.html">&raquo;</a></li>
         </ul>
@@ -392,28 +385,28 @@ li {
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/python-basic-the-calculate-simple-ver.html">
-                            Python basic "The Calculate" simple ver.
+                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0810.html">
+                            Pyslvs 開發進度 - 08/10
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/chronohe-xin-bian-yi-liu-cheng-linux.html">
-                            chrono核心編譯流程(Linux)
+                        <a href="http://project.mde.tw/blog/python-solvespace-update-windows.html">
+                            Python-Solvespace Update - Windows
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/chronohe-xin-bian-yi-liu-cheng-win.html">
-                            chrono核心編譯流程(WIn)
+                        <a href="http://project.mde.tw/blog/python-solvespace-update-ubuntu.html">
+                            Python-Solvespace Update - Ubuntu
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/python-basic-the-calculate.html">
-                            Python basic "The Calculate"
+                        <a href="http://project.mde.tw/blog/pyquino-geng-xin-jin-du.html">
+                            Pyquino 更新進度
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-tu-biao.html">
-                            Pyslvs 演算法圖表
+                        <a href="http://project.mde.tw/blog/pyquino-gai-ban-geng-xin.html">
+                            Pyquino 改版更新
                         </a>
                     </li>
                 </ul>

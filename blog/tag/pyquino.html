@@ -2,17 +2,39 @@
 <html lang="en"
 >
 <head>
-    <title>Pyquino - 機械設計專題 (虎尾科大MDE)</title>
+    <title>pyquino - 機械設計專題 (虎尾科大MDE)</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+<!-- for LaTeX equations -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
 
 
     <meta name="author" content="KMOL" />
-    <meta name="keywords" content="Pyquino" />
+    <meta name="keywords" content="pyquino" />
 
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="機械設計專題 (虎尾科大MDE)" />
@@ -147,6 +169,36 @@ li {
     <div class="row">
         <div class="col-sm-9">
 
+            <article>
+                <h2><a href="http://project.mde.tw/blog/pyquino-geng-xin-jin-du.html">Pyquino 更新進度</a></h2>
+                <div class="summary"><ol>
+<li>
+<p>目前完成項目</p>
+</li>
+<li>
+<p>預計新增項目</p>
+</li>
+</ol>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyquino-geng-xin-jin-du.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/pyquino-gai-ban-geng-xin.html">Pyquino 改版更新</a></h2>
+                <div class="summary"><ol>
+<li>
+<p>預計更新項目</p>
+</li>
+<li>
+<p>表單設計</p>
+</li>
+</ol>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyquino-gai-ban-geng-xin.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
             <article>
                 <h2><a href="http://project.mde.tw/blog/pyquino-ri-zhi-1060409.html">Pyquino 日誌 - 106/04/09</a></h2>
                 <div class="summary"><ol>
@@ -303,50 +355,6 @@ li {
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/pyquino-ri-zhi-1060225.html">Pyquino 日誌 - 106/02/25</a></h2>
-                <div class="summary"><ol>
-<li>
-<p>開發日誌</p>
-<ul>
-<li>
-<p>機器繪製完成</p>
-</li>
-<li>
-<p>匯入Vrep內部</p>
-</li>
-</ul>
-</li>
-</ol>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyquino-ri-zhi-1060225.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/pyquino-ri-zhi-1060219.html">Pyquino 日誌 - 106/02/19</a></h2>
-                <div class="summary"><ol>
-<li>
-<p>開發日誌</p>
-<ul>
-<li>
-<p>更換github名字</p>
-</li>
-<li>
-<p>release version beta0.1 </p>
-</li>
-</ul>
-</li>
-<li>
-<p>更新部分Ui</p>
-<p>*PyQtgraphy</p>
-</li>
-</ol>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyquino-ri-zhi-1060219.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -367,6 +375,16 @@ li {
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/pyquino-geng-xin-jin-du.html">
+                            Pyquino 更新進度
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/pyquino-gai-ban-geng-xin.html">
+                            Pyquino 改版更新
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyquino-ri-zhi-1060409.html">
                             Pyquino 日誌 - 106/04/09
                         </a>
@@ -379,16 +397,6 @@ li {
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyquino-ri-zhi-1060403.html">
                             Pyquino 日誌 - 106/04/03
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyquino-ri-zhi-1060331.html">
-                            Pyquino 日誌 - 106/03/31
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyquino-ri-zhi-1060315.html">
-                            Pyquino 日誌 - 106/03/15
                         </a>
                     </li>
                 </ul>

@@ -9,6 +9,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+<!-- for LaTeX equations -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
 
 
         <meta name="author" content="KMOL" />
@@ -147,6 +169,39 @@ li {
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="http://project.mde.tw/blog/bao-gao-de-nei-rong.html">報告的內容</a></h2>
+                <div class="summary"><p>動機與目的</p>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/bao-gao-de-nei-rong.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/kmolprint-0716.html">KmolPrint 0716</a></h2>
+                <div class="summary"><p>關於目前設計3dprinter clouds</p>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/kmolprint-0716.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/kmolprint-0715.html">KmolPrint 0715</a></h2>
+                <div class="summary"><p>關於目前設計3dprinter clouds</p>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/kmolprint-0715.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/pythontong-xun-0713.html">Python通訊 0713</a></h2>
+                <div class="summary"><p>今日讀的進度，以及筆記
+For python3的部分</p>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pythontong-xun-0713.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://project.mde.tw/blog/pyfirmata-tong-xun.html">PyFirmata 通訊</a></h2>
                 <div class="summary"><p>今日讀的進度，以及筆記
 For python3的部分</p>
@@ -195,38 +250,6 @@ For python3的部分</p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/ubuntu-ipv4-ipv6-shi-yong-jiao-xue.html">ubuntu IPV4 IPV6 使用教學</a></h2>
-                <div class="summary"><p>關於IPV4  IPV6設定</p>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/ubuntu-ipv4-ipv6-shi-yong-jiao-xue.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/shu-mei-pai-zhi-ling-biao-he-shi-yong.html">樹梅派指令表和使用</a></h2>
-                <div class="summary"><p>找到的些許文章和探討</p>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/shu-mei-pai-zhi-ling-biao-he-shi-yong.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/r2c2de-zi-liao.html">R2C2的資料</a></h2>
-                <div class="summary"><p>新的R2C2資料</p>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/r2c2de-zi-liao.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/opencvshi-zuo.html">OpenCv實作</a></h2>
-                <div class="summary"><p>OpenCv in python and use</p>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/opencvshi-zuo.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="http://project.mde.tw/blog/author/403231235.html">&laquo;</a>
@@ -258,28 +281,28 @@ For python3的部分</p>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/pyquino-geng-xin-jin-du.html">
+                            Pyquino 更新進度
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/pyquino-gai-ban-geng-xin.html">
+                            Pyquino 改版更新
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/liang-lun-ping-heng-che-tui-dao.html">
+                            兩輪平衡車推導
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/tao-lun-shi-xiang.html">
+                            討論事項
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/chronohe-xin-bian-yi-liu-cheng-linux.html">
                             chrono核心編譯流程(Linux)
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/chronohe-xin-bian-yi-liu-cheng-win.html">
-                            chrono核心編譯流程(WIn)
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/chrono-1060723.html">
-                            chrono - 106/07/23
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/modelica-1060721.html">
-                            modelica - 106/07/21
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/modelica-1060720.html">
-                            modelica - 106/07/20
                         </a>
                     </li>
                 </ul>
