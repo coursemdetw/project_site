@@ -1,5 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-26T09:00:00+08:00</updated><entry><title>Python basic "The Calculate" simple ver.</title><link href="http://project.mde.tw/blog/python-basic-the-calculate-simple-ver.html" rel="alternate"></link><published>2017-07-26T09:00:00+08:00</published><updated>2017-07-26T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-07-26:/blog/python-basic-the-calculate-simple-ver.html</id><summary type="html">&lt;p&gt;寫好了精簡版本的計算機程式&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-17T09:00:00+08:00</updated><entry><title>Eric 環境安裝-Windows (下)</title><link href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-xia.html" rel="alternate"></link><published>2017-08-17T09:00:00+08:00</published><updated>2017-08-17T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-17:/blog/eric-huan-jing-an-zhuang-windows-xia.html</id><summary type="html">&lt;p&gt;介紹安裝方法-2&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;介紹安裝方法-2&lt;/p&gt;
+
+
+&lt;p&gt;下載完QT安裝客戶端之後&lt;/p&gt;
+&lt;p&gt;雙擊開啟 進入安裝流程&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-A.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;按下NEXT之後 登入帳號&lt;/p&gt;
+&lt;p&gt;帳號可在Qt申請&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-B.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-C.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;選擇安裝位置並選擇需要安裝的項目&lt;/p&gt;
+&lt;p&gt;預設最新版本與工具包即可&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-D.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-E.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;按下同意即可繼續安裝&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-F.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;安裝過程 漫長的等待&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-G.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;完成&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-H.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;接下來打開命令提式字元&lt;/p&gt;
+&lt;p&gt;先切換至C槽&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+cd C:\
+&lt;/pre&gt;
+
+&lt;p&gt;接著使用pip進行安裝PyQt以及QScintilla&lt;/p&gt;
+&lt;p&gt;兩個打在一起他會自動依序安裝&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+pip install pyqt QScintilla
+&lt;/pre&gt;
+
+&lt;p&gt;若是電腦內原本就有安裝PyQt以及QScintilla&lt;/p&gt;
+&lt;p&gt;使用-U(要大寫)來進行更新&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+pip install pyqt QScintilla -U
+&lt;/pre&gt;
+
+&lt;p&gt;安裝完成後去Eric的官方網站下載Eric的檔案&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/ERIC-1.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/ERIC-2.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;下載完後進行解壓縮並將命令提示字元的位置轉移到其路徑&lt;/p&gt;
+&lt;p&gt;以下用我這邊來說明&lt;/p&gt;
+&lt;p&gt;由於我讓下載目錄預設在Downloads裡面故路徑為這樣&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/POS.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+C:\Users\kmol\Downloads\eric6-17.08 (1)\eric6-17.08
+&lt;/pre&gt;
+
+&lt;p&gt;這樣就完成切換&lt;/p&gt;
+&lt;p&gt;並且由於Eric的安裝檔為PY&lt;/p&gt;
+&lt;p&gt;故必須用Python來進行安裝&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+python install.py
+&lt;/pre&gt;
+
+&lt;p&gt;安裝完成後於命令提示字元輸入eric6即可開啟&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Eric 環境安裝-Windows (上)</title><link href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-shang.html" rel="alternate"></link><published>2017-08-12T09:00:00+08:00</published><updated>2017-08-12T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-12:/blog/eric-huan-jing-an-zhuang-windows-shang.html</id><summary type="html">&lt;p&gt;介紹安裝方法-1&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;介紹安裝方法-1&lt;/p&gt;
+
+
+&lt;p&gt;這篇介紹應該幾天前就出來了&lt;/p&gt;
+&lt;p&gt;不過由於我的筆記型電腦送修&lt;/p&gt;
+&lt;p&gt;實驗室原本位置的windows主機不知為何會突然關機&lt;/p&gt;
+&lt;p&gt;於是換成了同一位置的第二台主機&lt;/p&gt;
+&lt;p&gt;它屬於Linux系統，於是想用虛擬機來介紹&lt;/p&gt;
+&lt;p&gt;下載了64bit的WIN10的ISO檔案&lt;/p&gt;
+&lt;p&gt;不料原先BIOS內VT-D為disable狀態，要去調整時又發現BIOS有密碼&lt;/p&gt;
+&lt;p&gt;向詹老師詢問後終於開啟了VT-D，但還是只有32位元的虛擬機可以勾選&lt;/p&gt;
+&lt;p&gt;最後換到了實驗室最後面的電腦來使用。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/P.png?raw=true"&gt;&lt;/p&gt;
+&lt;h3&gt;安裝過程&lt;/h3&gt;
+
+&lt;p&gt;首先將Python 3.6.2安裝起來&lt;/p&gt;
+&lt;p&gt;先去系統檢視電腦為哪一位元&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/SYS.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;之後去Python的官網&lt;/p&gt;
+&lt;p&gt;選擇3.6.2(紅框處)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/python.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;之後拉到下面選擇好位元之後下載executable(可執行)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/python2.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;下載後打開來安裝&lt;/p&gt;
+&lt;p&gt;由於此電腦本身有安裝過&lt;/p&gt;
+&lt;p&gt;所以上面那欄為Upgrade&lt;/p&gt;
+&lt;p&gt;如未安裝過 應該顯示為&lt;font color=#0000FF&gt;Install Now&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/PI.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;先點選Customize來確認勾選項目如圖一樣&lt;/p&gt;
+&lt;p&gt;確認後按back然後按下install now&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/PI2.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;安裝好後開起命令提式字元來測試有沒有安裝成功&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/PY.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/PYTEST.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;安裝Qt&lt;/p&gt;
+&lt;p&gt;進入官網&lt;/p&gt;
+&lt;p&gt;點選紅框處&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/Qt.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;拉至頁面最下方點選紅框處&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT2.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;進入後拉至最下方，右邊為商業用，左邊為開放原始碼，並點選紅框處&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/Qt3.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;進入後DOWNLOAD NOW&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/Qt4.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;今日內容以上
+其餘內容下周補上&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Python basic "The Calculate" simple ver.</title><link href="http://project.mde.tw/blog/python-basic-the-calculate-simple-ver.html" rel="alternate"></link><published>2017-07-26T09:00:00+08:00</published><updated>2017-07-26T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-07-26:/blog/python-basic-the-calculate-simple-ver.html</id><summary type="html">&lt;p&gt;寫好了精簡版本的計算機程式&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;寫好了精簡版本的計算機程式&lt;/p&gt;
 
 
