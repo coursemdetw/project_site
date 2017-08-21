@@ -256,14 +256,11 @@ class AWidget(QWidget):
 
     def mouseReleaseEvent(self, event):
         super(AWidget, self).mouseReleaseEvent(event)
-<pre>
+</pre>
 
-接下來的 QEvent 函式都是一樣，如果不小心蓋掉發生怪怪的狀況，例如 QTableWidget 無法再選起儲存格，那就加上 super 補上被忽略的工作。
-
-言歸正傳，由於「按下滑鼠」這個事件不一定是想抓東西來拖移，因此不能就這樣亂槍打鳥，要先偷偷紀錄其的行為。在這裡設定一個名稱「draged」紀錄滑鼠的動作，決定是否為滑鼠左鍵抓住的動作。
-
-放掉滑鼠的話就把這個值取消，表示使用者並沒有做出拖動的行為。
-
+<p>接下來的 QEvent 函式都是一樣，如果不小心蓋掉發生怪怪的狀況，例如 QTableWidget 無法再選起儲存格，那就加上 super 補上被忽略的工作。</p>
+<p>言歸正傳，由於「按下滑鼠」這個事件不一定是想抓東西來拖移，因此不能就這樣亂槍打鳥，要先偷偷紀錄其的行為。在這裡設定一個名稱「draged」紀錄滑鼠的動作，決定是否為滑鼠左鍵抓住的動作。</p>
+<p>放掉滑鼠的話就把這個值取消，表示使用者並沒有做出拖動的行為。</p>
 <pre class="brush: python">
 class AWidget(QWidget):
     def __init__(self, parent=None):
@@ -278,27 +275,23 @@ class AWidget(QWidget):
     def mouseReleaseEvent(self, event):
         super(AWidget, self).mouseReleaseEvent(event)
         self.draged = False
-<pre>
+</pre>
 
-移出（AWidget::`mouseMoveEvent`）
----
-
-這個函式專門處理 AWidget 中滑鼠移動的動作，也包括憑空移動，因此剛才設定的「draged」可以告訴我們，使用者正想要「拿著東西移動」。
-
-既然想拿東西，就必須把東西打包交給使用者，一般普遍為文字資訊，包裝後在 BWidget 解開，亦可以攜帶圖片、網址、HTML、顏色資訊。
-
-這裡介紹兩個新的 Qt Class：
-
-+ QMimeData：行李箱，將一堆雜亂的行李分裝後包起來。
-
-+ QDrag：送貨員，可以附上一張圖片以辨識該行李的內容，另外送貨員知道寄件者地址（AWidget）、滑鼠停駐點等資訊，也可以幫旅行中的滑鼠換外觀。
-
-接下來就來裝箱吧，根據 Pyslvs 的影片，我們可以推測出攜帶的資訊為 AWidget 的「被選擇行號」，因此透過一段小迴圈篩選出所有被選擇的行號。
-
-用 Python 的 set 集合型態可以將重複選取的內容排除掉，接著重新排序轉回 list 類型儲存。
-
-而 QTableWidget 的 mouseMoveEvent 其實有「按住連續選取」的功能，但是這樣會干擾我們拖移的行為，因此這邊不使用 super。
-
+<h2>移出（AWidget::<code>mouseMoveEvent</code>）</h2>
+<p>這個函式專門處理 AWidget 中滑鼠移動的動作，也包括憑空移動，因此剛才設定的「draged」可以告訴我們，使用者正想要「拿著東西移動」。</p>
+<p>既然想拿東西，就必須把東西打包交給使用者，一般普遍為文字資訊，包裝後在 BWidget 解開，亦可以攜帶圖片、網址、HTML、顏色資訊。</p>
+<p>這裡介紹兩個新的 Qt Class：</p>
+<ul>
+<li>
+<p>QMimeData：行李箱，將一堆雜亂的行李分裝後包起來。</p>
+</li>
+<li>
+<p>QDrag：送貨員，可以附上一張圖片以辨識該行李的內容，另外送貨員知道寄件者地址（AWidget）、滑鼠停駐點等資訊，也可以幫旅行中的滑鼠換外觀。</p>
+</li>
+</ul>
+<p>接下來就來裝箱吧，根據 Pyslvs 的影片，我們可以推測出攜帶的資訊為 AWidget 的「被選擇行號」，因此透過一段小迴圈篩選出所有被選擇的行號。</p>
+<p>用 Python 的 set 集合型態可以將重複選取的內容排除掉，接著重新排序轉回 list 類型儲存。</p>
+<p>而 QTableWidget 的 mouseMoveEvent 其實有「按住連續選取」的功能，但是這樣會干擾我們拖移的行為，因此這邊不使用 super。</p>
 <pre class="brush: python">
 class AWidget(QTableWidget):
     def selectedRows(self):
@@ -318,29 +311,24 @@ class AWidget(QTableWidget):
                 drag.setMimeData(mimeData)
                 drag.setPixmap(QPixmap(":/icons/tooltips/need{}bearings.png".format(selectedRowCount)).scaledToWidth(50))
                 drag.exec_()
-<pre>
+</pre>
 
-由於下方的表格需要 2 或 3 個選取的行號，因此以外的選項我們一律不接受。
-
-行號資訊型態是 int，這邊轉換成字串後用分號 `;` 包裝起來。而這裡還有設定 `need{}bearings.png` 的圖片，表示拿了 2 個或 3 個「軸承」。
-
-最後下的 `drag.exec_()` 方法為延遲函式，表示送貨員已出發，它會一直等到貨物到達或被丟棄時才會回傳，因此要注意不要讓執行序被阻塞。
-
-移入（BWidget::`dragEnterEvent`）
----
-
-這個函式專門處理 BWidget 中滑鼠**帶著資訊進入**的動作。這裡的 event 物件已經被 Qt 轉換成我們的送貨員，與剛才的 QDrag 物件有一定程度的相仿。要使用審核機制來判別這個送貨員是不是我們要接受的對象。
-
-要如何審核呢？有兩種結果：
-
-+ 使用 `acceptProposedAction` 方法接受這名送貨員進入 BWidget 的領域。
-
-+ 使用一般的 `ignore` 方法無視這名送貨員，或是乾脆不理他，會造成滑鼠游標出現類似禁止的符號，依你的桌面系統而定。
-
-被允許的送貨員能在進入的時候，依你的桌面系統出現類似抓著資訊的樣式，這時可以選擇是否放開以丟下資訊，或是將資訊帶走（我只是路過），不一定會送達 BWidget。
-
-若是送貨員在此處被禁止投遞，卻仍然放開滑鼠，那他手中的資訊就會遺失，而且會無法重新取得（除非回到 AWidget 再打包）。
-
+<p>由於下方的表格需要 2 或 3 個選取的行號，因此以外的選項我們一律不接受。</p>
+<p>行號資訊型態是 int，這邊轉換成字串後用分號 <code>;</code> 包裝起來。而這裡還有設定 <code>need{}bearings.png</code> 的圖片，表示拿了 2 個或 3 個「軸承」。</p>
+<p>最後下的 <code>drag.exec_()</code> 方法為延遲函式，表示送貨員已出發，它會一直等到貨物到達或被丟棄時才會回傳，因此要注意不要讓執行序被阻塞。</p>
+<h2>移入（BWidget::<code>dragEnterEvent</code>）</h2>
+<p>這個函式專門處理 BWidget 中滑鼠<strong>帶著資訊進入</strong>的動作。這裡的 event 物件已經被 Qt 轉換成我們的送貨員，與剛才的 QDrag 物件有一定程度的相仿。要使用審核機制來判別這個送貨員是不是我們要接受的對象。</p>
+<p>要如何審核呢？有兩種結果：</p>
+<ul>
+<li>
+<p>使用 <code>acceptProposedAction</code> 方法接受這名送貨員進入 BWidget 的領域。</p>
+</li>
+<li>
+<p>使用一般的 <code>ignore</code> 方法無視這名送貨員，或是乾脆不理他，會造成滑鼠游標出現類似禁止的符號，依你的桌面系統而定。</p>
+</li>
+</ul>
+<p>被允許的送貨員能在進入的時候，依你的桌面系統出現類似抓著資訊的樣式，這時可以選擇是否放開以丟下資訊，或是將資訊帶走（我只是路過），不一定會送達 BWidget。</p>
+<p>若是送貨員在此處被禁止投遞，卻仍然放開滑鼠，那他手中的資訊就會遺失，而且會無法重新取得（除非回到 AWidget 再打包）。</p>
 <pre class="brush: python">
 class BWidget(QTableWidget):
     def dragEnterEvent(self, event):
@@ -348,57 +336,39 @@ class BWidget(QTableWidget):
         if mimeData.hasText():
             if len(mimeData.text().split(';'))==self.bearings:
                 event.acceptProposedAction()
-<pre>
+</pre>
 
-這邊的程式中，`self.bearings` 為允許的行號數，例如連桿表格為 2 個，當拆解用 `;` 分號封裝的字串時，數量為 2 個，那此貨物就允許進入。
-
-橫越（BWidget::`dragMoveEvent`）
----
-
-某些列表式的 QWidget，例如 QTableView、QListView、QTreeView，其實會內建清單拖移功能，讓使用者可以直接拖動儲存格，插到自己或是其他相同類型的 QWidget 中，而且不用自己寫 QEvent 函式，只是這些功能預設是關閉的。
-
-由於上述原因，我們得將自訂送貨員打扮成上面較特殊 QWidget 的送貨員，否則這些類型會不允許他送進資訊，即使在上一小節中已經允許。
-
+<p>這邊的程式中，<code>self.bearings</code> 為允許的行號數，例如連桿表格為 2 個，當拆解用 <code>;</code> 分號封裝的字串時，數量為 2 個，那此貨物就允許進入。</p>
+<h2>橫越（BWidget::<code>dragMoveEvent</code>）</h2>
+<p>某些列表式的 QWidget，例如 QTableView、QListView、QTreeView，其實會內建清單拖移功能，讓使用者可以直接拖動儲存格，插到自己或是其他相同類型的 QWidget 中，而且不用自己寫 QEvent 函式，只是這些功能預設是關閉的。</p>
+<p>由於上述原因，我們得將自訂送貨員打扮成上面較特殊 QWidget 的送貨員，否則這些類型會不允許他送進資訊，即使在上一小節中已經允許。</p>
 <pre class="brush: python">
 class BWidget(QTableWidget):
     def dragMoveEvent(self, event):
         event.setDropAction(Qt.MoveAction)
         event.accept()
-<pre>
+</pre>
 
-這些特殊 QWidget 的送貨員會攜帶「放置行為」，如「遷移」、「複製」等等，因此將我們的送貨員設定為常見的 `Qt.MoveAction` 即可。
-
-若是其他沒有這種 items 的 QWidget，是不用設定此步驟的。
-
-放下（BWidget::`dropEvent`）
----
-
-終於到最後一步了，送貨員最終決定在此投遞，因此必須在此拆包，執行相關的函式。
-
-為了方便，這裡與外界溝通的方式是使用信號槽將所有行號拆包發送出去，使用的是 `self.dragIn` 這個信號。
-
+<p>這些特殊 QWidget 的送貨員會攜帶「放置行為」，如「遷移」、「複製」等等，因此將我們的送貨員設定為常見的 <code>Qt.MoveAction</code> 即可。</p>
+<p>若是其他沒有這種 items 的 QWidget，是不用設定此步驟的。</p>
+<h2>放下（BWidget::<code>dropEvent</code>）</h2>
+<p>終於到最後一步了，送貨員最終決定在此投遞，因此必須在此拆包，執行相關的函式。</p>
+<p>為了方便，這裡與外界溝通的方式是使用信號槽將所有行號拆包發送出去，使用的是 <code>self.dragIn</code> 這個信號。</p>
 <pre class="brush: python">
 class BWidget(QTableWidget):
     def dropEvent(self, event):
         self.dragIn.emit(*[int(e) for e in event.mimeData().text().split(';')])
         event.acceptProposedAction()
-<pre>
+</pre>
 
-最後，還是要執行 `acceptProposedAction` 方法，才會關閉此事件。
-
------
-
-之前介紹過如何接收外部拖入檔案，在程式中開啟的方法：
-
-[http://project.mde.tw/blog/40323230ri-zhi-1060116.html](http://project.mde.tw/blog/40323230ri-zhi-1060116.html)
-
-這次挑戰較複雜的，在 Qt Widget 中抓起資訊的方式。
-
-這三種 QTableWidget 的獨立原始碼提供在這裡，因為這其中的設定還透過繼承方式簡化函式，會較整齊些。
-
-[https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/dndExample.txt](https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/dndExample.txt)
-
-可以透過對照的方式看看自己寫的是否完整。
+<p>最後，還是要執行 <code>acceptProposedAction</code> 方法，才會關閉此事件。</p>
+<hr>
+<p>之前介紹過如何接收外部拖入檔案，在程式中開啟的方法：</p>
+<p><a href="http://project.mde.tw/blog/40323230ri-zhi-1060116.html">http://project.mde.tw/blog/40323230ri-zhi-1060116.html</a></p>
+<p>這次挑戰較複雜的，在 Qt Widget 中抓起資訊的方式。</p>
+<p>這三種 QTableWidget 的獨立原始碼提供在這裡，因為這其中的設定還透過繼承方式簡化函式，會較整齊些。</p>
+<p><a href="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/dndExample.txt">https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/dndExample.txt</a></p>
+<p>可以透過對照的方式看看自己寫的是否完整。</p>
             </div>
             <!-- /.entry-content -->
     <hr/>
