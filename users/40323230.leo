@@ -17,8 +17,14 @@
 </v>
 <v t="amd.20151215170031.1" a="E"><vh>@path ../content</vh>
 <v t="amd.20160106093454.1" a="E"><vh>40323230 網誌文章</vh>
-<v t="leo.20160729110330.1"><vh>重要文章</vh>
-<v t="leo.20160725134048.1"><vh>@edit 40323230_20160725.md</vh></v>
+<v t="leo.20160729110330.1" a="E"><vh>重要文章</vh>
+<v t="leo.20160725134048.1"><vh>@clean 40323230_20160725.md</vh>
+<v t="ahshoe.20170811135917.1"><vh>Param Class</vh></v>
+<v t="ahshoe.20170811173848.1"><vh>Entity Class</vh></v>
+<v t="ahshoe.20170811173851.1"><vh>Point Class</vh></v>
+<v t="ahshoe.20170811181636.1"><vh>Point3d Class</vh></v>
+<v t="ahshoe.20170811151239.1"><vh>style</vh></v>
+</v>
 <v t="leo.20160802124937.1"><vh>@edit 40323230_20160802.md</vh></v>
 <v t="40323230.20170131223202.1"><vh>@edit 40323230_20170121.md</vh></v>
 <v t="ahshoe.20170316194859.1"><vh>@clean 40323230_20170128.md</vh>
@@ -326,10 +332,13 @@
 <v t="40323230.20170803101452.1"><vh>@edit 40323230_20170803.md</vh></v>
 <v t="ahshoe.20170804214618.1"><vh>@edit 40323230_20170804.md</vh></v>
 </v>
-<v t="ahshoe.20170808215558.1" a="E"><vh>w6</vh>
+<v t="ahshoe.20170808215558.1"><vh>w6</vh>
 <v t="ahshoe.20170808215547.1"><vh>@edit 40323230_20170808.md</vh></v>
 <v t="40323230.20170809170803.1"><vh>@edit 40323230_20170809.md</vh></v>
 <v t="ahshoe.20170810162314.1"><vh>@edit 40323230_20170810.md</vh></v>
+</v>
+<v t="ahshoe.20170821134508.1" a="E"><vh>w8</vh>
+<v t="ahshoe.20170821134521.1"><vh>@edit 40323230_20170821.md</vh></v>
 </v>
 </v>
 </v>
@@ -742,6 +751,320 @@ Pabdoc 會自動編碼，套用不同的 csl 檔案可以改變條列外觀。
 <t tx="ahshoe.20170629004729.1"></t>
 <t tx="ahshoe.20170704193233.1"></t>
 <t tx="ahshoe.20170808215558.1"></t>
+<t tx="ahshoe.20170811135917.1">-----
+
+&lt;div class="section"&gt;&lt;span id="Param" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;Param Class
+===
+
+這個類型用來儲存參數值。
+
+繼承自
+---
+
++ Object Class
+
+被繼承
+---
+
++ 無
+
+屬性
+---
+
++ [sys](#Param-sys): System*
++ [handle](#Param-handle): Slvs_hParam
++ [group](#Param-group): Slvs_hGroup
++ [value](#Param-value): double
+
+公開函式
+---
+
++ [Param](#Param-init)(double value)
++ [__del\_\_](#Param-del)()
++ Slvs_hParam [GetHandle](#Param-handle)()
++ Slvs_hGroup [GetGroup](#Param-group)()
++ System * [GetSystem](#Param-sys)()
++ double [GetValue](#Param-value)()
++ void [SetValue](#Param-value)(double value)
++ void [prepareFor](#Param-prepareFor)(System* system, Slvs_hGroup group)
+
+&lt;div class="section"&gt;&lt;span id="Param-sys" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;sys: [System]*
+---
+
+這個屬性為此類型所在的系統。
+
+這個屬性可以直接呼叫。
+
+取得函式：
+
++ System * GetSystem()
+
+&lt;div class="section"&gt;&lt;span id="Param-handle" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;handle: Slvs_hParam
+---
+
+這個屬性為此類型的句柄。
+
+這個屬性可以直接呼叫。
+
+取得函式：
+
++ Slvs_hParam GetHandle()
+
+&lt;div class="section"&gt;&lt;span id="Param-group" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;group: Slvs_hGroup
+---
+
+這個屬性為此類型所在的群組。
+
+這個屬性可以直接呼叫。
+
+取得函式：
+
++ Slvs_hGroup GetGroup()
+
+&lt;div class="section"&gt;&lt;span id="Param-value" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;value: double
+---
+
+這個屬性為此類型的參數值。
+
+這個屬性可以直接呼叫。
+
+取得函式：
+
++ double [GetValue](#Param-GetValue)()
+
+設定函式：
+
++ [Param](#Param-init0)(double value)
++ void SetValue(double value)
+
+&lt;div class="section"&gt;&lt;span id="Param-init" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;Param(double value)
+---
+
+初始化此類型。
+
+給定 value 屬性。
+
+&lt;div class="section"&gt;&lt;span id="Param-del" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;Param.__del\_\_()
+---
+
+刪除此類型的函式。
+
+&lt;div class="section"&gt;&lt;span id="Param-prepareFor" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;void prepareFor([System]* system, Slvs_hGroup group)
+---
+
+此函式可以
+
+</t>
+<t tx="ahshoe.20170811151239.1">&lt;style&gt;
+p a {
+    color : green;
+}
+li a {
+    color : green;
+}
+h2 a {
+    color : green;
+}
+.section {
+    position: relative;
+}
+.anchor {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    top: -70px;
+    left: 0;
+    visibility: hidden;
+}
+&lt;/style&gt;
+
+</t>
+<t tx="ahshoe.20170811173848.1">-----
+
+&lt;div class="section"&gt;&lt;span id="Entity" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;Entity Class
+===
+
+這個類型協助建構所有實體。
+
+請不要直接使用這個類型，因為它無法代表任何實體。
+
+繼承自
+---
+
++ Object Class
+
+被繼承
+---
+
++ [Point] Class
+
+    * [Point3d] Class
+
+    * [Point2d] Class
+
++ [Normal3d] Class
+
++ [Workplane] Class
+
++ [Distance] Class
+
++ [LineSegment] Class
+
+    * [LineSegment3d] Class
+
+    * [LineSegment2d] Class
+
++ [Circular] Class
+
+    * [ArcOfCircle] Class
+
+    * [Circle] Class
+
+    * [Cubic] Class
+
+屬性
+---
+
++ [handle](#Entity-handle): Slvs_hParam
++ [group](#Entity-group): Slvs_hGroup
+
+公開函式
+---
+
++ [Entity](#Entity-init)()
++ [__del\_\_](#Entity-del)()
++ Slvs_hEntity [GetHandle](#Entity-handle)()
++ Slvs_hGroup [GetGroup](#Entity-group)()
+
+&lt;div class="section"&gt;&lt;span id="Entity-handle" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;handle: Slvs_hParam
+---
+
+這個屬性為此類型的句柄。
+
+取得函式：
+
++ Slvs_hParam GetHandle()
+
+&lt;div class="section"&gt;&lt;span id="Entity-group" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;group: Slvs_hGroup
+---
+
+這個屬性為此類型所在的群組。
+
+取得函式：
+
++ Slvs_hGroup GetGroup()
+
+&lt;div class="section"&gt;&lt;span id="Entity-init" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;Entity()
+---
+
+初始化此類型。
+
+直接使用此函式會回傳 AttributeError 錯誤。
+
+&lt;div class="section"&gt;&lt;span id="Entity-del" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;Entity.__del\_\_()
+---
+
+刪除此類型的函式。
+
+</t>
+<t tx="ahshoe.20170811173851.1">-----
+
+&lt;div class="section"&gt;&lt;span id="Point" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;Point Class
+===
+
+這個類型協助建構點實體。
+
+請不要直接使用這個類型，因為它無法代表任何實體。
+
+繼承自
+---
+
++ [Entity] Class
+
+被繼承
+---
+
++ [Point3d] Class
+
++ [Point2d] Class
+
+公開函式
+---
+
++ [Point](#Point-init)()
++ [__del\_\_](#Point-del)()
+
+&lt;div class="section"&gt;&lt;span id="Point-init" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;Point()
+---
+
+初始化此類型。
+
+直接使用此函式會回傳 AttributeError 錯誤。
+
+&lt;div class="section"&gt;&lt;span id="Point-del" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;Point.__del\_\_()
+---
+
+刪除此類型的函式。
+
+</t>
+<t tx="ahshoe.20170811181636.1">-----
+
+&lt;div class="section"&gt;&lt;span id="Point3d" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;Point3d Class
+===
+
+這個類型代表 3D 空間中的點。
+
+建立這個類型可以
+
+繼承自
+---
+
++ [Point] Class
+
+被繼承
+---
+
++ 無
+
+屬性
+---
+
++ [x](#Point3d-x): Param
++ [y](#Point3d-x): Param
++ [z](#Point3d-x): Param
+
+公開函式
+---
+
++ [Point3d](#Point3d-init0)(Param x, Param y, Param z, System* system = NULL, Slvs_hGroup group = USE\_DEFAULT_GROUP)
++ [Point3d](#Point3d-init1)(double x, double y, double z, System* system = NULL, Slvs_hGroup group = USE\_DEFAULT_GROUP)
++ [__del\_\_](#Point3d-del)()
++ list&amp;lt;double&amp;gt; [to_openscad](#Point3d-to_openscad)()
+
+&lt;div class="section"&gt;&lt;span id="Point3d-init0" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;Point3d([Param] x, [Param] y, [Param] z, [System]* system = NULL, Slvs_hGroup group = [USE_DEFAULT_GROUP])
+---
+
+初始化此類型。
+
+&lt;div class="section"&gt;&lt;span id="Point3d-init1" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;Point3d(double x, double y, double z, [System]* system = NULL, Slvs_hGroup group = [USE_DEFAULT_GROUP])
+---
+
+初始化此類型。
+
+&lt;div class="section"&gt;&lt;span id="Point3d-del" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;Point3d.__del\_\_()
+---
+
+刪除此類型的函式。
+
+&lt;div class="section"&gt;&lt;span id="Point3d-to_openscad" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;list&amp;lt;double&amp;gt; Point3d.to_openscad()
+---
+
+此函式將回傳一組含有三個浮點數的 list 類型，分別為 x、y、z 屬性的值。
+
+</t>
+<t tx="ahshoe.20170821134508.1"></t>
 <t tx="amd.20151215170031.1"></t>
 <t tx="amd.20151216001126.1">@language md
 Title: 文章標題
@@ -870,6 +1193,81 @@ g.es("admin pelican 近端執行完畢")</t>
 <t tx="leo.20160710183629.1"></t>
 <t tx="leo.20160718211848.1"></t>
 <t tx="leo.20160724154753.1"></t>
+<t tx="leo.20160725134048.1">@language md
+Title: SLVS 程式庫函式
+Date: 2016-08-11 12:00
+Category: 2016bg2
+Tags: Python-Solvespace
+Author: 40323230
+
+這篇文章為 Python-Solvespace 的 API 文件。
+
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+目錄
+===
+
+1. [Param] Class
+
+1. [Entity] Class
+
+    1. [Point] Class
+
+        + [Point3d] Class
+
+        + [Point2d] Class
+
+    1. [Normal3d] Class
+
+    1. [Workplane] Class
+
+    1. [Distance] Class
+
+    1. [LineSegment] Class
+
+        + [LineSegment3d] Class
+
+        + [LineSegment2d] Class
+
+    1. [Circular] Class
+
+        + [ArcOfCircle] Class
+
+        + [Circle] Class
+
+        + [Cubic] Class
+
+1. [Constraint] Class
+
+1. [System] Class
+
+1. 其他函式
+
+1. 額外變數
+
+@others
+
+[Param]: #Param
+[Entity]: #Entity
+[Point]: #Point
+[Point3d]: #Point3d
+[Normal3d]: #Normal3d
+[Workplane]: #Workplane
+[Point2d]: #Point2d
+[LineSegment]: #LineSegment
+[LineSegment3d]: #LineSegment3d
+[LineSegment2d]: #LineSegment2d
+[Circular]: #Circular
+[ArcOfCircle]: #ArcOfCircle
+[Distance]: #Distance
+[Circle]: #Circle
+[Cubic]: #Cubic
+[Constraint]: #Constraint
+[System]: #System
+
+[USE_DEFAULT_GROUP]: #USE_DEFAULT_GROUP
+
+</t>
 <t tx="leo.20160729110330.1"></t>
 <t tx="leo.20160731150914.1"></t>
 <t tx="leo.20160808172613.1"></t>
