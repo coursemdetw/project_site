@@ -48,7 +48,7 @@ class BWidget(QWidget):
 &lt;p&gt;這邊就不再介紹如何手動放這些 Widget 了，較不瞭解的初學者可以用 QtDesigner 拉出 QLayout 後用 &lt;code&gt;insertWidget&lt;/code&gt; 指令達成。&lt;/p&gt;
 &lt;h2&gt;抓起？（AWidget::&lt;code&gt;mousePressEvent&lt;/code&gt; / &lt;code&gt;mouseReleaseEvent&lt;/code&gt;）&lt;/h2&gt;
 &lt;p&gt;這個函式專門處理 AWidget 中任何按下滑鼠的動作，因此如果你的 AWidget 並非原始無瑕的 QWidget，那 Qt 早已設定過一些互動函式了。&lt;/p&gt;
-&lt;p&gt;在 Python 中，子 Class 的新 method 若和任何父項 Class 撞名，會造成覆蓋。為了不讓 Qt 的設定功能失效，請使用 super 函式讓 Qt 先做完應有的工作。&lt;/p&gt;
+&lt;p&gt;在 Python 中，子 Class 的新 method 若和任何父項 method 撞名，會造成覆蓋。為了不讓 Qt 的設定功能失效，請使用 super 函式讓 Qt 先做完應有的工作。&lt;/p&gt;
 &lt;pre class="brush: python"&gt;
 class AWidget(QWidget):
     def mousePressEvent(self, event):
