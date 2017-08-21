@@ -97,6 +97,8 @@ class AWidget(QWidget):
 
 用 Python 的 set 集合型態可以將重複選取的內容排除掉，接著重新排序轉回 list 類型儲存。
 
+而 QTableWidget 的 mouseMoveEvent 其實有「按住連續選取」的功能，但是這樣會干擾我們拖移的行為，因此這邊不使用 super。
+
 &lt;pre class="brush: python"&gt;
 class AWidget(QTableWidget):
     def selectedRows(self):
@@ -106,7 +108,6 @@ class AWidget(QTableWidget):
         return sorted(set(a))
 
     def mouseMoveEvent(self, event):
-        super(AWidget, self).mouseMoveEvent(event)
         if self.draged:
             selectedRows = self.selectedRows()
             selectedRowCount = len(selectedRows)
