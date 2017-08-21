@@ -106,6 +106,7 @@ class AWidget(QTableWidget):
         return sorted(set(a))
 
     def mouseMoveEvent(self, event):
+        super(AWidget, self).mouseMoveEvent(event)
         if self.draged:
             selectedRows = self.selectedRows()
             selectedRowCount = len(selectedRows)
