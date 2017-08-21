@@ -1,5 +1,261 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-26T09:00:00+08:00</updated><entry><title>Python basic "The Calculate" simple ver.</title><link href="http://project.mde.tw/blog/python-basic-the-calculate-simple-ver.html" rel="alternate"></link><published>2017-07-26T09:00:00+08:00</published><updated>2017-07-26T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-07-26:/blog/python-basic-the-calculate-simple-ver.html</id><summary type="html">&lt;p&gt;寫好了精簡版本的計算機程式&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-18T09:00:00+08:00</updated><entry><title>推送網誌教學</title><link href="http://project.mde.tw/blog/tui-song-wang-zhi-jiao-xue.html" rel="alternate"></link><published>2017-08-18T09:00:00+08:00</published><updated>2017-08-18T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-18:/blog/tui-song-wang-zhi-jiao-xue.html</id><summary type="html">&lt;p&gt;在還不是協作者的情況下進行網誌推送&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;在還不是協作者的情況下進行網誌推送&lt;/p&gt;
+
+
+&lt;p&gt;首先到 Coursemdetw 的使用者頁面，找到 Project_site 以及 Project_site file 並執行 fork 來複製倉儲&lt;/p&gt;
+&lt;p&gt;為何需要兩個倉儲?&lt;/p&gt;
+&lt;p&gt;為了將網誌以及圖資分開管理&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/rep.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;fork 就有如複製一般&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/fork-mean.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;如何確認自己 fork 無誤呢?&lt;/p&gt;
+&lt;p&gt;在自己倉儲區域下面有標註原出處&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/fork.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;如 fork 到錯誤的倉儲&lt;/p&gt;
+&lt;p&gt;直接進入 setting 拉至最底下的 Danger Zone 來進行刪除即可&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/setting.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;Danger Zone &lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/delete.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;確認好之後&lt;/p&gt;
+&lt;p&gt;直接 clone 自己 fork 的倉儲即可&lt;/p&gt;
+&lt;p&gt;因為你無權去修改出處的內容&lt;/p&gt;
+&lt;p&gt;網誌撰寫完成之後進行推送&lt;/p&gt;
+&lt;p&gt;步驟一樣是&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+git add -A
+
+git commit -m "XXXX"
+
+git push
+&lt;/pre&gt;
+
+&lt;h3&gt;Pull request&lt;/h3&gt;
+
+&lt;p&gt;並到倉儲上做 New pull request 要求原倉儲的管理員進行版本更新&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/but.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;按下 request 之後 請注意 base 以及 head 分別為哪邊的倉儲&lt;/p&gt;
+&lt;p&gt;下面紅框處可以看到自己剛剛 commit 的名稱&lt;/p&gt;
+&lt;p&gt;可以以這樣來確認自己有沒有搞錯目的地以及來源&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/pull.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;確認後按下 Creat pull request&lt;/p&gt;
+&lt;p&gt;會進入到此頁面 並在紅框處留言(不能為空白)&lt;/p&gt;
+&lt;p&gt;完成後按下 Create 即送出更新版本要求&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/request.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;如遇到下圖沒有可以選目的以及來源的狀況&lt;/p&gt;
+&lt;p&gt;請點選 compare across forks (紅框處)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/nothing.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/nothing1.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;並回到 Pull request 照著步驟進行&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Eric 環境安裝-Windows (下)</title><link href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-xia.html" rel="alternate"></link><published>2017-08-17T09:00:00+08:00</published><updated>2017-08-17T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-17:/blog/eric-huan-jing-an-zhuang-windows-xia.html</id><summary type="html">&lt;p&gt;介紹安裝方法-2&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;介紹安裝方法-2&lt;/p&gt;
+
+
+&lt;p&gt;下載完QT安裝客戶端之後&lt;/p&gt;
+&lt;p&gt;雙擊開啟 進入安裝流程&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-A.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;按下NEXT之後 登入帳號&lt;/p&gt;
+&lt;p&gt;帳號可在Qt申請&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-B.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-C.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;選擇安裝位置並選擇需要安裝的項目&lt;/p&gt;
+&lt;p&gt;預設最新版本與工具包即可&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-D.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-E.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;按下同意即可繼續安裝&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-F.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;安裝過程 漫長的等待&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-G.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;完成&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-H.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;接下來打開命令提式字元&lt;/p&gt;
+&lt;p&gt;先切換至C槽&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+cd C:\
+&lt;/pre&gt;
+
+&lt;p&gt;接著使用pip進行安裝PyQt以及QScintilla&lt;/p&gt;
+&lt;p&gt;兩個打在一起他會自動依序安裝&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+pip install pyqt QScintilla
+&lt;/pre&gt;
+
+&lt;p&gt;若是電腦內原本就有安裝PyQt以及QScintilla&lt;/p&gt;
+&lt;p&gt;使用-U(要大寫)來進行更新&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+pip install pyqt QScintilla -U
+&lt;/pre&gt;
+
+&lt;p&gt;安裝完成後去Eric的官方網站下載Eric的檔案&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/ERIC-1.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/ERIC-2.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;下載完後進行解壓縮並將命令提示字元的位置轉移到其路徑&lt;/p&gt;
+&lt;p&gt;以下用我這邊來說明&lt;/p&gt;
+&lt;p&gt;由於我讓下載目錄預設在Downloads裡面故路徑為這樣&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/POS.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+C:\Users\kmol\Downloads\eric6-17.08 (1)\eric6-17.08
+&lt;/pre&gt;
+
+&lt;p&gt;這樣就完成切換&lt;/p&gt;
+&lt;p&gt;並且由於Eric的安裝檔為PY&lt;/p&gt;
+&lt;p&gt;故必須用Python來進行安裝&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+python install.py
+&lt;/pre&gt;
+
+&lt;p&gt;安裝完成後於命令提示字元輸入eric6即可開啟&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Linux作業系統下的程式開發環境</title><link href="http://project.mde.tw/blog/linuxzuo-ye-xi-tong-xia-de-cheng-shi-kai-fa-huan-jing.html" rel="alternate"></link><published>2017-08-15T09:00:00+08:00</published><updated>2017-08-15T09:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2017-08-15:/blog/linuxzuo-ye-xi-tong-xia-de-cheng-shi-kai-fa-huan-jing.html</id><summary type="html">&lt;p&gt;參考&lt;a href="http://project.mde.tw/blog/yen-kmol-de-cheng-shi-kai-fa-huan-jing.html"&gt;yen - KMOL 的程式開發環境 &lt;/a&gt;學習如何安裝Qt5、sip、PyQt5、qscintilla2 與 eric6 等，並寫一篇文章回報&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;參考&lt;a href="http://project.mde.tw/blog/yen-kmol-de-cheng-shi-kai-fa-huan-jing.html"&gt;yen - KMOL 的程式開發環境 &lt;/a&gt;學習如何安裝Qt5、sip、PyQt5、qscintilla2 與 eric6 等，並寫一篇文章回報&lt;/p&gt;
+
+
+&lt;h2&gt;Ubuntu 16.04 虛擬主機安裝&lt;/h2&gt;
+
+&lt;p&gt;下載&lt;a href="https://www.virtualbox.org/wiki/Downloads"&gt;VirtualBox&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;下載&lt;a href="https://www.ubuntu.com/download/desktop"&gt;Ubuntu 16.04&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;開啟VirtualBox並新增虛擬機器&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="./users/4042/40423116/01.png" width="800" height="600" /&gt;
+&lt;p&gt;載入ubuntu-16.04映像檔安裝ubuntu&lt;/p&gt;
+&lt;p&gt;有幾個要注意的虛擬機器配置選樣:&lt;/p&gt;
+&lt;p&gt;記憶體差不多1~4G就可以&lt;/p&gt;
+&lt;p&gt;檔案位置與大小:位置看個人需求,比較需要注意的是大小，建議多一點，設超過20以上&lt;/p&gt;
+&lt;h2&gt;開始安裝工具&lt;/h2&gt;
+&lt;h3&gt;安裝, Solvespace 與程式庫開發所需的各種套件:&lt;/h3&gt;
+&lt;pre class="brush: python"&gt;
+apt-get install libpng-dev libjson-c-dev libfreetype6-dev \
+                libfontconfig1-dev libgtkmm-2.4-dev libpangomm-1.4-dev \
+                libcairo2-dev libgl-dev libglu-dev cmake swig \
+                python3-dev python3-pip pyqt5-dev mingw-w64
+&lt;/pre&gt;
+&lt;p&gt;安裝 Pyslvs-PyQt5 所需要的 peewee ORM 模組, 以及產生靜態網誌所需的 pelican 與 Markdown:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+sudo pip3 install peewee pelican Markdown
+&lt;/pre&gt;
+&lt;h3&gt;安裝Qt5.7&lt;/h3&gt;
+&lt;p&gt;確認 Qt 版次指令:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+qmake-v
+&lt;/pre&gt;
+&lt;p&gt;下載&lt;a href="http://download.qt.io/official_releases/qt/5.7/5.7.0/qt-opensource-linux-x64-5.7.0.run"&gt;http://download.qt.io/official_releases/qt/5.7/5.7.0/qt-opensource-linux-x64-5.7.0.run &lt;/a&gt;並安裝Qt5.7&lt;/p&gt;
+&lt;p&gt;若雙擊安裝包未能執行程式,使用下列指令並安裝&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+sudo chmod +x      /可執行化
+sudo ./qt-xxx.run   /執行qt
+&lt;/pre&gt;
+&lt;p&gt;利用 gedit ~/.bashrc, 編輯 .bashrc, 加入:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+export QTDIR=/opt/Qt5.7.0/5.7/gcc_64/ 
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${QTDIR}/lib 
+export PATH=${QTDIR}/bin:${PATH}
+&lt;/pre&gt;
+&lt;p&gt;然後以 source ~/.bashrc 讓設定生效&lt;/p&gt;
+&lt;h3&gt;安裝Sip&lt;/h3&gt;
+&lt;p&gt;確認 Sip 版次指令:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+sip -V 
+&lt;/pre&gt;
+&lt;p&gt;首先,先移除Ubuntu 16.04 內建的 sip 4.17.1 舊版本:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+sudo apt purge python3-sip python3-sip-dev
+&lt;/pre&gt;
+&lt;p&gt;然後下載&lt;a href="http://www.riverbankcomputing.com/software/sip/download"&gt; http://www.riverbankcomputing.com/software/sip/download &lt;/a&gt;,安裝sip4.18.1&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+python3 configure.py 
+make
+sudo make install
+&lt;/pre&gt;
+&lt;p&gt;假如要確認 Python3 導入時使用的 sip 版本, 利用下列程式碼檢查:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+import sip
+print(sip, sip.SIP_VERSION_STR)
+&lt;/pre&gt;
+&lt;h3&gt;安裝PyQt5&lt;/h3&gt;
+&lt;p&gt;PyQt5 的安裝步驟與 sip 相同, 從&lt;a href="http://www.riverbankcomputing.com/software/pyqt/download5"&gt; http://www.riverbankcomputing.com/software/pyqt/download5 &lt;/a&gt;下載原始碼之後:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+python3 configure.py 
+make
+sudo make install
+&lt;/pre&gt;
+&lt;h3&gt;安裝qscintilla&lt;/h3&gt;
+&lt;p&gt;首先下載原始碼&lt;a href="http://www.riverbankcomputing.com/software/qscintilla/download "&gt; http://www.riverbankcomputing.com/software/qscintilla/download  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下執行指令在3個目錄下(cd)&lt;/p&gt;
+&lt;p&gt;1.Qt4Qt5&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+cd Qt4Qt5
+qmake qscintilla.pro
+make
+sudo make install
+&lt;/pre&gt;
+&lt;p&gt;2.designer-Qt4Qt5&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+cd ../designer-Qt4Qt5
+qmake designer.pro
+make
+sudo make install
+&lt;/pre&gt;
+&lt;p&gt;3.Python&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+cd ../Python
+python3 configure.py --pyqt=PyQt5
+make
+sudo make install
+&lt;/pre&gt;
+&lt;h3&gt;安裝eric6&lt;/h3&gt;
+&lt;p&gt;從 &lt;a href="http://eric-ide.python-projects.org/eric-download.html "&gt; http://eric-ide.python-projects.org/eric-download.html  &lt;/a&gt;下載原始碼後, 進行安裝&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+sudo python3 install.py
+&lt;/pre&gt;
+&lt;p&gt;在黑窗打入指令 eric6 即可開啟&lt;/p&gt;
+&lt;h3&gt;安裝 Leo Editor&lt;/h3&gt;
+&lt;p&gt;1.git clone Leo Editor 的原始碼,並將 leo 目錄複製到 /usr/local/lib/python3.5/dist-packages 目錄中即完成安裝,&lt;/p&gt;
+&lt;p&gt;2.以 python3 launchLeo.py, 或者將 python3 launchLeo.py 放入可執行的 leo 檔案中來啟動Leo Editor&lt;/p&gt;&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Eric 環境安裝-Windows (上)</title><link href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-shang.html" rel="alternate"></link><published>2017-08-12T09:00:00+08:00</published><updated>2017-08-12T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-12:/blog/eric-huan-jing-an-zhuang-windows-shang.html</id><summary type="html">&lt;p&gt;介紹安裝方法-1&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;介紹安裝方法-1&lt;/p&gt;
+
+
+&lt;p&gt;這篇介紹應該幾天前就出來了&lt;/p&gt;
+&lt;p&gt;不過由於我的筆記型電腦送修&lt;/p&gt;
+&lt;p&gt;實驗室原本位置的windows主機不知為何會突然關機&lt;/p&gt;
+&lt;p&gt;於是換成了同一位置的第二台主機&lt;/p&gt;
+&lt;p&gt;它屬於Linux系統，於是想用虛擬機來介紹&lt;/p&gt;
+&lt;p&gt;下載了64bit的WIN10的ISO檔案&lt;/p&gt;
+&lt;p&gt;不料原先BIOS內VT-D為disable狀態，要去調整時又發現BIOS有密碼&lt;/p&gt;
+&lt;p&gt;向詹老師詢問後終於開啟了VT-D，但還是只有32位元的虛擬機可以勾選&lt;/p&gt;
+&lt;p&gt;最後換到了實驗室最後面的電腦來使用。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/P.png?raw=true"&gt;&lt;/p&gt;
+&lt;h3&gt;安裝過程&lt;/h3&gt;
+
+&lt;p&gt;首先將Python 3.6.2安裝起來&lt;/p&gt;
+&lt;p&gt;先去系統檢視電腦為哪一位元&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/SYS.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;之後去Python的官網&lt;/p&gt;
+&lt;p&gt;選擇3.6.2(紅框處)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/python.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;之後拉到下面選擇好位元之後下載executable(可執行)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/python2.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;下載後打開來安裝&lt;/p&gt;
+&lt;p&gt;由於此電腦本身有安裝過&lt;/p&gt;
+&lt;p&gt;所以上面那欄為Upgrade&lt;/p&gt;
+&lt;p&gt;如未安裝過 應該顯示為&lt;font color=#0000FF&gt;Install Now&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/PI.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;先點選Customize來確認勾選項目如圖一樣&lt;/p&gt;
+&lt;p&gt;確認後按back然後按下install now&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/PI2.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;安裝好後開起命令提式字元來測試有沒有安裝成功&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/PY.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/PYTEST.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;安裝Qt&lt;/p&gt;
+&lt;p&gt;進入官網&lt;/p&gt;
+&lt;p&gt;點選紅框處&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/Qt.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;拉至頁面最下方點選紅框處&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT2.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;進入後拉至最下方，右邊為商業用，左邊為開放原始碼，並點選紅框處&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/Qt3.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;進入後DOWNLOAD NOW&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/Qt4.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;今日內容以上
+其餘內容下周補上&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Python basic "The Calculate" simple ver.</title><link href="http://project.mde.tw/blog/python-basic-the-calculate-simple-ver.html" rel="alternate"></link><published>2017-07-26T09:00:00+08:00</published><updated>2017-07-26T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-07-26:/blog/python-basic-the-calculate-simple-ver.html</id><summary type="html">&lt;p&gt;寫好了精簡版本的計算機程式&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;寫好了精簡版本的計算機程式&lt;/p&gt;
 
 
