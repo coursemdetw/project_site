@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-21T21:00:00+08:00</updated><entry><title>Qt Drag and Drop 教學</title><link href="http://project.mde.tw/blog/qt-drag-and-drop-jiao-xue.html" rel="alternate"></link><published>2017-08-21T21:00:00+08:00</published><updated>2017-08-21T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-21:/blog/qt-drag-and-drop-jiao-xue.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 新功能測試及解說&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-22T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 08/22</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0822.html" rel="alternate"></link><published>2017-08-22T21:00:00+08:00</published><updated>2017-08-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-22:/blog/pyslvs-kai-fa-jin-du-0822.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Version 0.9 目標&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Version 0.9 目標&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Version 0.9 目標&lt;/h1&gt;
+&lt;p&gt;將自改版後完成的項目列出來：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;重新設定 QTableWidget。&lt;/p&gt;
+&lt;p&gt;手寫 QTableWidget 的功能，這意味著很多功能可以直接連結表格元件，資料格式應該轉為直接連動的方式，會更節省途中暫存的空間。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;目標&lt;/strong&gt;：重新設計 QTableWidget 資料存取方式，已有初步規劃。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;更直覺的畫布選取。&lt;/p&gt;
+&lt;p&gt;由於上述 QTableWidget 的改寫，可以達成滑鼠與表格元件的選取狀態一致，甚至有觸發編輯的功能。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;目標&lt;/strong&gt;：添加額外互動功能，視需求而定，目前可能無法作到 Solvespace 直接拖動的效果，但是對於還未有連結關係的點可以考慮。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重新整理部份函式&lt;/p&gt;
+&lt;p&gt;以前寫的功能雜亂且不明確，沒符合 PEP 8 的格式。v0.8 發布時有大量修正，不過還有指標亂用的情況，目前只有小部份的整理。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;目標&lt;/strong&gt;：減少函式和轉送數據的用量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;之後預計會加入演算法結果的速度、加速度分析功能，目前可以推導出四連桿的角度，不知道有沒有八連桿的相關資料？&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>Qt Drag and Drop 教學</title><link href="http://project.mde.tw/blog/qt-drag-and-drop-jiao-xue.html" rel="alternate"></link><published>2017-08-21T21:00:00+08:00</published><updated>2017-08-21T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-21:/blog/qt-drag-and-drop-jiao-xue.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 新功能測試及解說&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;如何在 Qt 框架中達成 Widgets 間的滑鼠資訊轉移&lt;/li&gt;
 &lt;/ul&gt;
@@ -168,7 +197,7 @@ class BWidget(QTableWidget):
 &lt;p&gt;這次挑戰較複雜的，在 Qt Widget 中抓起資訊的方式。&lt;/p&gt;
 &lt;p&gt;這三種 QTableWidget 的獨立原始碼提供在這裡，因為這其中的設定還透過繼承方式簡化函式，會較整齊些。&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/dndExample.txt"&gt;https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/dndExample.txt&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;可以透過對照的方式看看自己寫的是否完整。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>Pyslvs 開發進度 - 08/10</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0810.html" rel="alternate"></link><published>2017-08-10T21:00:00+08:00</published><updated>2017-08-10T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-10:/blog/pyslvs-kai-fa-jin-du-0810.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;p&gt;可以透過對照的方式看看自己寫的是否完整。&lt;/p&gt;</content><category term="Pyslvs"></category><category term="PyQt"></category></entry><entry><title>Pyslvs 開發進度 - 08/10</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0810.html" rel="alternate"></link><published>2017-08-10T21:00:00+08:00</published><updated>2017-08-10T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-10:/blog/pyslvs-kai-fa-jin-du-0810.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Version 0.8 Release&lt;/li&gt;
 &lt;li&gt;Version 0.8 後續更新&lt;/li&gt;
@@ -7402,7 +7431,7 @@ self.work.progress_Signal.connect(self.progressbar_change)
 &lt;p&gt;覺得自己需要多練習語言表達的部份，因為可能統整資料十分明瞭，在口語上卻節奏太快，順著聽者的思路呈現才是最重要的方向。&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;
 &lt;br&gt;&lt;/p&gt;
-&lt;p&gt;P.S Roger 用 wordpress 架了一個存文章的網站：&lt;a href="http://roger-blog.tk/" title="roger-blog.tk"&gt;http://roger-blog.tk/&lt;/a&gt;&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>40323230日誌 - 105/09/06</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1050906.html" rel="alternate"></link><published>2016-09-06T21:00:00+08:00</published><updated>2016-09-06T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2016-09-06:/blog/40323230ri-zhi-1050906.html</id><summary type="html">&lt;ol&gt;
+&lt;p&gt;P.S Roger 用 wordpress 架了一個存文章的網站：&lt;a href="http://roger-blog.tk/" title="roger-blog.tk"&gt;http://roger-blog.tk/&lt;/a&gt;&lt;/p&gt;</content><category term="Pyslvs"></category><category term="PyQt"></category></entry><entry><title>40323230日誌 - 105/09/06</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1050906.html" rel="alternate"></link><published>2016-09-06T21:00:00+08:00</published><updated>2016-09-06T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2016-09-06:/blog/40323230ri-zhi-1050906.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;表格管理與程式碼&lt;/p&gt;
 &lt;/li&gt;
