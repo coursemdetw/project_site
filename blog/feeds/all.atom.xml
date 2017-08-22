@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-22T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 08/22</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0822.html" rel="alternate"></link><published>2017-08-22T21:00:00+08:00</published><updated>2017-08-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-22:/blog/pyslvs-kai-fa-jin-du-0822.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-22T23:30:00+08:00</updated><entry><title>pyslvs 四連桿速度分析</title><link href="http://project.mde.tw/blog/pyslvs-si-lian-gan-su-du-fen-xi.html" rel="alternate"></link><published>2017-08-22T23:30:00+08:00</published><updated>2017-08-22T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-08-22:/blog/pyslvs-si-lian-gan-su-du-fen-xi.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;四連桿速度分析&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;四連桿加速度分析&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;四連桿速度分析&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;四連桿加速度分析&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/fourbar.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;針對我們 pyslvs 所產生的四連桿進行速度以及加速度分析。&lt;/p&gt;
+&lt;p&gt;角位移
+&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/Spicture.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;角速度
+&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/Vpicture.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;角加速度
+&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/apicture.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;透過 python 產生結果
+&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/codeSVA.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;接下來會將程式寫成 class 讓 pyslvs 接到主程式顯示結果，八連桿部分還在思考如何推導，在思考者是否要用一樣的方法進行推導結果。推導的方法，會再找時間全部寫成 latex 的方式顯示出來，要花比較多時間進行編寫。&lt;/p&gt;</content><category term="pyslvs"></category></entry><entry><title>Pyslvs 開發進度 - 08/22</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0822.html" rel="alternate"></link><published>2017-08-22T21:00:00+08:00</published><updated>2017-08-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-22:/blog/pyslvs-kai-fa-jin-du-0822.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Version 0.9 目標&lt;/li&gt;
 &lt;/ul&gt;
