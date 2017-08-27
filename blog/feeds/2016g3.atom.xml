@@ -1,0 +1,2730 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g3</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g3.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-05-15T01:30:00+08:00</updated><entry><title>40323214日誌- Opencv&amp;Vrep 控制手臂</title><link href="http://project.mde.tw/blog/40323214ri-zhi-opencvvrep-kong-zhi-shou-bi.html" rel="alternate"></link><published>2017-05-15T01:30:00+08:00</published><updated>2017-05-15T01:30:00+08:00</updated><author><name>40323214</name></author><id>tag:project.mde.tw,2017-05-15:/blog/40323214ri-zhi-opencvvrep-kong-zhi-shou-bi.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+&lt;h3&gt;一.環境建立&lt;/h3&gt;
+
+&lt;h4&gt;
+1.在V-rep部分，導入bg2組別的3D-printer及手臂模組，藉此完成從辨識到控制手臂夾取物件的流程。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/aIiKTJw.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+2.機台(左)與手臂(右)座標設定。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/6Ne6dpm.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+3.攝影機座標設定與角度設定。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/emsULIX.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+4.建立底面(由於辨識時背景需要全黑)。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/Fi8wuSU.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+5.建立光源，為了使物體不會有陰影，影響辨識成果。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/5a6P3DF.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/9LRZUNu.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/yGnDpaf.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+6.最後將機台與手臂部分的可辨識部分隱藏，只留下夾爪可辨識即可。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;h3&gt;二.Python程式&lt;/h3&gt;
+&lt;h4&gt;
+將下面程式存成py檔至建立的資料夾。
+&lt;/br&gt;
+&lt;/br&gt;
+
+&lt;pre class="brush: python"&gt;
+
+import matplotlib
+matplotlib.use("TkAgg")
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg,NavigationToolbar2TkAgg
+from matplotlib.figure import Figure
+import matplotlib.animation as animation
+from matplotlib import style
+import numpy as np
+from matplotlib import pyplot, rcParams
+import serial
+import sys
+import vrep
+import math
+import time
+from matplotlib import pyplot as plt
+import cv2
+import time
+from PIL import Image
+from scipy.spatial import distance as dist
+from imutils import perspective
+from imutils import contours
+import argparse
+import imutils
+
+
+
+
+
+
+
+
+vrep.simxFinish(-1) #終止所有連接
+clientID=vrep.simxStart('127.0.0.1',19997,True,True,5000,5) #設立一個連接口19997(默認地址)
+
+#啟動模擬
+vrep.simxStartSimulation(clientID, vrep.simx_opmode_oneshot)
+
+if clientID!= -1:
+    print ('Conexion establecida')
+
+else:
+    print('Connection not successful')
+    sys.exit('Could not connect')
+#保存參考相機
+_, camhandle = vrep.simxGetObjectHandle(clientID, 'Vision_sensor1', vrep.simx_opmode_oneshot_wait)
+#啟動相機電源
+_, resolution, image = vrep.simxGetVisionSensorImage(clientID, camhandle, 0, vrep.simx_opmode_streaming)
+time.sleep(1)
+
+#保存攝像機並轉換為BGR
+_, resolution, image=vrep.simxGetVisionSensorImage(clientID, camhandle, 0, vrep.simx_opmode_buffer)
+img = np.array(image, dtype = np.uint16)
+img.resize([resolution[0], resolution[1], 3])
+img = np.rot90(img,2)
+img = np.fliplr(img)
+img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)   
+cv2.imwrite("B.png", img)
+#vrep.simxStopSimulation(clientID, vrep.simx_opmode_oneshot_wait)
+
+
+
+ap = argparse.ArgumentParser()
+#原輸入的基準物寬，單位為inch
+ap.add_argument("-w", "--width", type=float, required=True)
+args = vars(ap.parse_args())
+
+
+   #用於距離測量
+def midpoint(ptA, ptB):
+    return ((ptA[0] + ptB[0]) * 0.5, (ptA[1] + ptB[1]) * 0.5)
+
+
+#此定義用於物體標號時
+def order_points_old(pts):
+    #設定物體輪廓之四個點位置,左上右上右下左下(順時針)
+    rect = np.zeros((4, 2), dtype="float32")
+
+    s = pts.sum(axis=1)
+    rect[0] = pts[np.argmin(s)]
+    rect[2] = pts[np.argmax(s)]
+
+    diff = np.diff(pts, axis=1)
+    rect[1] = pts[np.argmin(diff)]
+    rect[3] = pts[np.argmax(diff)]
+
+    return rect
+
+
+###剪裁圖片→只留基準物 (用於重心距離量測)###
+
+imgC = Image.open("B.png")
+cut = imgC.crop((0, 0, 200, 200))
+cut.save("AA.png")
+
+#讀取圖檔→灰階→模糊
+#cv2.GaussianBlur模糊程度可以用3x3, 5x5, 7x7
+imgC = cv2.imread("AA.png", 1)
+grayC = cv2.cvtColor(imgC, cv2.COLOR_BGR2GRAY)
+blurredC = cv2.GaussianBlur(grayC, (5, 5), 0)
+threshC = cv2.threshold(blurredC, 60, 255, cv2.THRESH_BINARY)[1]
+
+cntsC = cv2.findContours(threshC.copy(), cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE)
+
+cntsC = cntsC[0] if imutils.is_cv2() else cntsC[1]
+(cntsC, _) = contours.sort_contours(cntsC)
+
+for b in cntsC:
+
+    #辨識基準物重心
+    M = cv2.moments(b)
+    cX = int(M["m10"] / M["m00"])
+    cY = int(M["m01"] / M["m00"])
+
+###處理未裁剪的圖片(原始圖)###
+
+#讀取圖檔→灰階→模糊
+#cv2.GaussianBlur模糊程度可以用3x3, 5x5, 7x7
+img = cv2.imread("B.png", 1)
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+thresh = cv2.threshold(blurred, 60, 255, cv2.THRESH_BINARY)[1]
+
+# 輪廓描邊→補空&amp;侵蝕 (用於size)
+edged = cv2.Canny(gray, 50, 100)
+edged = cv2.dilate(edged, None, iterations=1)
+edged = cv2.erode(edged, None, iterations=1)
+
+#進行輪廓偵測  (用於重心測量&amp;標號)
+cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE)
+cnts = cnts[0] if imutils.is_cv2() else cnts[1]
+(cnts, _) = contours.sort_contours(cnts)
+
+#進行輪廓偵測  (用於最大長寬測量)
+cntsS = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE)
+cntsS = cntsS[0] if imutils.is_cv2() else cntsS[1]
+
+# 'pixels Per Metric' = object_width / know_width (相機像素 / 已知物品的寬度)
+(cntsS, _) = contours.sort_contours(cntsS)
+
+
+###物體標號###
+
+for (i, n) in enumerate(cnts):
+
+    if cv2.contourArea(n) &lt; 50:
+        continue
+
+    box = cv2.minAreaRect(n)
+    box = cv2.cv.BoxPoints(box) if imutils.is_cv2() else cv2.boxPoints(box)
+    box = np.array(box, dtype="int")
+
+    rect = order_points_old(box)
+
+    cv2.putText(img, "[{}]".format(i + 1),
+        (int(rect[0][0] - 10), int(rect[0][1] - 10)),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255,100, 200), 1)
+
+
+###最大長寬###
+
+pixelsPerMetric = None
+
+for (a, d) in enumerate(cntsS):
+
+    # 計算輪廓旋轉邊界
+    Sbox = cv2.minAreaRect(d)
+    Sbox = cv2.cv.BoxPoints(Sbox) if imutils.is_cv2() else cv2.boxPoints(Sbox)
+    Sbox = np.array(Sbox, dtype="int")
+
+    # 繪製輪廓旋轉邊界
+    Sbox = perspective.order_points(Sbox)
+    cv2.drawContours(img, [Sbox.astype("int")], -1, (0, 255, 0), 1)
+
+    for (x, y) in Sbox:
+        cv2.circle(img, (int(x), int(y)), 3, (0, 0, 230), -1)
+
+    # 計算物品上下邊界之中點
+    (Stl, Str, Sbr, Sbl) = Sbox
+    (StltrX, StltrY) = midpoint(Stl, Str)
+    (SblbrX, SblbrY) = midpoint(Sbl, Sbr)
+
+    # 計算物品左右邊界之中點
+    (StlblX, StlblY) = midpoint(Stl, Sbl)
+    (StrbrX, StrbrY) = midpoint(Str, Sbr)
+
+
+    # 利用歐式定理算中點之間的距離
+    dA = dist.euclidean((StltrX, StltrY), (SblbrX, SblbrY))
+    dB = dist.euclidean((StlblX, StlblY), (StrbrX, StrbrY))
+
+    # 如果未知 'pixelsPerMetric', 則使用下一行之算式
+    if pixelsPerMetric is None:
+        pixelsPerMetric = dB / (args["width"] * 2.54)
+
+    # 計算物品之最大長寬
+    dimA = dA / pixelsPerMetric
+    dimB = dB / pixelsPerMetric
+    print ("[{}]".format(a + 1),"width" , round(dimA , 2) , "length" , round(dimB , 2))
+
+    # 顯示出畫面中物品的大小
+    cv2.putText(img, "{:.1f}cm".format(dimA),
+        (int(StrbrX + 10), int(StrbrY)), cv2.FONT_HERSHEY_SIMPLEX,
+        0.5, (255, 255, 255), 1)
+    cv2.putText(img, "{:.1f}cm".format(dimB),
+        (int(StltrX - 15), int(StltrY - 10)), cv2.FONT_HERSHEY_SIMPLEX,
+        0.5, (255, 255, 255), 1)
+
+###重心距離###
+
+refObj = None
+
+for c in cnts:
+
+    cv2.drawContours(img, [c], -1, (220, 255, 250), 1)
+    cv2.circle(img, (cX, cY), 5, (255, 255, 255), -1)
+    cv2.putText(img, "datum", (cX - 20, cY - 20),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 220), 1)
+
+    # 計算輪廓旋轉邊界
+    gear7 = cv2.minAreaRect(c)
+    gear7 = cv2.cv.BoxPoints(gear7) if imutils.is_cv2() else cv2.boxPoints(gear7)
+    gear7 = np.array(gear7, dtype="int")
+
+    # 計算輪廓旋轉邊界
+    gear7C = cv2.minAreaRect(c)
+    gear7C = cv2.cv.BoxPoints(gear7C) if imutils.is_cv2() else cv2.boxPoints(gear7C)
+    gear7C = np.array(gear7C, dtype="int")
+
+    gear7 = perspective.order_points(gear7)
+    gear7C = perspective.order_points(gear7C)
+
+#計算物體重心
+    M = cv2.moments(c)
+    PcX = int(M["m10"] / M["m00"])
+    PcY = int(M["m01"] / M["m00"])
+    #PcX = np.average(gear7[:, 0])
+    #PcY = np.average(gear7[:, 1])
+    print (PcX ,PcY)
+
+# 以左邊邊界輪廓當基準, 當參考對象
+    if refObj is None:
+        # 計算基準物的中點
+        (tl, tr, br, bl) = gear7C
+        (tlblX, tlblY) = midpoint(tl, bl)
+        (trbrX, trbrY) = midpoint(tr, br)
+
+        # 用座標法計算兩物體中心距離 (D為圖中物體座標距離)
+        # 乘2.54換算單位inch→mm
+        D = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
+        refObj = (gear7C, (cX, cY), D / (args["width"] * 2.54))
+        continue
+
+    orig = img.copy()
+
+     # 基準物&amp;測量物的中心點及點到點的距離
+    cv2.circle(orig, (int(PcX), int(PcY)), 5, (240, 250, 150), -1)
+    cv2.circle(orig, (int(cX), int(cY)), 5, (240, 250, 150), -1)
+    cv2.line(orig, (int(PcX), int(PcY)), (int(cX), int(cY)), (240, 250, 150), 2)
+
+    #用座標距離法算出圖中的座標距離，並和實際的距離做比值，求出待測實際距離
+    D = dist.euclidean((PcX, PcY), (cX, cY)) / refObj[2]
+    (mX, mY) = midpoint((PcX, PcY), (cX, cY))
+    cv2.putText(orig, "{:.2f}cm".format(D), (int(mX), int(mY - 10)),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.55, (240, 200, 100), 2)
+        # "{:.2f}in" 取到小數點第二位
+
+
+    #cv2.imshow("Image", orig)
+
+    cv2.waitKey(0)
+
+
+
+deg = math.pi/180
+
+
+errorCode,Catch=vrep.simxGetObjectHandle(clientID,'catch',vrep.simx_opmode_oneshot_wait)
+
+if errorCode == -1:
+    print('Can not find Catch')
+    sys.exit()            
+
+#開爪60度    
+errorCode=vrep.simxSetJointTargetPosition(clientID,Catch,60*deg, vrep.simx_opmode_oneshot)
+
+#計算手臂轉軸度數
+r=D*10
+x= (94+18-(10*dimB)/2)/2.4
+z = ((math.pow(math.pow(r,2)-math.pow(94,2),0.5)-21)/3)
+
+#print(x,z)
+#print(r)
+
+errorCode2,Joint2=vrep.simxGetObjectHandle(clientID,'joint2',vrep.simx_opmode_oneshot_wait)
+errorCode3,Joint3=vrep.simxGetObjectHandle(clientID,'joint3',vrep.simx_opmode_oneshot_wait)
+
+#計算之值帶入 控制手臂
+errorCode1=vrep.simxSetJointTargetPosition(clientID,Joint2,x*deg, vrep.simx_opmode_oneshot)
+errorCode3=vrep.simxSetJointTargetPosition(clientID,Joint3,z*deg, vrep.simx_opmode_oneshot)
+
+time.sleep(10) #停10秒執行下一行程式
+#夾取物件
+errorCode,Catch=vrep.simxGetObjectHandle(clientID,'catch',vrep.simx_opmode_oneshot_wait)
+errorCode=vrep.simxSetJointTargetPosition(clientID,Catch,0*deg, vrep.simx_opmode_oneshot)
+
+time.sleep(5)#停5秒執行下一行程式
+
+errorCode2,Joint2=vrep.simxGetObjectHandle(clientID,'joint2',vrep.simx_opmode_oneshot_wait)
+errorCode3,Joint3=vrep.simxGetObjectHandle(clientID,'joint3',vrep.simx_opmode_oneshot_wait)
+
+#手臂回歸原點
+errorCode1=vrep.simxSetJointTargetPosition(clientID,Joint2,0, vrep.simx_opmode_oneshot)
+errorCode3=vrep.simxSetJointTargetPosition(clientID,Joint3,0, vrep.simx_opmode_oneshot)
+
+
+&lt;/pre&gt;
+
+&lt;/br&gt;
+&lt;/br&gt;
+在上述程式中計算手臂移動度數的部分將在下面做解釋。
+&lt;/br&gt;
+#計算手臂轉軸度數
+&lt;/br&gt;
+r=D*10
+&lt;/br&gt;
+x= (94+18-(10*dimB)/2)/2.4
+&lt;/br&gt;
+z = ((math.pow(math.pow(r,2)-math.pow(94,2),0.5)-21)/3)
+&lt;/br&gt;
+&lt;/br&gt;
+(1)我們利用三角形畢氏定理，將辨識出來的D值與已知的夾爪和物體的距離(X軸)做計算，獲得夾爪與物體重心的高度差距離(Z軸)。
+&lt;/br&gt;
+&lt;/br&gt;
+(2)由於辨識出的D值單位是公分，而我們需要的單位是公厘，故在定義斜邊長r時，將D值乘以10。
+&lt;/br&gt;
+&lt;/br&gt;
+(3)x為X軸向的度數。由於在進行Z軸與X軸向手臂運動時，會互相影響，所以在計算時，夾爪與物體距離94須加上誤差值18(大約x值給30度)時的誤差距離，並減掉dimb(須乘以10換成公厘)(物體寬度)的一半(避免碰撞到物體)，最後將值除以每走一度往前2.4公厘的距離，得到x度。
+&lt;/br&gt;
+&lt;/br&gt;
+(4)z為Z軸向的度數。利用畢氏定理(r^2減X^2等於Z^2)計算出Z軸重心距離，將距離減掉21(X軸前行30度的誤差值)，再除以Z軸每走一度往下3公厘的距離，得到z度。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;/h4&gt;
+&lt;/br&gt;
+&lt;h3&gt;三.執行結果&lt;/h3&gt;
+&lt;/br&gt;
+&lt;h4&gt;
+在系統管理員下，到程式的路徑，執行Python control-1.py -w 18，即可看到程式結果。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/tMPsxE6.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/A7qKlKs.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/auqZMXR.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;iframe src="https://player.vimeo.com/video/217392215" width="640" height="361" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/217392215"&gt;夾取成功.mp4&lt;/a&gt; from &lt;a href="https://vimeo.com/user45009540"&gt;吳信褘&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;/h4&gt;</content><category term="OpenCv"></category></entry><entry><title>40323214日誌- Opencv&amp;Vrep 程式應用</title><link href="http://project.mde.tw/blog/40323214ri-zhi-opencvvrep-cheng-shi-ying-yong.html" rel="alternate"></link><published>2017-04-27T23:00:00+08:00</published><updated>2017-04-27T23:00:00+08:00</updated><author><name>40323214</name></author><id>tag:project.mde.tw,2017-04-27:/blog/40323214ri-zhi-opencvvrep-cheng-shi-ying-yong.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+&lt;h3&gt;一.在onshape上繪製機台&lt;/h3&gt;
+
+&lt;h4&gt;
+1.繪製機台柱子。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/3eBrYWp.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+2.繪製底板。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/uJ0zKBK.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+3.繪製頂板。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/mS2vJil.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+4.繪製攝影機。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/ihrUaRn.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+5.組合圖。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/mvogjoz.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+6.將組合圖匯出為STL檔。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/0QF662G.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;/h4&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;h3&gt;二.將機台導入Vrep並調整環境&lt;/h3&gt;
+&lt;h4&gt;
+1.開啟vrep，導入繪製的機台
+&lt;/br&gt;
+&lt;/br&gt;
+以下是導入過程。
+&lt;/br&gt;
+&lt;/br&gt;
+(1)點選File-&amp;gt;Import-&amp;gt;Mesh..。
+&lt;/br&gt;
+接著點選自己的STL檔案，選擇1:1mlliimeter，點選確定。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/UD4lVjf.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+(2)導入後改變物體座標(X:0 Y:0 Z:0.32)。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/SpTLytn.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+(3)點選物體，利用下列步驟將攝影機與機台分開。
+&lt;/br&gt;
+點選物體-&amp;gt;Grouping/Merging-&amp;gt;Divide selected shapes。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/5AKPG4d.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+攝影機與機台分開後的樣子。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/ASYeNST.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+2.建立攝影機並調整環境參數
+&lt;/br&gt;
+&lt;/br&gt;
+(1)建立攝影機。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/eT0yaBt.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+(2)將攝影機與繪製的攝影機同動，再調整攝影機座標與角度。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/OIHscuG.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+(3)調整攝影機參數。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/MxpPQqQ.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+(4)建立文件對應到攝影機上。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/pMgMbE3.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+(5)最後增加投影幕對應攝影機。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/gxy1bg2.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+3.建立拍攝對象
+&lt;/br&gt;
+&lt;/br&gt;
+(1)建立一薄型方體(作為基準目標)。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/Z3e0aeP.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+(2)建立兩個偵測目標(a為圓柱b為方柱)。
+&lt;/br&gt;
+a.座標尺寸。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/2GPtQtu.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+b.座標尺寸。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/7QtHyk9.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+另外記得要開啟物體的可偵測性。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;/h4&gt;
+&lt;h3&gt;三.執行Python程式&lt;/h3&gt;
+&lt;h4&gt;
+將下列程式存檔於資料夾中。
+&lt;/br&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+
+#導入函式庫
+from matplotlib import pyplot as plt
+import vrep
+import sys
+import cv2
+import numpy as np
+import time
+from PIL import Image
+from scipy.spatial import distance as dist
+from imutils import perspective
+from imutils import contours
+import argparse
+import imutils
+
+
+vrep.simxFinish(-1) #終止所有連接
+clientID=vrep.simxStart('127.0.0.1',19997,True,True,5000,5) #設立一個連接口19997(默認地址)
+
+#啟動模擬
+vrep.simxStartSimulation(clientID, vrep.simx_opmode_oneshot)
+
+if clientID!= -1:
+    print ('Conexion establecida')
+
+else:
+    print('Connection not successful')
+    sys.exit('Could not connect')
+#保存參考相機
+_, camhandle = vrep.simxGetObjectHandle(clientID, 'Vision_sensor', vrep.simx_opmode_oneshot_wait)
+#啟動相機電源
+_, resolution, image = vrep.simxGetVisionSensorImage(clientID, camhandle, 0, vrep.simx_opmode_streaming)
+time.sleep(1)
+
+#保存攝像機並轉換為BGR
+_, resolution, image=vrep.simxGetVisionSensorImage(clientID, camhandle, 0, vrep.simx_opmode_buffer)
+img = np.array(image, dtype = np.uint16)
+img.resize([resolution[0], resolution[1], 3])
+img = np.rot90(img,2)
+img = np.fliplr(img)
+img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)   
+cv2.imwrite("B.png", img)
+vrep.simxStopSimulation(clientID, vrep.simx_opmode_oneshot_wait)
+
+
+
+ap = argparse.ArgumentParser()
+#原輸入的基準物寬，單位為inch
+ap.add_argument("-w", "--width", type=float, required=True)
+args = vars(ap.parse_args())
+
+
+   #用於距離測量
+def midpoint(ptA, ptB):
+    return ((ptA[0] + ptB[0]) * 0.5, (ptA[1] + ptB[1]) * 0.5)
+
+
+#此定義用於物體標號時
+def order_points_old(pts):
+    #設定物體輪廓之四個點位置,左上右上右下左下(順時針)
+    rect = np.zeros((4, 2), dtype="float32")
+
+    s = pts.sum(axis=1)
+    rect[0] = pts[np.argmin(s)]
+    rect[2] = pts[np.argmax(s)]
+
+    diff = np.diff(pts, axis=1)
+    rect[1] = pts[np.argmin(diff)]
+    rect[3] = pts[np.argmax(diff)]
+
+    return rect
+
+
+###剪裁圖片→只留基準物 (用於重心距離量測)###
+
+imgC = Image.open("B.png")
+cut = imgC.crop((0, 0, 100, 100))
+cut.save("AA.png")
+
+#讀取圖檔→灰階→模糊
+#cv2.GaussianBlur模糊程度可以用3x3, 5x5, 7x7
+imgC = cv2.imread("AA.png", 1)
+grayC = cv2.cvtColor(imgC, cv2.COLOR_BGR2GRAY)
+blurredC = cv2.GaussianBlur(grayC, (5, 5), 0)
+threshC = cv2.threshold(blurredC, 60, 255, cv2.THRESH_BINARY)[1]
+
+cntsC = cv2.findContours(threshC.copy(), cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE)
+
+cntsC = cntsC[0] if imutils.is_cv2() else cntsC[1]
+(cntsC, _) = contours.sort_contours(cntsC)
+
+for b in cntsC:
+
+    #辨識基準物重心
+    M = cv2.moments(b)
+    cX = int(M["m10"] / M["m00"])
+    cY = int(M["m01"] / M["m00"])
+
+###處理未裁剪的圖片(原始圖)###
+
+#讀取圖檔→灰階→模糊
+#cv2.GaussianBlur模糊程度可以用3x3, 5x5, 7x7
+img = cv2.imread("B.png", 1)
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+thresh = cv2.threshold(blurred, 60, 255, cv2.THRESH_BINARY)[1]
+
+# 輪廓描邊→補空&amp;侵蝕 (用於size)
+edged = cv2.Canny(gray, 50, 100)
+edged = cv2.dilate(edged, None, iterations=1)
+edged = cv2.erode(edged, None, iterations=1)
+
+#進行輪廓偵測  (用於重心測量&amp;標號)
+cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE)
+cnts = cnts[0] if imutils.is_cv2() else cnts[1]
+(cnts, _) = contours.sort_contours(cnts)
+
+#進行輪廓偵測  (用於最大長寬測量)
+cntsS = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE)
+cntsS = cntsS[0] if imutils.is_cv2() else cntsS[1]
+
+# 'pixels Per Metric' = object_width / know_width (相機像素 / 已知物品的寬度)
+(cntsS, _) = contours.sort_contours(cntsS)
+
+
+###物體標號###
+
+for (i, n) in enumerate(cnts):
+
+    if cv2.contourArea(n) &lt; 50:
+        continue
+
+    box = cv2.minAreaRect(n)
+    box = cv2.cv.BoxPoints(box) if imutils.is_cv2() else cv2.boxPoints(box)
+    box = np.array(box, dtype="int")
+
+    rect = order_points_old(box)
+
+    cv2.putText(img, "[{}]".format(i + 1),
+        (int(rect[0][0] - 10), int(rect[0][1] - 10)),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255,100, 200), 1)
+
+
+###最大長寬###
+
+pixelsPerMetric = None
+
+for (a, d) in enumerate(cntsS):
+
+    # 計算輪廓旋轉邊界
+    Sbox = cv2.minAreaRect(d)
+    Sbox = cv2.cv.BoxPoints(Sbox) if imutils.is_cv2() else cv2.boxPoints(Sbox)
+    Sbox = np.array(Sbox, dtype="int")
+
+    # 繪製輪廓旋轉邊界
+    Sbox = perspective.order_points(Sbox)
+    cv2.drawContours(img, [Sbox.astype("int")], -1, (0, 255, 0), 1)
+
+    for (x, y) in Sbox:
+        cv2.circle(img, (int(x), int(y)), 3, (0, 0, 230), -1)
+
+    # 計算物品上下邊界之中點
+    (Stl, Str, Sbr, Sbl) = Sbox
+    (StltrX, StltrY) = midpoint(Stl, Str)
+    (SblbrX, SblbrY) = midpoint(Sbl, Sbr)
+
+    # 計算物品左右邊界之中點
+    (StlblX, StlblY) = midpoint(Stl, Sbl)
+    (StrbrX, StrbrY) = midpoint(Str, Sbr)
+
+
+    # 利用歐式定理算中點之間的距離
+    dA = dist.euclidean((StltrX, StltrY), (SblbrX, SblbrY))
+    dB = dist.euclidean((StlblX, StlblY), (StrbrX, StrbrY))
+
+    # 如果未知 'pixelsPerMetric', 則使用下一行之算式
+    if pixelsPerMetric is None:
+        pixelsPerMetric = dB / (args["width"] * 2.54)
+
+    # 計算物品之最大長寬
+    dimA = dA / pixelsPerMetric
+    dimB = dB / pixelsPerMetric
+    print ("[{}]".format(a + 1),"width" , round(dimA , 2) , "length" , round(dimB , 2))
+
+    # 顯示出畫面中物品的大小
+    cv2.putText(img, "{:.1f}cm".format(dimA),
+        (int(StrbrX + 10), int(StrbrY)), cv2.FONT_HERSHEY_SIMPLEX,
+        0.5, (255, 255, 255), 1)
+    cv2.putText(img, "{:.1f}cm".format(dimB),
+        (int(StltrX - 15), int(StltrY - 10)), cv2.FONT_HERSHEY_SIMPLEX,
+        0.5, (255, 255, 255), 1)
+
+###重心距離###
+
+refObj = None
+
+for c in cnts:
+
+    cv2.drawContours(img, [c], -1, (220, 255, 250), 1)
+    cv2.circle(img, (cX, cY), 5, (255, 255, 255), -1)
+    cv2.putText(img, "datum", (cX - 20, cY - 20),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 220), 1)
+
+    # 計算輪廓旋轉邊界
+    gear7 = cv2.minAreaRect(c)
+    gear7 = cv2.cv.BoxPoints(gear7) if imutils.is_cv2() else cv2.boxPoints(gear7)
+    gear7 = np.array(gear7, dtype="int")
+
+    # 計算輪廓旋轉邊界
+    gear7C = cv2.minAreaRect(c)
+    gear7C = cv2.cv.BoxPoints(gear7C) if imutils.is_cv2() else cv2.boxPoints(gear7C)
+    gear7C = np.array(gear7C, dtype="int")
+
+    gear7 = perspective.order_points(gear7)
+    gear7C = perspective.order_points(gear7C)
+
+#計算物體重心
+    M = cv2.moments(c)
+    PcX = int(M["m10"] / M["m00"])
+    PcY = int(M["m01"] / M["m00"])
+    #PcX = np.average(gear7[:, 0])
+    #PcY = np.average(gear7[:, 1])
+    print (PcX ,PcY)
+
+# 以左邊邊界輪廓當基準, 當參考對象
+    if refObj is None:
+        # 計算基準物的中點
+        (tl, tr, br, bl) = gear7C
+        (tlblX, tlblY) = midpoint(tl, bl)
+        (trbrX, trbrY) = midpoint(tr, br)
+
+        # 用座標法計算兩物體中心距離 (D為圖中物體座標距離)
+        # 乘2.54換算單位inch→mm
+        D = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
+        refObj = (gear7C, (cX, cY), D / (args["width"] * 2.54))
+        continue
+
+    orig = img.copy()
+
+     # 基準物&amp;測量物的中心點及點到點的距離
+    cv2.circle(orig, (int(PcX), int(PcY)), 5, (240, 250, 150), -1)
+    cv2.circle(orig, (int(cX), int(cY)), 5, (240, 250, 150), -1)
+    cv2.line(orig, (int(PcX), int(PcY)), (int(cX), int(cY)), (240, 250, 150), 2)
+
+    #用座標距離法算出圖中的座標距離，並和實際的距離做比值，求出待測實際距離
+    D = dist.euclidean((PcX, PcY), (cX, cY)) / refObj[2]
+    (mX, mY) = midpoint((PcX, PcY), (cX, cY))
+    cv2.putText(orig, "{:.2f}cm".format(D), (int(mX), int(mY - 10)),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.55, (240, 200, 100), 2)
+        # "{:.2f}in" 取到小數點第二位
+
+
+    cv2.imshow("Image", orig)
+    cv2.waitKey(0)
+
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;/br&gt;
+&lt;/h4&gt;
+&lt;/br&gt;
+&lt;h3&gt;四.執行結果&lt;/h3&gt;
+&lt;/br&gt;
+&lt;h4&gt;
+在系統管理員下，到程式的路徑，執行Python test2.py -w (數字)，即可看到程式結果。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/wyBRqI4.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;iframe src="https://player.vimeo.com/video/215008238" width="640" height="361" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/215008238"&gt;Vrep與Opencv結果&lt;/a&gt; from &lt;a href="https://vimeo.com/user45009540"&gt;吳信褘&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;/h4&gt;&lt;/p&gt;</content><category term="OpenCv"></category></entry><entry><title>40323203&amp;05&amp;06日誌 - 物體標號+最大長寬+重心距離</title><link href="http://project.mde.tw/blog/403232030506ri-zhi-wu-ti-biao-hao-zui-da-chang-kuan-zhong-xin-ju-li.html" rel="alternate"></link><published>2017-04-11T17:30:00+08:00</published><updated>2017-04-11T17:30:00+08:00</updated><author><name>40323203</name></author><id>tag:project.mde.tw,2017-04-11:/blog/403232030506ri-zhi-wu-ti-biao-hao-zui-da-chang-kuan-zhong-xin-ju-li.html</id><summary type="html">&lt;p&gt;辨識物體將其標號，並標註長寬及抓取重心，以便算出各點到點之距離。&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;辨識物體將其標號，並標註長寬及抓取重心，以便算出各點到點之距離。&lt;/p&gt;
+
+
+&lt;h3&gt;★範例所使用的圖檔下載位置&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="http://imgur.com/4J07fKZ"&gt; http://imgur.com/4J07fKZ &lt;/a&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★程式範例執行&lt;/h3&gt;
+
+&lt;pre class="brush: python"&gt;
+#辨識物體將其標號，並標註長寬及抓取重心，以便算出各點到點之距離
+from scipy.spatial import distance as dist
+from imutils import perspective
+from imutils import contours
+from PIL import Image
+import numpy as np
+import argparse
+import imutils
+import cv2
+
+#用於距離測量
+def midpoint(ptA, ptB):
+    return ((ptA[0] + ptB[0]) * 0.5, (ptA[1] + ptB[1]) * 0.5)
+
+#此定義用於物體標號時
+def order_points_old(pts):
+    #設定物體輪廓之四個點位置,左上右上右下左下(順時針)
+    rect = np.zeros((4, 2), dtype="float32")
+
+    s = pts.sum(axis=1)
+    rect[0] = pts[np.argmin(s)]
+    rect[2] = pts[np.argmax(s)]
+
+    diff = np.diff(pts, axis=1)
+    rect[1] = pts[np.argmin(diff)]
+    rect[3] = pts[np.argmax(diff)]
+
+    return rect
+
+ap = argparse.ArgumentParser()
+#原輸入的基準物寬，單位為inch
+ap.add_argument("-w", "--width", type=float, required=True)
+args = vars(ap.parse_args())
+
+###剪裁圖片→只留基準物 (用於重心距離量測)###
+
+imgC = Image.open("B.png")
+cut = imgC.crop((0, 0, 200, 200))
+cut.save("AA.png")
+
+#讀取圖檔→灰階→模糊
+#cv2.GaussianBlur模糊程度可以用3x3, 5x5, 7x7
+imgC = cv2.imread("AA.png", 1)
+grayC = cv2.cvtColor(imgC, cv2.COLOR_BGR2GRAY)
+blurredC = cv2.GaussianBlur(grayC, (5, 5), 0)
+threshC = cv2.threshold(blurredC, 60, 255, cv2.THRESH_BINARY)[1]
+
+cntsC = cv2.findContours(threshC.copy(), cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE)
+
+cntsC = cntsC[0] if imutils.is_cv2() else cntsC[1]
+(cntsC, _) = contours.sort_contours(cntsC)
+
+for b in cntsC:
+
+    #辨識基準物重心
+    M = cv2.moments(b)
+    cX = int(M["m10"] / M["m00"])
+    cY = int(M["m01"] / M["m00"])
+
+###處理未裁剪的圖片(原始圖)###
+
+#讀取圖檔→灰階→模糊
+#cv2.GaussianBlur模糊程度可以用3x3, 5x5, 7x7
+img = cv2.imread("B.png", 1)
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+thresh = cv2.threshold(blurred, 60, 255, cv2.THRESH_BINARY)[1]
+
+# 輪廓描邊→補空&amp;侵蝕 (用於size)
+edged = cv2.Canny(gray, 50, 100)
+edged = cv2.dilate(edged, None, iterations=1)
+edged = cv2.erode(edged, None, iterations=1)
+
+#進行輪廓偵測  (用於重心測量&amp;標號)
+cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE)
+cnts = cnts[0] if imutils.is_cv2() else cnts[1]
+(cnts, _) = contours.sort_contours(cnts)
+
+#進行輪廓偵測  (用於最大長寬測量)
+cntsS = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE)
+cntsS = cntsS[0] if imutils.is_cv2() else cntsS[1]
+
+# 'pixels Per Metric' = object_width / know_width (相機像素 / 已知物品的寬度)
+(cntsS, _) = contours.sort_contours(cntsS)
+
+
+###物體標號###
+
+for (i, n) in enumerate(cnts):
+
+    if cv2.contourArea(n) &lt; 100:
+        continue
+
+    box = cv2.minAreaRect(n)
+    box = cv2.cv.BoxPoints(box) if imutils.is_cv2() else cv2.boxPoints(box)
+    box = np.array(box, dtype="int")
+
+    rect = order_points_old(box)
+
+    cv2.putText(img, "[{}]".format(i + 1),
+        (int(rect[0][0] - 10), int(rect[0][1] - 10)),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255,100, 200), 1)
+
+
+###最大長寬###
+
+pixelsPerMetric = None
+
+for (a, d) in enumerate(cntsS):
+
+    # 計算輪廓旋轉邊界
+    Sbox = cv2.minAreaRect(d)
+    Sbox = cv2.cv.BoxPoints(Sbox) if imutils.is_cv2() else cv2.boxPoints(Sbox)
+    Sbox = np.array(Sbox, dtype="int")
+
+    # 繪製輪廓旋轉邊界
+    Sbox = perspective.order_points(Sbox)
+    cv2.drawContours(img, [Sbox.astype("int")], -1, (0, 255, 0), 1)
+
+    for (x, y) in Sbox:
+        cv2.circle(img, (int(x), int(y)), 3, (0, 0, 230), -1)
+
+    # 計算物品上下邊界之中點
+    (Stl, Str, Sbr, Sbl) = Sbox
+    (StltrX, StltrY) = midpoint(Stl, Str)
+    (SblbrX, SblbrY) = midpoint(Sbl, Sbr)
+
+    # 計算物品左右邊界之中點
+    (StlblX, StlblY) = midpoint(Stl, Sbl)
+    (StrbrX, StrbrY) = midpoint(Str, Sbr)
+
+
+    # 利用歐式定理算中點之間的距離
+    dA = dist.euclidean((StltrX, StltrY), (SblbrX, SblbrY))
+    dB = dist.euclidean((StlblX, StlblY), (StrbrX, StrbrY))
+
+    # 如果未知 'pixelsPerMetric', 則使用下一行之算式
+    if pixelsPerMetric is None:
+        pixelsPerMetric = dB / (args["width"] * 2.54)
+
+    # 計算物品之最大長寬
+    dimA = dA / pixelsPerMetric
+    dimB = dB / pixelsPerMetric
+    print ("[{}]".format(a + 1),"width" , round(dimA , 2) , "length" , round(dimB , 2))
+
+    # 顯示出畫面中物品的大小
+    cv2.putText(img, "{:.1f}cm".format(dimA),
+        (int(StrbrX + 10), int(StrbrY)), cv2.FONT_HERSHEY_SIMPLEX,
+        0.5, (255, 255, 255), 1)
+    cv2.putText(img, "{:.1f}cm".format(dimB),
+        (int(StltrX - 15), int(StltrY - 10)), cv2.FONT_HERSHEY_SIMPLEX,
+        0.5, (255, 255, 255), 1)
+
+###重心距離###
+
+refObj = None
+
+for c in cnts:
+
+    cv2.drawContours(img, [c], -1, (220, 255, 250), 1)
+    cv2.circle(img, (cX, cY), 5, (255, 255, 255), -1)
+    cv2.putText(img, "datum", (cX - 20, cY - 20),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 220), 1)
+
+    # 計算輪廓旋轉邊界
+    gear7 = cv2.minAreaRect(c)
+    gear7 = cv2.cv.BoxPoints(gear7) if imutils.is_cv2() else cv2.boxPoints(gear7)
+    gear7 = np.array(gear7, dtype="int")
+
+    # 計算輪廓旋轉邊界
+    gear7C = cv2.minAreaRect(c)
+    gear7C = cv2.cv.BoxPoints(gear7C) if imutils.is_cv2() else cv2.boxPoints(gear7C)
+    gear7C = np.array(gear7C, dtype="int")
+
+    gear7 = perspective.order_points(gear7)
+    gear7C = perspective.order_points(gear7C)
+
+    #計算物體重心
+    M = cv2.moments(c)
+    PcX = int(M["m10"] / M["m00"])
+    PcY = int(M["m01"] / M["m00"])
+    print (PcX ,PcY)
+
+    # 以左邊邊界輪廓當基準, 當參考對象
+    if refObj is None:
+        # 計算基準物的中點(矩形中點=重心)
+        (tl, tr, br, bl) = gear7C
+        (tlblX, tlblY) = midpoint(tl, bl)
+        (trbrX, trbrY) = midpoint(tr, br)
+
+        # 用座標法計算兩物體中心距離 (D為圖中物體座標距離)
+        # 乘2.54換算單位inch→mm
+        D = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
+        refObj = (gear7C, (cX, cY), D / (args["width"] * 2.54))
+        continue
+
+    orig = img.copy()
+
+     # 基準物&amp;測量物的中心點及點到點的距離
+    cv2.circle(orig, (int(PcX), int(PcY)), 5, (240, 250, 150), -1)
+    cv2.circle(orig, (int(cX), int(cY)), 5, (240, 250, 150), -1)
+    cv2.line(orig, (int(PcX), int(PcY)), (int(cX), int(cY)), (240, 250, 150), 2)
+
+    #用座標距離法算出圖中的座標距離，並和實際的距離做比值，求出待測實際距離
+    D = dist.euclidean((PcX, PcY), (cX, cY)) / refObj[2]
+    (mX, mY) = midpoint((PcX, PcY), (cX, cY))
+    cv2.putText(orig, "{:.2f}cm".format(D), (int(mX), int(mY - 10)),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.55, (240, 200, 100), 2)
+        # "{:.2f}in" 取到小數點第二位
+
+
+    cv2.imshow("Image", orig)
+    cv2.waitKey(0)
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;h3&gt;★範例執行結果&lt;/h3&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/Uoo9CeO.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/WyULpaK.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/bn8tEZS.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/KwbSpi2.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+print出長寬並標上編號
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/XTlUi7Z.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;/br&gt;&lt;/p&gt;</content><category term="Kmol &amp; OpenCV &amp; Python"></category></entry><entry><title>40323203&amp;05&amp;06日誌 - Measuring Two Point</title><link href="http://project.mde.tw/blog/403232030506ri-zhi-measuring-two-point.html" rel="alternate"></link><published>2017-04-06T21:30:00+08:00</published><updated>2017-04-06T21:30:00+08:00</updated><author><name>40323205</name></author><id>tag:project.mde.tw,2017-04-06:/blog/403232030506ri-zhi-measuring-two-point.html</id><summary type="html">&lt;p&gt;以最左物體重心當基準點，測量各物體重心到基準點距離。&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;以最左物體重心當基準點，測量各物體重心到基準點距離。&lt;/p&gt;
+
+
+&lt;h3&gt;★範例所使用的圖檔下載位置&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="http://imgur.com/DUKNwkZ"&gt; http://imgur.com/DUKNwkZ &lt;/a&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★程式範例執行&lt;/h3&gt;
+
+&lt;pre class="brush: python"&gt;
+from scipy.spatial import distance as dist
+from imutils import perspective
+from imutils import contours
+from PIL import Image
+import numpy as np
+import argparse
+import imutils
+import cv2
+
+def midpoint(ptA, ptB):
+    return ((ptA[0] + ptB[0]) * 0.5, (ptA[1] + ptB[1]) * 0.5)
+
+ap = argparse.ArgumentParser()
+# 原尺寸單位為inch
+ap.add_argument("-w", "--width", type=float, required=True)
+args = vars(ap.parse_args())
+
+# 剪裁圖片→只留基準物
+imgC = Image.open("A.png")
+cut = imgC.crop((0, 0, 200, 200))
+cut.save("AA.png")
+
+imgC = cv2.imread("AA.png", 1)
+grayC = cv2.cvtColor(imgC, cv2.COLOR_BGR2GRAY)
+blurredC = cv2.GaussianBlur(grayC, (5, 5), 0)
+threshC = cv2.threshold(blurredC, 60, 255, cv2.THRESH_BINARY)[1]
+
+cntsC = cv2.findContours(threshC.copy(), cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE)
+cntsC = cntsC[0] if imutils.is_cv2() else cntsC[1]
+(cntsC, _) = contours.sort_contours(cntsC)
+
+for b in cntsC:
+    # 辨識基準物重心
+    M = cv2.moments(b)
+    cX = int(M["m10"] / M["m00"])
+    cY = int(M["m01"] / M["m00"])
+
+# 讀取圖檔→灰階→模糊
+# cv2.GaussianBlur模糊程度可以用3x3, 5x5, 7x7
+img = cv2.imread("A.png", 1)
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+thresh = cv2.threshold(blurred, 60, 255, cv2.THRESH_BINARY)[1]
+
+# 進行輪廓偵測
+cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE)
+cnts = cnts[0] if imutils.is_cv2() else cnts[1]
+(cnts, _) = contours.sort_contours(cnts)
+refObj = None
+
+for c in cnts:
+
+    cv2.drawContours(img, [c], -1, (220, 255, 250), 1)
+    cv2.circle(img, (cX, cY), 6, (255, 255, 255), -1)
+    cv2.putText(img, "datummark", (cX - 20, cY - 20),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 220), 2)
+
+    # 計算輪廓旋轉邊界
+    gear7 = cv2.minAreaRect(c)
+    gear7 = cv2.cv.BoxPoints(gear7) if imutils.is_cv2() else cv2.boxPoints(gear7)
+    gear7 = np.array(gear7, dtype="int")
+
+    # 計算輪廓旋轉邊界
+    gear7C = cv2.minAreaRect(c)
+    gear7C = cv2.cv.BoxPoints(gear7C) if imutils.is_cv2() else cv2.boxPoints(gear7C)
+    gear7C = np.array(gear7C, dtype="int")
+
+    gear7 = perspective.order_points(gear7)
+    gear7C = perspective.order_points(gear7C)
+
+    # 辨識物體重心
+    M = cv2.moments(c)
+    PcX = int(M["m10"] / M["m00"])
+    PcY = int(M["m01"] / M["m00"])
+    print (PcX ,PcY)
+
+
+    if refObj is None:
+        # 計算基準物的中點
+        (tl, tr, br, bl) = gear7C
+        (tlblX, tlblY) = midpoint(tl, bl)
+        (trbrX, trbrY) = midpoint(tr, br)
+
+        # 用座標法計算兩物體重心距離
+        # 單位換算成mm
+        D = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
+        refObj = (gear7C, (cX, cY), D / args["width"] / 2.54 / 100)
+        continue
+
+    orig = img.copy()
+
+     # 基準物和測量物中心點&amp;點到點的距離
+    cv2.circle(orig, (int(PcX), int(PcY)), 5, (240, 0, 150), -1)
+    cv2.circle(orig, (int(cX), int(cY)), 5, (240, 0, 150), -1)
+    cv2.line(orig, (int(PcX), int(PcY)), (int(cX), int(cY)), (240, 0, 150), 2)
+
+    # 用座標距離法算出圖中的座標距離，並和實際的距離做比值，求出待測實際距離
+    D = dist.euclidean((PcX, PcY), (cX, cY)) / refObj[2]
+    (mX, mY) = midpoint((PcX, PcY), (cX, cY))
+    cv2.putText(orig, "{:.2f}mm".format(D), (int(mX), int(mY - 10)),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.55, (240, 0, 100), 2)
+    # "{:.1f}mm" 取到小數點第一位，依此類推
+
+
+    cv2.imshow("Image", orig)
+    cv2.waitKey(0)
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;h3&gt;★範例執行結果&lt;/h3&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/kxyw1rh.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/klbtZqj.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/7bUpPuP.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/MLNXMs1.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/eOWssxf.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★細部程式介紹&lt;/h3&gt;
+
+&lt;p&gt;【PIL裁剪圖片】
+&lt;/br&gt;
+&lt;/br&gt;
+◎範例程式：
+&lt;/br&gt;&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+
+#導入pillow
+from PIL import Image
+
+#載入原始圖片
+img = Image.open("A1.png")
+
+#從左上角開始裁剪200*200的圖片，再以B1檔名存取
+cut = img.crop((0, 0, 200, 200))
+cut.save("B1.png")
+
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;/br&gt;
+◎結果：
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/xRMtwvc.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+【cv2.moments】→取物品重心座標
+&lt;/br&gt;
+&lt;/br&gt;
+◎使用格式：
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/fVTe5ux.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+◎範例程式：
+&lt;/br&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+
+from imutils import contours
+import imutils
+import cv2
+
+image = cv2.imread("A1.png")
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+cnts = cv2.findContours(gray.copy(), 1, 2)
+cnts = cnts[0] if imutils.is_cv2() else cnts[1]
+(cnts,_) = contours.sort_contours(cnts)
+
+for c in cnts:
+    M = cv2.moments(c)
+    cX = int(M["m10"] / M["m00"])
+    cY = int(M["m01"] / M["m00"])
+
+    print (cX,cY)
+
+    cv2.drawContours(image, [c], -1, (0, 255, 0), 2)
+    cv2.circle(image, (cX, cY), 7, (0, 255, 255), -1)
+
+    cv2.imshow("Image", image)
+    cv2.waitKey(0)    
+
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;/br&gt;
+◎結果：
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/Q6sEf2K.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;&lt;/p&gt;</content><category term="Kmol &amp; OpenCV &amp; Python"></category></entry><entry><title>40323214日誌- Opencv&amp;Vrep 執行範例</title><link href="http://project.mde.tw/blog/40323214ri-zhi-opencvvrep-zhi-xing-fan-li.html" rel="alternate"></link><published>2017-03-23T21:00:00+08:00</published><updated>2017-03-23T21:00:00+08:00</updated><author><name>40323214</name></author><id>tag:project.mde.tw,2017-03-23:/blog/40323214ri-zhi-opencvvrep-zhi-xing-fan-li.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+&lt;h3&gt;一.環境設定&lt;/h3&gt;
+
+&lt;h4&gt;1.先建立一個資料夾(名稱可以自訂)，接著依循下面路徑C:\Program Files (x86)\V-REP3\V-REP_PRO_EDU\programming\remoteApiBindings找到python資料夾。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/YbLS81B.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+2.進入資料夾內，將檔案複製到建立好的資料夾中。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/PN9Ex5o.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+3.再依循路徑到C:\Program Files (x86)\V-REP3\V-REP_PRO_EDU\programming\remoteApiBindings\lib\lib\64Bit，將裡面的檔案複製到建立好的資料夾中。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/m9CUi2h.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+4.都放入建立好的資料夾後，就可以開始進行vrep的部分。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/4Olcnjg.png"&gt;
+&lt;/br&gt;
+&lt;/h4&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;h3&gt;二.Vrep範例設定&lt;/h3&gt;
+&lt;h4&gt;
+1.開啟vrep後，先建立好兩個方體。
+&lt;/br&gt;
+&lt;/br&gt;
+以下是如何建立方塊&amp;amp;更改尺寸顏色和座標的方法。
+&lt;/br&gt;
+&lt;/br&gt;
+(1)在Scene hierarchy表單中按右鍵-&amp;gt;Add-&amp;gt;Primitive shape-&amp;gt;Cuboid。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/a9l08RD.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+(2)點選後可以直接按確定，也可以先設定好自己要的尺寸。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/jzezLRX.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+(3)建立好兩個方塊後，可以利用下列步驟進行修改尺寸和顏色。
+&lt;/br&gt;
+&lt;/br&gt;
+先點選下方圖示部分。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/ILfqYWp.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+接著點選尺寸設定的地方，進行尺寸更改。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/8pqZi7L.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+然後點選顏色設定的地方，進行顏色更改。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/yBmCSAx.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+(4)修改座標的部分。
+&lt;/br&gt;
+&lt;/br&gt;
+點選下方圖示的部分就能更改物體座標，物體z座標的部分為物體z尺寸的一半。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/yc6DjPD.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+(5)建立好一個黑色方體和一個綠色圓柱以及一個藍色方體。
+&lt;/br&gt;
+&lt;/br&gt;
+黑色方體設定
+&lt;/br&gt;
+尺寸:X:3 Y:3 Z:0.1
+&lt;/br&gt;
+座標:X:0 Y:0 Z:0.05
+&lt;/br&gt;
+綠色圓柱設定(可以在Primitive shape中點選Cylinder建立)
+&lt;/br&gt;
+尺寸:X:0.3 :Y:0.3 Z:0.1
+&lt;/br&gt;
+座標:X:0 Y:0 Z:0.15
+&lt;/br&gt;
+藍色方體設定(辨識程式中的基準)
+&lt;/br&gt;
+尺寸:X:0.2 Y:0.2 Z:0.01
+&lt;/br&gt;
+座標:X:-0.5 Y:0.5 Z:0.105
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/WfUBj33.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+(6)最後必須開啟物體的可偵測性，才能使後續的影像拍攝到物體。
+&lt;/br&gt;
+&lt;/br&gt;
+將圖示中的選單打勾即可。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/fLHQ4kZ.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+2.建立攝影機
+&lt;/br&gt;
+&lt;/br&gt;
+(1)點選DefaultCamera按右鍵-&amp;gt;Add-&amp;gt;Vision sensor-&amp;gt;Perspective。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/MKvYO3B.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+(2)點選圖示中的地方，更改框起來的部分。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/kXbzfZ9.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+更改的部分，分別為影像的距離和拍攝的角度以及解析度。
+&lt;/br&gt;
+&lt;/br&gt;
+(3)接著改變攝影機的座標和拍攝方向
+&lt;/br&gt;
+&lt;/br&gt;
+點選下列圖示部分，進行修改。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/Di9SfhL.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+座標:X:0 Y:0 Z:2.5
+&lt;/br&gt;
+方向部分:Alpha:180 Beta:0 Gamma:180
+&lt;/br&gt;
+&lt;/br&gt;
+(4)建立影像屏幕
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/7Wfizry.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+(5)將屏幕與攝影機連結
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/Lzwi7X4.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+先點選Vision_sensor，在屏幕上點選右鍵-&amp;gt;View-&amp;gt;Associate view with selected vision sensor
+&lt;/br&gt;
+&lt;/br&gt;
+(6)點選下列圖示，建立一個文件對應到攝影機上。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/ZwqhbBY.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+(7)在文件中加入simExtRemoteApiStart(19999)這行程式碼，為了連接到python的程式。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/HIBNzsC.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+(8)最後將檔案儲存於建立的資料夾中，再來就是建立python程式進行控制。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;h3&gt;三.Python程式碼&lt;/h3&gt;
+&lt;/br&gt;
+&lt;h4&gt;
+將下列程式碼建立好，儲存於建立的資料夾中。
+&lt;/br&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+#導入函式庫
+from matplotlib import pyplot as plt
+import vrep
+import sys
+import cv2
+import numpy as np
+import time
+from scipy.spatial import distance as dist
+from imutils import perspective
+from imutils import contours
+import argparse
+import imutils
+
+vrep.simxFinish(-1) #終止所有連接
+clientID=vrep.simxStart('127.0.0.1',19999,True,True,5000,5) #設立一個連接口19999(默認地址)
+
+if clientID!=-1:
+    print ('Conexion establecida')
+
+else:
+    sys.exit("Error: no se puede conectar")
+
+#保存參考相機
+_, camhandle = vrep.simxGetObjectHandle(clientID, 'Vision_sensor', vrep.simx_opmode_oneshot_wait)
+#啟動相機電源
+_, resolution, image = vrep.simxGetVisionSensorImage(clientID, camhandle, 0, vrep.simx_opmode_streaming)
+time.sleep(1)
+
+while(1):
+    #保存攝像機並轉換為BGR
+    _, resolution, image=vrep.simxGetVisionSensorImage(clientID, camhandle, 0, vrep.simx_opmode_buffer)
+    img = np.array(image, dtype = np.uint8)
+    img.resize([resolution[0], resolution[1], 3])
+    img = np.rot90(img,2)
+    img = np.fliplr(img)
+    img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)   
+    #影像存檔 名為gear4
+    tecla = cv2.waitKey(5) &amp; 0xFF
+    file = "gear4.png"
+    cv2.imwrite(file, img)
+
+
+
+    def midpoint(ptA, ptB):
+        return ((ptA[0] + ptB[0]) * 0.5, (ptA[1] + ptB[1]) * 0.5)
+
+    ap = argparse.ArgumentParser()
+
+#讓圖檔於開啟指令執行時輸入最左端的矩形寬度
+#cmd進入py檔和圖檔所在資料夾後，輸入python 1117_distance.py --width 寬度(inch) 開啟
+#寬度可直接輸入數字
+    ap.add_argument("-w", "--width", type=float, required=True)
+
+    args = vars(ap.parse_args())
+
+#讀取圖檔→灰階→模糊
+#cv2.GaussianBlur模糊程度可以用3x3, 5x5, 7x7
+    img = cv2.imread("gear4.png", 1)
+    Gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    gray = cv2.GaussianBlur(Gray, (3, 3), 0)
+
+#輪廓描邊→補空&amp;侵蝕
+    edged = cv2.Canny(gray, 50, 100)
+    edged = cv2.dilate(edged, None, iterations=1)
+    edged = cv2.erode(edged, None, iterations=1)
+
+#進行偵測
+    cnts = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL,
+        cv2.CHAIN_APPROX_SIMPLE)
+    cnts = cnts[0] if imutils.is_cv2() else cnts[1]
+
+#以最左矩形四點&amp;中心為基準到其他物品的距離標示線顏色
+    (cnts, _) = contours.sort_contours(cnts)
+    colors = ((0, 0, 255), (240, 0, 159), (0, 165, 255), (255, 255, 0),
+        (255, 0, 255))
+    refObj = None
+
+#進行一連串的輪廓校準
+    for c in cnts:
+    # 忽略過小的輪廓 (限定輪廓描繪範圍)
+        if cv2.contourArea(c) &lt; 100: #後方的值若是太大則讀不到vrep照出來的形狀
+            continue
+
+    # 計算輪廓旋轉邊界
+        gear4 = cv2.minAreaRect(c)
+        gear4 = cv2.cv.BoxPoints(gear4) if imutils.is_cv2() else cv2.boxPoints(gear4)
+        gear4 = np.array(gear4, dtype="int")
+
+    # 重新設定邊界角落座標的順序, 由左上 右上 右下 左下, 順時針方向繞
+        gear4 = perspective.order_points(gear4)
+
+    # 計算物體的中心
+        cX = np.average(gear4[:, 0])
+        cY = np.average(gear4[:, 1])
+
+# 以左邊邊界輪廓當基準, 當參考對象
+        if refObj is None:
+        # 計算物品左右邊界的中點
+            (tl, tr, br, bl) = gear4
+            (tlblX, tlblY) = midpoint(tl, bl)
+            (trbrX, trbrY) = midpoint(tr, br)
+
+        # 用座標法計算兩物體中心距離
+            D = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
+            refObj = (gear4, (cX, cY), D / args["width"])
+            continue
+
+    # 輪廓描繪
+        orig = img.copy()
+        cv2.drawContours(orig, [gear4.astype("int")], -1, (0, 255, 0), 2) # 其餘物品的輪廓描繪
+        cv2.drawContours(orig, [refObj[0].astype("int")], -1, (0, 255, 0), 2) # 最左邊物品的輪廓描繪
+
+    # refObj[0] = 最左邊物品輪廓邊緣的左上
+    # refObj[1] = 物品中心
+    # refCoords為基準物, objCoords為測量物
+        refCoords = np.vstack([refObj[0], refObj[1]])
+        objCoords = np.vstack([gear4, (cX, cY)])
+
+        for ((xA, yA), (xB, yB), color) in zip(refCoords, objCoords, colors):
+        # 基準物的四個角&amp;中心點 測量物的四個角&amp;中心點 點到點的距離
+            cv2.circle(orig, (int(xA), int(yA)), 5, color, -1)
+            cv2.circle(orig, (int(xB), int(yB)), 5, color, -1)
+            cv2.line(orig, (int(xA), int(yA)), (int(xB), int(yB)), color, 2)
+
+        #用座標距離法算出圖中的座標距離，並和實際的距離做比值，求出待測實際距離
+            D = dist.euclidean((xA, yA), (xB, yB)) / refObj[2]
+            (mX, mY) = midpoint((xA, yA), (xB, yB))
+            cv2.putText(orig, "{:.1f}in".format(D), (int(mX), int(mY - 10)),
+            cv2.FONT_HERSHEY_SIMPLEX, 0.55, color, 2)
+        # "{:.1f}in" 取到小數點第一位
+
+            cv2.imshow("Image2", orig)
+            cv2.waitKey(0)
+
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;/h4&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/br&gt;
+&lt;h3&gt;四.執行結果&lt;/h3&gt;
+&lt;/br&gt;
+&lt;h4&gt;
+在Vrep上按下撥放，並在系統管理員上進入到建立的資料夾，打上Python test1.py -w (數字)，即可看到程式結果。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/CaEMD7w.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/hACkkS6.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;iframe src="https://player.vimeo.com/video/208655475" width="640" height="361" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/208655475"&gt;0316_vrep+opencv&lt;/a&gt; from &lt;a href="https://vimeo.com/user32554456"&gt;Wan Jing Huang&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;/h4&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;h3&gt;五.引用文獻&lt;/h3&gt;
+&lt;/br&gt;
+&lt;h4&gt;
+1.Tutorial de Vrep y OpenCV-Python:http://robologs.net/2016/07/07/tutorial-de-vrep-y-opencv-python/ 
+&lt;/h4&gt;&lt;/p&gt;</content><category term="OpenCv"></category></entry><entry><title>40323203&amp;05&amp;06日誌 - Mark Number</title><link href="http://project.mde.tw/blog/403232030506ri-zhi-mark-number.html" rel="alternate"></link><published>2017-03-23T10:30:00+08:00</published><updated>2017-03-23T10:30:00+08:00</updated><author><name>40323205</name></author><id>tag:project.mde.tw,2017-03-23:/blog/403232030506ri-zhi-mark-number.html</id><summary type="html">&lt;p&gt;以矩形框起辨識的物體，並依序標上記號。&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;以矩形框起辨識的物體，並依序標上記號。&lt;/p&gt;
+
+
+&lt;h3&gt;★範例所使用的圖檔下載位置&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="http://imgur.com/pSaQUS0"&gt; http://imgur.com/pSaQUS0 &lt;/a&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★程式範例執行&lt;/h3&gt;
+
+&lt;pre class="brush: bash"&gt;
+from imutils import contours
+import numpy as np
+import argparse
+import imutils
+import cv2
+
+def order_points_old(pts):
+    #設定物體輪廓之四個點位置,左上右上右下左下(順時針)
+    rect = np.zeros((4, 2), dtype="float32")
+
+    s = pts.sum(axis=1)
+    rect[0] = pts[np.argmin(s)]
+    rect[2] = pts[np.argmax(s)]
+
+    return rect
+
+ap = argparse.ArgumentParser()
+args = vars(ap.parse_args())
+
+image = cv2.imread("03.png")
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+gray = cv2.GaussianBlur(gray, (7, 7), 0)
+
+edged = cv2.Canny(gray, 50, 100)
+edged = cv2.dilate(edged, None, iterations=1)
+edged = cv2.erode(edged, None, iterations=1)
+
+cnts = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE)
+cnts = cnts[0] if imutils.is_cv2() else cnts[1]
+
+#以順時針順序排列(刪除即相反)
+(cnts, _) = contours.sort_contours(cnts)
+
+
+for (i, c) in enumerate(cnts):
+
+    if cv2.contourArea(c) &lt; 100:
+        continue
+
+    box = cv2.minAreaRect(c)
+    box = cv2.cv.BoxPoints(box) if imutils.is_cv2() else cv2.boxPoints(box)
+    box = np.array(box, dtype="int")
+    cv2.drawContours(image, [box], -1, (0, 255, 200), 2)
+
+    rect = order_points_old(box)
+
+    cv2.putText(image, "Object #{}".format(i + 1),
+        (int(rect[0][0] - 15), int(rect[0][1] - 15)),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255,255, 200), 1)
+
+    cv2.imshow("Image", image)
+    cv2.waitKey(0)
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;h3&gt;★範例執行結果&lt;/h3&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/ba1iTGT.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/N3YDrXP.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/iyCA4By.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★細部程式介紹&lt;/h3&gt;
+
+&lt;p&gt;【numpy.sum】
+&lt;/br&gt;
+&lt;/br&gt;
+◎使用格式：
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/nFmBGRe.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+◎範例程式：
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/JrkElRH.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+【numpy.diff】
+&lt;/br&gt;
+&lt;/br&gt;
+◎使用格式：
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/casg6ha.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+◎範例程式：
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/8Z7jhoW.png"&gt;
+&lt;/br&gt;&lt;/p&gt;</content><category term="Kmol &amp; OpenCV &amp; Python"></category></entry><entry><title>40323203&amp;05&amp;06日誌 - Measuring size</title><link href="http://project.mde.tw/blog/403232030506ri-zhi-measuring-size.html" rel="alternate"></link><published>2017-03-20T10:30:00+08:00</published><updated>2017-03-20T10:30:00+08:00</updated><author><name>40323206</name></author><id>tag:project.mde.tw,2017-03-20:/blog/403232030506ri-zhi-measuring-size.html</id><summary type="html">&lt;p&gt;辨識圖片中物體的最大長寬
+&lt;/br&gt;
+Measuring distance between objects in an image&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;辨識圖片中物體的最大長寬
+&lt;/br&gt;
+Measuring distance between objects in an image&lt;/p&gt;
+
+
+&lt;h3&gt;★範例所使用的圖檔下載位置&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="http://imgur.com/pSaQUS0"&gt;http://imgur.com/pSaQUS0&lt;/a&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★程式範例執行&lt;/h3&gt;
+
+&lt;pre class="brush: bash"&gt;
+#以圖片最左物體最大寬為基準，量測其他物體最大長寬
+from scipy.spatial import distance as dist
+from imutils import perspective
+from imutils import contours
+import numpy as np
+import argparse
+import imutils
+import cv2
+
+def midpoint(ptA, ptB):
+    return ((ptA[0] + ptB[0]) * 0.5, (ptA[1] + ptB[1]) * 0.5)
+
+
+# 構造參數解析跟解析參數
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--image", required=True,
+    help="指定要開啟的圖檔 ")
+ap.add_argument("-w", "--width", type=float, required=True,
+    help="最左物體最大寬度 (英吋)")
+args = vars(ap.parse_args())
+
+
+# 讀取圖檔→灰階→模糊
+# cv2.GaussianBlur模糊程度可以用3x3, 5x5, 7x7
+image = cv2.imread(args["image"])
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+gray = cv2.GaussianBlur(gray, (7, 7), 0)
+
+# 輪廓描邊→補空&amp;侵蝕
+edged = cv2.Canny(gray, 50, 100)
+edged = cv2.dilate(edged, None, iterations=1)
+edged = cv2.erode(edged, None, iterations=1)
+
+
+# 進行偵測
+cnts = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE)
+cnts = cnts[0] if imutils.is_cv2() else cnts[1]
+
+# 'pixels Per Metric' = object_width / know_width (相機像素 / 已知物品的寬度)
+(cnts, _) = contours.sort_contours(cnts)
+pixelsPerMetric = None
+
+# 進行一連串的輪廓校準
+for c in cnts:
+
+    # 忽略過小的輪廓 (限定輪廓描繪範圍)
+    if cv2.contourArea(c) &lt; 100:
+        continue
+
+    # 計算輪廓旋轉邊界
+    orig = image.copy()
+    box = cv2.minAreaRect(c)
+    box = cv2.cv.BoxPoints(box) if imutils.is_cv2() else cv2.boxPoints(box)
+    box = np.array(box, dtype="int")
+
+    # 繪製輪廓旋轉邊界
+    box = perspective.order_points(box)
+    cv2.drawContours(orig, [box.astype("int")], -1, (0, 255, 0), 2)
+
+    # 繪製物體角落之點
+    for (x, y) in box:
+        cv2.circle(orig, (int(x), int(y)), 5, (0, 0, 255), -1)
+
+    # 計算物品上下邊界之中點
+    (tl, tr, br, bl) = box
+    (tltrX, tltrY) = midpoint(tl, tr)
+    (blbrX, blbrY) = midpoint(bl, br)
+
+    # 計算物品左右邊界之中點
+    (tlblX, tlblY) = midpoint(tl, bl)
+    (trbrX, trbrY) = midpoint(tr, br)
+
+    # 物品邊界的四個中點設定條件
+    cv2.circle(orig, (int(tltrX), int(tltrY)), 5, (255, 0, 0), -1)
+    cv2.circle(orig, (int(blbrX), int(blbrY)), 5, (255, 0, 0), -1)
+    cv2.circle(orig, (int(tlblX), int(tlblY)), 5, (255, 0, 0), -1)
+    cv2.circle(orig, (int(trbrX), int(trbrY)), 5, (255, 0, 0), -1)
+
+    # 物品邊界的四個中點連線設定條件
+    cv2.line(orig, (int(tltrX), int(tltrY)), (int(blbrX), int(blbrY)),
+        (255, 0, 255), 2)
+    cv2.line(orig, (int(tlblX), int(tlblY)), (int(trbrX), int(trbrY)),
+        (255, 0, 255), 2)
+
+            # 利用歐式定理算中點之間的距離
+    dA = dist.euclidean((tltrX, tltrY), (blbrX, blbrY))
+    dB = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
+
+    # 如果未知 'pixelsPerMetric', 則使用下一行之算式
+    if pixelsPerMetric is None:
+        pixelsPerMetric = dB / args["width"]
+
+    # 計算物品之最大長寬
+    dimA = dA / pixelsPerMetric
+    dimB = dB / pixelsPerMetric
+
+    # 顯示出畫面中物品的大小
+    cv2.putText(orig, "{:.1f}in".format(dimA),
+        (int(tltrX - 15), int(tltrY - 10)), cv2.FONT_HERSHEY_SIMPLEX,
+        0.65, (255, 255, 255), 2)
+    cv2.putText(orig, "{:.1f}in".format(dimB),
+        (int(trbrX + 10), int(trbrY)), cv2.FONT_HERSHEY_SIMPLEX,
+        0.65, (255, 255, 255), 2)
+
+    cv2.imshow("Image", orig)
+    cv2.waitKey(0)     
+&lt;/pre&gt;
+
+&lt;h4&gt;
+◎輸入指令
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/pKNMwov.png"&gt;
+&lt;/br&gt;
+&lt;/h4&gt;
+
+&lt;h3&gt;★範例執行結果&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;img src="http://i.imgur.com/66Bs8iR.png"&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/2AGmOeE.png"&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/rL4eMd8.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★Numpy &amp; Scipy 運用的主要數學計算&lt;/h3&gt;
+
+&lt;h4&gt;
+用numpy找出物體四個邊界的中心
+&lt;/br&gt;
+用scipy進行長度換算，換算的方式是用座標法：
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/sSEWyxe.jpg"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+◎計算過程
+&lt;/br&gt;
+1.以一開始輸入基準物(最左的物體)的實際寬度和用座標法在圖片中算出的寬度做比值
+&lt;/br&gt;
+2.中心點分別為上下、左右，測量出圖片中兩線段長
+&lt;/br&gt;
+3.把第二步驟求出的線段長帶入第一步驟求出的比值，算出待測物的最大長寬
+&lt;/h4&gt;</content><category term="Kmol &amp; OpenCV &amp; Python"></category></entry><entry><title>40323203&amp;05&amp;06日誌 - Measuring distance</title><link href="http://project.mde.tw/blog/403232030506ri-zhi-measuring-distance.html" rel="alternate"></link><published>2017-03-06T19:30:00+08:00</published><updated>2017-03-06T19:30:00+08:00</updated><author><name>40323206</name></author><id>tag:project.mde.tw,2017-03-06:/blog/403232030506ri-zhi-measuring-distance.html</id><summary type="html">&lt;p&gt;辨識圖片中兩物體的實際距離
+&lt;/br&gt;
+Measuring distance between objects in an image&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;辨識圖片中兩物體的實際距離
+&lt;/br&gt;
+Measuring distance between objects in an image&lt;/p&gt;
+
+
+&lt;h3&gt;★範例所使用的圖檔下載位置&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="http://imgur.com/pSaQUS0"&gt;http://imgur.com/pSaQUS0&lt;/a&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★程式範例執行&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+#以圖片最左矩形寬作為依據的距離測量
+from scipy.spatial import distance as dist
+from imutils import perspective
+from imutils import contours
+import numpy as np
+import argparse
+import imutils
+import cv2
+
+def midpoint(ptA, ptB):
+    return ((ptA[0] + ptB[0]) * 0.5, (ptA[1] + ptB[1]) * 0.5)
+
+ap = argparse.ArgumentParser()
+
+#讓圖檔於開啟指令執行時輸入最左端的矩形寬度
+#cmd進入py檔和圖檔所在資料夾後，輸入python 1117_distance.py --width 寬度(inch) 開啟
+#寬度可直接輸入數字
+ap.add_argument("-w", "--width", type=float, required=True)
+
+args = vars(ap.parse_args())
+
+#讀取圖檔→灰階→模糊
+#cv2.GaussianBlur模糊程度可以用3x3, 5x5, 7x7
+img = cv2.imread("gear4.png", 1)
+Gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+gray = cv2.GaussianBlur(Gray, (3, 3), 0)
+
+#輪廓描邊→補空&amp;侵蝕
+edged = cv2.Canny(gray, 50, 100)
+edged = cv2.dilate(edged, None, iterations=1)
+edged = cv2.erode(edged, None, iterations=1)
+
+#進行偵測
+cnts = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE)
+cnts = cnts[0] if imutils.is_cv2() else cnts[1]
+
+#以最左矩形四點&amp;中心為基準到其他物品的距離標示線顏色
+(cnts, _) = contours.sort_contours(cnts)
+colors = ((0, 0, 255), (240, 0, 159), (0, 165, 255), (255, 255, 0),
+    (255, 0, 255))
+refObj = None
+
+#進行一連串的輪廓校準
+for c in cnts:
+    # 忽略過小的輪廓 (限定輪廓描繪範圍)
+    if cv2.contourArea(c) &lt; 1500:
+        continue
+
+    # 計算輪廓旋轉邊界
+    gear4 = cv2.minAreaRect(c)
+    gear4 = cv2.cv.BoxPoints(gear4) if imutils.is_cv2() else cv2.boxPoints(gear4)
+    gear4 = np.array(gear4, dtype="int")
+
+    # 重新設定邊界角落座標的順序, 由左上 右上 右下 左下, 順時針方向繞
+    gear4 = perspective.order_points(gear4)
+
+    # 計算物體的中心
+    cX = np.average(gear4[:, 0])
+    cY = np.average(gear4[:, 1])
+
+# 以左邊邊界輪廓當基準, 當參考對象
+    if refObj is None:
+        # 計算物品左右邊界的中點
+        (tl, tr, br, bl) = gear4
+        (tlblX, tlblY) = midpoint(tl, bl)
+        (trbrX, trbrY) = midpoint(tr, br)
+
+        # 用座標法計算兩物體中心距離
+        D = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
+        refObj = (gear4, (cX, cY), D / args["width"])
+        continue
+
+    # 輪廓描繪
+    orig = img.copy()
+    cv2.drawContours(orig, [gear4.astype("int")], -1, (0, 255, 0), 2) # 其餘物品的輪廓描繪
+    cv2.drawContours(orig, [refObj[0].astype("int")], -1, (0, 255, 0), 2) # 最左邊物品的輪廓描繪
+
+
+    # refCoords為基準物, objCoords為測量物
+    refCoords = np.vstack([refObj[0], refObj[1]])
+    objCoords = np.vstack([gear4, (cX, cY)])
+
+    for ((xA, yA), (xB, yB), color) in zip(refCoords, objCoords, colors):
+        # 基準物的四個角&amp;中心點 測量物的四個角&amp;中心點 點到點的距離
+        cv2.circle(orig, (int(xA), int(yA)), 5, color, -1)
+        cv2.circle(orig, (int(xB), int(yB)), 5, color, -1)
+        cv2.line(orig, (int(xA), int(yA)), (int(xB), int(yB)), color, 2)
+
+        #用座標距離法算出圖中的座標距離，並和實際的距離做比值，求出待測實際距離
+        D = dist.euclidean((xA, yA), (xB, yB)) / refObj[2]
+        (mX, mY) = midpoint((xA, yA), (xB, yB))
+        cv2.putText(orig, "{:.1f}in".format(D), (int(mX), int(mY - 10)),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.55, color, 2)
+        # "{:.1f}in" 取到小數點第一位
+
+        cv2.imshow("Image", orig)
+        cv2.waitKey(0)
+
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;h3&gt;★範例執行結果&lt;/h3&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/RmMEEJw.jpg"&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/A1h453s.jpg"&gt;
+&lt;/br&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★Numpy &amp; Scipy 運用的主要數學計算&lt;/h3&gt;
+
+&lt;h4&gt;
+用numpy找出物體的中心
+&lt;/br&gt;
+用scipy進行距離計算，計算的方式是用座標法：
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/sSEWyxe.jpg"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+◎計算過程
+&lt;/br&gt;
+1.以一開始輸入基準物(最左的物體)的實際寬度和用座標法在圖片中算出的寬度做比值
+&lt;/br&gt;
+2.分別假設基準物和待測物的座標為(X1,Y1)和(X2,Y2)帶入座標法計算出圖片中的距離
+&lt;/br&gt;
+3.把第二步驟求出的距離帶入第一步驟求出的比值，算出待測物的實際距離
+&lt;/h4&gt;
+
+&lt;h3&gt;★細部程式介紹&lt;/h3&gt;
+
+&lt;h4&gt;
+【cv2.GaussianBlur】圖像模糊
+&lt;/br&gt;
+&lt;/br&gt;
+◎使用格式：
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/PLY5k4D.jpg"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+◎範例程式
+&lt;/br&gt;
+&lt;pre class="brush: bash"&gt;
+import cv2
+
+img = cv2.imread('gear4.png')
+
+# cv2.GaussianBlur模糊程度可以用3x3, 5x5, 7x7
+# cv2.blur指令: blur = cv2.blur(img, (5,5))
+# 相較於 cv2.blur, cv2.GaussianBlur多一個參數color σ（顏色空間的標準差），此數值越大使得模糊效果更明顯
+blur = cv2.GaussianBlur(img, (5,5), 0)
+
+cv2.imshow("Image", blur)
+cv2.waitKey(0)
+&lt;/pre&gt;
+&lt;/br&gt;
+◎結果：
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/E4SpYIr.jpg"&gt;
+
+&lt;/br&gt;
+&lt;/h4&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h4&gt;
+【cv2.Canny &amp; cv2.dilate &amp; cv2.erode】描繪輪廓→擴張輪廓→修邊侵蝕
+&lt;/br&gt;
+&lt;/br&gt;
+◎使用格式：
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/tUUUeEQ.jpg"&gt;
+&lt;img src="http://i.imgur.com/C7ngCSo.jpg"&gt;
+&lt;img src="http://i.imgur.com/YjrILr2.jpg"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+◎範例程式
+&lt;/br&gt;
+&lt;pre class="brush: bash"&gt;
+import cv2
+
+img = cv2.imread('gear4.png',0)
+edges = cv2.Canny(img,10,50)
+edged = cv2.dilate(edges, None, iterations=1)
+erosion = cv2.erode(edged,None,iterations = 1)
+
+cv2.imshow("Image1", edges)
+cv2.imshow("Image2", edged)
+cv2.imshow("Image3", erosion)
+cv2.waitKey(0)
+&lt;/pre&gt;
+&lt;/br&gt;
+◎結果：
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/jNVKqS6.jpg"&gt;
+&lt;img src="http://i.imgur.com/2qZJ5Z8.jpg"&gt;
+&lt;img src="http://i.imgur.com/VLVWr8G.jpg"&gt;
+&lt;/br&gt;
+&lt;/h4&gt;</content><category term="Kmol &amp; OpenCV &amp; Python"></category></entry><entry><title>40323214日誌- Install Scipy on windows</title><link href="http://project.mde.tw/blog/40323214ri-zhi-install-scipy-on-windows.html" rel="alternate"></link><published>2017-01-20T21:00:00+08:00</published><updated>2017-01-20T21:00:00+08:00</updated><author><name>40323214</name></author><id>tag:project.mde.tw,2017-01-20:/blog/40323214ri-zhi-install-scipy-on-windows.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+&lt;h3&gt;一.Scipy基本介紹&lt;/h3&gt;
+
+&lt;h4&gt;SciPy是一個開源的Python演算法庫和數學工具包。
+&lt;/br&gt;
+SciPy包含的模組有最佳化、線性代數、積分、插值、特殊函式、快速傅立葉變換、訊號處理和圖像處理、常微分方程求解和其他科學與工程中常用的計算。與其功能相類似的軟體還有MATLAB、GNU Octave和Scilab。
+&lt;/h4&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;h3&gt;二.安裝過程&lt;/h3&gt;
+&lt;h4&gt;1.首先到http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy 網址中下載對應python(3.4.4)版本的whl檔案。Numpy這個函式庫也可以在這邊下載http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/lmr28o6.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/4gJaBxP.png"&gt;
+&lt;/br&gt;
+2.接著利用系統管理員找到載好檔案的路徑。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/jpFKDDm.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+3.再來打上對應python版本資料夾的路徑，進到scripts中，打上pip install "載好檔案的名稱前兩個英文字再按tab鍵"也就是"sc然後按tab或是nu再按tab"按下enter後就會開始下載了。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/YOZfiTb.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+4.最後在python的互動端中，使用Import測試是否有安裝成功。
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/UmOR6zH.png"&gt;
+&lt;/h4&gt;
+&lt;h3&gt;三.安裝原因&lt;/h3&gt;
+&lt;h4&gt;
+1.在Opencv執行範例時需要使用。
+&lt;/br&gt;
+&lt;/br&gt;
+2.由於直接使用pip install scipy無法正常下載，所以上網找了其他的安裝方法。
+&lt;/h4&gt;
+&lt;/br&gt;
+&lt;h3&gt;四.參考的網頁資料&lt;/h3&gt;
+&lt;/br&gt;
+&lt;h4&gt;
+1.維基百科:https://zh.wikipedia.org/zh-tw/SciPy
+&lt;/br&gt;
+&lt;/br&gt;
+2.whl檔載點:http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy
+&lt;/br&gt;
+&lt;/br&gt;
+3.下載步驟參考影片:https://www.youtube.com/watch?v=jnpC_Ib_lbc
+&lt;/h4&gt;&lt;/p&gt;</content><category term="OpenCv"></category></entry><entry><title>40323214日誌-齒輪計算</title><link href="http://project.mde.tw/blog/40323214ri-zhi-chi-lun-ji-suan.html" rel="alternate"></link><published>2016-11-23T10:00:00+08:00</published><updated>2016-11-23T10:00:00+08:00</updated><author><name>40323214</name></author><id>tag:project.mde.tw,2016-11-23:/blog/40323214ri-zhi-chi-lun-ji-suan.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+&lt;h3&gt;一.齒輪的公式轉換&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;h4&gt;執行程式&lt;/h4&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+import math
+import sympy
+from sympy import pi
+#a=壓力角
+#算節圓直徑
+def tes1(m,t):
+    d=m*t
+    return(d)
+
+#有效齒深
+def tes2(m):
+    h=2*m
+    return(h)
+
+#算模數 d1=外徑
+def tes3(d1):
+    m=d1/(t+2)
+    return(m)
+
+#基圓直徑
+def tes4(d,a):
+    dg=d *math.cos(a)
+    return(dg)
+
+#周節
+def tes5(m):
+    t0=pi.evalf()*m
+    return(t0)
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;h3&gt;二.執行後心得&lt;/h3&gt;
+&lt;/br&gt;
+&lt;h4&gt;以上程式是關於計算正齒輪的數值，在小組做出辨識齒輪的外徑以及尺數之後，導入上述程式可以求得齒輪其他的數值，例如模數、節圓直徑...等。
+&lt;/br&gt;
+&lt;/br&gt;
+而辨識出壓力角之後，就可以再計算更多關於齒輪的數值。
+&lt;/h4&gt;
+&lt;/br&gt;
+&lt;h3&gt;三.執行後問題&lt;/h3&gt;
+&lt;/br&gt;
+&lt;h4&gt;
+在寫完這些程式之後，發現 sympy函式庫出現問題"No module named 'sympy'"，而原因是導入pi這個函式需要使用到sympy，所以自己在網路上找了解答，發現原來是環境裡面並沒有這個函式庫，於是我從"https://pypi.python.org/pypi/sympy"網址中下載了安裝檔，並且把所需的資料拉進環境路徑裡面，就能夠正常執行計算式子。
+&lt;/h4&gt;
+&lt;/br&gt;
+&lt;h3&gt;五.參考的網頁資料&lt;/h3&gt;
+&lt;/br&gt;
+&lt;h4&gt;
+1.齒輪計算公式:http://coccad.com/subject/about/2427.html
+&lt;/br&gt;
+&lt;/br&gt;
+2.Sympy安裝網頁:https://pypi.python.org/pypi/sympy
+&lt;/br&gt;
+&lt;/h4&gt;&lt;/p&gt;</content><category term="OpenCv"></category></entry><entry><title>40323205日誌 - OpenCV (繪圖函式)</title><link href="http://project.mde.tw/blog/40323205ri-zhi-opencv-hui-tu-han-shi.html" rel="alternate"></link><published>2016-11-17T22:30:00+08:00</published><updated>2016-11-17T22:30:00+08:00</updated><author><name>40323205</name></author><id>tag:project.mde.tw,2016-11-17:/blog/40323205ri-zhi-opencv-hui-tu-han-shi.html</id><summary type="html">&lt;h4&gt;繪圖函式 - cv2.line, cv2.circle, cv2.rectangle, cv2.ellipse&lt;/h4&gt;
+
+</summary><content type="html">&lt;h4&gt;繪圖函式 - cv2.line, cv2.circle, cv2.rectangle, cv2.ellipse&lt;/h4&gt;
+
+
+
+&lt;h4&gt;目前電腦都可畫出線、矩形、圓、橢圓，並更改黑色背景大小。&lt;/h4&gt;
+
+&lt;h3&gt;【畫線】&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/dC0Jpmg.jpg"&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;【畫線-程式範例執行】&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+import numpy as np
+import cv2
+
+# 建立一個黑色背景
+img = np.zeros((512,512,3), np.uint8)
+
+# 以寬度 5 px 畫一條藍色的對角線
+img = cv2.line(img,(0,0),(511,511),(255,0,0),5)
+# 呈現此影像
+cv2.imshow('image',img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;【畫矩形】&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/xHEpGBC.jpg"&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;【畫矩形-程式範例執行】&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+import numpy as np
+import cv2
+
+# 建立一個黑色背景
+img = np.zeros((200,200,3), np.uint8)
+
+# 以寬度 5 px 畫一條藍色的對角線
+img = cv2.rectangle(img,(10,10),(100,150),(0,255,0),10)
+# 呈現此影像
+cv2.imshow('image',img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;【畫圓】&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/pIBit41.jpg"&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;【畫圓-程式範例執行】&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+import numpy as np
+import cv2
+
+# 建立一個黑色背景
+img = np.zeros((300,300,3), np.uint8)
+
+# 以寬度 5 px 畫一條藍色的對角線
+img = cv2.circle(img,(100,150), 100, (0,0,255), -1)
+# 呈現此影像
+cv2.imshow('image',img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;【畫橢圓】&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/wkuBhn5.jpg"&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;【畫橢圓-程式範例執行】&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+import numpy as np
+import cv2
+
+# 建立一個黑色背景
+img = np.zeros((450,450,3), np.uint8)
+
+# 以寬度 5 px 畫一條藍色的對角線
+img = cv2.ellipse(img,(256,256),(100,50),20,150,360, (255,0,255),3)
+# 呈現此影像
+cv2.imshow('image',img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h4&gt;後記 - 目前正在研究其他OpenCV程式，在這裡先呈現最基礎的繪圖函式。&lt;/h4&gt;</content><category term="Kmol &amp; OpenCV"></category></entry><entry><title>40323203日誌 - OpenCV(載入圖像)</title><link href="http://project.mde.tw/blog/40323203ri-zhi-opencvzai-ru-tu-xiang.html" rel="alternate"></link><published>2016-11-17T22:00:00+08:00</published><updated>2016-11-17T22:00:00+08:00</updated><author><name>40323203</name></author><id>tag:project.mde.tw,2016-11-17:/blog/40323203ri-zhi-opencvzai-ru-tu-xiang.html</id><summary type="html">&lt;h3&gt;載入圖片及影像--cv2.imread,cv2.VideoCapture&lt;/h3&gt;
+
+</summary><content type="html">&lt;h3&gt;載入圖片及影像--cv2.imread,cv2.VideoCapture&lt;/h3&gt;
+
+
+
+&lt;hr&gt;
+&lt;h4&gt;載入圖片程式&lt;/h4&gt;
+
+&lt;pre class="brush: bash"&gt;
+import numpy as np
+import cv2
+
+#載入jpg圖檔
+#imread:讀取圖片，並將資料寫入Mat/flags:影像標誌
+#IMREAD_COLOR:彩色模式可用1表示
+#IMREAD_GRAYSCALE:灰度圖可用0表示
+#IMREAD_UNCHANGED:透明度可用-1表示
+image = cv2.imread("DSC00040.jpg", flags=cv2.IMREAD_COLOR)
+
+#WINDOW_NORMAL:調節窗口大小
+#WINDOW_AUTOSIZE:固定窗口大小
+cv2.namedWindow('image',cv2.WINDOW_NORMAL) 
+
+cv2.imshow('image',image) 
+cv2.waitKey(0) 
+cv2.destroyAllWindows()
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h4&gt;顯示圖片結果可為彩色及黑白:&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/1nXHjD7.png"&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;/br&gt;
+&lt;h4&gt;載入影片程式&lt;/h4&gt;&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+import numpy as np
+import cv2
+
+#Capture:拍攝,紀錄
+cap = cv2.VideoCapture('00007.avi')
+
+while(cap.isOpened()):
+    ret, frame = cap.read()
+
+    #cvtColor：轉換影像色域，程式以轉換RGB到gray為例
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    cv2.imshow('frame',gray)
+    if cv2.waitKey(6) &amp; 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
+&lt;/pre&gt;</content><category term="Kmol &amp; OpenCV"></category></entry><entry><title>40323206日誌 - OpenCV (Dots)</title><link href="http://project.mde.tw/blog/40323206ri-zhi-opencv-dots.html" rel="alternate"></link><published>2016-11-15T20:53:00+08:00</published><updated>2016-11-15T20:53:00+08:00</updated><author><name>40323206</name></author><id>tag:project.mde.tw,2016-11-15:/blog/40323206ri-zhi-opencv-dots.html</id><summary type="html">&lt;p&gt;物體角落(點)的辨識 --- cv2.cornerHarris &amp;amp; cv2.dilate&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;物體角落(點)的辨識 --- cv2.cornerHarris &amp;amp; cv2.dilate&lt;/p&gt;
+
+
+&lt;h3&gt;★cv2.cornerHarris的使用&amp;格式&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/zne7h7s.jpg"&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★範例所使用的圖檔下載位置&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="http://imgur.com/F05kwRB"&gt;http://imgur.com/F05kwRB&lt;/a&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★程式範例執行&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+import cv2
+import numpy as np
+
+filename = 'chessboard.png'
+img = cv2.imread(filename)
+gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+
+gray = np.float32(gray)
+dst = cv2.cornerHarris(gray,2,3,0.04)
+
+#result is dilated for marking the corners, not important
+dst = cv2.dilate(dst,None)
+
+# Threshold for an optimal value, it may vary depending on the image.
+img[dst&gt;0.01*dst.max()]=[0,0,255]
+
+cv2.imshow('dst',img)
+if cv2.waitKey(0) &amp; 0xff == 27:
+    cv2.destroyAllWindows()
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★範例執行(已灰階)前後之比較&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/chMPHbO.jpg"&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★套用於齒輪辨識&lt;/h3&gt;
+
+&lt;h4&gt;
+有包含圓和圓心的辨識&amp;單獨作角落抓點
+&lt;pre class="brush: bash"&gt;
+import numpy as np
+import cv2
+from matplotlib import pyplot as plt
+
+img = cv2.imread("gear2.png", 1)
+imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+cv2.imwrite('graygear.png', imgGray)
+
+# 抓點
+gray = np.float32(imgGray)
+dst = cv2.cornerHarris(gray,2,3,0.04)
+
+# result is dilated for marking the corners, not important
+dst = cv2.dilate(dst,None)
+
+# Threshold for an optimal value, it may vary depending on the image.
+img[dst&gt;0.01*dst.max()]=[0,0,255]
+
+cv2.imshow('dst',img)
+
+# 抓圓
+circles = cv2.HoughCircles(imgGray,cv2.HOUGH_GRADIENT,1,20,
+                            param1=60,param2=50,minRadius=0,maxRadius=60)
+
+circles = np.uint16(np.around(circles))
+for i in circles[0,:]:
+    # draw the outer circle
+    cv2.circle(img,(i[0],i[1]),i[2],(255,0,255),2)
+    # draw the center of the circle
+    cv2.circle(img,(i[0],i[1]),2,(0,0,255),3)
+
+cv2.imshow('detected circles',img)
+
+
+cv2.waitKey(0)
+
+
+cv2.destroyAllWindows()
+&lt;/pre&gt;
+
+&lt;/br&gt;
+
+&lt;h3&gt;★齒輪辨識目的&lt;/h3&gt;
+&lt;h4&gt;配合之前的圓心可以初步抓出齒輪的外徑、內徑，方便之後直行計算相關程式的條件。&lt;/h4&gt;
+&lt;/br&gt;
+
+&lt;h3&gt;★齒輪辨識結果&lt;/h3&gt;
+&lt;img src="http://i.imgur.com/116TeT4.jpg"&gt;
+&lt;/br&gt;</content><category term="Kmol &amp; OpenCV"></category></entry><entry><title>40323206日誌 - OpenCV (Circles)</title><link href="http://project.mde.tw/blog/40323206ri-zhi-opencv-circles.html" rel="alternate"></link><published>2016-11-14T20:16:00+08:00</published><updated>2016-11-14T20:16:00+08:00</updated><author><name>40323206</name></author><id>tag:project.mde.tw,2016-11-14:/blog/40323206ri-zhi-opencv-circles.html</id><summary type="html">&lt;p&gt;圓形的辨識 --- cv2.HoughCircles&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;圓形的辨識 --- cv2.HoughCircles&lt;/p&gt;
+
+
+&lt;h3&gt;★cv2.HoughCircles的使用&amp;格式&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/sSe92Wx.jpg"&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★範例所使用的圖檔下載位置&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="http://imgur.com/EyLp3Qx"&gt;http://imgur.com/EyLp3Qx&lt;/a&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★程式範例執行&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+import cv2
+import numpy as np
+
+img = cv2.imread('opencv_logo.png',0)
+img = cv2.medianBlur(img,5)
+cimg = cv2.cvtColor(img,cv2.COLOR_GRAY2BGR)
+
+circles = cv2.HoughCircles(img,cv2.HOUGH_GRADIENT,
+                            1,20,
+                            param1=50,
+                            param2=40, 
+                            minRadius=0,
+                            maxRadius=0)
+
+circles = np.uint16(np.around(circles))
+for i in circles[0,:]:
+    # draw the outer circle
+    cv2.circle(cimg,(i[0],i[1]),i[2],(0,255,0),3)
+    # draw the center of the circle
+    cv2.circle(cimg,(i[0],i[1]),2,(0,0,255),3)
+
+cv2.imshow('detected circles',cimg)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★範例執行前後之比較&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/fSWa1OC.jpg"&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★套用於齒輪辨識&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+import numpy as np
+import cv2
+from matplotlib import pyplot as plt
+
+# 讀取圖檔
+img = cv2.imread("gear1.png", 1)
+# 圖檔轉灰階
+imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+# 灰階後進行存檔
+cv2.imwrite('graygear.png', imgGray)
+
+# 使用灰階圖抓圓
+circles = cv2.HoughCircles(imgGray,cv2.HOUGH_GRADIENT,
+                            1,20,
+                            param1=60,
+                            param2=50,
+                            minRadius=0,
+                            maxRadius=60)
+
+circles = np.uint16(np.around(circles))
+for i in circles[0,:]:
+    # 圓形的繪製
+    cv2.circle(img,(i[0],i[1]),i[2],(255,0,255),2)
+    # 圓心的繪製
+    cv2.circle(img,(i[0],i[1]),2,(0,0,255),3)
+
+cv2.imshow('detected circles',img)
+
+cv2.waitKey(0)
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★齒輪辨識目的&lt;/h3&gt;
+
+&lt;h4&gt;找出齒輪的圓心位置，方便之後直行計算相關程式的條件。&lt;/h4&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;★齒輪辨識結果&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="http://i.imgur.com/1gvQ3vH.jpg"&gt;
+&lt;/br&gt;&lt;/p&gt;</content><category term="Kmol &amp; OpenCV"></category></entry><entry><title>40323214日誌-Opencv範例</title><link href="http://project.mde.tw/blog/40323214ri-zhi-opencvfan-li.html" rel="alternate"></link><published>2016-08-04T15:00:00+08:00</published><updated>2016-08-04T15:00:00+08:00</updated><author><name>40323214</name></author><id>tag:project.mde.tw,2016-08-04:/blog/40323214ri-zhi-opencvfan-li.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+&lt;h3&gt;一.Windows執行範例程式&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;h4&gt;1.範例程式&lt;/h4&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+import cv2
+import sys
+
+cascPath = "haarcascade_frontalface_default.xml"
+faceCascade = cv2.CascadeClassifier(cascPath)
+
+video_capture = cv2.VideoCapture(0)
+
+while True:
+    # 逐一以影格取像
+    ret, frame = video_capture.read()
+
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    faces = faceCascade.detectMultiScale(
+        gray,
+        scaleFactor=1.1,
+        minNeighbors=5,
+        minSize=(30, 30),
+        flags=cv2.CASCADE_SCALE_IMAGE
+     )
+
+    # 在辨識的臉形外圍畫一個矩形
+    for (x, y, w, h) in faces:
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+
+    # 呈現影像
+    cv2.imshow('Video', frame)
+
+    if cv2.waitKey(1) &amp; 0xFF == ord('q'):
+        break
+
+# 停止執行
+video_capture.release()
+cv2.destroyAllWindows()
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;h4&gt;2.執行結果&lt;/h4&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/H6NpM2F.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;二.網路上的相關範例&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+import cv2
+from webcam_gui import webcam_gui
+
+def imgproc(frame):
+
+    # convert color to gray scale and show it
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    cv2.imshow('gray', gray)
+
+    blur = cv2.blur(gray, (5,5))
+    edge = cv2.Canny(blur, 30, 100)
+    edge = cv2.blur(edge, (2,2))
+    cv2.imshow('blured edge', edge)
+
+
+    # convert image to black and white and show it
+    thresh1, thresh = cv2.threshold(edge, 60, 255, cv2.THRESH_BINARY)
+    cv2.imshow('thresh', thresh)
+
+    # find contours!
+    _,contours, hry = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+
+    # draw all the contours
+    cpframe = frame.copy()
+    cv2.drawContours(cpframe, contours, -1, (0,255,0), 3)
+    cv2.imshow('cpframe', cpframe)
+
+    # ================== TODO ===================
+
+    # Modify these code to suit your need
+    contours = [ctr for ctr in contours if cv2.contourArea(ctr) &gt; 100]
+    contours = [cv2.approxPolyDP(ctr, 5 , True) for ctr in contours]
+    contours = [ctr for ctr in contours if cv2.isContourConvex(ctr)]
+
+    # ============================================
+
+
+    # draw on the frame
+    cv2.drawContours(frame, contours, -1, (0,255,0), 3)
+
+    return frame
+
+if __name__ == "__main__":
+    webcam_gui(imgproc, video_src=0)
+
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;h4&gt;1.執行結果&lt;/h4&gt;
+&lt;/br&gt;
+&lt;img src="http://i.imgur.com/J9Z93mG.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h3&gt;三.執行範例後心得&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;h3&gt;執行老師範例後，配合視訊裝置，可以呼叫出影像，並且進行人臉辨識。另外，我也在網路上查詢了其他相關範例，但程式碼更為複雜難懂，而網路上的範例是使用python2.x版本，所以必須換成python3的版本。
+&lt;/br&gt;
+&lt;/br&gt;
+由於剛接觸到程式以及Opencv，所以有很多範例的程式碼是尚未瞭解的。
+&lt;/br&gt;
+&lt;/br&gt;
+因此，我從Opencv的基礎語法中開始學習，包含cv2.imread()，cv2.imshow()，cv2.imwrite()等，先從如何呼叫圖片視窗，再到呼叫影片視窗。
+&lt;/h3&gt;
+&lt;/br&gt;
+&lt;h3&gt;四.目前碰到的問題&lt;/h3&gt;
+&lt;/br&gt;
+&lt;h3&gt;
+1.不知道如何學習範例程式中的辨識輪廓部分，以及辨識輪廓的數值是從何處來的。
+&lt;/br&gt;
+&lt;/br&gt;
+2.有些程式中會提到Xml檔案，但不知道是如何製作出來。
+&lt;/h3&gt;
+&lt;/br&gt;
+&lt;h3&gt;五.參考的網頁資料&lt;/h3&gt;
+&lt;/br&gt;
+&lt;h3&gt;
+1.拍.電.視.時間Github範例程式:https://github.com/fatcloud/PyCV-time
+&lt;/br&gt;
+&lt;/br&gt;
+2.OpenCv基礎語法學習網頁:http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_gui/py_table_of_contents_gui/py_table_of_contents_gui.html
+&lt;/br&gt;
+&lt;/br&gt;
+3.大兵萊恩學習OpenCv路程:http://gogoprivateryan.blogspot.tw/2015/09/opencv-3-opencv-python-face-recognition.html
+&lt;/br&gt;
+&lt;/br&gt;
+4.Python2 to Python3程式改變部分:https://docs.python.org/2/library/2to3.html&lt;/p&gt;</content><category term="OpenCv"></category></entry></feed>
