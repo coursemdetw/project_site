@@ -49,6 +49,10 @@
 &lt;p&gt;此點顏色，由名稱回傳 Qt 的顏色值。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
+&lt;p&gt;input: bool&lt;/p&gt;
+&lt;p&gt;是否為輸入點，以及角度。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;x, y: int, float&lt;/p&gt;
 &lt;p&gt;直角座標系數值。&lt;/p&gt;
 &lt;/li&gt;
