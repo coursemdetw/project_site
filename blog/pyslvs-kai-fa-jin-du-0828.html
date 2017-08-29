@@ -244,10 +244,6 @@ li {
 <p>此點顏色，由名稱回傳 Qt 的顏色值。</p>
 </li>
 <li>
-<p>input: bool</p>
-<p>是否為輸入點，以及角度。</p>
-</li>
-<li>
 <p>x, y: int, float</p>
 <p>直角座標系數值。</p>
 </li>
@@ -268,8 +264,8 @@ li {
 </li>
 </ul>
 <p>其實只需要 VPoint 類型即可表示整個連桿機構，但是為了使 Solvespace 與使用者較好判讀，加入 VLink 以輔助建模。</p>
-<p>不過在資料處理上，VLink 會從 VPoint 同步數據，因此只要處理 VPoint 即可。</p>
-<p>當然另外也會支援由 VLink 加入其他節點的功能。</p>
+<p>不過在資料處理上，VPoint 會從 VLink 同步數據，因此必須先建立 VLink 才能加入節點。</p>
+<p>而 Drive shaft 的部份則可以選擇輸入的節點（預設為第一個點）。</p>
 <p>必須完成目標：</p>
 <ul>
 <li>
