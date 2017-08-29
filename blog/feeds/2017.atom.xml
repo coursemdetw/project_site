@@ -1,5 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-18T09:00:00+08:00</updated><entry><title>推送網誌教學</title><link href="http://project.mde.tw/blog/tui-song-wang-zhi-jiao-xue.html" rel="alternate"></link><published>2017-08-18T09:00:00+08:00</published><updated>2017-08-18T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-18:/blog/tui-song-wang-zhi-jiao-xue.html</id><summary type="html">&lt;p&gt;在還不是協作者的情況下進行網誌推送&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-29T21:00:00+08:00</updated><entry><title>環境設定以及計算機程式</title><link href="http://project.mde.tw/blog/huan-jing-she-ding-yi-ji-ji-suan-ji-cheng-shi.html" rel="alternate"></link><published>2017-08-29T21:00:00+08:00</published><updated>2017-08-29T21:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-29:/blog/huan-jing-she-ding-yi-ji-ji-suan-ji-cheng-shi.html</id><summary type="html">&lt;p&gt;一些之前環境設定中沒有提到的細節&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;一些之前環境設定中沒有提到的細節&lt;/p&gt;
+
+
+&lt;h3&gt;指令設定&lt;/h3&gt;
+
+&lt;p&gt;筆記型電腦送修回來之後重新安裝了環境&lt;/p&gt;
+&lt;p&gt;在安裝上遇到一些問題&lt;/p&gt;
+&lt;p&gt;記錄下來讓大家參考&lt;/p&gt;
+&lt;p&gt;在寫網誌上面會使用的 pelican markdown beautifulsoup4 要先使用 pip 安裝好&lt;/p&gt;
+&lt;p&gt;如何進行 會在下文提到&lt;/p&gt;
+&lt;p&gt;首先，安裝好 Python 之後命令提示字元上輸入 python 會讀取不到指令&lt;/p&gt;
+&lt;p&gt;要安裝其他東西的 pip 也不能讀取到指令&lt;/p&gt;
+&lt;p&gt;因為他們不屬於內部指令&lt;/p&gt;
+&lt;p&gt;在環境變數內還沒有 python 與 pip 來進行動作&lt;/p&gt;
+&lt;p&gt;於是我們要設定以下的東西來讓指令運作&lt;/p&gt;
+&lt;p&gt;首先進入控制台 &amp;gt; 進階系統設定 &amp;gt; 進階標籤中的環境變數&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/set.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/adv.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/vir.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/path.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;紅框處就是指定到檔案的絕對位置 如 python 就可以用下圖參考&lt;/p&gt;
+&lt;p&gt;紅框框到第二個為 pip 的絕對位置&lt;/p&gt;
+&lt;p&gt;pip 的安裝會在下面介紹&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/folder.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;h3&gt;PIP 安裝&lt;/h3&gt;
+
+&lt;p&gt;首先利用 cd 切入 python 內的 script 裡面有一個 easy_install.exe&lt;/p&gt;
+&lt;p&gt;並輸入 easy_install.exe pip &lt;/p&gt;
+&lt;p&gt;之後同知資料夾會跑出很多 pip 相關文件&lt;/p&gt;
+&lt;p&gt;然後就回到上面的步驟&lt;/p&gt;
+&lt;p&gt;將 pip 加入環境變數之後指令就可以使用了&lt;/p&gt;
+&lt;h3&gt;預設使用程式&lt;/h3&gt;
+
+&lt;p&gt;每次開啟 leo 檔時都需要使用 python launchleo.py才能開啟&lt;/p&gt;
+&lt;p&gt;上次學長有調整過使 leo 可以直接開啟&lt;/p&gt;
+&lt;p&gt;使用以下方式即可達成&lt;/p&gt;
+&lt;p&gt;先建立一個批次檔&lt;/p&gt;
+&lt;p&gt;並輸入&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+python C:\Users\User\Downloads\Leo-5.5\Leo-5.5\launchLeo.py %1
+&lt;/pre&gt;
+
+&lt;p&gt;並將 leo 檔開啟的預設檔案設定為此 bat 檔案&lt;/p&gt;
+&lt;h3&gt;計算機狀況報告&lt;/h3&gt;
+
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/cal.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;目前已將 UI 拉成這樣&lt;/p&gt;
+&lt;p&gt;以有功能&lt;/p&gt;
+&lt;p&gt;但與當初老師說的已可以加減乘除有些不同&lt;/p&gt;
+&lt;p&gt;會再想想如何解決&lt;/p&gt;
+&lt;p&gt;已有參考過 boabao 的程式&lt;/p&gt;
+&lt;p&gt;但還是不太能理解&lt;/p&gt;
+&lt;p&gt;31日會出發去日本&lt;/p&gt;
+&lt;p&gt;5日會回到虎尾&lt;/p&gt;
+&lt;p&gt;這幾日暫時不會有進度&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Eric 環境安裝-Windows (下) 8/29已修正</title><link href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-xia-829yi-xiu-zheng.html" rel="alternate"></link><published>2017-08-29T09:00:00+08:00</published><updated>2017-08-29T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-29:/blog/eric-huan-jing-an-zhuang-windows-xia-829yi-xiu-zheng.html</id><summary type="html">&lt;p&gt;介紹安裝方法-2&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;介紹安裝方法-2&lt;/p&gt;
+
+
+&lt;p&gt;下載完QT安裝客戶端之後&lt;/p&gt;
+&lt;p&gt;雙擊開啟 進入安裝流程&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-A.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;按下NEXT之後 登入帳號&lt;/p&gt;
+&lt;p&gt;帳號可在Qt申請&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-B.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-C.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;選擇安裝位置並選擇需要安裝的項目&lt;/p&gt;
+&lt;p&gt;預設最新版本與工具包即可&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-D.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-E.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;按下同意即可繼續安裝&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-F.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;安裝過程 漫長的等待&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-G.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;完成&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-H.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;接下來打開命令提式字元&lt;/p&gt;
+&lt;p&gt;先切換至C槽&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+cd C:\
+&lt;/pre&gt;
+
+&lt;p&gt;接著使用pip進行安裝PyQt以及QScintilla&lt;/p&gt;
+&lt;p&gt;兩個打在一起他會自動依序安裝&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+pip install pyqt QScintilla
+&lt;/pre&gt;
+
+&lt;p&gt;若是電腦內原本就有安裝PyQt以及QScintilla&lt;/p&gt;
+&lt;p&gt;使用-U(要大寫)來進行更新&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+pip install pyqt5 QScintilla -U
+&lt;/pre&gt;
+
+&lt;p&gt;安裝完成後去Eric的官方網站下載Eric的檔案&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/ERIC-1.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/ERIC-2.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;下載完後進行解壓縮並將命令提示字元的位置轉移到其路徑&lt;/p&gt;
+&lt;p&gt;以下用我這邊來說明&lt;/p&gt;
+&lt;p&gt;由於我讓下載目錄預設在Downloads裡面故路徑為這樣&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/POS.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+C:\Users\kmol\Downloads\eric6-17.08 (1)\eric6-17.08
+&lt;/pre&gt;
+
+&lt;p&gt;這樣就完成切換&lt;/p&gt;
+&lt;p&gt;並且由於Eric的安裝檔為PY&lt;/p&gt;
+&lt;p&gt;故必須用Python來進行安裝&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+python install.py
+&lt;/pre&gt;
+
+&lt;p&gt;安裝完成後於命令提示字元輸入eric6即可開啟&lt;/p&gt;
+&lt;p&gt;20170829 修正 pyqt版本沒有加導致安裝不能繼續，補上版本&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>推送網誌教學</title><link href="http://project.mde.tw/blog/tui-song-wang-zhi-jiao-xue.html" rel="alternate"></link><published>2017-08-18T09:00:00+08:00</published><updated>2017-08-18T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-18:/blog/tui-song-wang-zhi-jiao-xue.html</id><summary type="html">&lt;p&gt;在還不是協作者的情況下進行網誌推送&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;在還不是協作者的情況下進行網誌推送&lt;/p&gt;
 
 
@@ -46,64 +159,7 @@ git push
 &lt;p&gt;請點選 compare across forks (紅框處)&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/nothing.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/nothing1.PNG?raw=true"&gt;&lt;/p&gt;
-&lt;p&gt;並回到 Pull request 照著步驟進行&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Eric 環境安裝-Windows (下)</title><link href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-xia.html" rel="alternate"></link><published>2017-08-17T09:00:00+08:00</published><updated>2017-08-17T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-17:/blog/eric-huan-jing-an-zhuang-windows-xia.html</id><summary type="html">&lt;p&gt;介紹安裝方法-2&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;介紹安裝方法-2&lt;/p&gt;
-
-
-&lt;p&gt;下載完QT安裝客戶端之後&lt;/p&gt;
-&lt;p&gt;雙擊開啟 進入安裝流程&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-A.PNG?raw=true"&gt;&lt;/p&gt;
-&lt;p&gt;按下NEXT之後 登入帳號&lt;/p&gt;
-&lt;p&gt;帳號可在Qt申請&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-B.PNG?raw=true"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-C.PNG?raw=true"&gt;&lt;/p&gt;
-&lt;p&gt;選擇安裝位置並選擇需要安裝的項目&lt;/p&gt;
-&lt;p&gt;預設最新版本與工具包即可&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-D.PNG?raw=true"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-E.PNG?raw=true"&gt;&lt;/p&gt;
-&lt;p&gt;按下同意即可繼續安裝&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-F.PNG?raw=true"&gt;&lt;/p&gt;
-&lt;p&gt;安裝過程 漫長的等待&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-G.PNG?raw=true"&gt;&lt;/p&gt;
-&lt;p&gt;完成&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-H.PNG?raw=true"&gt;&lt;/p&gt;
-&lt;p&gt;接下來打開命令提式字元&lt;/p&gt;
-&lt;p&gt;先切換至C槽&lt;/p&gt;
-&lt;pre class="brush: bash"&gt;
-cd C:\
-&lt;/pre&gt;
-
-&lt;p&gt;接著使用pip進行安裝PyQt以及QScintilla&lt;/p&gt;
-&lt;p&gt;兩個打在一起他會自動依序安裝&lt;/p&gt;
-&lt;pre class="brush: bash"&gt;
-pip install pyqt QScintilla
-&lt;/pre&gt;
-
-&lt;p&gt;若是電腦內原本就有安裝PyQt以及QScintilla&lt;/p&gt;
-&lt;p&gt;使用-U(要大寫)來進行更新&lt;/p&gt;
-&lt;pre class="brush: bash"&gt;
-pip install pyqt QScintilla -U
-&lt;/pre&gt;
-
-&lt;p&gt;安裝完成後去Eric的官方網站下載Eric的檔案&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/ERIC-1.PNG?raw=true"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/ERIC-2.PNG?raw=true"&gt;&lt;/p&gt;
-&lt;p&gt;下載完後進行解壓縮並將命令提示字元的位置轉移到其路徑&lt;/p&gt;
-&lt;p&gt;以下用我這邊來說明&lt;/p&gt;
-&lt;p&gt;由於我讓下載目錄預設在Downloads裡面故路徑為這樣&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/POS.PNG?raw=true"&gt;&lt;/p&gt;
-&lt;pre class="brush: bash"&gt;
-C:\Users\kmol\Downloads\eric6-17.08 (1)\eric6-17.08
-&lt;/pre&gt;
-
-&lt;p&gt;這樣就完成切換&lt;/p&gt;
-&lt;p&gt;並且由於Eric的安裝檔為PY&lt;/p&gt;
-&lt;p&gt;故必須用Python來進行安裝&lt;/p&gt;
-&lt;pre class="brush: bash"&gt;
-python install.py
-&lt;/pre&gt;
-
-&lt;p&gt;安裝完成後於命令提示字元輸入eric6即可開啟&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Linux作業系統下的程式開發環境</title><link href="http://project.mde.tw/blog/linuxzuo-ye-xi-tong-xia-de-cheng-shi-kai-fa-huan-jing.html" rel="alternate"></link><published>2017-08-15T09:00:00+08:00</published><updated>2017-08-15T09:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2017-08-15:/blog/linuxzuo-ye-xi-tong-xia-de-cheng-shi-kai-fa-huan-jing.html</id><summary type="html">&lt;p&gt;參考&lt;a href="http://project.mde.tw/blog/yen-kmol-de-cheng-shi-kai-fa-huan-jing.html"&gt;yen - KMOL 的程式開發環境 &lt;/a&gt;學習如何安裝Qt5、sip、PyQt5、qscintilla2 與 eric6 等，並寫一篇文章回報&lt;/p&gt;
+&lt;p&gt;並回到 Pull request 照著步驟進行&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Linux作業系統下的程式開發環境</title><link href="http://project.mde.tw/blog/linuxzuo-ye-xi-tong-xia-de-cheng-shi-kai-fa-huan-jing.html" rel="alternate"></link><published>2017-08-15T09:00:00+08:00</published><updated>2017-08-15T09:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2017-08-15:/blog/linuxzuo-ye-xi-tong-xia-de-cheng-shi-kai-fa-huan-jing.html</id><summary type="html">&lt;p&gt;參考&lt;a href="http://project.mde.tw/blog/yen-kmol-de-cheng-shi-kai-fa-huan-jing.html"&gt;yen - KMOL 的程式開發環境 &lt;/a&gt;學習如何安裝Qt5、sip、PyQt5、qscintilla2 與 eric6 等，並寫一篇文章回報&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;參考&lt;a href="http://project.mde.tw/blog/yen-kmol-de-cheng-shi-kai-fa-huan-jing.html"&gt;yen - KMOL 的程式開發環境 &lt;/a&gt;學習如何安裝Qt5、sip、PyQt5、qscintilla2 與 eric6 等，並寫一篇文章回報&lt;/p&gt;
 
 
