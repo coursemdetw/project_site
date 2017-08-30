@@ -54,7 +54,7 @@ in_the_forest(donald)
 in_the_forest(john)
 &lt;/pre&gt;
 
-&lt;p&gt;以上程式碼顯示，不管你是 Duck 類型還是 Person 類型，一樣可以進入 &lt;code&gt;in_the\_forest&lt;/code&gt; 函式。&lt;/p&gt;
+&lt;p&gt;以上程式碼顯示，不管你是 Duck 類型還是 Person 類型，一樣可以進入 &lt;code&gt;in_the_forest&lt;/code&gt; 函式。&lt;/p&gt;
 &lt;p&gt;很明顯地，我們的 john 可以玩到直到「穿幫」為止。&lt;/p&gt;
 &lt;p&gt;也呼應了 Python 的設計風格：&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;We're all consenting adults here.&lt;/strong&gt;&lt;/p&gt;
@@ -65,7 +65,7 @@ in_the_forest(john)
 &lt;p&gt;使用 PEP 484 的規則設計，最大的好處是可以不用使用註解來標明，畢竟同一色系常常會打錯字或是會錯意。&lt;/p&gt;
 &lt;p&gt;而且 Python 直譯器以及絕大多數的 IDE 都會幫你檢查是否為正確的類型。&lt;/p&gt;
 &lt;h2&gt;輸入&lt;/h2&gt;
-&lt;p&gt;先來展示基本的寫法，提醒 john 不要進入 &lt;code&gt;in_the\_forest&lt;/code&gt; 函式：&lt;/p&gt;
+&lt;p&gt;先來展示基本的寫法，提醒 john 不要進入 &lt;code&gt;in_the_forest&lt;/code&gt; 函式：&lt;/p&gt;
 &lt;pre class="brush: python"&gt;
 def in_the_forest(duck: Duck):
     duck.quack()
