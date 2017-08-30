@@ -1,5 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-28T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 08/28</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0828.html" rel="alternate"></link><published>2017-08-28T21:00:00+08:00</published><updated>2017-08-28T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-28:/blog/pyslvs-kai-fa-jin-du-0828.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 計劃&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-30T21:00:00+08:00</updated><entry><title>PEP 484 Type Hints</title><link href="http://project.mde.tw/blog/pep-484-type-hints.html" rel="alternate"></link><published>2017-08-30T21:00:00+08:00</published><updated>2017-08-30T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-30:/blog/pep-484-type-hints.html</id><summary type="html">&lt;p&gt;文章閱讀：Python 函式中的類型提示&lt;/p&gt;
+&lt;p&gt;如何在 Python funtion 中標示類型？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B"&gt;Duck Typing&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.python.org/dev/peps/pep-0484"&gt;PEP 484&lt;/a&gt; 簡讀&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;文章閱讀：Python 函式中的類型提示&lt;/p&gt;
+&lt;p&gt;如何在 Python funtion 中標示類型？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B"&gt;Duck Typing&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.python.org/dev/peps/pep-0484"&gt;PEP 484&lt;/a&gt; 簡讀&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;em&gt;詳情可參閱上方連結。&lt;/em&gt;&lt;/p&gt;
+&lt;h1&gt;Duck Typing&lt;/h1&gt;
+&lt;p&gt;作為一種動態程式語言，Python 採用「鴨子型別」的方式進行物件識別：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;「當看到一隻鳥走起來像鴨子、游泳起來像鴨子、叫起來也像鴨子，那麼這隻鳥就可以被稱為鴨子。」&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;例如以下的程式：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class Duck:
+    def quack(self):
+        print("這鴨子在呱呱叫")
+    def feathers(self):
+        print("這鴨子擁有白色與灰色羽毛")
+    def getMyFeathers(self):
+        return ["白色羽毛", "灰色羽毛"]
+
+class Person:
+    def quack(self):
+        print("這人正在模仿鴨子")
+    def feathers(self): 
+        print("這人在地上拿起1根羽毛然後給其他人看")
+    def getMyFeathers(self):
+        return "地上的羽毛"
+
+def in_the_forest(duck):
+    duck.quack()
+    duck.feathers()
+
+#Start the game.
+donald = Duck()
+john = Person()
+in_the_forest(donald)
+in_the_forest(john)
+&lt;/pre&gt;
+
+&lt;p&gt;以上程式碼顯示，不管你是 Duck 類型還是 Person 類型，一樣可以進入 &lt;code&gt;in_the\_forest&lt;/code&gt; 函式。&lt;/p&gt;
+&lt;p&gt;很明顯地，我們的 john 可以玩到直到「穿幫」為止。&lt;/p&gt;
+&lt;p&gt;也呼應了 Python 的設計風格：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;We're all consenting adults here.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;只要知道自己在做什麼，Python 可以讓寫作方式不會太過拘謹。&lt;/p&gt;
+&lt;h1&gt;PEP 484 簡讀&lt;/h1&gt;
+&lt;p&gt;不過 Python 中還是可以「提醒」工程師，function 中究竟該輸入什麼、會得到什麼。&lt;/p&gt;
+&lt;p&gt;這裡使用「提醒」這個字，代表著還是可以不按照規定輸入輸出（因為我們是動態語言），當然可能抱著被拆穿的風險。&lt;/p&gt;
+&lt;p&gt;使用 PEP 484 的規則設計，最大的好處是可以不用使用註解來標明，畢竟同一色系常常會打錯字或是會錯意。&lt;/p&gt;
+&lt;p&gt;而且 Python 直譯器以及絕大多數的 IDE 都會幫你檢查是否為正確的類型。&lt;/p&gt;
+&lt;h2&gt;輸入&lt;/h2&gt;
+&lt;p&gt;先來展示基本的寫法，提醒 john 不要進入 &lt;code&gt;in_the\_forest&lt;/code&gt; 函式：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+def in_the_forest(duck: Duck):
+    duck.quack()
+    duck.feathers()
+    whiteFeather, grayFeather = duck.getMyFeathers()
+&lt;/pre&gt;
+
+&lt;p&gt;這裡使用冒號 &lt;code&gt;:&lt;/code&gt; 後加上類型物件可以標示這個輸入的類型。&lt;/p&gt;
+&lt;p&gt;如果在其他檔案，懶得找到鴨子，也可以表示有種生物叫鴨子。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+def in_the_forest(duck: "Duck"):
+&lt;/pre&gt;
+
+&lt;p&gt;預設項目的用法也是以此類推，比如沒有 donald，自己找隻鴨子。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+def in_the_forest(duck: Duck =Duck()):
+&lt;/pre&gt;
+
+&lt;p&gt;多個輸入也雷同，使用逗號隔開即可。若是很多項，則是建議換行。&lt;/p&gt;
+&lt;p&gt;多個項目中可以選擇特定的標示，這些都不是硬性規定。&lt;/p&gt;
+&lt;p&gt;下面的範例留了一個安全的位子給 john。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+def in_the_forest(
+    duck1: Duck =Duck(),
+    duck2: Duck =Duck(),
+    duck3: Duck =Duck(),
+    person: Person =Person()
+):
+    Creatures = [duck1, duck2, duck3, person]
+    for i, duck in enumerate(Creatures):
+        duck.quack()
+        duck.feathers()
+        if i!=3:
+            whiteFeather, grayFeather = duck.getMyFeathers()
+
+in_the_forest(person=john)
+&lt;/pre&gt;
+
+&lt;p&gt;類型中的方法 (method) 也是一樣，不過因為第一個輸入 self 本來就是該類型，通常都不會標示。&lt;/p&gt;
+&lt;p&gt;這樣是不是清楚很多呢？&lt;/p&gt;
+&lt;h2&gt;輸出&lt;/h2&gt;
+&lt;p&gt;我們注意到 donald 和 john 在 &lt;code&gt;getMyFeathers&lt;/code&gt; 函式中拿出的物件不一樣，為了瞭解類型的函式究竟會得到什麼，可以使用輸出表示的方法。&lt;/p&gt;
+&lt;p&gt;輸出表示是一個箭號形狀擺在 function 尾端的冒號 &lt;code&gt;:&lt;/code&gt; 之前：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class Person:
+    def getMyFeathers(self) -&gt; str:
+        return "地上的羽毛"
+&lt;/pre&gt;
+
+&lt;p&gt;當然只會做事的函式是回傳 None，可以視情況決定要不要寫：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class Person:
+    def quack(self) -&gt; None:
+        print("這人正在模仿鴨子")
+&lt;/pre&gt;
+
+&lt;p&gt;若為多個，也是使用逗號分隔，這裡就不示範了。&lt;/p&gt;
+&lt;h2&gt;容器物件&lt;/h2&gt;
+&lt;p&gt;若是輸入或輸出的物件為容器 (container)，可以使用檢索符號 &lt;code&gt;[ ]&lt;/code&gt; 中括弧來標示。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class Duck:
+    def getMyFeathers(self) -&gt; list[str, str]:
+        return ["白色羽毛", "灰色羽毛"]
+&lt;/pre&gt;
+
+&lt;p&gt;若是有任意長度的「均勻」容器，可以用 &lt;a href="https://docs.python.org/3.6/library/constants.html#Ellipsis"&gt;Ellipsis&lt;/a&gt; 類型的 &lt;code&gt;...&lt;/code&gt; 表示：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+list[int, ...]
+&lt;/pre&gt;
+
+&lt;h2&gt;可呼叫物件&lt;/h2&gt;
+&lt;p&gt;可呼叫 (callable) 的 function 類型和常用的 lambda 如下表示：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+from typing import Callable
+
+def async_query(
+    on_success: Callable[[int], None],
+    on_error: Callable[[int, Exception], None]
+):
+&lt;/pre&gt;
+
+&lt;p&gt;第一項為「輸入類型」，第二項為「輸出類型」。&lt;/p&gt;
+&lt;p&gt;若是懶得管第一項，可以使用上面提到的 Ellipsis 表示。&lt;/p&gt;
+&lt;p&gt;一個簡單的 lambda 物件如下表示：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+lambda x, y: str(x+y)
+
+Callable[[int, int], str]
+Callable[..., str]
+&lt;/pre&gt;
+
+&lt;h2&gt;泛型物件&lt;/h2&gt;
+&lt;p&gt;若有多重類型的物件可以適用，便可從 typing 模組匯入泛型物件。&lt;/p&gt;
+&lt;p&gt;例如無序集合：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+from typing import Mapping, Set
+
+def notify_by_email(employees: Set[Employee], overrides: Mapping[str, str]):
+&lt;/pre&gt;
+
+&lt;p&gt;或是有序集合：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+from typing import Sequence, TypeVar
+
+T = TypeVar('T')
+
+def first(l: Sequence[T]) -&gt; T:
+    return l[0]
+&lt;/pre&gt;
+
+&lt;p&gt;或是任何字串：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+from typing import TypeVar
+
+AnyStr = TypeVar('AnyStr', str, bytes)
+
+def concat(x: AnyStr, y: AnyStr) -&gt; AnyStr:
+    return x + y
+&lt;/pre&gt;
+
+&lt;p&gt;上面的範例中，透過 TypeVar 函式可以將你的自訂類型正規化，讓直譯器不會出錯，是一個比字串更好的表達方式。&lt;/p&gt;
+&lt;p&gt;還有更多使用方式，這裡就不細數了，更多內容可以參閱官方的說明。&lt;/p&gt;</content><category term="Python3"></category></entry><entry><title>Pyslvs 開發進度 - 08/28</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0828.html" rel="alternate"></link><published>2017-08-28T21:00:00+08:00</published><updated>2017-08-28T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-28:/blog/pyslvs-kai-fa-jin-du-0828.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 計劃&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;新的表示式&lt;/p&gt;
