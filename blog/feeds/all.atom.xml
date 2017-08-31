@@ -64,6 +64,7 @@ in_the_forest(john)
 &lt;p&gt;這裡使用「提醒」這個字，代表著仍然能不按照規定輸入輸出（因為我們是動態語言），當然也會抱著被拆穿的風險。&lt;/p&gt;
 &lt;p&gt;使用 PEP 484 的規則設計，最大的好處是可以不須使用註解來標明，畢竟同一色系常常會打錯字或是會錯意。&lt;/p&gt;
 &lt;p&gt;而且 Python 直譯器以及絕大多數的 IDE 都會幫你檢查是否為正確的類型。&lt;/p&gt;
+&lt;p&gt;需要注意的是，typing 模組是在 Python 3.5 加入。&lt;/p&gt;
 &lt;h2&gt;輸入&lt;/h2&gt;
 &lt;p&gt;先來展示基本的寫法，提醒 john 不要進入 &lt;code&gt;in_the_forest&lt;/code&gt; 函式：&lt;/p&gt;
 &lt;pre class="brush: python"&gt;
@@ -126,16 +127,14 @@ class Person:
 &lt;h2&gt;容器物件&lt;/h2&gt;
 &lt;p&gt;若是輸入或輸出的物件為容器 (container)，可以使用檢索符號 &lt;code&gt;[ ]&lt;/code&gt; 中括弧來標示。&lt;/p&gt;
 &lt;pre class="brush: python"&gt;
+from typing import List
+
 class Duck:
-    def getMyFeathers(self) -&gt; list[str, str]:
+    def getMyFeathers(self) -&gt; List[str, str]:
         return ["白色羽毛", "灰色羽毛"]
 &lt;/pre&gt;
 
-&lt;p&gt;若是有任意長度的「均勻」容器，可以用 &lt;a href="https://docs.python.org/3.6/library/constants.html#Ellipsis"&gt;Ellipsis&lt;/a&gt; 類型的 &lt;code&gt;...&lt;/code&gt; 表示：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-list[int, ...]
-&lt;/pre&gt;
-
+&lt;p&gt;從 typing 模組匯入的類型名稱字首為大寫，注意不要與一般類型混淆了。&lt;/p&gt;
 &lt;h2&gt;可呼叫物件&lt;/h2&gt;
 &lt;p&gt;可呼叫 (callable) 的 function 類型和常用的 lambda 如下表示：&lt;/p&gt;
 &lt;pre class="brush: python"&gt;
@@ -148,7 +147,7 @@ def async_query(
 &lt;/pre&gt;
 
 &lt;p&gt;第一項為「輸入類型」，第二項為「輸出類型」。&lt;/p&gt;
-&lt;p&gt;若是懶得管第一項，可以使用上面提到的 Ellipsis 表示。&lt;/p&gt;
+&lt;p&gt;若是懶得管第一項，可以使用 &lt;a href="https://docs.python.org/3.6/library/constants.html#Ellipsis"&gt;Ellipsis&lt;/a&gt; 表示。&lt;/p&gt;
 &lt;p&gt;一個簡單的 lambda 物件如下表示：&lt;/p&gt;
 &lt;pre class="brush: python"&gt;
 lambda x, y: str(x+y)
