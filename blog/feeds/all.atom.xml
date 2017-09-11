@@ -1,5 +1,366 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-17T09:00:00+08:00</updated><entry><title>Eric 環境安裝-Windows (下)</title><link href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-xia.html" rel="alternate"></link><published>2017-08-17T09:00:00+08:00</published><updated>2017-08-17T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-17:/blog/eric-huan-jing-an-zhuang-windows-xia.html</id><summary type="html">&lt;p&gt;介紹安裝方法-2&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-09-08T21:00:00+08:00</updated><entry><title>在網誌內附加圖片&amp;日本小發現</title><link href="http://project.mde.tw/blog/zai-wang-zhi-nei-fu-jia-tu-pian-ri-ben-xiao-fa-xian.html" rel="alternate"></link><published>2017-09-08T21:00:00+08:00</published><updated>2017-09-08T21:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-09-08:/blog/zai-wang-zhi-nei-fu-jia-tu-pian-ri-ben-xiao-fa-xian.html</id><summary type="html">&lt;p&gt;組員像我詢問如何附加圖檔在網誌內&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;組員像我詢問如何附加圖檔在網誌內&lt;/p&gt;
+
+
+&lt;h3&gt;圖片附加&lt;/h3&gt;
+
+&lt;p&gt;本文以成為管理員之後的方式來操作&lt;/p&gt;
+&lt;p&gt;差別在於 clone 以及 push 而已&lt;/p&gt;
+&lt;p&gt;首先 clone 倉儲 project site file&lt;/p&gt;
+&lt;p&gt;方便管理 我們將媒體檔案分開放置&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/POS.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;從 &lt;font color=#0000FF&gt;/blob/gh-pagess/&lt;/font&gt;就是檔案的絕對位置&lt;/p&gt;
+&lt;p&gt;用圖中的語法即可附上圖片&lt;/p&gt;
+&lt;h3&gt;日本小發現&lt;/h3&gt;
+
+&lt;p&gt;離開台灣前看到的阿聯酋航空&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/1.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;日本第一餐麥當勞 跟台灣比起來超貴&lt;/p&gt;
+&lt;p&gt;飲料還是小罐的.....&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/2.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;日本五天的住處&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/3.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;這幾天的好夥伴 黑門市場&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/4.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;很罪惡的看板&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/5.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;市場內會撥放廣告的機器人&lt;/p&gt;
+&lt;p&gt;說著可以用外幣入內換日幣&lt;/p&gt;
+&lt;p&gt;但是我看進店內機器貼著 No work.....&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/6.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;住處在日本橋，距離道頓掘很近&lt;/p&gt;
+&lt;p&gt;真的跟漫畫一模一樣&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/7.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/comic.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;連便利商店都有生魚片...&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/8.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;免洗筷還有附牙籤&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/9.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;嵐山美景&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/10.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;雲超少 好熱&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/11.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;很貴的午餐 這樣要750日幣....&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/12.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;樂器很像鍋蓋的街頭藝人&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/13.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;100日幣的可樂 以販賣機來說很便宜....&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/14.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;不知為何會有個握力器&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/15.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;園藝小熊&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/16.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;金閣寺門票&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/17.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;金閣寺&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/18.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;日本美景&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/19.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/20.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/21.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/22.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/23.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/24.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/25.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/26.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/27.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/28.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/29.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/30.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/31.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/32.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/33.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;住處內很棒的設計&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/232933705" width="640" height="1138" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/232933705"&gt;line_1504184119147[1]&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Pyslvs 開發進度 - 09/02</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0902.html" rel="alternate"></link><published>2017-09-02T21:00:00+08:00</published><updated>2017-09-02T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-09-02:/blog/pyslvs-kai-fa-jin-du-0902.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;使用者介面&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;程式碼&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;使用者介面&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;程式碼&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Pyslvs v0.9 大更新進度&lt;/h1&gt;
+&lt;p&gt;經過近一週的大幅度調整後，移除累贅的 module files，重寫了基本函式，大致上已經把底層表示式建好了，PMKS 的滑塊部份還未研究，因此先不加入。&lt;/p&gt;
+&lt;p&gt;以下將說明當前程式部份的達成部份。&lt;/p&gt;
+&lt;h2&gt;使用者介面&lt;/h2&gt;
+&lt;p&gt;大改版之前有換過圖示，Points 使用軸承圖示；Links 使用曲柄表示，之前從 Solvespace 借用的圖示改為較直覺的樣式。&lt;/p&gt;
+&lt;p&gt;介面更動後比較清爽了，只剩兩個表格操作：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_02_01.png"&gt;&lt;/p&gt;
+&lt;p&gt;Link 的部份跟過去的原點一樣，預設有一個 ground，無法修改或刪除。&lt;/p&gt;
+&lt;p&gt;以前的切換 Fix / Unfix 功能調整成會將 ground 加入此點。&lt;/p&gt;
+&lt;p&gt;這兩個表格其實是相輔相成的，改動其中一邊會造成包含的內容同時修正，因此在設計時可以先建立空點或空連桿，再接著連起來即可。&lt;/p&gt;
+&lt;p&gt;快速建法跟以前一樣使用拖拉模式，不過這部份要自動填入名稱，還未設計好。&lt;/p&gt;
+&lt;p&gt;為此有別重寫 Qt 的 Undo Redo command。由於只有兩個表格，因此這次設計較為周全。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_02_02.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_02_03.png"&gt;&lt;/p&gt;
+&lt;p&gt;下方的包含清單是使用拖拉的方式加入和移除，Link 的名稱一樣是自訂，是通過 String 類型的 &lt;code&gt;isidentifier()&lt;/code&gt;方法辨認。&lt;/p&gt;
+&lt;p&gt;這次改換了新的表示式，因此趁機會將資料格式一舉調整，節省使用空間。&lt;/p&gt;
+&lt;p&gt;另外還順便拉了版本控制的說明介面：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_02_04.png"&gt;&lt;/p&gt;
+&lt;h2&gt;程式碼&lt;/h2&gt;
+&lt;p&gt;這次表示式的部份採用 PEP 484 的風格撰寫，因此 &lt;strong&gt;Python 必須升級到 3.5 版&lt;/strong&gt;或以上。&lt;/p&gt;
+&lt;p&gt;重寫的部份，在邏輯方面加入了多行的程式註解，免得較細節的部份看不懂。&lt;/p&gt;
+&lt;p&gt;由於中心部份直接刪除重做，連接處仍然需要維修，例如 Panels 跟畫布和表格互動的部份。&lt;/p&gt;
+&lt;p&gt;PMKS 表示式的好處是更節省函式和物件的空間。&lt;/p&gt;
+&lt;p&gt;這次基礎建設改動了 69 個檔案，首要目標是先將舊功能加回，規劃新檔案格式後，再將幾個重要的 Examples 補齊。&lt;/p&gt;
+&lt;p&gt;看了相關資料後，發覺 fossil 格式包含的項目滿多的，可能要評估如何將 Points 表格的資料以何種方式存入 Database，fossil 的版次格式和 merge 方式也需要研究。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>PEP 484 Type Hints</title><link href="http://project.mde.tw/blog/pep-484-type-hints.html" rel="alternate"></link><published>2017-08-30T21:00:00+08:00</published><updated>2017-08-30T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-30:/blog/pep-484-type-hints.html</id><summary type="html">&lt;p&gt;文章閱讀：Python 函式中的類型提示&lt;/p&gt;
+&lt;p&gt;如何在 Python 函式中標示類型？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B"&gt;Duck Typing&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.python.org/dev/peps/pep-0484"&gt;PEP 484&lt;/a&gt; 簡讀&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;文章閱讀：Python 函式中的類型提示&lt;/p&gt;
+&lt;p&gt;如何在 Python 函式中標示類型？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B"&gt;Duck Typing&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.python.org/dev/peps/pep-0484"&gt;PEP 484&lt;/a&gt; 簡讀&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;em&gt;詳情可參閱上方連結。&lt;/em&gt;&lt;/p&gt;
+&lt;h1&gt;Duck Typing&lt;/h1&gt;
+&lt;p&gt;作為一種動態程式語言，Python 採用「鴨子型別」的方式進行物件識別：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;「當看到一隻鳥走起來像鴨子、游泳起來像鴨子、叫起來也像鴨子，那麼這隻鳥就可以被稱為鴨子。」&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;例如以下的程式：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class Duck:
+    def quack(self):
+        print("這鴨子在呱呱叫")
+    def feathers(self):
+        print("這鴨子擁有白色與灰色羽毛")
+    def getMyFeathers(self):
+        return ["白色羽毛", "灰色羽毛"]
+
+class Person:
+    def quack(self):
+        print("這人正在模仿鴨子")
+    def feathers(self): 
+        print("這人在地上拿起1根羽毛然後給其他人看")
+    def getMyFeathers(self):
+        return "地上的羽毛"
+
+def in_the_forest(duck):
+    duck.quack()
+    duck.feathers()
+
+#Start the game.
+donald = Duck()
+john = Person()
+in_the_forest(donald)
+in_the_forest(john)
+&lt;/pre&gt;
+
+&lt;p&gt;以上程式碼顯示，不管你是 Duck 類型還是 Person 類型，一樣可以進入 &lt;code&gt;in_the_forest&lt;/code&gt; 函式。&lt;/p&gt;
+&lt;p&gt;很明顯地，我們的 john 可以玩到直到「穿幫」為止。&lt;/p&gt;
+&lt;p&gt;也呼應了 Python 的設計風格：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;We're all consenting adults here.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;只要知道自己在做什麼，Python 可以讓寫作方式不會太過拘謹。&lt;/p&gt;
+&lt;h1&gt;PEP 484 簡讀&lt;/h1&gt;
+&lt;p&gt;不過 Python 中還是可以「提醒」工程師，function 中究竟該輸入什麼、會得到什麼。&lt;/p&gt;
+&lt;p&gt;這裡使用「提醒」這個字，代表著仍然能不按照規定輸入輸出（因為我們是動態語言），當然也會抱著被拆穿的風險。&lt;/p&gt;
+&lt;p&gt;使用 PEP 484 的規則設計，最大的好處是可以不須使用註解來標明，畢竟同一色系常常會打錯字或是會錯意。&lt;/p&gt;
+&lt;p&gt;而且 Python 直譯器以及絕大多數的 IDE 都會幫你檢查是否為正確的類型。&lt;/p&gt;
+&lt;p&gt;需要注意的是，typing 模組是在 Python 3.5 加入。&lt;/p&gt;
+&lt;h2&gt;輸入&lt;/h2&gt;
+&lt;p&gt;先來展示基本的寫法，提醒 john 不要進入 &lt;code&gt;in_the_forest&lt;/code&gt; 函式：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+def in_the_forest(duck: Duck):
+    duck.quack()
+    duck.feathers()
+    whiteFeather, grayFeather = duck.getMyFeathers()
+&lt;/pre&gt;
+
+&lt;p&gt;這裡使用冒號 &lt;code&gt;:&lt;/code&gt; 後加上類型物件可以標示這個輸入的類型。&lt;/p&gt;
+&lt;p&gt;如果在其他檔案，懶得找到鴨子，也可以用字串表示有種生物叫鴨子。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+def in_the_forest(duck: "Duck"):
+&lt;/pre&gt;
+
+&lt;p&gt;預設項目的用法也是以此類推，比如沒有 donald，自己找隻鴨子。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+def in_the_forest(duck: Duck =Duck()):
+&lt;/pre&gt;
+
+&lt;p&gt;多個輸入也雷同，使用逗號隔開即可。若是很多項，則是建議換行。&lt;/p&gt;
+&lt;p&gt;多個項目中可以選擇特定的標示，這些都不是硬性規定。&lt;/p&gt;
+&lt;p&gt;下面的範例留了一個安全的位子給 john。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+def in_the_forest(
+    duck1: Duck =Duck(),
+    duck2: Duck =Duck(),
+    duck3: Duck =Duck(),
+    person: Person =Person()
+):
+    Creatures = [duck1, duck2, duck3, person]
+    for i, duck in enumerate(Creatures):
+        duck.quack()
+        duck.feathers()
+        if i!=3:
+            whiteFeather, grayFeather = duck.getMyFeathers()
+
+in_the_forest(person=john)
+&lt;/pre&gt;
+
+&lt;p&gt;類型中的方法 (method) 也是一樣，不過因為第一個輸入 self 本來就是該類型，通常都不會標示。&lt;/p&gt;
+&lt;p&gt;這樣是不是清楚很多呢？&lt;/p&gt;
+&lt;h2&gt;輸出&lt;/h2&gt;
+&lt;p&gt;我們注意到 donald 和 john 在 &lt;code&gt;getMyFeathers&lt;/code&gt; 函式中拿出的物件不一樣，為了瞭解類型的函式究竟會得到什麼，可以使用輸出表示的方法。&lt;/p&gt;
+&lt;p&gt;輸出表示是一個箭號形狀擺在 function 尾端的冒號 &lt;code&gt;:&lt;/code&gt; 之前：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class Person:
+    def getMyFeathers(self) -&gt; str:
+        return "地上的羽毛"
+&lt;/pre&gt;
+
+&lt;p&gt;當然只會做事的函式是回傳 None，可以視情況決定要不要寫：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class Person:
+    def quack(self) -&gt; None:
+        print("這人正在模仿鴨子")
+&lt;/pre&gt;
+
+&lt;p&gt;若為多個，也是使用逗號分隔，這裡就不示範了。&lt;/p&gt;
+&lt;h2&gt;容器物件&lt;/h2&gt;
+&lt;p&gt;若是輸入或輸出的物件為容器 (container)，可以使用檢索符號 &lt;code&gt;[ ]&lt;/code&gt; 中括弧來標示。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+from typing import List
+
+class Duck:
+    def getMyFeathers(self) -&gt; List[str, str]:
+        return ["白色羽毛", "灰色羽毛"]
+&lt;/pre&gt;
+
+&lt;p&gt;從 typing 模組匯入的類型名稱字首為大寫，注意不要與一般類型混淆了。&lt;/p&gt;
+&lt;h2&gt;可呼叫物件&lt;/h2&gt;
+&lt;p&gt;可呼叫 (callable) 的 function 類型和常用的 lambda 如下表示：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+from typing import Callable
+
+def async_query(
+    on_success: Callable[[int], None],
+    on_error: Callable[[int, Exception], None]
+):
+&lt;/pre&gt;
+
+&lt;p&gt;第一項為「輸入類型」，第二項為「輸出類型」。&lt;/p&gt;
+&lt;p&gt;若是懶得管第一項，可以使用 &lt;a href="https://docs.python.org/3.6/library/constants.html#Ellipsis"&gt;Ellipsis&lt;/a&gt; 表示。&lt;/p&gt;
+&lt;p&gt;一個簡單的 lambda 物件如下表示：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+lambda x, y: str(x+y)
+
+Callable[[int, int], str]
+Callable[..., str]
+&lt;/pre&gt;
+
+&lt;h2&gt;泛型物件&lt;/h2&gt;
+&lt;p&gt;若有多重類型的物件可以適用，便可從 typing 模組匯入泛型物件。&lt;/p&gt;
+&lt;p&gt;例如無序集合：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+from typing import Mapping, Set
+
+def notify_by_email(employees: Set[Employee], overrides: Mapping[str, str]):
+&lt;/pre&gt;
+
+&lt;p&gt;或是有序集合：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+from typing import Sequence, TypeVar
+
+T = TypeVar('T')
+
+def first(l: Sequence[T]) -&gt; T:
+    return l[0]
+&lt;/pre&gt;
+
+&lt;p&gt;或是任何字串：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+from typing import TypeVar
+
+AnyStr = TypeVar('AnyStr', str, bytes)
+
+def concat(x: AnyStr, y: AnyStr) -&gt; AnyStr:
+    return x + y
+&lt;/pre&gt;
+
+&lt;p&gt;上面的範例中，透過 TypeVar 函式可以將你的自訂類型正規化，讓直譯器不會出錯，是一個比字串更好的表達方式。&lt;/p&gt;
+&lt;p&gt;還有更多使用方式，這裡就不細數了，更多內容可以參閱官方的說明。&lt;/p&gt;</content><category term="Python3"></category></entry><entry><title>環境設定以及計算機程式</title><link href="http://project.mde.tw/blog/huan-jing-she-ding-yi-ji-ji-suan-ji-cheng-shi.html" rel="alternate"></link><published>2017-08-29T21:00:00+08:00</published><updated>2017-08-29T21:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-29:/blog/huan-jing-she-ding-yi-ji-ji-suan-ji-cheng-shi.html</id><summary type="html">&lt;p&gt;一些之前環境設定中沒有提到的細節&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;一些之前環境設定中沒有提到的細節&lt;/p&gt;
+
+
+&lt;h3&gt;指令設定&lt;/h3&gt;
+
+&lt;p&gt;筆記型電腦送修回來之後重新安裝了環境&lt;/p&gt;
+&lt;p&gt;在安裝上遇到一些問題&lt;/p&gt;
+&lt;p&gt;記錄下來讓大家參考&lt;/p&gt;
+&lt;p&gt;在寫網誌上面會使用的 pelican markdown beautifulsoup4 要先使用 pip 安裝好&lt;/p&gt;
+&lt;p&gt;如何進行 會在下文提到&lt;/p&gt;
+&lt;p&gt;首先，安裝好 Python 之後命令提示字元上輸入 python 會讀取不到指令&lt;/p&gt;
+&lt;p&gt;要安裝其他東西的 pip 也不能讀取到指令&lt;/p&gt;
+&lt;p&gt;因為他們不屬於內部指令&lt;/p&gt;
+&lt;p&gt;在環境變數內還沒有 python 與 pip 來進行動作&lt;/p&gt;
+&lt;p&gt;於是我們要設定以下的東西來讓指令運作&lt;/p&gt;
+&lt;p&gt;首先進入控制台 &amp;gt; 進階系統設定 &amp;gt; 進階標籤中的環境變數&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/set.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/adv.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/vir.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/path.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;紅框處就是指定到檔案的絕對位置 如 python 就可以用下圖參考&lt;/p&gt;
+&lt;p&gt;紅框框到第二個為 pip 的絕對位置&lt;/p&gt;
+&lt;p&gt;pip 的安裝會在下面介紹&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/folder.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;h3&gt;PIP 安裝&lt;/h3&gt;
+
+&lt;p&gt;首先利用 cd 切入 python 內的 script 裡面有一個 easy_install.exe&lt;/p&gt;
+&lt;p&gt;並輸入 easy_install.exe pip &lt;/p&gt;
+&lt;p&gt;之後同知資料夾會跑出很多 pip 相關文件&lt;/p&gt;
+&lt;p&gt;然後就回到上面的步驟&lt;/p&gt;
+&lt;p&gt;將 pip 加入環境變數之後指令就可以使用了&lt;/p&gt;
+&lt;h3&gt;預設使用程式&lt;/h3&gt;
+
+&lt;p&gt;每次開啟 leo 檔時都需要使用 python launchleo.py才能開啟&lt;/p&gt;
+&lt;p&gt;上次學長有調整過使 leo 可以直接開啟&lt;/p&gt;
+&lt;p&gt;使用以下方式即可達成&lt;/p&gt;
+&lt;p&gt;先建立一個批次檔&lt;/p&gt;
+&lt;p&gt;並輸入&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+python C:\Users\User\Downloads\Leo-5.5\Leo-5.5\launchLeo.py %1
+&lt;/pre&gt;
+
+&lt;p&gt;並將 leo 檔開啟的預設檔案設定為此 bat 檔案&lt;/p&gt;
+&lt;h3&gt;計算機狀況報告&lt;/h3&gt;
+
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/cal.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;目前已將 UI 拉成這樣&lt;/p&gt;
+&lt;p&gt;以有功能&lt;/p&gt;
+&lt;p&gt;但與當初老師說的已可以加減乘除有些不同&lt;/p&gt;
+&lt;p&gt;會再想想如何解決&lt;/p&gt;
+&lt;p&gt;已有參考過 boabao 的程式&lt;/p&gt;
+&lt;p&gt;但還是不太能理解&lt;/p&gt;
+&lt;p&gt;31日會出發去日本&lt;/p&gt;
+&lt;p&gt;5日會回到虎尾&lt;/p&gt;
+&lt;p&gt;這幾日暫時不會有進度&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Eric 環境安裝-Windows (下) 8/29已修正</title><link href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-xia-829yi-xiu-zheng.html" rel="alternate"></link><published>2017-08-29T09:00:00+08:00</published><updated>2017-08-29T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-29:/blog/eric-huan-jing-an-zhuang-windows-xia-829yi-xiu-zheng.html</id><summary type="html">&lt;p&gt;介紹安裝方法-2&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;介紹安裝方法-2&lt;/p&gt;
 
 
@@ -35,7 +396,7 @@ pip install pyqt QScintilla
 &lt;p&gt;若是電腦內原本就有安裝PyQt以及QScintilla&lt;/p&gt;
 &lt;p&gt;使用-U(要大寫)來進行更新&lt;/p&gt;
 &lt;pre class="brush: bash"&gt;
-pip install pyqt QScintilla -U
+pip install pyqt5 QScintilla -U
 &lt;/pre&gt;
 
 &lt;p&gt;安裝完成後去Eric的官方網站下載Eric的檔案&lt;/p&gt;
@@ -56,7 +417,745 @@ C:\Users\kmol\Downloads\eric6-17.08 (1)\eric6-17.08
 python install.py
 &lt;/pre&gt;
 
-&lt;p&gt;安裝完成後於命令提示字元輸入eric6即可開啟&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Eric 環境安裝-Windows (上)</title><link href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-shang.html" rel="alternate"></link><published>2017-08-12T09:00:00+08:00</published><updated>2017-08-12T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-12:/blog/eric-huan-jing-an-zhuang-windows-shang.html</id><summary type="html">&lt;p&gt;介紹安裝方法-1&lt;/p&gt;
+&lt;p&gt;安裝完成後於命令提示字元輸入eric6即可開啟&lt;/p&gt;
+&lt;p&gt;20170829 修正 pyqt版本沒有加導致安裝不能繼續，補上版本&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Pyslvs 開發進度 - 08/28</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0828.html" rel="alternate"></link><published>2017-08-28T21:00:00+08:00</published><updated>2017-08-28T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-28:/blog/pyslvs-kai-fa-jin-du-0828.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 計劃&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;新的表示式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SQL Database 檔案格式&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs v0.9 計劃&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;新的表示式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SQL Database 檔案格式&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Pyslvs v0.9 計劃&lt;/h1&gt;
+&lt;p&gt;在這次大改版中，預計會完成兩項目標：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;新的表示式，大幅縮減數據量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SQL Database 檔案格式，支援Git 版本控制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這兩個內容在進行時也會同時紀錄和&lt;/p&gt;
+&lt;p&gt;以下內容將闡述會需要製作的項目。&lt;/p&gt;
+&lt;h2&gt;新的表示式&lt;/h2&gt;
+&lt;p&gt;看了一些深度學習的文章後，了解到 PMKS 的表示式對於類神經演算法程式建模非常有幫助，因此決定將這個概念套用在 Pyslvs，並且藉由此表示法輸出成其他格式。&lt;/p&gt;
+&lt;p&gt;Pyslvs 中會使用下列兩種類型：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;VPoint&lt;/code&gt; 節點&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Link: str -&amp;gt; tuple[str]&lt;/p&gt;
+&lt;p&gt;表示節點所屬連桿名稱，由輸入 str 逗號分隔值轉為內含 str 的 tuple 類型。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Type: VPoint.Type&lt;/p&gt;
+&lt;p&gt;此節點的連接類型，關係其自由度。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;color: str -&amp;gt; QColor&lt;/p&gt;
+&lt;p&gt;此點顏色，由名稱回傳 Qt 的顏色值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;x, y: int, float&lt;/p&gt;
+&lt;p&gt;直角座標系數值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;cx, cy: int, float&lt;/p&gt;
+&lt;p&gt;當前的直角座標系數值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;VLink&lt;/code&gt; 連桿&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;name: str&lt;/p&gt;
+&lt;p&gt;連桿名稱，大小寫英數皆可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Points: str -&amp;gt; tuple[int]&lt;/p&gt;
+&lt;p&gt;表示連桿中含有的節點號碼，由輸入 str 逗號分隔值轉為內含 int 的 tuple 類型。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其實只需要 VPoint 類型即可表示整個連桿機構，但是為了使 Solvespace 與使用者較好判讀，加入 VLink 以輔助建模。&lt;/p&gt;
+&lt;p&gt;不過在資料處理上，VPoint 會從 VLink 同步數據，因此必須先建立 VLink 才能加入節點。&lt;/p&gt;
+&lt;p&gt;而 Drive shaft 的部份則可以選擇輸入的節點（預設為第一個點）。&lt;/p&gt;
+&lt;p&gt;必須完成目標：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;轉換拓樸法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;須將含有多點的連桿轉換成呆鍊。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;防止搜尋法放入 Solvespace 時發生錯誤。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;SQL Database 檔案格式&lt;/h2&gt;
+&lt;p&gt;這個版本由於必須打掉檔案格式重做，因此萌生使用新檔案格式的念頭。&lt;/p&gt;
+&lt;p&gt;任務是使用 peewee 套件規劃出紀錄整個檔案資訊的格式，並且套上 Git 版次管理的功能。&lt;/p&gt;
+&lt;p&gt;是否結合倉儲系統與加入帳戶驗證機制還在考慮中，目前是當成&lt;strong&gt;具有 Git 版本控制的檔案格式&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;由於可以開分支修改，已經拿掉之前參數的功能。&lt;/p&gt;
+&lt;p&gt;而 Pyslvs 可以透過 GUI 進行 add、commit、tag、push 至近端資料庫的功能，亦可進行 rebase 比較及預覽。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>Planar Mechanism Kinematic Simulator 拓樸法簡介</title><link href="http://project.mde.tw/blog/planar-mechanism-kinematic-simulator-tuo-pu-fa-jian-jie.html" rel="alternate"></link><published>2017-08-27T21:00:00+08:00</published><updated>2017-08-27T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-27:/blog/planar-mechanism-kinematic-simulator-tuo-pu-fa-jian-jie.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;目前 &lt;a href="http://designengrlab.github.io/PMKS/pmks.html"&gt;PMKS&lt;/a&gt; 拓樸法簡介&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pyslvs 如何利用及修改範圍討論&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;目前 &lt;a href="http://designengrlab.github.io/PMKS/pmks.html"&gt;PMKS&lt;/a&gt; 拓樸法簡介&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pyslvs 如何利用及修改範圍討論&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Planar Mechanism Kinematic Simulator&lt;/h1&gt;
+&lt;p&gt;為了學習 PMKS 的拓樸法，因此在 Windows 平台的 Demo 網頁中摸索。&lt;/p&gt;
+&lt;p&gt;網頁版的 PMKS 仍只能使用 IE 瀏覽器或是 macOS 的 Safari 載入，新的 Edge 都不行用。&lt;/p&gt;
+&lt;p&gt;由於是 Silverlight 的關係，操作上沒有右鍵選單，相較於單機軟體仍有不便之處。&lt;/p&gt;
+&lt;h2&gt;Graph-grammar 表格&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_08_27_01.png"&gt;&lt;/p&gt;
+&lt;p&gt;可以看到右上角有一個表格，即為輸入表示式的表格，雖然操作上有所不便，但是測試後還是能將結構表現出來。&lt;/p&gt;
+&lt;p&gt;表格的欄位從左到右如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Input：選擇輸入端，PMKS 是由輸入端當作起點，開始找尋周圍的點（浮動點無效）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Links：連桿節點表示式，使用逗號分隔。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Type of Joint：節點類型，分別如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;R：銷接。&lt;/li&gt;
+&lt;li&gt;P：滑塊。&lt;/li&gt;
+&lt;li&gt;RP：銷接於滑槽中。&lt;/li&gt;
+&lt;li&gt;G：齒輪牙。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;X Pos.：X 軸初始位置。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Y Pos.：Y 軸初始位置。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Angle：使用在擁有旋轉自由度的節點上。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;P：顯示位置路徑（固定點無效）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;V：顯示速度大小與方向（固定點無效）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A：顯示加速度大小與方向（固定點無效）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;要新增節點，只要點到底部的欄位就會自動新增一行，刪除只要按「Remove Row」鈕即可。&lt;/p&gt;
+&lt;h2&gt;Grammar&lt;/h2&gt;
+&lt;p&gt;表示式儲存於節點，代表此節點&lt;strong&gt;所在的連桿&lt;/strong&gt;，因此節點為兩連桿的交點時，表示式就會儲存兩個連桿的名稱，以此類推。&lt;/p&gt;
+&lt;p&gt;預設有一個連桿名稱為「ground」，代表接地，因此擁有此名稱的節點無法移動。&lt;/p&gt;
+&lt;p&gt;連桿名稱皆為&lt;strong&gt;自訂&lt;/strong&gt;，只接受&lt;strong&gt;小寫字母&lt;/strong&gt;與&lt;strong&gt;非字首的數字&lt;/strong&gt;，不過很遺憾的是，圖面不會告訴你連桿名稱，只以顏色表示。&lt;/p&gt;
+&lt;p&gt;以普通六連桿為例，對照如下：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_08_27_02.png"&gt;&lt;/p&gt;
+&lt;p&gt;若只有一個節點使用新的連桿名稱，如下圖的「o」，會出現淡色的圓圈，此時也會記入旋轉對的自由度計算。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_08_27_03.png"&gt;&lt;/p&gt;
+&lt;h2&gt;優缺點分析&lt;/h2&gt;
+&lt;p&gt;PMKS 目前有許多值得學習及利用的地方，應該都能配合完成，只是資料結構必須配合更改。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;優點：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;優秀的拓樸法及求解方式。&lt;/li&gt;
+&lt;li&gt;此結構可以與 Python-Solvespace 整合。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;缺點：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;網頁介面操作及規劃十分不理想。&lt;/li&gt;
+&lt;li&gt;利用性較少，目前只有 C# 程式庫、Excel 巨集、Silverlight 網頁介面三種。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;根據 PMKS 的 Graph-grammar，只需要修改 1 種類型－－不過我打算做成節點以及連桿 2 種表達，設定節點以及所屬連桿即可。&lt;/p&gt;
+&lt;p&gt;稍微思考了一下，若是套用至 Pyslvs：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;大幅減少 Pyslvs 的資源使用，因為只需要&lt;strong&gt;兩個表格&lt;/strong&gt;即可呈現表示法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pyslvs 可能得重新規劃資料格式以及檔案格式，並且會花較久的時間。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;關於模仿 Linkage 的部分，由於 PMKS 精簡的 grammar，因此可能目前 Pyslvs 的新增選取功能就夠用了。必要的話應也能做拖移節點的功能。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;先維持使用 Python-Solvespace 解題，因為 PMKS 拓樸法並不支援 1 個以上的輸入，但是 Pyslvs 這邊能轉給 Solvespace 解多重輸入的功能。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;由於 v0.9 目前更新量不大，因此若要加入 PMKS 的概念，就會在此版本發布。&lt;/p&gt;
+&lt;p&gt;有了 1 年多的 Python 開發經驗，應該能在下學期中完成這個計畫。&lt;/p&gt;</content><category term="PMKS"></category></entry><entry><title>Pyslvs 開發進度 - 08/25</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0825.html" rel="alternate"></link><published>2017-08-25T21:00:00+08:00</published><updated>2017-08-25T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-25:/blog/pyslvs-kai-fa-jin-du-0825.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Functional trangle solver&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Functional trangle solver&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Functional trangle solver&lt;/h1&gt;
+&lt;p&gt;由於要加入速度與加速度的計算，因此決定由三角形的 solver 下手，透過 SymPy 模組協助解題，獲得 x 和 y 軸的分量。&lt;/p&gt;
+&lt;p&gt;編寫概念類似 PMKS 將方程式存起來，因此每個點都會先獲得一個位置函式，接收數值為角速度 ω 與時間 t：&lt;/p&gt;
+&lt;p&gt;$$f_{x,y}(\omega,t)$$&lt;/p&gt;
+&lt;p&gt;首先要定義幾個類型方便計算：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+from sympy import pi, sqrt, cos, sin, acos, asin, diff, lambdify
+from sympy.abc import w, t
+
+class Coordinate:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    #兩座標距離
+    def distance(self, p):
+        '''
+        Coordinate p
+        '''
+        return sqrt((p.x - self.x)**2 + (p.y - self.y)**2)
+
+    #兩座標與水平軸夾角
+    def m(self, p):
+        '''
+        Coordinate p
+        '''
+        return asin((p.y - self.y)/self.distance(p))
+
+    #若分量為 SymPy 函式，將其 Lambda 化回傳
+    @property
+    def functions(self):
+        return (
+            lambdify((t, w), self.x),
+            lambdify((t, w), self.y))
+
+class FunctionBase:
+    '''
+    Input Coordinate should get from position function.
+    '''
+
+    #位置方程式
+    @property
+    def p(self):
+        return Coordinate(self.pxFunc, self.pyFunc)
+
+    #速度方程式：微分 1 次
+    @property
+    def v(self):
+        return Coordinate(diff(self.pxFunc, t), diff(self.pyFunc, t))
+
+    #加速度方程式：微分 2 次
+    @property
+    def a(self):
+        return Coordinate(diff(self.pxFunc, t, 2), diff(self.pyFunc, t, 2))
+
+    #急跳度方程式：微分 3 次
+    @property
+    def j(self):
+        return Coordinate(diff(self.pxFunc, t, 3), diff(self.pyFunc, t, 3))
+&lt;/pre&gt;
+
+&lt;p&gt;用兩個固定點可以得到繞行旋轉軸的點座標，接著再構建出其他點的位置。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_08_25_01.png"&gt;&lt;/p&gt;
+&lt;h2&gt;PLAP&lt;/h2&gt;
+&lt;p&gt;由於輸入項目由角度取代成代數，之前的 PLAP 函式改為 PL 函式，輸入連桿與軸端的座標即可。&lt;/p&gt;
+&lt;p&gt;這裡採用的是圓周運動公式：&lt;/p&gt;
+&lt;p&gt;$$\left | \vec{x} \right | = r\,  cos\, \theta$$
+$$\left | \vec{y} \right | = r\,  sin\, \theta$$&lt;/p&gt;
+&lt;p&gt;Python 程式：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class pl(FunctionBase):
+    def __init__(self, A, L):
+        self.pxFunc = A.x+L*cos(w*t)
+        self.pyFunc = A.y+L*sin(w*t)
+&lt;/pre&gt;
+
+&lt;h2&gt;PLLP&lt;/h2&gt;
+&lt;p&gt;使用底邊夾角與餘弦定理得到座標。&lt;/p&gt;
+&lt;p&gt;$$\alpha = sin^{-1}(\frac{y_{B}-y_{A}}{\sqrt{(x_{B}-x_{A})^{2}+(y_{B}-y_{A})^{2}}})$$
+$$\beta = cos^{-1}(\frac{L^{2}+L_{b}^{2}-R^{2}}{2\times L\times L_{b}})$$&lt;/p&gt;
+&lt;p&gt;正向：&lt;/p&gt;
+&lt;p&gt;$$x = x_{A}+L\, cos(\alpha+\beta)$$
+$$y = y_{A}+L\, cos(\alpha+\beta)$$&lt;/p&gt;
+&lt;p&gt;反向：&lt;/p&gt;
+&lt;p&gt;$$x = x_{A}+L\, cos(\alpha-\beta)$$
+$$y = y_{A}+L\, cos(\alpha-\beta)$$&lt;/p&gt;
+&lt;p&gt;Python 程式：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class pllp(FunctionBase):
+    def __init__(self, A, L, R, B, reverse=False):
+        alpha = A.m(B)
+        base = A.distance(B)
+        beta = acos((L**2 + base**2 - R**2)/(2*L*base))
+        if reverse:
+            self.pxFunc = A.x+L*cos(alpha-beta)
+            self.pyFunc = A.y+L*sin(alpha-beta)
+        else:
+            self.pxFunc = A.x+L*cos(alpha+beta)
+            self.pyFunc = A.y+L*sin(alpha+beta)
+&lt;/pre&gt;
+
+&lt;h2&gt;套入四連桿範例&lt;/h2&gt;
+&lt;p&gt;應用到標準曲柄搖桿範例後，可以繪出四者的曲線圖。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_08_25_02.png"&gt;&lt;/p&gt;
+&lt;p&gt;通過 solver 這個函式輸入連桿參數：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+def solver(mechanism, progress=False):
+    results = []
+    resultCount = len(mechanism)
+    for i, e in enumerate(mechanism):
+        if len(e)==2:
+            foo = pl(*e)
+            results.append(foo)
+        else:
+            e = list(e)
+            if type(e[0])==int:
+                e[0] = results[e[0]].p
+            if type(e[3])==int:
+                e[3] = results[e[3]].p
+            foo = pllp(*e)
+            results.append(foo)
+        if progress:
+            print("{} / {}".format(i+1, resultCount))
+    return results
+&lt;/pre&gt;
+
+&lt;p&gt;最後會回傳一組函式物件，可以透過 FunctionBase 和 Coordinate 類型的方法取值。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+p0 = Coordinate(0, 0)
+p1 = Coordinate(90, 0)
+results = solver([
+        (p0, 35.), #p2
+        (0, 70., 70., p1), #p3
+        (0, 40., 40., 1), #p4
+], progress=True)
+
+W = pi/180 #rad/s
+for T in range(0, 360+1, 5):
+    xfun, yfun = results[2].p.functions
+    print("{}\t{}".format(xfun(T, W), yfun(T, W)))
+&lt;/pre&gt;
+
+&lt;p&gt;亦可使用 matplotlib 繪出資料。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+W = pi/180 #rad/s
+plot = []
+for T in range(0, 360+1, 5):
+    plot.append((xfun(T, W), yfun(T, W)))
+import matplotlib.pyplot as plt
+plt.plot(plot)
+plt.show()
+&lt;/pre&gt;
+
+&lt;p&gt;不過反覆測試之後，發現竟然沒辦法套用原本八連桿的配置。&lt;/p&gt;
+&lt;p&gt;這方面還在解決中，看看是輸入方面還是解題方程式哪裡出了問題。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>pyslvs 四連桿速度分析</title><link href="http://project.mde.tw/blog/pyslvs-si-lian-gan-su-du-fen-xi.html" rel="alternate"></link><published>2017-08-22T23:30:00+08:00</published><updated>2017-08-22T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-08-22:/blog/pyslvs-si-lian-gan-su-du-fen-xi.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;四連桿速度分析&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;四連桿加速度分析&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;四連桿速度分析&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;四連桿加速度分析&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/fourbar.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;針對我們 pyslvs 所產生的四連桿進行速度以及加速度分析。&lt;/p&gt;
+&lt;p&gt;角位移
+&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/Spicture.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;角速度
+&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/Vpicture.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;角加速度
+&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/apicture.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;透過 python 產生結果
+&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/codeSVA.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;接下來會將程式寫成 class 讓 pyslvs 接到主程式顯示結果，八連桿部分還在思考如何推導，在思考者是否要用一樣的方法進行推導結果。推導的方法，會再找時間全部寫成 latex 的方式顯示出來，要花比較多時間進行編寫。&lt;/p&gt;</content><category term="pyslvs"></category></entry><entry><title>Pyslvs 開發進度 - 08/22</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0822.html" rel="alternate"></link><published>2017-08-22T21:00:00+08:00</published><updated>2017-08-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-22:/blog/pyslvs-kai-fa-jin-du-0822.html</id><summary type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Version 0.9 目標&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs 開發進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Version 0.9 目標&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Version 0.9 目標&lt;/h1&gt;
+&lt;p&gt;將自改版後完成的項目列出來：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;重新設定 QTableWidget。&lt;/p&gt;
+&lt;p&gt;手寫 QTableWidget 的功能，這意味著很多功能可以直接連結表格元件，資料格式應該轉為直接連動的方式，會更節省途中暫存的空間。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;目標&lt;/strong&gt;：重新設計 QTableWidget 資料存取方式，已有初步規劃。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;更直覺的畫布選取。&lt;/p&gt;
+&lt;p&gt;由於上述 QTableWidget 的改寫，可以達成滑鼠與表格元件的選取狀態一致，甚至有觸發編輯的功能。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;目標&lt;/strong&gt;：添加額外互動功能，視需求而定，目前可能無法作到 Solvespace 直接拖動的效果，但是對於還未有連結關係的點可以考慮。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重新整理部份函式&lt;/p&gt;
+&lt;p&gt;以前寫的功能雜亂且不明確，沒符合 PEP 8 的格式。v0.8 發布時有大量修正，不過還有指標亂用的情況，目前只有小部份的整理。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;目標&lt;/strong&gt;：減少函式和轉送數據的用量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;之後預計會加入演算法結果的速度、加速度分析功能，目前可以推導出四連桿的角度，不知道有沒有八連桿的相關資料？&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>Qt Drag and Drop 教學</title><link href="http://project.mde.tw/blog/qt-drag-and-drop-jiao-xue.html" rel="alternate"></link><published>2017-08-21T21:00:00+08:00</published><updated>2017-08-21T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-08-21:/blog/qt-drag-and-drop-jiao-xue.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 新功能測試及解說&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如何在 Qt 框架中達成 Widgets 間的滑鼠資訊轉移&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs v0.9 新功能測試及解說&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如何在 Qt 框架中達成 Widgets 間的滑鼠資訊轉移&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Qt Drag and Drop&lt;/h1&gt;
+&lt;p&gt;詳細說明可以參考這裡：&lt;a href="http://doc.qt.io/qt-5/dnd.html"&gt;http://doc.qt.io/qt-5/dnd.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Pyslvs v0.9 新功能影片：&lt;/p&gt;
+&lt;iframe width="854" height="480" src="https://www.youtube.com/embed/54sy6nNWdV8" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h2&gt;動作解析&lt;/h2&gt;
+&lt;p&gt;在不同的桌面系統中，滑鼠的拖放動作都已經透過 Qt 框架轉化成以下幾個動作：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;從 AWidget 到 BWidget。&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;抓起？（AWidget::&lt;code&gt;mousePressEvent&lt;/code&gt; / &lt;code&gt;mouseReleaseEvent&lt;/code&gt;）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;移出（AWidget::&lt;code&gt;mouseMoveEvent&lt;/code&gt;）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;移入（BWidget::&lt;code&gt;dragEnterEvent&lt;/code&gt;）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;橫越（BWidget::&lt;code&gt;dragMoveEvent&lt;/code&gt;）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;放下（BWidget::&lt;code&gt;dropEvent&lt;/code&gt;）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;接下來按照步驟配置所需的函式。&lt;/p&gt;
+&lt;p&gt;第一步就是開啟拖放置功能，以允許丟東西在 QWidget 中：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class BWidget(QWidget):
+    def __init__(self, parent=None):
+        super(BWidget, self).__init__(parent)
+        self.setAcceptDrops(True)
+&lt;/pre&gt;
+
+&lt;p&gt;需要注意的是，上述的這些 QEvent 函式&lt;strong&gt;都是私有的&lt;/strong&gt;，意即無法（Python 其實可以強制設定，但是很難看）透過外部撰寫。&lt;/p&gt;
+&lt;p&gt;上面這句話的意思是，&lt;strong&gt;不能用 QtDesigner 來佈置這些 Widget！&lt;/strong&gt;請按部就班繼承改寫新 Class，用指令插入 Layout 裡。&lt;/p&gt;
+&lt;p&gt;這邊就不再介紹如何手動放這些 Widget 了，較不瞭解的初學者可以用 QtDesigner 拉出 QLayout 後用 &lt;code&gt;insertWidget&lt;/code&gt; 指令達成。&lt;/p&gt;
+&lt;h2&gt;抓起？（AWidget::&lt;code&gt;mousePressEvent&lt;/code&gt; / &lt;code&gt;mouseReleaseEvent&lt;/code&gt;）&lt;/h2&gt;
+&lt;p&gt;這個函式專門處理 AWidget 中任何按下滑鼠的動作，因此如果你的 AWidget 並非原始無瑕的 QWidget，那 Qt 早已設定過一些互動函式了。&lt;/p&gt;
+&lt;p&gt;在 Python 中，子 Class 的新 method 若和任何父項 method 撞名，會造成覆蓋。為了不讓 Qt 的設定功能失效，請使用 super 函式讓 Qt 先做完應有的工作。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class AWidget(QWidget):
+    def mousePressEvent(self, event):
+        super(AWidget, self).mousePressEvent(event)
+
+    def mouseReleaseEvent(self, event):
+        super(AWidget, self).mouseReleaseEvent(event)
+&lt;/pre&gt;
+
+&lt;p&gt;接下來的 QEvent 函式都是一樣，如果不小心蓋掉發生怪怪的狀況，例如 QTableWidget 無法再選起儲存格，那就加上 super 補上被忽略的工作。&lt;/p&gt;
+&lt;p&gt;言歸正傳，由於「按下滑鼠」這個事件不一定是想抓東西來拖移，因此不能就這樣亂槍打鳥，要先偷偷紀錄其的行為。在這裡設定一個名稱「draged」紀錄滑鼠的動作，決定是否為滑鼠左鍵抓住的動作。&lt;/p&gt;
+&lt;p&gt;放掉滑鼠的話就把這個值取消，表示使用者並沒有做出拖動的行為。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class AWidget(QWidget):
+    def __init__(self, parent=None):
+        super(AWidget, self).__init__(parent)
+        self.draged = False
+
+    def mousePressEvent(self, event):
+        super(AWidget, self).mousePressEvent(event)
+        if event.button()==Qt.LeftButton:
+            self.draged = True
+
+    def mouseReleaseEvent(self, event):
+        super(AWidget, self).mouseReleaseEvent(event)
+        self.draged = False
+&lt;/pre&gt;
+
+&lt;h2&gt;移出（AWidget::&lt;code&gt;mouseMoveEvent&lt;/code&gt;）&lt;/h2&gt;
+&lt;p&gt;這個函式專門處理 AWidget 中滑鼠移動的動作，也包括憑空移動，因此剛才設定的「draged」可以告訴我們，使用者正想要「拿著東西移動」。&lt;/p&gt;
+&lt;p&gt;既然想拿東西，就必須把東西打包交給使用者，一般普遍為文字資訊，包裝後在 BWidget 解開，亦可以攜帶圖片、網址、HTML、顏色資訊。&lt;/p&gt;
+&lt;p&gt;這裡介紹兩個新的 Qt Class：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;QMimeData：行李箱，將一堆雜亂的行李分裝後包起來。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;QDrag：送貨員，可以附上一張圖片以辨識該行李的內容，另外送貨員知道寄件者地址（AWidget）、滑鼠停駐點等資訊，也可以幫旅行中的滑鼠換外觀。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;接下來就來裝箱吧，根據 Pyslvs 的影片，我們可以推測出攜帶的資訊為 AWidget 的「被選擇行號」，因此透過一段小迴圈篩選出所有被選擇的行號。&lt;/p&gt;
+&lt;p&gt;用 Python 的 set 集合型態可以將重複選取的內容排除掉，接著重新排序轉回 list 類型儲存。&lt;/p&gt;
+&lt;p&gt;而 QTableWidget 的 mouseMoveEvent 其實有「按住連續選取」的功能，但是這樣會干擾我們拖移的行為，因此這邊不使用 super。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class AWidget(QTableWidget):
+    def selectedRows(self):
+        a = list()
+        for r in self.selectedRanges():
+            a += [i for i in range(r.topRow(), r.bottomRow()+1)]
+        return sorted(set(a))
+
+    def mouseMoveEvent(self, event):
+        if self.draged:
+            selectedRows = self.selectedRows()
+            selectedRowCount = len(selectedRows)
+            if selectedRowCount==2 or selectedRowCount==3:
+                drag = QDrag(self)
+                mimeData = QMimeData()
+                mimeData.setText(';'.join([str(e) for e in selectedRows]))
+                drag.setMimeData(mimeData)
+                drag.setPixmap(QPixmap(":/icons/tooltips/need{}bearings.png".format(selectedRowCount)).scaledToWidth(50))
+                drag.exec_()
+&lt;/pre&gt;
+
+&lt;p&gt;由於下方的表格需要 2 或 3 個選取的行號，因此以外的選項我們一律不接受。&lt;/p&gt;
+&lt;p&gt;行號資訊型態是 int，這邊轉換成字串後用分號 &lt;code&gt;;&lt;/code&gt; 包裝起來。而這裡還有設定 &lt;code&gt;need{}bearings.png&lt;/code&gt; 的圖片，表示拿了 2 個或 3 個「軸承」。&lt;/p&gt;
+&lt;p&gt;最後下的 &lt;code&gt;drag.exec_()&lt;/code&gt; 方法為延遲函式，表示送貨員已出發，它會一直等到貨物到達或被丟棄時才會回傳，因此要注意不要讓執行序被阻塞。&lt;/p&gt;
+&lt;h2&gt;移入（BWidget::&lt;code&gt;dragEnterEvent&lt;/code&gt;）&lt;/h2&gt;
+&lt;p&gt;這個函式專門處理 BWidget 中滑鼠&lt;strong&gt;帶著資訊進入&lt;/strong&gt;的動作。這裡的 event 物件已經被 Qt 轉換成我們的送貨員，與剛才的 QDrag 物件有一定程度的相仿。要使用審核機制來判別這個送貨員是不是我們要接受的對象。&lt;/p&gt;
+&lt;p&gt;要如何審核呢？有兩種結果：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;使用 &lt;code&gt;acceptProposedAction&lt;/code&gt; 方法接受這名送貨員進入 BWidget 的領域。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用一般的 &lt;code&gt;ignore&lt;/code&gt; 方法無視這名送貨員，或是乾脆不理他，會造成滑鼠游標出現類似禁止的符號，依你的桌面系統而定。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;被允許的送貨員能在進入的時候，依你的桌面系統出現類似抓著資訊的樣式，這時可以選擇是否放開以丟下資訊，或是將資訊帶走（我只是路過），不一定會送達 BWidget。&lt;/p&gt;
+&lt;p&gt;若是送貨員在此處被禁止投遞，卻仍然放開滑鼠，那他手中的資訊就會遺失，而且會無法重新取得（除非回到 AWidget 再打包）。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class BWidget(QTableWidget):
+    def dragEnterEvent(self, event):
+        mimeData = event.mimeData()
+        if mimeData.hasText():
+            if len(mimeData.text().split(';'))==self.bearings:
+                event.acceptProposedAction()
+&lt;/pre&gt;
+
+&lt;p&gt;這邊的程式中，&lt;code&gt;self.bearings&lt;/code&gt; 為允許的行號數，例如連桿表格為 2 個，當拆解用 &lt;code&gt;;&lt;/code&gt; 分號封裝的字串時，數量為 2 個，那此貨物就允許進入。&lt;/p&gt;
+&lt;h2&gt;橫越（BWidget::&lt;code&gt;dragMoveEvent&lt;/code&gt;）&lt;/h2&gt;
+&lt;p&gt;某些列表式的 QWidget，例如 QTableView、QListView、QTreeView，其實會內建清單拖移功能，讓使用者可以直接拖動儲存格，插到自己或是其他相同類型的 QWidget 中，而且不用自己寫 QEvent 函式，只是這些功能預設是關閉的。&lt;/p&gt;
+&lt;p&gt;由於上述原因，我們得將自訂送貨員打扮成上面較特殊 QWidget 的送貨員，否則這些類型會不允許他送進資訊，即使在上一小節中已經允許。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class BWidget(QTableWidget):
+    def dragMoveEvent(self, event):
+        event.setDropAction(Qt.MoveAction)
+        event.accept()
+&lt;/pre&gt;
+
+&lt;p&gt;這些特殊 QWidget 的送貨員會攜帶「放置行為」，如「遷移」、「複製」等等，因此將我們的送貨員設定為常見的 &lt;code&gt;Qt.MoveAction&lt;/code&gt; 即可。&lt;/p&gt;
+&lt;p&gt;若是其他沒有這種 items 的 QWidget，是不用設定此步驟的。&lt;/p&gt;
+&lt;h2&gt;放下（BWidget::&lt;code&gt;dropEvent&lt;/code&gt;）&lt;/h2&gt;
+&lt;p&gt;終於到最後一步了，送貨員最終決定在此投遞，因此必須在此拆包，執行相關的函式。&lt;/p&gt;
+&lt;p&gt;為了方便，這裡與外界溝通的方式是使用信號槽將所有行號拆包發送出去，使用的是 &lt;code&gt;self.dragIn&lt;/code&gt; 這個信號。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class BWidget(QTableWidget):
+    def dropEvent(self, event):
+        self.dragIn.emit(*[int(e) for e in event.mimeData().text().split(';')])
+        event.acceptProposedAction()
+&lt;/pre&gt;
+
+&lt;p&gt;最後，還是要執行 &lt;code&gt;acceptProposedAction&lt;/code&gt; 方法，才會關閉此事件。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;之前介紹過如何接收外部拖入檔案，在程式中開啟的方法：&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://project.mde.tw/blog/40323230ri-zhi-1060116.html"&gt;http://project.mde.tw/blog/40323230ri-zhi-1060116.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;這次挑戰較複雜的，在 Qt Widget 中抓起資訊的方式。&lt;/p&gt;
+&lt;p&gt;這三種 QTableWidget 的獨立原始碼提供在這裡，因為這其中的設定還透過繼承方式簡化函式，會較整齊些。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/dndExample.txt"&gt;https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/dndExample.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;可以透過對照的方式看看自己寫的是否完整。&lt;/p&gt;</content><category term="Pyslvs"></category><category term="PyQt"></category></entry><entry><title>推送網誌教學</title><link href="http://project.mde.tw/blog/tui-song-wang-zhi-jiao-xue.html" rel="alternate"></link><published>2017-08-18T09:00:00+08:00</published><updated>2017-08-18T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-18:/blog/tui-song-wang-zhi-jiao-xue.html</id><summary type="html">&lt;p&gt;在還不是協作者的情況下進行網誌推送&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;在還不是協作者的情況下進行網誌推送&lt;/p&gt;
+
+
+&lt;p&gt;首先到 Coursemdetw 的使用者頁面，找到 Project_site 以及 Project_site file 並執行 fork 來複製倉儲&lt;/p&gt;
+&lt;p&gt;為何需要兩個倉儲?&lt;/p&gt;
+&lt;p&gt;為了將網誌以及圖資分開管理&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/rep.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;fork 就有如複製一般&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/fork-mean.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;如何確認自己 fork 無誤呢?&lt;/p&gt;
+&lt;p&gt;在自己倉儲區域下面有標註原出處&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/fork.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;如 fork 到錯誤的倉儲&lt;/p&gt;
+&lt;p&gt;直接進入 setting 拉至最底下的 Danger Zone 來進行刪除即可&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/setting.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;Danger Zone &lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/delete.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;確認好之後&lt;/p&gt;
+&lt;p&gt;直接 clone 自己 fork 的倉儲即可&lt;/p&gt;
+&lt;p&gt;因為你無權去修改出處的內容&lt;/p&gt;
+&lt;p&gt;網誌撰寫完成之後進行推送&lt;/p&gt;
+&lt;p&gt;步驟一樣是&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+git add -A
+
+git commit -m "XXXX"
+
+git push
+&lt;/pre&gt;
+
+&lt;h3&gt;Pull request&lt;/h3&gt;
+
+&lt;p&gt;並到倉儲上做 New pull request 要求原倉儲的管理員進行版本更新&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/but.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;按下 request 之後 請注意 base 以及 head 分別為哪邊的倉儲&lt;/p&gt;
+&lt;p&gt;下面紅框處可以看到自己剛剛 commit 的名稱&lt;/p&gt;
+&lt;p&gt;可以以這樣來確認自己有沒有搞錯目的地以及來源&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/pull.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;確認後按下 Creat pull request&lt;/p&gt;
+&lt;p&gt;會進入到此頁面 並在紅框處留言(不能為空白)&lt;/p&gt;
+&lt;p&gt;完成後按下 Create 即送出更新版本要求&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/request.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;如遇到下圖沒有可以選目的以及來源的狀況&lt;/p&gt;
+&lt;p&gt;請點選 compare across forks (紅框處)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/nothing.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/nothing1.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;並回到 Pull request 照著步驟進行&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Linux作業系統下的程式開發環境</title><link href="http://project.mde.tw/blog/linuxzuo-ye-xi-tong-xia-de-cheng-shi-kai-fa-huan-jing.html" rel="alternate"></link><published>2017-08-15T09:00:00+08:00</published><updated>2017-08-15T09:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2017-08-15:/blog/linuxzuo-ye-xi-tong-xia-de-cheng-shi-kai-fa-huan-jing.html</id><summary type="html">&lt;p&gt;參考&lt;a href="http://project.mde.tw/blog/yen-kmol-de-cheng-shi-kai-fa-huan-jing.html"&gt;yen - KMOL 的程式開發環境 &lt;/a&gt;學習如何安裝Qt5、sip、PyQt5、qscintilla2 與 eric6 等，並寫一篇文章回報&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;參考&lt;a href="http://project.mde.tw/blog/yen-kmol-de-cheng-shi-kai-fa-huan-jing.html"&gt;yen - KMOL 的程式開發環境 &lt;/a&gt;學習如何安裝Qt5、sip、PyQt5、qscintilla2 與 eric6 等，並寫一篇文章回報&lt;/p&gt;
+
+
+&lt;h2&gt;Ubuntu 16.04 虛擬主機安裝&lt;/h2&gt;
+
+&lt;p&gt;下載&lt;a href="https://www.virtualbox.org/wiki/Downloads"&gt;VirtualBox&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;下載&lt;a href="https://www.ubuntu.com/download/desktop"&gt;Ubuntu 16.04&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;開啟VirtualBox並新增虛擬機器&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="./users/4042/40423116/01.png" width="800" height="600" /&gt;
+&lt;p&gt;載入ubuntu-16.04映像檔安裝ubuntu&lt;/p&gt;
+&lt;p&gt;有幾個要注意的虛擬機器配置選樣:&lt;/p&gt;
+&lt;p&gt;記憶體差不多1~4G就可以&lt;/p&gt;
+&lt;p&gt;檔案位置與大小:位置看個人需求,比較需要注意的是大小，建議多一點，設超過20以上&lt;/p&gt;
+&lt;h2&gt;開始安裝工具&lt;/h2&gt;
+&lt;h3&gt;安裝, Solvespace 與程式庫開發所需的各種套件:&lt;/h3&gt;
+&lt;pre class="brush: python"&gt;
+apt-get install libpng-dev libjson-c-dev libfreetype6-dev \
+                libfontconfig1-dev libgtkmm-2.4-dev libpangomm-1.4-dev \
+                libcairo2-dev libgl-dev libglu-dev cmake swig \
+                python3-dev python3-pip pyqt5-dev mingw-w64
+&lt;/pre&gt;
+&lt;p&gt;安裝 Pyslvs-PyQt5 所需要的 peewee ORM 模組, 以及產生靜態網誌所需的 pelican 與 Markdown:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+sudo pip3 install peewee pelican Markdown
+&lt;/pre&gt;
+&lt;h3&gt;安裝Qt5.7&lt;/h3&gt;
+&lt;p&gt;確認 Qt 版次指令:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+qmake-v
+&lt;/pre&gt;
+&lt;p&gt;下載&lt;a href="http://download.qt.io/official_releases/qt/5.7/5.7.0/qt-opensource-linux-x64-5.7.0.run"&gt;http://download.qt.io/official_releases/qt/5.7/5.7.0/qt-opensource-linux-x64-5.7.0.run &lt;/a&gt;並安裝Qt5.7&lt;/p&gt;
+&lt;p&gt;若雙擊安裝包未能執行程式,使用下列指令並安裝&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+sudo chmod +x      /可執行化
+sudo ./qt-xxx.run   /執行qt
+&lt;/pre&gt;
+&lt;p&gt;利用 gedit ~/.bashrc, 編輯 .bashrc, 加入:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+export QTDIR=/opt/Qt5.7.0/5.7/gcc_64/ 
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${QTDIR}/lib 
+export PATH=${QTDIR}/bin:${PATH}
+&lt;/pre&gt;
+&lt;p&gt;然後以 source ~/.bashrc 讓設定生效&lt;/p&gt;
+&lt;h3&gt;安裝Sip&lt;/h3&gt;
+&lt;p&gt;確認 Sip 版次指令:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+sip -V 
+&lt;/pre&gt;
+&lt;p&gt;首先,先移除Ubuntu 16.04 內建的 sip 4.17.1 舊版本:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+sudo apt purge python3-sip python3-sip-dev
+&lt;/pre&gt;
+&lt;p&gt;然後下載&lt;a href="http://www.riverbankcomputing.com/software/sip/download"&gt; http://www.riverbankcomputing.com/software/sip/download &lt;/a&gt;,安裝sip4.18.1&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+python3 configure.py 
+make
+sudo make install
+&lt;/pre&gt;
+&lt;p&gt;假如要確認 Python3 導入時使用的 sip 版本, 利用下列程式碼檢查:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+import sip
+print(sip, sip.SIP_VERSION_STR)
+&lt;/pre&gt;
+&lt;h3&gt;安裝PyQt5&lt;/h3&gt;
+&lt;p&gt;PyQt5 的安裝步驟與 sip 相同, 從&lt;a href="http://www.riverbankcomputing.com/software/pyqt/download5"&gt; http://www.riverbankcomputing.com/software/pyqt/download5 &lt;/a&gt;下載原始碼之後:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+python3 configure.py 
+make
+sudo make install
+&lt;/pre&gt;
+&lt;h3&gt;安裝qscintilla&lt;/h3&gt;
+&lt;p&gt;首先下載原始碼&lt;a href="http://www.riverbankcomputing.com/software/qscintilla/download "&gt; http://www.riverbankcomputing.com/software/qscintilla/download  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下執行指令在3個目錄下(cd)&lt;/p&gt;
+&lt;p&gt;1.Qt4Qt5&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+cd Qt4Qt5
+qmake qscintilla.pro
+make
+sudo make install
+&lt;/pre&gt;
+&lt;p&gt;2.designer-Qt4Qt5&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+cd ../designer-Qt4Qt5
+qmake designer.pro
+make
+sudo make install
+&lt;/pre&gt;
+&lt;p&gt;3.Python&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+cd ../Python
+python3 configure.py --pyqt=PyQt5
+make
+sudo make install
+&lt;/pre&gt;
+&lt;h3&gt;安裝eric6&lt;/h3&gt;
+&lt;p&gt;從 &lt;a href="http://eric-ide.python-projects.org/eric-download.html "&gt; http://eric-ide.python-projects.org/eric-download.html  &lt;/a&gt;下載原始碼後, 進行安裝&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+sudo python3 install.py
+&lt;/pre&gt;
+&lt;p&gt;在黑窗打入指令 eric6 即可開啟&lt;/p&gt;
+&lt;h3&gt;安裝 Leo Editor&lt;/h3&gt;
+&lt;p&gt;1.git clone Leo Editor 的原始碼,並將 leo 目錄複製到 /usr/local/lib/python3.5/dist-packages 目錄中即完成安裝,&lt;/p&gt;
+&lt;p&gt;2.以 python3 launchLeo.py, 或者將 python3 launchLeo.py 放入可執行的 leo 檔案中來啟動Leo Editor&lt;/p&gt;&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Eric 環境安裝-Windows (上)</title><link href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-shang.html" rel="alternate"></link><published>2017-08-12T09:00:00+08:00</published><updated>2017-08-12T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-12:/blog/eric-huan-jing-an-zhuang-windows-shang.html</id><summary type="html">&lt;p&gt;介紹安裝方法-1&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;介紹安裝方法-1&lt;/p&gt;
 
 
@@ -12647,7 +13746,7 @@ self.work.progress_Signal.connect(self.progressbar_change)
 &lt;p&gt;覺得自己需要多練習語言表達的部份，因為可能統整資料十分明瞭，在口語上卻節奏太快，順著聽者的思路呈現才是最重要的方向。&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;
 &lt;br&gt;&lt;/p&gt;
-&lt;p&gt;P.S Roger 用 wordpress 架了一個存文章的網站：&lt;a href="http://roger-blog.tk/" title="roger-blog.tk"&gt;http://roger-blog.tk/&lt;/a&gt;&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>40323230日誌 - 105/09/06</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1050906.html" rel="alternate"></link><published>2016-09-06T21:00:00+08:00</published><updated>2016-09-06T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2016-09-06:/blog/40323230ri-zhi-1050906.html</id><summary type="html">&lt;ol&gt;
+&lt;p&gt;P.S Roger 用 wordpress 架了一個存文章的網站：&lt;a href="http://roger-blog.tk/" title="roger-blog.tk"&gt;http://roger-blog.tk/&lt;/a&gt;&lt;/p&gt;</content><category term="Pyslvs"></category><category term="PyQt"></category></entry><entry><title>40323230日誌 - 105/09/06</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1050906.html" rel="alternate"></link><published>2016-09-06T21:00:00+08:00</published><updated>2016-09-06T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2016-09-06:/blog/40323230ri-zhi-1050906.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;表格管理與程式碼&lt;/p&gt;
 &lt;/li&gt;
@@ -13680,1322 +14779,11 @@ libc.so.6: version `GLIBC_2.14' not found
 &lt;p&gt;另外還把 Makefile 修正到 Python 3.3 的 &lt;code&gt;include&lt;/code&gt; 和共享資料庫的目錄。&lt;/p&gt;
 &lt;p&gt;執行時會找不到 &lt;code&gt;libpython3.3m.so&lt;/code&gt;，可能是 CentOS 的 Python 3.3 是安裝在自訂的位置，所以環境變數沒對到。&lt;/p&gt;
 &lt;p&gt;後來想調整，但是虛擬機因為記憶體太少而卡住了，不過 Redhat 的 Python 是原生的，應該是沒問題。&lt;/p&gt;
-&lt;p&gt;目前還未搬上 Openshift 測試。&lt;/p&gt;</content><category term="Python-Solvespace"></category></entry><entry><title>SLVS 程式庫函式</title><link href="http://project.mde.tw/blog/slvs-cheng-shi-ku-han-shi.html" rel="alternate"></link><published>2016-08-17T12:00:00+08:00</published><updated>2016-08-17T12:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2016-08-17:/blog/slvs-cheng-shi-ku-han-shi.html</id><summary type="html">&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;slvs&lt;/code&gt;程式庫（&lt;code&gt;_slvs.pyd&lt;/code&gt;或&lt;code&gt;_slvs.so&lt;/code&gt;）轉成Python後的內容。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;協助Python程式使用指令。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;內容待勘誤&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;08/17 更新-錯誤已解決&lt;/em&gt;&lt;/p&gt;
-</summary><content type="html">&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;slvs&lt;/code&gt;程式庫（&lt;code&gt;_slvs.pyd&lt;/code&gt;或&lt;code&gt;_slvs.so&lt;/code&gt;）轉成Python後的內容。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;協助Python程式使用指令。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;內容待勘誤&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;08/17 更新-錯誤已解決&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;目前還未搬上 Openshift 測試。&lt;/p&gt;</content><category term="Python-Solvespace"></category></entry><entry><title>SLVS Library Functions</title><link href="http://project.mde.tw/blog/slvs-library-functions.html" rel="alternate"></link><published>2016-08-17T12:00:00+08:00</published><updated>2016-08-17T12:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2016-08-17:/blog/slvs-library-functions.html</id><summary type="html">&lt;p&gt;This article is an API file for Python-Solvespace.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;This article is an API file for Python-Solvespace.&lt;/p&gt;
 
 
-&lt;h1&gt;&lt;strong&gt;快速尋找&lt;/strong&gt;&lt;/h1&gt;
-&lt;h2&gt;&lt;a href="#FOREWORD"&gt;簡介&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;a href="#CDemo"&gt;CDemo&lt;/a&gt;｜&lt;a href="#SLVS"&gt;程式庫簡介&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href="#START"&gt;使用基礎&lt;/a&gt;&lt;/h2&gt;
-&lt;h2&gt;&lt;a href="#ENTITIES"&gt;實體&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;a href="#Point"&gt;點&lt;/a&gt;｜&lt;a href="#Workplane"&gt;工作平面&lt;/a&gt;｜&lt;a href="#Distance"&gt;距離&lt;/a&gt;｜&lt;a href="#Normal"&gt;向量法線&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#Line"&gt;線段&lt;/a&gt;｜&lt;a href="#Arc"&gt;中心點弧&lt;/a&gt;｜&lt;a href="#Circle"&gt;完整圓&lt;/a&gt;｜&lt;a href="#Cubic"&gt;貝茲曲線&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href="#CONSTRAINTS"&gt;約束&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;a href="#C-Distance"&gt;距離&lt;/a&gt;｜&lt;a href="#C-Ratio"&gt;線段比值&lt;/a&gt;｜&lt;a href="#C-Diameter"&gt;直徑&lt;/a&gt;｜&lt;a href="#C-Angle"&gt;角度&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#C-On"&gt;重合&lt;/a&gt;｜&lt;a href="#C-Equal"&gt;相等&lt;/a&gt;｜&lt;a href="#C-Dragged"&gt;鎖定位置&lt;/a&gt;｜&lt;a href="#C-Midpoint"&gt;中點&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#C-Symmetric"&gt;對稱&lt;/a&gt;｜&lt;a href="#C-HV"&gt;水平或垂直&lt;/a&gt;｜&lt;a href="#C-Parallel"&gt;平行&lt;/a&gt;｜&lt;a href="#C-Tangent"&gt;相切&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href="#ADD"&gt;未支援功能&lt;/a&gt;&lt;/h2&gt;
-&lt;hr&gt;
-
-&lt;h1&gt;&lt;a name="FOREWORD"&gt;&lt;/a&gt;Brief Introduction&lt;/h1&gt;
-&lt;p&gt;SLVS 程式庫裡面的名稱結構是使用C語言撰寫，雖然 &lt;code&gt;slvs.py&lt;/code&gt; 已經幫忙轉換了裡面的名稱，但是仍有些許函式名稱變化。&lt;/p&gt;
-&lt;p&gt;所以紀錄一下在Python中如何使用這些功能，預計讓這篇文章達到易使用和易理解的功能。&lt;/p&gt;
-&lt;h2&gt;&lt;a name="CDemo"&gt;&lt;/a&gt;CDemo&lt;/h2&gt;
-&lt;p&gt;SolveSpace 是一款開源的 2D / 3D 電腦輔助設計繪圖軟體，從 2008 年釋出第一個版本，相容於 Windows / Mac / Linux 三個平台。&lt;/p&gt;
-&lt;p&gt;有著體積小、執行快速、免費，且不用安裝的特性，支援 STEP 或 STL 開啟，或輸出成 DXF 、 PDF 、 SVG 等開放格式，也有自己的文字式格式 &lt;code&gt;*.slvs&lt;/code&gt; 。&lt;/p&gt;
-&lt;p&gt;更新方面，可以在 GitHub 的&lt;a href="https://github.com/solvespace/solvespace" title="github.com"&gt;官方倉儲&lt;/a&gt;或是&lt;a href="https://github.com/whitequark/solvespace" title="github.com"&gt;非官方倉儲&lt;/a&gt;中下載最新的原始碼後，直接利用開發者工具（如 GNU）編譯出主程式。&lt;/p&gt;
-&lt;p&gt;Solvespace 在繪圖程式本身外還附帶一個名為 CDemo 的小執行檔，是利用 Solvespace 的原始碼編譯出來的。&lt;/p&gt;
-&lt;p&gt;可以利用此外部程式呼叫 Solvespace 的程式庫 &lt;code&gt;libslvs.dll&lt;/code&gt; 進行 2D 或是 3D 的解題運算，而無須啟動 Solvespace 。&lt;/p&gt;
-&lt;p&gt;CDemo 的概念是能夠讓外部程式使用 Solvespace 的功能，無論是利用其解開最大行程、干涉位置，都能讓應用程式免去您需要親自使用 CAD 軟體解題的困擾。&lt;/p&gt;
-&lt;h2&gt;&lt;a name="SLVS"&gt;&lt;/a&gt;SLVS Library&lt;/h2&gt;
-&lt;p&gt;CDemo 為 C 語言編譯而成，使用的 Solvespace 程式庫則是C++編譯的，在運算和使用上固然快速，但活用性較局限。&lt;/p&gt;
-&lt;p&gt;Python 語言擁有大量自定義模組、易讀的函式，並且在網際執行方面比C語言多一片天，若將 Solvespace 程式庫轉換使用，將會使這些 Python 程式擁有線上解題的能力，在機械設計方面更是方便許多。&lt;/p&gt;
-&lt;p&gt;在 Python 的連結庫中， &lt;code&gt;*.pyd&lt;/code&gt; 和 Windows 中 C 語言的動態載入庫 &lt;code&gt;*.dll&lt;/code&gt; 相仿； &lt;code&gt;*.so&lt;/code&gt; 則是大部分開放式作業系統（如為人熟知的 Ubuntu）使用的。 &lt;code&gt;*.so&lt;/code&gt; 的優點是利於共享資料，執行檔與程式庫分離，更新函式庫更為方便。&lt;/p&gt;
-&lt;p&gt;Python-Solvespace 的製作概念是利用 SWIG 軟體製作一個 C++ 至 Python 的端口，使任何一個使用 Anaconda 3 (Python 3.5) 的 Python 程式都能夠使用 Solvespace 的函式庫。&lt;/p&gt;
-&lt;p&gt;當 Solvespace 的函式轉換成 Python 介面時，也希望保持這個語言一貫清爽易懂的名稱，因此特別重新分類了這些指令的名稱及用法。&lt;/p&gt;
-&lt;p&gt;稱號下方是原始的命令代號，用於程式庫中識別命令的類型。&lt;/p&gt;
-&lt;hr&gt;
-
-&lt;h1&gt;&lt;a name="START"&gt;&lt;/a&gt;Starting Draw and Solve&lt;/h1&gt;
-&lt;p&gt;若要使用SLVS程式庫，必須透過&lt;code&gt;slvs.py&lt;/code&gt;介面來轉換。&lt;/p&gt;
-&lt;p&gt;在您的Python程式中使用以下指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-#導入slvs.py
-from slvs import *
-
-#導入Solid Python
-#沒有使用就不需要導入
-import solid
-
-#創造你的系統，以及支援單位數量
-#預設單位數為50
-#若是在迴圈中創造系統，將會重新洗掉記錄
-sys = System(20)
-...
-&lt;/pre&gt;
-
-&lt;p&gt;欲執行解題，Python必須使用下列命令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-#執行解題
-sys.solve()
-#直接命令
-Slvs_Solve(sys, g)
-
-#結果回報的值如下
-if (sys.result == SLVS_RESULT_OKAY):
-    ...
-elif (sys.result == SLVS_RESULT_INCONSISTENT):
-    print ("solve failed")
-    print ("SLVS_RESULT_INCONSISTENT")
-    print ("%d DOF" % sys.dof)
-elif (sys.result == SLVS_RESULT_DIDNT_CONVERGE):
-    print ("solve failed")
-    print ("SLVS_RESULT_DIDNT_CONVERGE")
-    print ("%d DOF" % sys.dof)
-elif (sys.result == SLVS_RESULT_TOO_MANY_UNKNOWNS):
-    print ("solve failed")
-    print ("SLVS_RESULT_TOO_MANY_UNKNOWNS")
-    print ("%d DOF" % sys.dof)
-&lt;/pre&gt;
-
-&lt;p&gt;在執行解題程式後，會出現三種結果：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;所有約束都能滿足，會回傳&lt;code&gt;SLVS_RESULT_OKAY&lt;/code&gt;，這時就能檢查您的約束結果，沒有完全約束的項目會被移動至滿足條件的範圍中，不過可能會不符合您的期待。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;解題程式證明約束條件互相牴觸，會傳回&lt;code&gt;SLVS_RESULT_INCONSISTENT&lt;/code&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;解題程式證明約束條件沒有互相牴觸，但定義了一些重複的約束，會傳回&lt;code&gt;SLVS_RESULT_DIDNT_CONVERGE&lt;/code&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;最後能調用以下值來檢查結果。&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-#實體結果
-#格式為高精度浮點數
-sys.get_param(0).val
-&lt;/pre&gt;
-
-&lt;p&gt;而過於嚴重的錯誤會回傳&lt;code&gt;SLVS_RESULT_TOO_MANY_UNKNOWNS&lt;/code&gt;，必須檢查您的 Python 程式庫或是 SLVS 函式庫是否損壞。&lt;/p&gt;
-&lt;hr&gt;
-
-&lt;h1&gt;&lt;a name="ENTITIES"&gt;&lt;/a&gt;Types of Entities&lt;/h1&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;實體的類型，屬於物件的部分，Entity中還有一些子分類。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;kbd&gt;Point&lt;/kbd&gt; 此物件屬於點。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;kbd&gt;LineSegment&lt;/kbd&gt; 此物件屬於線段。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;kbd&gt;Circular&lt;/kbd&gt; 此物件屬於圓弧。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;沒有標籤的項目屬於 &lt;kbd&gt;Entity&lt;/kbd&gt; 旗下的物件。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;根據這些關係，在約束時必須判斷其分類以填入。&lt;/p&gt;
-&lt;p&gt;輸入值後方加入&lt;code&gt;, sys&lt;/code&gt;，以傳入系統清單&lt;code&gt;sys&lt;/code&gt;中（也許有&lt;code&gt;sys2&lt;/code&gt;或&lt;code&gt;sys3&lt;/code&gt;等等）；亦可用&lt;code&gt;sys.add_&lt;/code&gt;加入以下支援的實體，而取出的編號取決於註冊的順序。&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
-2
-3
-4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;add_param( )
-add_point2d( )
-add_point3d( )
-add_entity( )
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;p&gt;取出時亦同（函數中加上編號就能指定）：&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;get_Point2d( )
-get_Point3d( )
-get_LineSegment2d( )
-get_LineSegment3d( )
-get_Normal3d( )
-get_Distance( )
-get_Workplane( )
-get_Cubic( )
-get_Circle( )
-get_ArcOfCircle( )
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;h2&gt;&lt;a name="Point"&gt;&lt;/a&gt;Point&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_POINT_IN_3D&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;Point&lt;/kbd&gt; / &lt;kbd&gt;Point3d&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Point3d(Param x, Param y, Param z)
-&lt;/pre&gt;
-
-&lt;p&gt;代表空間中的點。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_POINT_IN_2D&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;Point&lt;/kbd&gt; / &lt;kbd&gt;Point2d&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Point2d(Workplane workplane, Param u, Param v)
-&lt;/pre&gt;
-
-&lt;p&gt;代表工作平面上的點。&lt;/p&gt;
-&lt;h2&gt;&lt;a name="Normal"&gt;&lt;/a&gt;Normal&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_NORMAL_IN_3D&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;Normal3d&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Normal3d(Param qw, Param qx, Param qy, Param qz)
-&lt;/pre&gt;
-
-&lt;p&gt;代表空間中的一條法線。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_NORMAL_IN_2D&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;Normal3d&lt;/kbd&gt; / &lt;kbd&gt;Normal2d&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Normal3d(Workplane wrkpl)
-&lt;/pre&gt;
-
-&lt;p&gt;代表垂直工作平面的一條法線。&lt;/p&gt;
-&lt;p&gt;在SolveSpace中，法線是由一個3x3的旋轉矩陣從基本的坐標系到一個新的架構，是由單位四元數定義的。&lt;/p&gt;
-&lt;p&gt;可以想像這個四元數代表一個通過原點的平面。&lt;/p&gt;
-&lt;p&gt;這個平面跟三個向量相關：基礎向量&lt;code&gt;U&lt;/code&gt;和&lt;code&gt;V&lt;/code&gt;在平面上、而法線&lt;code&gt;N&lt;/code&gt;則垂直它，相當於&lt;code&gt;[ U V N ]'&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;因此U、N、N都有單位長度，而他們都正交，所以：&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
-2
-3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;U cross V = N
-V cross N = U
-N cross U = V
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;p&gt;轉換函式&lt;code&gt;Slvs_Quaternion&lt;/code&gt;提供了在&lt;code&gt;U&lt;/code&gt;、&lt;code&gt;V&lt;/code&gt;、&lt;code&gt;N&lt;/code&gt;和單位四元數之間轉換。&lt;/p&gt;
-&lt;p&gt;單位四元數只有三個自由度，但是要在四個參數中指定。因此一個額外的約束產生了，就是：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;w^2 + x^2 + y^2 + z^2 = 1&lt;/code&gt;&lt;/p&gt;
-&lt;h2&gt;Make a Quaternion for a Work Plane &lt;kbd&gt;Tips&lt;/kbd&gt;&lt;/h2&gt;
-&lt;p&gt;要定義一個由&lt;code&gt;U[1 0 0]&lt;/code&gt;向量（等同X軸）和&lt;code&gt;V[0 1 0]&lt;/code&gt;向量（等同Y軸）組成的平面，是需要一條3D法線的。&lt;/p&gt;
-&lt;p&gt;若是不會計算四元數，可以利用下列函式達成：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-#函式轉換四元數
-qw, qx, qy, qz = MakeQuaternion(1, 0, 0, 0, 1, 0)
-
-#帶入3D法線的函式中
-normal = Normal3d(Param(qw), Param(qx), Param(qy), Param(qz), sys)
-
-#做成工作平面
-c = Point3d(Param(0.0), Param(0.0), Param(0.0))
-plane = Workplane(c, normal)
-&lt;/pre&gt;
-
-&lt;p&gt;這個公式在製作2D平面時非常方便。&lt;/p&gt;
-&lt;p&gt;以下是不同平面參考：&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;XY平面：[1 0 0], [0 1 0]
-MakeQuaternion(1, 0, 0, 0, 1, 0)
-
-YZ平面：[0 1 0], [0 0 1]
-MakeQuaternion(0, 1, 0, 0, 0, 1)
-
-XZ平面：[1 0 0], [0 0 1]
-MakeQuaternion(1, 0, 0, 0, 0, 1)
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;h2&gt;&lt;a name="Distance"&gt;&lt;/a&gt;Distance&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_DISTANCE&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;Distance&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Distance(Workplane wrkpl, Param distance)
-&lt;/pre&gt;
-
-&lt;p&gt;代表與工作平面平行的距離。&lt;/p&gt;
-&lt;h2&gt;&lt;a name="Workplane"&gt;&lt;/a&gt;Work Plane&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;Workplane&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_WORKPLANE&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Workplane(Point3d origin, Normal3d normal)
-&lt;/pre&gt;
-
-&lt;p&gt;代表通過原點，與法線垂直的工作平面。&lt;/p&gt;
-&lt;h2&gt;&lt;a name="Line"&gt;&lt;/a&gt;Line Segment&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_LINE_SEGMENT&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;LineSegment&lt;/kbd&gt; / &lt;kbd&gt;LineSegment3d&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-LineSegment3d(Point3d a, Point3d b)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;LineSegment&lt;/kbd&gt; / &lt;kbd&gt;LineSegment2d&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-LineSegment2d(Workplane wrkpl, Point2d a, Point2d b)
-&lt;/pre&gt;
-
-&lt;p&gt;在兩個&lt;code&gt;Point2d/3d&lt;/code&gt;之間繪出直線條。&lt;/p&gt;
-&lt;p&gt;代表兩個點之間的連線。&lt;/p&gt;
-&lt;h2&gt;&lt;a name="Cubic"&gt;&lt;/a&gt;Cubic&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_CUBIC&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;Cubic&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Cubic(Point3d pt0, Point3d pt1, Point3d pt2, Point3d pt3)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Cubic(Workplane wrkpl, Point2d pt0, Point2d pt1, Point2d pt2, Point2d pt3)
-&lt;/pre&gt;
-
-&lt;p&gt;四個點構成的貝茲曲線，無論是用2D還是3D建構，都會視為3D物件。&lt;/p&gt;
-&lt;p&gt;四個點的公式如下：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;公式（t從0積分到1）
-p(t) = P0*(1 - t)^3 + 3*P1*(1 - t)^2*t + 3*P2*(1 - t)*t^2 + P3*t^3&lt;/code&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a name="Circle"&gt;&lt;/a&gt;Circle&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;Circular&lt;/kbd&gt; / &lt;kbd&gt;Circle&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_CIRCLE&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Circle(Workplane wrkpl, Normal3d normal, Point2d center, Distance radius)
-&lt;/pre&gt;
-
-&lt;p&gt;與一條&lt;code&gt;Normal3d&lt;/code&gt;法線垂直，與一個&lt;code&gt;Workplane&lt;/code&gt;平面平行，由&lt;code&gt;Point2d&lt;/code&gt;圓心和&lt;code&gt;Distance&lt;/code&gt;半徑構成的完整圓。&lt;/p&gt;
-&lt;p&gt;這個圓無法使用相切約束，除非給定切點，並使圓心距離永遠和切線保持半徑長度。&lt;/p&gt;
-&lt;h2&gt;&lt;a name="Arc"&gt;&lt;/a&gt;Arc of Circle&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_ARC_OF_CIRCLE&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;Circular&lt;/kbd&gt; / &lt;kbd&gt;ArcOfCircle&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-ArcOfCircle(Workplane wrkpl, Normal3d normal, Point2d center, Point2d start, Point2d end)
-&lt;/pre&gt;
-
-&lt;p&gt;與一條&lt;code&gt;Normal3d&lt;/code&gt;法線垂直，與一個&lt;code&gt;Workplane&lt;/code&gt;平面平行，由&lt;code&gt;Point2d&lt;/code&gt;圓心和兩個&lt;code&gt;Point2d&lt;/code&gt;點構成的三點弧。&lt;/p&gt;
-&lt;hr&gt;
-
-&lt;h1&gt;&lt;a name="CONSTRAINTS"&gt;&lt;/a&gt;Types of Constrains&lt;/h1&gt;
-&lt;p&gt;&lt;code&gt;SLVS_C&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;約束的類型，大部分的指令都會自動判斷狀況。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 此種約束只能用在3D或投影到平面上。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 此種約束只能用在平面上。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;kbd&gt;Val&lt;/kbd&gt; 此種約束必須設定額外的參考值。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;輸入值最後端加入群組編號可以規定群組（預設值&lt;code&gt;Slvs_hGroup group = USE_DEFAULT_GROUP&lt;/code&gt;）。&lt;/p&gt;
-&lt;p&gt;約束的直接命令（必須在空白項目中填入 &lt;code&gt;0&lt;/code&gt;）：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Slvs_MakeConstraint(h, group, type, wrkpl, valA, ptA, ptB, entityA, entityB,  entityC,  entityD, other, other2)
-&lt;/pre&gt;
-
-&lt;h2&gt;&lt;a name="C-Distance"&gt;&lt;/a&gt;Distance &lt;kbd&gt;Val&lt;/kbd&gt;&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_PT_PT_DISTANCE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.distance(double value, Point3d p1, Point3d p2)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.distance(double value, Workplane wrkpl, Point p1, Point p2)
-&lt;/pre&gt;
-
-&lt;p&gt;約束兩個&lt;code&gt;Point2d/3d&lt;/code&gt;的距離。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_PROJ_PT_DISTANCE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.distance_proj(double value, Point3d p1, Point3d p2, Workplane wrkpl)
-&lt;/pre&gt;
-
-&lt;p&gt;約束兩個&lt;code&gt;Point3d&lt;/code&gt;的投影到&lt;code&gt;Workplane&lt;/code&gt;的距離。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_PT_PLANE_DISTANCE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.distance(double value, Workplane wrkpl, Point3d p)
-&lt;/pre&gt;
-
-&lt;p&gt;從一個&lt;code&gt;Point3d&lt;/code&gt;到一個&lt;code&gt;Workplane&lt;/code&gt;的距離。&lt;/p&gt;
-&lt;p&gt;距離值的正負會規定點在平面之上或之下。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_PT_LINE_DISTANCE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.distance(double value, Point3d p, LineSegment3d line)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.distance(double value, Workplane wrkpl, Point p, LineSegment2d line)
-&lt;/pre&gt;
-
-&lt;p&gt;從一個&lt;code&gt;Point2d/3d&lt;/code&gt;到一條&lt;code&gt;LineSegment2d/3d&lt;/code&gt;的距離。&lt;/p&gt;
-&lt;p&gt;距離值的正負會規定點在線段之上或之下。&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-On"&gt;&lt;/a&gt;On&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_POINTS_COINCIDENT&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.on(Point3d p1, Point3d p2)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.on(Workplane wrkpl, Point p1, Point p2)
-&lt;/pre&gt;
-
-&lt;p&gt;兩個&lt;code&gt;Point2d/3d&lt;/code&gt;的座標相等。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_PT_IN_PLANE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.on(Workplane wrkpl, Point3d p)
-&lt;/pre&gt;
-
-&lt;p&gt;一個&lt;code&gt;Point3d&lt;/code&gt;會被固定在一個&lt;code&gt;Workplane&lt;/code&gt;上。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_PT_ON_LINE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.on(Point3d p, LineSegment3d line)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.on(Workplane wrkpl, Point p, LineSegment2d line)
-&lt;/pre&gt;
-
-&lt;p&gt;一個&lt;code&gt;Point2d/3d&lt;/code&gt;會被固定在一條&lt;code&gt;LineSegment2d/3d&lt;/code&gt;上。&lt;/p&gt;
-&lt;p&gt;注意此約束會在2D時移除一個自由度；而在3D空間時變成兩個。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_PT_ON_CIRCLE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.on(Workplane wrkpl, Point p, Circle circle)
-&lt;/pre&gt;
-
-&lt;p&gt;一個&lt;code&gt;Point2d&lt;/code&gt;會被固定在一個&lt;code&gt;Circle&lt;/code&gt;上。&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-Equal"&gt;&lt;/a&gt;Equal&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_EQUAL_LENGTH_LINES&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.equal(Workplane wrkpl, LineSegment2d line1, LineSegment2d line line2)
-&lt;/pre&gt;
-
-&lt;p&gt;兩條&lt;code&gt;LineSegment2d&lt;/code&gt;的長度等長。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_EQ_LEN_PT_LINE_D&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.equal(Workplane wrkpl, Point2d p, LineSegment2d line1, LineSegment2d line line2)
-&lt;/pre&gt;
-
-&lt;p&gt;第一條&lt;code&gt;LineSegment2d&lt;/code&gt;長度等於一個&lt;code&gt;Point2d&lt;/code&gt;到第二條&lt;code&gt;LineSegment2d&lt;/code&gt;的距離。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_EQ_PT_LN_DISTANCES&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.equal_point_line(Workplane wrkpl, Point2d p1, Point2d p2, LineSegment2d line1, LineSegment2d line2)
-&lt;/pre&gt;
-
-&lt;p&gt;第一個&lt;code&gt;Point2d&lt;/code&gt;到第一條&lt;code&gt;LineSegment2d&lt;/code&gt;的距離等於第二個&lt;code&gt;Point2d&lt;/code&gt;到第二條&lt;code&gt;LineSegment2d&lt;/code&gt;的距離。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_EQUAL_ANGLE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.equal_angle(Workplane wrkpl, LineSegment2d line1, LineSegment2d line2, LineSegment2d line3, LineSegment2d line4)
-&lt;/pre&gt;
-
-&lt;p&gt;第一條&lt;code&gt;LineSegment2d&lt;/code&gt;和第二條&lt;code&gt;LineSegment2d&lt;/code&gt;的夾角等於第三條&lt;code&gt;LineSegment2d&lt;/code&gt;和第四條&lt;code&gt;LineSegment2d&lt;/code&gt;的夾角。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_EQUAL_LINE_ARC_LEN&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.equal(Workplane wrkpl, LineSegment2d line, Circular c)
-&lt;/pre&gt;
-
-&lt;p&gt;一條&lt;code&gt;LineSegment2d&lt;/code&gt;線段長度和另一段&lt;code&gt;Circular&lt;/code&gt;長度相等。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_EQUAL_RADIUS&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.equal_radius(Workplane wrkpl, Circular c1, Circular c2)
-&lt;/pre&gt;
-
-&lt;p&gt;兩條&lt;code&gt;Circular&lt;/code&gt;的半徑相等。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_SAME_ORIENTATION&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.orientation(Normal3d nrml1, Normal3d nrml2)
-&lt;/pre&gt;
-
-&lt;p&gt;兩條&lt;code&gt;Normal3d&lt;/code&gt;法線的方向相等。&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-Ratio"&gt;&lt;/a&gt;Ratio of Length &lt;kbd&gt;Val&lt;/kbd&gt;&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_LENGTH_RATIO&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.ratio(double value, Workplane wrkpl, LineSegment2d line1, LineSegment2d line2)
-&lt;/pre&gt;
-
-&lt;p&gt;第一條&lt;code&gt;LineSegment2d&lt;/code&gt;長度對上第二條&lt;code&gt;LineSegment2d&lt;/code&gt;長度的比值。&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-Symmetric"&gt;&lt;/a&gt;Symmetric&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_SYMMETRIC&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.symmetric(Workplane wrkpl, Point3d p1, Point3d p2)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.symmetric(Workplane wrkpl, Point2d p1, Point2d p2)
-&lt;/pre&gt;
-
-&lt;p&gt;第一個&lt;code&gt;Point2d/3d&lt;/code&gt;會和第二個&lt;code&gt;Point2d/3d&lt;/code&gt;對稱於一個工作平面。&lt;/p&gt;
-&lt;p&gt;意味著兩個點到平面的距離都相等，而兩點的連線可以做為平面的法線。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_SYMMETRIC_HORIZ&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.symmetric_H(Workplane wrkpl, Point2d p1, Point2d p2)
-&lt;/pre&gt;
-
-&lt;p&gt;兩個&lt;code&gt;Point2d&lt;/code&gt;會鎖定在相同的水平座標。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_SYMMETRIC_VERT&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.symmetric_V(Workplane wrkpl, Point2d p1, Point2d p2)
-&lt;/pre&gt;
-
-&lt;p&gt;兩個&lt;code&gt;Point2d&lt;/code&gt;會鎖定在相同的垂直座標。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_SYMMETRIC_LINE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.symmetric(Workplane wrkpl, Point2d p1, Point2d p2, LineSegment2d line)
-&lt;/pre&gt;
-
-&lt;p&gt;規定兩個&lt;code&gt;Point2d&lt;/code&gt;，對稱&lt;code&gt;LineSegment2d&lt;/code&gt;。&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-Midpoint"&gt;&lt;/a&gt;Middle point&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_AT_MIDPOINT&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.midpoint(Point3d p, LineSegment3d line)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.midpoint(Workplane wrkpl, Point2d p, LineSegment2d line)
-&lt;/pre&gt;
-
-&lt;p&gt;讓一個&lt;code&gt;Point2d/3d&lt;/code&gt;位於一條&lt;code&gt;LineSegment2d&lt;/code&gt;的中點。&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-HV"&gt;&lt;/a&gt;Horizontal &amp;amp; Vertical&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_HORIZONTAL&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.horizontal(Workplane wrkpl, LineSegment2d line)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;SLVS_C_VERTICAL&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.vertical(Workplane wrkpl, LineSegment2d line)
-&lt;/pre&gt;
-
-&lt;p&gt;規定一條&lt;code&gt;LineSegment2d&lt;/code&gt;水平或垂直。&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-Diameter"&gt;&lt;/a&gt;Diameter &lt;kbd&gt;Val&lt;/kbd&gt;&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_DIAMETER&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.diameter(double diameter, Workplane wrkpl, Circular c)
-&lt;/pre&gt;
-
-&lt;p&gt;一段&lt;code&gt;Circular&lt;/code&gt;的直徑。&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-Angle"&gt;&lt;/a&gt;Angle &lt;kbd&gt;Val&lt;/kbd&gt;&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_ANGLE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.angle(Workplane wrkpl, double value, LineSegment2d line1, LineSegment2d line2, bool other)
-&lt;/pre&gt;
-
-&lt;p&gt;兩條&lt;code&gt;LineSegment2d&lt;/code&gt;的夾角，定義值單位為度。&lt;/p&gt;
-&lt;p&gt;公式如下（&lt;code&gt;A&lt;/code&gt;和&lt;code&gt;B&lt;/code&gt;為兩條線的向量）：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;(A dot B)/(|A||B|) = cos(valA)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;注意這裡的值定義比較不明確，無論正負90度都會是相同的結果。&lt;/p&gt;
-&lt;p&gt;所以必須使用&lt;code&gt;other&lt;/code&gt;布林值來判斷正負。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_PERPENDICULAR&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.perpendicular(Workplane wrkpl, LineSegment2d line1, LineSegment2d line2, bool other)
-&lt;/pre&gt;
-
-&lt;p&gt;源自約束&lt;code&gt;SLVS_C_ANGLE&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;這個約束是定義角度約束為90度的情況。&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-Parallel"&gt;&lt;/a&gt;Parallel&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_PARALLEL&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.parallel(LineSegment3d line1, LineSegment3d line2)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.parallel(Workplane wrkpl, LineSegment2d line1, LineSegment2d line2)
-&lt;/pre&gt;
-
-&lt;p&gt;兩條&lt;code&gt;LineSegment2d/3d&lt;/code&gt;互相平行。&lt;/p&gt;
-&lt;p&gt;注意此約束會在投影到一個平面上時移除一個自由度；而在3D空間時變成兩個。&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-Tangent"&gt;&lt;/a&gt;Tangent &lt;kbd&gt;Val&lt;/kbd&gt;&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_ARC_LINE_TANGENT&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.tangent(ArcOfCircle arc, LineSegment2d line, bool other)
-&lt;/pre&gt;
-
-&lt;p&gt;一段&lt;code&gt;ArcOfCircle&lt;/code&gt;和一條&lt;code&gt;LineSegment2d&lt;/code&gt;相切。&lt;/p&gt;
-&lt;p&gt;若布林值是&lt;code&gt;False&lt;/code&gt;，則圓弧的切點會位於它的起點&lt;code&gt;s&lt;/code&gt;；反之若為&lt;code&gt;True&lt;/code&gt;，則會位於它的終點&lt;code&gt;e&lt;/code&gt;。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_CUBIC_LINE_TANGENT&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.tangent(Cubic c, LineSegment3d l, bool other)
-&lt;/pre&gt;
-
-&lt;p&gt;一條&lt;code&gt;Cubic&lt;/code&gt;和一條&lt;code&gt;LineSegment3d&lt;/code&gt;相切。&lt;/p&gt;
-&lt;p&gt;若布林值是&lt;code&gt;False&lt;/code&gt;，則貝茲曲線的切點會位於它的起點&lt;code&gt;p0&lt;/code&gt;；反之若為&lt;code&gt;True&lt;/code&gt;，則會位於它的終點&lt;code&gt;p3&lt;/code&gt;。&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_CURVE_CURVE_TANGENT&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.tangent(ArcOfCircle c1, ArcOfCircle c2, bool other, bool other2)
-Constraint.tangent(Cubic c1, Cubic c2, bool other, bool other2)
-Constraint.tangent(ArcOfCircle c1, Cubic c2, bool other, bool other2)
-Constraint.tangent(Cubic c1, ArcOfCircle c2, bool other, bool other2)
-&lt;/pre&gt;
-
-&lt;p&gt;兩條曲線的相切組合。&lt;/p&gt;
-&lt;p&gt;若布林值是&lt;code&gt;False&lt;/code&gt;，則圓弧的切點會位於它的起點&lt;code&gt;s&lt;/code&gt;，貝茲曲線的切點會位於它的起點&lt;code&gt;p0&lt;/code&gt;；反之若為&lt;code&gt;True&lt;/code&gt;，則會位於它的終點&lt;code&gt;e&lt;/code&gt;或&lt;code&gt;p3&lt;/code&gt;。&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-Dragged"&gt;&lt;/a&gt;Dragged&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_WHERE_DRAGGED&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.dragged(Point3d p)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.dragged(Workplane wrkpl, Point2d p)
-&lt;/pre&gt;
-
-&lt;p&gt;永久鎖定這個&lt;code&gt;Point2d/3d&lt;/code&gt;的座標在目前計算的座標上，再也不會改變。&lt;/p&gt;
-&lt;p&gt;在2D平面上，會移除兩個自由度；在3D空間中，是三個自由度。&lt;/p&gt;
-&lt;h2&gt;Set Dragged &lt;kbd&gt;Tips&lt;/kbd&gt;&lt;/h2&gt;
-&lt;p&gt;關於鎖定位置，另一個系統的約束如下：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-sys.set_dragged(Point p)
-&lt;/pre&gt;
-
-&lt;p&gt;是命令約束盡量固定這個&lt;code&gt;Point2d/3d&lt;/code&gt;點，取而代之的是移動周遭的項目。&lt;/p&gt;
-&lt;p&gt;這個點被固定後移動量會較小。&lt;/p&gt;
-&lt;hr&gt;
-
-&lt;h1&gt;&lt;a name="ADD"&gt;&lt;/a&gt;Additional Types of Constrains&lt;/h1&gt;
-&lt;p&gt;一些額外的約束條件，目前沒有對應實體項目可用。&lt;/p&gt;
-&lt;h2&gt;Point and Face&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;SLVS_C_PT_FACE_DISTANCE&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-#這個功能尚未建構
-&lt;/pre&gt;
-
-&lt;h2&gt;Point on Face&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;SLVS_C_PT_ON_FACE&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; 使用指令：&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-#這個功能尚未建構
-&lt;/pre&gt;</content><category term="SWIG"></category><category term="Solvespace"></category><category term="CDemo"></category><category term="Python-Solvespace"></category></entry><entry><title>SLVS Library Functions</title><link href="http://project.mde.tw/blog/slvs-library-functions.html" rel="alternate"></link><published>2016-08-17T12:00:00+08:00</published><updated>2016-08-17T12:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2016-08-17:/blog/slvs-library-functions.html</id><summary type="html">&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;slvs&lt;/code&gt; library（&lt;code&gt;_slvs.pyd&lt;/code&gt;or &lt;code&gt;_slvs.so&lt;/code&gt;）for Python.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Retrieve for Python Programing Design.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;Content to be amended&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;08/17 Updated&lt;/em&gt;&lt;/p&gt;
-</summary><content type="html">&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;slvs&lt;/code&gt; library（&lt;code&gt;_slvs.pyd&lt;/code&gt;or &lt;code&gt;_slvs.so&lt;/code&gt;）for Python.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Retrieve for Python Programing Design.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;Content to be amended&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;08/17 Updated&lt;/em&gt;&lt;/p&gt;
-
-
-&lt;h1&gt;&lt;strong&gt;Quick Search&lt;/strong&gt;&lt;/h1&gt;
-&lt;h2&gt;&lt;a href="#FOREWORD"&gt;Brief introduction&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;a href="#CDemo"&gt;CDemo&lt;/a&gt;｜&lt;a href="#SLVS"&gt;SLVS Library&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href="#START"&gt;How to start&lt;/a&gt;&lt;/h2&gt;
-&lt;h2&gt;&lt;a href="#ENTITIES"&gt;Entities&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;a href="#Point"&gt;Point&lt;/a&gt;｜&lt;a href="#Workplane"&gt;Work Plane&lt;/a&gt;｜&lt;a href="#Distance"&gt;Distance&lt;/a&gt;｜&lt;a href="#Normal"&gt;Normal&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#Line"&gt;Line Segment&lt;/a&gt;｜&lt;a href="#Arc"&gt;Arc (have a center)&lt;/a&gt;｜&lt;a href="#Circle"&gt;Circle&lt;/a&gt;｜&lt;a href="#Cubic"&gt;Bezier curve&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href="#CONSTRAINTS"&gt;Constraints&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;a href="#C-Distance"&gt;Distance&lt;/a&gt;｜&lt;a href="#C-Ratio"&gt;Ratio of Line Segment&lt;/a&gt;｜&lt;a href="#C-Diameter"&gt;Diameter&lt;/a&gt;｜&lt;a href="#C-Angle"&gt;Angle&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#C-On"&gt;Coincide&lt;/a&gt;｜&lt;a href="#C-Equal"&gt;Equal&lt;/a&gt;｜&lt;a href="#C-Dragged"&gt;Locked position&lt;/a&gt;｜&lt;a href="#C-Midpoint"&gt;Middle point&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#C-Symmetric"&gt;Symmetric&lt;/a&gt;｜&lt;a href="#C-HV"&gt;Horizontal &amp;amp; Vertical&lt;/a&gt;｜&lt;a href="#C-Parallel"&gt;Parallel&lt;/a&gt;｜&lt;a href="#C-Tangent"&gt;Tangent&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href="#ADD"&gt;Functions that not in use&lt;/a&gt;&lt;/h2&gt;
-&lt;hr&gt;
-
-&lt;h1&gt;&lt;a name="FOREWORD"&gt;&lt;/a&gt;Brief Introduction&lt;/h1&gt;
-&lt;p&gt;SLVS Library is compose by C language, Although &lt;code&gt;slvs.py&lt;/code&gt; was translate to Python interface, but some function names has change.&lt;/p&gt;
-&lt;p&gt;So I record these function, that how to use in Python program.&lt;/p&gt;
-&lt;h2&gt;&lt;a name="CDemo"&gt;&lt;/a&gt;CDemo&lt;/h2&gt;
-&lt;p&gt;SolveSpace is an open source 2D / 3D computer-aided design and drafting software, from 2008 released the first version, compatible with Windows / Mac / Linux three platforms.&lt;/p&gt;
-&lt;p&gt;Has a small size, perform fast, free, and no installation features, STEP or STL support open, or exported into DXF, PDF, SVG and other open formats, also has its own text-based format &lt;code&gt;*.slvs&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;For updating, you can go to GitHub's &lt;a href="https://github.com/solvespace/solvespace" title="github.com"&gt;official storage&lt;/a&gt; or &lt;a href="https://github.com/whitequark/solvespace" title="github.com"&gt;unofficial storage&lt;/a&gt; to download the latest source code, the direct use of developer tools (such as GNU) compile the main program.&lt;/p&gt;
-&lt;p&gt;Solvespace has another small executable file named CDemo, compiled with source code of Solvespace.&lt;/p&gt;
-&lt;p&gt;You can use this external program call library of Solvespace &lt;code&gt;libslvs.dll&lt;/code&gt; be 2D or 3D computing problem-solving, and without startup Solvespace.&lt;/p&gt;
-&lt;p&gt;The concept of CDemo is be able to use an external program to call functions from Solvespace, whether it is using its maximum travel untied, the interference position. You can use this app without need to use CAD software to personally solving problems by you self.&lt;/p&gt;
-&lt;h2&gt;&lt;a name="SLVS"&gt;&lt;/a&gt;SLVS Library&lt;/h2&gt;
-&lt;p&gt;CDemo compiled from C language. Solvespace database using the C++ compiler is useful and fast of course, but the utilization of more limited.&lt;/p&gt;
-&lt;p&gt;Python language has a lot of custom modules, easy-reading function, and has another scopes in the Internet than the C language, if Solvespace use database conversion, will make these Python programs have online problem-solving ability, mechanical design in particular it is a lot easier.&lt;/p&gt;
-&lt;p&gt;In Python link library, &lt;code&gt;*.pyd&lt;/code&gt; is similar to C language dynamic load library &lt;code&gt;*.dll&lt;/code&gt; in Windows; &lt;code&gt;*.so&lt;/code&gt; is the most open operating systems (such as Ubuntu) in use. Advantage of &lt;code&gt;*.so&lt;/code&gt; is beneficial to share information, perform file and database separation, updated library more convenient.&lt;/p&gt;
-&lt;p&gt;Concept of the production Python-Solvespace is using SWIG to create a C ++ to Python port to make any use of Anaconda 3 (Python 3.5) of Python programs are able to use the library of Solvespace.&lt;/p&gt;
-&lt;p&gt;When Solvespace the function is converted into when Python interface, but also want to keep consistently fresh and understandable names for this language, so I especially reclassified these names and usage instructions.&lt;/p&gt;
-&lt;p&gt;Below the title is original name of the command code, the database using to identify the type of command.&lt;/p&gt;
-&lt;hr&gt;
-
-&lt;h1&gt;&lt;a name="START"&gt;&lt;/a&gt;Starting Draw and Solve&lt;/h1&gt;
-&lt;p&gt;To use SLVS database must be converted through the &lt;code&gt;slvs.py&lt;/code&gt; interface.&lt;/p&gt;
-&lt;p&gt;Use the following command in your Python program:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-#Import "slvs.py".
-from slvs import *
-
-#Import Solid Python.
-#If not using Solid Python, don't need to do this.
-import solid
-
-#Your system, and it's supporting number of params.
-#Default Units 50
-#If your system is in a loop, it's params will be re-clear.
-sys = System(20)
-...
-&lt;/pre&gt;
-
-&lt;p&gt;For the implementation of problem-solving, Python program must use the following command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-#Implementation of problem-solving.
-sys.solve()
-#Another command.
-Slvs_Solve(sys, g)
-
-#Return result value as follows.
-if (sys.result == SLVS_RESULT_OKAY):
-    ...
-elif (sys.result == SLVS_RESULT_INCONSISTENT):
-    print ("solve failed")
-    print ("SLVS_RESULT_INCONSISTENT")
-    print ("%d DOF" % sys.dof)
-elif (sys.result == SLVS_RESULT_DIDNT_CONVERGE):
-    print ("solve failed")
-    print ("SLVS_RESULT_DIDNT_CONVERGE")
-    print ("%d DOF" % sys.dof)
-elif (sys.result == SLVS_RESULT_TOO_MANY_UNKNOWNS):
-    print ("solve failed")
-    print ("SLVS_RESULT_TOO_MANY_UNKNOWNS")
-    print ("%d DOF" % sys.dof)
-&lt;/pre&gt;
-
-&lt;p&gt;After the execution of problem-solving program, there will be three results:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;All constraints were satisfied to within our numerical tolerance (i.e., success). The result is equal to &lt;code&gt;SLVS_RESULT_OKAY&lt;/code&gt;, entities that not fully constrained will be moved to meet the conditions of, but may not meet your expectations.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The solver can prove that two constraints are inconsistent (for example, if a line with nonzero length is constrained both horizontal and vertical). The result is equal to &lt;code&gt;SLVS_RESULT_INCONSISTENT&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The solver cannot prove that two constraints are inconsistent, but it cannot find a solution. The result is equal to &lt;code&gt;SLVS_RESULT_DIDNT_CONVERGE&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Finally, the following function can call to check the results.&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-#Entities result.
-#Precision floating-point format.
-sys.get_param(0).val
-&lt;/pre&gt;
-
-&lt;p&gt;And too serious error will return &lt;code&gt;SLVS_RESULT_TOO_MANY_UNKNOWNS&lt;/code&gt;. You must checkout your Python library or SLVS library is damaged or not.&lt;/p&gt;
-&lt;hr&gt;
-
-&lt;h1&gt;&lt;a name="ENTITIES"&gt;&lt;/a&gt;Types of Entities&lt;/h1&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Entity type, object parts for problem-solving. Entity has some sub-categories.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;kbd&gt;Point&lt;/kbd&gt; This object belongs to Point.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;kbd&gt;LineSegment&lt;/kbd&gt; This object belongs to Line Segment.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;kbd&gt;Circular&lt;/kbd&gt; This object belongs to Circular.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;No label items belonging to sub-categories of &lt;kbd&gt;Entity&lt;/kbd&gt; .&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;According to these relations, in the constraint must determine its classification to fill.&lt;/p&gt;
-&lt;p&gt;When function input "&lt;code&gt;, sys&lt;/code&gt;" after value, it can record into &lt;code&gt;sys&lt;/code&gt; (There maybe exist &lt;code&gt;sys2&lt;/code&gt; or &lt;code&gt;sys3&lt;/code&gt;). It can also use &lt;code&gt;sys.add_&lt;/code&gt; to input to current system.&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
-2
-3
-4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;add_param( )
-add_point2d( )
-add_point3d( )
-add_entity( )
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;p&gt;As same as take them out (Add the specified number).&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;get_Point2d( )
-get_Point3d( )
-get_LineSegment2d( )
-get_LineSegment3d( )
-get_Normal3d( )
-get_Distance( )
-get_Workplane( )
-get_Cubic( )
-get_Circle( )
-get_ArcOfCircle( )
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;h2&gt;&lt;a name="Point"&gt;&lt;/a&gt;Point&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_POINT_IN_3D&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;Point&lt;/kbd&gt; / &lt;kbd&gt;Point3d&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Point3d(Param x, Param y, Param z)
-&lt;/pre&gt;
-
-&lt;p&gt;Representative of a point in space.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_POINT_IN_2D&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;Point&lt;/kbd&gt; / &lt;kbd&gt;Point2d&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Point2d(Workplane workplane, Param u, Param v)
-&lt;/pre&gt;
-
-&lt;p&gt;Representative a point on a work plane.&lt;/p&gt;
-&lt;h2&gt;&lt;a name="Normal"&gt;&lt;/a&gt;Normal&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_NORMAL_IN_3D&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;Normal3d&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Normal3d(Param qw, Param qx, Param qy, Param qz)
-&lt;/pre&gt;
-
-&lt;p&gt;Representative of a normal in space.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_NORMAL_IN_2D&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;Normal3d&lt;/kbd&gt; / &lt;kbd&gt;Normal2d&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Normal3d(Workplane wrkpl)
-&lt;/pre&gt;
-
-&lt;p&gt;Representative of a normal line perpendicular to the work plane.&lt;/p&gt;
-&lt;p&gt;In SolveSpace, "normals" represent a 3x3 rotation matrix from our base coordinate system to a new frame. Defined by the unit quaternion w, x, y, z.&lt;/p&gt;
-&lt;p&gt;It is useful to think of this quaternion as representing a plane through the origin. This plane has three associated vectors: basis vectors U, V that lie within the plane, and normal N that is perpendicular to it. This means that&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    [ U V N ]&amp;#39;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;p&gt;defines a 3x3 rotation matrix. So U, V, and N all have unit length, and are orthogonal so that&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
-2
-3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;U cross V = N
-V cross N = U
-N cross U = V
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;p&gt;Convenience functions &lt;code&gt;Slvs_Quaternion&lt;/code&gt; are provided to convert between this representation as vectors U, V, N and the unit quaternion.&lt;/p&gt;
-&lt;p&gt;A unit quaternion has only 3 degrees of freedom, but is specified in terms of 4 parameters. An extra constraint is therefore generatedimplicitly, that&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;w^2 + x^2 + y^2 + z^2 = 1&lt;/code&gt;&lt;/p&gt;
-&lt;h2&gt;Make a Quaternion for a Work Plane &lt;kbd&gt;Tips&lt;/kbd&gt;&lt;/h2&gt;
-&lt;p&gt;To define a plane consisting by the &lt;code&gt;U [1 0 0]&lt;/code&gt; vector (equivalent X-axis) and &lt;code&gt;V [0 1 0]&lt;/code&gt; vector (equivalent Y axis) need for 3D normals.&lt;/p&gt;
-&lt;p&gt;If you don't know how to calculated quaternion, can be reached using the following functions:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-#Conversion quaternion
-qw, qx, qy, qz = MakeQuaternion(1, 0, 0, 0, 1, 0)
-
-#Take into the 3D normal function
-normal = Normal3d(Param(qw), Param(qx), Param(qy), Param(qz), sys)
-
-#Make a working plane
-c = Point3d(Param(0.0), Param(0.0), Param(0.0))
-plane = Workplane(c, normal)
-&lt;/pre&gt;
-
-&lt;p&gt;When creating 2D plane, using this formula is very convenient.&lt;/p&gt;
-&lt;p&gt;The following are the different planes reference:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7
-8&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;XY plane: [1 0 0], [0 1 0]
-MakeQuaternion(1, 0, 0, 0, 1, 0)
-
-YZ plane: [0 1 0], [0 0 1]
-MakeQuaternion(0, 1, 0, 0, 0, 1)
-
-XZ plane: [1 0 0], [0 0 1]
-MakeQuaternion(1, 0, 0, 0, 0, 1)
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;h2&gt;&lt;a name="Distance"&gt;&lt;/a&gt;Distance&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_DISTANCE&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;Distance&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Distance(Workplane wrkpl, Param distance)
-&lt;/pre&gt;
-
-&lt;p&gt;Representative of a distance parallel a work plane.&lt;/p&gt;
-&lt;h2&gt;&lt;a name="Workplane"&gt;&lt;/a&gt;Work Plane&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;Workplane&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_WORKPLANE&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Workplane(Point3d origin, Normal3d normal)
-&lt;/pre&gt;
-
-&lt;p&gt;Representative of a work plane through the origin, perpendicular to a normal.&lt;/p&gt;
-&lt;h2&gt;&lt;a name="Line"&gt;&lt;/a&gt;Line Segment&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_LINE_SEGMENT&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;LineSegment&lt;/kbd&gt; / &lt;kbd&gt;LineSegment3d&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-LineSegment3d(Point3d a, Point3d b)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;LineSegment&lt;/kbd&gt; / &lt;kbd&gt;LineSegment2d&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-LineSegment2d(Workplane wrkpl, Point2d a, Point2d b)
-&lt;/pre&gt;
-
-&lt;p&gt;Draw a straight line between two &lt;code&gt;Point2d / 3d&lt;/code&gt; point.&lt;/p&gt;
-&lt;p&gt;Representative of a connection between two points.&lt;/p&gt;
-&lt;h2&gt;&lt;a name="Cubic"&gt;&lt;/a&gt;Cubic&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_CUBIC&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;Cubic&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Cubic(Point3d pt0, Point3d pt1, Point3d pt2, Point3d pt3)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Cubic(Workplane wrkpl, Point2d pt0, Point2d pt1, Point2d pt2, Point2d pt3)
-&lt;/pre&gt;
-
-&lt;p&gt;Bezier curve consisting of four points, whether it be 2D or 3D construction, will be treated as 3D objects.&lt;/p&gt;
-&lt;p&gt;Four point formula is as follows:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Equation (t from 0 to 1 points)
-p(t) = P0*(1 - t)^3 + 3*P1*(1 - t)^2*t + 3*P2*(1 - t)*t^2 + P3*t^3&lt;/code&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a name="Circle"&gt;&lt;/a&gt;Circle&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;Entity&lt;/kbd&gt; / &lt;kbd&gt;Circular&lt;/kbd&gt; / &lt;kbd&gt;Circle&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_CIRCLE&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Circle(Workplane wrkpl, Normal3d normal, Point2d center, Distance radius)
-&lt;/pre&gt;
-
-&lt;p&gt;Representative of a circle perpendicular with a &lt;code&gt;Normal3d&lt;/code&gt; normal, parallel with a &lt;code&gt;Workplane&lt;/code&gt; plane, constitute by a &lt;code&gt;Point2d&lt;/code&gt; center and a &lt;code&gt;Distance&lt;/code&gt; radius.&lt;/p&gt;
-&lt;h2&gt;&lt;a name="Arc"&gt;&lt;/a&gt;Arc of Circle&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;SLVS_E_ARC_OF_CIRCLE&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;Circular&lt;/kbd&gt; / &lt;kbd&gt;ArcOfCircle&lt;/kbd&gt;&lt;/p&gt;
-&lt;p&gt;Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-ArcOfCircle(Workplane wrkpl, Normal3d normal, Point2d center, Point2d start, Point2d end)
-&lt;/pre&gt;
-
-&lt;p&gt;Representative of an arc perpendicular with a &lt;code&gt;Normal3d&lt;/code&gt; normal, parallel with a &lt;code&gt;Workplane&lt;/code&gt; plane, constitute by a &lt;code&gt;Point2d&lt;/code&gt; center, a &lt;code&gt;Point2d&lt;/code&gt; start point, and a &lt;code&gt;Point2d&lt;/code&gt; endpoint.&lt;/p&gt;
-&lt;hr&gt;
-
-&lt;h1&gt;&lt;a name="CONSTRAINTS"&gt;&lt;/a&gt;Types of Constrains&lt;/h1&gt;
-&lt;p&gt;&lt;code&gt;SLVS_C&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Constraints type. Most of the instruction will automatically determine the situation.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Such constraints can only be used in 3D or projected onto a plane.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Such constraints can only be used in a 2D plane.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;kbd&gt;Val&lt;/kbd&gt; Such constraints must be set additional reference value.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Enter the value of the last side to join the group numbers can be specified group (Default &lt;code&gt;Slvs_hGroup group = USE_DEFAULT_GROUP&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;Direct command constraint(But you should filled zero in empty entry):&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Slvs_MakeConstraint(h, group, type, wrkpl, valA, ptA, ptB, entityA, entityB,  entityC,  entityD, other, other2)
-&lt;/pre&gt;
-
-&lt;h2&gt;&lt;a name="C-Distance"&gt;&lt;/a&gt;Distance &lt;kbd&gt;Val&lt;/kbd&gt;&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_PT_PT_DISTANCE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.distance(double value, Point3d p1, Point3d p2)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.distance(double value, Workplane wrkpl, Point p1, Point p2)
-&lt;/pre&gt;
-
-&lt;p&gt;Constraints two &lt;code&gt;Point 2d / 3d&lt;/code&gt; distance.&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_PROJ_PT_DISTANCE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.distance_proj(double value, Point3d p1, Point3d p2, Workplane wrkpl)
-&lt;/pre&gt;
-
-&lt;p&gt;Constraints two &lt;code&gt;Point 3d&lt;/code&gt; projected to&lt;code&gt;Workplane&lt;/code&gt; distance.&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_PT_PLANE_DISTANCE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.distance(double value, Workplane wrkpl, Point3d p)
-&lt;/pre&gt;
-
-&lt;p&gt;Distance from a &lt;code&gt;Point3d&lt;/code&gt; to a &lt;code&gt;Workplane&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Positive and negative values will be predetermined distance above or below the plane.&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_PT_LINE_DISTANCE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.distance(double value, Point3d p, LineSegment3d line)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.distance(double value, Workplane wrkpl, Point p, LineSegment2d line)
-&lt;/pre&gt;
-
-&lt;p&gt;Distance from a &lt;code&gt;Point 2d/3d&lt;/code&gt; to a&lt;code&gt;LineSegment2d/3d&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Positive and negative values will be predetermined distance above or below the line segment.&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-On"&gt;&lt;/a&gt;On&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_POINTS_COINCIDENT&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.on(Point3d p1, Point3d p2)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.on(Workplane wrkpl, Point p1, Point p2)
-&lt;/pre&gt;
-
-&lt;p&gt;Two &lt;code&gt;Point2d/3d&lt;/code&gt; coordinates equal.&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_PT_IN_PLANE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.on(Workplane wrkpl, Point3d p)
-&lt;/pre&gt;
-
-&lt;p&gt;A &lt;code&gt;Point3d&lt;/code&gt; will be fixed on a &lt;code&gt;Workplane&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_PT_ON_LINE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.on(Point3d p, LineSegment3d line)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.on(Workplane wrkpl, Point p, LineSegment2d line)
-&lt;/pre&gt;
-
-&lt;p&gt;A &lt;code&gt;Point2d/3d&lt;/code&gt; will be fixed on a &lt;code&gt;LineSegment2d/3d&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Note that this constraint removes one degree of freedom when projected in to the plane, but two degrees of freedom in 3d.&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_PT_ON_CIRCLE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.on(Workplane wrkpl, Point p, Circle circle)
-&lt;/pre&gt;
-
-&lt;p&gt;A &lt;code&gt;Point2d&lt;/code&gt; will be fixed on a &lt;code&gt;Circle&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-Equal"&gt;&lt;/a&gt;Equal&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_EQUAL_LENGTH_LINES&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.equal(Workplane wrkpl, LineSegment2d line1, LineSegment2d line line2)
-&lt;/pre&gt;
-
-&lt;p&gt;Two length of &lt;code&gt;LineSegment2d&lt;/code&gt; will be same.&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_EQ_LEN_PT_LINE_D&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.equal(Workplane wrkpl, Point2d p, LineSegment2d line1, LineSegment2d line line2)
-&lt;/pre&gt;
-
-&lt;p&gt;Length of first &lt;code&gt;LineSegment2d&lt;/code&gt; will as same as a distance of a &lt;code&gt;Point2d&lt;/code&gt; to second &lt;code&gt;LineSegment2d&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_EQ_PT_LN_DISTANCES&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.equal_point_line(Workplane wrkpl, Point2d p1, Point2d p2, LineSegment2d line1, LineSegment2d line2)
-&lt;/pre&gt;
-
-&lt;p&gt;Distance of first &lt;code&gt;Point2d&lt;/code&gt; to first &lt;code&gt;LineSegment2d&lt;/code&gt; will as same as next distance of second &lt;code&gt;Point2d&lt;/code&gt;to second &lt;code&gt;LineSegment2d&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_EQUAL_ANGLE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.equal_angle(Workplane wrkpl, LineSegment2d line1, LineSegment2d line2, LineSegment2d line3, LineSegment2d line4)
-&lt;/pre&gt;
-
-&lt;p&gt;Angle of first &lt;code&gt;LineSegment2d&lt;/code&gt; to second &lt;code&gt;LineSegment2d&lt;/code&gt; will as same as next angle of third &lt;code&gt;LineSegment2d&lt;/code&gt;to fourth &lt;code&gt;LineSegment2d&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_EQUAL_LINE_ARC_LEN&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.equal(Workplane wrkpl, LineSegment2d line, Circular c)
-&lt;/pre&gt;
-
-&lt;p&gt;Length of a &lt;code&gt;LineSegment2d&lt;/code&gt; and Arc length of a &lt;code&gt;Circular&lt;/code&gt; will be same.&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_EQUAL_RADIUS&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.equal_radius(Workplane wrkpl, Circular c1, Circular c2)
-&lt;/pre&gt;
-
-&lt;p&gt;Two radius of &lt;code&gt;Circular&lt;/code&gt; will be same.&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_SAME_ORIENTATION&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.orientation(Normal3d nrml1, Normal3d nrml2)
-&lt;/pre&gt;
-
-&lt;p&gt;Two direction of &lt;code&gt;Normal3d&lt;/code&gt; will be same.&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-Ratio"&gt;&lt;/a&gt;Ratio of Length &lt;kbd&gt;Val&lt;/kbd&gt;&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_LENGTH_RATIO&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.ratio(double value, Workplane wrkpl, LineSegment2d line1, LineSegment2d line2)
-&lt;/pre&gt;
-
-&lt;p&gt;The ratio of first &lt;code&gt;LineSegment2d&lt;/code&gt; to second &lt;code&gt;LineSegment2d&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-Symmetric"&gt;&lt;/a&gt;Symmetric&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_SYMMETRIC&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.symmetric(Workplane wrkpl, Point3d p1, Point3d p2)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.symmetric(Workplane wrkpl, Point2d p1, Point2d p2)
-&lt;/pre&gt;
-
-&lt;p&gt;Two &lt;code&gt;Point2d/3d&lt;/code&gt; will symmetric to a work plane.&lt;/p&gt;
-&lt;p&gt;This means that they are on opposite sides of the plane and at equal distances from the plane, and that the line connecting ptA and ptB is normal to the plane.&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_SYMMETRIC_HORIZ&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.symmetric_H(Workplane wrkpl, Point2d p1, Point2d p2)
-&lt;/pre&gt;
-
-&lt;p&gt;Two &lt;code&gt;Point2d&lt;/code&gt; will be locked in the same horizontal coordinate.&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_SYMMETRIC_VERT&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.symmetric_V(Workplane wrkpl, Point2d p1, Point2d p2)
-&lt;/pre&gt;
-
-&lt;p&gt;Two &lt;code&gt;Point2d&lt;/code&gt;will be locked in the same vertical coordinate.&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_SYMMETRIC_LINE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.symmetric(Workplane wrkpl, Point2d p1, Point2d p2, LineSegment2d line)
-&lt;/pre&gt;
-
-&lt;p&gt;Two &lt;code&gt;Point2d&lt;/code&gt; will symmetric to the &lt;code&gt;LineSegment2d&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-Midpoint"&gt;&lt;/a&gt;Middle point&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_AT_MIDPOINT&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.midpoint(Point3d p, LineSegment3d line)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.midpoint(Workplane wrkpl, Point2d p, LineSegment2d line)
-&lt;/pre&gt;
-
-&lt;p&gt;Let a &lt;code&gt;Point2d/3d&lt;/code&gt; locate on a middle point of the &lt;code&gt;LineSegment2d&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-HV"&gt;&lt;/a&gt;Horizontal &amp;amp; Vertical&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_HORIZONTAL&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.horizontal(Workplane wrkpl, LineSegment2d line)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;SLVS_C_VERTICAL&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.vertical(Workplane wrkpl, LineSegment2d line)
-&lt;/pre&gt;
-
-&lt;p&gt;Let a &lt;code&gt;LineSegment2d&lt;/code&gt; to horizontal or vertical.&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-Diameter"&gt;&lt;/a&gt;Diameter &lt;kbd&gt;Val&lt;/kbd&gt;&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_DIAMETER&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.diameter(double diameter, Workplane wrkpl, Circular c)
-&lt;/pre&gt;
-
-&lt;p&gt;Diameter of a &lt;code&gt;Circular&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-Angle"&gt;&lt;/a&gt;Angle &lt;kbd&gt;Val&lt;/kbd&gt;&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_ANGLE&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.angle(Workplane wrkpl, double value, LineSegment2d line1, LineSegment2d line2, bool other)
-&lt;/pre&gt;
-
-&lt;p&gt;Angle of two &lt;code&gt;LineSegment2d&lt;/code&gt;. In degrees.&lt;/p&gt;
-&lt;p&gt;The following formula (&lt;code&gt;A&lt;/code&gt; and &lt;code&gt;B&lt;/code&gt; are vector of two lines):&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;(A dot B)/(|A||B|) = cos(valA)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;where A and B are vectors in the directions of lines A and B. This equation does not specify the angle unambiguously; for example, note that valA = +/- 90 degrees will produce the same equation.&lt;/p&gt;
-&lt;p&gt;If other is true, then the constraint is instead that&lt;/p&gt;
-&lt;p&gt;(A dot B)/(|A||B|) = -cos(valA)&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_PERPENDICULAR&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.perpendicular(Workplane wrkpl, LineSegment2d line1, LineSegment2d line2, bool other)
-&lt;/pre&gt;
-
-&lt;p&gt;From constraint &lt;code&gt;SLVS_C_ANGLE&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;This constraint is defined angle constraint when it is 90 degrees.&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-Parallel"&gt;&lt;/a&gt;Parallel&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_PARALLEL&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.parallel(LineSegment3d line1, LineSegment3d line2)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.parallel(Workplane wrkpl, LineSegment2d line1, LineSegment2d line2)
-&lt;/pre&gt;
-
-&lt;p&gt;Two &lt;code&gt;LineSegment2d/3d&lt;/code&gt; are parallel each other.&lt;/p&gt;
-&lt;p&gt;Note that this constraint removes one degree of freedom when projected in to the plane, but two degrees of freedom in 3d.&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-Tangent"&gt;&lt;/a&gt;Tangent &lt;kbd&gt;Val&lt;/kbd&gt;&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_ARC_LINE_TANGENT&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.tangent(ArcOfCircle arc, LineSegment2d line, bool other)
-&lt;/pre&gt;
-
-&lt;p&gt;A &lt;code&gt;ArcOfCircle&lt;/code&gt; and a &lt;code&gt;LineSegment2d&lt;/code&gt; are tangent.&lt;/p&gt;
-&lt;p&gt;If the bool value is &lt;code&gt;False&lt;/code&gt;, than it will tangent at its beginning &lt;code&gt;s&lt;/code&gt;. If other is &lt;code&gt;True&lt;/code&gt;, then the arc is tangent at its end &lt;code&gt;e&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_CUBIC_LINE_TANGENT&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.tangent(Cubic c, LineSegment3d l, bool other)
-&lt;/pre&gt;
-
-&lt;p&gt;A &lt;code&gt;Cubic&lt;/code&gt; and a &lt;code&gt;LineSegment3d&lt;/code&gt; are tangent.&lt;/p&gt;
-&lt;p&gt;If the bool value is &lt;code&gt;False&lt;/code&gt;, than it will tangent at its beginning &lt;code&gt;p0&lt;/code&gt;. If other is &lt;code&gt;True&lt;/code&gt;, then the arc is tangent at its end &lt;code&gt;p3&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_CURVE_CURVE_TANGENT&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; &lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.tangent(ArcOfCircle c1, ArcOfCircle c2, bool other, bool other2)
-Constraint.tangent(Cubic c1, Cubic c2, bool other, bool other2)
-Constraint.tangent(ArcOfCircle c1, Cubic c2, bool other, bool other2)
-Constraint.tangent(Cubic c1, ArcOfCircle c2, bool other, bool other2)
-&lt;/pre&gt;
-
-&lt;p&gt;Tangent combination of two curves.&lt;/p&gt;
-&lt;p&gt;If the bool value is &lt;code&gt;False&lt;/code&gt;, than it will tangent at its beginning &lt;code&gt;s&lt;/code&gt; or &lt;code&gt;p0&lt;/code&gt;. If other is &lt;code&gt;True&lt;/code&gt;, then the arc is tangent at its end &lt;code&gt;e&lt;/code&gt; or &lt;code&gt;p3&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;&lt;a name="C-Dragged"&gt;&lt;/a&gt;Dragged&lt;/h2&gt;
-&lt;h2&gt;&lt;code&gt;SLVS_C_WHERE_DRAGGED&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.dragged(Point3d p)
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;kbd&gt;2D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-Constraint.dragged(Workplane wrkpl, Point2d p)
-&lt;/pre&gt;
-
-&lt;p&gt;Permanently lock the &lt;code&gt;Point2d/3d&lt;/code&gt; point coordinates in the current calculation of the coordinates, never change.&lt;/p&gt;
-&lt;p&gt;This constrains two degrees of freedom in a workplane, and three in free space.&lt;/p&gt;
-&lt;h2&gt;Set Dragged &lt;kbd&gt;Tips&lt;/kbd&gt;&lt;/h2&gt;
-&lt;p&gt;About lock the position,  another constraint of system as follows:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-sys.set_dragged(Point p)
-&lt;/pre&gt;
-
-&lt;p&gt;It is command that try to fix the &lt;code&gt;Point2d/3d&lt;/code&gt;, instead to move other entities.&lt;/p&gt;
-&lt;p&gt;This point will get a little of movement.&lt;/p&gt;
-&lt;hr&gt;
-
-&lt;h1&gt;&lt;a name="ADD"&gt;&lt;/a&gt;Additional Types of Constrains&lt;/h1&gt;
-&lt;p&gt;Some additional constraints, there is no corresponding entity items available for them.&lt;/p&gt;
-&lt;h2&gt;Point and Face&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;SLVS_C_PT_FACE_DISTANCE&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-#This feature is not Construction
-&lt;/pre&gt;
-
-&lt;h2&gt;Point on Face&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;SLVS_C_PT_ON_FACE&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;kbd&gt;3D&lt;/kbd&gt; Use the command:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-#This feature is not Construction
-&lt;/pre&gt;</content><category term="SWIG"></category><category term="Solvespace"></category><category term="CDemo"></category><category term="Python-Solvespace"></category></entry><entry><title>40323230日誌 - 105/08/16</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1050816.html" rel="alternate"></link><published>2016-08-16T21:00:00+08:00</published><updated>2016-08-16T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2016-08-16:/blog/40323230ri-zhi-1050816.html</id><summary type="html">&lt;ol&gt;
+&lt;h1&gt;Table of Contents&lt;/h1&gt;</content><category term="Python-Solvespace"></category></entry><entry><title>40323230日誌 - 105/08/16</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1050816.html" rel="alternate"></link><published>2016-08-16T21:00:00+08:00</published><updated>2016-08-16T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2016-08-16:/blog/40323230ri-zhi-1050816.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Jupyterhub 繪圖 - 漸開線範例（已儲存8888.kmol.info）&lt;/p&gt;
 &lt;/li&gt;
@@ -15538,7 +15326,358 @@ ImportError: libpython3.4m.so.1.0: cannot open shared object file: No such file 
 &lt;p&gt;不過在編譯&lt;code&gt;slvs_python.hpp&lt;/code&gt;時出現&lt;code&gt;‘__mingw_vasprintf’ was not declared in this scope&lt;/code&gt;的訊息。&lt;/p&gt;
 &lt;p&gt;這個函式應該是&lt;code&gt;stdio.h&lt;/code&gt;的，不知道為何無法找到它。&lt;/p&gt;
 &lt;p&gt;檢查了系統目錄，這個檔案應該都在&lt;code&gt;include&lt;/code&gt;的範圍內，所以應該是使用GNU和原本MinGW兩種版本gcc的問題。&lt;/p&gt;
-&lt;p&gt;不過這次並非在虛擬機測試，所以使用上會更小心。&lt;/p&gt;</content><category term="Python-Solvespace"></category></entry><entry><title>40323230日誌 - 105/08/10</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1050810.html" rel="alternate"></link><published>2016-08-10T21:00:00+08:00</published><updated>2016-08-10T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2016-08-10:/blog/40323230ri-zhi-1050810.html</id><summary type="html">&lt;ol&gt;
+&lt;p&gt;不過這次並非在虛擬機測試，所以使用上會更小心。&lt;/p&gt;</content><category term="Python-Solvespace"></category></entry><entry><title>SLVS 程式庫函式</title><link href="http://project.mde.tw/blog/slvs-cheng-shi-ku-han-shi.html" rel="alternate"></link><published>2016-08-11T12:00:00+08:00</published><updated>2016-08-11T12:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2016-08-11:/blog/slvs-cheng-shi-ku-han-shi.html</id><summary type="html">&lt;p&gt;這篇文章為 Python-Solvespace 的 API 文件。&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;這篇文章為 Python-Solvespace 的 API 文件。&lt;/p&gt;
+
+
+&lt;h1&gt;目錄&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Param"&gt;Param&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Entity"&gt;Entity&lt;/a&gt; Class&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Point"&gt;Point&lt;/a&gt; Class&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Point3d"&gt;Point3d&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Point2d"&gt;Point2d&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Normal3d"&gt;Normal3d&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Workplane"&gt;Workplane&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Distance"&gt;Distance&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#LineSegment"&gt;LineSegment&lt;/a&gt; Class&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#LineSegment3d"&gt;LineSegment3d&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#LineSegment2d"&gt;LineSegment2d&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Circular"&gt;Circular&lt;/a&gt; Class&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#ArcOfCircle"&gt;ArcOfCircle&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Circle"&gt;Circle&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Cubic"&gt;Cubic&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Constraint"&gt;Constraint&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#System"&gt;System&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;其他函式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;額外變數&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;div class="section"&gt;&lt;span id="Param" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h1&gt;Param Class&lt;/h1&gt;
+&lt;p&gt;這個類型用來儲存參數值。&lt;/p&gt;
+&lt;h2&gt;繼承自&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Object Class&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;被繼承&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;無&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;屬性&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#Param-sys"&gt;sys&lt;/a&gt;: System*&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Param-handle"&gt;handle&lt;/a&gt;: Slvs_hParam&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Param-group"&gt;group&lt;/a&gt;: Slvs_hGroup&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Param-value"&gt;value&lt;/a&gt;: double&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;公開函式&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#Param-init"&gt;Param&lt;/a&gt;(double value)&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Param-del"&gt;__del__&lt;/a&gt;()&lt;/li&gt;
+&lt;li&gt;Slvs_hParam &lt;a href="#Param-handle"&gt;GetHandle&lt;/a&gt;()&lt;/li&gt;
+&lt;li&gt;Slvs_hGroup &lt;a href="#Param-group"&gt;GetGroup&lt;/a&gt;()&lt;/li&gt;
+&lt;li&gt;System * &lt;a href="#Param-sys"&gt;GetSystem&lt;/a&gt;()&lt;/li&gt;
+&lt;li&gt;double &lt;a href="#Param-value"&gt;GetValue&lt;/a&gt;()&lt;/li&gt;
+&lt;li&gt;void &lt;a href="#Param-value"&gt;SetValue&lt;/a&gt;(double value)&lt;/li&gt;
+&lt;li&gt;void &lt;a href="#Param-prepareFor"&gt;prepareFor&lt;/a&gt;(System* system, Slvs_hGroup group)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section"&gt;&lt;span id="Param-sys" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h2&gt;sys: &lt;a href="#System"&gt;System&lt;/a&gt;*&lt;/h2&gt;
+&lt;p&gt;這個屬性為此類型所在的系統。&lt;/p&gt;
+&lt;p&gt;這個屬性可以直接呼叫。&lt;/p&gt;
+&lt;p&gt;取得函式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;System * GetSystem()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section"&gt;&lt;span id="Param-handle" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h2&gt;handle: Slvs_hParam&lt;/h2&gt;
+&lt;p&gt;這個屬性為此類型的句柄。&lt;/p&gt;
+&lt;p&gt;這個屬性可以直接呼叫。&lt;/p&gt;
+&lt;p&gt;取得函式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slvs_hParam GetHandle()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section"&gt;&lt;span id="Param-group" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h2&gt;group: Slvs_hGroup&lt;/h2&gt;
+&lt;p&gt;這個屬性為此類型所在的群組。&lt;/p&gt;
+&lt;p&gt;這個屬性可以直接呼叫。&lt;/p&gt;
+&lt;p&gt;取得函式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slvs_hGroup GetGroup()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section"&gt;&lt;span id="Param-value" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h2&gt;value: double&lt;/h2&gt;
+&lt;p&gt;這個屬性為此類型的參數值。&lt;/p&gt;
+&lt;p&gt;這個屬性可以直接呼叫。&lt;/p&gt;
+&lt;p&gt;取得函式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;double &lt;a href="#Param-GetValue"&gt;GetValue&lt;/a&gt;()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;設定函式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#Param-init0"&gt;Param&lt;/a&gt;(double value)&lt;/li&gt;
+&lt;li&gt;void SetValue(double value)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section"&gt;&lt;span id="Param-init" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h2&gt;Param(double value)&lt;/h2&gt;
+&lt;p&gt;初始化此類型。&lt;/p&gt;
+&lt;p&gt;給定 value 屬性。&lt;/p&gt;
+&lt;div class="section"&gt;&lt;span id="Param-del" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h2&gt;Param.__del__()&lt;/h2&gt;
+&lt;p&gt;刪除此類型的函式。&lt;/p&gt;
+&lt;div class="section"&gt;&lt;span id="Param-prepareFor" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h2&gt;void prepareFor(&lt;a href="#System"&gt;System&lt;/a&gt;* system, Slvs_hGroup group)&lt;/h2&gt;
+&lt;p&gt;此函式可以&lt;/p&gt;
+&lt;hr&gt;
+&lt;div class="section"&gt;&lt;span id="Entity" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h1&gt;Entity Class&lt;/h1&gt;
+&lt;p&gt;這個類型協助建構所有實體。&lt;/p&gt;
+&lt;p&gt;請不要直接使用這個類型，因為它無法代表任何實體。&lt;/p&gt;
+&lt;h2&gt;繼承自&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Object Class&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;被繼承&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Point"&gt;Point&lt;/a&gt; Class&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Point3d"&gt;Point3d&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Point2d"&gt;Point2d&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Normal3d"&gt;Normal3d&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Workplane"&gt;Workplane&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Distance"&gt;Distance&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#LineSegment"&gt;LineSegment&lt;/a&gt; Class&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#LineSegment3d"&gt;LineSegment3d&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#LineSegment2d"&gt;LineSegment2d&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Circular"&gt;Circular&lt;/a&gt; Class&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#ArcOfCircle"&gt;ArcOfCircle&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Circle"&gt;Circle&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Cubic"&gt;Cubic&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;屬性&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#Entity-handle"&gt;handle&lt;/a&gt;: Slvs_hParam&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Entity-group"&gt;group&lt;/a&gt;: Slvs_hGroup&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;公開函式&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#Entity-init"&gt;Entity&lt;/a&gt;()&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Entity-del"&gt;__del__&lt;/a&gt;()&lt;/li&gt;
+&lt;li&gt;Slvs_hEntity &lt;a href="#Entity-handle"&gt;GetHandle&lt;/a&gt;()&lt;/li&gt;
+&lt;li&gt;Slvs_hGroup &lt;a href="#Entity-group"&gt;GetGroup&lt;/a&gt;()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section"&gt;&lt;span id="Entity-handle" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h2&gt;handle: Slvs_hParam&lt;/h2&gt;
+&lt;p&gt;這個屬性為此類型的句柄。&lt;/p&gt;
+&lt;p&gt;取得函式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slvs_hParam GetHandle()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section"&gt;&lt;span id="Entity-group" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h2&gt;group: Slvs_hGroup&lt;/h2&gt;
+&lt;p&gt;這個屬性為此類型所在的群組。&lt;/p&gt;
+&lt;p&gt;取得函式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slvs_hGroup GetGroup()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section"&gt;&lt;span id="Entity-init" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h2&gt;Entity()&lt;/h2&gt;
+&lt;p&gt;初始化此類型。&lt;/p&gt;
+&lt;p&gt;直接使用此函式會回傳 AttributeError 錯誤。&lt;/p&gt;
+&lt;div class="section"&gt;&lt;span id="Entity-del" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h2&gt;Entity.__del__()&lt;/h2&gt;
+&lt;p&gt;刪除此類型的函式。&lt;/p&gt;
+&lt;hr&gt;
+&lt;div class="section"&gt;&lt;span id="Point" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h1&gt;Point Class&lt;/h1&gt;
+&lt;p&gt;這個類型協助建構點實體。&lt;/p&gt;
+&lt;p&gt;請不要直接使用這個類型，因為它無法代表任何實體。&lt;/p&gt;
+&lt;h2&gt;繼承自&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#Entity"&gt;Entity&lt;/a&gt; Class&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;被繼承&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Point3d"&gt;Point3d&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="#Point2d"&gt;Point2d&lt;/a&gt; Class&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;公開函式&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#Point-init"&gt;Point&lt;/a&gt;()&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Point-del"&gt;__del__&lt;/a&gt;()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section"&gt;&lt;span id="Point-init" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h2&gt;Point()&lt;/h2&gt;
+&lt;p&gt;初始化此類型。&lt;/p&gt;
+&lt;p&gt;直接使用此函式會回傳 AttributeError 錯誤。&lt;/p&gt;
+&lt;div class="section"&gt;&lt;span id="Point-del" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h2&gt;Point.__del__()&lt;/h2&gt;
+&lt;p&gt;刪除此類型的函式。&lt;/p&gt;
+&lt;hr&gt;
+&lt;div class="section"&gt;&lt;span id="Point3d" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h1&gt;Point3d Class&lt;/h1&gt;
+&lt;p&gt;這個類型代表 3D 空間中的點。&lt;/p&gt;
+&lt;p&gt;建立這個類型可以&lt;/p&gt;
+&lt;h2&gt;繼承自&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#Point"&gt;Point&lt;/a&gt; Class&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;被繼承&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;無&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;屬性&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#Point3d-x"&gt;x&lt;/a&gt;: Param&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Point3d-x"&gt;y&lt;/a&gt;: Param&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Point3d-x"&gt;z&lt;/a&gt;: Param&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;公開函式&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#Point3d-init0"&gt;Point3d&lt;/a&gt;(Param x, Param y, Param z, System* system = NULL, Slvs_hGroup group = USE_DEFAULT_GROUP)&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Point3d-init1"&gt;Point3d&lt;/a&gt;(double x, double y, double z, System* system = NULL, Slvs_hGroup group = USE_DEFAULT_GROUP)&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Point3d-del"&gt;__del__&lt;/a&gt;()&lt;/li&gt;
+&lt;li&gt;list&amp;lt;double&amp;gt; &lt;a href="#Point3d-to_openscad"&gt;to_openscad&lt;/a&gt;()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section"&gt;&lt;span id="Point3d-init0" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h2&gt;Point3d(&lt;a href="#Param"&gt;Param&lt;/a&gt; x, &lt;a href="#Param"&gt;Param&lt;/a&gt; y, &lt;a href="#Param"&gt;Param&lt;/a&gt; z, &lt;a href="#System"&gt;System&lt;/a&gt;* system = NULL, Slvs_hGroup group = &lt;a href="#USE_DEFAULT_GROUP"&gt;USE_DEFAULT_GROUP&lt;/a&gt;)&lt;/h2&gt;
+&lt;p&gt;初始化此類型。&lt;/p&gt;
+&lt;div class="section"&gt;&lt;span id="Point3d-init1" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h2&gt;Point3d(double x, double y, double z, &lt;a href="#System"&gt;System&lt;/a&gt;* system = NULL, Slvs_hGroup group = &lt;a href="#USE_DEFAULT_GROUP"&gt;USE_DEFAULT_GROUP&lt;/a&gt;)&lt;/h2&gt;
+&lt;p&gt;初始化此類型。&lt;/p&gt;
+&lt;div class="section"&gt;&lt;span id="Point3d-del" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h2&gt;Point3d.__del__()&lt;/h2&gt;
+&lt;p&gt;刪除此類型的函式。&lt;/p&gt;
+&lt;div class="section"&gt;&lt;span id="Point3d-to_openscad" class="anchor"&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;h2&gt;list&amp;lt;double&amp;gt; Point3d.to_openscad()&lt;/h2&gt;
+&lt;p&gt;此函式將回傳一組含有三個浮點數的 list 類型，分別為 x、y、z 屬性的值。&lt;/p&gt;
+&lt;style&gt;
+p a {
+    color : green;
+}
+li a {
+    color : green;
+}
+h2 a {
+    color : green;
+}
+.section {
+    position: relative;
+}
+.anchor {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    top: -70px;
+    left: 0;
+    visibility: hidden;
+}
+&lt;/style&gt;</content><category term="Python-Solvespace"></category></entry><entry><title>40323230日誌 - 105/08/10</title><link href="http://project.mde.tw/blog/40323230ri-zhi-1050810.html" rel="alternate"></link><published>2016-08-10T21:00:00+08:00</published><updated>2016-08-10T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2016-08-10:/blog/40323230ri-zhi-1050810.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;檢視python.log的錯誤&lt;/p&gt;
 &lt;/li&gt;
