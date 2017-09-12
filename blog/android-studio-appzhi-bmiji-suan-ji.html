@@ -36,13 +36,12 @@ init_mathjax();
 
         <meta name="author" content="40423118" />
         <meta name="keywords" content="暑期學習" />
-        <meta name="description" content="file:///D:/濟概/2017/tiny2017_1GB/tiny2017_700MB/data/kmol/users/4042/scrum1.leo" />
 
         <meta property="og:site_name" content="機械設計專題 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="android studio app之BMI計算機"/>
         <meta property="og:url" content="http://project.mde.tw/blog/android-studio-appzhi-bmiji-suan-ji.html"/>
-        <meta property="og:description" content="file:///D:/濟概/2017/tiny2017_1GB/tiny2017_700MB/data/kmol/users/4042/scrum1.leo"/>
+        <meta property="og:description" content=""/>
         <meta property="article:published_time" content="2017-08-30" />
             <meta property="article:section" content="2017" />
             <meta property="article:tag" content="暑期學習" />
@@ -203,39 +202,38 @@ li {
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>file:///D:/濟概/2017/tiny2017_1GB/tiny2017_700MB/data/kmol/users/4042/scrum1.leo</p>
-
+                <!-- PELICAN_END_SUMMARY -->
 
 <h1>STEP1.手機APP介面設計</h1>
 <p>這裡我們選擇無樣式的空白介面
-<img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%204.png"></p>
+![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 4.png?raw=true)</p>
 <p>手機介面的資料夾位在BMI(自己取名) →app→ res → layout裡面的activity_main.xml(根據當初取名會有所不同)                                           </p>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%201.png"></p>
+<p>![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 1.png?raw=true)</p>
 <p>從Palette視窗裡拉出需要用的元件或者也可以切換到Text手打元件</p>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%202.png"></p>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%203.png"></p>
+<p>![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 2.png?raw=true)</p>
+<p>![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 3.png?raw=true)</p>
 <p>=========================================</p>
 <p>1.首先拉出LinearLayout(vertical) , 在拉五個LinearLayout(horizontal)到LinearLayout(vertical)的底下</p>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2011.png"></p>
+<p>![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 11.png?raw=true)</p>
 <p>2.切換至Text改變五個LinearLayout(horizontal)的屬性,將寬跟高的屬性改為"wrap_content"</p>
 <p>"fill_parent"    代表填滿父控制項，在這裡通常是指撐滿螢幕(寬度或是高度)</p>
 <p>"wrap_content" 就是指依照你內容有多少就給你多少(寬度或是高度)</p>
 <h1>LinearLayout語法</h1>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2010.png"></p>
+<p>![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 10.png?raw=true)</p>
 <p>3.在將TextView拉至1,2,4,5的LinearLayout(horizontal),由上至下輸入"身高","體重","結果","診斷"</p>
 <h1>TextView語法</h1>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2013.png"></p>
+<p>![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 13.png?raw=true)</p>
 <h1>android:id屬性</h1>
 <p>介面元件的android:id屬性是為了讓程式碼可以在使用介面中找到指定的元件的索引 , 因此每個元件的id不重複</p>
 <p>====================================</p>
 <p>4.接著拉兩個EditText(Number)到1 , 2個LinearLayout(horizontal)裡面供使用者輸入身高 , 體重</p>
 <h1>EditText語法</h1>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2015.png"></p>
+<p>![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 15.png?raw=true)</p>
 <p>5.將Button(按鈕)元件拉入第3個LinearLayout(horizontal),將Text改為"送出"</p>
 <h1>Button語法</h1>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2018.png"></p>
+<p>![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 18.png?raw=true)</p>
 <p>這樣就完成了介面的設計</p>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2020.png"></p>
+<p>![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 20.png?raw=true)</p>
 <h1>完整程式碼</h1>
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -426,13 +424,13 @@ li {
 <p></android.support.constraint.ConstraintLayout></p>
 <h1>STEP2.撰寫BMI功能</h1>
 <p>JAVA檔的位置
-<img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2021.png"></p>
+![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 21.png.png?raw=true)</p>
 <p>撰寫方式</p>
 <p>導入函數的部分若是跟元件有相關的話 , 可以不用事先打 , 下面程式碼打完後 , 有用的函數Android Studio會自己導入 </p>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%206.png"></p>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2023.png"></p>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2026.png"></p>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2028.png"></p>
+<p>![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 6.png?raw=true)</p>
+<p>![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 23.png?raw=true)</p>
+<p>![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 26.png?raw=true)</p>
+<p>![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 28.png?raw=true)</p>
 <h1>完整程式碼</h1>
 <p>&lt;package com.example.user.bmi;</p>
 <p>import android.icu.text.NumberFormat;
