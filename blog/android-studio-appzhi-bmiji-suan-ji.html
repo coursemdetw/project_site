@@ -191,7 +191,7 @@ li {
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-08-30T12:57:00+08:00"> Wed 30 August 2017</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-08-30T12:57:00+08:00"> 三 30 八月 2017</time>
     </span>
             <span class="label label-default">By</span>
             <a href="http://project.mde.tw/blog/author/40423118.html"><i class="fa fa-user"></i> 40423118</a>
@@ -208,34 +208,34 @@ li {
 
 <h1>STEP1.手機APP介面設計</h1>
 <p>這裡我們選擇無樣式的空白介面
-<img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%204.png" /></p>
+<img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%204.png"></p>
 <p>手機介面的資料夾位在BMI(自己取名) →app→ res → layout裡面的activity_main.xml(根據當初取名會有所不同)                                           </p>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%201.png" /></p>
+<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%201.png"></p>
 <p>從Palette視窗裡拉出需要用的元件或者也可以切換到Text手打元件</p>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%202.png" /></p>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%203.png" /></p>
+<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%202.png"></p>
+<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%203.png"></p>
 <p>=========================================</p>
 <p>1.首先拉出LinearLayout(vertical) , 在拉五個LinearLayout(horizontal)到LinearLayout(vertical)的底下</p>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2011.png" /></p>
+<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2011.png"></p>
 <p>2.切換至Text改變五個LinearLayout(horizontal)的屬性,將寬跟高的屬性改為"wrap_content"</p>
 <p>"fill_parent"    代表填滿父控制項，在這裡通常是指撐滿螢幕(寬度或是高度)</p>
 <p>"wrap_content" 就是指依照你內容有多少就給你多少(寬度或是高度)</p>
 <h1>LinearLayout語法</h1>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2010.png" /></p>
+<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2010.png"></p>
 <p>3.在將TextView拉至1,2,4,5的LinearLayout(horizontal),由上至下輸入"身高","體重","結果","診斷"</p>
 <h1>TextView語法</h1>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2013.png" /></p>
+<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2013.png"></p>
 <h1>android:id屬性</h1>
 <p>介面元件的android:id屬性是為了讓程式碼可以在使用介面中找到指定的元件的索引 , 因此每個元件的id不重複</p>
 <p>====================================</p>
 <p>4.接著拉兩個EditText(Number)到1 , 2個LinearLayout(horizontal)裡面供使用者輸入身高 , 體重</p>
 <h1>EditText語法</h1>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2015.png" /></p>
+<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2015.png"></p>
 <p>5.將Button(按鈕)元件拉入第3個LinearLayout(horizontal),將Text改為"送出"</p>
 <h1>Button語法</h1>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2018.png" /></p>
+<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2018.png"></p>
 <p>這樣就完成了介面的設計</p>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2020.png" /></p>
+<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2020.png"></p>
 <h1>完整程式碼</h1>
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -245,7 +245,94 @@ li {
     android:layout_height="match_parent"
     tools:context="com.example.user.bmi.MainActivity">
 
-<div class="highlight"><pre><span></span><span class="nt">&lt;LinearLayout</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">&lt;LinearLayout</span>
     <span class="na">android:layout_width=</span><span class="s">&quot;368dp&quot;</span>
     <span class="na">android:layout_height=</span><span class="s">&quot;495dp&quot;</span>
     <span class="na">android:orientation=</span><span class="s">&quot;vertical&quot;</span>
@@ -334,18 +421,18 @@ li {
     <span class="nt">&lt;/LinearLayout&gt;</span>
 <span class="nt">&lt;/LinearLayout&gt;</span>
 </pre></div>
-
+</td></tr></table>
 
 <p></android.support.constraint.ConstraintLayout></p>
 <h1>STEP2.撰寫BMI功能</h1>
 <p>JAVA檔的位置
-<img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2021.png" /></p>
+<img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2021.png"></p>
 <p>撰寫方式</p>
 <p>導入函數的部分若是跟元件有相關的話 , 可以不用事先打 , 下面程式碼打完後 , 有用的函數Android Studio會自己導入 </p>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%206.png" /></p>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2023.png" /></p>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2026.png" /></p>
-<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2028.png" /></p>
+<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%206.png"></p>
+<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2023.png"></p>
+<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2026.png"></p>
+<p><img alt="" src="https://github.com/40423118/project_site_files/blob/gh-pages/files/4042/40423118/Image%2028.png"></p>
 <h1>完整程式碼</h1>
 <p>&lt;package com.example.user.bmi;</p>
 <p>import android.icu.text.NumberFormat;
@@ -360,7 +447,56 @@ import android.widget.TextView;</p>
 <p>public class MainActivity extends AppCompatActivity {
     EditText haha;
     EditText wawa;</p>
-<div class="highlight"><pre><span></span>@Override
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50</pre></div></td><td class="code"><div class="highlight"><pre><span></span>@Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
@@ -411,7 +547,7 @@ protected void onCreate(Bundle savedInstanceState) {
     }
 }
 </pre></div>
-
+</td></tr></table>
 
 <p>&lt; // 我 ..............頭好痛
     ===</p>
@@ -460,6 +596,11 @@ protected void onCreate(Bundle savedInstanceState) {
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/python-solvespace-kai-fa-jin-du-0912.html">
+                            Python-Solvespace 開發進度 - 09/12
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/zai-wang-zhi-nei-fu-jia-tu-pian-ri-ben-xiao-fa-xian.html">
                             在網誌內附加圖片&日本小發現
                         </a>
@@ -477,11 +618,6 @@ protected void onCreate(Bundle savedInstanceState) {
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/android-studio-appzhi-bmiji-suan-ji.html">
                             android studio app之BMI計算機
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/huan-jing-she-ding-yi-ji-ji-suan-ji-cheng-shi.html">
-                            環境設定以及計算機程式
                         </a>
                     </li>
                 </ul>

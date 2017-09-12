@@ -191,7 +191,7 @@ li {
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-07-31T23:30:00+08:00"> Mon 31 July 2017</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-07-31T23:30:00+08:00"> 一 31 七月 2017</time>
     </span>
             <span class="label label-default">By</span>
             <a href="http://project.mde.tw/blog/author/40323123.html"><i class="fa fa-user"></i> 40323123</a>
@@ -210,7 +210,7 @@ li {
 
 <h1>兩輪平衡車推導</h1>
 <h2>數學模型</h2>
-<p><img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/mathmodel/blenceCarModel.JPG?raw=true" /></p>
+<p><img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/mathmodel/blenceCarModel.JPG?raw=true"></p>
 <ol>
 <li>
 <p>符號定義</p>
@@ -224,112 +224,41 @@ li {
 <p>公視推導</p>
 <ul>
 <li>
-<p>
-<div class="math">$$H\frac{d^{2}\theta (t)}{dt^{2}} = gSin\theta(t)+a_2(t)H-a_1(t)Cos\theta(t)$$</div>
-</p>
+<p>$$H\frac{d^{2}\theta (t)}{dt^{2}} = gSin\theta(t)+a_2(t)H-a_1(t)Cos\theta(t)$$</p>
 </li>
 <li>
-<p>t = 0 沒有加速度固 <div class="math">$$a_1(t) =0$$</div>
-</p>
+<p>t = 0 沒有加速度固 $$a_1(t) =0$$</p>
 </li>
 <li>
-<p>
-<div class="math">$$H\frac{d^{2}\theta (t)}{dt^{2}} = gSin\theta(t)+a_2(t)H$$</div>
-</p>
+<p>$$H\frac{d^{2}\theta (t)}{dt^{2}} = gSin\theta(t)+a_2(t)H$$</p>
 </li>
 <li>
-<p>設角度在正負五度內 <div class="math">$$Sin(\theta)=1$$</div>
-</p>
+<p>設角度在正負五度內 $$Sin(\theta)=1$$</p>
 </li>
 <li>
-<p>
-<div class="math">$$H\frac{d^{2}\theta (t)}{dt^{2}} = g\theta(t)+a_2(t)H$$</div>
-</p>
+<p>$$H\frac{d^{2}\theta (t)}{dt^{2}} = g\theta(t)+a_2(t)H$$</p>
 </li>
 <li>
 <p>進行 S-domain 轉換</p>
 </li>
 <li>
-<p>
-<div class="math">$$\phi (s) = \frac{\theta(s)}{A_2(s)} = \frac{1}{s^{2}-\frac{G}{H}}$$</div>
-</p>
+<p>$$\phi (s) = \frac{\theta(s)}{A_2(s)} = \frac{1}{s^{2}-\frac{G}{H}}$$</p>
 </li>
 <li>
 <p>繪製方塊圖加控制器(PD)</p>
 </li>
 <li>
-<p><img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/mathmodel/bolck.JPG?raw=true" /></p>
+<p><img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/mathmodel/bolck.JPG?raw=true"></p>
 </li>
 <li>
-<p>
-<div class="math">$$\phi (s) = \frac{\theta(s)}{A_2(s)} = \frac{1}{s^{2}+\frac{k_1s}{H}+\frac{k_p-g}{H}}$$</div>
-</p>
+<p>$$\phi (s) = \frac{\theta(s)}{A_2(s)} = \frac{1}{s^{2}+\frac{k_1s}{H}+\frac{k_p-g}{H}}$$</p>
 </li>
 <li>
-<p>
-<div class="math">$$S_1,_2 = \frac{-k_1\pm \sqrt{k_1^{2}-4H(k_p-g)}}{2H}$$</div>
-</p>
+<p>$$S_1,_2 = \frac{-k_1\pm \sqrt{k_1^{2}-4H(k_p-g)}}{2H}$$</p>
 </li>
 </ul>
 </li>
 </ol>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    var location_protocol = (false) ? 'https' : document.location.protocol;
-    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -375,6 +304,11 @@ li {
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/python-solvespace-kai-fa-jin-du-0912.html">
+                            Python-Solvespace 開發進度 - 09/12
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/zai-wang-zhi-nei-fu-jia-tu-pian-ri-ben-xiao-fa-xian.html">
                             在網誌內附加圖片&日本小發現
                         </a>
@@ -392,11 +326,6 @@ li {
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/android-studio-appzhi-bmiji-suan-ji.html">
                             android studio app之BMI計算機
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/huan-jing-she-ding-yi-ji-ji-suan-ji-cheng-shi.html">
-                            環境設定以及計算機程式
                         </a>
                     </li>
                 </ul>
