@@ -77,34 +77,34 @@
 
 &lt;h1&gt;STEP1.手機APP介面設計&lt;/h1&gt;
 &lt;p&gt;這裡我們選擇無樣式的空白介面
-![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 4.png?raw=true)&lt;/p&gt;
+&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image4.png?raw=true" /&gt;&lt;/p&gt;
 &lt;p&gt;手機介面的資料夾位在BMI(自己取名) →app→ res → layout裡面的activity_main.xml(根據當初取名會有所不同)                                           &lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 1.png?raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image1.png?raw=true" /&gt;&lt;/p&gt;
 &lt;p&gt;從Palette視窗裡拉出需要用的元件或者也可以切換到Text手打元件&lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 2.png?raw=true)&lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 3.png?raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image2.png?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image3.png?raw=true" /&gt;&lt;/p&gt;
 &lt;p&gt;=========================================&lt;/p&gt;
 &lt;p&gt;1.首先拉出LinearLayout(vertical) , 在拉五個LinearLayout(horizontal)到LinearLayout(vertical)的底下&lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 11.png?raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image11.png?raw=true" /&gt;&lt;/p&gt;
 &lt;p&gt;2.切換至Text改變五個LinearLayout(horizontal)的屬性,將寬跟高的屬性改為"wrap_content"&lt;/p&gt;
 &lt;p&gt;"fill_parent"    代表填滿父控制項，在這裡通常是指撐滿螢幕(寬度或是高度)&lt;/p&gt;
 &lt;p&gt;"wrap_content" 就是指依照你內容有多少就給你多少(寬度或是高度)&lt;/p&gt;
 &lt;h1&gt;LinearLayout語法&lt;/h1&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 10.png?raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image10.png?raw=true" /&gt;&lt;/p&gt;
 &lt;p&gt;3.在將TextView拉至1,2,4,5的LinearLayout(horizontal),由上至下輸入"身高","體重","結果","診斷"&lt;/p&gt;
 &lt;h1&gt;TextView語法&lt;/h1&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 13.png?raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image13.png?raw=true" /&gt;&lt;/p&gt;
 &lt;h1&gt;android:id屬性&lt;/h1&gt;
 &lt;p&gt;介面元件的android:id屬性是為了讓程式碼可以在使用介面中找到指定的元件的索引 , 因此每個元件的id不重複&lt;/p&gt;
 &lt;p&gt;====================================&lt;/p&gt;
 &lt;p&gt;4.接著拉兩個EditText(Number)到1 , 2個LinearLayout(horizontal)裡面供使用者輸入身高 , 體重&lt;/p&gt;
 &lt;h1&gt;EditText語法&lt;/h1&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 15.png?raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image15.png?raw=true" /&gt;&lt;/p&gt;
 &lt;p&gt;5.將Button(按鈕)元件拉入第3個LinearLayout(horizontal),將Text改為"送出"&lt;/p&gt;
 &lt;h1&gt;Button語法&lt;/h1&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 18.png?raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image18.png?raw=true" /&gt;&lt;/p&gt;
 &lt;p&gt;這樣就完成了介面的設計&lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 20.png?raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image20.png?raw=true" /&gt;&lt;/p&gt;
 &lt;h1&gt;完整程式碼&lt;/h1&gt;
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -208,13 +208,13 @@
 &lt;p&gt;&lt;/android.support.constraint.ConstraintLayout&gt;&lt;/p&gt;
 &lt;h1&gt;STEP2.撰寫BMI功能&lt;/h1&gt;
 &lt;p&gt;JAVA檔的位置
-![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 21.png.png?raw=true)&lt;/p&gt;
+&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image21.png.png?raw=true" /&gt;&lt;/p&gt;
 &lt;p&gt;撰寫方式&lt;/p&gt;
 &lt;p&gt;導入函數的部分若是跟元件有相關的話 , 可以不用事先打 , 下面程式碼打完後 , 有用的函數Android Studio會自己導入 &lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 6.png?raw=true)&lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 23.png?raw=true)&lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 26.png?raw=true)&lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 28.png?raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image6.png?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image23.png?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image26.png?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image28.png?raw=true" /&gt;&lt;/p&gt;
 &lt;h1&gt;完整程式碼&lt;/h1&gt;
 &lt;p&gt;&amp;lt;package com.example.user.bmi;&lt;/p&gt;
 &lt;p&gt;import android.icu.text.NumberFormat;
