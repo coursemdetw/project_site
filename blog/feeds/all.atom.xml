@@ -288,8 +288,8 @@ def concat(x: AnyStr, y: AnyStr) -&gt; AnyStr:
 &lt;p&gt;還有更多使用方式，這裡就不細數了，更多內容可以參閱官方的說明。&lt;/p&gt;</summary><category term="Python3"></category></entry><entry><title>android studio app之BMI計算機</title><link href="http://project.mde.tw/blog/android-studio-appzhi-bmiji-suan-ji.html" rel="alternate"></link><published>2017-08-30T12:57:00+08:00</published><updated>2017-08-30T12:57:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2017-08-30:blog/android-studio-appzhi-bmiji-suan-ji.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
 &lt;h1&gt;STEP1.手機APP介面設計&lt;/h1&gt;
-&lt;p&gt;這裡我們選擇無樣式的空白介面&lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 4.png?raw=true)&lt;/p&gt;
+&lt;p&gt;這裡我們選擇無樣式的空白介面
+![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 4.png?raw=true)&lt;/p&gt;
 &lt;p&gt;手機介面的資料夾位在BMI(自己取名) →app→ res → layout裡面的activity_main.xml(根據當初取名會有所不同)                                           &lt;/p&gt;
 &lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 1.png?raw=true)&lt;/p&gt;
 &lt;p&gt;從Palette視窗裡拉出需要用的元件或者也可以切換到Text手打元件&lt;/p&gt;
