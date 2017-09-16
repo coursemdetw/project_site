@@ -1,5 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-09-12T21:00:00+08:00</updated><entry><title>Python-Solvespace 開發進度 - 09/12</title><link href="http://project.mde.tw/blog/python-solvespace-kai-fa-jin-du-0912.html" rel="alternate"></link><published>2017-09-12T21:00:00+08:00</published><updated>2017-09-12T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-09-12:/blog/python-solvespace-kai-fa-jin-du-0912.html</id><summary type="html">&lt;p&gt;Python-Solvespace 更新&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-09-16T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 09/16</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0916.html" rel="alternate"></link><published>2017-09-16T21:00:00+08:00</published><updated>2017-09-16T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-09-16:/blog/pyslvs-kai-fa-jin-du-0916.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;AppImage&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;轉出 PMKS&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;更新 Drive shaft 計畫&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;AppImage&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;轉出 PMKS&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;更新 Drive shaft 計畫&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;AppImage&lt;/h1&gt;
+&lt;p&gt;自之前沒時間理會 &lt;a href="https://github.com/KmolYuan/Pyslvs-PyQt5/issues/3"&gt;Symbian9 開的 issue&lt;/a&gt;，昨天利用空閒時間研究了一下 AppImage 的原理。&lt;/p&gt;
+&lt;p&gt;AppImage 是將 Linux 程式所需的關聯函式庫包裝在一起，模擬出一個小 /usr/bin 環境，以達成 Linux 程式可以達成如 Windows 程式攜帶到相同作業系統中執行的效果，甚至可以「安裝」到家目錄，並且無論是可攜狀態執行還是想裝到硬碟，都不需要 sudo 權限。&lt;/p&gt;
+&lt;p&gt;但是這種方式會造成檔案龐大，越多程式庫會需要放入越多內容。&lt;/p&gt;
+&lt;p&gt;根據 probonopd 寫的一個 Python 2  GTK 3 hello world 範例：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/probonopd/AppImages/blob/master/recipes/pythongtk3hello/Recipe"&gt;AppImages/recipes/pythongtk3hello/Recipe&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以發現其實只要一個 Bash 腳本，就可以將程式包裝起來，AppImage 的 functions.sh 工具是從網路下載導入的。&lt;/p&gt;
+&lt;p&gt;操作方式跟 Makefile 或 Windows 的 Batch file 雷同，當然 Makefile 最大的優勢是可以跨平台，為邏輯尋找的方式執行；Bash 腳本則是可以自訂 function，以順序執行，跟程式語言很像。&lt;/p&gt;
+&lt;h2&gt;包裝 AppImage&lt;/h2&gt;
+&lt;p&gt;首先是建立兩層資料夾，第一層會隔離原始碼，用以編譯環境；第二層是 AppDir，相當於環境的根目錄。&lt;/p&gt;
+&lt;p&gt;第一層目錄使用 ENV 代稱，這樣 git ignore 會當作 python 虛擬環境忽略此目錄。&lt;/p&gt;
+&lt;p&gt;Bash 腳本的語法與終端機是一樣的，因此可以利用 cd 指令切換目錄（這點 Makefile 就得另外達成），只要注意所在目錄即可。&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+########################################################################
+# Create the AppDir
+########################################################################
+
+APP=pyslvs
+LOWERAPP=${APP,,}
+
+mkdir -p ENV/$APP.AppDir/
+cd ENV/$APP.AppDir/
+&lt;/pre&gt;
+
+&lt;p&gt;使用 Python 的 virtualenv 套件建立獨立 Python 環境，需指定 Python 3。&lt;/p&gt;
+&lt;p&gt;加入 &lt;code&gt;--no-site-packages&lt;/code&gt; 參數會建立一個乾淨的模組環境，除了 pip 和一些內建程式庫，所有模組或套件都要重裝，以避免包入不需要的內容。&lt;/p&gt;
+&lt;p&gt;使用 source activate 會套用類似 Windows 的環境變數，此時呼叫的 python 和 pip 即為指定的 Python 3，不用擔心 Python 2 混入。&lt;/p&gt;
+&lt;p&gt;下達 deactivate 命令會還原設定，便可繼續使用系統的 python 工具。&lt;/p&gt;
+&lt;p&gt;單純環境中，可以使用 PyQt 現成的 pip 包裝，這樣能大幅加快速度。&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+########################################################################
+# Create a virtualenv inside the AppDir
+########################################################################
+
+mkdir -p usr
+virtualenv --no-site-packages --python=python3 usr
+
+source usr/bin/activate
+
+# Source some helper functions
+wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
+. ./functions.sh
+
+mkdir -p usr/bin/
+
+#Show python and pip versions
+python --version
+pip --version
+
+# Install python dependencies into the virtualenv
+pip install pyqt5 qscintilla pyqtchart
+pip install -r ../../requirements.txt
+
+deactivate
+&lt;/pre&gt;
+
+&lt;p&gt;接下來要利用 cp 指令「安裝（複製）」自己的程式進 AppDir 環境中，由於原本擁擠的 /usr/bin 只有 Python 工具，因此可以安心地將自己的原始碼展開在 /usr/bin 中。&lt;/p&gt;
+&lt;p&gt;原來在 /usr/bin 中的程式只需提及名稱便可隨傳隨到，因此我們將它偽裝成一枚程式，使用 chmod a+x 將全體權限設定為可執行化。&lt;/p&gt;
+&lt;p&gt;當腳本被設為可執行化時，必須要有預設開啟的程式，於是要在腳本第一行加上 &lt;code&gt;#!/usr/bin/env python&lt;/code&gt; 或 &lt;code&gt;#!/usr/bin/python&lt;/code&gt;，這邊使用 sed -i "1i\" 命令達成。&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+########################################################################
+# "Install" app in the AppDir
+########################################################################
+
+cp ../../launch_pyslvs.py usr/bin/$LOWERAPP
+sed -i "1i\#!/usr/bin/env python" usr/bin/$LOWERAPP
+chmod a+x usr/bin/$LOWERAPP
+
+cp ../../icons_rc.py usr/bin
+cp ../../preview_rc.py usr/bin
+cp -r ../../core usr/bin
+&lt;/pre&gt;
+
+&lt;p&gt;再來是打包 AppDir，根目錄下必須建立一個類似 Windows 捷徑的 desktop 檔案，在 Bash 中建立文字文件可以使用 cat 加上 EOF 標記達成。&lt;/p&gt;
+&lt;p&gt;這邊會開始用到 functions.sh 的函式包裝。&lt;/p&gt;
+&lt;p&gt;如果有填寫 Icon 那欄，可以將 png 檔命名放在旁邊，當成 AppImage 的圖示。&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+########################################################################
+# Finalize the AppDir
+########################################################################
+
+get_apprun
+
+cd ../..
+VERSION=$(python3 -c "from core.info.info import VERSION; print(\"{}.{}.{}\".format(*VERSION))")
+cd ENV/$APP.AppDir/
+
+cat &gt; $LOWERAPP.desktop &amp;lt;&amp;lt;EOF
+[Desktop Entry]
+Version=$VERSION
+Name=$APP
+Exec=$LOWERAPP
+Type=Application
+Icon=$LOWERAPP
+Comment=Open Source Planar Linkage Mechanism Simulation and Dimensional Synthesis System.
+EOF
+
+# Make the AppImage ask to "install" itself into the menu
+get_desktopintegration $LOWERAPP
+cp ../../icons/main_big.png $LOWERAPP.png
+&lt;/pre&gt;
+
+&lt;p&gt;最後是 functions.sh 的函式收尾，會在最外頭建立一個 out 資料夾，裡面放的就是執行檔。&lt;/p&gt;
+&lt;pre class="brush: bash"&gt;
+########################################################################
+# Bundle dependencies
+########################################################################
+
+copy_deps ; copy_deps ; copy_deps
+delete_blacklisted
+move_lib
+
+########################################################################
+# Package the AppDir as an AppImage
+########################################################################
+
+cd ..
+generate_appimage
+&lt;/pre&gt;
+
+&lt;p&gt;測試時有稍微出點小錯，不過後來有發現並修正。&lt;/p&gt;
+&lt;p&gt;如此流程在 Travis-ci 的虛擬機中編譯會更快速，而且有搬移到其他 Ubuntu 中測試成功。&lt;/p&gt;
+&lt;p&gt;成功後，probonopd 就把 Pyslvs 加到 AppImage 的範例了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/AppImage/appimage.github.io/blob/master/data/Pyslvs"&gt;appimage.github.io/data/Pyslvs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;OwO&lt;/p&gt;
+&lt;h1&gt;轉出 PMKS&lt;/h1&gt;
+&lt;p&gt;稍微看了一下 PMKS 在網址列的輸入方式後，便將 Qt 表格的資料編成 PMKS 的網址格式。&lt;/p&gt;
+&lt;p&gt;輸入表格資料是使用 mech 參數，用 pipe 符號 &lt;code&gt;|&lt;/code&gt; 串聯所有點，後面的 t 和 f 是打勾顯示 P V A 的狀況，Pyslvs 是顯示 P 即可。&lt;/p&gt;
+&lt;p&gt;透過按下按鈕，可以將當前專案載入到網頁中：&lt;/p&gt;
+&lt;iframe width="854" height="480" src="https://www.youtube.com/embed/PrwQywzbrJ4" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;另外 PMKS 其實還有在畫布上繪製圖形的功能，像以下範例：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://designengrlab.github.io/PMKS/pmks.html?ts=m-50 0 C -50 125 50 -125 50 0 S -50 -125 -50 0&amp;amp;mech=ground,input,R,0.000,0.000,tfft|input,R,25.000,0.000,tfff|"&gt;figure eight (move back to {-50,0} and draw to connected B-splines)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;使用的是 ts 參數，不過表示法採用 &lt;a href="https://msdn.microsoft.com/en-us/library/ms752293(v=vs.100).aspx"&gt;Path Markup Syntax&lt;/a&gt; 的方法，可能還需研究一下。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_16.png"&gt;&lt;/p&gt;
+&lt;p&gt;這個功能對應 Pyslvs 的 Path Solving 路徑顯示，之後有空再加上去。&lt;/p&gt;
+&lt;p&gt;不過今天有發現 PMKS 有 Export Kinematic Data 的功能，會轉出 tab 分隔值的 txt 文件，似乎可以拿來利用的樣子？&lt;/p&gt;
+&lt;h1&gt;更新 Drive shaft 計畫&lt;/h1&gt;
+&lt;p&gt;接下來 Pyslvs 要開始忙動態呈現的部分，這部分就參照 Linkage 的「播放」功能和之前 Drive shaft 的轉盤。&lt;/p&gt;
+&lt;p&gt;不過還要考慮路徑格式，讓算過的路徑結果能抓到起始點和終點，並重新調整角度和點座標之間的關係。&lt;/p&gt;
+&lt;p&gt;上述兩者會花一段時間規劃資料結構，避免之前程式紊亂的情況發生。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>Python-Solvespace 開發進度 - 09/12</title><link href="http://project.mde.tw/blog/python-solvespace-kai-fa-jin-du-0912.html" rel="alternate"></link><published>2017-09-12T21:00:00+08:00</published><updated>2017-09-12T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-09-12:/blog/python-solvespace-kai-fa-jin-du-0912.html</id><summary type="html">&lt;p&gt;Python-Solvespace 更新&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;切換群組功能&lt;/p&gt;
