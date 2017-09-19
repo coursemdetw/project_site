@@ -241,12 +241,12 @@ li {
 </ul>
 <p>接著將所有 sources 編譯成 obj 檔，由於是較新版規則，在 g++ 中加入 <code>-std=c++11</code> 的參數供辨認。</p>
 <p>最後包裝 obj 時加上 <code>-shared</code> 編成共享函式庫。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_08_04_01.png"></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_08_04_01.png" /></p>
 <p>以上流程都為 C++ 編譯操作，往後可能會換成加入 SWIG 端口或 Cython 包裝。</p>
 <h1>長時演算模式</h1>
 <p>新增直到手動停止的模式，將代數改為 0 即可，這時 report 會變成每 10 代紀錄一次。</p>
 <p>此模式下會一直演化，直到手動中斷為止。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_08_04_02.png"></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_08_04_02.png" /></p>
 <p>這個模式只是用來測試用，若是在服務端，可以改成演化直到適應值小於某要求後停止，且加上評估演化效率後自動中止的機制。</p>
             </div>
             <!-- /.entry-content -->
@@ -293,6 +293,11 @@ li {
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/an-zhuang-zuo-ye-huan-jing.html">
+                            安裝作業環境
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0916.html">
                             Pyslvs 開發進度 - 09/16
                         </a>
@@ -310,11 +315,6 @@ li {
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0902.html">
                             Pyslvs 開發進度 - 09/02
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pep-484-type-hints.html">
-                            PEP 484 Type Hints
                         </a>
                     </li>
                 </ul>

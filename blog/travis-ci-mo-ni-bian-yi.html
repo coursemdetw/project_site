@@ -211,7 +211,7 @@ li {
 <p>使用 Travis CI 服務在遠端虛擬機編譯測試</p>
 </li>
 <li>
-<p>Pyslvs Build Status: <a href="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5"><img alt="Build Status" src="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5.svg"></a></p>
+<p>Pyslvs Build Status: <a href="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5"><img alt="Build Status" src="https://travis-ci.org/KmolYuan/Pyslvs-PyQt5.svg" /></a></p>
 </li>
 </ul>
 
@@ -297,7 +297,7 @@ cache:
 <p>由於上面的檔案中<strong>條列</strong>了 Python，因此會建立 2 台虛擬機，分別上 Python 3.4 與 3.5（目前可以支援到最新的 3.7 測試版）。</p>
 <p>若是想針對各種混搭的環境測試，可以使用 <code>matrix</code> 選項，建立更多不同種環境的虛擬機，更詳細的設定則可以參考<a href="https://docs.travis-ci.com/">說明頁面</a>。</p>
 <p>目前在這個服務中已經成功編譯 Solvespace 端口和 Pyslvs。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_07_06.png"></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_07_06.png" /></p>
 <p>虛擬機在 <code>script</code> 的指令都回傳 0 或是錯誤時會自動關機，留下 log 供參考。</p>
 <p>Travis CI 會在<strong>每次更新倉儲</strong>時編譯，類似 gh-pages，不過因為要幫所有虛擬機開機，所以會過一段時間才會有結果。</p>
 <p>編譯後可以透過 commit 後的綠點圖示查看結果，或是使用 Shields.io 製作 Readme 的動態標籤。</p>
@@ -349,6 +349,11 @@ cache:
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/an-zhuang-zuo-ye-huan-jing.html">
+                            安裝作業環境
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0916.html">
                             Pyslvs 開發進度 - 09/16
                         </a>
@@ -366,11 +371,6 @@ cache:
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0902.html">
                             Pyslvs 開發進度 - 09/02
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pep-484-type-hints.html">
-                            PEP 484 Type Hints
                         </a>
                     </li>
                 </ul>
