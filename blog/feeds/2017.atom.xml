@@ -14,7 +14,54 @@
 &lt;p&gt;依照網誌內容操作後成功安裝 Eric . &lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://github.com/40423112/project_site_files/blob/gh-pages/files/4042/40423112/eric6.png?raw=true" /&gt;&lt;/p&gt;
 &lt;h3&gt;心得&lt;/h3&gt;
-&lt;p&gt;在暑假期間先去當兵 , 其他組員則已經開始著手於專題研究 , 接下來要加緊腳步努力跟上並配合老師以及學長的指導 .&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>在網誌內附加圖片&amp;日本小發現</title><link href="http://project.mde.tw/blog/zai-wang-zhi-nei-fu-jia-tu-pian-ri-ben-xiao-fa-xian.html" rel="alternate"></link><published>2017-09-08T21:00:00+08:00</published><updated>2017-09-08T21:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-09-08:blog/zai-wang-zhi-nei-fu-jia-tu-pian-ri-ben-xiao-fa-xian.html</id><summary type="html">&lt;p&gt;組員像我詢問如何附加圖檔在網誌內&lt;/p&gt;
+&lt;p&gt;在暑假期間先去當兵 , 其他組員則已經開始著手於專題研究 , 接下來要加緊腳步努力跟上並配合老師以及學長的指導 .&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>仿生獸組裝日誌(2)</title><link href="http://project.mde.tw/blog/fang-sheng-shou-zu-zhuang-ri-zhi-2.html" rel="alternate"></link><published>2017-09-19T16:00:00+08:00</published><updated>2017-09-19T16:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2017-09-19:blog/fang-sheng-shou-zu-zhuang-ri-zhi-2.html</id><summary type="html">&lt;p&gt;介紹仿生獸組裝所需的小零件以及一些更新&lt;/p&gt;
+
+
+&lt;p&gt;M4螺絲、螺母內徑4mm水管，以及內徑分別為5、7mm墊片&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li7.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;水管跟螺絲螺母組合成表面光滑的軸棒&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li10.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li11.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;步進馬達與傳動輪子&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li1.jpg?raw=true" /&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li2.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;h3&gt;更新:&lt;/h3&gt;
+&lt;p&gt;昨天3D列印的第一組軸連接件出來了&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li9.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;組裝後與原軸連接件比較&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li4.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;雖然正面並無明顯差別，但新零件側面因為接起來後具備聯軸器的功用，比起原零件用摩擦力在傳動好多了
+而支撐座兩端加厚使連接軸時有更多接觸面來保持垂直度&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li5.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li3.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;下午繼續列印第2組軸連接件&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>仿生獸組裝日誌(1)</title><link href="http://project.mde.tw/blog/fang-sheng-shou-zu-zhuang-ri-zhi-1.html" rel="alternate"></link><published>2017-09-18T16:00:00+08:00</published><updated>2017-09-18T16:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2017-09-18:blog/fang-sheng-shou-zu-zhuang-ri-zhi-1.html</id><summary type="html">&lt;p&gt;目前仿生獸的進度以及設計新的軸連接器來替代傳動立不足的零件&lt;/p&gt;
+
+
+&lt;p&gt;目前八連桿仿生獸進度
+試著組第一層腳並接上android控制步進馬達
+&lt;iframe src="https://player.vimeo.com/video/234287752" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/234287752"&gt;虎尾科技大學 機械設計系 40423116 李冠辰-八連趕運轉測試1&lt;/a&gt; from &lt;a href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;/p&gt;
+&lt;p&gt;3D列印八連桿腳
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/5.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;步進馬達需要圓輪來聯動其他八連桿運動，並且要連接另外兩個圓輪來傳動第二層八連桿，中間夾一個支撐座來固定軸位置&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/3.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/10.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;但兩個圓輪之間僅用螺絲鎖緊，只靠摩擦力在傳動&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/6.jpg?raw=true" /&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/8.jpg?raw=true" /&gt;
+只靠摩擦力是不足以傳動其他八連桿，而且會造成角度偏移(兩孔位置之間必須夾60度)所以重新設計新的零件來改善問題&lt;/p&gt;
+&lt;h2&gt;軸連接器&lt;/h2&gt;
+
+&lt;p&gt;兩個圓輪之間長出類似冠齒輪的形狀，一面凹一面凸
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/1.png?raw=true" /&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/2.png?raw=true" /&gt;
+兩個圓輪接起來可以正確傳動孔位置(60度)，不會因為摩擦力而造成角度篇小或偏大&lt;/p&gt;
+&lt;h2&gt;onshape組裝&lt;/h2&gt;
+&lt;p&gt;&lt;iframe src="https://player.vimeo.com/video/234287323" width="640" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/234287323"&gt;虎尾科技大學 機械設計系 40423116 李冠辰 - 仿生獸之軸連結器&lt;/a&gt; from &lt;a href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;/p&gt;
+&lt;p&gt;目前已先3D列印第一組軸連接器&lt;/p&gt;
+&lt;p&gt;其他事情:
+3D線材不夠必須要換3D材料時，必須先將噴頭預熱(設定是190度)，預熱之後舊線材推入並拉出，目的是確實的把舊線材熔斷拉出，並推入新的線材，利用預熱噴頭出來的熔料來確認新線材是否裝好。&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>在網誌內附加圖片&amp;日本小發現</title><link href="http://project.mde.tw/blog/zai-wang-zhi-nei-fu-jia-tu-pian-ri-ben-xiao-fa-xian.html" rel="alternate"></link><published>2017-09-08T21:00:00+08:00</published><updated>2017-09-08T21:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-09-08:blog/zai-wang-zhi-nei-fu-jia-tu-pian-ri-ben-xiao-fa-xian.html</id><summary type="html">&lt;p&gt;組員像我詢問如何附加圖檔在網誌內&lt;/p&gt;
 
 
 &lt;h3&gt;圖片附加&lt;/h3&gt;
@@ -92,34 +139,34 @@
 
 &lt;h1&gt;STEP1.手機APP介面設計&lt;/h1&gt;
 &lt;p&gt;這裡我們選擇無樣式的空白介面
-![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 4.png?raw=true)&lt;/p&gt;
+&lt;a href="http://imgur.com/6hdipZq"&gt;&lt;img src="http://i.imgur.com/6hdipZq.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;手機介面的資料夾位在BMI(自己取名) →app→ res → layout裡面的activity_main.xml(根據當初取名會有所不同)                                           &lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 1.png?raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://imgur.com/jfSdYxD"&gt;&lt;img src="http://i.imgur.com/jfSdYxD.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;從Palette視窗裡拉出需要用的元件或者也可以切換到Text手打元件&lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 2.png?raw=true)&lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 3.png?raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://imgur.com/PaEs9ot"&gt;&lt;img src="http://i.imgur.com/PaEs9ot.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://imgur.com/ZVxhxPc"&gt;&lt;img src="http://i.imgur.com/ZVxhxPc.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;=========================================&lt;/p&gt;
 &lt;p&gt;1.首先拉出LinearLayout(vertical) , 在拉五個LinearLayout(horizontal)到LinearLayout(vertical)的底下&lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 11.png?raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://imgur.com/6OzLbRE"&gt;&lt;img src="http://i.imgur.com/6OzLbRE.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;2.切換至Text改變五個LinearLayout(horizontal)的屬性,將寬跟高的屬性改為"wrap_content"&lt;/p&gt;
 &lt;p&gt;"fill_parent"    代表填滿父控制項，在這裡通常是指撐滿螢幕(寬度或是高度)&lt;/p&gt;
 &lt;p&gt;"wrap_content" 就是指依照你內容有多少就給你多少(寬度或是高度)&lt;/p&gt;
 &lt;h1&gt;LinearLayout語法&lt;/h1&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 10.png?raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://imgur.com/cTXCAV8"&gt;&lt;img src="http://i.imgur.com/cTXCAV8.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;3.在將TextView拉至1,2,4,5的LinearLayout(horizontal),由上至下輸入"身高","體重","結果","診斷"&lt;/p&gt;
 &lt;h1&gt;TextView語法&lt;/h1&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 13.png?raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://imgur.com/ebACp5p"&gt;&lt;img src="http://i.imgur.com/ebACp5p.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;android:id屬性&lt;/h1&gt;
 &lt;p&gt;介面元件的android:id屬性是為了讓程式碼可以在使用介面中找到指定的元件的索引 , 因此每個元件的id不重複&lt;/p&gt;
 &lt;p&gt;====================================&lt;/p&gt;
 &lt;p&gt;4.接著拉兩個EditText(Number)到1 , 2個LinearLayout(horizontal)裡面供使用者輸入身高 , 體重&lt;/p&gt;
 &lt;h1&gt;EditText語法&lt;/h1&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 15.png?raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://imgur.com/cLVOTLZ"&gt;&lt;img src="http://i.imgur.com/cLVOTLZ.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;5.將Button(按鈕)元件拉入第3個LinearLayout(horizontal),將Text改為"送出"&lt;/p&gt;
 &lt;h1&gt;Button語法&lt;/h1&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 18.png?raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://imgur.com/2HNYrnH"&gt;&lt;img src="http://i.imgur.com/2HNYrnH.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;這樣就完成了介面的設計&lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 20.png?raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://imgur.com/PdvXqk9"&gt;&lt;img src="http://i.imgur.com/PdvXqk9.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;完整程式碼&lt;/h1&gt;
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -223,13 +270,13 @@
 &lt;p&gt;&lt;/android.support.constraint.ConstraintLayout&gt;&lt;/p&gt;
 &lt;h1&gt;STEP2.撰寫BMI功能&lt;/h1&gt;
 &lt;p&gt;JAVA檔的位置
-![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 21.png.png?raw=true)&lt;/p&gt;
+&lt;a href="http://imgur.com/Htz37HZ"&gt;&lt;img src="http://i.imgur.com/Htz37HZ.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;撰寫方式&lt;/p&gt;
 &lt;p&gt;導入函數的部分若是跟元件有相關的話 , 可以不用事先打 , 下面程式碼打完後 , 有用的函數Android Studio會自己導入 &lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 6.png?raw=true)&lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 23.png?raw=true)&lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 26.png?raw=true)&lt;/p&gt;
-&lt;p&gt;![](https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/Image 28.png?raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://imgur.com/YdQTnLf"&gt;&lt;img src="http://i.imgur.com/YdQTnLf.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://imgur.com/rzNAfW1"&gt;&lt;img src="http://i.imgur.com/rzNAfW1.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://imgur.com/1C38pjO"&gt;&lt;img src="http://i.imgur.com/1C38pjO.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://imgur.com/9SQ7nFY"&gt;&lt;img src="http://i.imgur.com/9SQ7nFY.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;完整程式碼&lt;/h1&gt;
 &lt;p&gt;&amp;lt;package com.example.user.bmi;&lt;/p&gt;
 &lt;p&gt;import android.icu.text.NumberFormat;
