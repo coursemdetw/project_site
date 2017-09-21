@@ -191,7 +191,7 @@ li {
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-09-02T21:00:00+08:00"> Sat 02 September 2017</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-09-02T21:00:00+08:00"> 週六 02 九月 2017</time>
     </span>
             <span class="label label-default">By</span>
             <a href="http://project.mde.tw/blog/author/40323230.html"><i class="fa fa-user"></i> 40323230</a>
@@ -220,18 +220,18 @@ li {
 <h2>使用者介面</h2>
 <p>大改版之前有換過圖示，Points 使用軸承圖示；Links 使用曲柄表示，之前從 Solvespace 借用的圖示改為較直覺的樣式。</p>
 <p>介面更動後比較清爽了，只剩兩個表格操作：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_02_01.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_02_01.png"></p>
 <p>Link 的部份跟過去的原點一樣，預設有一個 ground，無法修改或刪除。</p>
 <p>以前的切換 Fix / Unfix 功能調整成會將 ground 加入此點。</p>
 <p>這兩個表格其實是相輔相成的，改動其中一邊會造成包含的內容同時修正，因此在設計時可以先建立空點或空連桿，再接著連起來即可。</p>
 <p>快速建法跟以前一樣使用拖拉模式，不過這部份要自動填入名稱，還未設計好。</p>
 <p>為此有別重寫 Qt 的 Undo Redo command。由於只有兩個表格，因此這次設計較為周全。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_02_02.png" /></p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_02_03.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_02_02.png"></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_02_03.png"></p>
 <p>下方的包含清單是使用拖拉的方式加入和移除，Link 的名稱一樣是自訂，是通過 String 類型的 <code>isidentifier()</code>方法辨認。</p>
 <p>這次改換了新的表示式，因此趁機會將資料格式一舉調整，節省使用空間。</p>
 <p>另外還順便拉了版本控制的說明介面：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_02_04.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_02_04.png"></p>
 <h2>程式碼</h2>
 <p>這次表示式的部份採用 PEP 484 的風格撰寫，因此 <strong>Python 必須升級到 3.5 版</strong>或以上。</p>
 <p>重寫的部份，在邏輯方面加入了多行的程式註解，免得較細節的部份看不懂。</p>
@@ -284,6 +284,11 @@ li {
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/ji-dian-xiao-wan-ju-jin-du.html">
+                            機電小玩具進度
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/an-zhuang-zuo-ye-huan-jing.html">
                             安裝作業環境
                         </a>
@@ -301,11 +306,6 @@ li {
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/fang-sheng-shou-zu-zhuang-ri-zhi-1.html">
                             仿生獸組裝日誌(1)
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0916.html">
-                            Pyslvs 開發進度 - 09/16
                         </a>
                     </li>
                 </ul>
