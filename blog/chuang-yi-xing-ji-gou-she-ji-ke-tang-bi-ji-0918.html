@@ -228,7 +228,7 @@ li {
 <p>連桿組一般稱為運動鍊 (Kinematic chain)，當其中一個桿件作為機架（主座標系）時，此連桿組可謂拘束化 (Constrained)，稱為機構。</p>
 <h2>平面系統</h2>
 <p>平面系統中，物體的全自由度為 3，為 x、y 座標的增量與 z 軸的旋轉量，當配合接頭後，會將各桿件的自由度減少。</p>
-<div class="math">$$Dof=3(N_{L}-1)-2\times{J_{R}}-2\times{J_{P}}-1\times{J_{G}}-1\times{J_{RP}}$$</div>
+<p>$$Dof=3(N_{L}-1)-2\times{J_{R}}-2\times{J_{P}}-1\times{J_{G}}-1\times{J_{RP}}$$</p>
 <p>首先將各桿件的全自由度相加，接著將各種接頭失去的自由度減去。</p>
 <ul>
 <li>R 為旋轉對，失去平移的自由度，因此扣 2。</li>
@@ -238,17 +238,17 @@ li {
 </ul>
 <p>P 和 RP 的差異在於 P 多了一個滑塊，而滑塊屬於桿件，如圖所示：</p>
 <p>下圖的桿件數為 4，R 接頭為 3 個，P 接頭為 1 個。（<a href="http://designengrlab.github.io/PMKS/pmks.html?mech=ground,i,R,0.000,0.000,0.000,tfft|i,c,R,3.844,5.482,0.000,tfff|ground,s,P,14.234,9.449,45.000,tfff|c,s,R,14.234,9.449,45.000,tfff|">PMKS Server</a>）</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_18_01.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_18_01.png"></p>
 <p>下圖的桿件數為 3，R 接頭為 2 個，RP 接頭為 1 個。（<a href="http://designengrlab.github.io/PMKS/pmks.html?mech=ground,i,R,0.000,0.000,tfft|i,c,R,3.844,5.482,tfff|ground,c,RP,14.234,9.449,45.000,tfff|">PMKS Server</a>）</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_18_02.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_18_02.png"></p>
 <p>透過自由度可證，當自由度小於 1 時，會無法接收任何輸入。</p>
 <p>但是有些連桿雖然自由度低於 1，在某些情況下是可以使用的，例如平行搖桿：</p>
 <p>下圖的桿件數為 5，R 接頭為 6 個。（<a href="http://designengrlab.github.io/PMKS/pmks.html?mech=ground,i1,R,0.000,0.000,ffft|i1,c,R,0.000,10.000,tfff|ground,i2,R,10.000,0.000,tfff|i2,c,R,10.000,10.000,tfff|ground,i3,R,20.000,0.000,tfff|i3,c,R,20.000,10.000,tfff|">PMKS Server</a>）</p>
 <p><em>Solvespace 這裡有時求的到解，有時會紅屏。</em></p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_18_03.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_18_03.png"></p>
 <h2>空間系統</h2>
 <p>空間系統的全自由度為 6，為 x、y、z 軸的增量與旋轉。</p>
-<div class="math">$$Dof=6(N_{L}-1)-5\times{J_{R}}-5\times{J_{P}}-3\times{J_{S}}$$</div>
+<p>$$Dof=6(N_{L}-1)-5\times{J_{R}}-5\times{J_{P}}-3\times{J_{S}}$$</p>
 <p>原本的接頭繼承自平面機構，因此 R 和 P 接頭只釋出 1 個自由度，其他接頭也是同理。</p>
 <p>在空間系統中，還有更多樣的接頭：</p>
 <ul>
@@ -257,69 +257,12 @@ li {
 </ul>
 <p>當一桿件兩端皆為 S 接頭時，如 Delta 3D 列印機的連桿，會產生自轉，不過此自轉對整個系統是沒任何影響的，稱為贅餘 (Redundent) 自由度，計算時應當扣除。</p>
 <p>如下面的 6 對史都華連桿計算，桿件數為 14，P 接頭為 6 個，S 接頭為 12 個：</p>
-<div class="math">$$Dof=6(14-1)-5\times{0}-5\times{6}-3\times{12}=6+6(自轉)$$</div>
+<p>$$Dof=6(14-1)-5\times{0}-5\times{6}-3\times{12}=6+6(自轉)$$</p>
 <p>輸入為 6 個 P 接頭。</p>
 <h1>心得</h1>
 <p>排除特殊連桿，希望 Pyslvs 可以根據自由度的數量，讓使用者選擇從指定的接頭輸入，而 Path track 功能則變為 Solvespace 單純紀錄路徑的功能。</p>
 <p>存下來的路徑，可以套用至以前的 demo 功能，類似錄製性的可以重新播放。</p>
 <p>接頭輸入系統即為之前的 Drive shaft，可能需要重新設計，P 和 RP 接頭若也要接收輸入，則需規劃一下。</p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    var location_protocol = (false) ? 'https' : document.location.protocol;
-    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -365,6 +308,11 @@ li {
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0922.html">
+                            Pyslvs 開發進度 - 09/22
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/fang-sheng-shou-zu-zhuang-ri-zhi-3.html">
                             仿生獸組裝日誌(3)
                         </a>
@@ -382,11 +330,6 @@ li {
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/fang-sheng-shou-zu-zhuang-ri-zhi-2.html">
                             仿生獸組裝日誌(2)
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/chuang-yi-xing-ji-gou-she-ji-ke-tang-bi-ji-0918.html">
-                            創意性機構設計課堂筆記 - 09/18
                         </a>
                     </li>
                 </ul>
