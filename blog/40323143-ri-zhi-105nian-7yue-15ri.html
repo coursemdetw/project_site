@@ -191,7 +191,7 @@ li {
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-07-15T12:00:00+08:00"> Fri 15 July 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-07-15T12:00:00+08:00"> 五 15 七月 2016</time>
     </span>
             <span class="label label-default">By</span>
             <a href="http://project.mde.tw/blog/author/40323143.html"><i class="fa fa-user"></i> 40323143</a>
@@ -218,7 +218,44 @@ li {
 <p>備註:</p>
 <p>1.伺服馬達是在虎尾的無名電子買的。</p>
 <p>別人寫的馬達控制程式</p>
-<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;Servo.h&gt;</span><span class="cp"></span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;Servo.h&gt;</span><span class="cp"></span>
 
 <span class="n">Servo</span> <span class="n">servoLeft</span><span class="p">;</span>          <span class="c1">// 宣告左邊伺服馬達</span>
 <span class="n">Servo</span> <span class="n">servoRight</span><span class="p">;</span>         <span class="c1">// 宣告右邊伺服馬達</span>
@@ -257,12 +294,53 @@ li {
   <span class="n">servoRight</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">150</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-
+</td></tr></table>
 
 <p>來源:</p>
 <p><a href="http://www.robofun.net/forum/redirect.php?goto=findpost&ptid=7154&pid=29129"></p>
 <p>修改後的程式:</p>
-<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;Servo.h&gt;</span><span class="cp"></span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;Servo.h&gt;</span><span class="cp"></span>
 
 <span class="n">Servo</span> <span class="n">servo1</span><span class="p">;</span>          
 <span class="n">Servo</span> <span class="n">servo2</span><span class="p">;</span>         
@@ -305,7 +383,7 @@ li {
   <span class="n">servo3</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-
+</td></tr></table>
 
 <p>結語:</p>
 <p>發現自己的思考有很多問題，有點混亂、挫折，想整理整理，看看書。</p>
@@ -354,6 +432,11 @@ li {
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/python-slots-attribute.html">
+                            Python Slots Attribute
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0922.html">
                             Pyslvs 開發進度 - 09/22
                         </a>
@@ -371,11 +454,6 @@ li {
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/ji-dian-xiao-wan-ju-jin-du.html">
                             機電小玩具進度
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/an-zhuang-zuo-ye-huan-jing.html">
-                            安裝作業環境
                         </a>
                     </li>
                 </ul>

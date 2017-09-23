@@ -191,7 +191,7 @@ li {
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-09-22T21:00:00+08:00"> Fri 22 September 2017</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-09-22T21:00:00+08:00"> 五 22 九月 2017</time>
     </span>
             <span class="label label-default">By</span>
             <a href="http://project.mde.tw/blog/author/40323230.html"><i class="fa fa-user"></i> 40323230</a>
@@ -217,12 +217,12 @@ li {
 <p>先用 RP 接頭做測試，並模仿 PMKS 的拓樸法輸入。</p>
 <h2>語法</h2>
 <p>這次使用連桿數 3 的機構模擬：（<a href="http://designengrlab.github.io/PMKS/pmks.html?mech=ground,i,R,0.000,0.000,0.000,ffft|c,i,RP,20.184,9.229,0.000,tfff|c,ground,R,32.896,0.000,0.000,tfff|">PMKS Server</a>）</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_22_01.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_22_01.png"></p>
 <p>當 Type of Joint 屬性為 RP 時，會根據 Links 屬性進行判別，<strong>第一個</strong> Link 會當作滑槽所在的連桿，因此上圖的 c, i 表示滑槽在 c 連桿上，i 或之後的連桿則會通過銷連接在滑槽上。</p>
 <p>若相反，則會如下圖：（<a href="http://designengrlab.github.io/PMKS/pmks.html?mech=ground,i,R,0.000,0.000,0.000,ffft|i,c,RP,20.184,9.229,0.000,tfff|c,ground,R,32.896,0.000,0.000,tfff|">PMKS Server</a>）</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_22_02.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_22_02.png"></p>
 <p>第一張圖的接頭在 Solvespace 中模擬如下：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_22_03.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_22_03.png"></p>
 <p>接頭處，以一固定角度的直線取代滑槽的位置，角度為絕對角度和接頭位置計算得出 (15.71 度)。</p>
 <p>圖面上必須呈現滑動點和滑槽的位置，因此 Pyslvs 必須記錄不同桿件上的 Current position 數據。</p>
 <p>預計這幾天可以完成靜態的輸入。</p>
@@ -271,6 +271,11 @@ li {
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/python-slots-attribute.html">
+                            Python Slots Attribute
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0922.html">
                             Pyslvs 開發進度 - 09/22
                         </a>
@@ -288,11 +293,6 @@ li {
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/ji-dian-xiao-wan-ju-jin-du.html">
                             機電小玩具進度
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/an-zhuang-zuo-ye-huan-jing.html">
-                            安裝作業環境
                         </a>
                     </li>
                 </ul>
