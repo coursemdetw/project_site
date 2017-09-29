@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>android studio app之Wi-Fi開啟、偵測 - 機械設計專題 (虎尾科大MDE)</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!-- for LaTeX equations -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
+
+<link rel="canonical" href="http://project.mde.tw/blog/android-studio-appzhi-wi-fikai-qi-zhen-ce.html">
+
+        <meta name="author" content="40423118" />
+        <meta name="keywords" content="HW" />
+        <meta name="description" content="施工中....." />
+
+        <meta property="og:site_name" content="機械設計專題 (虎尾科大MDE)" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="android studio app之Wi-Fi開啟、偵測"/>
+        <meta property="og:url" content="http://project.mde.tw/blog/android-studio-appzhi-wi-fikai-qi-zhen-ce.html"/>
+        <meta property="og:description" content="施工中....."/>
+        <meta property="article:published_time" content="2017-09-16" />
+            <meta property="article:section" content="2017" />
+            <meta property="article:tag" content="HW" />
+            <meta property="article:author" content="40423118" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://project.mde.tw/blog/theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="http://project.mde.tw/blog/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://project.mde.tw/blog/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link href="http://project.mde.tw/blog/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://project.mde.tw/blog/theme/css/style.css" type="text/css"/>
+
+        <link href="http://project.mde.tw/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="機械設計專題 (虎尾科大MDE) ATOM Feed"/>
+
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPlain.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushMakefile.min.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushMakefile.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushYaml.js"></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://chiamingyen.github.io/kmolab_data/files/syntaxhighlighter/css/shCore.css";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://chiamingyen.github.io/kmolab_data/files/syntaxhighlighter/css/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
+</head>
+<body>
+<style>
+p {
+  font-size: 12pt;
+}
+li {
+  font-size: 12pt;
+}
+</style>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://project.mde.tw/blog/" class="navbar-brand">
+機械設計專題 (虎尾科大MDE)            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/blog/pages/about/">About</a></li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/2016bg2.html">2016bg2</a>
+                        </li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/2016g1.html">2016g1</a>
+                        </li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/2016g3.html">2016g3</a>
+                        </li>
+                        <li class="active">
+                            <a href="http://project.mde.tw/blog/category/2017.html">2017</a>
+                        </li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/tutorial.html">Tutorial</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="http://project.mde.tw/blog/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="http://project.mde.tw/blog/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://project.mde.tw/blog/android-studio-appzhi-wi-fikai-qi-zhen-ce.html"
+                       rel="bookmark"
+                       title="Permalink to android studio app之Wi-Fi開啟、偵測">
+                        android studio app之Wi-Fi開啟、偵測
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-09-16T04:40:00+08:00"> Sat 16 September 2017</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="http://project.mde.tw/blog/author/40423118.html"><i class="fa fa-user"></i> 40423118</a>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://project.mde.tw/blog/tag/hw.html">HW</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h1>施工中.....</h1>
+
+
+<h1>Android權限設定</h1>
+<p>.
+.
+.
+.
+.</p>
+<p><a href="https://developer.android.com/guide/topics/manifest/uses-permission-element.html">關於uses-permission</a></p>
+<p><a href="http://joeshua.pixnet.net/blog/post/37037485-android-%E6%AC%8A%E9%99%90%E8%A8%AD%E5%AE%9A">各式各樣的uses-permission</a></p>
+<p>首先找到AndroidManifest.xml這個資料夾</p>
+<p><a href="https://imgur.com/pI7i9xG"><img src="https://i.imgur.com/pI7i9xG.png" title="source: imgur.com" /></a></p>
+<p>在AndroidManifest.xml加入Wi-Fi讀取權限與更改Wi-Fi權限</p>
+<p><a href="https://imgur.com/oJ7cheI"><img src="https://i.imgur.com/oJ7cheI.png" title="source: imgur.com" /></a></p>
+<h1>介面設計</h1>
+<p><a href="https://imgur.com/Nu10f7Q"><img src="https://i.imgur.com/Nu10f7Q.png" title="source: imgur.com" /></a></p>
+<h1>ScrollView語法</h1>
+<p><a href="https://imgur.com/ZqU1pJc"><img src="https://i.imgur.com/ZqU1pJc.png" title="source: imgur.com" /></a></p>
+<p>若是內容高度超過android:layout_height="?"的話 , 就會以滾動方式呈現</p>
+<p>增加一段android:scrollbars="none"的話就不會顯示滾動條</p>
+<h1>程式碼</h1>
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.wifi_2.MainActivity">
+
+<div class="highlight"><pre><span></span><span class="nt">&lt;Button</span>
+    <span class="na">android:id=</span><span class="s">&quot;@+id/but1&quot;</span>
+    <span class="na">android:layout_width=</span><span class="s">&quot;wrap_content&quot;</span>
+    <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+    <span class="na">android:text=</span><span class="s">&quot;Search Wi-Fi&quot;</span>
+    <span class="na">tools:ignore=</span><span class="s">&quot;MissingConstraints&quot;</span>
+    <span class="na">tools:layout_editor_absoluteX=</span><span class="s">&quot;135dp&quot;</span>
+    <span class="na">tools:layout_editor_absoluteY=</span><span class="s">&quot;447dp&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;LinearLayout</span>
+    <span class="na">android:layout_width=</span><span class="s">&quot;wrap_content&quot;</span>
+    <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+    <span class="na">tools:layout_editor_absoluteX=</span><span class="s">&quot;16dp&quot;</span>
+    <span class="na">tools:layout_editor_absoluteY=</span><span class="s">&quot;16dp&quot;</span><span class="nt">&gt;</span>
+
+
+
+
+    <span class="nt">&lt;ScrollView</span>
+        <span class="na">android:id=</span><span class="s">&quot;@+id/scrollView&quot;</span>
+        <span class="na">android:layout_width=</span><span class="s">&quot;wrap_content&quot;</span>
+        <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;TextView</span>
+            <span class="na">android:id=</span><span class="s">&quot;@+id/text&quot;</span>
+            <span class="na">android:layout_width=</span><span class="s">&quot;fill_parent&quot;</span>
+            <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+            <span class="na">android:layout_gravity=</span><span class="s">&quot;center&quot;</span>
+            <span class="na">android:text=</span><span class="s">&quot;WiFiDemo&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/ScrollView&gt;</span>
+
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</pre></div>
+
+
+<p></android.support.constraint.ConstraintLayout></p>
+<h1>JAVA程式</h1>
+<p><a href="https://imgur.com/tIsHRIs"><img src="https://i.imgur.com/tIsHRIs.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/OiuHaGQ"><img src="https://i.imgur.com/OiuHaGQ.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/w9wNqJT"><img src="https://i.imgur.com/w9wNqJT.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/7TdzyqG"><img src="https://i.imgur.com/7TdzyqG.png" title="source: imgur.com" /></a></p>
+<h1>this</h1>
+<p>我們回到上面的this
+<a href="https://imgur.com/9vB1YiT"><img src="https://i.imgur.com/9vB1YiT.png" title="source: imgur.com" /></a></p>
+<p>一開始寫出來因為java原本沒有這個函數</p>
+<p><a href="https://imgur.com/szOD8rf"><img src="https://i.imgur.com/szOD8rf.png" title="source: imgur.com" /></a></p>
+<p>所以我們必須對紅底按alt+Enter來撰寫功能
+<a href="https://imgur.com/TX7eBOY"><img src="https://i.imgur.com/TX7eBOY.png" title="source: imgur.com" /></a></p>
+<p>這邊this是&lt;普通的直接引用&gt;</p>
+<p><a href="http://www.cnblogs.com/hasse/p/5023392.html">更多this,super用法</a>
+.
+.
+.
+.</p>
+<h1>BroadcastReceiver</h1>
+<p>通常廣播是用來通知系統</p>
+<p><a href="https://imgur.com/YkT68eK"><img src="https://i.imgur.com/YkT68eK.png" title="source: imgur.com" /></a></p>
+<p>此範例中則是用來通知使用者沒開啟WIFI</p>
+<p>這邊將它設為receiver然後在下面撰寫它的功能</p>
+<p><a href="https://imgur.com/RMNMjXU"><img src="https://i.imgur.com/RMNMjXU.png" title="source: imgur.com" /></a></p>
+<p><a href="http://www.codedata.com.tw/mobile/android-tutorial-the-5th-class-1-broadcastreceiver-alarmmanager/">廣播接收元件</a></p>
+<h1>super</h1>
+<p><a href="https://imgur.com/e19s7Zu"><img src="https://i.imgur.com/e19s7Zu.png" title="source: imgur.com" /></a></p>
+<p><a href="http://charleslin74.pixnet.net/blog/post/434409800-%5Bjava%5D-super%E7%9A%84%E7%94%A8%E6%B3%95">關於super用法</a></p>
+<h1>程式碼</h1>
+<p>package com.example.user.wifi_2;</p>
+<p>import android.content.BroadcastReceiver;</p>
+<p>import android.content.Context;</p>
+<p>import android.content.IntentFilter;</p>
+<p>import android.net.wifi.WifiConfiguration;</p>
+<p>import android.net.wifi.WifiInfo;</p>
+<p>import android.net.wifi.WifiManager;</p>
+<p>import android.support.v7.app.AppCompatActivity;</p>
+<p>import android.os.Bundle;</p>
+<p>import android.util.Log;</p>
+<p>import android.view.View;</p>
+<p>import android.widget.Button;</p>
+<p>import android.widget.TextView;</p>
+<p>import android.widget.Toast;</p>
+<p>import java.util.List;</p>
+<p>import static com.example.user.wifi_2.R.id.info;</p>
+<p>public class MainActivity extends AppCompatActivity implements     View.OnClickListener {</p>
+<p>private static final String TAG="繃繃包";
+    WifiManager wifi;
+    BroadcastReceiver receiver;</p>
+<div class="highlight"><pre><span></span> TextView text;
+
+ Button  but;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    text=(TextView)findViewById(R.id.text);
+    but=(Button)findViewById(R.id.but1);
+    but.setOnClickListener(this);
+
+    wifi=(WifiManager)getSystemService(Context.WIFI_SERVICE);
+    WifiInfo info=wifi.getConnectionInfo();
+    text.append(&quot;\n\nwifi status ;&quot;+info.toString());
+
+
+
+
+    List&lt;WifiConfiguration&gt; configurations=wifi.getConfiguredNetworks();
+    for(WifiConfiguration configuration :configurations){
+        text.append(&quot;\n\n&quot; +configuration.toString());
+    }
+
+    if(receiver==null)
+        receiver=new WifiScaner(this);
+    registerReceiver(receiver,new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
+    Log.d(TAG, &quot;onCreate()&quot;);
+
+}
+
+@Override
+public void onStop() {
+    unregisterReceiver(receiver);
+    super.onStop();
+
+
+}
+@Override
+public void onClick(View view) {
+    Toast.makeText(getApplicationContext(),&quot;ALL WIFI seached~~&quot;,0).show();
+    if(view.getId()==R.id.but1){
+        Log.d(TAG, &quot;onCreat() wifi.startScan()&quot;);
+        wifi.startScan();
+    }
+
+}
+</pre></div>
+
+
+<p>}</p>
+<p>接著對WifiScaner按alt+Enter寫立一個新的java檔</p>
+<p><a href="https://imgur.com/VdNjtEd"><img src="https://i.imgur.com/VdNjtEd.png" title="source: imgur.com" /></a></p>
+<h1>程式碼</h1>
+<p>package com.example.user.wifi_2;</p>
+<p>import android.content.BroadcastReceiver;</p>
+<p>import android.content.Context;</p>
+<p>import android.content.Intent;</p>
+<p>import android.net.wifi.WifiManager;</p>
+<p>import android.nfc.Tag;</p>
+<p>import android.util.Log;</p>
+<p>import android.widget.Toast;</p>
+<p>import java.util.List;</p>
+<p>class WifiScaner extends BroadcastReceiver {</p>
+<div class="highlight"><pre><span></span>private  static final String TAG=&quot;WifiscanReceiver&quot;;
+MainActivity main;
+
+
+public WifiScaner(MainActivity mainActivity) {
+    super();
+    this.main=main;
+
+}
+
+
+@Override
+public void onReceive(Context context, Intent intent) {
+    List&lt;android.net.wifi.ScanResult&gt; results=main.wifi.getScanResults();
+    android.net.wifi.ScanResult bestsignal =null;
+    for(android.net.wifi.ScanResult result:results){
+        if(bestsignal==null|| WifiManager.compareSignalLevel(bestsignal.level, result.level)&lt;0)
+            bestsignal=result;
+    }
+
+    String message=String.format(&quot;%s networks found.%s is the strongest.&quot;,results.size(), results.size(),bestsignal.SSID);
+    Toast.makeText(main, message, 0).show();
+    Log.d(TAG, &quot;onReceive() message :&quot; +message);
+
+
+}
+</pre></div>
+
+
+<p>}</p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'projectmdetw'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'android-studio-appzhi-wi-fikai-qi-zhen-ce';
+                var disqus_url = 'http://project.mde.tw/blog/android-studio-appzhi-wi-fikai-qi-zhen-ce.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0926.html">
+                            Pyslvs 開發進度 - 09/26
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/tai-mei-jiao-liu.html">
+                            台美交流
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/python-slots-attribute.html">
+                            Python Slots Attribute
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0922.html">
+                            Pyslvs 開發進度 - 09/22
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/fang-sheng-shou-zu-zhuang-ri-zhi-4.html">
+                            仿生獸組裝日誌(4)
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="http://project.mde.tw/blog/categories.html"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/2016bg2.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 2016bg2
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/2016g1.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 2016g1
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/2016g3.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 2016g3
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/2017.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 2017
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/tutorial.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Tutorial
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="http://project.mde.tw/blog/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group list-inline tagcloud" id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/DandyDev/pelican-bootstrap3/" target="_blank">
+                pelican-bootstrap3
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/getpelican/pelican-plugins" target="_blank">
+                pelican-plugins
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/Tipue/Tipue-Search" target="_blank">
+                Tipue search
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2017 KMOL
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://project.mde.tw/blog/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://project.mde.tw/blog/theme/js/bootstrap.min.js"></script>
+
+<!-- for https://github.com/jsor/lity lightbox video popup -->
+
+<link href="http://project.mde.tw/blog/theme/css/lity.css" rel="stylesheet">
+
+<script src="http://project.mde.tw/blog/theme/js/lity.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://project.mde.tw/blog/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'projectmdetw'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>
