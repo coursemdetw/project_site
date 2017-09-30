@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-09-29T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 09/29</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0929.html" rel="alternate"></link><published>2017-09-29T21:00:00+08:00</published><updated>2017-09-29T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-09-29:/blog/pyslvs-kai-fa-jin-du-0929.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-09-30T21:00:00+08:00</updated><entry><title>Python-Solvespace 開發進度 - 09/30</title><link href="http://project.mde.tw/blog/python-solvespace-kai-fa-jin-du-0930.html" rel="alternate"></link><published>2017-09-30T21:00:00+08:00</published><updated>2017-09-30T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-09-30:/blog/python-solvespace-kai-fa-jin-du-0930.html</id><summary type="html">&lt;p&gt;Python-Solvespace 更新&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;問題與回應&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Python-Solvespace 更新&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;問題與回應&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;問題與回應&lt;/h1&gt;
+&lt;p&gt;之前向官方提出關於 pull request 和檔案格式的問題：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/solvespace/solvespace/issues/292"&gt;https://github.com/solvespace/solvespace/issues/292&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;whitequark 今天回應說 solver 分支的存在是因為版權問題，若要以開發模式加入 Python bindings，則建議從 master 加入。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_30_01.png"&gt;&lt;/p&gt;
+&lt;p&gt;我提出是否能將 Python-Solvespace 整合到 CMake 的編譯流程中。&lt;/p&gt;
+&lt;p&gt;另外，詢問了一下關於檔案格式的問題。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_30_02.png"&gt;&lt;/p&gt;
+&lt;p&gt;whitequark 的回應是必須簽署 CLA (Contributor License Agreement)，並會開始處理 CMake 流程和做測試。&lt;/p&gt;
+&lt;p&gt;檔案格式的問題是因為事實上 solver 只能為一個 group 解題，而一個檔案含有多個，因此無法靠 solver 的延伸介面 (slvs.h) 操作檔案讀寫，似乎也沒解決方法。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_30_03.png"&gt;&lt;/p&gt;
+&lt;p&gt;鍥而不捨地提出有關達成外部自動組立的可能性。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_30_04.png"&gt;&lt;/p&gt;
+&lt;p&gt;不過現在似乎因為內部介面無法檢查定量而會造成記憶體外洩的問題，可能就無法處理了。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_30_05.png"&gt;&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>Pyslvs 開發進度 - 09/29</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0929.html" rel="alternate"></link><published>2017-09-29T21:00:00+08:00</published><updated>2017-09-29T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-09-29:/blog/pyslvs-kai-fa-jin-du-0929.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;PMKS 輸入&lt;/li&gt;
 &lt;/ul&gt;
