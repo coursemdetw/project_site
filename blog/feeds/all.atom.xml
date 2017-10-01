@@ -1,5 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-09-30T21:00:00+08:00</updated><entry><title>Python-Solvespace 開發進度 - 09/30</title><link href="http://project.mde.tw/blog/python-solvespace-kai-fa-jin-du-0930.html" rel="alternate"></link><published>2017-09-30T21:00:00+08:00</published><updated>2017-09-30T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-09-30:/blog/python-solvespace-kai-fa-jin-du-0930.html</id><summary type="html">&lt;p&gt;Python-Solvespace 更新&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-01T21:00:00+08:00</updated><entry><title>創意性機構設計課堂筆記 - 09/30</title><link href="http://project.mde.tw/blog/chuang-yi-xing-ji-gou-she-ji-ke-tang-bi-ji-0930.html" rel="alternate"></link><published>2017-10-01T21:00:00+08:00</published><updated>2017-10-01T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-01:/blog/chuang-yi-xing-ji-gou-she-ji-ke-tang-bi-ji-0930.html</id><summary type="html">&lt;p&gt;每星期創意性機構設計課程筆記整理&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;設計程序&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;每星期創意性機構設計課程筆記整理&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;設計程序&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;設計程序&lt;/h1&gt;
+&lt;p&gt;參照顏教授&lt;strong&gt;創意性設計方法&lt;/strong&gt; (Creative design methodology) 的流程，希望可以透過程式化將此流程由電腦協助完成。&lt;/p&gt;
+&lt;p&gt;利用 PMKS 的表示法可以讓連桿拓樸判斷更順利。&lt;/p&gt;
+&lt;p&gt;過程中一律忽略尺寸，目的是獲得新的機構類型。&lt;/p&gt;
+&lt;h2&gt;一般化 (Gerneralization)&lt;/h2&gt;
+&lt;p&gt;首先分析一個現有的機械裝置。&lt;/p&gt;
+&lt;p&gt;將各桿件的連接關係以運動鍊 (Kinematic chain) 方式呈現，必須符合以下特性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自由度不變&lt;/li&gt;
+&lt;li&gt;桿件數不變&lt;/li&gt;
+&lt;li&gt;全為迴轉對&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;使用&lt;strong&gt;拓樸構造特性&lt;/strong&gt;描述此機構，包含桿件與接頭功用，紀錄功用可以在排列組合時維持其本來目的。&lt;/p&gt;
+&lt;h2&gt;數目合成 (Number synthesis)&lt;/h2&gt;
+&lt;p&gt;取得全部桿件數與全部接頭數，進行桿件類型反推：&lt;/p&gt;
+&lt;p&gt;$$N_{L}(桿件數)=\sum_{m=2}^{m_{max}}N_{L_{m}}$$&lt;/p&gt;
+&lt;p&gt;$$2N_{J}(接頭數)=\sum_{m=2}^{m_{max}}mN_{L_{m}}$$&lt;/p&gt;
+&lt;p&gt;其中，最大連桿數可以從這兩個條件求得（其餘為不合理）：&lt;/p&gt;
+&lt;p&gt;$$
+m_{max} = \begin{cases}
+N_{J}-N_{L}+2 &amp;amp; (N_{L}\leq N_{J}\leq 2N_{L}-3);\
+N_{L}-1 &amp;amp; (2N_{L}-3\leq N_{J}\leq \frac{N_{L}(N_{L}-1)}{2})
+\end{cases}
+$$&lt;/p&gt;
+&lt;p&gt;由最大接頭類型，列出每種連桿數和接頭的可能性，當桿件的接頭超過 2 和 3，會變成一種以上的組合。&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;p&gt;$$
+\begin{cases}
+x+y+z=8;\
+2x+3y+4z=20;\
+x\geq 0,\quad y\geq 0,\quad z\geq 0
+\end{cases}
+$$&lt;/p&gt;
+&lt;p&gt;寫了一個手算解題的小工具，不過用 Scipy 解題顯然更有效率一點。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+f1 = (1, 1, 1, 8) #x + y + z = 8
+f2 = (2, 3, 4, 20) #2x + 3y + 4z = 20
+
+q = f2[2]/f1[2] #消去 z.
+f3 = tuple(f2[i]-f1[i]*q for i in range(len(f1)))
+#(-2.0, -1.0, 0.0, -12.0)
+#-2x + -y = -12
+#x = -y/2 + 6
+
+y = (1., 0.)
+x = (y[0]/f3[0], f3[3]/f3[0])
+
+#1(-t/2+6) + 1(t) + z = 8
+#z = -1(-t/2+6) - 1(t) + 8
+z = (
+    (-x[0]*f1[0]-y[0]*f1[1])/f1[2],
+    (-x[1]*f1[0]-y[1]*f1[1]+f1[3])/f1[2]
+)
+
+for name, s in zip(['x', 'y', 'z'], [x, y, z]):
+    print("{} = {}t + {}".format(name, s[0], s[1]))
+
+print('-'*7)
+
+#使用係數 t
+fx = lambda t: x[0]*t+x[1]
+fy = lambda t: y[0]*t+y[1]
+fz = lambda t: z[0]*t+z[1]
+
+for t in range(10):
+    a = (fx(t), fy(t), fz(t))
+    for name, an in zip(['x', 'y', 'z'], a):
+        print("{} = {}".format(name, an))
+    for i, f in enumerate([f1, f2, f3]):
+        print(f[0]*a[0]+f[1]*a[1]+f[2]*a[2]==f[-1])
+    print('-'*7)
+&lt;/pre&gt;
+
+&lt;p&gt;接著進行不同接頭的排列組合，並排除同構 (isomorphic) 結果。&lt;/p&gt;
+&lt;p&gt;排列後畫出圖譜，可以得知是否有新的結構產生。&lt;/p&gt;
+&lt;p&gt;由於一般化後都為迴轉對，若出現 3 桿件的&lt;strong&gt;呆鍊&lt;/strong&gt;迴路，會導致此運動鍊的自由度減少，應以排除該結果。&lt;/p&gt;
+&lt;h2&gt;特殊化 (Specialization)&lt;/h2&gt;
+&lt;p&gt;這裡需注意&lt;strong&gt;設計需求&lt;/strong&gt; (design requirement) 與&lt;strong&gt;設計限制&lt;/strong&gt; (design constraint)，拿捏不當可能產生一些無用的解。&lt;/p&gt;
+&lt;p&gt;此處為逆向產生原有的機構。&lt;/p&gt;
+&lt;p&gt;首先把之前的&lt;strong&gt;拓樸構造特性&lt;/strong&gt;分析連桿的角色與要求，例如定義原本的固定桿、搖臂、減震器等。&lt;/p&gt;
+&lt;p&gt;最後對圖譜結果排列組合，即可產生新的連桿類型。&lt;/p&gt;
+&lt;p&gt;其中一組解應為原本現有的機構類型。&lt;/p&gt;</content><category term="創意性機構設計"></category></entry><entry><title>Python-Solvespace 開發進度 - 09/30</title><link href="http://project.mde.tw/blog/python-solvespace-kai-fa-jin-du-0930.html" rel="alternate"></link><published>2017-09-30T21:00:00+08:00</published><updated>2017-09-30T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-09-30:/blog/python-solvespace-kai-fa-jin-du-0930.html</id><summary type="html">&lt;p&gt;Python-Solvespace 更新&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;問題與回應&lt;/li&gt;
 &lt;/ul&gt;
