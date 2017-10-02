@@ -150,6 +150,9 @@ li {
                             <a href="http://project.mde.tw/blog/category/2017.html">2017</a>
                         </li>
                         <li >
+                            <a href="http://project.mde.tw/blog/category/hw.html">Hw</a>
+                        </li>
+                        <li >
                             <a href="http://project.mde.tw/blog/category/misc.html">Misc</a>
                         </li>
                         <li >
@@ -255,8 +258,8 @@ cdef double randV():
 <p>這裡使用迭代運算而非重新指定值，速度會比較快一點。</p>
 <p>需要修改的檔案為 <code>rga.pyx</code> 和 <code>de.pyx</code>，其他函式庫都沒問題。</p>
 <p>但是因為 Windows 平台多加了判斷式，還有其他因素，運算時間慢上 1 倍（中間的螢火蟲演算法完全相同）。以下是相同題目的運算結果：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0104_01.png"></p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0104_02.jpg"></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0104_01.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0104_02.jpg" /></p>
 <h2>編譯方法</h2>
 <p>由於加入了 Cython 的程式庫，原本的編譯方式又沒辦法使用了，會出現「pythoncom」匯入的錯誤。</p>
 <p>用兩種方式重新編譯後，發現在 PyInstaller 的資料夾（dist）中執行它的主程式，會顯示找不到 py35w 的核心。</p>
@@ -308,6 +311,11 @@ cdef double randV():
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/shi-yong-peeweechuang-jian-zi-liao-ku.html">
+                            使用peewee創建資料庫
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/chuang-yi-xing-ji-gou-she-ji-ke-tang-bi-ji-0930.html">
                             創意性機構設計課堂筆記 - 09/30
                         </a>
@@ -325,11 +333,6 @@ cdef double randV():
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0926.html">
                             Pyslvs 開發進度 - 09/26
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/tai-mei-jiao-liu.html">
-                            台美交流
                         </a>
                     </li>
                 </ul>
@@ -355,6 +358,11 @@ cdef double randV():
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/category/2017.html">
                             <i class="fa fa-folder-open fa-lg"></i> 2017
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/hw.html">
+                            <i class="fa fa-folder-open fa-lg"></i> HW
                         </a>
                     </li>
                     <li class="list-group-item">

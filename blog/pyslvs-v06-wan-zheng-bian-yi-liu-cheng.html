@@ -150,6 +150,9 @@ li {
                             <a href="http://project.mde.tw/blog/category/2017.html">2017</a>
                         </li>
                         <li >
+                            <a href="http://project.mde.tw/blog/category/hw.html">Hw</a>
+                        </li>
+                        <li >
                             <a href="http://project.mde.tw/blog/category/misc.html">Misc</a>
                         </li>
                         <li >
@@ -293,8 +296,8 @@ li {
 <p>例如：</p>
 <blockquote>
 <p>export QTDIR=/opt/Qt/5.8/gcc_64/</p>
-<p>export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${QTDIR}/lib/</p>
-<p>export PATH=${QTDIR}/bin:${PATH}</p>
+<p>export LD_LIBRARY_PATH=<span QTDIR="QTDIR" class="math">\({LD_LIBRARY_PATH}:\)</span>/lib/</p>
+<p>export PATH=<span PATH="PATH" class="math">\({QTDIR}/bin:\)</span></p>
 </blockquote>
 </li>
 <li>
@@ -453,6 +456,63 @@ if py_nm=='36w':
 <p>編譯成功後會跳出程式執行，結束即可。</p>
 <p>編好的執行檔位於 <code>dist/Pyslvs</code> 中，主程式為 <code>launch_pyslvs</code>(<code>exe</code>)。</p>
 <p>可以將程式用 Debian 包裝或壓縮發佈。</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -498,6 +558,11 @@ if py_nm=='36w':
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/shi-yong-peeweechuang-jian-zi-liao-ku.html">
+                            使用peewee創建資料庫
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/chuang-yi-xing-ji-gou-she-ji-ke-tang-bi-ji-0930.html">
                             創意性機構設計課堂筆記 - 09/30
                         </a>
@@ -515,11 +580,6 @@ if py_nm=='36w':
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0926.html">
                             Pyslvs 開發進度 - 09/26
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/tai-mei-jiao-liu.html">
-                            台美交流
                         </a>
                     </li>
                 </ul>
@@ -545,6 +605,11 @@ if py_nm=='36w':
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/category/2017.html">
                             <i class="fa fa-folder-open fa-lg"></i> 2017
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/hw.html">
+                            <i class="fa fa-folder-open fa-lg"></i> HW
                         </a>
                     </li>
                     <li class="list-group-item">

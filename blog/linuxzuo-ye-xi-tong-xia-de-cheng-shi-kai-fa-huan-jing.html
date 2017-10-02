@@ -150,6 +150,9 @@ li {
                             <a href="http://project.mde.tw/blog/category/2017.html">2017</a>
                         </li>
                         <li >
+                            <a href="http://project.mde.tw/blog/category/hw.html">Hw</a>
+                        </li>
+                        <li >
                             <a href="http://project.mde.tw/blog/category/misc.html">Misc</a>
                         </li>
                         <li >
@@ -245,8 +248,8 @@ sudo ./qt-xxx.run   /執行qt
 <p>利用 gedit ~/.bashrc, 編輯 .bashrc, 加入:</p>
 <pre class="brush: python">
 export QTDIR=/opt/Qt5.7.0/5.7/gcc_64/ 
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${QTDIR}/lib 
-export PATH=${QTDIR}/bin:${PATH}
+export LD_LIBRARY_PATH=<span QTDIR="QTDIR" class="math">\({LD_LIBRARY_PATH}:\)</span>/lib 
+export PATH=<span PATH="PATH" class="math">\({QTDIR}/bin:\)</span>
 </pre>
 <p>然後以 source ~/.bashrc 讓設定生效</p>
 <h3>安裝Sip</h3>
@@ -309,6 +312,63 @@ sudo python3 install.py
 <h3>安裝 Leo Editor</h3>
 <p>1.git clone Leo Editor 的原始碼,並將 leo 目錄複製到 /usr/local/lib/python3.5/dist-packages 目錄中即完成安裝,</p>
 <p>2.以 python3 launchLeo.py, 或者將 python3 launchLeo.py 放入可執行的 leo 檔案中來啟動Leo Editor</p></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -354,6 +414,11 @@ sudo python3 install.py
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/shi-yong-peeweechuang-jian-zi-liao-ku.html">
+                            使用peewee創建資料庫
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/chuang-yi-xing-ji-gou-she-ji-ke-tang-bi-ji-0930.html">
                             創意性機構設計課堂筆記 - 09/30
                         </a>
@@ -371,11 +436,6 @@ sudo python3 install.py
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0926.html">
                             Pyslvs 開發進度 - 09/26
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/tai-mei-jiao-liu.html">
-                            台美交流
                         </a>
                     </li>
                 </ul>
@@ -401,6 +461,11 @@ sudo python3 install.py
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/category/2017.html">
                             <i class="fa fa-folder-open fa-lg"></i> 2017
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/hw.html">
+                            <i class="fa fa-folder-open fa-lg"></i> HW
                         </a>
                     </li>
                     <li class="list-group-item">
