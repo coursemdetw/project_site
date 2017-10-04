@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-03T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 10/03</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1003.html" rel="alternate"></link><published>2017-10-03T21:00:00+08:00</published><updated>2017-10-03T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-03:/blog/pyslvs-kai-fa-jin-du-1003.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-04T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 10/04</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1004.html" rel="alternate"></link><published>2017-10-04T21:00:00+08:00</published><updated>2017-10-04T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-04:/blog/pyslvs-kai-fa-jin-du-1004.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;批次刪除 / 鎖定點功能&lt;/li&gt;
+&lt;li&gt;自由移動模式&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;批次刪除 / 鎖定點功能&lt;/li&gt;
+&lt;li&gt;自由移動模式&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;批次刪除 / 鎖定點功能&lt;/h1&gt;
+&lt;p&gt;選取多個點的時候可以一起删除了。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_04_01.png"&gt;&lt;/p&gt;
+&lt;p&gt;進行 Undo 時會依照選取的順序復原。&lt;/p&gt;
+&lt;p&gt;鎖定功能也雷同，多選時若是固定狀態不一致，將會優先將所有點與 ground 連接。&lt;/p&gt;
+&lt;p&gt;依賴於復原重做功能，所有的對話框都已移除。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;註：復原重做功能有加入復原上限的設定了，預設為 16 次。&lt;/em&gt;&lt;/p&gt;
+&lt;h1&gt;自由移動模式&lt;/h1&gt;
+&lt;p&gt;新的修改方式，可以更快對機構進行編輯。&lt;/p&gt;
+&lt;p&gt;按下右下角的鎖頭啟動自由移動模式 (Free move mode)，畫布會出現紫色外框。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_04_02.png"&gt;&lt;/p&gt;
+&lt;p&gt;接著可以&lt;strong&gt;直接&lt;/strong&gt;拖動畫布上的點進行修改，放開滑鼠即可完成編輯。&lt;/p&gt;
+&lt;p&gt;舊的批次移動功能已移除。&lt;/p&gt;
+&lt;p&gt;這個操作和 XY 軸畫布是參考自 PMKS 的。&lt;/p&gt;
+&lt;p&gt;^_^&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>Pyslvs 開發進度 - 10/03</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1003.html" rel="alternate"></link><published>2017-10-03T21:00:00+08:00</published><updated>2017-10-03T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-03:/blog/pyslvs-kai-fa-jin-du-1003.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Release ground / Constrain link 功能&lt;/li&gt;
 &lt;/ul&gt;
