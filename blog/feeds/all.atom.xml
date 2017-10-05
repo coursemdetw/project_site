@@ -143,6 +143,7 @@ print(abs(4+3j)) #5.0
 &lt;p&gt;字串可視為多個符號串連在一起的容器，可供檢索與比較。&lt;/p&gt;
 &lt;p&gt;但是事實上字串的「同一句話」是存於同個記憶體位址的，而且也只能「裝載」其他字串，這方面與數值無異。&lt;/p&gt;
 &lt;p&gt;使用兩個雙括弧 &lt;code&gt;"&lt;/code&gt; 和 &lt;code&gt;'&lt;/code&gt; 單括弧可以將符號包成字串，使用上沒有分別，不過建議包含空白的字串使用雙括弧。&lt;/p&gt;
+&lt;p&gt;使用 &lt;a href=""&gt;str()&lt;/a&gt; 類型函式可以將其他類型轉為字串。&lt;/p&gt;
 &lt;p&gt;字串有以下幾個常用操作，注意常用的操作都會回傳新的字串。&lt;/p&gt;
 &lt;h2&gt;大小寫轉換 &lt;code&gt;upper&lt;/code&gt; &lt;code&gt;lower&lt;/code&gt; &lt;code&gt;capitalize&lt;/code&gt;&lt;/h2&gt;
 &lt;ul&gt;
