@@ -1,5 +1,310 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-04T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 10/04</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1004.html" rel="alternate"></link><published>2017-10-04T21:00:00+08:00</published><updated>2017-10-04T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-04:/blog/pyslvs-kai-fa-jin-du-1004.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-05T21:00:00+08:00</updated><entry><title>Python 3 類型入門</title><link href="http://project.mde.tw/blog/python-3-lei-xing-ru-men.html" rel="alternate"></link><published>2017-10-05T21:00:00+08:00</published><updated>2017-10-05T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-05:/blog/python-3-lei-xing-ru-men.html</id><summary type="html">&lt;p&gt;快速上手 Python 3 常用類型&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Build-in Type 內建類型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Numeric 數值&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;String 字串&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Container 容器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Function 函式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Name 名稱&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;快速上手 Python 3 常用類型&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Build-in Type 內建類型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Numeric 數值&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;String 字串&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Container 容器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Function 函式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Name 名稱&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Build-in Type 內建類型&lt;/h1&gt;
+&lt;p&gt;本節講述如何在 Python 中呈現與處理您的資料格式。&lt;/p&gt;
+&lt;p&gt;最常應用的類型為數值 (Numeric)、字串 (String) 與容器 (Container)。&lt;/p&gt;
+&lt;p&gt;前兩者用於儲存您的資料；容器可以編排資料，以供檢索與比較。&lt;/p&gt;
+&lt;p&gt;數據處理上，使用名稱 (Name) 與運算子 (Operator) 可以達成單一數據的處理。&lt;/p&gt;
+&lt;p&gt;名稱可以在程式中代表數據的用途；運算子則是以簡單明瞭的形式做比較與運算。&lt;/p&gt;
+&lt;p&gt;內建類型可以透過如下方式將相近類型轉換，有類似函式的功能。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+float(500)
+tuple([0, 1, 2])
+&lt;/pre&gt;
+
+&lt;p&gt;另外，可以通過 &lt;a href="https://docs.python.org/3/library/functions.html#type"&gt;type()&lt;/a&gt; 函式來檢查值的類型。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+print(type(20)==int) #True
+&lt;/pre&gt;
+
+&lt;p&gt;Python 中，數值和字串有以下特性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;是不會改變的，僅僅是作為數據的呈現。&lt;/li&gt;
+&lt;li&gt;相同的定值儲存在相同的記憶體位址。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Numeric 數值&lt;/h1&gt;
+&lt;p&gt;數值可以透過算術運算子進行計算。&lt;/p&gt;
+&lt;h2&gt;布林值 &lt;code&gt;bool&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;作為定義某件事的正確性，關鍵字 True 和 False 可以直接代表一個布林值。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+print(25 &gt; 20) #True
+&lt;/pre&gt;
+
+&lt;p&gt;另外 True 在數字運算中可以當成 1，False 可以當成 0。&lt;/p&gt;
+&lt;h2&gt;整數 &lt;code&gt;int&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;定義整數數字，例如重複次數、清單長度等等。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+print(len([0, 1, 2, 3, 4])) #5
+&lt;/pre&gt;
+
+&lt;p&gt;若兩整數進行運算時（除法必須可以整除），會優先使用整數類型回傳結果。&lt;/p&gt;
+&lt;p&gt;整數還有其他表示法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;二進位 b&lt;/li&gt;
+&lt;li&gt;八進位 o&lt;/li&gt;
+&lt;li&gt;十六進位 x&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="brush: python"&gt;
+print(0b101) #5
+print(0o20) #16
+print(0x20) #32
+&lt;/pre&gt;
+
+&lt;p&gt;即使使用其他種表示法，程式端還是以十進位為主，運算以二進位為主。&lt;/p&gt;
+&lt;h2&gt;浮點數 &lt;code&gt;float&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;定義小數數字，準確值可達 16 位數。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+print(1/10) #0.1
+&lt;/pre&gt;
+
+&lt;p&gt;在運算中可以混用整數來與浮點數做運算，但是注意不要把浮點數用在整數的需求上，即使它的尾數為 0。&lt;/p&gt;
+&lt;p&gt;透過兩種方法可以將浮點數轉換成整數：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 int 類型，會直接移除小數位。&lt;/li&gt;
+&lt;li&gt;使用 &lt;a href="https://docs.python.org/3/library/functions.html#round"&gt;round()&lt;/a&gt; 函式，四捨五入到指定位數。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="brush: python"&gt;
+print(int(20.52)) #20
+print(round(20.52)) #21
+print(round(20.52, 1)) #20.5
+&lt;/pre&gt;
+
+&lt;p&gt;浮點數還有其他種表示法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;科學記號 e&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="brush: python"&gt;
+print(6.5e5) #650000.0
+&lt;/pre&gt;
+
+&lt;h2&gt;複數 &lt;code&gt;complex&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;定義虛數，同時還有包含實數位。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+print((20+6j)+(8-9j)) #(28-3j)
+&lt;/pre&gt;
+
+&lt;p&gt;複數沒辦法直接以套用類型的方式轉回 float、int 類型，可以改用以下方式。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;取出實部。&lt;/li&gt;
+&lt;li&gt;取出虛部。&lt;/li&gt;
+&lt;li&gt;計算絕對值。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="brush: python"&gt;
+print((4+3j).real) #4.0
+print((4+3j).imag) #3.0
+print(abs(4+3j)) #5.0
+&lt;/pre&gt;
+
+&lt;h1&gt;String 字串&lt;/h1&gt;
+&lt;p&gt;字串用於儲存註記與符號，介於數值與容器之間，保有雙方某些特性。&lt;/p&gt;
+&lt;p&gt;字串可視為多個符號串連在一起的容器，可供檢索與比較。&lt;/p&gt;
+&lt;p&gt;但是事實上字串的「同一句話」是存於同個記憶體位址的，而且也只能「裝載」其他字串，這方面與數值無異。&lt;/p&gt;
+&lt;p&gt;使用兩個雙括弧 &lt;code&gt;"&lt;/code&gt; 和 &lt;code&gt;'&lt;/code&gt; 單括弧可以將符號包成字串，使用上沒有分別，不過建議包含空白的字串使用雙括弧。&lt;/p&gt;
+&lt;p&gt;字串有以下幾個常用操作，注意常用的操作都會回傳新的字串。&lt;/p&gt;
+&lt;h2&gt;大小寫轉換 &lt;code&gt;upper&lt;/code&gt; &lt;code&gt;lower&lt;/code&gt; &lt;code&gt;capitalize&lt;/code&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;全部小寫 upper&lt;/li&gt;
+&lt;li&gt;全部小寫 lower&lt;/li&gt;
+&lt;li&gt;字首大寫 capitalize&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="brush: python"&gt;
+print("abc".upper()) #ABC
+print("ABC".lower()) #abc
+print("aBc".capitalize()) #Abc
+&lt;/pre&gt;
+
+&lt;h2&gt;結合與複製&lt;/h2&gt;
+&lt;p&gt;使用一些易懂的運算子產生字串。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+print("-"*7) #-------
+print('a' + 'b' + 'c') #abc
+&lt;/pre&gt;
+
+&lt;h2&gt;取代 &lt;code&gt;replace&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;將指定的字元取代成輸入字元。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+print("get changed".replace('ged', 'ce')) #get chance
+&lt;/pre&gt;
+
+&lt;h2&gt;分割 &lt;code&gt;split&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;使用輸入字元分割成 list 類型。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+print("a,b,c".split(',')) #['a', 'b', 'c']
+&lt;/pre&gt;
+
+&lt;h2&gt;格式操作 &lt;code&gt;format&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;透過轉換的方式填入非字串物件，可以參考&lt;a href="https://docs.python.org/3/library/string.html#formatstrings"&gt;格式語法&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;使用大括弧填入輸入的項目，若要使用大括弧符號，可以使用兩個代表（&lt;code&gt;{{}}&lt;/code&gt;）。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+print("{} %".format(50)) #50 %
+&lt;/pre&gt;
+
+&lt;p&gt;使用冒號可以規定代數以及格式。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+print("{percent:.02f} %".format(percent=50)) #50.00 %
+&lt;/pre&gt;
+
+&lt;p&gt;在 Python 3.6 之後的版本可以簡化成這樣：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+percent = 50
+print(f"{percent:.02f} %") #50.00 %
+&lt;/pre&gt;
+
+&lt;p&gt;使用 &lt;a href="https://docs.python.org/3/library/stdtypes.html#str.format"&gt;format()&lt;/a&gt; 比直接使用 + 運算子節省記憶體空間，因為不用儲存零碎的字串片段。&lt;/p&gt;
+&lt;h1&gt;Container 容器&lt;/h1&gt;
+&lt;p&gt;容器專門供應記憶體位址，可以將上面提供的兩大數據類型儲存到裡面，並且根據不同容器能做不同需求的操作。&lt;/p&gt;
+&lt;h2&gt;清單 &lt;code&gt;list&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;清單為&lt;strong&gt;有序&lt;/strong&gt;動態容器，使用序號檢索與存取，直接寫法是使用中括弧 &lt;code&gt;[]&lt;/code&gt;。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+L = ['A', 'b', 2, 3]
+print(L[0]) #A
+&lt;/pre&gt;
+
+&lt;p&gt;加入至清單可以使用三種方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;加到尾部 append()&lt;/li&gt;
+&lt;li&gt;插入到指定位置 insert()&lt;/li&gt;
+&lt;li&gt;指派運算子 +=&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="brush: python"&gt;
+L = [8, 9]
+L.append(7) #L = [8, 9, 7]
+L.insert(1, 'b') #L = [8, 'b', 9, 7]
+L += [2, 5, 6] #L = [8, 'b', 9, 7, 2, 5, 6]
+&lt;/pre&gt;
+
+&lt;p&gt;移除有三種方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;移除尾部或指定序號並回傳 pop()&lt;/li&gt;
+&lt;li&gt;尋找並移除 remove()（若找不到會發出錯誤）&lt;/li&gt;
+&lt;li&gt;刪除關鍵字 &lt;code&gt;del&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="brush: python"&gt;
+L = ['a', 'b', 'c', 'd']
+L.pop(1) #L = ['a', 'c', 'd']
+L.remove('c') #L = ['a', 'd']
+del L[-1] #L = ['a']
+&lt;/pre&gt;
+
+&lt;h2&gt;元組 &lt;code&gt;tuple&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;元組為&lt;strong&gt;有序&lt;/strong&gt;靜態容器，僅供於檢索，直接寫法是使用小括弧 &lt;code&gt;()&lt;/code&gt;，只有一項時必須加上一個逗號 &lt;code&gt;,&lt;/code&gt;。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+T = ('A',)
+print(T[0]) #A
+&lt;/pre&gt;
+
+&lt;p&gt;由於元組不可修改，因此結構會比 list 節省硬體資源。&lt;/p&gt;
+&lt;h2&gt;字典 &lt;code&gt;dict&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;字典為&lt;strong&gt;無序&lt;/strong&gt;動態容器，使用鍵值 (Key value) 檢索與存取，直接寫法是使用中括弧 &lt;code&gt;{}&lt;/code&gt;，並且使用冒號 &lt;code&gt;:&lt;/code&gt; 結合鍵值。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+D = {'a':0, 'b':3, 'c':6}
+print(D['c']) #6
+&lt;/pre&gt;
+
+&lt;p&gt;字典可以透過指派運算子 = 來增加新值，用刪除關鍵字 &lt;code&gt;del&lt;/code&gt; 刪除一組鍵值。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+D = {'a':0, 'b':1, 'c':2}
+D['d'] = 3 #D = {'a':0, 'b':1, 'c':2, 'd':3}
+del D['b'] #D = {'a':0, 'c':2, 'd':3}
+&lt;/pre&gt;
+
+&lt;p&gt;可以用 keys()、values() 和 items() 方法來取得或轉換所有鍵值，不過取出來為記憶體位置的順序，可以使用 &lt;a href="https://docs.python.org/3/library/functions.html#sorted"&gt;sorted()&lt;/a&gt; 函式排序。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+D = {'a':0, 'b':1, 'c':2}
+K = list(D.keys()) #K = ['a', 'b', 'c']
+V = list(D.values()) #V = [0, 1, 2]
+D = [(k, v) for k, v in D.items()] #D = [('a', 0), ('b', 1), ('c', 2)]
+&lt;/pre&gt;
+
+&lt;h1&gt;Function 函式&lt;/h1&gt;
+&lt;p&gt;一般的函式也是物件，可以被傳遞或是儲存至容器。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+def plus(x, y):
+    return x + y
+
+print(plus(10, 20)) #30
+&lt;/pre&gt;
+
+&lt;p&gt;若是只做簡單的計算，也能使用 lambda 關鍵字建立函式物件。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+plus = lambda x, y: x + y
+
+print(plus(10, 20)) #30
+&lt;/pre&gt;
+
+&lt;h1&gt;Name 名稱&lt;/h1&gt;
+&lt;p&gt;名稱 (Name) 是 Python 中的專有名詞，可視為&lt;strong&gt;代名詞&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;名稱相當於綽號，可以將數據取名字，以供 Python 檢索這個數據的記憶體位址。&lt;/p&gt;
+&lt;p&gt;透過&lt;strong&gt;指派運算子&lt;/strong&gt;，可以將一個數據命上喜歡的名字。&lt;/p&gt;
+&lt;p&gt;命名之後，名稱可以代表數據進行運算。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+a = 25
+b = 20
+c = a - b
+print(c) #5
+&lt;/pre&gt;
+
+&lt;p&gt;命名規則如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;區分大小寫。&lt;/li&gt;
+&lt;li&gt;不能包含空白。&lt;/li&gt;
+&lt;li&gt;不能包含運算子。&lt;/li&gt;
+&lt;li&gt;不能以數字為首。&lt;/li&gt;
+&lt;li&gt;不要與關鍵字衝突。&lt;/li&gt;
+&lt;li&gt;盡量避開內建類型函式的名稱。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;若名稱想使用多個單字命名，以下的命名法都是正確的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CNC&lt;/li&gt;
+&lt;li&gt;RedApple&lt;/li&gt;
+&lt;li&gt;removedLists&lt;/li&gt;
+&lt;li&gt;count_down&lt;/li&gt;
+&lt;li&gt;part1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Python 中可以覆蓋指派過的名稱，&lt;strong&gt;被覆蓋的數據不會刪除&lt;/strong&gt;。因此在覆蓋前若是想存取舊的數據，應該為它找一個新的名稱，或是放在&lt;strong&gt;可以檢索到的地方&lt;/strong&gt;，例如容器中。&lt;/p&gt;</content><category term="Python3"></category></entry><entry><title>Pyslvs 開發進度 - 10/04</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1004.html" rel="alternate"></link><published>2017-10-04T21:00:00+08:00</published><updated>2017-10-04T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-04:/blog/pyslvs-kai-fa-jin-du-1004.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;批次刪除 / 鎖定點功能&lt;/li&gt;
 &lt;li&gt;自由移動模式&lt;/li&gt;
