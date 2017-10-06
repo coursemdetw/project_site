@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-05T21:00:00+08:00</updated><entry><title>Python 3 類型入門</title><link href="http://project.mde.tw/blog/python-3-lei-xing-ru-men.html" rel="alternate"></link><published>2017-10-05T21:00:00+08:00</published><updated>2017-10-05T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-05:/blog/python-3-lei-xing-ru-men.html</id><summary type="html">&lt;p&gt;快速上手 Python 3 常用類型&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-06T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 10/06</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1006.html" rel="alternate"></link><published>2017-10-06T21:00:00+08:00</published><updated>2017-10-06T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-06:/blog/pyslvs-kai-fa-jin-du-1006.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;路徑記錄功能&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;路徑記錄功能&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;路徑記錄功能&lt;/h1&gt;
+&lt;p&gt;這次的路徑紀錄功能類似 Solvespace 單純儲存移動路徑的概念。&lt;/p&gt;
+&lt;p&gt;使用者可以修改尺寸後，檢查路徑是否滿足條件。&lt;/p&gt;
+&lt;iframe width="854" height="480" src="https://www.youtube.com/embed/vlxy5DFCEE0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;錄影時的功能還有點陽春，自動旋轉的那個鈕還沒做好。&lt;/p&gt;
+&lt;p&gt;之後會加上輸出 csv、分開點檢視的功能。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>Python 3 類型入門</title><link href="http://project.mde.tw/blog/python-3-lei-xing-ru-men.html" rel="alternate"></link><published>2017-10-05T21:00:00+08:00</published><updated>2017-10-05T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-05:/blog/python-3-lei-xing-ru-men.html</id><summary type="html">&lt;p&gt;快速上手 Python 3 常用類型&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Build-in Type 內建類型&lt;/p&gt;
