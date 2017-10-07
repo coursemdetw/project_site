@@ -12,7 +12,9 @@
 
 
 &lt;h1&gt;加回自動旋轉鈕&lt;/h1&gt;
+&lt;p&gt;改良舊的 QThread，讓它掛在 main window 底下，不用因為面板關閉而刪除，執行上似乎有比以前順暢。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_07_01.png"&gt;&lt;/p&gt;
+&lt;p&gt;途中遇到修改動作會自動中斷。&lt;/p&gt;
 &lt;h1&gt;自由移動支援多點&lt;/h1&gt;
 &lt;p&gt;支援框選多個點拖移。&lt;/p&gt;
 &lt;p&gt;為避免此命令分散，造成復原功能困擾，包裝到一個巨集中。&lt;/p&gt;
