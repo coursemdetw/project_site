@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-06T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 10/06</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1006.html" rel="alternate"></link><published>2017-10-06T21:00:00+08:00</published><updated>2017-10-06T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-06:/blog/pyslvs-kai-fa-jin-du-1006.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-07T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 10/07</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1007.html" rel="alternate"></link><published>2017-10-07T21:00:00+08:00</published><updated>2017-10-07T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-07:/blog/pyslvs-kai-fa-jin-du-1007.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;加回自動旋轉鈕&lt;/li&gt;
+&lt;li&gt;自由移動支援多點&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;加回自動旋轉鈕&lt;/li&gt;
+&lt;li&gt;自由移動支援多點&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;加回自動旋轉鈕&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_07_01.png"&gt;&lt;/p&gt;
+&lt;h1&gt;自由移動支援多點&lt;/h1&gt;
+&lt;p&gt;支援框選多個點拖移。&lt;/p&gt;
+&lt;p&gt;為避免此命令分散，造成復原功能困擾，包裝到一個巨集中。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_07_02.png"&gt;&lt;/p&gt;
+&lt;p&gt;數學不太好，和當初按住滑鼠滾輪平移的公式一樣，算座標一直算錯，後來終於解決問題。&lt;/p&gt;
+&lt;p&gt;這邊重寫一下公式，看以後是否有 CAD 互動的需求。&lt;/p&gt;
+&lt;p&gt;滑鼠滾輪平移檢視公式：&lt;/p&gt;
+&lt;p&gt;$$x_{Origin (dragged)}=x_{Mouse (dragged)}-(x_{Mouse (pressed)}-x_{Origin (pressed)})$$&lt;/p&gt;
+&lt;p&gt;$$y_{Origin (dragged)}=y_{Mouse (dragged)}-(y_{Mouse (pressed)}-y_{Origin (pressed)})$$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;註：在 Widget 的座標系更改原點位置，以達成畫布平移。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;拉動&lt;strong&gt;滑鼠&lt;/strong&gt;同時拉動&lt;strong&gt;相對點&lt;/strong&gt;的座標：&lt;/p&gt;
+&lt;p&gt;$$x_{point (dragged)}=\frac{(x_{Mouse (dragged)}-x_{Origin}-(x_{Mouse (pressed)}-x_{Origin})}{f_{zoom}}+x_{point (Origin)}$$&lt;/p&gt;
+&lt;p&gt;$$y_{point (dragged)}=\frac{(y_{Mouse (dragged)}-y_{Origin}-(y_{Mouse (pressed)}-y_{Origin})}{f_{zoom}}+y_{point (Origin)}$$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;註：取得滑鼠移動增量套用縮放係數，加上該點原始座標，以獲得新的點座標。&lt;/em&gt;&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>Pyslvs 開發進度 - 10/06</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1006.html" rel="alternate"></link><published>2017-10-06T21:00:00+08:00</published><updated>2017-10-06T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-06:/blog/pyslvs-kai-fa-jin-du-1006.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;路徑記錄功能&lt;/li&gt;
 &lt;/ul&gt;
