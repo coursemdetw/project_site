@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>PyQt - 機械設計專題 (虎尾科大MDE)</title>
+    <title>PyQt5 完全入門 - 機械設計專題 (虎尾科大MDE)</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -32,16 +32,22 @@ init_mathjax();
 </script>
 
 
+<link rel="canonical" href="http://project.mde.tw/blog/pyqt5-wan-quan-ru-men.html">
 
-    <meta name="author" content="KMOL" />
-    <meta name="keywords" content="PyQt" />
+        <meta name="author" content="40323230" />
+        <meta name="keywords" content="Python3,PyQt5" />
+        <meta name="description" content="快速熟悉 PyQt5 開發環境 入門：甚麼是 GUI？甚麼是跨平台？ 基礎概念：高階語言與低階語言 架構：Qt 與 PyQt 與 PySide 開發流程：Eric 6 IDE" />
 
-    <!-- Open Graph tags -->
         <meta property="og:site_name" content="機械設計專題 (虎尾科大MDE)" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="機械設計專題 (虎尾科大MDE)"/>
-        <meta property="og:url" content="http://project.mde.tw/blog"/>
-        <meta property="og:description" content="機械設計專題 (虎尾科大MDE)"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="PyQt5 完全入門"/>
+        <meta property="og:url" content="http://project.mde.tw/blog/pyqt5-wan-quan-ru-men.html"/>
+        <meta property="og:description" content="快速熟悉 PyQt5 開發環境 入門：甚麼是 GUI？甚麼是跨平台？ 基礎概念：高階語言與低階語言 架構：Qt 與 PyQt 與 PySide 開發流程：Eric 6 IDE"/>
+        <meta property="article:published_time" content="2017-10-11" />
+            <meta property="article:section" content="2016bg2" />
+            <meta property="article:tag" content="Python3" />
+            <meta property="article:tag" content="PyQt5" />
+            <meta property="article:author" content="40323230" />
 
 
     <!-- Bootstrap -->
@@ -132,7 +138,7 @@ li {
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                     <li><a href="/blog/pages/about/">About</a></li>
-                        <li >
+                        <li class="active">
                             <a href="http://project.mde.tw/blog/category/2016bg2.html">2016bg2</a>
                         </li>
                         <li >
@@ -169,44 +175,144 @@ li {
     <div class="row">
         <div class="col-sm-9">
 
-            <article>
-                <h2><a href="http://project.mde.tw/blog/qt-drag-and-drop-jiao-xue.html">Qt Drag and Drop 教學</a></h2>
-                <div class="summary"><p>Pyslvs v0.9 新功能測試及解說</p>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://project.mde.tw/blog/pyqt5-wan-quan-ru-men.html"
+                       rel="bookmark"
+                       title="Permalink to PyQt5 完全入門">
+                        PyQt5 完全入門
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-10-11T21:00:00+08:00"> Wed 11 October 2017</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="http://project.mde.tw/blog/author/40323230.html"><i class="fa fa-user"></i> 40323230</a>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://project.mde.tw/blog/tag/python3.html">Python3</a>
+        /
+	<a href="http://project.mde.tw/blog/tag/pyqt5.html">PyQt5</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>快速熟悉 PyQt5 開發環境</p>
 <ul>
-<li>如何在 Qt 框架中達成 Widgets 間的滑鼠資訊轉移</li>
+<li>入門：甚麼是 GUI？甚麼是跨平台？</li>
+<li>基礎概念：高階語言與低階語言</li>
+<li>架構：Qt 與 PyQt 與 PySide</li>
+<li>開發流程：Eric 6 IDE</li>
 </ul>
 
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/qt-drag-and-drop-jiao-xue.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/40323230ri-zhi-1050907.html">40323230日誌 - 105/09/07</a></h2>
-                <div class="summary"><ol>
-<li>
-<p>路徑計算解決</p>
-</li>
-<li>
-<p>程式碼功能簡介</p>
-</li>
-<li>
-<p>PyQt5 線程 QThread 教學</p>
-</li>
-<li>
-<p>PyQt5 信號槽教學</p>
-</li>
-<li>
-<p>PyQt5 進度條教學</p>
-</li>
-<li>
-<p>倉儲<a href="https://github.com/40323230/python-solvespace" title="github.com">python-solvespace</a>已更新</p>
-</li>
-</ol>
 
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/40323230ri-zhi-1050907.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
+<h1>入門：甚麼是 GUI？甚麼是跨平台？</h1>
+<h2>GUI</h2>
+<p>在電影裡才會出現、螢幕列滿密密麻麻符號的「文字模式」，似乎是某種不明覺厲、更為艱深的領域。</p>
+<p>如果您只是剛學習程式語言的開發者，或是僅使用電腦進行資料編排、文書處理、影音製作剪輯、偶爾打打遊戲的使用者，想必對現階段這個「<strong>移動滑鼠便可完成任務</strong>」、「<strong>輕鬆收集一目瞭然的資訊</strong>」的環境非常滿意。</p>
+<p>這個親切熟悉的溝通環境稱為<strong>圖形化使用者介面</strong> (Graphical User Interface, GUI)，為任何以圖形方式下指令的廣泛稱呼，當然也包含自動提款機那種簡單的問答互動。</p>
+<p>儘管作業系統已經將任何處理程序包裝成圖形樣式，還是有方法透過文字命令傳達操作，稱為<strong>命令列介面</strong> (Command-Line Interface, CLI)。</p>
+<p>這兩者並沒有直接的優劣（無論功能與性能），因為一切取決於該程式的設計者如何設計，而且<strong>這兩者是可以同時並存的</strong>。</p>
+<p>當然也可以在命令提示字元用 Firefox 瀏覽器開兩個網站：</p>
+<pre class="brush: bash">
+firefox www.mozilla.com developer.mozilla.org
+</pre>
+
+<h2>跨平台</h2>
+<p>如果您是在 Windows 作業系統，簡單比較一下 Linux 的操作情況即會發現許多差異：</p>
+<ul>
+<li>目錄使用反斜線 <code>\</code> 而非斜線 <code>/</code>。</li>
+<li>檔案名稱沒有分大小寫，而 Linux 有。</li>
+<li>使用登錄檔管理安裝程式，而非由套件庫集中提供。</li>
+<li>Linux 怎麼會一直需要權限？</li>
+<li>...</li>
+</ul>
+<p>這些差異足以讓程式設計師傷腦筋了，當然也早有核心上的應對方法，使不同作業系統的程式跑起來功能不會差太多，這種模式即稱為跨平台 (Cross-platform)。</p>
+<h1>基礎概念：高階語言與低階語言</h1>
+<p>羅馬不是一天造成的，現在出現的資訊，也不是馬上就蹦出來的。</p>
+<p>這些「精巧」的電子零件，是透過輸入 010101，稱為「機器碼 (Machine code)」的指令才能運作的。電子裝置可以直接辨識與執行機器碼的指令，而且不同的裝置使用的機器碼語言是不一樣的。</p>
+<p>想當然爾，人類不可能一直查詢機器碼，再輸入給電子零件，因此才產生「程式 (Program)」。</p>
+<p>組合語言 (Combination language) 是一種用於可編成組件的程式語言，一種組合語言專用於某種電腦的系統結構。換句話說，組合語言僅次於機器碼，可以以較簡單的方式命令，而且開發人員可以輕易辨別位址與數值。</p>
+<p>大名鼎鼎的 C 語言主要用於不同平台的作業系統，根據不同平台的特性，C 語言透過「編譯 (Compile)」這個流程，將程式碼轉為機器碼執行。不同作業系統存在相應的「編譯器 (Compiler)」，對應到硬體的機器碼執行，而某些編譯器正是組合語言撰寫的。</p>
+<p>Python 語言是透過 C 語言編寫的直譯器進行轉譯與執行，因此不須經過編譯動作，甚至可以藉由伺服器在網路端執行，將結果回傳給客戶端。</p>
+<p>以上舉的範例，是不是看出了程式語言的相依性？其中接近硬體層面的程式語言稱為<strong>低階語言</strong>；依靠越多「後台」處理的程式語言，稱為<strong>高階語言</strong>。</p>
+<p>注意，這兩個稱呼是<strong>相對性的</strong>，並非絕對為哪種分類，如 C 語言相對於 Python 為低階語言；相對於組合語言為高階語言。</p>
+<p>而這兩個分類並沒有優劣之分，各自有優缺點。</p>
+<p>低階語言有以下特性：</p>
+<ul>
+<li>處理範圍廣，而且可以直接影響運作效能。</li>
+<li>較不易閱讀與開發，一件工作必須寫得較為詳細。</li>
+</ul>
+<p>高階語言則反之：</p>
+<ul>
+<li>處理範圍和運作效能端看基礎架構而定，大量運算時效能不如低階語言。</li>
+<li>簡單且優化過的內建命令，往往會有簡單的表示法與程式庫、模組。</li>
+</ul>
+<p>普遍初學程式語言由需求下手，如果從事學術運算的模型建立，可以從 Python 下手；從事 Arduino 控制器的開發，就會著重於 C 語言的函式庫。不同層級都會有對應的技術可以學習，學習資訊領域「多而不精」反而模糊了自己的立足點。</p>
+<h1>架構：Qt 與 PyQt 與 PySide</h1>
+<h2>Qt</h2>
+<p>大部分所見的圖形化介面程式語言都是由有物件導向的程式語言開發的，例如 C++、Java、C#、Python 等。</p>
+<p>直接使用 C++ 語言「寫出」圖形介面是一件滿費心的差事，因此有滿多圖形介面的函式庫 (library) 可以使用，例如 Qt、Tk、wxWidgets、GTK+ 等。使用簡單的函式 (function) 就可創造視窗介面，並且有很多函式庫盡力克服「跨平台」的障礙。由於可以包含的部件極多，稱得上圖形介面「框架 (framework)」一詞。</p>
+<p>其中 Qt 是由 Qt Project 開發。Qt 支援平台種類眾多，除了常見的 Windows、Linux、Mac 以外，還有非 X Window System 的作業系統。授權方面也十分自由，採用 GNU 較寬鬆通用公共許可證 (GNU Lesser General Public License, LGPL)、GNU 通用公共許可證 (GNU General Public License, GPL)、商業授權三種模式，可以讓開發者應需求選擇。</p>
+<p>Qt 程式庫中甚至支援開發圖形介面的「周邊」功能，如網路通訊、OpenGL、OpenVG、SQL 與 XML 直譯器、圖片格式轉檔、Linux 的輸入法開發、瀏覽器引擎（使用 Google Chromium）、各式圖表等。</p>
+<p>現在 Qt 的版本來到了第 5 版，而且每 6 個月仍再持續提出更新計畫，在自由軟體產業具有很高的影響力。</p>
+<h2>PyQt</h2>
+<p>由於 Qt 的功能極為強大，英國的 Riverbank Computing 公司率先為其撰寫 Python 語言的套件，甚至開發了 SIP 這套工具將 C 與 C++ 程式庫包裝為 Python 套件。</p>
+<p>PyQt 幾乎支援 Qt 大部分的功能，並且將較專門的功能另外分成 PyQt Chart（2D 圖表）、PyQt Data Visualization（3D 圖表）、PyQt Purchasing（應用程式購買功能）。</p>
+<p>另外 QScintilla 是一個將 Scintilla 連結至 PyQt 的套件（在 C++ 可以直接用 Qt 和 Scintilla 即可），用途是辨識文字中的程式語言，以亮顯 (highlight) 的方式呈現，可以用作程式語言的辨識功能。</p>
+<p>PyQt 的版本與 Qt 相同（除了小版號），採用 GPL 和商業授權。需要注意的是，若作為軟體釋出，沒有商業授權是需要<strong>公開原始碼</strong>的。</p>
+<h2>PySide</h2>
+<p>繼 PyQt 釋出後， Qt 官方製作了 PySide 專案，目的是讓 Qt 到 Python 之間的套件使用 LGPL 來授權。</p>
+<p>然而 PySide 的開發跟不上 Qt 的開發（因為並非使用 SIP 工具），因此在 Qt 從第 4 版到第 5 版時，似乎就沒有提供支援了。</p>
+<p>後來 PySide 2 宣布開始開發，並且放棄 Qt 5 較前面的進度，選擇以 5.6 和一個最新版進行測試（因為 5.7 版是一個分水嶺，加入之前提到 QtChart 和 Data Visualization 的功能），安裝上仍有不便之處。</p>
+<h1>開發流程：Eric 6 IDE</h1>
+<p>Eric 做為一個專門以 PyQt 開發的環境，幾乎全部用到 Riverbank Computing 公司的產品。</p>
+<p>透過 QtDesigner 設計類似 XML 的 UI 檔案，轉換成 Python 腳本，可以直接以雙重繼承的方式獲得 Qt 的類型與 UI 的介面，使用上十分方便。</p>
+<p>圖片也是透過類似 XML 的資源檔案（QRC），轉換成二進位的字串，直接變成 QPixmap 的格式。</p>
+<p>Python 語言的 Qt 程式私人開發可以以 PyQt 為主，若是有商用需求，必須購買 PyQt 授權或是轉換成 PySide。</p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'projectmdetw'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'pyqt5-wan-quan-ru-men';
+                var disqus_url = 'http://project.mde.tw/blog/pyqt5-wan-quan-ru-men.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
 
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -218,13 +324,28 @@ li {
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/qt-drag-and-drop-jiao-xue.html">
-                            Qt Drag and Drop 教學
+                        <a href="http://project.mde.tw/blog/pyqt5-wan-quan-ru-men.html">
+                            PyQt5 完全入門
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/40323230ri-zhi-1050907.html">
-                            40323230日誌 - 105/09/07
+                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1010.html">
+                            Pyslvs 開發進度 - 10/10
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1007.html">
+                            Pyslvs 開發進度 - 10/07
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1006.html">
+                            Pyslvs 開發進度 - 10/06
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/python-3-lei-xing-ru-men.html">
+                            Python 3 類型入門
                         </a>
                     </li>
                 </ul>
