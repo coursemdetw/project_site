@@ -78,7 +78,7 @@ firefox www.mozilla.com developer.mozilla.org
 &lt;p&gt;Eric 做為一個專門以 PyQt 開發的環境，幾乎全部用到 Riverbank Computing 公司的產品。&lt;/p&gt;
 &lt;p&gt;透過 QtDesigner 設計類似 XML 的 UI 檔案，轉換成 Python 腳本，可以直接以雙重繼承的方式獲得 Qt 的類型與 UI 的介面，使用上十分方便。&lt;/p&gt;
 &lt;p&gt;圖片也是透過類似 XML 的資源檔案（QRC），轉換成二進位的字串，直接變成 QPixmap 的格式。&lt;/p&gt;
-&lt;p&gt;Python 語言的 Qt 程式私人開發可以以 PyQt 為主，若是有商用需求，必須購買 PyQt 授權或是轉換成 PySide。&lt;/p&gt;</content><category term="Python3"></category><category term="PyQt5"></category></entry><entry><title>Pyslvs 開發進度 - 10/10</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1010.html" rel="alternate"></link><published>2017-10-10T21:00:00+08:00</published><updated>2017-10-10T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-10:/blog/pyslvs-kai-fa-jin-du-1010.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;p&gt;Python 語言的 Qt 程式私人開發可以以 PyQt 為主，若是有商用需求，必須購買 PyQt 授權或是轉換成 PySide。&lt;/p&gt;</content><category term="Python3"></category><category term="PyQt5"></category><category term="Tutorial Book"></category></entry><entry><title>Pyslvs 開發進度 - 10/10</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1010.html" rel="alternate"></link><published>2017-10-10T21:00:00+08:00</published><updated>2017-10-10T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-10:/blog/pyslvs-kai-fa-jin-du-1010.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Version 0.9 bata 1 released&lt;/li&gt;
 &lt;li&gt;Bata 2 目標&lt;/li&gt;
@@ -461,7 +461,7 @@ print(c) #5
 &lt;li&gt;count_down&lt;/li&gt;
 &lt;li&gt;part1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Python 中可以覆蓋指派過的名稱，&lt;strong&gt;被覆蓋的數據不會刪除&lt;/strong&gt;。因此在覆蓋前若是想存取舊的數據，應該為它找一個新的名稱，或是放在&lt;strong&gt;可以檢索到的地方&lt;/strong&gt;，例如容器中。&lt;/p&gt;</content><category term="Python3"></category></entry><entry><title>Pyslvs 開發進度 - 10/04</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1004.html" rel="alternate"></link><published>2017-10-04T21:00:00+08:00</published><updated>2017-10-04T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-04:/blog/pyslvs-kai-fa-jin-du-1004.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;p&gt;Python 中可以覆蓋指派過的名稱，&lt;strong&gt;被覆蓋的數據不會刪除&lt;/strong&gt;。因此在覆蓋前若是想存取舊的數據，應該為它找一個新的名稱，或是放在&lt;strong&gt;可以檢索到的地方&lt;/strong&gt;，例如容器中。&lt;/p&gt;</content><category term="Python3"></category><category term="Tutorial Book"></category></entry><entry><title>Pyslvs 開發進度 - 10/04</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1004.html" rel="alternate"></link><published>2017-10-04T21:00:00+08:00</published><updated>2017-10-04T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-04:/blog/pyslvs-kai-fa-jin-du-1004.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;批次刪除 / 鎖定點功能&lt;/li&gt;
 &lt;li&gt;自由移動模式&lt;/li&gt;
