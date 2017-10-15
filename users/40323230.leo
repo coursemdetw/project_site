@@ -17,7 +17,7 @@
 </v>
 <v t="ahshoe.20171015205656.1"><vh>@button https server</vh></v>
 <v t="ahshoe.20171015205642.1"><vh>@button ipv6 https server</vh></v>
-<v t="amd.20151215170031.1"><vh>@path ../content</vh>
+<v t="amd.20151215170031.1" a="E"><vh>@path ../content</vh>
 <v t="amd.20160106093454.1" a="E"><vh>40323230 網誌文章</vh>
 <v t="leo.20160729110330.1"><vh>重要文章</vh>
 <v t="leo.20160725134048.1"><vh>@clean 40323230_20160725.md</vh>
@@ -384,9 +384,8 @@
 </v>
 </v>
 </v>
-<v t="ahshoe.20170207113643.1"><vh>@path ..</vh>
+<v t="ahshoe.20170207113643.1" a="E"><vh>@path ..</vh>
 <v t="leo.20151212173658.1"><vh>@button gh-pages pelican</vh></v>
-<v t="leo.20151213085727.1"><vh>@button local pelican</vh></v>
 </v>
 </vnodes>
 <tnodes>
@@ -1283,11 +1282,6 @@ import os
 #os.system("pelican content -o ./ -s publishconf.py -t theme/pelican-bootstrap3")
 os.system("pelican content -o blog -s publishconf.py")
 g.es("admin pelican 執行完畢")</t>
-<t tx="leo.20151213085727.1">@language python
-import os
-#os.system("pelican content -o output -s local_publishconf.py -t theme/pelican-bootstrap3")
-os.system("pelican content -o blog -s local_publishconf.py")
-g.es("admin pelican 近端執行完畢")</t>
 <t tx="leo.20160703102920.1"></t>
 <t tx="leo.20160710183629.1"></t>
 <t tx="leo.20160718211848.1"></t>

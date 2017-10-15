@@ -20,6 +20,7 @@
 &lt;h1&gt;路徑轉出 CSV 功能&lt;/h1&gt;
 &lt;p&gt;在紀錄上用滑鼠雙擊，會顯示包含的點。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_15_02.png"&gt;&lt;/p&gt;
+&lt;p&gt;用右鍵選單可以直接挑一個點的路徑，複製到剪貼簿。&lt;/p&gt;
 &lt;p&gt;轉出後仍可以貼到演算法那裡當範本。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>PyQt5 完全入門</title><link href="http://project.mde.tw/blog/pyqt5-wan-quan-ru-men.html" rel="alternate"></link><published>2017-10-11T21:00:00+08:00</published><updated>2017-10-11T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-11:/blog/pyqt5-wan-quan-ru-men.html</id><summary type="html">&lt;p&gt;快速熟悉 PyQt5 開發環境&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;入門：甚麼是 GUI？甚麼是跨平台？&lt;/li&gt;
