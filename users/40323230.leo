@@ -15,7 +15,9 @@
 <v t="amd.20160106093610.1"><vh>協同網誌編寫規範</vh></v>
 <v t="amd.20151216001126.1"><vh>md 檔案範例</vh></v>
 </v>
-<v t="amd.20151215170031.1" a="E"><vh>@path ../content</vh>
+<v t="ahshoe.20171015205656.1"><vh>@button https server</vh></v>
+<v t="ahshoe.20171015205642.1"><vh>@button ipv6 https server</vh></v>
+<v t="amd.20151215170031.1"><vh>@path ../content</vh>
 <v t="amd.20160106093454.1" a="E"><vh>40323230 網誌文章</vh>
 <v t="leo.20160729110330.1"><vh>重要文章</vh>
 <v t="leo.20160725134048.1"><vh>@clean 40323230_20160725.md</vh>
@@ -373,15 +375,16 @@
 </v>
 <v t="ahshoe.20171010215435.1" a="E"><vh>w5</vh>
 <v t="ahshoe.20171010215445.1"><vh>@edit 40323230_20171010.md</vh></v>
+<v t="ahshoe.20171015193602.1"><vh>@edit 40323230_20171015.md</vh></v>
 </v>
 </v>
-<v t="ahshoe.20171014115108.1" a="E"><vh>Entry book</vh>
+<v t="ahshoe.20171014115108.1"><vh>Entry book</vh>
 <v t="ahshoe.20171014115129.1"><vh>@edit 40323230_20171005.md</vh></v>
 <v t="ahshoe.20171014115139.1"><vh>@edit 40323230_20171011.md</vh></v>
 </v>
 </v>
 </v>
-<v t="ahshoe.20170207113643.1" a="E"><vh>@path ..</vh>
+<v t="ahshoe.20170207113643.1"><vh>@path ..</vh>
 <v t="leo.20151212173658.1"><vh>@button gh-pages pelican</vh></v>
 <v t="leo.20151213085727.1"><vh>@button local pelican</vh></v>
 </v>
@@ -1111,6 +1114,56 @@ h2 a {
 <t tx="ahshoe.20171003204413.1"></t>
 <t tx="ahshoe.20171010215435.1"></t>
 <t tx="ahshoe.20171014115108.1"></t>
+<t tx="ahshoe.20171015205642.1">@language python
+import os
+import subprocess
+import threading
+import socket
+import http.server, ssl
+
+class HTTPServerV6(http.server.HTTPServer):
+    address_family = socket.AF_INET6
+  
+def domake():
+    # build directory
+    os.chdir("./../")
+    ipv6_address = '::1'
+    server_address = (ipv6_address, 6443)
+    #httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)
+    httpd = HTTPServerV6(server_address, http.server.SimpleHTTPRequestHandler)
+    httpd.socket = ssl.wrap_socket(httpd.socket,
+                                   server_side=True,
+                                   certfile='localhost.crt',
+                                   keyfile='localhost.key',
+                                   ssl_version=ssl.PROTOCOL_TLSv1)
+    print("6443 https server started")
+    httpd.serve_forever()
+
+# 利用執行緒執行 https 伺服器
+make = threading.Thread(target=domake)
+make.start()</t>
+<t tx="ahshoe.20171015205656.1">@language python
+import os
+import subprocess
+import threading
+import http.server, ssl
+
+def domake():
+    # build directory
+    os.chdir("./../")
+    server_address = ('localhost', 5443)
+    httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)
+    httpd.socket = ssl.wrap_socket(httpd.socket,
+                                   server_side=True,
+                                   certfile='localhost.crt',
+                                   keyfile='localhost.key',
+                                   ssl_version=ssl.PROTOCOL_TLSv1)
+    print("5443 https server started")
+    httpd.serve_forever()
+
+# 利用執行緒執行 https 伺服器
+make = threading.Thread(target=domake)
+make.start()</t>
 <t tx="amd.20151215170031.1"></t>
 <t tx="amd.20151216001126.1">@language md
 Title: 文章標題

@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-11T21:00:00+08:00</updated><entry><title>PyQt5 完全入門</title><link href="http://project.mde.tw/blog/pyqt5-wan-quan-ru-men.html" rel="alternate"></link><published>2017-10-11T21:00:00+08:00</published><updated>2017-10-11T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-11:/blog/pyqt5-wan-quan-ru-men.html</id><summary type="html">&lt;p&gt;快速熟悉 PyQt5 開發環境&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-15T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 10/15</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1015.html" rel="alternate"></link><published>2017-10-15T21:00:00+08:00</published><updated>2017-10-15T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-15:/blog/pyslvs-kai-fa-jin-du-1015.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自動旋轉介面修正&lt;/li&gt;
+&lt;li&gt;路徑轉出 CSV 功能&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自動旋轉介面修正&lt;/li&gt;
+&lt;li&gt;路徑轉出 CSV 功能&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;自動旋轉介面修正&lt;/h1&gt;
+&lt;p&gt;之前是用 QThread 驅動，佔用滿多資源的，而且會造成延遲。&lt;/p&gt;
+&lt;p&gt;這次改用 QTimer 發信號驅動 QDial，由於是 C++ 的物件，時間還算準確（準度為 1 毫秒）。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_15_01.png"&gt;&lt;/p&gt;
+&lt;p&gt;rpm 為 deg/s 的 1/6 倍，調整一下秒至毫秒即可。&lt;/p&gt;
+&lt;p&gt;預設方向為順時針（負），旋轉時也可以調整。&lt;/p&gt;
+&lt;h1&gt;路徑轉出 CSV 功能&lt;/h1&gt;
+&lt;p&gt;在紀錄上用滑鼠雙擊，會顯示包含的點。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_15_02.png"&gt;&lt;/p&gt;
+&lt;p&gt;轉出後仍可以貼到演算法那裡當範本。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>PyQt5 完全入門</title><link href="http://project.mde.tw/blog/pyqt5-wan-quan-ru-men.html" rel="alternate"></link><published>2017-10-11T21:00:00+08:00</published><updated>2017-10-11T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-11:/blog/pyqt5-wan-quan-ru-men.html</id><summary type="html">&lt;p&gt;快速熟悉 PyQt5 開發環境&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;入門：甚麼是 GUI？甚麼是跨平台？&lt;/li&gt;
 &lt;li&gt;基礎概念：高階語言與低階語言&lt;/li&gt;
