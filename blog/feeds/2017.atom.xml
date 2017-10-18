@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-02T04:40:00+08:00</updated><entry><title>使用peewee創建資料庫</title><link href="http://project.mde.tw/blog/shi-yong-peeweechuang-jian-zi-liao-ku.html" rel="alternate"></link><published>2017-10-02T04:40:00+08:00</published><updated>2017-10-02T04:40:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2017-10-02:/blog/shi-yong-peeweechuang-jian-zi-liao-ku.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-18T02:43:00+08:00</updated><entry><title>esp8266串接cp2012</title><link href="http://project.mde.tw/blog/esp8266chuan-jie-cp2012.html" rel="alternate"></link><published>2017-10-18T02:43:00+08:00</published><updated>2017-10-18T02:43:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2017-10-18:/blog/esp8266chuan-jie-cp2012.html</id><summary type="html">&lt;h1&gt;施工中&lt;/h1&gt;
+</summary><content type="html">&lt;h1&gt;施工中&lt;/h1&gt;
+
+
+&lt;p&gt;腳位接法&lt;/p&gt;
+&lt;p&gt;【CP2102】TXD→【ESP8266】URXD
+【CP2102】RXD→【ESP8266】UTXD&lt;/p&gt;
+&lt;p&gt;【Arduino】3.3V →【ESP8266】VCC
+【Arduino】3.3V →【ESP8266】CH_PD
+【Arduino】GND →【ESP8266】GND
+【Arduino】GND →【CP2102】GND   &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/vBtHWqY"&gt;&lt;img src="https://i.imgur.com/vBtHWqY.jpg" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;目前的目的是先控制簡單的LED明暗!&lt;/p&gt;</content><category term="HW"></category></entry><entry><title>使用peewee創建資料庫</title><link href="http://project.mde.tw/blog/shi-yong-peeweechuang-jian-zi-liao-ku.html" rel="alternate"></link><published>2017-10-02T04:40:00+08:00</published><updated>2017-10-02T04:40:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2017-10-02:/blog/shi-yong-peeweechuang-jian-zi-liao-ku.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
 &lt;p&gt;&lt;a href="http://docs.peewee-orm.com/en/latest/peewee/database.html"&gt;關於peewee&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.shushilvshe.com/python/peewee.html"&gt;peewee入門教程&lt;/a&gt;&lt;/p&gt;
