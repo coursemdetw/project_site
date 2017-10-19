@@ -1,5 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-18T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 10/18</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1018.html" rel="alternate"></link><published>2017-10-18T21:00:00+08:00</published><updated>2017-10-18T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-18:/blog/pyslvs-kai-fa-jin-du-1018.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-19T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 10/19</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1019.html" rel="alternate"></link><published>2017-10-19T21:00:00+08:00</published><updated>2017-10-19T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-19:/blog/pyslvs-kai-fa-jin-du-1019.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;改換 peewee 讀寫檔案格式&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;改換 peewee 讀寫檔案格式&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;參考連結：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://docs.peewee-orm.com/en/latest/peewee/transactions.html#transactions"&gt;peewee documentation: Transactions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;改換 peewee 讀寫檔案格式&lt;/h1&gt;
+&lt;p&gt;後來發現 peewee 的操作還是比較「pythonic」 (笑)。&lt;/p&gt;
+&lt;p&gt;改寫學弟的範例，進行讀寫、複製三種操作：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+import os
+from datetime import date
+from peewee import (
+    SqliteDatabase,
+    Model,
+    CharField,
+    DateField
+)
+
+fileName1 = "data.db"
+db1 = SqliteDatabase(fileName1)
+fileName2 = "data_copy.db"
+db2 = SqliteDatabase(fileName2)
+
+class BallBase(Model):
+    name = CharField()
+    date = DateField()
+    speed = CharField()
+
+class Ball1(BallBase):
+    class Meta:
+        database = db1
+
+class Ball2(BallBase):
+    class Meta:
+        database = db2
+
+if __name__=='__main__':
+    fileExist = os.path.isfile(fileName1)
+    db1.connect()
+    db1.create_tables([Ball1], safe=True)
+    if not fileExist:
+        print("create")
+        steven = Ball1(name="steven", date=date(2017, 9, 30), speed="3m/s")
+        steven.save()
+    else:
+        print("read and copy")
+        db2.connect()
+        db2.create_tables([Ball2], safe=True)
+        with db2.atomic():
+            for ball in Ball1.select():
+                try:
+                    print(ball.name, ball.date, ball.speed)
+                    steven = Ball2(name=ball.name, date=ball.date, speed=ball.speed)
+                    steven.save()
+                except:
+                    db2.rollback()
+        db2.close()
+    db1.close()
+&lt;/pre&gt;
+
+&lt;p&gt;用繼承來改 connection 簡直方便多了。&lt;/p&gt;
+&lt;p&gt;上面的程式執行時，若第一個資料庫 &lt;code&gt;data.db&lt;/code&gt; 不存在，會先建一個含有 &lt;code&gt;steven&lt;/code&gt; 名稱的資料。&lt;/p&gt;
+&lt;p&gt;若已經存在，則會開啟第二個資料庫 &lt;code&gt;data_copy.db&lt;/code&gt;，將 &lt;code&gt;data.db&lt;/code&gt; 的 Ball1 類型選取後填入 Ball2 的類型中，存入 &lt;code&gt;data_copy.db&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;由於都繼承自 BallBase 類型，表單空位都相同。實際檢查，&lt;code&gt;data.db&lt;/code&gt; 和 &lt;code&gt;data_copy.db&lt;/code&gt; 的大小是一樣的。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;with db2.atomic()&lt;/code&gt; 語句是建立一個 Transaction，類似 Qt Undo 功能的巨集，可以將多項改動儲存為一個檢查點，藉由 with 語句啟動 Transaction 紀錄，並在結束區塊時關閉它。使用 try 和 except 語句避免存入時發生錯誤，可用 rollback 方法退到上個檢查點。&lt;/p&gt;
+&lt;p&gt;注意在配合 &lt;code&gt;with db2.atomic()&lt;/code&gt; 語句時，peewee 會自動開啟 Transaction、自動 commit 和自動在錯誤時啟動新的 Transaction，不用再使用 begin、commit 之類的 method；另外它也能寫成裝飾器 &lt;code&gt;@db2.atomic()&lt;/code&gt; 來自動處理 function 中的內容，而由於類似巨集的功能，&lt;strong&gt;這個語句是可以巢狀使用的&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;另一個顯式 (Explicit) 的用法是直接使用 &lt;code&gt;with db.transaction()&lt;/code&gt; 語句：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+with db.transaction() as txn:
+    User.create(username='whiskers')
+    # Roll back changes, which removes "whiskers".
+    txn.rollback()
+
+    # Create a new row for "mr. whiskers" which will be implicitly committed
+    # at the end of the `with` block.
+    User.create(username='mr. whiskers')
+&lt;/pre&gt;
+
+&lt;p&gt;若怕中途出錯，可以開啟小的 Savepoints 來做紀錄：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+with db.transaction() as txn:
+    with db.savepoint() as sp1:
+        User.create(username='mickey')
+
+    with db.savepoint() as sp2:
+        User.create(username='zaizee')
+        sp2.rollback()  # "zaizee" will not be saved, but "mickey" will be.
+&lt;/pre&gt;
+
+&lt;p&gt;傳統的方法是關掉自動 commit 模式：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+db.set_autocommit(False)
+db.begin()
+try:
+    user.delete_instance(recursive=True)
+except:
+    db.rollback()
+    raise
+else:
+    try:
+        db.commit()
+    except:
+        db.rollback()
+        raise
+finally:
+    db.set_autocommit(True)
+&lt;/pre&gt;
+
+&lt;p&gt;或是一開始就不使用：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+db = SqliteDatabase(':memory:', autocommit=False)
+
+db.begin()
+User.create(username='somebody')
+db.commit()
+&lt;/pre&gt;
+
+&lt;p&gt;以上就是 peewee 手冊 Transactions 章節的全部內容，比起 Qt 還滿好理解的。&lt;/p&gt;
+&lt;p&gt;當然 peewee 沒辦法靠 C++ 的 method 直接呈現為 QTableView 的欄位，不過將資料庫當作物件管理在開發上駕輕就熟，稍微寫下介面也不是什麼難事。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>Pyslvs 開發進度 - 10/18</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1018.html" rel="alternate"></link><published>2017-10-18T21:00:00+08:00</published><updated>2017-10-18T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-18:/blog/pyslvs-kai-fa-jin-du-1018.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;測試使用 Qt 的 SQL Driver&lt;/li&gt;
 &lt;/ul&gt;

@@ -367,7 +367,7 @@
 <v t="40323230.20170930174125.1"><vh>@edit 40323230_20170930.md</vh></v>
 <v t="40323230.20171001192802.1"><vh>@edit 40323230_20171001.md</vh></v>
 </v>
-<v t="ahshoe.20171003204413.1" a="E"><vh>w4</vh>
+<v t="ahshoe.20171003204413.1"><vh>w4</vh>
 <v t="ahshoe.20171003204431.1"><vh>@edit 40323230_20171003.md</vh></v>
 <v t="ahshoe.20171004233134.1"><vh>@edit 40323230_20171004.md</vh></v>
 <v t="40323230.20171006200239.1"><vh>@edit 40323230_20171006.md</vh></v>
@@ -377,6 +377,7 @@
 <v t="ahshoe.20171010215445.1"><vh>@edit 40323230_20171010.md</vh></v>
 <v t="ahshoe.20171015193602.1"><vh>@edit 40323230_20171015.md</vh></v>
 <v t="40323230.20171018230827.1"><vh>@edit 40323230_20171018.md</vh></v>
+<v t="ahshoe.20171019223703.1"><vh>@edit 40323230_20171019.md</vh></v>
 </v>
 </v>
 <v t="ahshoe.20171014115108.1"><vh>Entry book</vh>
@@ -1280,9 +1281,12 @@ QLineEdit#editorLabel {
 vertical: body pane on the botton</t>
 <t tx="leo.20151212173658.1">@language python
 import os
-#os.system("pelican content -o ./ -s publishconf.py -t theme/pelican-bootstrap3")
 os.system("pelican content -o blog -s publishconf.py")
-g.es("admin pelican 執行完畢")</t>
+if os.listdir("blog"):
+    g.es("admin pelican 執行完畢")
+else:
+    g.es("admin pelican 執行失敗")
+</t>
 <t tx="leo.20160703102920.1"></t>
 <t tx="leo.20160710183629.1"></t>
 <t tx="leo.20160718211848.1"></t>
