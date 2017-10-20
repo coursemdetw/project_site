@@ -1,5 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-19T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 10/19</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1019.html" rel="alternate"></link><published>2017-10-19T21:00:00+08:00</published><updated>2017-10-19T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-19:/blog/pyslvs-kai-fa-jin-du-1019.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-20T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 10/20</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1020.html" rel="alternate"></link><published>2017-10-20T21:00:00+08:00</published><updated>2017-10-20T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-20:/blog/pyslvs-kai-fa-jin-du-1020.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;lark 基本用法&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;lark 基本用法&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;參考連結：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/erezsh/lark/blob/master/docs/json_tutorial.md"&gt;lark tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;lark 基本用法&lt;/h1&gt;
+&lt;p&gt;利用 &lt;a href="https://github.com/erezsh/lark"&gt;lark&lt;/a&gt; 創造表示式語法。&lt;/p&gt;
+&lt;p&gt;定義文法的結構是使用擴展巴科斯範式 (Extended Backus–Naur Form, EBNF)，巴科斯範式 (BNF) 即為 Qt 的輸入遮罩 (Mask) 所用的語法。&lt;/p&gt;
+&lt;p&gt;lark 有提供基本的類型判斷，例如 NUMBER、WORD 等等，用 &lt;code&gt;%import&lt;/code&gt; 語法匯入即可。&lt;/p&gt;
+&lt;p&gt;接著，使用冒號 &lt;code&gt;:&lt;/code&gt; 定義類似 class 的角色，使用 pip 符號 &lt;code&gt;|&lt;/code&gt; 可以同時聯集允許項目。這些類型只要名稱不衝突即可。&lt;/p&gt;
+&lt;p&gt;若想讓該項目可以函式化，使用箭號 &lt;code&gt;-&amp;gt;&lt;/code&gt; 給定新名稱。&lt;/p&gt;
+&lt;p&gt;以下是一個簡單表示 PMKS 機構的文法：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+from lark import Lark
+
+parser = Lark(
+    '''
+    type  : "R" | "P" | "PR"
+    name  : WORD
+    num   : NUMBER  -&gt; number
+          | "-" num -&gt; neg
+
+    joint    : "J[" [type "," point "," link ("," num)?] "]"
+    link     : "L[" [name ("," name)*] "]"
+    point    : "P[" [num  "," num] "]"
+    mechanism: "M[" [joint ("," joint)*] "]"
+
+    %import common.NUMBER
+    %import common.WORD
+    %import common.WS
+    %ignore WS
+    ''', start='mechanism'
+)
+
+expr = "M[J[R,P[0.0,0.0],L[ground,i]]]"
+print(parser.parse(expr))
+print(parser.parse(expr).pretty())
+&lt;/pre&gt;
+
+&lt;p&gt;上面 &lt;code&gt;%import common.WS&lt;/code&gt; 是匯入空白字元，&lt;code&gt;%ignore WS&lt;/code&gt; 代表解析上會忽略空白字元，斷句部分想加多少空白都可以。&lt;/p&gt;
+&lt;p&gt;一個需要小心的地方是 &lt;code&gt;%import common.ESCAPED_STRING&lt;/code&gt; 代表 &lt;code&gt;"AAA"&lt;/code&gt;；&lt;code&gt;%import common.WORD&lt;/code&gt; 代表 &lt;code&gt;AAA&lt;/code&gt;，使用上要注意。&lt;/p&gt;
+&lt;p&gt;另外 lark 無法解析時會 raise 錯誤，無論是文法還是輸入值，要注意不要導致程式出錯。&lt;/p&gt;
+&lt;p&gt;使用 pretty 方法可印出：&lt;/p&gt;
+&lt;pre&gt;
+mechanism
+  joint
+    type
+    point
+      number    0.0
+      number    0.0
+    link
+      name      ground
+      name      i
+&lt;/pre&gt;
+
+&lt;p&gt;最後可以透過 InlineTransformer 類型來執行解析後函式化的指令。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>Pyslvs 開發進度 - 10/19</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1019.html" rel="alternate"></link><published>2017-10-19T21:00:00+08:00</published><updated>2017-10-19T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-19:/blog/pyslvs-kai-fa-jin-du-1019.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;改換 peewee 讀寫檔案格式&lt;/li&gt;
 &lt;/ul&gt;
