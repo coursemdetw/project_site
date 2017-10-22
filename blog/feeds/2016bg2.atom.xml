@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-20T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 10/20</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1020.html" rel="alternate"></link><published>2017-10-20T21:00:00+08:00</published><updated>2017-10-20T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-20:/blog/pyslvs-kai-fa-jin-du-1020.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-22T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 10/22</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1022.html" rel="alternate"></link><published>2017-10-22T21:00:00+08:00</published><updated>2017-10-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-22:/blog/pyslvs-kai-fa-jin-du-1022.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;機構分析功能&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;機構分析功能&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;機構分析功能&lt;/h1&gt;
+&lt;p&gt;新的「數目與類型合成」介面，會和「尺寸合成」一起載入了，雖然記憶體使用量有明顯提升，但是之前開關面板的方式很不人性化且容易出錯，所以就改掉了。&lt;/p&gt;
+&lt;p&gt;將機構分解成一般化樣式，以利之後排列組合用。&lt;/p&gt;
+&lt;p&gt;會先初步排除沒有作用的節點（如下圖的 Point2）。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_22.png"&gt;&lt;/p&gt;
+&lt;p&gt;上面兩行是表示式，不過發現使用 lark 模組取值不是那麼容易，反倒直接執行函式比較簡單。&lt;/p&gt;
+&lt;p&gt;表示式運用的範圍可能要稍稍規劃一下，比如程式之間的轉出轉入；不然內部解析使用 class 會比較方便。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>Pyslvs 開發進度 - 10/20</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1020.html" rel="alternate"></link><published>2017-10-20T21:00:00+08:00</published><updated>2017-10-20T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-20:/blog/pyslvs-kai-fa-jin-du-1020.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;lark 基本用法&lt;/li&gt;
 &lt;/ul&gt;
