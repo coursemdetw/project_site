@@ -191,7 +191,7 @@ li {
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-08-25T21:00:00+08:00"> 五 25 八月 2017</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-08-25T21:00:00+08:00"> Fri 25 August 2017</time>
     </span>
             <span class="label label-default">By</span>
             <a href="http://project.mde.tw/blog/author/40323230.html"><i class="fa fa-user"></i> 40323230</a>
@@ -212,7 +212,7 @@ li {
 <h1>Functional trangle solver</h1>
 <p>由於要加入速度與加速度的計算，因此決定由三角形的 solver 下手，透過 SymPy 模組協助解題，獲得 x 和 y 軸的分量。</p>
 <p>編寫概念類似 PMKS 將方程式存起來，因此每個點都會先獲得一個位置函式，接收數值為角速度 ω 與時間 t：</p>
-<p>$$f_{x,y}(\omega,t)$$</p>
+<div class="math">$$f_{x,y}(\omega,t)$$</div>
 <p>首先要定義幾個類型方便計算：</p>
 <pre class="brush: python">
 from sympy import pi, sqrt, cos, sin, acos, asin, diff, lambdify
@@ -271,12 +271,12 @@ class FunctionBase:
 </pre>
 
 <p>用兩個固定點可以得到繞行旋轉軸的點座標，接著再構建出其他點的位置。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_08_25_01.png"></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_08_25_01.png" /></p>
 <h2>PLAP</h2>
 <p>由於輸入項目由角度取代成代數，之前的 PLAP 函式改為 PL 函式，輸入連桿與軸端的座標即可。</p>
 <p>這裡採用的是圓周運動公式：</p>
-<p>$$\left | \vec{x} \right | = r\,  cos\, \theta$$
-$$\left | \vec{y} \right | = r\,  sin\, \theta$$</p>
+<div class="math">$$\left | \vec{x} \right | = r\,  cos\, \theta$$</div>
+<div class="math">$$\left | \vec{y} \right | = r\,  sin\, \theta$$</div>
 <p>Python 程式：</p>
 <pre class="brush: python">
 class pl(FunctionBase):
@@ -287,14 +287,14 @@ class pl(FunctionBase):
 
 <h2>PLLP</h2>
 <p>使用底邊夾角與餘弦定理得到座標。</p>
-<p>$$\alpha = sin^{-1}(\frac{y_{B}-y_{A}}{\sqrt{(x_{B}-x_{A})^{2}+(y_{B}-y_{A})^{2}}})$$
-$$\beta = cos^{-1}(\frac{L^{2}+L_{b}^{2}-R^{2}}{2\times L\times L_{b}})$$</p>
+<div class="math">$$\alpha = sin^{-1}(\frac{y_{B}-y_{A}}{\sqrt{(x_{B}-x_{A})^{2}+(y_{B}-y_{A})^{2}}})$$</div>
+<div class="math">$$\beta = cos^{-1}(\frac{L^{2}+L_{b}^{2}-R^{2}}{2\times L\times L_{b}})$$</div>
 <p>正向：</p>
-<p>$$x = x_{A}+L\, cos(\alpha+\beta)$$
-$$y = y_{A}+L\, cos(\alpha+\beta)$$</p>
+<div class="math">$$x = x_{A}+L\, cos(\alpha+\beta)$$</div>
+<div class="math">$$y = y_{A}+L\, cos(\alpha+\beta)$$</div>
 <p>反向：</p>
-<p>$$x = x_{A}+L\, cos(\alpha-\beta)$$
-$$y = y_{A}+L\, cos(\alpha-\beta)$$</p>
+<div class="math">$$x = x_{A}+L\, cos(\alpha-\beta)$$</div>
+<div class="math">$$y = y_{A}+L\, cos(\alpha-\beta)$$</div>
 <p>Python 程式：</p>
 <pre class="brush: python">
 class pllp(FunctionBase):
@@ -312,7 +312,7 @@ class pllp(FunctionBase):
 
 <h2>套入四連桿範例</h2>
 <p>應用到標準曲柄搖桿範例後，可以繪出四者的曲線圖。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_08_25_02.png"></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_08_25_02.png" /></p>
 <p>通過 solver 這個函式輸入連桿參數：</p>
 <pre class="brush: python">
 def solver(mechanism, progress=False):
@@ -364,6 +364,63 @@ plt.show()
 
 <p>不過反覆測試之後，發現竟然沒辦法套用原本八連桿的配置。</p>
 <p>這方面還在解決中，看看是輸入方面還是解題方程式哪裡出了問題。</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -414,6 +471,11 @@ plt.show()
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/shi-yong-onshapehui-zhi-marble.html">
+                            使用Onshape繪製Marble
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1022.html">
                             Pyslvs 開發進度 - 10/22
                         </a>
@@ -426,11 +488,6 @@ plt.show()
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1019.html">
                             Pyslvs 開發進度 - 10/19
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1018.html">
-                            Pyslvs 開發進度 - 10/18
                         </a>
                     </li>
                 </ul>
