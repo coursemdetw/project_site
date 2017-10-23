@@ -15,6 +15,8 @@
 <v t="amd.20160106093610.1"><vh>協同網誌編寫規範</vh></v>
 <v t="amd.20151216001126.1"><vh>md 檔案範例</vh></v>
 </v>
+<v t="ahshoe.20171015205656.1"><vh>@button https server</vh></v>
+<v t="ahshoe.20171015205642.1"><vh>@button ipv6 https server</vh></v>
 <v t="amd.20151215170031.1" a="E"><vh>@path ../content</vh>
 <v t="amd.20160106093454.1" a="E"><vh>40323230 網誌文章</vh>
 <v t="leo.20160729110330.1"><vh>重要文章</vh>
@@ -354,16 +356,45 @@
 <v t="ahshoe.20170912234840.1"><vh>@edit 40323230_20170912.md</vh></v>
 <v t="40323230.20170916203314.1"><vh>@edit 40323230_20170916.md</vh></v>
 </v>
-<v t="40323230.20170918230407.1" a="E"><vh>w2</vh>
+<v t="40323230.20170918230407.1"><vh>w2</vh>
 <v t="40323230.20170918202423.1"><vh>@edit 40323230_20170918.md</vh></v>
 <v t="40323230.20170922173659.1"><vh>@edit 40323230_20170922.md</vh></v>
+<v t="ahshoe.20170923203626.1"><vh>@edit 40323230_20170923.md</vh></v>
 </v>
+<v t="ahshoe.20170926202905.1"><vh>w3</vh>
+<v t="ahshoe.20170926202917.1"><vh>@edit 40323230_20170926.md</vh></v>
+<v t="40323230.20170929225439.1"><vh>@edit 40323230_20170929.md</vh></v>
+<v t="40323230.20170930174125.1"><vh>@edit 40323230_20170930.md</vh></v>
+<v t="40323230.20171001192802.1"><vh>@edit 40323230_20171001.md</vh></v>
+</v>
+<v t="ahshoe.20171003204413.1"><vh>w4</vh>
+<v t="ahshoe.20171003204431.1"><vh>@edit 40323230_20171003.md</vh></v>
+<v t="ahshoe.20171004233134.1"><vh>@edit 40323230_20171004.md</vh></v>
+<v t="40323230.20171006200239.1"><vh>@edit 40323230_20171006.md</vh></v>
+<v t="ahshoe.20171007215332.1"><vh>@edit 40323230_20171007.md</vh></v>
+</v>
+<v t="ahshoe.20171010215435.1"><vh>w5</vh>
+<v t="ahshoe.20171010215445.1"><vh>@edit 40323230_20171010.md</vh></v>
+<v t="ahshoe.20171015193602.1"><vh>@edit 40323230_20171015.md</vh></v>
+</v>
+<v t="40323230.20171020222901.1"><vh>w6</vh>
+<v t="40323230.20171018230827.1"><vh>@edit 40323230_20171018.md</vh></v>
+<v t="ahshoe.20171019223703.1"><vh>@edit 40323230_20171019.md</vh></v>
+<v t="40323230.20171020222941.1"><vh>@edit 40323230_20171020.md</vh></v>
+<v t="ahshoe.20171022214517.1"><vh>@edit 40323230_20171022.md</vh></v>
+</v>
+<v t="ahshoe.20171023201616.1" a="E"><vh>w7</vh>
+<v t="ahshoe.20171023194136.1"><vh>@edit 40323230_20171023.md</vh></v>
+</v>
+</v>
+<v t="ahshoe.20171014115108.1"><vh>Entry book</vh>
+<v t="ahshoe.20171014115129.1"><vh>@edit 40323230_20171005.md</vh></v>
+<v t="ahshoe.20171014115139.1"><vh>@edit 40323230_20171011.md</vh></v>
 </v>
 </v>
 </v>
 <v t="ahshoe.20170207113643.1" a="E"><vh>@path ..</vh>
 <v t="leo.20151212173658.1"><vh>@button gh-pages pelican</vh></v>
-<v t="leo.20151213085727.1"><vh>@button local pelican</vh></v>
 </v>
 </vnodes>
 <tnodes>
@@ -407,6 +438,7 @@ sudo pip3 install markdown
 <t tx="40323230.20170726203708.1"></t>
 <t tx="40323230.20170803101442.1"></t>
 <t tx="40323230.20170918230407.1"></t>
+<t tx="40323230.20171020222901.1"></t>
 <t tx="ahshoe.20160821213649.1"></t>
 <t tx="ahshoe.20160828214004.1"></t>
 <t tx="ahshoe.20160902195148.1"></t>
@@ -1087,6 +1119,61 @@ h2 a {
 <t tx="ahshoe.20170828192941.1"></t>
 <t tx="ahshoe.20170912234806.1"></t>
 <t tx="ahshoe.20170912234824.1"></t>
+<t tx="ahshoe.20170926202905.1"></t>
+<t tx="ahshoe.20171003204413.1"></t>
+<t tx="ahshoe.20171010215435.1"></t>
+<t tx="ahshoe.20171014115108.1"></t>
+<t tx="ahshoe.20171015205642.1">@language python
+import os
+import subprocess
+import threading
+import socket
+import http.server, ssl
+
+class HTTPServerV6(http.server.HTTPServer):
+    address_family = socket.AF_INET6
+  
+def domake():
+    # build directory
+    os.chdir("./../")
+    ipv6_address = '::1'
+    server_address = (ipv6_address, 6443)
+    #httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)
+    httpd = HTTPServerV6(server_address, http.server.SimpleHTTPRequestHandler)
+    httpd.socket = ssl.wrap_socket(httpd.socket,
+                                   server_side=True,
+                                   certfile='localhost.crt',
+                                   keyfile='localhost.key',
+                                   ssl_version=ssl.PROTOCOL_TLSv1)
+    print("6443 https server started")
+    httpd.serve_forever()
+
+# 利用執行緒執行 https 伺服器
+make = threading.Thread(target=domake)
+make.start()</t>
+<t tx="ahshoe.20171015205656.1">@language python
+import os
+import subprocess
+import threading
+import http.server, ssl
+
+def domake():
+    # build directory
+    os.chdir("./../")
+    server_address = ('localhost', 5443)
+    httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)
+    httpd.socket = ssl.wrap_socket(httpd.socket,
+                                   server_side=True,
+                                   certfile='localhost.crt',
+                                   keyfile='localhost.key',
+                                   ssl_version=ssl.PROTOCOL_TLSv1)
+    print("5443 https server started")
+    httpd.serve_forever()
+
+# 利用執行緒執行 https 伺服器
+make = threading.Thread(target=domake)
+make.start()</t>
+<t tx="ahshoe.20171023201616.1"></t>
 <t tx="amd.20151215170031.1"></t>
 <t tx="amd.20151216001126.1">@language md
 Title: 文章標題
@@ -1203,14 +1290,12 @@ QLineEdit#editorLabel {
 vertical: body pane on the botton</t>
 <t tx="leo.20151212173658.1">@language python
 import os
-#os.system("pelican content -o ./ -s publishconf.py -t theme/pelican-bootstrap3")
 os.system("pelican content -o blog -s publishconf.py")
-g.es("admin pelican 執行完畢")</t>
-<t tx="leo.20151213085727.1">@language python
-import os
-#os.system("pelican content -o output -s local_publishconf.py -t theme/pelican-bootstrap3")
-os.system("pelican content -o blog -s local_publishconf.py")
-g.es("admin pelican 近端執行完畢")</t>
+if os.listdir("blog"):
+    g.es("admin pelican 執行完畢")
+else:
+    g.es("admin pelican 執行失敗")
+</t>
 <t tx="leo.20160703102920.1"></t>
 <t tx="leo.20160710183629.1"></t>
 <t tx="leo.20160718211848.1"></t>
