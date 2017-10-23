@@ -1,5 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-22T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 10/22</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1022.html" rel="alternate"></link><published>2017-10-22T21:00:00+08:00</published><updated>2017-10-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-22:/blog/pyslvs-kai-fa-jin-du-1022.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-23T21:00:00+08:00</updated><entry><title>創意性機構設計課堂筆記 - 10/23</title><link href="http://project.mde.tw/blog/chuang-yi-xing-ji-gou-she-ji-ke-tang-bi-ji-1023.html" rel="alternate"></link><published>2017-10-23T21:00:00+08:00</published><updated>2017-10-23T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-23:/blog/chuang-yi-xing-ji-gou-she-ji-ke-tang-bi-ji-1023.html</id><summary type="html">&lt;p&gt;每星期創意性機構設計課程筆記整理&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;機構分析&lt;/li&gt;
+&lt;li&gt;數目合成&lt;/li&gt;
+&lt;li&gt;類型合成&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;每星期創意性機構設計課程筆記整理&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;機構分析&lt;/li&gt;
+&lt;li&gt;數目合成&lt;/li&gt;
+&lt;li&gt;類型合成&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;機構分析&lt;/h1&gt;
+&lt;p&gt;找到了一個中國專利網站的平面連桿機構，進行一般化：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_23_01.png"&gt;&lt;/p&gt;
+&lt;p&gt;連桿數為 9，有 7 個旋轉接頭與 4 個滑動接頭（這裡顏教授沒有使用 RP 接頭）。&lt;/p&gt;
+&lt;p&gt;老師說這樣的數目很多組合，值得嘗試。&lt;/p&gt;
+&lt;p&gt;今天想了一下拓樸構造，這方面的「同構」其實會移除所有接頭屬性，只看連桿連接構造。&lt;/p&gt;
+&lt;h1&gt;數目合成&lt;/h1&gt;
+&lt;p&gt;上次那個解題程式雖然比較有效率但是寫太死，因此不可能用在任意種類的機構。&lt;/p&gt;
+&lt;p&gt;於是今天寫了個萬用的。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+from itertools import product
+
+class NumberSynthesis:
+    def __init__(self, NL, NJ):
+        self.NL = NL
+        self.NJ = NJ
+
+    @property
+    def Mmax(self):
+        if self.NL &lt;= self.NJ and self.NJ &lt;= (2*self.NL-3):
+            return self.NJ - self.NL + 2
+        elif (2*self.NL-3) &lt;= self.NJ and self.NJ &lt;= (self.NL*(self.NL-1)/2):
+            return self.NL - 1
+        else:
+            raise ValueError("incorrect number.")
+
+    @property
+    def NLm(self):
+        result = []
+        correction = lambda l: sum((i+2)*l[i] for i in range(len(l))) == 2*self.NJ
+        for symbols in product(range(self.NL+1), repeat=self.Mmax-2):
+            NLMmax = self.NL - sum(symbols)
+            answer = symbols+(NLMmax,)
+            if correction(answer) and NLMmax&gt;=0:
+                result.append(answer)
+        return tuple(result)
+
+if __name__=='__main__':
+    a = NumberSynthesis(9, 11)
+    print(a.NLm)
+&lt;/pre&gt;
+
+&lt;p&gt;找到的 Mmax 為 4，答案為：&lt;/p&gt;
+&lt;pre&gt;
+((5, 4, 0), (6, 2, 1), (7, 0, 2))
+&lt;/pre&gt;
+
+&lt;p&gt;使用的是 Python 內建迭代工具 itertools 模組的 product 函式，輸入「種類數」與「組合長度」，可以直接輸出一個 generator，用 tuple 回傳所有組合的結果。&lt;/p&gt;
+&lt;p&gt;三個未知數可以先取前兩個未知數的組合，透過第一式找到第三個未知數的解。&lt;/p&gt;
+&lt;p&gt;$$N_{L}(桿件數)=\sum_{m=2}^{m_{max}}N_{L_{m}}$$&lt;/p&gt;
+&lt;p&gt;然後透過第二式與「第三個未知數為正數」驗正是否符合。&lt;/p&gt;
+&lt;p&gt;$$2N_{J}(接頭數)=\sum_{m=2}^{m_{max}}mN_{L_{m}}$$&lt;/p&gt;
+&lt;p&gt;輸出的結果即為符合連桿數與接頭數的條件下，雙接頭桿件、三接頭桿件、四接頭桿件分別的數量。&lt;/p&gt;
+&lt;p&gt;再來是類型合成的部份。&lt;/p&gt;
+&lt;h1&gt;類型合成&lt;/h1&gt;
+&lt;p&gt;稍微為找到的機構畫了下樹狀圖：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_23_02.png"&gt;&lt;/p&gt;
+&lt;p&gt;程式排列順序為左至右，接頭用完就換兄弟姊妹項；當此輩分用完時，才由最左的連桿繼續接。此種拓樸法理論上不會有先後問題。&lt;/p&gt;
+&lt;p&gt;若不看數目合成的結果，此種數目其實只會辨認 5 個雙接頭與 4 個三接頭連桿。&lt;/p&gt;
+&lt;p&gt;必須達成：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;取光這 9 個連桿。&lt;/li&gt;
+&lt;li&gt;接頭完全都有連接（遇到死點要自動作廢）。&lt;/li&gt;
+&lt;li&gt;轉換成表示法判斷同構。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;拓樸可以使用主副 class 附加屬性達成，也會先寫一些小模型才會加入 Pyslvs。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;每個數目合成的結果都可以做類型合成&lt;/strong&gt;，也是這裡最複雜，必須排除無用或重複的機構。&lt;/p&gt;
+&lt;p&gt;然後圖譜目前找不到規律性，不知有何方法可以「畫」出來，不然現階段只能展示很難閱讀的樹狀結構。&lt;/p&gt;
+&lt;p&gt;最後特殊化的部份就可能要人工手動或 AI 介入了，因為必須賦予連桿功能，例如迴歸輪系不可以在三角形迴路上。&lt;/p&gt;</content><category term="創意性機構設計"></category></entry><entry><title>Pyslvs 開發進度 - 10/22</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1022.html" rel="alternate"></link><published>2017-10-22T21:00:00+08:00</published><updated>2017-10-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-22:/blog/pyslvs-kai-fa-jin-du-1022.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;機構分析功能&lt;/li&gt;
 &lt;/ul&gt;
