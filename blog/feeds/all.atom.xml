@@ -81,7 +81,9 @@ if __name__=='__main__':
 &lt;p&gt;拓樸可以使用主副 class 附加屬性達成，也會先寫一些小模型才會加入 Pyslvs。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;每個數目合成的結果都可以做類型合成&lt;/strong&gt;，也是這裡最複雜，必須排除無用或重複的機構。&lt;/p&gt;
 &lt;p&gt;然後圖譜目前找不到規律性，不知有何方法可以「畫」出來，不然現階段只能展示很難閱讀的樹狀結構。&lt;/p&gt;
-&lt;p&gt;最後特殊化的部份就可能要人工手動或 AI 介入了，因為必須賦予連桿功能，例如迴歸輪系不可以在三角形迴路上。&lt;/p&gt;</content><category term="創意性機構設計"></category></entry><entry><title>Pyslvs 開發進度 - 10/22</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1022.html" rel="alternate"></link><published>2017-10-22T21:00:00+08:00</published><updated>2017-10-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-22:/blog/pyslvs-kai-fa-jin-du-1022.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;p&gt;最後特殊化的部份就可能要人工手動或 AI 介入了，因為必須賦予連桿功能，例如迴歸輪系不可以在三角形迴路上。&lt;/p&gt;
+&lt;p&gt;上次寫的拓樸法先拿掉，準備重寫。數目合成小模型加入 Pyslvs 的成效：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_23_03.png"&gt;&lt;/p&gt;</content><category term="創意性機構設計"></category></entry><entry><title>Pyslvs 開發進度 - 10/22</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1022.html" rel="alternate"></link><published>2017-10-22T21:00:00+08:00</published><updated>2017-10-22T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-10-22:/blog/pyslvs-kai-fa-jin-du-1022.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;機構分析功能&lt;/li&gt;
 &lt;/ul&gt;
