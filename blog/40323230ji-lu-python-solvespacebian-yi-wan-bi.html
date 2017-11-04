@@ -231,12 +231,15 @@ li {
 <p>最後編譯時把<code>_slvs.so</code>改成了<code>_slvs.pyd</code>就能使用了。</p>
 <p>有測試過改成<code>.dll</code>的方式，但是反而不能使用，可能是Windows平台Python辨認的問題。</p>
 <p>不過由於<code>_slvs.pyd</code>是參照<code>libslvs.so</code>的內容生成的，所以這四個檔案必須放在同一個資料夾：</p>
-<div class="highlight"><pre><span></span>solvespace/exposed/_slvs.pyd
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>solvespace/exposed/_slvs.pyd
 solvespace/exposed/libslvs.so
 solvespace/exposed/slvs.py
 solvespace/exposed/Usage.py
 </pre></div>
-
+</td></tr></table>
 
 <p>倉儲的Readme也做了一下說明。</p>
 <p>而<code>test.py</code>執行結果中，偵測到<code>long</code>還沒定義，所以資料庫還需要修理一下。</p>
@@ -293,6 +296,11 @@ solvespace/exposed/Usage.py
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/double-ball-lifter-ji-gou-fen-xi.html">
+                            Double Ball Lifter 機構分析
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/chuang-yi-xing-ji-gou-she-ji-ke-tang-bi-ji-1023.html">
                             創意性機構設計課堂筆記 - 10/23
                         </a>
@@ -310,11 +318,6 @@ solvespace/exposed/Usage.py
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1020.html">
                             Pyslvs 開發進度 - 10/20
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1019.html">
-                            Pyslvs 開發進度 - 10/19
                         </a>
                     </li>
                 </ul>
