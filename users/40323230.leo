@@ -214,8 +214,8 @@
 <v t="ahshoe.20170116211908.1"><vh>@edit 40323230_20170116.md</vh></v>
 </v>
 </v>
-<v t="ahshoe.20170119213309.1"><vh>2017 Winter Vacation</vh>
-<v t="ahshoe.20170119213337.1"><vh>w1</vh>
+<v t="ahshoe.20170119213309.1" a="E"><vh>2017 Winter Vacation</vh>
+<v t="ahshoe.20170119213337.1" a="E"><vh>w1</vh>
 <v t="ahshoe.20170119213402.1"><vh>@edit 40323230_20170119.md</vh></v>
 <v t="ahshoe.20170120225056.1"><vh>@edit 40323230_20170120.md</vh></v>
 <v t="40323230.20170122203639.1"><vh>@edit 40323230_20170122.md</vh></v>
