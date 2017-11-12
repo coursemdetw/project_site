@@ -214,8 +214,8 @@
 <v t="ahshoe.20170116211908.1"><vh>@edit 40323230_20170116.md</vh></v>
 </v>
 </v>
-<v t="ahshoe.20170119213309.1" a="E"><vh>2017 Winter Vacation</vh>
-<v t="ahshoe.20170119213337.1" a="E"><vh>w1</vh>
+<v t="ahshoe.20170119213309.1"><vh>2017 Winter Vacation</vh>
+<v t="ahshoe.20170119213337.1"><vh>w1</vh>
 <v t="ahshoe.20170119213402.1"><vh>@edit 40323230_20170119.md</vh></v>
 <v t="ahshoe.20170120225056.1"><vh>@edit 40323230_20170120.md</vh></v>
 <v t="40323230.20170122203639.1"><vh>@edit 40323230_20170122.md</vh></v>
@@ -386,8 +386,11 @@
 <v t="ahshoe.20171023201616.1"><vh>w7</vh>
 <v t="ahshoe.20171023194136.1"><vh>@edit 40323230_20171023.md</vh></v>
 </v>
-<v t="40323230.20171104203503.1" a="E"><vh>w8</vh>
+<v t="40323230.20171104203503.1"><vh>w8</vh>
 <v t="40323230.20171104203522.1"><vh>@edit 40323230_20171104.md</vh></v>
+</v>
+<v t="ahshoe.20171112161612.1" a="E"><vh>w9</vh>
+<v t="ahshoe.20171112161641.1"><vh>@edit 40323230_20171112.md</vh></v>
 </v>
 </v>
 <v t="ahshoe.20171014115108.1"><vh>Entry book</vh>
@@ -1178,6 +1181,7 @@ def domake():
 make = threading.Thread(target=domake)
 make.start()</t>
 <t tx="ahshoe.20171023201616.1"></t>
+<t tx="ahshoe.20171112161612.1"></t>
 <t tx="amd.20151215170031.1"></t>
 <t tx="amd.20151216001126.1">@language md
 Title: 文章標題

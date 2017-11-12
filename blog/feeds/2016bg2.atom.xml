@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-11-04T21:00:00+08:00</updated><entry><title>Double Ball Lifter 機構分析</title><link href="http://project.mde.tw/blog/double-ball-lifter-ji-gou-fen-xi.html" rel="alternate"></link><published>2017-11-04T21:00:00+08:00</published><updated>2017-11-04T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-11-04:/blog/double-ball-lifter-ji-gou-fen-xi.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-11-12T21:00:00+08:00</updated><entry><title>Pyslvs 開發進度 - 11/12</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1112.html" rel="alternate"></link><published>2017-11-12T21:00:00+08:00</published><updated>2017-11-12T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-11-12:/blog/pyslvs-kai-fa-jin-du-1112.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;版次管理功能&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;版次管理功能&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;版次管理功能&lt;/h1&gt;
+&lt;p&gt;花了許久時間做出版次管理的介面，目前只有基本框架，分支功能還沒做好。&lt;/p&gt;
+&lt;p&gt;Pyslvs 的檔案格式為副檔名為「.pyslvs」的 SQL 資料庫。&lt;/p&gt;
+&lt;p&gt;下圖的 commit #1 只有增加主動桿，commit #2 完成四連桿。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_11_12.png"&gt;&lt;/p&gt;
+&lt;p&gt;在每次使用「Save」功能時，會視為一次「commit」，此時便會將&lt;strong&gt;機構狀態&lt;/strong&gt;、&lt;strong&gt;路徑數據&lt;/strong&gt;、&lt;strong&gt;尺寸合成結果&lt;/strong&gt;三筆資料轉為字串，透過壓縮成 byte 格式後存入資料庫的一行欄位中，三筆資料都經過測試可以回歸上一個版本。&lt;/p&gt;
+&lt;p&gt;壓縮功能是透過 zlib 模組達成，使用 peewee 的 BlobField 格式，可以用來處理資料庫中的 list、dict：&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+import zlib
+compress = lambda obj: zlib.compress(bytes(repr(obj), encoding="utf8"), 5)
+decompress = lambda obj: eval(zlib.decompress(obj).decode())
+&lt;/pre&gt;
+
+&lt;p&gt;每個 commit 還包含兩個外來鍵標註屬性，分別為「Author」和「Branch」標示作者和所屬分支。而 commit 的從屬關聯是參照「Previous」自我參照的外來鍵決定。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;畫面中最上方的表格為所有提交的清單，可以透過上方的搜尋列過濾「Description」和「Author」欄位的內容，取消搜尋只要清空搜尋列即可。&lt;/li&gt;
+&lt;li&gt;若要載入過去的提交紀錄，可以按下表格左側的按鈕，不過需要注意是否有變更尚未儲存。&lt;/li&gt;
+&lt;li&gt;進行提交時，必須輸入作者名稱（預設為 Anonymous）、說明文字，若是忘記輸入會彈出 QInputDialog 詢問。&lt;/li&gt;
+&lt;li&gt;使用「Save」功能或「Commit」按鈕儲存；亦可使用「New Branch」按鈕將編輯的內容儲存到新分支中。&lt;/li&gt;
+&lt;li&gt;使用「Stash」按鈕可以捨棄目前所有變更，相當於載入上次最新的提交。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;目前的基本功能載入都滿快的，除了連接到新資料庫的時候 peewee 會頓一下。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>Double Ball Lifter 機構分析</title><link href="http://project.mde.tw/blog/double-ball-lifter-ji-gou-fen-xi.html" rel="alternate"></link><published>2017-11-04T21:00:00+08:00</published><updated>2017-11-04T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-11-04:/blog/double-ball-lifter-ji-gou-fen-xi.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;分析接球機構&lt;/p&gt;
 &lt;/li&gt;
