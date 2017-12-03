@@ -191,7 +191,7 @@ li {
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-11-12T21:00:00+08:00"> 日 12 十一月 2017</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-11-12T21:00:00+08:00"> Sun 12 November 2017</time>
     </span>
             <span class="label label-default">By</span>
             <a href="http://project.mde.tw/blog/author/40323230.html"><i class="fa fa-user"></i> 40323230</a>
@@ -213,7 +213,7 @@ li {
 <p>花了許久時間做出版次管理的介面，目前只有基本框架，分支功能還沒做好。</p>
 <p>Pyslvs 的檔案格式為副檔名為「.pyslvs」的 SQL 資料庫。</p>
 <p>下圖的 commit #1 只有增加主動桿，commit #2 完成四連桿。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_11_12.png"></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_11_12.png" /></p>
 <p>在每次使用「Save」功能時，會視為一次「commit」，此時便會將<strong>機構狀態</strong>、<strong>路徑數據</strong>、<strong>尺寸合成結果</strong>三筆資料轉為字串，透過壓縮成 byte 格式後存入資料庫的一行欄位中，三筆資料都經過測試可以回歸上一個版本。</p>
 <p>壓縮功能是透過 zlib 模組達成，使用 peewee 的 BlobField 格式，可以用來處理資料庫中的 list、dict：</p>
 <pre class="brush: python">
@@ -276,6 +276,11 @@ decompress = lambda obj: eval(zlib.decompress(obj).decode())
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/esp8266chuan-jie-cp2012.html">
+                            esp8266串接cp2012
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1203.html">
                             Pyslvs 開發進度 - 12/03
                         </a>
@@ -293,11 +298,6 @@ decompress = lambda obj: eval(zlib.decompress(obj).decode())
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1112.html">
                             Pyslvs 開發進度 - 11/12
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/double-ball-lifter-ji-gou-fen-xi.html">
-                            Double Ball Lifter 機構分析
                         </a>
                     </li>
                 </ul>
