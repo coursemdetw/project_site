@@ -191,7 +191,7 @@ li {
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-10-23T21:00:00+08:00"> 一 23 十月 2017</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-10-23T21:00:00+08:00"> Mon 23 October 2017</time>
     </span>
             <span class="label label-default">By</span>
             <a href="http://project.mde.tw/blog/author/40323230.html"><i class="fa fa-user"></i> 40323230</a>
@@ -213,7 +213,7 @@ li {
 
 <h1>機構分析</h1>
 <p>找到了一個中國專利網站的平面連桿機構，進行一般化：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_23_01.png"></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_23_01.png" /></p>
 <p>連桿數為 9，有 7 個旋轉接頭與 4 個滑動接頭（這裡顏教授沒有使用 RP 接頭）。</p>
 <p>老師說這樣的數目很多組合，值得嘗試。</p>
 <p>今天想了一下拓樸構造，這方面的「同構」其實會移除所有接頭屬性，只看連桿連接構造。</p>
@@ -260,14 +260,14 @@ if __name__=='__main__':
 
 <p>使用的是 Python 內建迭代工具 itertools 模組的 product 函式，輸入「種類數」與「組合長度」，可以直接輸出一個 generator，用 tuple 回傳所有組合的結果。</p>
 <p>三個未知數可以先取前兩個未知數的組合，透過第一式找到第三個未知數的解。</p>
-<p>$$N_{L}(桿件數)=\sum_{m=2}^{m_{max}}N_{L_{m}}$$</p>
+<div class="math">$$N_{L}(桿件數)=\sum_{m=2}^{m_{max}}N_{L_{m}}$$</div>
 <p>然後透過第二式與「第三個未知數為正數」驗正是否符合。</p>
-<p>$$2N_{J}(接頭數)=\sum_{m=2}^{m_{max}}mN_{L_{m}}$$</p>
+<div class="math">$$2N_{J}(接頭數)=\sum_{m=2}^{m_{max}}mN_{L_{m}}$$</div>
 <p>輸出的結果即為符合連桿數與接頭數的條件下，雙接頭桿件、三接頭桿件、四接頭桿件分別的數量。</p>
 <p>再來是類型合成的部份。</p>
 <h1>類型合成</h1>
 <p>稍微為找到的機構畫了下樹狀圖：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_23_02.png"></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_23_02.png" /></p>
 <p>程式排列順序為左至右，接頭用完就換兄弟姊妹項；當此輩分用完時，才由最左的連桿繼續接。此種拓樸法理論上不會有先後問題。</p>
 <p>若不看數目合成的結果，此種數目其實只會辨認 5 個雙接頭與 4 個三接頭連桿。</p>
 <p>必須達成：</p>
@@ -281,7 +281,64 @@ if __name__=='__main__':
 <p>然後圖譜目前找不到規律性，不知有何方法可以「畫」出來，不然現階段只能展示很難閱讀的樹狀結構。</p>
 <p>最後特殊化的部份就可能要人工手動或 AI 介入了，因為必須賦予連桿功能，例如迴歸輪系不可以在三角形迴路上。</p>
 <p>上次寫的拓樸法先拿掉，準備重寫。數目合成小模型加入 Pyslvs 的成效：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_23_03.png"></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_23_03.png" /></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -327,6 +384,11 @@ if __name__=='__main__':
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/esp8266chuan-jie-cp2012.html">
+                            esp8266串接cp2012
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1203.html">
                             Pyslvs 開發進度 - 12/03
                         </a>
@@ -344,11 +406,6 @@ if __name__=='__main__':
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1112.html">
                             Pyslvs 開發進度 - 11/12
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/double-ball-lifter-ji-gou-fen-xi.html">
-                            Double Ball Lifter 機構分析
                         </a>
                     </li>
                 </ul>
