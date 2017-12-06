@@ -40,7 +40,7 @@ show_tree = lambda root: '\n'.join("{}{}({})".format(pre, n.name, n.limit) for p
 
 &lt;p&gt;接下來是主函式，稱為 &lt;code&gt;make_link&lt;/code&gt;，接收內含 int 的可迭代物件。&lt;/p&gt;
 &lt;pre class="brush: python"&gt;
-def make_link(iter: Tuple[int,]):
+def topo(iter: Tuple[int,]):
     ...
     return answer
 &lt;/pre&gt;
@@ -114,7 +114,7 @@ if error:
 
 &lt;p&gt;或是兩對連桿之間有連到一個以上的接頭。&lt;/p&gt;
 &lt;pre class="brush: python"&gt;
-if findall(links[0], filter_=lambda n: len([c.name for c in n.children])!=len(set(c.name for c in n.children))):
+if findall(links[0], filter_=lambda n: len(n.children)!=len(set(c.name.replace('[', '').replace(']', '') for c in n.children))):
     continue
 &lt;/pre&gt;
 
@@ -137,20 +137,20 @@ if __name__=='__main__':
 L0(2)
 ├── L1(3)
 │   ├── L3(2)
-│   │   └── L5(3)
-│   │       ├── L6(3)
-│   │       │   ├── L8(3)
-│   │       │   │   ├── [L6](3)
-│   │       │   │   └── [L7](2)
-│   │       │   └── [L8](3)
-│   │       └── L7(2)
-│   │           └── [L8](3)
-│   └── L4(2)
+│   │   └── L5(2)
+│   │       └── L6(3)
+│   │           ├── L7(2)
+│   │           │   └── [L8](3)
+│   │           └── L8(3)
+│   │               ├── [L7](2)
+│   │               └── [L4](3)
+│   └── L4(3)
+│       ├── [L8](3)
 │       └── [L2](2)
 └── L2(2)
-    └── [L4](2)
+    └── [L4](3)
 -------
-Answer count: 60
+Answer count: 36
 &lt;/pre&gt;
 
 &lt;p&gt;經驗證，所有接頭都有連接。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>Pyslvs 開發進度 - 12/03</title><link href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1203.html" rel="alternate"></link><published>2017-12-03T21:00:00+08:00</published><updated>2017-12-03T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2017-12-03:/blog/pyslvs-kai-fa-jin-du-1203.html</id><summary type="html">&lt;p&gt;Pyslvs v0.9 大更新進度&lt;/p&gt;
