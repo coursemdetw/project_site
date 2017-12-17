@@ -224,24 +224,24 @@ li {
 <p>使用<strong>拓樸構造特性</strong>描述此機構，包含桿件與接頭功用，紀錄功用可以在排列組合時維持其本來目的。</p>
 <h2>數目合成 (Number synthesis)</h2>
 <p>取得全部桿件數與全部接頭數，進行桿件類型反推：</p>
-<div class="math">$$N_{L}(桿件數)=\sum_{m=2}^{m_{max}}N_{L_{m}}$$</div>
-<div class="math">$$2N_{J}(接頭數)=\sum_{m=2}^{m_{max}}mN_{L_{m}}$$</div>
+<p>$$N_{L}(桿件數)=\sum_{m=2}^{m_{max}}N_{L_{m}}$$</p>
+<p>$$2N_{J}(接頭數)=\sum_{m=2}^{m_{max}}mN_{L_{m}}$$</p>
 <p>其中，最大連桿數可以從這兩個條件求得（其餘為不合理）：</p>
-<div class="math">$$
+<p>$$
 m_{max} = \begin{cases}
-N_{J}-N_{L}+2 &amp; (N_{L}\leq N_{J}\leq 2N_{L}-3);\\
+N_{J}-N_{L}+2 &amp; (N_{L}\leq N_{J}\leq 2N_{L}-3);\
 N_{L}-1 &amp; (2N_{L}-3\leq N_{J}\leq \frac{N_{L}(N_{L}-1)}{2})
 \end{cases}
-$$</div>
+$$</p>
 <p>由最大接頭類型，列出每種連桿數和接頭的可能性，當桿件的接頭超過 2 和 3，會變成一種以上的組合。</p>
 <p>例如：</p>
-<div class="math">$$
+<p>$$
 \begin{cases}
-x+y+z=8;\\
-2x+3y+4z=20;\\
+x+y+z=8;\
+2x+3y+4z=20;\
 x\geq 0,\quad y\geq 0,\quad z\geq 0
 \end{cases}
-$$</div>
+$$</p>
 <p>寫了一個手算解題的小工具，不過用 Scipy 解題顯然更有效率一點。</p>
 <pre class="brush: python">
 f1 = (1, 1, 1, 8) #x + y + z = 8
@@ -291,63 +291,6 @@ for t in range(10):
 <p>首先把之前的<strong>拓樸構造特性</strong>分析連桿的角色與要求，例如定義原本的固定桿、搖臂、減震器等。</p>
 <p>最後對圖譜結果排列組合，即可產生新的連桿類型。</p>
 <p>其中一組解應為原本現有的機構類型。</p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    var location_protocol = (false) ? 'https' : document.location.protocol;
-    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -393,28 +336,28 @@ for t in range(10):
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/esp8266chuan-jie-cp2012.html">
-                            esp8266串接cp2012
+                        <a href="http://project.mde.tw/blog/x-windows-sftp-filezilla-proxy-yu-xu-ni-si-fu-qi.html">
+                            X Windows, SFtp, Filezilla, Proxy 與虛擬伺服器
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1015.html">
-                            Pyslvs 開發進度 - 10/15
+                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1212.html">
+                            Pyslvs 開發進度 - 12/12
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyqt5-wan-quan-ru-men.html">
-                            PyQt5 完全入門
+                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1210.html">
+                            Pyslvs 開發進度 - 12/10
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1010.html">
-                            Pyslvs 開發進度 - 10/10
+                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1205.html">
+                            Pyslvs 開發進度 - 12/05
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1007.html">
-                            Pyslvs 開發進度 - 10/07
+                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1203.html">
+                            Pyslvs 開發進度 - 12/03
                         </a>
                     </li>
                 </ul>

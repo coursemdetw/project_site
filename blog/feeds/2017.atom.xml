@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-18T02:43:00+08:00</updated><entry><title>esp8266串接cp2012</title><link href="http://project.mde.tw/blog/esp8266chuan-jie-cp2012.html" rel="alternate"></link><published>2017-10-18T02:43:00+08:00</published><updated>2017-10-18T02:43:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2017-10-18:blog/esp8266chuan-jie-cp2012.html</id><summary type="html">&lt;h1&gt;施工中&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-10-23T16:00:00+08:00</updated><entry><title>使用Onshape繪製Marble</title><link href="http://project.mde.tw/blog/shi-yong-onshapehui-zhi-marble.html" rel="alternate"></link><published>2017-10-23T16:00:00+08:00</published><updated>2017-10-23T16:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2017-10-23:/blog/shi-yong-onshapehui-zhi-marble.html</id><summary type="html">&lt;p&gt;使用Onshape繪製Marble&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;使用Onshape繪製Marble&lt;/p&gt;
+
+
+&lt;p&gt;參考 https://youtu.be/as_ul9h8ELU&lt;/p&gt;
+&lt;h3&gt;使用Onshape繪製Marble&lt;/h3&gt;
+&lt;h2&gt;1.首先，先定好整個台座的大小:200x150 h=18  ,順便定好可更換道路區的範圍:150x80。&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/1023/01.png?raw=true"&gt;&lt;/p&gt;
+&lt;h2&gt;2.開始繪製假想前視圖，直接在前視圖繪製仿生獸的八連桿、鋼珠等候區、導流、升降台、升降台的滑軌道、軌道支撐台、翹翹板(抵住鋼珠)及其支座。&lt;/h2&gt;
+&lt;p&gt;預先設計這些零件的高度、長度以及位置，對之後的擠出會有幫助。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/1023/03.png?raw=true"&gt;&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/239440868" width="640" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/239440868"&gt;虎尾科技大學 機械設計系 40423116 李冠辰 升降台移動&lt;/a&gt; from &lt;a href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;3.繪製連桿、擠出:5&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/1023/04.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/1023/06.png?raw=true"&gt;&lt;/p&gt;
+&lt;h2&gt;4.設計等候區、導流&lt;/h2&gt;
+&lt;p&gt;等候區的重點在於如何將鋼珠引入導流的部分，而導流將每顆鋼珠排成一列，兩者皆需要有個弧度使鋼珠移動，&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/1023/12.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/1023/14.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;完成如下:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/1023/08.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;上方的孔洞之後用銅線捏成一個圍欄來擋住鋼珠&lt;/p&gt;
+&lt;h2&gt;5.設計升降台，及翹翹板&lt;/h2&gt;
+&lt;p&gt;這裡我把凹槽設計在邊邊，外面立兩根柱子(或是一根)，這樣鋼珠落下時，會被柱子抵住，到達極限高度時鋼珠變會離開升降台。
+底下則是為了翹翹板挖一個凹槽。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/1023/13.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/1023/15.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;完成如下:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/1023/09.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;尾端設計孔洞以方便銅線套入。&lt;/p&gt;
+&lt;h2&gt;6.馬達座及減速機&lt;/h2&gt;
+&lt;p&gt;由兩個座固定，馬達置於下方，搭配正齒輪減速機，達成減速比。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/1023/17.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/1023/16.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/1023/10.png?raw=true"&gt;&lt;/p&gt;
+&lt;h2&gt;7.軌道支撐台&lt;/h2&gt;
+&lt;p&gt;沒什麼好說的，附圖就好，用於銅線固定用&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/1023/11.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;有了等候區、升降台，馬達座，基礎的循環動力源就有了，剩下的就是設計出道路區，以及考驗焊接銅線的技術了。&lt;/p&gt;
+&lt;p&gt;附上俯視、前視:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/1023/07.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/1023/05.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;註:固定皆由釘子打入木板，所以每個台座都要通幾個釘子直徑的孔&lt;/p&gt;</content><category term="專題"></category></entry><entry><title>esp8266串接cp2012</title><link href="http://project.mde.tw/blog/esp8266chuan-jie-cp2012.html" rel="alternate"></link><published>2017-10-18T02:43:00+08:00</published><updated>2017-10-18T02:43:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2017-10-18:/blog/esp8266chuan-jie-cp2012.html</id><summary type="html">&lt;h1&gt;施工中&lt;/h1&gt;
+</summary><content type="html">&lt;h1&gt;施工中&lt;/h1&gt;
 
 
 &lt;p&gt;腳位接法&lt;/p&gt;
@@ -10,7 +56,7 @@
 【Arduino】GND →【ESP8266】GND
 【Arduino】GND →【CP2102】GND   &lt;/p&gt;
 &lt;p&gt;&lt;a href="https://imgur.com/vBtHWqY"&gt;&lt;img src="https://i.imgur.com/vBtHWqY.jpg" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;目前的目的是先控制簡單的LED明暗!&lt;/p&gt;</summary><category term="HW"></category></entry><entry><title>使用peewee創建資料庫</title><link href="http://project.mde.tw/blog/shi-yong-peeweechuang-jian-zi-liao-ku.html" rel="alternate"></link><published>2017-10-02T04:40:00+08:00</published><updated>2017-10-02T04:40:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2017-10-02:blog/shi-yong-peeweechuang-jian-zi-liao-ku.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+&lt;p&gt;目前的目的是先控制簡單的LED明暗!&lt;/p&gt;</content><category term="HW"></category></entry><entry><title>使用peewee創建資料庫</title><link href="http://project.mde.tw/blog/shi-yong-peeweechuang-jian-zi-liao-ku.html" rel="alternate"></link><published>2017-10-02T04:40:00+08:00</published><updated>2017-10-02T04:40:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2017-10-02:/blog/shi-yong-peeweechuang-jian-zi-liao-ku.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
 &lt;p&gt;&lt;a href="http://docs.peewee-orm.com/en/latest/peewee/database.html"&gt;關於peewee&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.shushilvshe.com/python/peewee.html"&gt;peewee入門教程&lt;/a&gt;&lt;/p&gt;
@@ -79,12 +125,25 @@ if __name__=='__main__':
 &lt;p&gt;&lt;a href="https://imgur.com/PDpOgKB"&gt;&lt;img src="https://i.imgur.com/PDpOgKB.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;創建資料&lt;/h1&gt;
 &lt;p&gt;&lt;pre class="brush: python"&gt;
-from peewee import *  &lt;br /&gt;
-from datetime import date&lt;br /&gt;
+from peewee import *  &lt;br&gt;
+from datetime import date&lt;br&gt;
 from data import Ball, db   #導入data裡面寫好的資料表格式&lt;/p&gt;
-&lt;p&gt;if &lt;strong&gt;name&lt;/strong&gt;=='&lt;strong&gt;main&lt;/strong&gt;':  &lt;br /&gt;
+&lt;p&gt;if &lt;strong&gt;name&lt;/strong&gt;=='&lt;strong&gt;main&lt;/strong&gt;':  &lt;br&gt;
     db.connect()   &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;db.create_tables([Ball],safe=True)
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;db.create_tables([Ball],safe=True)
 
 print(&amp;quot;create&amp;quot;) #print create.
 
@@ -99,7 +158,7 @@ goodhaha.save()
 
 db.close()
 &lt;/pre&gt;&lt;/div&gt;
-
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;/pre&gt;
 
@@ -135,15 +194,16 @@ if __name__=='__main__':    .
 &lt;p&gt;&lt;a href="https://imgur.com/GA7Twvv"&gt;&lt;img src="https://i.imgur.com/GA7Twvv.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;這樣不行&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://imgur.com/1teVbOu"&gt;&lt;img src="https://i.imgur.com/1teVbOu.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;這樣才可以&lt;/p&gt;</summary><category term="HW"></category></entry><entry><title>台美交流</title><link href="http://project.mde.tw/blog/tai-mei-jiao-liu.html" rel="alternate"></link><published>2017-09-26T15:00:00+08:00</published><updated>2017-09-26T15:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-09-26:blog/tai-mei-jiao-liu.html</id><summary type="html">&lt;p&gt;開學第三周&lt;/p&gt;
+&lt;p&gt;這樣才可以&lt;/p&gt;</content><category term="HW"></category></entry><entry><title>台美交流</title><link href="http://project.mde.tw/blog/tai-mei-jiao-liu.html" rel="alternate"></link><published>2017-09-26T15:00:00+08:00</published><updated>2017-09-26T15:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-09-26:/blog/tai-mei-jiao-liu.html</id><summary type="html">&lt;p&gt;開學第三周&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;開學第三周&lt;/p&gt;
 
 
 &lt;p&gt;於今年年初，一名外國魔術師來到虎尾並與我所在的虎科摩術社有了交流；在昨日魔術社的茶會，外國人與友校有了地一次的接觸並有了一個關於魔術道具的想法。&lt;/p&gt;
 &lt;p&gt;首先將這個視為一個撲克牌盒 : &lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170926/card.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170926/card.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;想要的效果為 : 發牌給隨機觀眾，隨機挑一位觀眾來進行所謂的心靈魔術並預測到觀眾手上的牌。&lt;/p&gt;
 &lt;p&gt;希望的流程為 : 隨機給觀眾選牌，將空牌盒用魔術手法替換成我們所做得這一個機觀牌盒，並是先找好一名線人待在觀眾身後看觀眾的牌，並用手機發訊給機關牌盒，訊息會以這樣呈現 : &lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170926/card2.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170926/card2.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;在魔術"工程"師們討論的過程中想過很多有趣的想法 : &lt;/p&gt;
 &lt;p&gt;1.在每張牌上加上線圈並利用 NFC 技術來讓線人這項條件免除，以 NFC 來感應可以即時顯現出觀眾手上的牌，不過在牌上加線圈會太麻煩而且 NFC 的距離太近。&lt;/p&gt;
 &lt;p&gt;2.直接用智慧型手錶，在線人手機端下載記事本且是要可以雲端同步的那種，用手錶也安裝一樣的程式來更新線人所寫的記事本文字，雖然省下了 SMS 的簡訊費，但外過人說不過魔幻看起來很"假"，不好演出。&lt;/p&gt;
@@ -151,43 +211,41 @@ if __name__=='__main__':    .
 &lt;p&gt;4.用 BBcall 的小螢幕來呈現，但....眾人投票說古代科技，不討論。&lt;/p&gt;
 &lt;p&gt;最後想出一個看似可行的辦法 : &lt;/p&gt;
 &lt;p&gt;先看圖片 : &lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170926/card3.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170926/card3.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;圓圓的是 LED ，我們以手機透過藍芽來控制燈號，不需要邏輯還是甚麼複雜的東西；透過二進位來表示，前四顆皆是單色 LED 燈 ，第五顆為三色 LED ，前四顆分別代表 "1"、"2"、"4"、"8"，剛好可湊出1~13中所有數字，並以最後一顆三色的信號來代表四種花色，咦 ? 三色代表四種 ? 是的，別忘了沒亮也是一種信號。&lt;/p&gt;
-&lt;p&gt;目前的想法看似可行，但手機遙控與如何縮小 Arduino 放到牌盒內也是一門技術，縮小若是有困難，我想過關於8051單晶片的可能性，不過那是完全沒踏入的領域，所以目前先不予以討論。&lt;/p&gt;</summary><category term="魔術機電結合"></category></entry><entry><title>仿生獸組裝日誌(4)</title><link href="http://project.mde.tw/blog/fang-sheng-shou-zu-zhuang-ri-zhi-4.html" rel="alternate"></link><published>2017-09-22T16:00:00+08:00</published><updated>2017-09-22T16:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2017-09-22:blog/fang-sheng-shou-zu-zhuang-ri-zhi-4.html</id><summary type="html">&lt;p&gt;組裝仿生獸方式以及蝸桿蝸輪進度&lt;/p&gt;
+&lt;p&gt;目前的想法看似可行，但手機遙控與如何縮小 Arduino 放到牌盒內也是一門技術，縮小若是有困難，我想過關於8051單晶片的可能性，不過那是完全沒踏入的領域，所以目前先不予以討論。&lt;/p&gt;</content><category term="魔術機電結合"></category></entry><entry><title>仿生獸組裝日誌(4)</title><link href="http://project.mde.tw/blog/fang-sheng-shou-zu-zhuang-ri-zhi-4.html" rel="alternate"></link><published>2017-09-22T16:00:00+08:00</published><updated>2017-09-22T16:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2017-09-22:/blog/fang-sheng-shou-zu-zhuang-ri-zhi-4.html</id><summary type="html">&lt;p&gt;組裝仿生獸方式以及蝸桿蝸輪進度&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;組裝仿生獸方式以及蝸桿蝸輪進度&lt;/p&gt;
 
 
 &lt;p&gt;今天主要將這禮拜印的聯軸器組裝起來接在一起，用軸棒撐著嘗試手動轉轉看&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0922/05.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0922/05.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;h3&gt;所有組裝上的問題全靠水管來解決。&lt;/h3&gt;
 &lt;h2&gt;1.用水管套入螺絲組成軸棒，避免連桿接觸牙紋。&lt;/h2&gt;
 &lt;p&gt;剛好水管內徑4mm，恰好與M4螺絲為緊配合，然後外徑為6mm，所以我買了能通過M4螺絲跟外徑6mm的墊片，每個連桿之間都隔一墊片如圖下所示&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0922/04.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0922/04.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;h2&gt;2.水管可以作為鬆緊度的微調零件&lt;/h2&gt;
 &lt;p&gt;其實這有好處有壞處&lt;/p&gt;
 &lt;p&gt;好處是水管可以被擠壓，以用來抵住墊片，就跟圖上最後一段水管緊固螺帽，而且因為內壁也被張開的關係，會形成牙紋，就可以當作非常緊的螺帽來使用，所謂的鬆緊度微調就是指圖下唯一露出的那一小截水管，用尖嘴鉗夾緊轉動他可以調整旁邊連桿的鬆緊度，而旁邊的螺帽也被緊固著，保持兩個聯軸器之間的同軸關係。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0922/03.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0922/03.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;壞處就是因為非常緊的緣故，要拆掉非常耗時，一條水管的長短會關係到它的緊度，當要做為軸棒使用時，剪個20mm就非常難套入螺絲，要解決此方法只有兩種，一種用尖嘴鉗慢慢轉進去，非常慢，另一種則是全剪成10mm段，不過這樣中間就會有一條接痕，一旦水管一端是斜口的，接合後會擠壓造成凸起，連桿轉動就會不順暢。&lt;/p&gt;
 &lt;h3&gt;總結:&lt;/h3&gt;
 &lt;p&gt;雖然組裝上，常因為一些規則問題就必須全部拆掉，但完成後，實質上確實有上述效果，所以水管是個非常好用的材料，很幸運在五金行找到它，讓我對仿生獸的設計有莫大的幫助。&lt;/p&gt;
 &lt;h3&gt;蝸桿蝸輪:&lt;/h3&gt;
 &lt;p&gt;今天3D列印昨日設計好的蝸桿蝸輪，來測試看能不能配合、轉動，雖然3D列印時發生了一些問題，我會再另外寫一篇網誌來寫這一塊，而蝸桿蝸輪3D後簡單組裝配合如圖下&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0922/06.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;配合上，蝸桿的部分需要打磨，不然轉動上會有多餘的摩擦，之後可能要討論下要使用步進馬達或直流馬達來控制蝸桿傳動蝸輪。&lt;/p&gt;</summary><category term="仿生獸"></category></entry><entry><title>仿生獸組裝日誌(3)</title><link href="http://project.mde.tw/blog/fang-sheng-shou-zu-zhuang-ri-zhi-3.html" rel="alternate"></link><published>2017-09-21T16:00:00+08:00</published><updated>2017-09-21T16:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2017-09-21:blog/fang-sheng-shou-zu-zhuang-ri-zhi-3.html</id><summary type="html">&lt;p&gt;設計蝸桿蝸輪減速比以及報告零件進度&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0922/06.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;配合上，蝸桿的部分需要打磨，不然轉動上會有多餘的摩擦，之後可能要討論下要使用步進馬達或直流馬達來控制蝸桿傳動蝸輪。&lt;/p&gt;</content><category term="仿生獸"></category></entry><entry><title>仿生獸組裝日誌(3)</title><link href="http://project.mde.tw/blog/fang-sheng-shou-zu-zhuang-ri-zhi-3.html" rel="alternate"></link><published>2017-09-21T16:00:00+08:00</published><updated>2017-09-21T16:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2017-09-21:/blog/fang-sheng-shou-zu-zhuang-ri-zhi-3.html</id><summary type="html">&lt;p&gt;設計蝸桿蝸輪減速比以及報告零件進度&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;設計蝸桿蝸輪減速比以及報告零件進度&lt;/p&gt;
 
 
 &lt;h3&gt;蝸桿蝸輪&lt;/h3&gt;
-&lt;p&gt;![](https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0921/092101.png?
-raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0921/092101.png?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;蝸桿長30，一條螺旋線，節距6&lt;/p&gt;
-&lt;p&gt;![](https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0921/092102.png?
-raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0921/092102.png?raw=true"&gt;&lt;/p&gt;
 &lt;h3&gt;齒型設計&lt;/h3&gt;
 &lt;p&gt;蝸桿齒高5，齒頂圓R1，齒底寬3&lt;/p&gt;
-&lt;p&gt;![](https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0921/092103.png?
-raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0921/092103.png?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;蝸輪齒數30T&lt;/p&gt;
-&lt;p&gt;![](https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0921/092104.png?
-raw=true)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0921/092104.png?raw=true"&gt;&lt;/p&gt;
 &lt;h3&gt;設計流程(跑步驟)&lt;/h3&gt;
 &lt;iframe src="https://player.vimeo.com/video/234836702" width="640" height="316" frameborder="0" 
 webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
@@ -207,70 +265,74 @@ href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https
 &lt;p&gt;目前是想把齒輪箱跟仿生獸身體做成一體的，會往這方向去試試看&lt;/p&gt;
 &lt;h3&gt;零件更新:&lt;/h3&gt;
 &lt;p&gt;星期四第四組(最後一組)聯軸器已經印出來了，拆掉之前的舊零件順便組裝前面三組聯軸器，還沒接上連桿，明天可能會
-去組裝一下然後拍些照片。&lt;/p&gt;</summary><category term="仿生獸"></category></entry><entry><title>機電小玩具進度</title><link href="http://project.mde.tw/blog/ji-dian-xiao-wan-ju-jin-du.html" rel="alternate"></link><published>2017-09-21T15:00:00+08:00</published><updated>2017-09-21T15:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-09-21:blog/ji-dian-xiao-wan-ju-jin-du.html</id><summary type="html">&lt;p&gt;開學第二周進度報告&lt;/p&gt;
+去組裝一下然後拍些照片。&lt;/p&gt;</content><category term="仿生獸"></category></entry><entry><title>機電小玩具進度</title><link href="http://project.mde.tw/blog/ji-dian-xiao-wan-ju-jin-du.html" rel="alternate"></link><published>2017-09-21T15:00:00+08:00</published><updated>2017-09-21T15:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-09-21:/blog/ji-dian-xiao-wan-ju-jin-du.html</id><summary type="html">&lt;p&gt;開學第二周進度報告&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;開學第二周進度報告&lt;/p&gt;
 
 
 &lt;h3&gt;進度&lt;/h3&gt;
 
 &lt;p&gt;目前已將小部分得零件繪製於 onshape 內&lt;/p&gt;
 &lt;p&gt;並在這裡放上參數式繪製法提供各位參考&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170921/os.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170921/os.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;今天若孔軸大小若還不確定&lt;/p&gt;
 &lt;p&gt;那麼在設計零件上就會怕怕的&lt;/p&gt;
 &lt;p&gt;擔心完成後又必須改來改去&lt;/p&gt;
 &lt;p&gt;若是使用參數功能就可以牽一髮動全身&lt;/p&gt;
 &lt;p&gt;&lt;font color=#0000FF&gt;在草圖模式內不能用&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170921/os1.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170921/os1.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;紅框內即為設定完成之參數&lt;/p&gt;
 &lt;p&gt;&lt;h3&gt;如何設定&lt;/h3&gt;&lt;/p&gt;
 &lt;p&gt;首先點選紅框內類似函數的符號&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170921/os2.png?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170921/os2.png?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;並給予名稱以及大小即可&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170921/os3.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170921/os3.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;在標柱時打上你所決定之名稱即可&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170921/os4.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170921/os4.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;最後一點注意事項&lt;/p&gt;
 &lt;p&gt;要注意順序&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170921/os5.png?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170921/os5.png?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;如圖所示&lt;/p&gt;
 &lt;p&gt;草圖一即不能理解新的參數&lt;/p&gt;
 &lt;p&gt;直接將參數拉至最上層即可&lt;/p&gt;
-&lt;p&gt;近幾周社團活動事物較為繁雜 依然會好好用功做事&lt;/p&gt;</summary><category term="機電玩具學習"></category></entry><entry><title>安裝作業環境</title><link href="http://project.mde.tw/blog/an-zhuang-zuo-ye-huan-jing.html" rel="alternate"></link><published>2017-09-19T21:00:00+08:00</published><updated>2017-09-19T21:00:00+08:00</updated><author><name>40423112</name></author><id>tag:project.mde.tw,2017-09-19:blog/an-zhuang-zuo-ye-huan-jing.html</id><summary type="html">&lt;p&gt;依序安裝 Python3.6.2   pyqt5   Eric&lt;/p&gt;
+&lt;p&gt;近幾周社團活動事物較為繁雜 依然會好好用功做事&lt;/p&gt;</content><category term="機電玩具學習"></category></entry><entry><title>安裝作業環境</title><link href="http://project.mde.tw/blog/an-zhuang-zuo-ye-huan-jing.html" rel="alternate"></link><published>2017-09-19T21:00:00+08:00</published><updated>2017-09-19T21:00:00+08:00</updated><author><name>40423112</name></author><id>tag:project.mde.tw,2017-09-19:/blog/an-zhuang-zuo-ye-huan-jing.html</id><summary type="html">&lt;p&gt;依序安裝 Python3.6.2   pyqt5   Eric&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;依序安裝 Python3.6.2   pyqt5   Eric&lt;/p&gt;
 
 
 &lt;h3&gt;Python3.6.2&lt;/h3&gt;
 &lt;p&gt;按照專題的網誌內容安裝 , 在安裝完成後出現問題 , 原本在安裝完成後在 CMD 裡打 Python 可以使用 Python , 但在輸入後會顯示失敗 , 在組員的另一篇網誌內找到 , 原來要先在進階系統設定的環境變數要新增兩個 C:\Program Files\Python36 以及 C:\Program Files\Python36\Scripts , 再新增完畢後成功在 CMD 裡使用 Python . &lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/40423112/project_site_files/blob/gh-pages/files/4042/40423112/python.png?raw=true" /&gt;   &lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423112/project_site_files/blob/gh-pages/files/4042/40423112/python.png?raw=true"&gt;   &lt;/p&gt;
 &lt;h3&gt;pyqt5&lt;/h3&gt;
 &lt;p&gt;依網誌內容逐步安裝 , 在等待漫長的時間後安裝完畢 , 但發現問題 &lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/40423112/project_site_files/blob/gh-pages/files/4042/40423112/pyqt5.png?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423112/project_site_files/blob/gh-pages/files/4042/40423112/pyqt5.png?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;在詢問學長以及查詢 Google 後解決問題 , 使用 Win + X 開啟 CMD(系統管理員) 執行 python -m pip install -U pip setuptools
 更新 Python 的 pip 更新程式後 , 成功安裝 pyqt 5 .&lt;/p&gt;
 &lt;h3&gt;Eric&lt;/h3&gt;
 &lt;p&gt;依照網誌內容操作後成功安裝 Eric . &lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/40423112/project_site_files/blob/gh-pages/files/4042/40423112/eric6.png?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423112/project_site_files/blob/gh-pages/files/4042/40423112/eric6.png?raw=true"&gt;&lt;/p&gt;
 &lt;h3&gt;心得&lt;/h3&gt;
-&lt;p&gt;在暑假期間先去當兵 , 其他組員則已經開始著手於專題研究 , 接下來要加緊腳步努力跟上並配合老師以及學長的指導 .&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>仿生獸組裝日誌(2)</title><link href="http://project.mde.tw/blog/fang-sheng-shou-zu-zhuang-ri-zhi-2.html" rel="alternate"></link><published>2017-09-19T16:00:00+08:00</published><updated>2017-09-19T16:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2017-09-19:blog/fang-sheng-shou-zu-zhuang-ri-zhi-2.html</id><summary type="html">&lt;p&gt;介紹仿生獸組裝所需的小零件以及一些更新&lt;/p&gt;
+&lt;p&gt;在暑假期間先去當兵 , 其他組員則已經開始著手於專題研究 , 接下來要加緊腳步努力跟上並配合老師以及學長的指導 .&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>仿生獸組裝日誌(2)</title><link href="http://project.mde.tw/blog/fang-sheng-shou-zu-zhuang-ri-zhi-2.html" rel="alternate"></link><published>2017-09-19T16:00:00+08:00</published><updated>2017-09-19T16:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2017-09-19:/blog/fang-sheng-shou-zu-zhuang-ri-zhi-2.html</id><summary type="html">&lt;p&gt;介紹仿生獸組裝所需的小零件以及一些更新&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;介紹仿生獸組裝所需的小零件以及一些更新&lt;/p&gt;
 
 
 &lt;p&gt;M4螺絲、螺母內徑4mm水管，以及內徑分別為5、7mm墊片&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li7.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li7.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;水管跟螺絲螺母組合成表面光滑的軸棒&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li10.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li11.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li10.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li11.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;步進馬達與傳動輪子&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li1.jpg?raw=true" /&gt;
-&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li2.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li1.jpg?raw=true"&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li2.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;h3&gt;更新:&lt;/h3&gt;
 &lt;p&gt;昨天3D列印的第一組軸連接件出來了&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li9.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li9.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;組裝後與原軸連接件比較&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li4.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li4.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;雖然正面並無明顯差別，但新零件側面因為接起來後具備聯軸器的功用，比起原零件用摩擦力在傳動好多了
 而支撐座兩端加厚使連接軸時有更多接觸面來保持垂直度&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li5.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li3.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;下午繼續列印第2組軸連接件&lt;/p&gt;</summary><category term="仿生獸"></category></entry><entry><title>仿生獸組裝日誌(1)</title><link href="http://project.mde.tw/blog/fang-sheng-shou-zu-zhuang-ri-zhi-1.html" rel="alternate"></link><published>2017-09-18T16:00:00+08:00</published><updated>2017-09-18T16:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2017-09-18:blog/fang-sheng-shou-zu-zhuang-ri-zhi-1.html</id><summary type="html">&lt;p&gt;目前仿生獸的進度以及設計新的軸連接器來替代傳動立不足的零件&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li5.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0919/8li3.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;下午繼續列印第2組軸連接件&lt;/p&gt;</content><category term="仿生獸"></category></entry><entry><title>仿生獸組裝日誌(1)</title><link href="http://project.mde.tw/blog/fang-sheng-shou-zu-zhuang-ri-zhi-1.html" rel="alternate"></link><published>2017-09-18T16:00:00+08:00</published><updated>2017-09-18T16:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2017-09-18:/blog/fang-sheng-shou-zu-zhuang-ri-zhi-1.html</id><summary type="html">&lt;p&gt;目前仿生獸的進度以及設計新的軸連接器來替代傳動立不足的零件&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;目前仿生獸的進度以及設計新的軸連接器來替代傳動立不足的零件&lt;/p&gt;
 
 
 &lt;p&gt;目前八連桿仿生獸進度
@@ -278,26 +340,27 @@ href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https
 &lt;iframe src="https://player.vimeo.com/video/234287752" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;a href="https://vimeo.com/234287752"&gt;虎尾科技大學 機械設計系 40423116 李冠辰-八連趕運轉測試1&lt;/a&gt; from &lt;a href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;/p&gt;
 &lt;p&gt;3D列印八連桿腳
-&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/5.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/5.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;步進馬達需要圓輪來聯動其他八連桿運動，並且要連接另外兩個圓輪來傳動第二層八連桿，中間夾一個支撐座來固定軸位置&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/3.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/10.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/3.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/10.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;但兩個圓輪之間僅用螺絲鎖緊，只靠摩擦力在傳動&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/6.jpg?raw=true" /&gt;
-&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/8.jpg?raw=true" /&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/6.jpg?raw=true"&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/8.jpg?raw=true"&gt;
 只靠摩擦力是不足以傳動其他八連桿，而且會造成角度偏移(兩孔位置之間必須夾60度)所以重新設計新的零件來改善問題&lt;/p&gt;
 &lt;h2&gt;軸連接器&lt;/h2&gt;
 
 &lt;p&gt;兩個圓輪之間長出類似冠齒輪的形狀，一面凹一面凸
-&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/1.png?raw=true" /&gt;
-&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/2.png?raw=true" /&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/1.png?raw=true"&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0918/2.png?raw=true"&gt;
 兩個圓輪接起來可以正確傳動孔位置(60度)，不會因為摩擦力而造成角度篇小或偏大&lt;/p&gt;
 &lt;h2&gt;onshape組裝&lt;/h2&gt;
 &lt;p&gt;&lt;iframe src="https://player.vimeo.com/video/234287323" width="640" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;a href="https://vimeo.com/234287323"&gt;虎尾科技大學 機械設計系 40423116 李冠辰 - 仿生獸之軸連結器&lt;/a&gt; from &lt;a href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;/p&gt;
 &lt;p&gt;目前已先3D列印第一組軸連接器&lt;/p&gt;
 &lt;p&gt;其他事情:
-3D線材不夠必須要換3D材料時，必須先將噴頭預熱(設定是190度)，預熱之後舊線材推入並拉出，目的是確實的把舊線材熔斷拉出，並推入新的線材，利用預熱噴頭出來的熔料來確認新線材是否裝好。&lt;/p&gt;</summary><category term="仿生獸"></category></entry><entry><title>android studio app之Wi-Fi開啟、偵測</title><link href="http://project.mde.tw/blog/android-studio-appzhi-wi-fikai-qi-zhen-ce.html" rel="alternate"></link><published>2017-09-16T04:40:00+08:00</published><updated>2017-09-16T04:40:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2017-09-16:blog/android-studio-appzhi-wi-fikai-qi-zhen-ce.html</id><summary type="html">&lt;h1&gt;施工中.....&lt;/h1&gt;
+3D線材不夠必須要換3D材料時，必須先將噴頭預熱(設定是190度)，預熱之後舊線材推入並拉出，目的是確實的把舊線材熔斷拉出，並推入新的線材，利用預熱噴頭出來的熔料來確認新線材是否裝好。&lt;/p&gt;</content><category term="仿生獸"></category></entry><entry><title>android studio app之Wi-Fi開啟、偵測</title><link href="http://project.mde.tw/blog/android-studio-appzhi-wi-fikai-qi-zhen-ce.html" rel="alternate"></link><published>2017-09-16T04:40:00+08:00</published><updated>2017-09-16T04:40:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2017-09-16:/blog/android-studio-appzhi-wi-fikai-qi-zhen-ce.html</id><summary type="html">&lt;h1&gt;施工中.....&lt;/h1&gt;
+</summary><content type="html">&lt;h1&gt;施工中.....&lt;/h1&gt;
 
 
 &lt;h1&gt;Android權限設定&lt;/h1&gt;
@@ -327,7 +390,37 @@ href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https
     android:layout_height="match_parent"
     tools:context="com.example.user.wifi_2.MainActivity"&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;Button&lt;/span&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;Button&lt;/span&gt;
     &lt;span class="na"&gt;android:id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;@+id/but1&amp;quot;&lt;/span&gt;
     &lt;span class="na"&gt;android:layout_width=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;wrap_content&amp;quot;&lt;/span&gt;
     &lt;span class="na"&gt;android:layout_height=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;wrap_content&amp;quot;&lt;/span&gt;
@@ -359,7 +452,7 @@ href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https
 
 &lt;span class="nt"&gt;&amp;lt;/LinearLayout&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;p&gt;&lt;/android.support.constraint.ConstraintLayout&gt;&lt;/p&gt;
 &lt;h1&gt;JAVA程式&lt;/h1&gt;
@@ -411,7 +504,54 @@ href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https
 &lt;p&gt;private static final String TAG="繃繃包";
     WifiManager wifi;
     BroadcastReceiver receiver;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; TextView text;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; TextView text;
 
  Button  but;
 
@@ -460,7 +600,7 @@ public void onClick(View view) {
 
 }
 &lt;/pre&gt;&lt;/div&gt;
-
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;p&gt;}&lt;/p&gt;
 &lt;p&gt;接著對WifiScaner按alt+Enter寫立一個新的java檔&lt;/p&gt;
@@ -476,7 +616,32 @@ public void onClick(View view) {
 &lt;p&gt;import android.widget.Toast;&lt;/p&gt;
 &lt;p&gt;import java.util.List;&lt;/p&gt;
 &lt;p&gt;class WifiScaner extends BroadcastReceiver {&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;private  static final String TAG=&amp;quot;WifiscanReceiver&amp;quot;;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;private  static final String TAG=&amp;quot;WifiscanReceiver&amp;quot;;
 MainActivity main;
 
 
@@ -503,9 +668,10 @@ public void onReceive(Context context, Intent intent) {
 
 }
 &lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-
-&lt;p&gt;}&lt;/p&gt;</summary><category term="HW"></category></entry><entry><title>在網誌內附加圖片&amp;日本小發現</title><link href="http://project.mde.tw/blog/zai-wang-zhi-nei-fu-jia-tu-pian-ri-ben-xiao-fa-xian.html" rel="alternate"></link><published>2017-09-08T21:00:00+08:00</published><updated>2017-09-08T21:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-09-08:blog/zai-wang-zhi-nei-fu-jia-tu-pian-ri-ben-xiao-fa-xian.html</id><summary type="html">&lt;p&gt;組員向我詢問如何附加圖檔在網誌內&lt;/p&gt;
+&lt;p&gt;}&lt;/p&gt;</content><category term="HW"></category></entry><entry><title>在網誌內附加圖片&amp;日本小發現</title><link href="http://project.mde.tw/blog/zai-wang-zhi-nei-fu-jia-tu-pian-ri-ben-xiao-fa-xian.html" rel="alternate"></link><published>2017-09-08T21:00:00+08:00</published><updated>2017-09-08T21:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-09-08:/blog/zai-wang-zhi-nei-fu-jia-tu-pian-ri-ben-xiao-fa-xian.html</id><summary type="html">&lt;p&gt;組員向我詢問如何附加圖檔在網誌內&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;組員向我詢問如何附加圖檔在網誌內&lt;/p&gt;
 
 
 &lt;h3&gt;圖片附加&lt;/h3&gt;
@@ -514,72 +680,72 @@ public void onReceive(Context context, Intent intent) {
 &lt;p&gt;差別在於 clone 以及 push 而已&lt;/p&gt;
 &lt;p&gt;首先 clone 倉儲 project site file&lt;/p&gt;
 &lt;p&gt;方便管理 我們將媒體檔案分開放置&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/POS.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/POS.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;從 &lt;font color=#0000FF&gt;/blob/gh-pages/&lt;/font&gt;就是檔案的絕對位置&lt;/p&gt;
 &lt;p&gt;用圖中的語法即可附上圖片&lt;/p&gt;
 &lt;h3&gt;日本小發現&lt;/h3&gt;
 
 &lt;p&gt;離開台灣前看到的阿聯酋航空&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/1.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/1.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;日本第一餐麥當勞 跟台灣比起來超貴&lt;/p&gt;
 &lt;p&gt;飲料還是小罐的.....&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/2.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/2.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;日本五天的住處&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/3.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/3.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;這幾天的好夥伴 黑門市場&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/4.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/4.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;很罪惡的看板&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/5.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/5.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;市場內會撥放廣告的機器人&lt;/p&gt;
 &lt;p&gt;說著可以用外幣入內換日幣&lt;/p&gt;
 &lt;p&gt;但是我看進店內機器貼著 No work.....&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/6.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/6.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;住處在日本橋，距離道頓掘很近&lt;/p&gt;
 &lt;p&gt;真的跟漫畫一模一樣&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/7.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/comic.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/7.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/comic.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;連便利商店都有生魚片...&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/8.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/8.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;免洗筷還有附牙籤&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/9.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/9.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;嵐山美景&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/10.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/10.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;雲超少 好熱&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/11.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/11.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;很貴的午餐 這樣要750日幣....&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/12.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/12.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;樂器很像鍋蓋的街頭藝人&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/13.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/13.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;100日幣的可樂 以販賣機來說很便宜....&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/14.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/14.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;不知為何會有個握力器&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/15.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/15.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;園藝小熊&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/16.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/16.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;金閣寺門票&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/17.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/17.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;金閣寺&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/18.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/18.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;日本美景&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/19.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/20.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/21.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/22.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/23.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/24.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/25.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/26.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/27.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/28.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/29.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/30.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/31.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/32.jpg?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/33.jpg?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/19.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/20.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/21.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/22.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/23.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/24.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/25.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/26.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/27.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/28.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/29.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/30.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/31.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/32.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170908/33.jpg?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;住處內很棒的設計&lt;/p&gt;
 &lt;iframe src="https://player.vimeo.com/video/232933705" width="640" height="1138" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;&lt;a href="https://vimeo.com/232933705"&gt;line_1504184119147[1]&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>android studio app之BMI計算機</title><link href="http://project.mde.tw/blog/android-studio-appzhi-bmiji-suan-ji.html" rel="alternate"></link><published>2017-08-30T12:57:00+08:00</published><updated>2017-08-30T12:57:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2017-08-30:blog/android-studio-appzhi-bmiji-suan-ji.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/232933705"&gt;line_1504184119147[1]&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>android studio app之BMI計算機</title><link href="http://project.mde.tw/blog/android-studio-appzhi-bmiji-suan-ji.html" rel="alternate"></link><published>2017-08-30T12:57:00+08:00</published><updated>2017-08-30T12:57:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2017-08-30:/blog/android-studio-appzhi-bmiji-suan-ji.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
 &lt;h1&gt;STEP1.手機APP介面設計&lt;/h1&gt;
 &lt;p&gt;這裡我們選擇無樣式的空白介面
@@ -620,7 +786,94 @@ public void onReceive(Context context, Intent intent) {
     android:layout_height="match_parent"
     tools:context="com.example.user.bmi.MainActivity"&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;LinearLayout&lt;/span&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;LinearLayout&lt;/span&gt;
     &lt;span class="na"&gt;android:layout_width=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;368dp&amp;quot;&lt;/span&gt;
     &lt;span class="na"&gt;android:layout_height=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;495dp&amp;quot;&lt;/span&gt;
     &lt;span class="na"&gt;android:orientation=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;vertical&amp;quot;&lt;/span&gt;
@@ -709,7 +962,7 @@ public void onReceive(Context context, Intent intent) {
     &lt;span class="nt"&gt;&amp;lt;/LinearLayout&amp;gt;&lt;/span&gt;
 &lt;span class="nt"&gt;&amp;lt;/LinearLayout&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;p&gt;&lt;/android.support.constraint.ConstraintLayout&gt;&lt;/p&gt;
 &lt;h1&gt;STEP2.撰寫BMI功能&lt;/h1&gt;
@@ -735,7 +988,56 @@ import android.widget.TextView;&lt;/p&gt;
 &lt;p&gt;public class MainActivity extends AppCompatActivity {
     EditText haha;
     EditText wawa;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@Override
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
@@ -786,10 +1088,11 @@ protected void onCreate(Bundle savedInstanceState) {
     }
 }
 &lt;/pre&gt;&lt;/div&gt;
-
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;p&gt;&amp;lt; // 我 ..............頭好痛
-    ===&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>環境設定以及計算機程式</title><link href="http://project.mde.tw/blog/huan-jing-she-ding-yi-ji-ji-suan-ji-cheng-shi.html" rel="alternate"></link><published>2017-08-29T21:00:00+08:00</published><updated>2017-08-29T21:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-29:blog/huan-jing-she-ding-yi-ji-ji-suan-ji-cheng-shi.html</id><summary type="html">&lt;p&gt;一些之前環境設定中沒有提到的細節&lt;/p&gt;
+    ===&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>環境設定以及計算機程式</title><link href="http://project.mde.tw/blog/huan-jing-she-ding-yi-ji-ji-suan-ji-cheng-shi.html" rel="alternate"></link><published>2017-08-29T21:00:00+08:00</published><updated>2017-08-29T21:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-29:/blog/huan-jing-she-ding-yi-ji-ji-suan-ji-cheng-shi.html</id><summary type="html">&lt;p&gt;一些之前環境設定中沒有提到的細節&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;一些之前環境設定中沒有提到的細節&lt;/p&gt;
 
 
 &lt;h3&gt;指令設定&lt;/h3&gt;
@@ -807,14 +1110,14 @@ protected void onCreate(Bundle savedInstanceState) {
 &lt;p&gt;首先進入控制台 &amp;gt; 進階系統設定 &amp;gt; 進階標籤中的環境變數&lt;/p&gt;
 &lt;p&gt;圖上紅框內是要自行添加&lt;/p&gt;
 &lt;p&gt;找到 pip 以及 Python 位置直接加上即可&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/set.PNG?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/adv.PNG?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/vir.PNG?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/path.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/set.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/adv.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/vir.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/path.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;紅框處就是指定到檔案的絕對位置 如 python 就可以用下圖參考&lt;/p&gt;
 &lt;p&gt;紅框框到第二個為 pip 的絕對位置&lt;/p&gt;
 &lt;p&gt;pip 的安裝會在下面介紹&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/folder.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/folder.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;h3&gt;PIP 安裝&lt;/h3&gt;
 
 &lt;p&gt;首先利用 cd 切入 python 內的 script 裡面有一個 easy_install.exe&lt;/p&gt;
@@ -836,7 +1139,7 @@ python C:\Users\User\Downloads\Leo-5.5\Leo-5.5\launchLeo.py %1
 &lt;p&gt;並將 leo 檔開啟的預設檔案設定為此 bat 檔案&lt;/p&gt;
 &lt;h3&gt;計算機狀況報告&lt;/h3&gt;
 
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/cal.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170829/cal.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;目前已將 UI 拉成這樣&lt;/p&gt;
 &lt;p&gt;以有功能&lt;/p&gt;
 &lt;p&gt;但與當初老師說的已可以加減乘除有些不同&lt;/p&gt;
@@ -845,26 +1148,27 @@ python C:\Users\User\Downloads\Leo-5.5\Leo-5.5\launchLeo.py %1
 &lt;p&gt;但還是不太能理解&lt;/p&gt;
 &lt;p&gt;31日會出發去日本&lt;/p&gt;
 &lt;p&gt;5日會回到虎尾&lt;/p&gt;
-&lt;p&gt;這幾日暫時不會有進度&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>Eric 環境安裝-Windows (下) 8/29已修正</title><link href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-xia-829yi-xiu-zheng.html" rel="alternate"></link><published>2017-08-29T09:00:00+08:00</published><updated>2017-08-29T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-29:blog/eric-huan-jing-an-zhuang-windows-xia-829yi-xiu-zheng.html</id><summary type="html">&lt;p&gt;介紹安裝方法-2&lt;/p&gt;
+&lt;p&gt;這幾日暫時不會有進度&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Eric 環境安裝-Windows (下) 8/29已修正</title><link href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-xia-829yi-xiu-zheng.html" rel="alternate"></link><published>2017-08-29T09:00:00+08:00</published><updated>2017-08-29T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-29:/blog/eric-huan-jing-an-zhuang-windows-xia-829yi-xiu-zheng.html</id><summary type="html">&lt;p&gt;介紹安裝方法-2&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;介紹安裝方法-2&lt;/p&gt;
 
 
 &lt;p&gt;下載完QT安裝客戶端之後&lt;/p&gt;
 &lt;p&gt;雙擊開啟 進入安裝流程&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-A.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-A.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;按下NEXT之後 登入帳號&lt;/p&gt;
 &lt;p&gt;帳號可在Qt申請&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-B.PNG?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-C.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-B.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-C.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;選擇安裝位置並選擇需要安裝的項目&lt;/p&gt;
 &lt;p&gt;預設最新版本與工具包即可&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-D.PNG?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-E.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-D.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-E.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;按下同意即可繼續安裝&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-F.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-F.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;安裝過程 漫長的等待&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-G.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-G.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;完成&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-H.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT-H.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;接下來打開命令提式字元&lt;/p&gt;
 &lt;p&gt;先切換至C槽&lt;/p&gt;
 &lt;pre class="brush: bash"&gt;
@@ -884,12 +1188,12 @@ pip install pyqt5 QScintilla -U
 &lt;/pre&gt;
 
 &lt;p&gt;安裝完成後去Eric的官方網站下載Eric的檔案&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/ERIC-1.PNG?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/ERIC-2.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/ERIC-1.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/ERIC-2.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;下載完後進行解壓縮並將命令提示字元的位置轉移到其路徑&lt;/p&gt;
 &lt;p&gt;以下用我這邊來說明&lt;/p&gt;
 &lt;p&gt;由於我讓下載目錄預設在Downloads裡面故路徑為這樣&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/POS.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/POS.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;pre class="brush: bash"&gt;
 C:\Users\kmol\Downloads\eric6-17.08 (1)\eric6-17.08
 &lt;/pre&gt;
@@ -902,7 +1206,7 @@ python install.py
 &lt;/pre&gt;
 
 &lt;p&gt;安裝完成後於命令提示字元輸入eric6即可開啟&lt;/p&gt;
-&lt;p&gt;20170829 修正 pyqt版本沒有加導致安裝不能繼續，補上版本&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>android studio 模擬器安裝教學</title><link href="http://project.mde.tw/blog/android-studio-mo-ni-qi-an-zhuang-jiao-xue.html" rel="alternate"></link><published>2017-08-22T02:16:00+08:00</published><updated>2017-08-22T02:16:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2017-08-22:blog/android-studio-mo-ni-qi-an-zhuang-jiao-xue.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+&lt;p&gt;20170829 修正 pyqt版本沒有加導致安裝不能繼續，補上版本&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>android studio 模擬器安裝教學</title><link href="http://project.mde.tw/blog/android-studio-mo-ni-qi-an-zhuang-jiao-xue.html" rel="alternate"></link><published>2017-08-22T02:16:00+08:00</published><updated>2017-08-22T02:16:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2017-08-22:/blog/android-studio-mo-ni-qi-an-zhuang-jiao-xue.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
 &lt;p&gt;因為不可能叫大家都買一支手機來實測app的情況,所以android studio有模擬器可以使用,但是若電腦不是SSD硬碟的話,速度會很緩慢
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/_xA3URzFpa0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
@@ -910,30 +1214,31 @@ python install.py
 &lt;p&gt;https://support.lenovo.com/tw/zh/solutions/ht500006&lt;/p&gt;
 &lt;p&gt;Intel加速器下載網址
 https://software.intel.com/en-us/android/articles/intel-hardware-accelerated-execution-manager/&lt;/p&gt;
-&lt;p&gt;背景音樂:https://www.youtube.com/watch?v=JRQbVNzmCK0&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>android studio 安裝教學</title><link href="http://project.mde.tw/blog/android-studio-an-zhuang-jiao-xue.html" rel="alternate"></link><published>2017-08-19T03:06:00+08:00</published><updated>2017-08-19T03:06:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2017-08-19:blog/android-studio-an-zhuang-jiao-xue.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+&lt;p&gt;背景音樂:https://www.youtube.com/watch?v=JRQbVNzmCK0&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>android studio 安裝教學</title><link href="http://project.mde.tw/blog/android-studio-an-zhuang-jiao-xue.html" rel="alternate"></link><published>2017-08-19T03:06:00+08:00</published><updated>2017-08-19T03:06:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2017-08-19:/blog/android-studio-an-zhuang-jiao-xue.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/Z6GooBcn02o" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;p&gt;java下載網址
 http://www.oracle.com/technetwork/java/javase/downloads/index.html&lt;/p&gt;
 &lt;p&gt;android studio 下載網址
-https://developer.android.com/studio/index.html&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>推送網誌教學</title><link href="http://project.mde.tw/blog/tui-song-wang-zhi-jiao-xue.html" rel="alternate"></link><published>2017-08-18T09:00:00+08:00</published><updated>2017-08-18T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-18:blog/tui-song-wang-zhi-jiao-xue.html</id><summary type="html">&lt;p&gt;在還不是協作者的情況下進行網誌推送&lt;/p&gt;
+https://developer.android.com/studio/index.html&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>推送網誌教學</title><link href="http://project.mde.tw/blog/tui-song-wang-zhi-jiao-xue.html" rel="alternate"></link><published>2017-08-18T09:00:00+08:00</published><updated>2017-08-18T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-18:/blog/tui-song-wang-zhi-jiao-xue.html</id><summary type="html">&lt;p&gt;在還不是協作者的情況下進行網誌推送&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;在還不是協作者的情況下進行網誌推送&lt;/p&gt;
 
 
 &lt;p&gt;首先到 Coursemdetw 的使用者頁面，找到 Project_site 以及 Project_site file 並執行 fork 來複製倉儲&lt;/p&gt;
 &lt;p&gt;為何需要兩個倉儲?&lt;/p&gt;
 &lt;p&gt;為了將網誌以及圖資分開管理&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/rep.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/rep.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;fork 就有如複製一般&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/fork-mean.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/fork-mean.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;如何確認自己 fork 無誤呢?&lt;/p&gt;
 &lt;p&gt;在自己倉儲區域下面有標註原出處&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/fork.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/fork.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;如 fork 到錯誤的倉儲&lt;/p&gt;
 &lt;p&gt;直接進入 setting 拉至最底下的 Danger Zone 來進行刪除即可&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/setting.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/setting.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;Danger Zone &lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/delete.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/delete.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;確認好之後&lt;/p&gt;
 &lt;p&gt;直接 clone 自己 fork 的倉儲即可&lt;/p&gt;
 &lt;p&gt;因為你無權去修改出處的內容&lt;/p&gt;
@@ -950,20 +1255,21 @@ git push
 &lt;h3&gt;Pull request&lt;/h3&gt;
 
 &lt;p&gt;並到倉儲上做 New pull request 要求原倉儲的管理員進行版本更新&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/but.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/but.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;按下 request 之後 請注意 base 以及 head 分別為哪邊的倉儲&lt;/p&gt;
 &lt;p&gt;下面紅框處可以看到自己剛剛 commit 的名稱&lt;/p&gt;
 &lt;p&gt;可以以這樣來確認自己有沒有搞錯目的地以及來源&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/pull.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/pull.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;確認後按下 Creat pull request&lt;/p&gt;
 &lt;p&gt;會進入到此頁面 並在紅框處留言(不能為空白)&lt;/p&gt;
 &lt;p&gt;完成後按下 Create 即送出更新版本要求&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/request.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/request.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;如遇到下圖沒有可以選目的以及來源的狀況&lt;/p&gt;
 &lt;p&gt;請點選 compare across forks (紅框處)&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/nothing.PNG?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/nothing1.PNG?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;並回到 Pull request 照著步驟進行&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>Linux作業系統下的程式開發環境</title><link href="http://project.mde.tw/blog/linuxzuo-ye-xi-tong-xia-de-cheng-shi-kai-fa-huan-jing.html" rel="alternate"></link><published>2017-08-15T09:00:00+08:00</published><updated>2017-08-15T09:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2017-08-15:blog/linuxzuo-ye-xi-tong-xia-de-cheng-shi-kai-fa-huan-jing.html</id><summary type="html">&lt;p&gt;參考&lt;a href="http://project.mde.tw/blog/yen-kmol-de-cheng-shi-kai-fa-huan-jing.html"&gt;yen - KMOL 的程式開發環境 &lt;/a&gt;學習如何安裝Qt5、sip、PyQt5、qscintilla2 與 eric6 等，並寫一篇文章回報&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/nothing.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20170818/nothing1.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;並回到 Pull request 照著步驟進行&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Linux作業系統下的程式開發環境</title><link href="http://project.mde.tw/blog/linuxzuo-ye-xi-tong-xia-de-cheng-shi-kai-fa-huan-jing.html" rel="alternate"></link><published>2017-08-15T09:00:00+08:00</published><updated>2017-08-15T09:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2017-08-15:/blog/linuxzuo-ye-xi-tong-xia-de-cheng-shi-kai-fa-huan-jing.html</id><summary type="html">&lt;p&gt;參考&lt;a href="http://project.mde.tw/blog/yen-kmol-de-cheng-shi-kai-fa-huan-jing.html"&gt;yen - KMOL 的程式開發環境 &lt;/a&gt;學習如何安裝Qt5、sip、PyQt5、qscintilla2 與 eric6 等，並寫一篇文章回報&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;參考&lt;a href="http://project.mde.tw/blog/yen-kmol-de-cheng-shi-kai-fa-huan-jing.html"&gt;yen - KMOL 的程式開發環境 &lt;/a&gt;學習如何安裝Qt5、sip、PyQt5、qscintilla2 與 eric6 等，並寫一篇文章回報&lt;/p&gt;
 
 
 &lt;h2&gt;Ubuntu 16.04 虛擬主機安裝&lt;/h2&gt;
@@ -1005,8 +1311,8 @@ sudo ./qt-xxx.run   /執行qt
 &lt;p&gt;利用 gedit ~/.bashrc, 編輯 .bashrc, 加入:&lt;/p&gt;
 &lt;pre class="brush: python"&gt;
 export QTDIR=/opt/Qt5.7.0/5.7/gcc_64/ 
-export LD_LIBRARY_PATH=&lt;span QTDIR="QTDIR" class="math"&gt;\({LD_LIBRARY_PATH}:\)&lt;/span&gt;/lib 
-export PATH=&lt;span PATH="PATH" class="math"&gt;\({QTDIR}/bin:\)&lt;/span&gt;
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${QTDIR}/lib 
+export PATH=${QTDIR}/bin:${PATH}
 &lt;/pre&gt;
 &lt;p&gt;然後以 source ~/.bashrc 讓設定生效&lt;/p&gt;
 &lt;h3&gt;安裝Sip&lt;/h3&gt;
@@ -1068,64 +1374,8 @@ sudo python3 install.py
 &lt;p&gt;在黑窗打入指令 eric6 即可開啟&lt;/p&gt;
 &lt;h3&gt;安裝 Leo Editor&lt;/h3&gt;
 &lt;p&gt;1.git clone Leo Editor 的原始碼,並將 leo 目錄複製到 /usr/local/lib/python3.5/dist-packages 目錄中即完成安裝,&lt;/p&gt;
-&lt;p&gt;2.以 python3 launchLeo.py, 或者將 python3 launchLeo.py 放入可執行的 leo 檔案中來啟動Leo Editor&lt;/p&gt;&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    var location_protocol = (false) ? 'https' : document.location.protocol;
-    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</summary><category term="暑期學習"></category></entry><entry><title>Eric 環境安裝-Windows (上)</title><link href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-shang.html" rel="alternate"></link><published>2017-08-12T09:00:00+08:00</published><updated>2017-08-12T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-12:blog/eric-huan-jing-an-zhuang-windows-shang.html</id><summary type="html">&lt;p&gt;介紹安裝方法-1&lt;/p&gt;
+&lt;p&gt;2.以 python3 launchLeo.py, 或者將 python3 launchLeo.py 放入可執行的 leo 檔案中來啟動Leo Editor&lt;/p&gt;&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Eric 環境安裝-Windows (上)</title><link href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-shang.html" rel="alternate"></link><published>2017-08-12T09:00:00+08:00</published><updated>2017-08-12T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-08-12:/blog/eric-huan-jing-an-zhuang-windows-shang.html</id><summary type="html">&lt;p&gt;介紹安裝方法-1&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;介紹安裝方法-1&lt;/p&gt;
 
 
 &lt;p&gt;這篇介紹應該幾天前就出來了&lt;/p&gt;
@@ -1137,40 +1387,41 @@ sudo python3 install.py
 &lt;p&gt;不料原先BIOS內VT-D為disable狀態，要去調整時又發現BIOS有密碼&lt;/p&gt;
 &lt;p&gt;向詹老師詢問後終於開啟了VT-D，但還是只有32位元的虛擬機可以勾選&lt;/p&gt;
 &lt;p&gt;最後換到了實驗室最後面的電腦來使用。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/P.png?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/P.png?raw=true"&gt;&lt;/p&gt;
 &lt;h3&gt;安裝過程&lt;/h3&gt;
 
 &lt;p&gt;首先將Python 3.6.2安裝起來&lt;/p&gt;
 &lt;p&gt;先去系統檢視電腦為哪一位元&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/SYS.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/SYS.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;之後去Python的官網&lt;/p&gt;
 &lt;p&gt;選擇3.6.2(紅框處)&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/python.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/python.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;之後拉到下面選擇好位元之後下載executable(可執行)&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/python2.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/python2.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;下載後打開來安裝&lt;/p&gt;
 &lt;p&gt;由於此電腦本身有安裝過&lt;/p&gt;
 &lt;p&gt;所以上面那欄為Upgrade&lt;/p&gt;
 &lt;p&gt;如未安裝過 應該顯示為&lt;font color=#0000FF&gt;Install Now&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/PI.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/PI.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;先點選Customize來確認勾選項目如圖一樣&lt;/p&gt;
 &lt;p&gt;確認後按back然後按下install now&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/PI2.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/PI2.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;安裝好後開起命令提式字元來測試有沒有安裝成功&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/PY.PNG?raw=true" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/PYTEST.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/PY.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/PYTEST.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;安裝Qt&lt;/p&gt;
 &lt;p&gt;進入官網&lt;/p&gt;
 &lt;p&gt;點選紅框處&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/Qt.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/Qt.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;拉至頁面最下方點選紅框處&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT2.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/QT2.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;進入後拉至最下方，右邊為商業用，左邊為開放原始碼，並點選紅框處&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/Qt3.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/Qt3.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;進入後DOWNLOAD NOW&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/Qt4.PNG?raw=true" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/Qt4.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;p&gt;今日內容以上
-其餘內容下周補上&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>Python basic "The Calculate" simple ver.</title><link href="http://project.mde.tw/blog/python-basic-the-calculate-simple-ver.html" rel="alternate"></link><published>2017-07-26T09:00:00+08:00</published><updated>2017-07-26T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-07-26:blog/python-basic-the-calculate-simple-ver.html</id><summary type="html">&lt;p&gt;寫好了精簡版本的計算機程式&lt;/p&gt;
+其餘內容下周補上&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Python basic "The Calculate" simple ver.</title><link href="http://project.mde.tw/blog/python-basic-the-calculate-simple-ver.html" rel="alternate"></link><published>2017-07-26T09:00:00+08:00</published><updated>2017-07-26T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-07-26:/blog/python-basic-the-calculate-simple-ver.html</id><summary type="html">&lt;p&gt;寫好了精簡版本的計算機程式&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;寫好了精簡版本的計算機程式&lt;/p&gt;
 
 
 &lt;p&gt;昨日的計算機程式今日改了介面並在學長的幫助下完成了&lt;/p&gt;
@@ -1243,7 +1494,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 &lt;p&gt;原來是因為會得出無限大的答案&lt;/p&gt;
 &lt;iframe src="https://player.vimeo.com/video/227038029" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;&lt;a href="https://vimeo.com/227038029"&gt;錄製_2017_07_26_17_05_10_483&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>Python basic "The Calculate"</title><link href="http://project.mde.tw/blog/python-basic-the-calculate.html" rel="alternate"></link><published>2017-07-25T09:00:00+08:00</published><updated>2017-07-25T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-07-25:blog/python-basic-the-calculate.html</id><summary type="html">&lt;p&gt;在實驗室已重新灌window系統的電腦上安裝以及撰寫計算機程式&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/227038029"&gt;錄製_2017_07_26_17_05_10_483&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Python basic "The Calculate"</title><link href="http://project.mde.tw/blog/python-basic-the-calculate.html" rel="alternate"></link><published>2017-07-25T09:00:00+08:00</published><updated>2017-07-25T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-07-25:/blog/python-basic-the-calculate.html</id><summary type="html">&lt;p&gt;在實驗室已重新灌window系統的電腦上安裝以及撰寫計算機程式&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;在實驗室已重新灌window系統的電腦上安裝以及撰寫計算機程式&lt;/p&gt;
 
 
 &lt;p&gt;有上次的經驗這次安裝過程快了很多&lt;/p&gt;
@@ -1390,7 +1642,8 @@ if __name__=='__main__':
 &lt;p&gt;小數點(del)屬Python的語言&lt;/p&gt;
 &lt;p&gt;故不能取del為名稱&lt;/p&gt;
 &lt;p&gt;程式圖樣&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://imgur.com/4TrCFzp"&gt;&lt;img src="http://i.imgur.com/4TrCFzp.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>Python basic and install eric6</title><link href="http://project.mde.tw/blog/python-basic-and-install-eric6.html" rel="alternate"></link><published>2017-07-21T09:00:00+08:00</published><updated>2017-07-21T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-07-21:blog/python-basic-and-install-eric6.html</id><summary type="html">&lt;p&gt;暑假期間對於 python 最基礎的認識以及安裝編輯器&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://imgur.com/4TrCFzp"&gt;&lt;img src="http://i.imgur.com/4TrCFzp.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>Python basic and install eric6</title><link href="http://project.mde.tw/blog/python-basic-and-install-eric6.html" rel="alternate"></link><published>2017-07-21T09:00:00+08:00</published><updated>2017-07-21T09:00:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2017-07-21:/blog/python-basic-and-install-eric6.html</id><summary type="html">&lt;p&gt;暑假期間對於 python 最基礎的認識以及安裝編輯器&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;暑假期間對於 python 最基礎的認識以及安裝編輯器&lt;/p&gt;
 
 
 &lt;p&gt;今日安裝好&lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;3.6.2、Qt、PyQt以及Eric6 並請教學長關於Python的基礎。&lt;/p&gt;
@@ -1399,7 +1652,8 @@ if __name__=='__main__':
 &lt;p&gt;&lt;a href="http://imgur.com/3rNThMi"&gt;&lt;img src="http://i.imgur.com/3rNThMi.jpg" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;iframe src="https://player.vimeo.com/video/226420771" width="640" height="985" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;&lt;a href="https://vimeo.com/226420771"&gt;錄製_2017_07_21_15_41_35_686.mp4&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;</summary><category term="暑期學習"></category></entry><entry><title>轉換基準的 Pull Requests</title><link href="http://project.mde.tw/blog/zhuan-huan-ji-zhun-de-pull-requests.html" rel="alternate"></link><published>2016-12-16T09:00:00+08:00</published><updated>2016-12-16T09:00:00+08:00</updated><author><name>scrum1</name></author><id>tag:project.mde.tw,2016-12-16:blog/zhuan-huan-ji-zhun-de-pull-requests.html</id><summary type="html">&lt;p&gt;在 &lt;a href="yi-pull-requests-can-yu-wang-zhi-bian-ji.html"&gt;"以 Pull Requests 參與網誌編輯"&lt;/a&gt;文章中, scrum-1 學員已經成功利用 pull requests 機制參與機械設計專題網誌的編寫.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/226420771"&gt;錄製_2017_07_21_15_41_35_686.mp4&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;</content><category term="暑期學習"></category></entry><entry><title>轉換基準的 Pull Requests</title><link href="http://project.mde.tw/blog/zhuan-huan-ji-zhun-de-pull-requests.html" rel="alternate"></link><published>2016-12-16T09:00:00+08:00</published><updated>2016-12-16T09:00:00+08:00</updated><author><name>scrum1</name></author><id>tag:project.mde.tw,2016-12-16:/blog/zhuan-huan-ji-zhun-de-pull-requests.html</id><summary type="html">&lt;p&gt;在 &lt;a href="yi-pull-requests-can-yu-wang-zhi-bian-ji.html"&gt;"以 Pull Requests 參與網誌編輯"&lt;/a&gt;文章中, scrum-1 學員已經成功利用 pull requests 機制參與機械設計專題網誌的編寫.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;在 &lt;a href="yi-pull-requests-can-yu-wang-zhi-bian-ji.html"&gt;"以 Pull Requests 參與網誌編輯"&lt;/a&gt;文章中, scrum-1 學員已經成功利用 pull requests 機制參與機械設計專題網誌的編寫.&lt;/p&gt;
 
 
 &lt;p&gt;此一利用 pull requests 參與倉儲改版的流程為:&lt;/p&gt;
@@ -1420,7 +1674,8 @@ if __name__=='__main__':
 &lt;p&gt;根據下圖, 轉換基準的合併要求可以直接在線上進行, 不會產生衝突:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://coursemdetw.github.io/project_site_files/files/4042/scrum1/scrum-1_gh-pages_switching_base-2.png" width="600" /&gt;&lt;/p&gt;
 &lt;p&gt;最後, 如下圖所示, scrum-1 具有同意此一"轉換基準版本合併請求"的權限:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://coursemdetw.github.io/project_site_files/files/4042/scrum1/scrum-1_gh-pages_switching_base-3.png" width="600" /&gt;&lt;/p&gt;</summary><category term="4042g1"></category><category term="Leo Editor"></category><category term="樣板"></category></entry><entry><title>以 Pull Requests 參與網誌編輯</title><link href="http://project.mde.tw/blog/yi-pull-requests-can-yu-wang-zhi-bian-ji.html" rel="alternate"></link><published>2016-12-15T09:00:00+08:00</published><updated>2016-12-15T09:00:00+08:00</updated><author><name>scrum1</name></author><id>tag:project.mde.tw,2016-12-15:blog/yi-pull-requests-can-yu-wang-zhi-bian-ji.html</id><summary type="html">&lt;p&gt;&lt;a href="https://help.github.com/articles/about-pull-requests/"&gt;Pull Requests&lt;/a&gt; 是一種間接 git 倉儲改版的模式. 在此展示如何利用 github 的拉回請求, 以及 Leo Editor 專案檔案的建立, 對機械設計專題網誌新增文章.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://coursemdetw.github.io/project_site_files/files/4042/scrum1/scrum-1_gh-pages_switching_base-3.png" width="600" /&gt;&lt;/p&gt;</content><category term="4042g1"></category><category term="Leo Editor"></category><category term="樣板"></category></entry><entry><title>以 Pull Requests 參與網誌編輯</title><link href="http://project.mde.tw/blog/yi-pull-requests-can-yu-wang-zhi-bian-ji.html" rel="alternate"></link><published>2016-12-15T09:00:00+08:00</published><updated>2016-12-15T09:00:00+08:00</updated><author><name>scrum1</name></author><id>tag:project.mde.tw,2016-12-15:/blog/yi-pull-requests-can-yu-wang-zhi-bian-ji.html</id><summary type="html">&lt;p&gt;&lt;a href="https://help.github.com/articles/about-pull-requests/"&gt;Pull Requests&lt;/a&gt; 是一種間接 git 倉儲改版的模式. 在此展示如何利用 github 的拉回請求, 以及 Leo Editor 專案檔案的建立, 對機械設計專題網誌新增文章.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;a href="https://help.github.com/articles/about-pull-requests/"&gt;Pull Requests&lt;/a&gt; 是一種間接 git 倉儲改版的模式. 在此展示如何利用 github 的拉回請求, 以及 Leo Editor 專案檔案的建立, 對機械設計專題網誌新增文章.&lt;/p&gt;
 
 
 &lt;h3&gt;Fork 倉儲&lt;/h3&gt;
@@ -1446,4 +1701,4 @@ if __name__=='__main__':
 &lt;h3&gt;網誌提交推送&lt;/h3&gt;
 &lt;p&gt;一旦 scrum-1 學員完成 .md 的文章原始檔案編輯, 且透過近端 local-pelican 按鈕轉為 pelican 網誌 html 系統之後, 可以利用支援 IPv4 的 https-server 按鈕或支援 IPv6 的 ipv6-https-server 按鈕, 在近端以 https 檢視網誌後, 直接提交推送到 scrum-1 的 project_site 倉儲後進行 pull requests, 由於拉回請求的過程, 管理者除了必須納入 scrum-1 所新增的 .md 檔案外, 其餘都必須先在近端用 local-pelican 按鈕轉檔檢驗, 因此 scrum-1 無需在 pull requests 的流程中提交 gh-pages-pelican 按鈕所產生的遠端格式版本(多了 disqus 留言系統), 可以直接提交近端版本即可.&lt;/p&gt;
 &lt;p&gt;但是負責審核 pull requests 的管理學員, 除了在近端檢查機械設計專題的網誌改版內容之外, 必須記得在提交推送到 project_site 倉儲 gh-pages 分支之前, 利用 gh-pages-pelican 按鈕, 將 .md 檔案轉為遠端網誌格式, 否則 disqus 留言系統將無法正確呈現.&lt;/p&gt;
-&lt;p&gt;最後, scrum-1 學員一旦完成互刻 project_site 倉儲 gh-pages 分支的提交推送後, 即可針對 gh-pages 分支, 新增 pull requests, 接下來就是 project_site 倉儲管理端審核請求, 以及納入改版內容的流程.&lt;/p&gt;</summary><category term="4042g1"></category><category term="Leo Editor"></category><category term="樣板"></category></entry></feed>
+&lt;p&gt;最後, scrum-1 學員一旦完成互刻 project_site 倉儲 gh-pages 分支的提交推送後, 即可針對 gh-pages 分支, 新增 pull requests, 接下來就是 project_site 倉儲管理端審核請求, 以及納入改版內容的流程.&lt;/p&gt;</content><category term="4042g1"></category><category term="Leo Editor"></category><category term="樣板"></category></entry></feed>

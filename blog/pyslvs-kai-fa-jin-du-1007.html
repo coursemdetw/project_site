@@ -212,79 +212,21 @@ li {
 
 <h1>加回自動旋轉鈕</h1>
 <p>改良舊的 QThread，讓它掛在 main window 底下，不用因為面板關閉而刪除，執行上似乎有比以前順暢。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_07_01.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_07_01.png"></p>
 <p>途中遇到修改動作會自動中斷。</p>
 <h1>自由移動支援多點</h1>
 <p>支援框選多個點拖移。</p>
 <p>為避免此命令分散，造成復原功能困擾，包裝到一個巨集中。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_07_02.png" /></p>
-<p>數學不太好，和當初按住滑鼠滾輪平移的公式一樣，算座標一直算錯，後來終於解決問題。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_10_07_02.png"></p>
 <p>這邊重寫一下公式，看以後是否有 CAD 互動的需求。</p>
 <p>滑鼠滾輪平移檢視公式：</p>
-<div class="math">$$x_{Origin (dragged)}=x_{Mouse (dragged)}-(x_{Mouse (pressed)}-x_{Origin (pressed)})$$</div>
-<div class="math">$$y_{Origin (dragged)}=y_{Mouse (dragged)}-(y_{Mouse (pressed)}-y_{Origin (pressed)})$$</div>
+<p>$$x_{Origin (dragged)}=x_{Mouse (dragged)}-(x_{Mouse (pressed)}-x_{Origin (pressed)})$$</p>
+<p>$$y_{Origin (dragged)}=y_{Mouse (dragged)}-(y_{Mouse (pressed)}-y_{Origin (pressed)})$$</p>
 <p><em>註：在 Widget 的座標系更改原點位置，以達成畫布平移。</em></p>
 <p>拉動<strong>滑鼠</strong>同時拉動<strong>相對點</strong>的座標：</p>
-<div class="math">$$x_{point (dragged)}=\frac{(x_{Mouse (dragged)}-x_{Origin}-(x_{Mouse (pressed)}-x_{Origin})}{f_{zoom}}+x_{point (Origin)}$$</div>
-<div class="math">$$y_{point (dragged)}=\frac{(y_{Mouse (dragged)}-y_{Origin}-(y_{Mouse (pressed)}-y_{Origin})}{f_{zoom}}+y_{point (Origin)}$$</div>
+<p>$$x_{point (dragged)}=\frac{(x_{Mouse (dragged)}-x_{Origin}-(x_{Mouse (pressed)}-x_{Origin})}{f_{zoom}}+x_{point (Origin)}$$</p>
+<p>$$y_{point (dragged)}=\frac{(y_{Mouse (dragged)}-y_{Origin}-(y_{Mouse (pressed)}-y_{Origin})}{f_{zoom}}+y_{point (Origin)}$$</p>
 <p><em>註：取得滑鼠移動增量套用縮放係數，加上該點原始座標，以獲得新的點座標。</em></p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    var location_protocol = (false) ? 'https' : document.location.protocol;
-    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -330,28 +272,28 @@ li {
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/esp8266chuan-jie-cp2012.html">
-                            esp8266串接cp2012
+                        <a href="http://project.mde.tw/blog/x-windows-sftp-filezilla-proxy-yu-xu-ni-si-fu-qi.html">
+                            X Windows, SFtp, Filezilla, Proxy 與虛擬伺服器
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1015.html">
-                            Pyslvs 開發進度 - 10/15
+                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1212.html">
+                            Pyslvs 開發進度 - 12/12
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyqt5-wan-quan-ru-men.html">
-                            PyQt5 完全入門
+                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1210.html">
+                            Pyslvs 開發進度 - 12/10
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1010.html">
-                            Pyslvs 開發進度 - 10/10
+                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1205.html">
+                            Pyslvs 開發進度 - 12/05
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1007.html">
-                            Pyslvs 開發進度 - 10/07
+                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1203.html">
+                            Pyslvs 開發進度 - 12/03
                         </a>
                     </li>
                 </ul>
