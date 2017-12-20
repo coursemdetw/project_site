@@ -220,10 +220,10 @@ li {
 
 <p>以下這張圖, 是在一台中華電信光世代網路連線下的 Windows 10 電腦, 啟動 <a href="https://sourceforge.net/projects/xming/">X Windows Server</a>, 以 <a href="https://en.wikipedia.org/wiki/Secure_Shell">SSH</a> 連線, 夾帶 <a href="https://en.wikipedia.org/wiki/Tunneling_protocol">X Windows Tunneling</a> 設定, 連線到 TANet 網路上的一台, 擁有多片網路卡, 以 <a href="https://www.virtualbox.org/manual/ch06.html#network_bridged">Virtualbox Bridge Adapter</a> 啟動四台虛擬伺服器的 <a href="https://en.wikipedia.org/wiki/IPv4">IPv4</a> Linux 主控伺服器.</p>
 <p><img src="./../data/images/xming_filezilla_sftp_proxy_ipv6.png"></img></p>
-<p>此一網路連線的目的, 是在近端 Windows 10 電腦上進行操控, 透過 <a href="https://en.wikipedia.org/wiki/Secure_Shell">SSH</a> 連線到目的伺服器上, 從一台只有 <a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a> 網路連線設定的伺服器上, 下載一份 18.2 GB 的 <a href="https://www.virtualbox.org/manual/ch05.html#vdidetails">vdi</a> 檔案, 以便能夠在這台 <a href="https://en.wikipedia.org/wiki/IPv4">IPv4</a> Linux 主控伺服器上, 再建置一台支援 <a href="https://github.com/jupyterhub/jupyterhub">Jupyterhub</a> 或 <a href="https://github.com/jupyterlab/jupyterlab">Jupyterlab</a> 伺服主機.　這時從只支援 <a href="https://en.wikipedia.org/wiki/IPv4">IPv4</a> 的電腦連線到只支援 [IPv6］ 的伺服器, 必須設法透過雙協定支援的 [Proxy Server] 才能執行 <a href="https://filezilla-project.org/">Filezilla</a> 上的 <a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol">SFTP</a> 連線.</p>
+<p>此一網路連線的目的, 是在近端 Windows 10 電腦上進行操控, 透過 <a href="https://en.wikipedia.org/wiki/Secure_Shell">SSH</a> 連線到目的伺服器上, 從一台只有 <a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a> 網路連線設定的伺服器上, 下載一份 18.2 GB 的 <a href="https://www.virtualbox.org/manual/ch05.html#vdidetails">vdi</a> 檔案, 以便能夠在這台 <a href="https://en.wikipedia.org/wiki/IPv4">IPv4</a> Linux 主控伺服器上, 再建置一台支援 <a href="https://github.com/jupyterhub/jupyterhub">Jupyterhub</a> 或 <a href="https://github.com/jupyterlab/jupyterlab">Jupyterlab</a> 伺服主機.　這時從只支援 <a href="https://en.wikipedia.org/wiki/IPv4">IPv4</a> 的電腦連線到只支援 <a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a> 的伺服器, 必須設法透過雙協定支援的 <a href="https://en.wikipedia.org/wiki/Proxy_server">Proxy Server</a> 才能執行 <a href="https://filezilla-project.org/">Filezilla</a> 上的 <a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol">SFTP</a> 連線.</p>
 <p>最終, 此一操作的目的, 只是希望在全球資訊網上建立一個能夠支援與機構分析及合成有關的基因演算伺服運算環境, 若機械設計工程師完成基本的機構設計分析與確認後, 還需要針對機構所需各部零件進行強度與細部設計, 但是上述這些在資訊與通信科技領域中, 習以為常的網路操作技術, 在無任何其他單位的支援下, 若希望快速布局, 就必須逐一克服, 順利完成機械設計流程中所預定達成的結果.</p>
 <h2>X Windows</h2>
-<p>X Windows 是一種軟體視窗系統, 可以從 Client 端將圖形化程式介面傳輸到 Server 端, 此地的 X Windows Client 端就是透過 SSH 被 Windows 10 電腦連線的 Linux 伺服器, 而 X Windows Server 端就是在 Windows 10 上所啟動的 <a href="https://sourceforge.net/projects/xming/">Xming Server</a>, 當 Windows 10 中的 <a href="https://en.wikipedia.org/wiki/Secure_Shell">Putty</a> Client 連線後, 在 Linux 上執行 <a href="https://filezilla-project.org/">Filezilla</a> 後, 就可以將 <a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol">Filezilla</a> 客戶端的 [X Windows] 視窗畫面, 顯示在 Windows 10 中.</p>
+<p>X Windows 是一種軟體視窗系統, 可以從 Client 端將圖形化程式介面傳輸到 Server 端, 此地的 X Windows Client 端就是透過 SSH 被 Windows 10 電腦連線的 Linux 伺服器, 而 X Windows Server 端就是在 Windows 10 上所啟動的 <a href="https://sourceforge.net/projects/xming/">Xming Server</a>, 當 Windows 10 中的 <a href="https://en.wikipedia.org/wiki/Secure_Shell">Putty</a> Client 連線後, 在 Linux 上執行 <a href="https://filezilla-project.org/">Filezilla</a> 後, 就可以將 <a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol">Filezilla</a> 客戶端的 X Windows 視窗畫面, 顯示在 Windows 10 中.</p>
 <p>由於以 <a href="http://www.putty.org/">Putty</a> 連線的兩端都支援 <a href="https://en.wikipedia.org/wiki/IPv4">IPv4</a> 網路協定, 因此可直接連線, 若其中一端只支援 <a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a> 網路協定, 則必須在 <a href="http://www.putty.org/">Putty</a> 連線設定中的 Connect - Proxy 中設定 IPv4/IPv6 雙支援的代理主機, 而此代理主機可以採用 <a href="http://www.squid-cache.org/">Squid</a>, 使用下列 squid.conf 設定:</p>
 <pre class="brush: jscript">
 acl cad_lab src 140.130.17.0/24
@@ -344,6 +344,11 @@ refresh_pattern . 0 20% 4320
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/2018-kmolab-cheng-shi-kai-fa-huan-jing.html">
+                            2018 KMOLab 程式開發環境
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/x-windows-sftp-filezilla-proxy-yu-xu-ni-si-fu-qi.html">
                             X Windows, SFtp, Filezilla, Proxy 與虛擬伺服器
                         </a>
@@ -361,11 +366,6 @@ refresh_pattern . 0 20% 4320
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1205.html">
                             Pyslvs 開發進度 - 12/05
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1203.html">
-                            Pyslvs 開發進度 - 12/03
                         </a>
                     </li>
                 </ul>
