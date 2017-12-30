@@ -5,35 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://project.mde.tw/blog/</loc>
-<lastmod>2017-12-25T10:48:46-00:00</lastmod>
+<lastmod>2017-12-30T22:12:23-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/archives.html</loc>
-<lastmod>2017-12-25T10:48:46-00:00</lastmod>
+<lastmod>2017-12-30T22:12:23-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/tags.html</loc>
-<lastmod>2017-12-25T10:48:46-00:00</lastmod>
+<lastmod>2017-12-30T22:12:23-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/categories.html</loc>
-<lastmod>2017-12-25T10:48:46-00:00</lastmod>
+<lastmod>2017-12-30T22:12:23-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/pages/about/</loc>
-<lastmod>2017-12-17T10:29:34+08:00</lastmod>
+<lastmod>2017-12-30T21:40:09+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://project.mde.tw/blog/3d-fourbar.html</loc>
+<lastmod>2017-12-30T23:30:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -3071,7 +3078,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://project.mde.tw/blog/category/2016g1.html</loc>
-<lastmod>2017-08-22T23:30:00+08:06</lastmod>
+<lastmod>2017-12-30T23:30:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -3100,6 +3107,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://project.mde.tw/blog/category/tutorial.html</loc>
 <lastmod>2016-12-28T11:29:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://project.mde.tw/blog/tag/4rfourbar.html</loc>
+<lastmod>2017-12-30T23:30:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -3876,7 +3890,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://project.mde.tw/blog/author/40323123.html</loc>
-<lastmod>2017-08-22T23:30:00+08:06</lastmod>
+<lastmod>2017-12-30T23:30:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-08-22T23:30:00+08:00</updated><entry><title>pyslvs 四連桿速度分析</title><link href="http://project.mde.tw/blog/pyslvs-si-lian-gan-su-du-fen-xi.html" rel="alternate"></link><published>2017-08-22T23:30:00+08:00</published><updated>2017-08-22T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-08-22:/blog/pyslvs-si-lian-gan-su-du-fen-xi.html</id><summary type="html">&lt;ol&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-12-30T23:30:00+08:00</updated><entry><title>3D fourbar</title><link href="http://project.mde.tw/blog/3d-fourbar.html" rel="alternate"></link><published>2017-12-30T23:30:00+08:00</published><updated>2017-12-30T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-12-30:/blog/3d-fourbar.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;3D 四連桿展示&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;3D 四連桿展示&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;&lt;img alt="" src="https://github.com/kmolLin/4Ralgorithm/blob/master/image/Figure_1.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/kmolLin/4Ralgorithm/blob/master/image/2sfourbar.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;增加 E 點的推導，由於有上三角和下三角，會有兩種不一樣的曲線，由圖中可以得知 E1 及 E2 ，皆符合方程式的答案，因此曲線也有兩種，分別為圖一上表示。&lt;/p&gt;
+&lt;p&gt;接下來的方案，透過 GA 進行反算合成的運算，做出一個範例是 : 透過一個輸入轉動三維空間的運動的機構，嘗試讓機構可以進行反算合成 3D 的特殊四連桿機構。&lt;/p&gt;
+&lt;h2&gt;討論事項&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;考慮開發的位置要在 github 還是 fossil ?&lt;/li&gt;
+&lt;li&gt;是否使用製作介面來進行反算合成的輸入 ?&lt;/li&gt;
+&lt;li&gt;導入 C-K 理論進行輔助開發 ?&lt;/li&gt;
+&lt;/ol&gt;</content><category term="4rfourbar"></category></entry><entry><title>pyslvs 四連桿速度分析</title><link href="http://project.mde.tw/blog/pyslvs-si-lian-gan-su-du-fen-xi.html" rel="alternate"></link><published>2017-08-22T23:30:00+08:00</published><updated>2017-08-22T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-08-22:/blog/pyslvs-si-lian-gan-su-du-fen-xi.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;四連桿速度分析&lt;/p&gt;
 &lt;/li&gt;
