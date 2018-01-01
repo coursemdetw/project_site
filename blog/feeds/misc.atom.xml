@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - Misc</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/misc.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-12-25T11:11:00+08:00</updated><entry><title>在 MSYS2 環境編譯 Solvespace</title><link href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-solvespace.html" rel="alternate"></link><published>2017-12-25T11:11:00+08:00</published><updated>2017-12-25T11:11:00+08:00</updated><author><name>yen</name></author><id>tag:project.mde.tw,2017-12-25:/blog/zai-msys2-huan-jing-bian-yi-solvespace.html</id><summary type="html">&lt;p&gt;先前必須在 Ubuntu 或 Windows Visual Studio 環境中, 才能夠編譯 Windows 環境中的 &lt;a href="https://github.com/solvespace/solvespace"&gt;Solvespace&lt;/a&gt; 執行檔情況, 在 2014 年 &lt;a href="http://www.msys2.org/"&gt;MSYS2&lt;/a&gt; 推出之後, 有了截然不同的改變.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - Misc</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/misc.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-01-01T11:11:00+08:00</updated><entry><title>在 MSYS2 環境編譯 Fossil SCM</title><link href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-fossil-scm.html" rel="alternate"></link><published>2018-01-01T11:11:00+08:00</published><updated>2018-01-01T11:11:00+08:00</updated><author><name>yen</name></author><id>tag:project.mde.tw,2018-01-01:/blog/zai-msys2-huan-jing-bian-yi-fossil-scm.html</id><summary type="html">&lt;p&gt;採用 &lt;a href="http://www.msys2.org/"&gt;MSYS2&lt;/a&gt; 編譯 &lt;a href="https://www.fossil-scm.org"&gt;Fossil SCM&lt;/a&gt; 過程, 可以從 &lt;a href="http://gnuwin32.sourceforge.net/packages/coreutils.htm"&gt;Gnuwin32 coreutils&lt;/a&gt; 取得視窗環境下執行的 cat 與 grep, 先編譯 &lt;a href="https://www.fossil-scm.org"&gt;Fossil SCM&lt;/a&gt; 附帶的 zlib 後, 再設定 PREFIX = x86_64-w64-mingw32-, 就可順利完成 fossil.exe 的編譯. 目前唯一的限制是必須與 zlib1.dll 配合才能執行.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;採用 &lt;a href="http://www.msys2.org/"&gt;MSYS2&lt;/a&gt; 編譯 &lt;a href="https://www.fossil-scm.org"&gt;Fossil SCM&lt;/a&gt; 過程, 可以從 &lt;a href="http://gnuwin32.sourceforge.net/packages/coreutils.htm"&gt;Gnuwin32 coreutils&lt;/a&gt; 取得視窗環境下執行的 cat 與 grep, 先編譯 &lt;a href="https://www.fossil-scm.org"&gt;Fossil SCM&lt;/a&gt; 附帶的 zlib 後, 再設定 PREFIX = x86_64-w64-mingw32-, 就可順利完成 fossil.exe 的編譯. 目前唯一的限制是必須與 zlib1.dll 配合才能執行.&lt;/p&gt;
+
+
+&lt;h2&gt;取得 fossil clone 原始碼&lt;/h2&gt;
+&lt;p&gt;從 &lt;a href="https://www.fossil-scm.org"&gt;Fossil SCM&lt;/a&gt; 倉儲取得原始碼壓縮檔後, 在 wd/fossil 目錄中解開 trunk 最新版本的原始碼, 目前為 &lt;a href="https://www.fossil-scm.org"&gt;Fossil SCM&lt;/a&gt; 2.5 版.&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;fossil clone https://www.fossil-scm.org fossil.fossil
+cd wd
+mkdir fossil
+cd fossil
+fossil open ./../../fossil.fossil
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h2&gt;編譯 zlib&lt;/h2&gt;
+&lt;p&gt;在 &lt;a href="http://www.msys2.org/"&gt;MSYS2&lt;/a&gt; 環境中編譯 &lt;a href="https://www.fossil-scm.org"&gt;Fossil SCM&lt;/a&gt; 時, 必須先編譯 compat/zlib&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd compat/zlib
+mingw32-make -f win32/Makefile.gcc
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h2&gt;編譯 fossil.exe&lt;/h2&gt;
+&lt;p&gt;之後, 再退出 compat/zlib 目錄, 回到 wd/fossil 目錄中, 編輯 win/Makefile.mingw, 設定 &lt;/p&gt;
+&lt;p&gt;PREFIX = x86_64-w64-mingw32-&lt;/p&gt;
+&lt;p&gt;接著以 mingw32-make -f win/Makefile.mingw 編譯 fossil.exe&lt;/p&gt;
+&lt;p&gt;執行 fossil.exe 時, 必須搭配 compat/zlib/zlib1.dll 才能執行.&lt;/p&gt;
+&lt;p&gt;根據以上說明所建立的教學用倉儲位於: &lt;a href="https://github.com/kmolab/fossil-scm_25"&gt;https://github.com/kmolab/fossil-scm_25&lt;/a&gt;&lt;/p&gt;</content><category term="Fossil SCM"></category><category term="MSYS2"></category></entry><entry><title>在 MSYS2 環境編譯 Solvespace</title><link href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-solvespace.html" rel="alternate"></link><published>2017-12-25T11:11:00+08:00</published><updated>2017-12-25T11:11:00+08:00</updated><author><name>yen</name></author><id>tag:project.mde.tw,2017-12-25:/blog/zai-msys2-huan-jing-bian-yi-solvespace.html</id><summary type="html">&lt;p&gt;先前必須在 Ubuntu 或 Windows Visual Studio 環境中, 才能夠編譯 Windows 環境中的 &lt;a href="https://github.com/solvespace/solvespace"&gt;Solvespace&lt;/a&gt; 執行檔情況, 在 2014 年 &lt;a href="http://www.msys2.org/"&gt;MSYS2&lt;/a&gt; 推出之後, 有了截然不同的改變.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;先前必須在 Ubuntu 或 Windows Visual Studio 環境中, 才能夠編譯 Windows 環境中的 &lt;a href="https://github.com/solvespace/solvespace"&gt;Solvespace&lt;/a&gt; 執行檔情況, 在 2014 年 &lt;a href="http://www.msys2.org/"&gt;MSYS2&lt;/a&gt; 推出之後, 有了截然不同的改變.&lt;/p&gt;
 
 
