@@ -171,7 +171,7 @@ li {
 
             <article>
                 <h2><a href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-fossil-scm.html">在 MSYS2 環境編譯 Fossil SCM</a></h2>
-                <div class="summary"><p>採用 <a href="http://www.msys2.org/">MSYS2</a> 編譯 <a href="https://www.fossil-scm.org">Fossil SCM</a> 過程, 可以從 <a href="http://gnuwin32.sourceforge.net/packages/coreutils.htm">Gnuwin32 coreutils</a> 取得視窗環境下執行的 cat 與 grep, 先編譯 <a href="https://www.fossil-scm.org">Fossil SCM</a> 附帶的 zlib 後, 再設定 PREFIX = x86_64-w64-mingw32-, 就可順利完成 fossil.exe 的編譯. 目前唯一的限制是必須與 zlib1.dll 配合才能執行.</p>
+                <div class="summary"><p>採用 <a href="http://www.msys2.org/">MSYS2</a> 編譯 <a href="https://www.fossil-scm.org">Fossil SCM</a> 過程, 可以從 <a href="http://gnuwin32.sourceforge.net/packages/coreutils.htm">Gnuwin32 coreutils</a> 取得視窗環境下執行的 cat 與 grep, 並且確定 sh.exe 位於指令搜尋路徑 (例如, 透過 git/bin 目錄中的 sh.exe), 先編譯 <a href="https://www.fossil-scm.org">Fossil SCM</a> 附帶的 zlib 後, 再設定 PREFIX = x86_64-w64-mingw32-, 就可順利完成 fossil.exe 的編譯. 在不修改 win/Makefile.mingw 的情況下, 必須與 zlib1.dll 配合才能執行. 若開啟 LIB = -static 設定, 則可以將程式庫納入 fossil.exe 中執行。</p>
 
                     <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-fossil-scm.html">more ...</a>
                 </div>
