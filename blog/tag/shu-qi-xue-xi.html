@@ -9,6 +9,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+<!-- for LaTeX equations -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
 
 
     <meta name="author" content="KMOL" />
@@ -148,30 +170,92 @@ li {
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="http://project.mde.tw/blog/python-basic-the-calculate-simple-ver.html">Python basic "The Calculate" simple ver.</a></h2>
-                <div class="summary"><p>寫好了精簡版本的計算機程式</p>
+                <h2><a href="http://project.mde.tw/blog/an-zhuang-zuo-ye-huan-jing.html">安裝作業環境</a></h2>
+                <div class="summary"><p>依序安裝 Python3.6.2   pyqt5   Eric</p>
 
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/python-basic-the-calculate-simple-ver.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/an-zhuang-zuo-ye-huan-jing.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://project.mde.tw/blog/python-basic-the-calculate.html">Python basic "The Calculate"</a></h2>
-                <div class="summary"><p>在實驗室已重新灌window系統的電腦上安裝以及撰寫計算機程式</p>
+                <h2><a href="http://project.mde.tw/blog/zai-wang-zhi-nei-fu-jia-tu-pian-ri-ben-xiao-fa-xian.html">在網誌內附加圖片&日本小發現</a></h2>
+                <div class="summary"><p>組員向我詢問如何附加圖檔在網誌內</p>
 
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/python-basic-the-calculate.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/zai-wang-zhi-nei-fu-jia-tu-pian-ri-ben-xiao-fa-xian.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://project.mde.tw/blog/python-basic-and-install-eric6.html">Python basic and install eric6</a></h2>
-                <div class="summary"><p>暑假期間對於 python 最基礎的認識以及安裝編輯器</p>
+                <h2><a href="http://project.mde.tw/blog/android-studio-appzhi-bmiji-suan-ji.html">android studio app之BMI計算機</a></h2>
+                <div class="summary">
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/android-studio-appzhi-bmiji-suan-ji.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/huan-jing-she-ding-yi-ji-ji-suan-ji-cheng-shi.html">環境設定以及計算機程式</a></h2>
+                <div class="summary"><p>一些之前環境設定中沒有提到的細節</p>
 
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/python-basic-and-install-eric6.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/huan-jing-she-ding-yi-ji-ji-suan-ji-cheng-shi.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-xia-829yi-xiu-zheng.html">Eric 環境安裝-Windows (下) 8/29已修正</a></h2>
+                <div class="summary"><p>介紹安裝方法-2</p>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-xia-829yi-xiu-zheng.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/android-studio-mo-ni-qi-an-zhuang-jiao-xue.html">android studio 模擬器安裝教學</a></h2>
+                <div class="summary">
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/android-studio-mo-ni-qi-an-zhuang-jiao-xue.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/android-studio-an-zhuang-jiao-xue.html">android studio 安裝教學</a></h2>
+                <div class="summary">
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/android-studio-an-zhuang-jiao-xue.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/tui-song-wang-zhi-jiao-xue.html">推送網誌教學</a></h2>
+                <div class="summary"><p>在還不是協作者的情況下進行網誌推送</p>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/tui-song-wang-zhi-jiao-xue.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/linuxzuo-ye-xi-tong-xia-de-cheng-shi-kai-fa-huan-jing.html">Linux作業系統下的程式開發環境</a></h2>
+                <div class="summary"><p>參考<a href="http://project.mde.tw/blog/yen-kmol-de-cheng-shi-kai-fa-huan-jing.html">yen - KMOL 的程式開發環境 </a>學習如何安裝Qt5、sip、PyQt5、qscintilla2 與 eric6 等，並寫一篇文章回報</p>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/linuxzuo-ye-xi-tong-xia-de-cheng-shi-kai-fa-huan-jing.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-shang.html">Eric 環境安裝-Windows (上)</a></h2>
+                <div class="summary"><p>介紹安裝方法-1</p>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-shang.html">more ...</a>
                 </div>
             </article>
             <hr/>
 
+        <ul class="pagination">
+                <li class="prev disabled"><a href="#">&laquo;</a></li>
+                    <li class="active"><a
+                            href="http://project.mde.tw/blog/tag/shu-qi-xue-xi.html">1</a></li>
+                    <li class=""><a
+                            href="http://project.mde.tw/blog/tag/shu-qi-xue-xi2.html">2</a></li>
+                <li class="next"><a
+                        href="http://project.mde.tw/blog/tag/shu-qi-xue-xi2.html">&raquo;</a></li>
+        </ul>
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
@@ -182,18 +266,28 @@ li {
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/python-basic-the-calculate-simple-ver.html">
-                            Python basic "The Calculate" simple ver.
+                        <a href="http://project.mde.tw/blog/an-zhuang-zuo-ye-huan-jing.html">
+                            安裝作業環境
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/python-basic-the-calculate.html">
-                            Python basic "The Calculate"
+                        <a href="http://project.mde.tw/blog/zai-wang-zhi-nei-fu-jia-tu-pian-ri-ben-xiao-fa-xian.html">
+                            在網誌內附加圖片&日本小發現
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/python-basic-and-install-eric6.html">
-                            Python basic and install eric6
+                        <a href="http://project.mde.tw/blog/android-studio-appzhi-bmiji-suan-ji.html">
+                            android studio app之BMI計算機
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/huan-jing-she-ding-yi-ji-ji-suan-ji-cheng-shi.html">
+                            環境設定以及計算機程式
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-xia-829yi-xiu-zheng.html">
+                            Eric 環境安裝-Windows (下) 8/29已修正
                         </a>
                     </li>
                 </ul>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Pyslvs 開發進度 - 09/26 - 機械設計專題 (虎尾科大MDE)</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!-- for LaTeX equations -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
+
+<link rel="canonical" href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0926.html">
+
+        <meta name="author" content="40323230" />
+        <meta name="keywords" content="Pyslvs" />
+        <meta name="description" content="Pyslvs v0.9 大更新進度 輸入 (Inputs) 介面 Version 0.9 Bata 計畫" />
+
+        <meta property="og:site_name" content="機械設計專題 (虎尾科大MDE)" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Pyslvs 開發進度 - 09/26"/>
+        <meta property="og:url" content="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0926.html"/>
+        <meta property="og:description" content="Pyslvs v0.9 大更新進度 輸入 (Inputs) 介面 Version 0.9 Bata 計畫"/>
+        <meta property="article:published_time" content="2017-09-26" />
+            <meta property="article:section" content="2016bg2" />
+            <meta property="article:tag" content="Pyslvs" />
+            <meta property="article:author" content="40323230" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://project.mde.tw/blog/theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="http://project.mde.tw/blog/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://project.mde.tw/blog/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link href="http://project.mde.tw/blog/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://project.mde.tw/blog/theme/css/style.css" type="text/css"/>
+
+        <link href="http://project.mde.tw/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="機械設計專題 (虎尾科大MDE) ATOM Feed"/>
+
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPlain.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushMakefile.min.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushMakefile.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushYaml.js"></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://chiamingyen.github.io/kmolab_data/files/syntaxhighlighter/css/shCore.css";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://chiamingyen.github.io/kmolab_data/files/syntaxhighlighter/css/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
+</head>
+<body>
+<style>
+p {
+  font-size: 12pt;
+}
+li {
+  font-size: 12pt;
+}
+</style>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://project.mde.tw/blog/" class="navbar-brand">
+機械設計專題 (虎尾科大MDE)            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/blog/pages/about/">About</a></li>
+                        <li class="active">
+                            <a href="http://project.mde.tw/blog/category/2016bg2.html">2016bg2</a>
+                        </li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/2016g1.html">2016g1</a>
+                        </li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/2016g3.html">2016g3</a>
+                        </li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/2017.html">2017</a>
+                        </li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/tutorial.html">Tutorial</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="http://project.mde.tw/blog/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="http://project.mde.tw/blog/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0926.html"
+                       rel="bookmark"
+                       title="Permalink to Pyslvs 開發進度 - 09/26">
+                        Pyslvs 開發進度 - 09/26
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-09-26T21:00:00+08:00"> 週二 26 九月 2017</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="http://project.mde.tw/blog/author/40323230.html"><i class="fa fa-user"></i> 40323230</a>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://project.mde.tw/blog/tag/pyslvs.html">Pyslvs</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>Pyslvs v0.9 大更新進度</p>
+<ul>
+<li>輸入 (Inputs) 介面</li>
+<li>Version 0.9 Bata 計畫</li>
+</ul>
+
+
+<h1>輸入 (Inputs) 介面</h1>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/pyslvs/17_09_26.png"></p>
+<p>製作了藉由自由度輸入變數至機構的 GUI，介面盡量設計得直覺一些。</p>
+<p>Points 清單的更新模式是跟畫布 (Canvas) 同步的，無論是新增、刪除節點，還是選取、取消選取，Points 清單都會保持最新狀態，方便使用者設計時不再需要一直跳出視窗設定。</p>
+<p>首先由 Points 清單選擇節點，接著選擇基準桿件與驅動桿件，例如圖中 link_1 和機架 ground 做相對運動，按下「Add to variable list」鈕加入到下方的變數清單。</p>
+<p>由於自由度 (DOF) 的數學定義是能取決該機構節點位置的<strong>變數數量</strong>，因此 Variables 清單的長度不可大於自由度。</p>
+<p>選取變數後，可以藉由右邊的轉盤增減量。</p>
+<p>由於還有幾個部份還沒確定，因此還未將控制添加給 Solvespace API。</p>
+<h2>待決定事項</h2>
+<p>關於輸入 (Inputs) 介面功能的未決定事項，想在這裡列出來，看看是否靈光一現，能有兩全其美的規劃。</p>
+<ol>
+<li>
+<p>因為此介面是與機構 (Mechanism) 完全同步，是否改變機構外觀時就要更新變數的內容了呢？</p>
+</li>
+<li>
+<p>正在規劃錄製 (Records) 清單的角色定位，至少能達成 Solvespace 中紀錄並繪製點座標的功能，但也因上述問題，不知是否處理已錄製的數據。</p>
+</li>
+<li>
+<p>搭配下述新的版次管理，希望錄製 (Records) 清單能保存每個版本機構的路徑資料。</p>
+</li>
+</ol>
+<h1>Version 0.9 Bata 計畫</h1>
+<p>當新的 PMKS 表示法和輸入功能建立好後，會封鎖還未完成的功能（例如輸出輸入與舊範例），釋出這兩個新系統的 Bata 版本。</p>
+<p>而 Bata 版的推出是一系列的，釋出時將會標明測試哪部份的功能。</p>
+<p>預計將分批測試以下項目（順序可變）：</p>
+<ul>
+<li>PMKS 表示法和輸入功能</li>
+<li>具有版次紀錄的檔案格式</li>
+<li>大量機構範例</li>
+<li>外部格式輸出</li>
+</ul>
+<h2>具有版次紀錄的檔案格式</h2>
+<ul>
+<li>新的檔案格式採用 SQL Database。</li>
+<li><strong>僅會紀錄機構變更內容</strong>。</li>
+<li>設計一組符合 PMKS 表示法的<strong>索引值</strong>，讓 Pyslvs 可以更快更動機構內容。</li>
+<li>「變更內容」搭配「索引值」，可以比較出機構差異，若要合併分支，需要設計差異疊加的判斷功能。</li>
+<li>Undo Redo 清單仍只會依順序重新建立機構，以免造成程式負擔。</li>
+</ul>
+<h2>大量機構範例</h2>
+<ul>
+<li>這部份想學習顏鴻森教授的「一般化」，嘗試將不同組合的運動鍊轉換後導入。</li>
+<li>機構範例<strong>用 PMKS 網址參數就能紀錄了</strong>，可以較以前省下更多資源空間。</li>
+</ul>
+<h2>外部格式輸出</h2>
+<ul>
+<li>
+<p>修正舊的 Solvespace 導出功能，會再向開發人員詢問問題。</p>
+</li>
+<li>
+<p>導出格式：</p>
+<ul>
+<li>PMKS 網址（<strong>完成</strong>）</li>
+<li>截圖用 Qt 轉檔或複製到剪貼簿（<strong>完成</strong>）</li>
+<li>Pyslvs 格式</li>
+<li>Solvespace 格式</li>
+<li>DXF 平面格式</li>
+</ul>
+</li>
+</ul>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'projectmdetw'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'pyslvs-kai-fa-jin-du-0926';
+                var disqus_url = 'http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0926.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/v_rep-cheng-shi.html">
+                            V_rep 程式
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-fossil-scm.html">
+                            在 MSYS2 環境編譯 Fossil SCM
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/3d-fourbar.html">
+                            3D fourbar
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-solvespace.html">
+                            在 MSYS2 環境編譯 Solvespace
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/2018-kmolab-cheng-shi-kai-fa-huan-jing.html">
+                            2018 KMOLab 程式開發環境
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="http://project.mde.tw/blog/categories.html"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/2016bg2.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 2016bg2
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/2016g1.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 2016g1
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/2016g3.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 2016g3
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/2017.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 2017
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/tutorial.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Tutorial
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="http://project.mde.tw/blog/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group list-inline tagcloud" id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/DandyDev/pelican-bootstrap3/" target="_blank">
+                pelican-bootstrap3
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/getpelican/pelican-plugins" target="_blank">
+                pelican-plugins
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/Tipue/Tipue-Search" target="_blank">
+                Tipue search
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 KMOL
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://project.mde.tw/blog/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://project.mde.tw/blog/theme/js/bootstrap.min.js"></script>
+
+<!-- for https://github.com/jsor/lity lightbox video popup -->
+
+<link href="http://project.mde.tw/blog/theme/css/lity.css" rel="stylesheet">
+
+<script src="http://project.mde.tw/blog/theme/js/lity.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://project.mde.tw/blog/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'projectmdetw'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

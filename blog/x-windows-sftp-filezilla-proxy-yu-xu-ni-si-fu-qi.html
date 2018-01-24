@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>X Windows, SFtp, Filezilla, Proxy 與虛擬伺服器 - 機械設計專題 (虎尾科大MDE)</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!-- for LaTeX equations -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
+
+<link rel="canonical" href="http://project.mde.tw/blog/x-windows-sftp-filezilla-proxy-yu-xu-ni-si-fu-qi.html">
+
+        <meta name="author" content="yen" />
+        <meta name="keywords" content="X Windows,SFtp,Filezilla,Proxy,Virtualbox" />
+        <meta name="description" content="假如您認同機械設計就是靈活運用六種表達, 明確說明如何透過固體、流體與軟體元件之互動運作, 而能達成預定結果之明確與具體表達. 那麼隨著電子隨身裝置的普及, 資訊通信系統的持續整合, 機械設計工程師對於軟體元件互動運作細節的認知, 也勢必與時俱進." />
+
+        <meta property="og:site_name" content="機械設計專題 (虎尾科大MDE)" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="X Windows, SFtp, Filezilla, Proxy 與虛擬伺服器"/>
+        <meta property="og:url" content="http://project.mde.tw/blog/x-windows-sftp-filezilla-proxy-yu-xu-ni-si-fu-qi.html"/>
+        <meta property="og:description" content="假如您認同機械設計就是靈活運用六種表達, 明確說明如何透過固體、流體與軟體元件之互動運作, 而能達成預定結果之明確與具體表達. 那麼隨著電子隨身裝置的普及, 資訊通信系統的持續整合, 機械設計工程師對於軟體元件互動運作細節的認知, 也勢必與時俱進."/>
+        <meta property="article:published_time" content="2017-12-17" />
+            <meta property="article:section" content="Misc" />
+            <meta property="article:tag" content="X Windows" />
+            <meta property="article:tag" content="SFtp" />
+            <meta property="article:tag" content="Filezilla" />
+            <meta property="article:tag" content="Proxy" />
+            <meta property="article:tag" content="Virtualbox" />
+            <meta property="article:author" content="yen" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://project.mde.tw/blog/theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="http://project.mde.tw/blog/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://project.mde.tw/blog/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link href="http://project.mde.tw/blog/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://project.mde.tw/blog/theme/css/style.css" type="text/css"/>
+
+        <link href="http://project.mde.tw/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="機械設計專題 (虎尾科大MDE) ATOM Feed"/>
+
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPlain.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushMakefile.min.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushMakefile.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushYaml.js"></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://chiamingyen.github.io/kmolab_data/files/syntaxhighlighter/css/shCore.css";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://chiamingyen.github.io/kmolab_data/files/syntaxhighlighter/css/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
+</head>
+<body>
+<style>
+p {
+  font-size: 12pt;
+}
+li {
+  font-size: 12pt;
+}
+</style>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://project.mde.tw/blog/" class="navbar-brand">
+機械設計專題 (虎尾科大MDE)            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/blog/pages/about/">About</a></li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/2016bg2.html">2016bg2</a>
+                        </li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/2016g1.html">2016g1</a>
+                        </li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/2016g3.html">2016g3</a>
+                        </li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/2017.html">2017</a>
+                        </li>
+                        <li class="active">
+                            <a href="http://project.mde.tw/blog/category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/tutorial.html">Tutorial</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="http://project.mde.tw/blog/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="http://project.mde.tw/blog/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://project.mde.tw/blog/x-windows-sftp-filezilla-proxy-yu-xu-ni-si-fu-qi.html"
+                       rel="bookmark"
+                       title="Permalink to X Windows, SFtp, Filezilla, Proxy 與虛擬伺服器">
+                        X Windows, SFtp, Filezilla, Proxy 與虛擬伺服器
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-12-17T11:11:00+08:00"> 週日 17 十二月 2017</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="http://project.mde.tw/blog/author/yen.html"><i class="fa fa-user"></i> yen</a>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://project.mde.tw/blog/tag/x-windows.html">X Windows</a>
+        /
+	<a href="http://project.mde.tw/blog/tag/sftp.html">SFtp</a>
+        /
+	<a href="http://project.mde.tw/blog/tag/filezilla.html">Filezilla</a>
+        /
+	<a href="http://project.mde.tw/blog/tag/proxy.html">Proxy</a>
+        /
+	<a href="http://project.mde.tw/blog/tag/virtualbox.html">Virtualbox</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>假如您認同機械設計就是靈活運用六種表達, 明確說明如何透過固體、流體與軟體元件之互動運作, 而能達成預定結果之明確與具體表達. 那麼隨著電子隨身裝置的普及, 資訊通信系統的持續整合, 機械設計工程師對於軟體元件互動運作細節的認知, 也勢必與時俱進.</p>
+
+
+<p>以下這張圖, 是在一台中華電信光世代網路連線下的 Windows 10 電腦, 啟動 <a href="https://sourceforge.net/projects/xming/">X Windows Server</a>, 以 <a href="https://en.wikipedia.org/wiki/Secure_Shell">SSH</a> 連線, 夾帶 <a href="https://en.wikipedia.org/wiki/Tunneling_protocol">X Windows Tunneling</a> 設定, 連線到 TANet 網路上的一台, 擁有多片網路卡, 以 <a href="https://www.virtualbox.org/manual/ch06.html#network_bridged">Virtualbox Bridge Adapter</a> 啟動四台虛擬伺服器的 <a href="https://en.wikipedia.org/wiki/IPv4">IPv4</a> Linux 主控伺服器.</p>
+<p><img src="./../data/images/xming_filezilla_sftp_proxy_ipv6.png"></img></p>
+<p>此一網路連線的目的, 是在近端 Windows 10 電腦上進行操控, 透過 <a href="https://en.wikipedia.org/wiki/Secure_Shell">SSH</a> 連線到目的伺服器上, 從一台只有 <a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a> 網路連線設定的伺服器上, 下載一份 18.2 GB 的 <a href="https://www.virtualbox.org/manual/ch05.html#vdidetails">vdi</a> 檔案, 以便能夠在這台 <a href="https://en.wikipedia.org/wiki/IPv4">IPv4</a> Linux 主控伺服器上, 再建置一台支援 <a href="https://github.com/jupyterhub/jupyterhub">Jupyterhub</a> 或 <a href="https://github.com/jupyterlab/jupyterlab">Jupyterlab</a> 伺服主機.　這時從只支援 <a href="https://en.wikipedia.org/wiki/IPv4">IPv4</a> 的電腦連線到只支援 <a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a> 的伺服器, 必須設法透過雙協定支援的 <a href="https://en.wikipedia.org/wiki/Proxy_server">Proxy Server</a> 才能執行 <a href="https://filezilla-project.org/">Filezilla</a> 上的 <a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol">SFTP</a> 連線.</p>
+<p>最終, 此一操作的目的, 只是希望在全球資訊網上建立一個能夠支援與機構分析及合成有關的基因演算伺服運算環境, 若機械設計工程師完成基本的機構設計分析與確認後, 還需要針對機構所需各部零件進行強度與細部設計, 但是上述這些在資訊與通信科技領域中, 習以為常的網路操作技術, 在無任何其他單位的支援下, 若希望快速布局, 就必須逐一克服, 順利完成機械設計流程中所預定達成的結果.</p>
+<h2>X Windows</h2>
+<p>X Windows 是一種軟體視窗系統, 可以從 Client 端將圖形化程式介面傳輸到 Server 端, 此地的 X Windows Client 端就是透過 SSH 被 Windows 10 電腦連線的 Linux 伺服器, 而 X Windows Server 端就是在 Windows 10 上所啟動的 <a href="https://sourceforge.net/projects/xming/">Xming Server</a>, 當 Windows 10 中的 <a href="https://en.wikipedia.org/wiki/Secure_Shell">Putty</a> Client 連線後, 在 Linux 上執行 <a href="https://filezilla-project.org/">Filezilla</a> 後, 就可以將 <a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol">Filezilla</a> 客戶端的 X Windows 視窗畫面, 顯示在 Windows 10 中.</p>
+<p>由於以 <a href="http://www.putty.org/">Putty</a> 連線的兩端都支援 <a href="https://en.wikipedia.org/wiki/IPv4">IPv4</a> 網路協定, 因此可直接連線, 若其中一端只支援 <a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a> 網路協定, 則必須在 <a href="http://www.putty.org/">Putty</a> 連線設定中的 Connect - Proxy 中設定 IPv4/IPv6 雙支援的代理主機, 而此代理主機可以採用 <a href="http://www.squid-cache.org/">Squid</a>, 使用下列 squid.conf 設定:</p>
+<pre class="brush: jscript">
+acl cad_lab src 140.130.17.0/24
+acl cad_lab src 2001:288:6004:17::/64
+
+acl SSL_ports port 443
+acl Safe_ports port 80 # http
+acl Safe_ports port 88
+
+#acl Safe_ports port 21 # ftp
+acl SSL_ports port 8443
+acl Safe_ports port 8443
+
+acl SSL_ports port 9443
+acl Safe_ports port 9443
+
+acl SSL_ports port 22
+acl Safe_ports port 22
+
+acl Safe_ports port 443 # https
+acl Safe_ports port 1025-65535 # unregistered ports
+acl Safe_ports port 280 # http-mgmt
+acl Safe_ports port 488 # gss-http
+acl Safe_ports port 591 # filemaker
+acl Safe_ports port 777 # multiling http
+acl CONNECT method CONNECT
+
+# Deny requests to certain unsafe ports
+http_access deny !Safe_ports
+
+# Deny CONNECT to other than secure SSL ports
+http_access deny CONNECT !SSL_ports
+
+http_access allow cad_lab
+http_access deny all
+# Only allow cachemgr access from localhost
+http_access allow localhost manager
+http_access deny manager
+
+#http_access allow localnet
+http_access allow localhost
+
+# And finally deny all other access to this proxy
+http_access deny all
+
+# Squid normally listens to port 3128
+http_port 3128
+
+#cache_dir ufs /var/spool/squid 100 16 256
+icp_port 3130
+icp_access allow all
+
+cache_dir ufs /var/spool/squid 2000 16 256
+cache_peer 140.130.17.17 sibling 3128 3130
+cache_peer 140.130.17.4 sibling 3128 3130
+cache_peer 140.130.17.9 sibling 3128 3130
+cache_peer 140.130.17.53 sibling 3128 3130
+cache_peer 140.130.17.42 sibling 3128 3130
+
+#
+# Add any of your own refresh_pattern entries above these.
+#
+refresh_pattern ^ftp: 1440 20% 10080
+refresh_pattern ^gopher: 1440 0% 1440
+refresh_pattern -i (/cgi-bin/|\?) 0 0% 0
+refresh_pattern (Release|Packages(.gz)*)$ 0 20% 2880
+refresh_pattern . 0 20% 4320
+</pre>
+
+<p>至於所謂 <a href="https://en.wikipedia.org/wiki/Tunneling_protocol">X Windows Tunneling</a>, 以 <a href="http://www.putty.org/">Putty</a> 而言, 設定位於 Connection-SSH-X11-X11 forwarding, 其中除了勾選 Enable X 11 forwarding 外, X display location 設為 localhost:0.0</p>
+<h2>Virtualbox</h2>
+<p>至於在 Virtualbox 中採 <a href="https://www.virtualbox.org/manual/ch06.html#network_bridged">Virtualbox Bridge Adapter</a> 網路卡設定的虛擬主機, 目的在於透過主體電腦的實體網路卡, 直接讓虛擬主機與實體網路卡對應, 可以從外部接受網路封包, 擔任虛擬伺服器的角色.</p>
+<p>由於一台 Virtualbox 的虛擬伺服器最多可以<a href="http://cadlab.mde.tw/post/virtualbox-de-ying-yong-yu-wang-lu-she-ding-er.html">啟用 36 片網路卡</a>, 因此能夠測試多種複雜的主機網路連線設定, 讓伺服器實體配置硬體網路卡之前, 簡化配置測試的工作.</p>
+<h2>Filezilla</h2>
+<p><a href="https://filezilla-project.org/">Filezilla</a> 是跨操作平台的 <a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol">SFTP</a> Client, 當遠端的 Linux 主機要透過 <a href="https://filezilla-project.org/">Filezilla</a> 連線到只支援 IPv6 協定主機時, 必須在 Edit-Settings-Connection-Generic Proxy 中設定能同時支援 IPv4/IPv6 的代理主機.</p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'projectmdetw'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'x-windows-sftp-filezilla-proxy-yu-xu-ni-si-fu-qi';
+                var disqus_url = 'http://project.mde.tw/blog/x-windows-sftp-filezilla-proxy-yu-xu-ni-si-fu-qi.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/v_rep-cheng-shi.html">
+                            V_rep 程式
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-fossil-scm.html">
+                            在 MSYS2 環境編譯 Fossil SCM
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/3d-fourbar.html">
+                            3D fourbar
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-solvespace.html">
+                            在 MSYS2 環境編譯 Solvespace
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/2018-kmolab-cheng-shi-kai-fa-huan-jing.html">
+                            2018 KMOLab 程式開發環境
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="http://project.mde.tw/blog/categories.html"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/2016bg2.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 2016bg2
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/2016g1.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 2016g1
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/2016g3.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 2016g3
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/2017.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 2017
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/tutorial.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Tutorial
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="http://project.mde.tw/blog/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group list-inline tagcloud" id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/DandyDev/pelican-bootstrap3/" target="_blank">
+                pelican-bootstrap3
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/getpelican/pelican-plugins" target="_blank">
+                pelican-plugins
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/Tipue/Tipue-Search" target="_blank">
+                Tipue search
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 KMOL
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://project.mde.tw/blog/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://project.mde.tw/blog/theme/js/bootstrap.min.js"></script>
+
+<!-- for https://github.com/jsor/lity lightbox video popup -->
+
+<link href="http://project.mde.tw/blog/theme/css/lity.css" rel="stylesheet">
+
+<script src="http://project.mde.tw/blog/theme/js/lity.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://project.mde.tw/blog/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'projectmdetw'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

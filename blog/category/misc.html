@@ -9,6 +9,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+<!-- for LaTeX equations -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
 
 
     <meta name="author" content="KMOL" />
@@ -148,6 +170,38 @@ li {
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-fossil-scm.html">在 MSYS2 環境編譯 Fossil SCM</a></h2>
+                <div class="summary"><p>採用 <a href="http://www.msys2.org/">MSYS2</a> 編譯 <a href="https://www.fossil-scm.org">Fossil SCM</a> 過程, 可以從 <a href="http://gnuwin32.sourceforge.net/packages/coreutils.htm">Gnuwin32 coreutils</a> 取得視窗環境下執行的 cat 與 grep, 並且確定 sh.exe 位於指令搜尋路徑 (例如, 透過 git/bin 目錄中的 sh.exe), 先編譯 <a href="https://www.fossil-scm.org">Fossil SCM</a> 附帶的 zlib 後, 再設定 PREFIX = x86_64-w64-mingw32-, 就可順利完成 fossil.exe 的編譯. 在不修改 win/Makefile.mingw 的情況下, 必須與 zlib1.dll 配合才能執行. 若開啟 LIB = -static 設定, 則可以將程式庫納入 fossil.exe 中執行。</p>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-fossil-scm.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-solvespace.html">在 MSYS2 環境編譯 Solvespace</a></h2>
+                <div class="summary"><p>先前必須在 Ubuntu 或 Windows Visual Studio 環境中, 才能夠編譯 Windows 環境中的 <a href="https://github.com/solvespace/solvespace">Solvespace</a> 執行檔情況, 在 2014 年 <a href="http://www.msys2.org/">MSYS2</a> 推出之後, 有了截然不同的改變.</p>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-solvespace.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/2018-kmolab-cheng-shi-kai-fa-huan-jing.html">2018 KMOLab 程式開發環境</a></h2>
+                <div class="summary"><p>2017Fall <a href="https://kmolab.github.io/blog/">KMOLab</a> 首次將 <a href="https://pypi.python.org/pypi/PyQt5/5.9.2">PyQt5</a> 的視窗程式納入大一計算機程式課程, 採用的是 Windows 10 64 位元環境下, 結合 <a href="https://eric-ide.python-projects.org/eric-download.html">Eric6</a> 整合開發環境的 Python3 可攜系統.</p>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/2018-kmolab-cheng-shi-kai-fa-huan-jing.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/x-windows-sftp-filezilla-proxy-yu-xu-ni-si-fu-qi.html">X Windows, SFtp, Filezilla, Proxy 與虛擬伺服器</a></h2>
+                <div class="summary"><p>假如您認同機械設計就是靈活運用六種表達, 明確說明如何透過固體、流體與軟體元件之互動運作, 而能達成預定結果之明確與具體表達. 那麼隨著電子隨身裝置的普及, 資訊通信系統的持續整合, 機械設計工程師對於軟體元件互動運作細節的認知, 也勢必與時俱進.</p>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/x-windows-sftp-filezilla-proxy-yu-xu-ni-si-fu-qi.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://project.mde.tw/blog/blue-workforce-bing-gou-v-rep-gong-si.html">Blue Workforce 併購 V-rep 公司</a></h2>
                 <div class="summary"><p>丹麥的 <a href="http://blueworkforce.com/">Blue Workforce</a>公司與瑞士的 <a href="http://www.coppeliarobotics.com/">Coppelia Robotics</a> 公司已經在 2016 年 12 月 28 日合併了. 主要目標在開發更普及 (Accessible), 合用 (Applicable) 與平價 (Affordable) 的機器人系統</p>
 
@@ -195,38 +249,6 @@ li {
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/yen-yun-duan-shang-de-ji-jie-she-ji-zhuan-ti.html">yen - 雲端上的機械設計專題</a></h2>
-                <div class="summary"><p>OnShape 正式推出全面的免費帳號還不滿一年, 在 Google 搜尋結果已經突破百萬, 在這段期間, Windows 10 大小更新不斷, 從推出至今一直給系統管理人員帶來困擾, 面對無需使用 SolidWorks 的機械設計專題, Windows 10 的可有可無, 已經確定.</p>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/yen-yun-duan-shang-de-ji-jie-she-ji-zhuan-ti.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/yen-ji-jie-she-ji-zhuan-ti-de-jin-duan-yu-yuan-duan.html">yen - 機械設計專題的近端與遠端</a></h2>
-                <div class="summary"><p>機械設計專門研究如何利用機巧的配置來解決問題, 所謂機巧的配置不限固體、流體或是軟體, 隨著網路數位科技的不斷精進, 機械設計工程師也必須熟練網際協同環境中近端與遠端的搭配使用.</p>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/yen-ji-jie-she-ji-zhuan-ti-de-jin-duan-yu-yuan-duan.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/yen-dian-nao-fu-zhu-she-ji-shi-dian-nao-pei-zhi.html">yen - 電腦輔助設計室電腦配置</a></h2>
-                <div class="summary"><p>2016 年暑假機械設計工程系八樓的電腦輔助設計室更換了 54 台四年保固的華碩 Skylake MD790/I7-6700, 這一批 Intel 第六代 Core i7/3.4GHz/8M 電腦, 採用 Intel Q170 晶片組, 搭載 16GB DDR4/2133/288 Pin 記憶體 (8 GBx2), 2 TB-SATA3 硬碟, Asus MINI-GTX950-2G 顯示卡 (支援 PCIE 3.0, OpenGL 4.5, 768 個CUDA 核心數), 500瓦電源供應器, USB 3.1x2 (10GB/s) , USB 3.0x6 (5GB/s), USB 2.0x2 (480MB/s), 以及 <a href="http://www.teamsoftex.com">群準</a>的 EVOsys PRO/SATA 還原卡, 可同時支援 D-sub、HDMI 及 DisplayPort 三台獨立顯示器多工作業.</p>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/yen-dian-nao-fu-zhu-she-ji-shi-dian-nao-pei-zhi.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/yen-anaconda-on-windows-10.html">yen - Anaconda on Windows 10</a></h2>
-                <div class="summary"><p>在 Windows 10 中的 Anaconda 使用 Python 3.5.2 以及 Pelican, 測試將 .md 檔案轉為 html.</p>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/yen-anaconda-on-windows-10.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -249,28 +271,28 @@ li {
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-fossil-scm.html">
+                            在 MSYS2 環境編譯 Fossil SCM
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-solvespace.html">
+                            在 MSYS2 環境編譯 Solvespace
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/2018-kmolab-cheng-shi-kai-fa-huan-jing.html">
+                            2018 KMOLab 程式開發環境
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/x-windows-sftp-filezilla-proxy-yu-xu-ni-si-fu-qi.html">
+                            X Windows, SFtp, Filezilla, Proxy 與虛擬伺服器
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/blue-workforce-bing-gou-v-rep-gong-si.html">
                             Blue Workforce 併購 V-rep 公司
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/cadlab-jiu-dian-nao-de-chu-li.html">
-                            CADLAB 舊電腦的處理
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/chu-li-xue-yuan-pull-requests.html">
-                            處理學員 pull requests
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/windows-huan-jing-xia-de-ke-xi-eric6-ide.html">
-                            Windows 環境下的可攜 Eric6 IDE
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/leo-editor-zhuan-an-de-https-an-niu.html">
-                            Leo Editor 專案的 https 按鈕
                         </a>
                     </li>
                 </ul>
@@ -349,7 +371,7 @@ li {
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2017 KMOL
+         <div class="col-xs-10">&copy; 2018 KMOL
             &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>

@@ -1,5 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2017-07-31T23:30:00+08:00</updated><entry><title>兩輪平衡車推導</title><link href="http://project.mde.tw/blog/liang-lun-ping-heng-che-tui-dao.html" rel="alternate"></link><published>2017-07-31T23:30:00+08:00</published><updated>2017-07-31T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-31:/blog/liang-lun-ping-heng-che-tui-dao.html</id><summary type="html">&lt;ol&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-01-25T01:30:00+08:00</updated><entry><title>V_rep 程式</title><link href="http://project.mde.tw/blog/v_rep-cheng-shi.html" rel="alternate"></link><published>2018-01-25T01:30:00+08:00</published><updated>2018-01-25T01:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-01-25:/blog/v_rep-cheng-shi.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Vrepper 使用&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;程式改寫&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Vrepper 使用&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;程式改寫&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/vrep/vrep.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/vrep/vrep_arm.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;1.從頭改寫部分的 vrepper 以及設定相關以及設定相關環境變數，可以直接啟動 vrep 可選擇有介面版本或者是沒有介面版本，兩者可以透過我下的指令直接啟動。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;增加 thread 可以即時的更新每個馬達的 pos 以便進行機械手臂解的判斷，改日在將推導公式放上網誌&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;討論事項&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;已經將研討會的 revealjs 製作完成，正在練習當中&lt;/li&gt;
+&lt;li&gt;嘗試將介面寫得更符合人機介面&lt;/li&gt;
+&lt;li&gt;會嘗試看看將 tensorflow 導入並使用 vrep_nogui 版本進行取得資料&lt;/li&gt;
+&lt;/ol&gt;</content><category term="V-rep"></category></entry><entry><title>3D fourbar</title><link href="http://project.mde.tw/blog/3d-fourbar.html" rel="alternate"></link><published>2017-12-30T23:30:00+08:00</published><updated>2017-12-30T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-12-30:/blog/3d-fourbar.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;3D 四連桿展示&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;3D 四連桿展示&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;&lt;img alt="" src="https://github.com/kmolLin/4Ralgorithm/blob/master/image/Figure_1.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/kmolLin/4Ralgorithm/blob/master/image/2sfourbar.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;增加 E 點的推導，由於有上三角和下三角，會有兩種不一樣的曲線，由圖中可以得知 E1 及 E2 ，皆符合方程式的答案，因此曲線也有兩種，分別為圖一上表示。&lt;/p&gt;
+&lt;p&gt;接下來的方案，透過 GA 進行反算合成的運算，做出一個範例是 : 透過一個輸入轉動三維空間的運動的機構，嘗試讓機構可以進行反算合成 3D 的特殊四連桿機構。&lt;/p&gt;
+&lt;h2&gt;討論事項&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;考慮開發的位置要在 github 還是 fossil ?&lt;/li&gt;
+&lt;li&gt;是否使用製作介面來進行反算合成的輸入 ?&lt;/li&gt;
+&lt;li&gt;導入 C-K 理論進行輔助開發 ?&lt;/li&gt;
+&lt;/ol&gt;</content><category term="4rfourbar"></category></entry><entry><title>pyslvs 四連桿速度分析</title><link href="http://project.mde.tw/blog/pyslvs-si-lian-gan-su-du-fen-xi.html" rel="alternate"></link><published>2017-08-22T23:30:00+08:00</published><updated>2017-08-22T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-08-22:/blog/pyslvs-si-lian-gan-su-du-fen-xi.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;四連桿速度分析&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;四連桿加速度分析&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;四連桿速度分析&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;四連桿加速度分析&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/fourbar.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;針對我們 pyslvs 所產生的四連桿進行速度以及加速度分析。&lt;/p&gt;
+&lt;p&gt;角位移
+&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/Spicture.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;角速度
+&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/Vpicture.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;角加速度
+&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/apicture.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;透過 python 產生結果
+&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/codeSVA.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;接下來會將程式寫成 class 讓 pyslvs 接到主程式顯示結果，八連桿部分還在思考如何推導，在思考者是否要用一樣的方法進行推導結果。推導的方法，會再找時間全部寫成 latex 的方式顯示出來，要花比較多時間進行編寫。&lt;/p&gt;</content><category term="pyslvs"></category></entry><entry><title>Pyquino 更新進度</title><link href="http://project.mde.tw/blog/pyquino-geng-xin-jin-du.html" rel="alternate"></link><published>2017-08-07T23:30:00+08:00</published><updated>2017-08-07T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-08-07:/blog/pyquino-geng-xin-jin-du.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;目前完成項目&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;預計新增項目&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;目前完成項目&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;預計新增項目&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;h2&gt;完成項目&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;新增樹狀圖顯示各個元件內所包含的項目&lt;/li&gt;
+&lt;li&gt;新增表單進行填寫元件名稱以及範圍限制&lt;/li&gt;
+&lt;li&gt;新增移除表單方法，以及設計子項目&lt;/li&gt;
+&lt;li&gt;增加使用者更改物件名稱功能&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/treeForm.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/treelist.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;h2&gt;預計新增項目&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;將會增加新增元件按鈕，提供圖示的方法以顯示各元件在圖形化操作，使用者可進行圖形化操作每個元件的順序，以實現虛實整合，達成雙邊控制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;增加自訂元件的圖示，方便辨識元件差別&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;透過感測器資料，繪製成圖表。&lt;/li&gt;
+&lt;li&gt;透過 xml 儲存自訂元件庫資料。&lt;/li&gt;
+&lt;/ol&gt;</content><category term="pyquino"></category></entry><entry><title>Pyquino 改版更新</title><link href="http://project.mde.tw/blog/pyquino-gai-ban-geng-xin.html" rel="alternate"></link><published>2017-08-06T23:30:00+08:00</published><updated>2017-08-06T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-08-06:/blog/pyquino-gai-ban-geng-xin.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;預計更新項目&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;表單設計&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;預計更新項目&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;表單設計&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;h2&gt;預計更新項目&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;新增個人化訊號傳送&lt;/li&gt;
+&lt;li&gt;新增樹狀表示元件設計&lt;/li&gt;
+&lt;li&gt;使用 Qgraphyview 操控元件的順序 (類似labview)&lt;/li&gt;
+&lt;li&gt;新增 motor 、 sensor 、 light 三個元件&lt;/li&gt;
+&lt;li&gt;新增存檔，記錄每個元件的資訊以及順序&lt;/li&gt;
+&lt;li&gt;新增 matplotlib 繪畫感測器的值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;使用流程將會變成，透過自行設計的元件順序及通過自定的通訊格式，來進行一連串指令的控制，比如說: 要控制一台人形機器人，可以針對每顆馬達設定極限位置以及想要控制的腳本方式，透過圖形化的方式進行拖曳來控制馬達選轉的角度以及方向，實現虛實整合的目的。&lt;/p&gt;
+&lt;p&gt;Sensor 部分，則是使用者自定義訊號的格式，透過正確的傳送值格式，讓 pyquino 蒐集現實中感測器得到的值，並將值匯出成 exel 以及 matplotlib 繪製的圖片。&lt;/p&gt;
+&lt;p&gt;上面的資料都會使用 QT 所提供的樹狀圖( tree )進行記錄，而自訂存檔的部分將會使用 xml 進行存取。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/LlistTree.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;h2&gt;表單設計&lt;/h2&gt;
+&lt;p&gt;將會新增更多方式來輔助使用者設計 arduino 的程式邏輯，透過電腦的串列通訊，得以實現連續控制，以及順序控制的方式。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/singalForm.PNG?raw=true"&gt;&lt;/p&gt;</content><category term="pyquino"></category></entry><entry><title>兩輪平衡車推導</title><link href="http://project.mde.tw/blog/liang-lun-ping-heng-che-tui-dao.html" rel="alternate"></link><published>2017-07-31T23:30:00+08:00</published><updated>2017-07-31T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2017-07-31:/blog/liang-lun-ping-heng-che-tui-dao.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;兩輪平衡車推導&lt;/li&gt;
 &lt;/ol&gt;
 </summary><content type="html">&lt;ol&gt;

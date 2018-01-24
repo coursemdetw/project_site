@@ -9,6 +9,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+<!-- for LaTeX equations -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
 
 <link rel="canonical" href="http://project.mde.tw/blog">
         <meta name="author" content="KMOL" />
@@ -147,104 +169,109 @@ li {
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="http://project.mde.tw/blog/40323230ri-zhi-1060327.html">40323230日誌 - 106/03/27</a></h2>
-                <div class="summary"><p>Pyslvs 開發進度：</p>
-<ul>
-<li>Release version 0.6</li>
-<li>關於報告</li>
-</ul>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/40323230ri-zhi-1060327.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/40323230ri-zhi-1060325.html">40323230日誌 - 106/03/25</a></h2>
-                <div class="summary"><p>Pyslvs 開發進度：</p>
-<ul>
-<li>面板工具提示</li>
-<li>演算法結果校正</li>
-</ul>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/40323230ri-zhi-1060325.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/40323214ri-zhi-opencvvrep-zhi-xing-fan-li.html">40323214日誌- Opencv&Vrep 執行範例</a></h2>
+                <h2><a href="http://project.mde.tw/blog/android-studio-an-zhuang-jiao-xue.html">android studio 安裝教學</a></h2>
                 <div class="summary">
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/40323214ri-zhi-opencvvrep-zhi-xing-fan-li.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/android-studio-an-zhuang-jiao-xue.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://project.mde.tw/blog/403232030506ri-zhi-mark-number.html">40323203&05&06日誌 -  Mark Number</a></h2>
-                <div class="summary"><p>以矩形框起辨識的物體，並依序標上記號。</p>
+                <h2><a href="http://project.mde.tw/blog/tui-song-wang-zhi-jiao-xue.html">推送網誌教學</a></h2>
+                <div class="summary"><p>在還不是協作者的情況下進行網誌推送</p>
 
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/403232030506ri-zhi-mark-number.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/tui-song-wang-zhi-jiao-xue.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://project.mde.tw/blog/40323230ri-zhi-1060322.html">40323230日誌 - 106/03/22</a></h2>
-                <div class="summary"><p>Pyslvs 開發進度 - 三角求解器：</p>
+                <h2><a href="http://project.mde.tw/blog/linuxzuo-ye-xi-tong-xia-de-cheng-shi-kai-fa-huan-jing.html">Linux作業系統下的程式開發環境</a></h2>
+                <div class="summary"><p>參考<a href="http://project.mde.tw/blog/yen-kmol-de-cheng-shi-kai-fa-huan-jing.html">yen - KMOL 的程式開發環境 </a>學習如何安裝Qt5、sip、PyQt5、qscintilla2 與 eric6 等，並寫一篇文章回報</p>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/linuxzuo-ye-xi-tong-xia-de-cheng-shi-kai-fa-huan-jing.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-shang.html">Eric 環境安裝-Windows (上)</a></h2>
+                <div class="summary"><p>介紹安裝方法-1</p>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/eric-huan-jing-an-zhuang-windows-shang.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0810.html">Pyslvs 開發進度 - 08/10</a></h2>
+                <div class="summary"><p>Pyslvs 開發進度</p>
 <ul>
-<li>完成合併功能</li>
-<li>演算法合併校正</li>
+<li>Version 0.8 Release</li>
+<li>Version 0.8 後續更新</li>
 </ul>
 
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/40323230ri-zhi-1060322.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0810.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://project.mde.tw/blog/40323230ri-zhi-1060320.html">40323230日誌 - 106/03/20</a></h2>
-                <div class="summary"><p>Pyslvs 開發進度 - 三角求解器：</p>
+                <h2><a href="http://project.mde.tw/blog/python-solvespace-update-windows.html">Python-Solvespace Update - Windows</a></h2>
+                <div class="summary"><p>測試並改良 Python-Solvespace wrapper：</p>
 <ul>
-<li>關於範例結合報告</li>
+<li>端口更新相容至 Windows 平台</li>
 </ul>
 
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/40323230ri-zhi-1060320.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/python-solvespace-update-windows.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://project.mde.tw/blog/403232030506ri-zhi-measuring-size.html">40323203&05&06日誌 -  Measuring size</a></h2>
-                <div class="summary"><p>辨識圖片中物體的最大長寬
-</br>
-Measuring distance between objects in an image</p>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/403232030506ri-zhi-measuring-size.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/40323230ri-zhi-1060318.html">40323230日誌 - 106/03/18</a></h2>
-                <div class="summary"><p>Pyslvs 開發進度：</p>
+                <h2><a href="http://project.mde.tw/blog/python-solvespace-update-ubuntu.html">Python-Solvespace Update - Ubuntu</a></h2>
+                <div class="summary"><p>測試並改良 Python-Solvespace wrapper：</p>
 <ul>
-<li>三角求解器面板</li>
+<li>端口更新至 Solvespace 2.3 (Ubuntu only)</li>
 </ul>
 
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/40323230ri-zhi-1060318.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/python-solvespace-update-ubuntu.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://project.mde.tw/blog/40323230ri-zhi-1060316.html">40323230日誌 - 106/03/16</a></h2>
-                <div class="summary"><p>Pyslvs 開發進度：</p>
+                <h2><a href="http://project.mde.tw/blog/pyquino-geng-xin-jin-du.html">Pyquino 更新進度</a></h2>
+                <div class="summary"><ol>
+<li>
+<p>目前完成項目</p>
+</li>
+<li>
+<p>預計新增項目</p>
+</li>
+</ol>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyquino-geng-xin-jin-du.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/pyquino-gai-ban-geng-xin.html">Pyquino 改版更新</a></h2>
+                <div class="summary"><ol>
+<li>
+<p>預計更新項目</p>
+</li>
+<li>
+<p>表單設計</p>
+</li>
+</ol>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyquino-gai-ban-geng-xin.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0804.html">Pyslvs 開發進度 - 08/04</a></h2>
+                <div class="summary"><p>Pyslvs 開發進度</p>
 <ul>
-<li>卡車尾門範例</li>
+<li>新版 Solvespace 獨立 solver 編譯成功</li>
+<li>長時演算模式</li>
 </ul>
 
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/40323230ri-zhi-1060316.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/pandoc-markdown-ji-ben-yu-fa-jie-shao.html">Pandoc - Markdown 基本語法介紹</a></h2>
-                <div class="summary"><p>一些 Pandoc 常用的 Markdown 語法及注意事項</p>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pandoc-markdown-ji-ben-yu-fa-jie-shao.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-0804.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -326,6 +353,20 @@ Measuring distance between objects in an image</p>
                             href="http://project.mde.tw/blog/index36.html">36</a></li>
                     <li class=""><a
                             href="http://project.mde.tw/blog/index37.html">37</a></li>
+                    <li class=""><a
+                            href="http://project.mde.tw/blog/index38.html">38</a></li>
+                    <li class=""><a
+                            href="http://project.mde.tw/blog/index39.html">39</a></li>
+                    <li class=""><a
+                            href="http://project.mde.tw/blog/index40.html">40</a></li>
+                    <li class=""><a
+                            href="http://project.mde.tw/blog/index41.html">41</a></li>
+                    <li class=""><a
+                            href="http://project.mde.tw/blog/index42.html">42</a></li>
+                    <li class=""><a
+                            href="http://project.mde.tw/blog/index43.html">43</a></li>
+                    <li class=""><a
+                            href="http://project.mde.tw/blog/index44.html">44</a></li>
                 <li class="next"><a
                         href="http://project.mde.tw/blog/index8.html">&raquo;</a></li>
         </ul>
@@ -339,28 +380,28 @@ Measuring distance between objects in an image</p>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/liang-lun-ping-heng-che-tui-dao.html">
-                            兩輪平衡車推導
+                        <a href="http://project.mde.tw/blog/v_rep-cheng-shi.html">
+                            V_rep 程式
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-zhong-duan-ji-zhi-2.html">
-                            Pyslvs 演算法中斷機制 - (2)
+                        <a href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-fossil-scm.html">
+                            在 MSYS2 環境編譯 Fossil SCM
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-zhong-duan-ji-zhi.html">
-                            Pyslvs 演算法中斷機制
+                        <a href="http://project.mde.tw/blog/3d-fourbar.html">
+                            3D fourbar
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/tao-lun-shi-xiang.html">
-                            討論事項
+                        <a href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-solvespace.html">
+                            在 MSYS2 環境編譯 Solvespace
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-diao-zheng.html">
-                            Pyslvs 演算法調整
+                        <a href="http://project.mde.tw/blog/2018-kmolab-cheng-shi-kai-fa-huan-jing.html">
+                            2018 KMOLab 程式開發環境
                         </a>
                     </li>
                 </ul>
@@ -439,7 +480,7 @@ Measuring distance between objects in an image</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2017 KMOL
+         <div class="col-xs-10">&copy; 2018 KMOL
             &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>

@@ -9,6 +9,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+<!-- for LaTeX equations -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
 
 <link rel="canonical" href="http://project.mde.tw/blog">
         <meta name="author" content="KMOL" />
@@ -147,160 +169,124 @@ li {
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-tu-biao.html">Pyslvs 演算法圖表</a></h2>
-                <div class="summary"><p>Pyslvs 開發進度</p>
+                <h2><a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1128.html">Pyslvs 開發進度 - 11/28</a></h2>
+                <div class="summary"><p>Pyslvs v0.9 大更新進度</p>
 <ul>
-<li>新增 fitness - time 圖表</li>
+<li>介面操作重大更新</li>
 </ul>
 
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-tu-biao.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1128.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://project.mde.tw/blog/chrono-1060723.html">chrono - 106/07/23</a></h2>
-                <div class="summary"><ol>
-<li>
-<p>討論項目</p>
+                <h2><a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1114.html">Pyslvs 開發進度 - 11/14</a></h2>
+                <div class="summary"><p>Pyslvs v0.9 大更新進度</p>
 <ul>
 <li>
-<p>chrono 討論事宜</p>
-</li>
-<li>
-<p>幾個小型範例</p>
-</li>
+<p>版次管理功能</p>
+<ul>
+<li>分支</li>
+<li>資料庫連結機制</li>
 </ul>
 </li>
-</ol>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/chrono-1060723.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/pyslvs-de-zmq-fang-zhi-lian-xian-zhong-duan.html">Pyslvs 的 ZMQ 防止連線中斷</a></h2>
-                <div class="summary"><p>Pyslvs 開發進度</p>
-<ul>
-<li>改善 Server  突然關閉的狀況</li>
-</ul>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-de-zmq-fang-zhi-lian-xian-zhong-duan.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-jie-guo-yu-lan.html">Pyslvs 演算法結果預覽</a></h2>
-                <div class="summary"><p>Pyslvs 開發進度</p>
-<ul>
 <li>
-<p>演算法結果動態預覽</p>
-</li>
-<li>
-<p>路徑模糊化</p>
+<p>預設範例</p>
 </li>
 </ul>
 
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-jie-guo-yu-lan.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1114.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://project.mde.tw/blog/modelica-1060721.html">modelica - 106/07/21</a></h2>
-                <div class="summary"><ol>
-<li>
-<p>討論項目</p>
+                <h2><a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1112.html">Pyslvs 開發進度 - 11/12</a></h2>
+                <div class="summary"><p>Pyslvs v0.9 大更新進度</p>
 <ul>
-<li>
-<p>modelica 討論</p>
-</li>
-<li>
-<p>Jmodelica vs Openmodelica</p>
-</li>
-</ul>
-</li>
-</ol>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/modelica-1060721.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/python-basic-and-install-eric6.html">Python basic and install eric6</a></h2>
-                <div class="summary"><p>暑假期間對於 python 最基礎的認識以及安裝編輯器</p>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/python-basic-and-install-eric6.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/pyslvs-lu-jing-chu-li.html">Pyslvs 路徑處理</a></h2>
-                <div class="summary"><p>Pyslvs 開發進度</p>
-<ul>
-<li>
-<p>支援匯入與處理演算法路徑</p>
-</li>
-<li>
-<p>簡單處理演算法路徑座標點功能</p>
-</li>
-<li>
-<p>演算法名詞解釋</p>
-</li>
-<li>
-<p>模組授權整理</p>
-</li>
+<li>版次管理功能雛形</li>
 </ul>
 
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-lu-jing-chu-li.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1112.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://project.mde.tw/blog/modelica-1060720.html">modelica - 106/07/20</a></h2>
-                <div class="summary"><ol>
-<li>
-<p>討論項目</p>
-<ul>
-<li>
-<p>modelica</p>
-</li>
-<li>
-<p>gyro</p>
-</li>
-</ul>
-</li>
-</ol>
-
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/modelica-1060720.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://project.mde.tw/blog/pyslvs-tong-yi-bian-yi-liu-cheng.html">Pyslvs 統一編譯流程</a></h2>
+                <h2><a href="http://project.mde.tw/blog/double-ball-lifter-ji-gou-fen-xi.html">Double Ball Lifter 機構分析</a></h2>
                 <div class="summary"><ul>
-<li>單一 Makefile 完成 kernel 編譯</li>
+<li>
+<p>分析接球機構</p>
+</li>
+<li>
+<p>三角形法套入一般化鍊的要求</p>
+</li>
 </ul>
 
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-tong-yi-bian-yi-liu-cheng.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/double-ball-lifter-ji-gou-fen-xi.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://project.mde.tw/blog/opencvdong-tai-zhen-ce-1060714.html">Opencv動態偵測 - 106/07/14</a></h2>
-                <div class="summary"><ol>
-<li>
-<p>討論項目</p>
+                <h2><a href="http://project.mde.tw/blog/chuang-yi-xing-ji-gou-she-ji-ke-tang-bi-ji-1023.html">創意性機構設計課堂筆記 - 10/23</a></h2>
+                <div class="summary"><p>每星期創意性機構設計課程筆記整理</p>
 <ul>
-<li>
-<p>影像辨識工具開發</p>
-</li>
-<li>
-<p>步伐測量</p>
-</li>
+<li>機構分析</li>
+<li>數目合成</li>
+<li>類型合成</li>
 </ul>
-</li>
-</ol>
 
-                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/opencvdong-tai-zhen-ce-1060714.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/chuang-yi-xing-ji-gou-she-ji-ke-tang-bi-ji-1023.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/shi-yong-onshapehui-zhi-marble.html">使用Onshape繪製Marble</a></h2>
+                <div class="summary"><p>使用Onshape繪製Marble</p>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/shi-yong-onshapehui-zhi-marble.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1022.html">Pyslvs 開發進度 - 10/22</a></h2>
+                <div class="summary"><p>Pyslvs v0.9 大更新進度</p>
+<ul>
+<li>機構分析功能</li>
+</ul>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1022.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1020.html">Pyslvs 開發進度 - 10/20</a></h2>
+                <div class="summary"><p>Pyslvs v0.9 大更新進度</p>
+<ul>
+<li>lark 基本用法</li>
+</ul>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1020.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1019.html">Pyslvs 開發進度 - 10/19</a></h2>
+                <div class="summary"><p>Pyslvs v0.9 大更新進度</p>
+<ul>
+<li>改換 peewee 讀寫檔案格式</li>
+</ul>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1019.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1018.html">Pyslvs 開發進度 - 10/18</a></h2>
+                <div class="summary"><p>Pyslvs v0.9 大更新進度</p>
+<ul>
+<li>測試使用 Qt 的 SQL Driver</li>
+</ul>
+
+                    <a class="btn btn-default btn-xs" href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1018.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -382,6 +368,20 @@ li {
                             href="http://project.mde.tw/blog/index36.html">36</a></li>
                     <li class=""><a
                             href="http://project.mde.tw/blog/index37.html">37</a></li>
+                    <li class=""><a
+                            href="http://project.mde.tw/blog/index38.html">38</a></li>
+                    <li class=""><a
+                            href="http://project.mde.tw/blog/index39.html">39</a></li>
+                    <li class=""><a
+                            href="http://project.mde.tw/blog/index40.html">40</a></li>
+                    <li class=""><a
+                            href="http://project.mde.tw/blog/index41.html">41</a></li>
+                    <li class=""><a
+                            href="http://project.mde.tw/blog/index42.html">42</a></li>
+                    <li class=""><a
+                            href="http://project.mde.tw/blog/index43.html">43</a></li>
+                    <li class=""><a
+                            href="http://project.mde.tw/blog/index44.html">44</a></li>
                 <li class="next"><a
                         href="http://project.mde.tw/blog/index3.html">&raquo;</a></li>
         </ul>
@@ -395,28 +395,28 @@ li {
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/liang-lun-ping-heng-che-tui-dao.html">
-                            兩輪平衡車推導
+                        <a href="http://project.mde.tw/blog/v_rep-cheng-shi.html">
+                            V_rep 程式
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-zhong-duan-ji-zhi-2.html">
-                            Pyslvs 演算法中斷機制 - (2)
+                        <a href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-fossil-scm.html">
+                            在 MSYS2 環境編譯 Fossil SCM
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-zhong-duan-ji-zhi.html">
-                            Pyslvs 演算法中斷機制
+                        <a href="http://project.mde.tw/blog/3d-fourbar.html">
+                            3D fourbar
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/tao-lun-shi-xiang.html">
-                            討論事項
+                        <a href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-solvespace.html">
+                            在 MSYS2 環境編譯 Solvespace
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-yan-suan-fa-diao-zheng.html">
-                            Pyslvs 演算法調整
+                        <a href="http://project.mde.tw/blog/2018-kmolab-cheng-shi-kai-fa-huan-jing.html">
+                            2018 KMOLab 程式開發環境
                         </a>
                     </li>
                 </ul>
@@ -495,7 +495,7 @@ li {
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2017 KMOL
+         <div class="col-xs-10">&copy; 2018 KMOL
             &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>

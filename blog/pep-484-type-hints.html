@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>PEP 484 Type Hints - 機械設計專題 (虎尾科大MDE)</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!-- for LaTeX equations -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
+
+<link rel="canonical" href="http://project.mde.tw/blog/pep-484-type-hints.html">
+
+        <meta name="author" content="40323230" />
+        <meta name="keywords" content="Python3" />
+        <meta name="description" content="文章閱讀：Python 函式中的類型提示 如何在 Python 函式中標示類型？ Duck Typing PEP 484 簡讀" />
+
+        <meta property="og:site_name" content="機械設計專題 (虎尾科大MDE)" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="PEP 484 Type Hints"/>
+        <meta property="og:url" content="http://project.mde.tw/blog/pep-484-type-hints.html"/>
+        <meta property="og:description" content="文章閱讀：Python 函式中的類型提示 如何在 Python 函式中標示類型？ Duck Typing PEP 484 簡讀"/>
+        <meta property="article:published_time" content="2017-08-30" />
+            <meta property="article:section" content="2016bg2" />
+            <meta property="article:tag" content="Python3" />
+            <meta property="article:author" content="40323230" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://project.mde.tw/blog/theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="http://project.mde.tw/blog/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://project.mde.tw/blog/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link href="http://project.mde.tw/blog/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://project.mde.tw/blog/theme/css/style.css" type="text/css"/>
+
+        <link href="http://project.mde.tw/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="機械設計專題 (虎尾科大MDE) ATOM Feed"/>
+
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPlain.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushMakefile.min.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushMakefile.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushYaml.js"></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://chiamingyen.github.io/kmolab_data/files/syntaxhighlighter/css/shCore.css";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://chiamingyen.github.io/kmolab_data/files/syntaxhighlighter/css/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
+</head>
+<body>
+<style>
+p {
+  font-size: 12pt;
+}
+li {
+  font-size: 12pt;
+}
+</style>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://project.mde.tw/blog/" class="navbar-brand">
+機械設計專題 (虎尾科大MDE)            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/blog/pages/about/">About</a></li>
+                        <li class="active">
+                            <a href="http://project.mde.tw/blog/category/2016bg2.html">2016bg2</a>
+                        </li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/2016g1.html">2016g1</a>
+                        </li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/2016g3.html">2016g3</a>
+                        </li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/2017.html">2017</a>
+                        </li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="http://project.mde.tw/blog/category/tutorial.html">Tutorial</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="http://project.mde.tw/blog/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="http://project.mde.tw/blog/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://project.mde.tw/blog/pep-484-type-hints.html"
+                       rel="bookmark"
+                       title="Permalink to PEP 484 Type Hints">
+                        PEP 484 Type Hints
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-08-30T21:00:00+08:00"> 週三 30 八月 2017</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="http://project.mde.tw/blog/author/40323230.html"><i class="fa fa-user"></i> 40323230</a>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://project.mde.tw/blog/tag/python3.html">Python3</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>文章閱讀：Python 函式中的類型提示</p>
+<p>如何在 Python 函式中標示類型？</p>
+<ul>
+<li>
+<p><a href="https://zh.wikipedia.org/wiki/%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B">Duck Typing</a></p>
+</li>
+<li>
+<p><a href="https://www.python.org/dev/peps/pep-0484">PEP 484</a> 簡讀</p>
+</li>
+</ul>
+
+
+<p><em>詳情可參閱上方連結。</em></p>
+<h1>Duck Typing</h1>
+<p>作為一種動態程式語言，Python 採用「鴨子型別」的方式進行物件識別：</p>
+<p><strong>「當看到一隻鳥走起來像鴨子、游泳起來像鴨子、叫起來也像鴨子，那麼這隻鳥就可以被稱為鴨子。」</strong></p>
+<p>例如以下的程式：</p>
+<pre class="brush: python">
+class Duck:
+    def quack(self):
+        print("這鴨子在呱呱叫")
+    def feathers(self):
+        print("這鴨子擁有白色與灰色羽毛")
+    def getMyFeathers(self):
+        return ["白色羽毛", "灰色羽毛"]
+
+class Person:
+    def quack(self):
+        print("這人正在模仿鴨子")
+    def feathers(self): 
+        print("這人在地上拿起1根羽毛然後給其他人看")
+    def getMyFeathers(self):
+        return "地上的羽毛"
+
+def in_the_forest(duck):
+    duck.quack()
+    duck.feathers()
+
+#Start the game.
+donald = Duck()
+john = Person()
+in_the_forest(donald)
+in_the_forest(john)
+</pre>
+
+<p>以上程式碼顯示，不管你是 Duck 類型還是 Person 類型，一樣可以進入 <code>in_the_forest</code> 函式。</p>
+<p>很明顯地，我們的 john 可以玩到直到「穿幫」為止。</p>
+<p>也呼應了 Python 的設計風格：</p>
+<p><strong>We're all consenting adults here.</strong></p>
+<p>只要知道自己在做什麼，Python 可以讓寫作方式不會太過拘謹。</p>
+<h1>PEP 484 簡讀</h1>
+<p>不過 Python 中還是可以「提醒」工程師，function 中究竟該輸入什麼、會得到什麼。</p>
+<p>這裡使用「提醒」這個字，代表著仍然能不按照規定輸入輸出（因為我們是動態語言），當然也會抱著被拆穿的風險。</p>
+<p>使用 PEP 484 的規則設計，最大的好處是可以不須使用註解來標明，畢竟同一色系常常會打錯字或是會錯意。</p>
+<p>而且 Python 直譯器以及絕大多數的 IDE 都會幫你檢查是否為正確的類型。</p>
+<p>需要注意的是，typing 模組是在 Python 3.5 加入。</p>
+<h2>輸入</h2>
+<p>先來展示基本的寫法，提醒 john 不要進入 <code>in_the_forest</code> 函式：</p>
+<pre class="brush: python">
+def in_the_forest(duck: Duck):
+    duck.quack()
+    duck.feathers()
+    whiteFeather, grayFeather = duck.getMyFeathers()
+</pre>
+
+<p>這裡使用冒號 <code>:</code> 後加上類型物件可以標示這個輸入的類型。</p>
+<p>如果在其他檔案，懶得找到鴨子，也可以用字串表示有種生物叫鴨子。</p>
+<pre class="brush: python">
+def in_the_forest(duck: "Duck"):
+</pre>
+
+<p>預設項目的用法也是以此類推，比如沒有 donald，自己找隻鴨子。</p>
+<pre class="brush: python">
+def in_the_forest(duck: Duck =Duck()):
+</pre>
+
+<p>多個輸入也雷同，使用逗號隔開即可。若是很多項，則是建議換行。</p>
+<p>多個項目中可以選擇特定的標示，這些都不是硬性規定。</p>
+<p>下面的範例留了一個安全的位子給 john。</p>
+<pre class="brush: python">
+def in_the_forest(
+    duck1: Duck =Duck(),
+    duck2: Duck =Duck(),
+    duck3: Duck =Duck(),
+    person: Person =Person()
+):
+    Creatures = [duck1, duck2, duck3, person]
+    for i, duck in enumerate(Creatures):
+        duck.quack()
+        duck.feathers()
+        if i!=3:
+            whiteFeather, grayFeather = duck.getMyFeathers()
+
+in_the_forest(person=john)
+</pre>
+
+<p>類型中的方法 (method) 也是一樣，不過因為第一個輸入 self 本來就是該類型，通常都不會標示。</p>
+<p>這樣是不是清楚很多呢？</p>
+<h2>輸出</h2>
+<p>我們注意到 donald 和 john 在 <code>getMyFeathers</code> 函式中拿出的物件不一樣，為了瞭解類型的函式究竟會得到什麼，可以使用輸出表示的方法。</p>
+<p>輸出表示是一個箭號形狀擺在 function 尾端的冒號 <code>:</code> 之前：</p>
+<pre class="brush: python">
+class Person:
+    def getMyFeathers(self) -> str:
+        return "地上的羽毛"
+</pre>
+
+<p>當然只會做事的函式是回傳 None，可以視情況決定要不要寫：</p>
+<pre class="brush: python">
+class Person:
+    def quack(self) -> None:
+        print("這人正在模仿鴨子")
+</pre>
+
+<p>若為多個，也是使用逗號分隔，這裡就不示範了。</p>
+<h2>容器物件</h2>
+<p>若是輸入或輸出的物件為容器 (container)，可以使用檢索符號 <code>[ ]</code> 中括弧來標示。</p>
+<pre class="brush: python">
+from typing import List
+
+class Duck:
+    def getMyFeathers(self) -> List[str, str]:
+        return ["白色羽毛", "灰色羽毛"]
+</pre>
+
+<p>從 typing 模組匯入的類型名稱字首為大寫，注意不要與一般類型混淆了。</p>
+<h2>可呼叫物件</h2>
+<p>可呼叫 (callable) 的 function 類型和常用的 lambda 如下表示：</p>
+<pre class="brush: python">
+from typing import Callable
+
+def async_query(
+    on_success: Callable[[int], None],
+    on_error: Callable[[int, Exception], None]
+):
+</pre>
+
+<p>第一項為「輸入類型」，第二項為「輸出類型」。</p>
+<p>若是懶得管第一項，可以使用 <a href="https://docs.python.org/3.6/library/constants.html#Ellipsis">Ellipsis</a> 表示。</p>
+<p>一個簡單的 lambda 物件如下表示：</p>
+<pre class="brush: python">
+lambda x, y: str(x+y)
+
+Callable[[int, int], str]
+Callable[..., str]
+</pre>
+
+<h2>泛型物件</h2>
+<p>若有多重類型的物件可以適用，便可從 typing 模組匯入泛型物件。</p>
+<p>例如無序集合：</p>
+<pre class="brush: python">
+from typing import Mapping, Set
+
+def notify_by_email(employees: Set[Employee], overrides: Mapping[str, str]):
+</pre>
+
+<p>或是有序集合：</p>
+<pre class="brush: python">
+from typing import Sequence, TypeVar
+
+T = TypeVar('T')
+
+def first(l: Sequence[T]) -> T:
+    return l[0]
+</pre>
+
+<p>或是任何字串：</p>
+<pre class="brush: python">
+from typing import TypeVar
+
+AnyStr = TypeVar('AnyStr', str, bytes)
+
+def concat(x: AnyStr, y: AnyStr) -> AnyStr:
+    return x + y
+</pre>
+
+<p>上面的範例中，透過 TypeVar 函式可以將你的自訂類型正規化，讓直譯器不會出錯，是一個比字串更好的表達方式。</p>
+<p>還有更多使用方式，這裡就不細數了，更多內容可以參閱官方的說明。</p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'projectmdetw'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'pep-484-type-hints';
+                var disqus_url = 'http://project.mde.tw/blog/pep-484-type-hints.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/v_rep-cheng-shi.html">
+                            V_rep 程式
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-fossil-scm.html">
+                            在 MSYS2 環境編譯 Fossil SCM
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/3d-fourbar.html">
+                            3D fourbar
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/zai-msys2-huan-jing-bian-yi-solvespace.html">
+                            在 MSYS2 環境編譯 Solvespace
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/2018-kmolab-cheng-shi-kai-fa-huan-jing.html">
+                            2018 KMOLab 程式開發環境
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="http://project.mde.tw/blog/categories.html"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/2016bg2.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 2016bg2
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/2016g1.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 2016g1
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/2016g3.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 2016g3
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/2017.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 2017
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/category/tutorial.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Tutorial
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="http://project.mde.tw/blog/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group list-inline tagcloud" id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/DandyDev/pelican-bootstrap3/" target="_blank">
+                pelican-bootstrap3
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/getpelican/pelican-plugins" target="_blank">
+                pelican-plugins
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/Tipue/Tipue-Search" target="_blank">
+                Tipue search
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 KMOL
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://project.mde.tw/blog/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://project.mde.tw/blog/theme/js/bootstrap.min.js"></script>
+
+<!-- for https://github.com/jsor/lity lightbox video popup -->
+
+<link href="http://project.mde.tw/blog/theme/css/lity.css" rel="stylesheet">
+
+<script src="http://project.mde.tw/blog/theme/js/lity.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://project.mde.tw/blog/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'projectmdetw'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>
