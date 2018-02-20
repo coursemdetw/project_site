@@ -1,5 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-01-25T01:30:00+08:00</updated><entry><title>V_rep 程式</title><link href="http://project.mde.tw/blog/v_rep-cheng-shi.html" rel="alternate"></link><published>2018-01-25T01:30:00+08:00</published><updated>2018-01-25T01:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-01-25:/blog/v_rep-cheng-shi.html</id><summary type="html">&lt;ol&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-02-20T09:30:00+08:00</updated><entry><title>Reinforcement Learning</title><link href="http://project.mde.tw/blog/reinforcement-learning.html" rel="alternate"></link><published>2018-02-20T09:30:00+08:00</published><updated>2018-02-20T09:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-02-20:/blog/reinforcement-learning.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Machine Learning&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reinforcement Learning&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Machine Learning&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reinforcement Learning&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;h1&gt;Machine Learning&lt;/h1&gt;
+&lt;p&gt;機器學習能夠解決的問題&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;問題需求&lt;/th&gt;
+&lt;th&gt;適用的機器學習種類&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;要將資料配適到某個函數或函數近似的議題&lt;/td&gt;
+&lt;td&gt;監督式學習 (Supervised learning)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;針對無任何回饋的資料進行結果揣測&lt;/td&gt;
+&lt;td&gt;非監督式學習 (Unsupervised learning)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;隨著時間累積而讓結果的獎勵最大化&lt;/td&gt;
+&lt;td&gt;增強式學習 (Reinforcement Learning)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;演算法種類&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;演算法&lt;/th&gt;
+&lt;th&gt;所屬的機器學習種類&lt;/th&gt;
+&lt;th&gt;演算法類別&lt;/th&gt;
+&lt;th&gt;受限偏向&lt;/th&gt;
+&lt;th&gt;適用偏向&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;K-最近鄰法 (K-Nearest Neighbors)&lt;/td&gt;
+&lt;td&gt;監督式學習&lt;/td&gt;
+&lt;td&gt;實例式&lt;/td&gt;
+&lt;td&gt;受限於維度詛咒&lt;/td&gt;
+&lt;td&gt;適用於距離形式的問題&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;單純貝式分類 (Naive Bayesian Classification)&lt;/td&gt;
+&lt;td&gt;監督式學習&lt;/td&gt;
+&lt;td&gt;機率(Probabilistic)&lt;/td&gt;
+&lt;td&gt;處理輸入內容呈現彼此獨立的問題&lt;/td&gt;
+&lt;td&gt;每種機率大於零的問題&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;決策樹 (Decision Trees)&lt;/td&gt;
+&lt;td&gt;監督式學習&lt;/td&gt;
+&lt;td&gt;Tree&lt;/td&gt;
+&lt;td&gt;受限於 covariance&lt;/td&gt;
+&lt;td&gt;適用於種類性資料的問題&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;大致上列舉幾種演算法還有許多的學習演算法並未列出&lt;/p&gt;
+&lt;h2&gt;Reinforcement Learning&lt;/h2&gt;
+&lt;p&gt;-由分數來決定要做的方法&lt;/p&gt;
+&lt;p&gt;比如老師會根據我的開心程度來打分, 我開心時, 可以得到高分, 我不開心時得到低分. 有了這些被打分的經驗, 我就能判斷為了拿到高分, 我應該選擇一張開心的臉, 避免選到傷心的臉. 這也是強化學習的核心思想. 可以看出在強化學習中, 一種行為的分數是十分重要的. 所以強化學習具有分數導向性. 我們換一個角度來思考.這種分數導向性好比我們在監督學習中的正確標籤&lt;/p&gt;
+&lt;p&gt;通過價值選行為的演算法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Q-learning
+&lt;li&gt;Sarsa
+&lt;li&gt;Deep Q Network (DQN)
+&lt;/ul&gt;
+
+&lt;h2&gt;Q-Learning&lt;/h2&gt;
+&lt;p&gt;Q-Learning&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/machine_learning/qlearning.png?raw=true"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;alpha 是一個小於1的數&lt;/li&gt;
+&lt;li&gt;gamma 是對未來的 reward 的衰減值&lt;/li&gt;
+&lt;li&gt;Epsilon greedy 是用在決策上的一種策略&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Deep Q Network (DQN)&lt;/h2&gt;
+&lt;p&gt;DQN 是一個記憶庫用於學習之前的經歷，主要解決了不用紀錄表格 (action &amp;amp; state) 因為 action 和 state 如果直接用表格紀錄，記憶體可能會有問題。
+而在機器學習中有一種方法是可以用來規劃，也就是神經網路，將狀態以及動作當成神經網路的輸入，透過神經網路生成 Q 值，這樣就可以不用在表格中紀錄 Q 值。&lt;/p&gt;
+&lt;h2&gt;Deep Deterministic Policy Gradient (DDPG)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;介紹&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;DDPG 是由 Google DeepMind 提出的一種使用 Actor-Critic 結構，但輸出不是機率而是具體的行為，用於連續動作 (continuous action)的預測。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;算法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$\bigtriangledown {\theta^{\mu }}J\approx \frac{1}{N}\sum^{ }\bigtriangledown {a}Q(s,a|\theta^{Q})|,a = \mu(s_{i})^{ }\bigtriangledown_{\theta^{\mu }}\mu)(s|\theta^{\mu })|s_{i}$$&lt;/p&gt;
+&lt;p&gt;關於 Actor 部分，參數更新同樣涉及到 critic ，上面是關於 Actor 參數的更新，算式的前半部分 grad(Q) 是從 Critic 產生。 Actor 的動作移動，才能獲得更大的 Q 值。
+而後半部分 gead[u] 是從 Actor 產生，Actor 要修改自己參數使得 Actor 更有可能做這個動作。所以兩個結合就會變成使: Actor 朝著更有可能獲得大的 Q 的方向修改動作參數。&lt;/p&gt;
+&lt;p&gt;$$\textbf{set} y_{i} = r^{i}+\gamma {Q}'(s_{i+1},{{\mu }}'(s_{i+1}|\theta^{{\mu }'})|\theta^{{Q}'}) $$
+$$\textbf{update cricitic by minimizing the loss:} L = \frac{1}{N}\sum_{i}(y_{i}-Q(s_{i},a_{i}|\theta^{Q}))^{2}$$&lt;/p&gt;
+&lt;p&gt;這個式子是關於 critic 的更新，參考 DQN 的方式，使用兩個 Q 的神經網路，Q target 中依據下一個狀態，由 Actor 來選擇動作，這時 Actor 也有一個 Actor_target ，使用這種方法獲得的 Q_target 能像 DQN 切斷相關性，提高收斂性。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;主結構&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/machine_learning/tenserboard.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/machine_learning/tenactor.png?raw=true"&gt;&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class Actor(object):
+    def __init__(self):
+        ...
+        with tf.variable_scope('Actor'):
+            # 這個網路用於即時更新網路
+            self.a = self._build_net(S, scope='eval_net', trainable=True)
+            # 這個網路不及時更新參数, 用于預測 Critic 的 Q_target 中的 action
+            self.a_ = self._build_net(S_, scope='target_net', trainable=False)
+        ...
+
+class Critic(object):
+    def __init__(self):
+        with tf.variable_scope('Critic'):
+            # 這個網路用於即時更新參數
+            self.a = a  # 這個 a 是来自 Actor 的, 但是 self.a 在更新 Critic 的时候是之前選擇的 a 而不是来自 Actor 的 a.
+            self.q = self._build_net(S, self.a, 'eval_net', trainable=True)
+            # 這個網路不及時更新參数, 给出 Actor 更新參数时的 Gradient ascent 强度
+            self.q_ = self._build_net(S_, a_, 'target_net', trainable=False)
+&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Actor Critic&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/machine_learning/actor.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;由圖可以看到兩個 eval_net ，Actor class 的寫法&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+with tf.variable_scope('policy_grads'):
+    # 這是在計算 (dQ/da) * (da/dparams)
+    self.policy_grads = tf.gradients(
+        ys=self.a, xs=self.e_params, # 計算 ys 對於 xs 的梯度
+        grad_ys=a_grads # 這是從 Critic 来的 dQ/da
+    )
+with tf.variable_scope('A_train'):
+    opt = tf.train.AdamOptimizer(-self.lr)  # 父的學習率是為了使我們計算梯度向上, 和 Policy Gradient 中的方式是同一個性質
+    self.train_op = opt.apply_gradients(zip(self.policy_grads, self.e_params)) # 對 eval_net 的參數更新
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/machine_learning/critic.png?raw=true"&gt;&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+# 計算 target Q
+with tf.variable_scope('target_q'):
+    self.target_q = R + self.gamma * self.q_    # self.q_ 根據 Actor 的 target_net 来的
+# 計算誤差並反向傳遞誤差
+with tf.variable_scope('TD_error'):
+    self.loss = tf.reduce_mean(tf.squared_difference(self.target_q, self.q))  # self.q 又基於 Actor 的 target_net
+with tf.variable_scope('C_train'):
+    self.train_op = tf.train.AdamOptimizer(self.lr).minimize(self.loss)
+&lt;/pre&gt;
+
+&lt;p&gt;最後把建立好的 actor 以及 critic 融合再一起&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+actor = Actor(...)
+critic = Critic(..., actor.a, actor.a_)  # 將 actor 同它的 eval_net/target_net 產生的 a/a_ 傳給 Critic
+actor.add_grad_to_graph(critic.a_grads) # 将 critic 產出的 dQ/da 加入到 Actor 的 Graph 中
+&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;記憶 Merory&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;建立一個 class 進行存取&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+class Memory(object):
+def __init__(self, capacity, dims):
+        """numpy 初始化"""
+
+    def store_transition(self, s, a, r, s_):
+        """保存每次記億到 numpy array"""
+
+    def sample(self, n):
+        """隨機從記憶庫中抽取 n 個記憶進行學習"""
+
+&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;每回合算法 (部分)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="brush: python"&gt;
+var = 3  # 初始化一個方差用於增强 actor 的探索性
+
+for i in range(MAX_EPISODES):
+    ...
+    for j in range(MAX_EP_STEPS):
+        ...
+
+        a = actor.choose_action(s)
+        a = np.clip(np.random.normal(a, var), -2, 2) # 增强探索性
+        s_, r, done, info = env.step(a)
+
+        M.store_transition(s, a, r / 10, s_)   # 記憶庫
+
+        if M.pointer &gt; MEMORY_CAPACITY: # 記憶庫滿了以後
+            var *= .9998    # 逐漸降低探索性
+            b_M = M.sample(BATCH_SIZE)
+            ...   # 將 b_M 拆分成下面的输入信息
+            critic.learn(b_s, b_a, b_r, b_s_)
+            actor.learn(b_s)
+        # 將現在的 state 取代舊的 S
+        s = s_
+
+        if j == MAX_EP_STEPS-1:
+            break
+&lt;/pre&gt;
+
+&lt;p&gt;以上部分資料參考於 youtube 一位 python 的教學課程還有一些書本的資料
+&lt;a href="https://morvanzhou.github.io/tutorials/machine-learning/reinforcement-learning/6-2-DDPG/"&gt;參考網址&lt;/a&gt;&lt;/p&gt;</content><category term="machine-learning"></category></entry><entry><title>V_rep 程式</title><link href="http://project.mde.tw/blog/v_rep-cheng-shi.html" rel="alternate"></link><published>2018-01-25T01:30:00+08:00</published><updated>2018-01-25T01:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-01-25:/blog/v_rep-cheng-shi.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Vrepper 使用&lt;/p&gt;
 &lt;/li&gt;
