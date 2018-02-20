@@ -305,7 +305,7 @@ li {
 <p>$$\bigtriangledown {\theta^{\mu }}J\approx \frac{1}{N}\sum^{ }\bigtriangledown {a}Q(s,a|\theta^{Q})|,a = \mu(s_{i})^{ }\bigtriangledown_{\theta^{\mu }}\mu)(s|\theta^{\mu })|s_{i}$$</p>
 <p>關於 Actor 部分，參數更新同樣涉及到 critic ，上面是關於 Actor 參數的更新，算式的前半部分 grad(Q) 是從 Critic 產生。 Actor 的動作移動，才能獲得更大的 Q 值。
 而後半部分 gead[u] 是從 Actor 產生，Actor 要修改自己參數使得 Actor 更有可能做這個動作。所以兩個結合就會變成使: Actor 朝著更有可能獲得大的 Q 的方向修改動作參數。</p>
-<p>$$\textbf{set} y_{i} = r^{i}+\gamma {Q}'(s_{i+1},{{\mu }}'(s_{i+1}|\theta^{\mu{}'})|\theta^{{Q}'}) $$
+<p>$$\textbf{set} y_{i} = r^{i}+\gamma {Q}'(s_{i+1},{{\mu }}'(s_{i+1}|\theta^{\mu{}'})|\theta^{Q{}'}) $$
 $$\textbf{update cricitic by minimizing the loss:} L = \frac{1}{N}\sum_{i}(y_{i}-Q(s_{i},a_{i}|\theta^{Q}))^{2}$$</p>
 <p>這個式子是關於 critic 的更新，參考 DQN 的方式，使用兩個 Q 的神經網路，Q target 中依據下一個狀態，由 Actor 來選擇動作，這時 Actor 也有一個 Actor_target ，使用這種方法獲得的 Q_target 能像 DQN 切斷相關性，提高收斂性。</p>
 <ul>
