@@ -1,5 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-02-20T09:30:00+08:00</updated><entry><title>Reinforcement Learning</title><link href="http://project.mde.tw/blog/reinforcement-learning.html" rel="alternate"></link><published>2018-02-20T09:30:00+08:00</published><updated>2018-02-20T09:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-02-20:/blog/reinforcement-learning.html</id><summary type="html">&lt;ol&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-02-21T09:30:00+08:00</updated><entry><title>2-dof RL 演算法練習</title><link href="http://project.mde.tw/blog/2-dof-rl-yan-suan-fa-lian-xi.html" rel="alternate"></link><published>2018-02-21T09:30:00+08:00</published><updated>2018-02-21T09:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-02-21:/blog/2-dof-rl-yan-suan-fa-lian-xi.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;2 links 機械手臂&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;實作 DDPG 方法應用於機械手臂控制&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;2 links 機械手臂&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;實作 DDPG 方法應用於機械手臂控制&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;訓練出來的效果&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/machine_learning/2arm.gif?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;使用環境 &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tensorflow
+&lt;li&gt;Numpy
+&lt;li&gt;Pyglet (畫面呈現)
+&lt;/ul&gt;
+
+&lt;ul&gt;
+&lt;li&gt;tensorboard 圖表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/machine_learning/tensorflowarmrobot.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;h2&gt;DDPG&lt;/h2&gt;
+&lt;p&gt;利用 tensorflow 建立 Actor(表演者) Critic(評審) 的網路&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+def _build_a(self, s, scope, trainable):
+        with tf.variable_scope(scope):
+            net = tf.layers.dense(s, 100, activation=tf.nn.relu, name='l1', trainable=trainable)
+            a = tf.layers.dense(net, self.a_dim, activation=tf.nn.tanh, name='a', trainable=trainable)
+            return tf.multiply(a, self.a_bound, name='scaled_a')
+
+def _build_c(self, s, a, scope, trainable):
+    with tf.variable_scope(scope):
+        n_l1 = 100
+        w1_s = tf.get_variable('w1_s', [self.s_dim, n_l1], trainable=trainable)
+        w1_a = tf.get_variable('w1_a', [self.a_dim, n_l1], trainable=trainable)
+        b1 = tf.get_variable('b1', [1, n_l1], trainable=trainable)
+        net = tf.nn.relu(tf.matmul(s, w1_s) + tf.matmul(a, w1_a) + b1)
+        return tf.layers.dense(net, 1, trainable=trainable)  # Q(s,a)
+&lt;/pre&gt;
+
+&lt;p&gt;Q-target 以及 Td-Error&lt;/p&gt;
+&lt;pre class="brush:python"&gt;
+
+q_target = self.R + GAMMA * q_
+td_error = tf.losses.mean_squared_error(labels=q_target, predictions=q)
+self.ctrain = tf.train.AdamOptimizer(LR_C).minimize(td_error, var_list=self.ce_params)
+
+&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;學習&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="brush:python"&gt;
+
+def learn(self):
+    # soft target replacement
+    self.sess.run(self.soft_replace)
+
+    indices = np.random.choice(MEMORY_CAPACITY, size=BATCH_SIZE)
+    bt = self.memory[indices, :]
+    bs = bt[:, :self.s_dim]
+    ba = bt[:, self.s_dim: self.s_dim + self.a_dim]
+    br = bt[:, -self.s_dim - 1: -self.s_dim]
+    bs_ = bt[:, -self.s_dim:]
+
+    self.sess.run(self.atrain, {self.S: bs})
+    self.sess.run(self.ctrain, {self.S: bs, self.a: ba, self.R: br, self.S_: bs_})
+
+&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;儲存記憶&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="brush:python"&gt;
+
+def store_transition(self, s, a, r, s_):
+    transition = np.hstack((s, a, [r], s_))
+    index = self.pointer % MEMORY_CAPACITY  # replace the old memory with new memory
+    self.memory[index, :] = transition
+    self.pointer += 1
+    if self.pointer &gt; MEMORY_CAPACITY:      # indicator for learning
+        self.memory_full = True
+
+&lt;/pre&gt;
+
+&lt;h2&gt;問題探討&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;不收斂的問題&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;目前網路第一次有成功收斂並得到正確的訓練網路，但是在增加幾種條件進去訓練神經網路，發現有不收斂或者選擇錯誤的部分，關於這部分還需要思考是否是特徵沒有完善的考慮。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;V-rep使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這部分可能等開學後和老師進行討論，有想果幾種可能方案進行，目前在 V-rep 中碰撞等問題尚未解決。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2維問題轉成 3維問題&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;會嘗試使用同樣的方法進行訓練，但在三維空間的機械手臂有許多需要考慮的部分，這部分的特徵還在思考有沒有新的解決方法可以提高訓練成功的機率&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;速度規劃&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;關於特徵選取問題，還有這個部分需要考量，因為除了位置正確還有移動速度考慮，還可以提出考慮的方法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Path planing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;嘗試將目前的 2D 機械手臂進行路徑規劃並輸出 G-code&lt;/p&gt;</content><category term="machine-learning"></category></entry><entry><title>Reinforcement Learning</title><link href="http://project.mde.tw/blog/reinforcement-learning.html" rel="alternate"></link><published>2018-02-20T09:30:00+08:00</published><updated>2018-02-20T09:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-02-20:/blog/reinforcement-learning.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Machine Learning&lt;/p&gt;
 &lt;/li&gt;
