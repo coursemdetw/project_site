@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-02-22T09:30:00+08:00</updated><entry><title>多軸機械手臂 DDPG (Vrep)</title><link href="http://project.mde.tw/blog/duo-zhou-ji-jie-shou-bi-ddpg-vrep.html" rel="alternate"></link><published>2018-02-22T09:30:00+08:00</published><updated>2018-02-22T09:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-02-22:/blog/duo-zhou-ji-jie-shou-bi-ddpg-vrep.html</id><summary type="html">&lt;ol&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-02-23T09:30:00+08:00</updated><entry><title>多軸機械手臂 (V-rep)</title><link href="http://project.mde.tw/blog/duo-zhou-ji-jie-shou-bi-v-rep.html" rel="alternate"></link><published>2018-02-23T09:30:00+08:00</published><updated>2018-02-23T09:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-02-23:/blog/duo-zhou-ji-jie-shou-bi-v-rep.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;多軸機械手臂訓練調整&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;多軸機械手臂訓練調整&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;調整項目&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;將最下方的轉角初始設定為固定，不在隨機轉動。[0,random(3)]
+&lt;li&gt;Vrep no gui mode
+&lt;li&gt;當初模型的轉角有設限制導致訓練產生問題，修正 joint 為360度並調整無碰撞
+&lt;li&gt;訓練次數1000次 (訓練時間 4.5 HR
+&lt;/ul&gt;
+
+&lt;h2&gt;猜測原因&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;訓練項目無規則性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;由於給個角度都擁有360度的轉角進行學習，但是就實際狀況中，每顆馬達進行的角度是有限制的，由於給予太大量的角度進行學習，導致學習到了許多在現實中不會產生的角度。&lt;/p&gt;
+&lt;p&gt;** 會在訓練模型中添加範圍限制，以利加速訓練模式。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Vrep 訓練時間&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;由這篇&lt;img alt="論文" src=""&gt;可以得知，當初這些人在 V-rep 進行手臂學習所使用的 Q-learning 學習法花了許多時間在訓練，由文中可以得知主要花的時間是在使用 v-rep 引擎所導致的時間，文中解決方法是使用 C# 進行 Gui 程式的編寫，創造自己的手臂學習機。如果將訓練項目變得有規則性時，如果時間還是過長，或許採用數學式的順向運動學(Forward kinematic) 進行訓練，也許是個方案。&lt;/p&gt;
+&lt;h2&gt;運作結果&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/machine_learning/arm_exp/experint2.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;h2&gt;1000次訓練&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/machine_learning/arm_exp/vreparm_train_1000.gif?raw=true"&gt;&lt;/p&gt;</content><category term="machine-learning"></category></entry><entry><title>多軸機械手臂 DDPG (Vrep)</title><link href="http://project.mde.tw/blog/duo-zhou-ji-jie-shou-bi-ddpg-vrep.html" rel="alternate"></link><published>2018-02-22T09:30:00+08:00</published><updated>2018-02-22T09:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-02-22:/blog/duo-zhou-ji-jie-shou-bi-ddpg-vrep.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;多軸機械手臂訓練&lt;/li&gt;
 &lt;/ol&gt;
 </summary><content type="html">&lt;ol&gt;
