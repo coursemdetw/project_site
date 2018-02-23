@@ -26,7 +26,7 @@
 &lt;ul&gt;
 &lt;li&gt;Vrep 訓練時間&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;由這篇&lt;img alt="論文" src=""&gt;可以得知，當初這些人在 V-rep 進行手臂學習所使用的 Q-learning 學習法花了許多時間在訓練，由文中可以得知主要花的時間是在使用 v-rep 引擎所導致的時間，文中解決方法是使用 C# 進行 Gui 程式的編寫，創造自己的手臂學習機。如果將訓練項目變得有規則性時，如果時間還是過長，或許採用數學式的順向運動學(Forward kinematic) 進行訓練，也許是個方案。&lt;/p&gt;
+&lt;p&gt;由這篇&lt;a href="https://www.doc.ic.ac.uk/~ejohns/Documents/stephen_james_thesis.pdf"&gt;論文&lt;/a&gt; 可以得知，當初這些人在 V-rep 進行手臂學習所使用的 Q-learning 學習法花了許多時間在訓練，由文中可以得知主要花的時間是在使用 v-rep 引擎所導致的時間，文中解決方法是使用 C# 進行 Gui 程式的編寫，創造自己的手臂學習機。如果將訓練項目變得有規則性時，如果時間還是過長，或許採用數學式的順向運動學(Forward kinematic) 進行訓練，也許是個方案。&lt;/p&gt;
 &lt;h2&gt;運作結果&lt;/h2&gt;
 &lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/machine_learning/arm_exp/experint2.PNG?raw=true"&gt;&lt;/p&gt;
 &lt;h2&gt;1000次訓練&lt;/h2&gt;
