@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-02-23T09:30:00+08:00</updated><entry><title>多軸機械手臂 (V-rep)</title><link href="http://project.mde.tw/blog/duo-zhou-ji-jie-shou-bi-v-rep.html" rel="alternate"></link><published>2018-02-23T09:30:00+08:00</published><updated>2018-02-23T09:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-02-23:/blog/duo-zhou-ji-jie-shou-bi-v-rep.html</id><summary type="html">&lt;ol&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-03-05T16:00:00+08:00</updated><entry><title>V_rep模擬機械手臂 ra605_robot</title><link href="http://project.mde.tw/blog/v_repmo-ni-ji-jie-shou-bi-ra605_robot.html" rel="alternate"></link><published>2018-03-05T16:00:00+08:00</published><updated>2018-03-05T16:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2018-03-05:/blog/v_repmo-ni-ji-jie-shou-bi-ra605_robot.html</id><summary type="html">&lt;p&gt;從onshape下載ra605_robot導入V_rep進行模擬&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;從onshape下載ra605_robot導入V_rep進行模擬&lt;/p&gt;
+
+
+&lt;h3&gt;onshape下載&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0305/chrome_2018-03-05_21-15-22.png?raw=true"&gt;
+&lt;p&gt;導入V_rep&lt;/p&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0305/vrep_2018-03-05_21-05-16.png?raw=true"&gt;
+&lt;p&gt;add joint (共6個)&lt;/p&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0305/vrep_2018-03-05_21-18-53.png?raw=true"&gt;
+&lt;p&gt;設定F(X)&lt;/p&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0305/vrep_2018-03-05_21-33-01.png?raw=true"&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0305/vrep_2018-03-05_21-33-15.png?raw=true"&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0305/vrep_2018-03-05_21-33-37.png?raw=true"&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0305/vrep_2018-03-05_21-33-43.png?raw=true"&gt;
+&lt;p&gt;可以參照V_rep裡面的範例"7 DoF manipulator"&lt;/p&gt;
+&lt;p&gt;影片&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/258609486" width="800" height="600" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/258609486"&gt;虎尾科技大學機械設計系_40423116_李冠辰_vrep模擬機械手臂ra605_robot&lt;/a&gt; from &lt;a href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;/p&gt;</content><category term="專題"></category></entry><entry><title>多軸機械手臂 (V-rep)</title><link href="http://project.mde.tw/blog/duo-zhou-ji-jie-shou-bi-v-rep.html" rel="alternate"></link><published>2018-02-23T09:30:00+08:00</published><updated>2018-02-23T09:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-02-23:/blog/duo-zhou-ji-jie-shou-bi-v-rep.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;多軸機械手臂訓練調整&lt;/li&gt;
 &lt;/ol&gt;
 </summary><content type="html">&lt;ol&gt;
