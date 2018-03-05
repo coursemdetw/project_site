@@ -191,7 +191,7 @@ li {
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-01-04T21:00:00+08:00"> Wed 04 January 2017</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-01-04T21:00:00+08:00"> 週三 04 一月 2017</time>
     </span>
             <span class="label label-default">By</span>
             <a href="http://project.mde.tw/blog/author/40323230.html"><i class="fa fa-user"></i> 40323230</a>
@@ -255,8 +255,8 @@ cdef double randV():
 <p>這裡使用迭代運算而非重新指定值，速度會比較快一點。</p>
 <p>需要修改的檔案為 <code>rga.pyx</code> 和 <code>de.pyx</code>，其他函式庫都沒問題。</p>
 <p>但是因為 Windows 平台多加了判斷式，還有其他因素，運算時間慢上 1 倍（中間的螢火蟲演算法完全相同）。以下是相同題目的運算結果：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0104_01.png" /></p>
-<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0104_02.jpg" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0104_01.png"></p>
+<p><img alt="" src="https://raw.githubusercontent.com/coursemdetw/project_site_files/gh-pages/files/2016spring/g2/Python_solvespace/0104_02.jpg"></p>
 <h2>編譯方法</h2>
 <p>由於加入了 Cython 的程式庫，原本的編譯方式又沒辦法使用了，會出現「pythoncom」匯入的錯誤。</p>
 <p>用兩種方式重新編譯後，發現在 PyInstaller 的資料夾（dist）中執行它的主程式，會顯示找不到 py35w 的核心。</p>
@@ -308,28 +308,28 @@ cdef double randV():
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/chuang-yi-xing-ji-gou-she-ji-ke-tang-bi-ji-1023.html">
-                            創意性機構設計課堂筆記 - 10/23
+                        <a href="http://project.mde.tw/blog/duo-zhou-ji-jie-shou-bi-v-rep.html">
+                            多軸機械手臂 (V-rep)
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/shi-yong-onshapehui-zhi-marble.html">
-                            使用Onshape繪製Marble
+                        <a href="http://project.mde.tw/blog/duo-zhou-ji-jie-shou-bi-ddpg-vrep.html">
+                            多軸機械手臂 DDPG (Vrep)
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1022.html">
-                            Pyslvs 開發進度 - 10/22
+                        <a href="http://project.mde.tw/blog/2-dof-rl-yan-suan-fa-lian-xi.html">
+                            2-dof RL 演算法練習
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1020.html">
-                            Pyslvs 開發進度 - 10/20
+                        <a href="http://project.mde.tw/blog/reinforcement-learning.html">
+                            Reinforcement Learning
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/pyslvs-kai-fa-jin-du-1019.html">
-                            Pyslvs 開發進度 - 10/19
+                        <a href="http://project.mde.tw/blog/v_rep-cheng-shi.html">
+                            V_rep 程式
                         </a>
                     </li>
                 </ul>
@@ -408,7 +408,7 @@ cdef double randV():
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2017 KMOL
+         <div class="col-xs-10">&copy; 2018 KMOL
             &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
