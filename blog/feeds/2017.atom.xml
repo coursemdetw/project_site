@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-03-05T16:00:00+08:00</updated><entry><title>V_rep模擬機械手臂 ra605_robot</title><link href="http://project.mde.tw/blog/v_repmo-ni-ji-jie-shou-bi-ra605_robot.html" rel="alternate"></link><published>2018-03-05T16:00:00+08:00</published><updated>2018-03-05T16:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2018-03-05:/blog/v_repmo-ni-ji-jie-shou-bi-ra605_robot.html</id><summary type="html">&lt;p&gt;從onshape下載ra605_robot導入V_rep進行模擬&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-03-15T23:00:00+08:00</updated><entry><title>V_rep模擬仿身獸 3/6~3/15</title><link href="http://project.mde.tw/blog/v_repmo-ni-fang-shen-shou-36315.html" rel="alternate"></link><published>2018-03-15T23:00:00+08:00</published><updated>2018-03-15T23:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2018-03-15:/blog/v_repmo-ni-fang-shen-shou-36315.html</id><summary type="html">&lt;p&gt;Onshape 繪製仿身獸後進行Vrep模擬&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Onshape 繪製仿身獸後進行Vrep模擬&lt;/p&gt;
+
+
+&lt;h2&gt;onshape下載&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0315/01.png?raw=true"&gt;
+&lt;p&gt;導入V_rep&lt;/p&gt;
+&lt;p&gt;接完一邊後複製並鏡射到另一邊&lt;/p&gt;&lt;/p&gt;
+&lt;h2&gt;影片&lt;/h2&gt;
+&lt;p&gt;&lt;iframe src="https://player.vimeo.com/video/259677212" width="640" height="338" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/259677212"&gt;虎尾科技大學 機械設計系 40423116 李冠辰 vrep 仿生獸一對腳&lt;/a&gt; from &lt;a href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;只有一對腳並不能完全讓仿身獸穩定行走&lt;/p&gt;
+&lt;p&gt;試著再組第二對腳，間隔180度&lt;/p&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0315/02.png?raw=true"&gt;&lt;/p&gt;
+&lt;h2&gt;影片&lt;/h2&gt;
+&lt;p&gt;&lt;iframe src="https://player.vimeo.com/video/260054288" width="640" height="337" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/260054288"&gt;虎尾科技大學 機械設計系 40423116 李冠辰 vrep 仿生獸兩對腳&lt;/a&gt; from &lt;a href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;雖然整體可以穩住不倒，但動作不實際，有零件轉過頭的現象&lt;/p&gt;
+&lt;p&gt;嘗試利用convex decomposition of selection(多邊形分解)將模型分解成多邊形，讓原本的模型只作為外觀作用，實際作業的是多邊形模型，這樣可以讓vrep再跑動作時可以順暢點&lt;/p&gt;&lt;/p&gt;
+&lt;h2&gt;convex decomposition of selection&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0315/03.png?raw=true"&gt;&lt;/p&gt;
+&lt;h2&gt;影片&lt;/h2&gt;
+&lt;p&gt;&lt;p&gt;這次將每個模型以多邊形分解試著讓vrep的動作變流暢(然而並沒有，但是能跑了)&lt;/p&gt;
+&lt;p&gt;不過仍然有關節處錯位的傾向&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/260241553" width="640" height="337" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/260241553"&gt;虎尾科技大學 機械設計系 40423116 李冠辰 vrep 仿身獸兩對腳(修正)&lt;/a&gt; from &lt;a href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;/p&gt;
+&lt;p&gt;3/15再進行修正&lt;/p&gt;
+
+&lt;p&gt;使用上一版沒有多邊形分解模型的版本&lt;/p&gt;
+
+&lt;p&gt;接伺服馬達(模型)的joint順位往前，變成Base接joint，(因為馬達固定於base上，所以當作base跟馬達為一體)&lt;/p&gt;
+
+&lt;h2&gt;影片&lt;/h2&gt;
+&lt;p&gt;&lt;iframe src="https://player.vimeo.com/video/260241918" width="640" height="337" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/260241918"&gt;虎尾科技大學 機械設計系 40423116 李冠辰 vrep 仿身獸 兩對腳 (在修正)&lt;/a&gt; from &lt;a href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;得知問題出在base上的兩顆伺服馬達模型身上&lt;/p&gt;&lt;/p&gt;
+&lt;h2&gt;下一步&lt;/h2&gt;
+&lt;p&gt;&lt;p&gt;我會聽老師建議，之後會嘗試用外部程式控制vrep模擬仿身獸走路路線&lt;/p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/40423116/2017kmol/blob/master/40423116car5.ttt"&gt;vrep仿身獸檔案&lt;/a&gt;&lt;/p&gt;</content><category term="專題"></category></entry><entry><title>V_rep模擬機械手臂 ra605_robot</title><link href="http://project.mde.tw/blog/v_repmo-ni-ji-jie-shou-bi-ra605_robot.html" rel="alternate"></link><published>2018-03-05T16:00:00+08:00</published><updated>2018-03-05T16:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2018-03-05:/blog/v_repmo-ni-ji-jie-shou-bi-ra605_robot.html</id><summary type="html">&lt;p&gt;從onshape下載ra605_robot導入V_rep進行模擬&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;從onshape下載ra605_robot導入V_rep進行模擬&lt;/p&gt;
 
 
