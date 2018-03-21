@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-03-21T02:41:00+08:00</updated><entry><title>android app 插入資料進資料庫</title><link href="http://project.mde.tw/blog/android-app-cha-ru-zi-liao-jin-zi-liao-ku.html" rel="alternate"></link><published>2018-03-21T02:41:00+08:00</published><updated>2018-03-21T02:41:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2018-03-21:/blog/android-app-cha-ru-zi-liao-jin-zi-liao-ku.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-03-22T02:15:00+08:00</updated><entry><title>寒期總結</title><link href="http://project.mde.tw/blog/han-qi-zong-jie.html" rel="alternate"></link><published>2018-03-22T02:15:00+08:00</published><updated>2018-03-22T02:15:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2018-03-22:/blog/han-qi-zong-jie.html</id><summary type="html">&lt;p&gt;統整直至目前的計畫以及影片&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;統整直至目前的計畫以及影片&lt;/p&gt;
+
+
+&lt;p&gt;寒假期間，利用小組長40423116冠辰印出來的抝線模具來製作了許多軌道。&lt;/p&gt;
+&lt;p&gt;由於錫銲不是很順利，仔細研究了桌上的錫膏；似乎對於我想做的"金屬嫁接"並派不上用場。&lt;/p&gt;
+&lt;p&gt;於去年所製作的轉彎軌道，片中右側那紫色那塊即是模具，圖片的資料夾那邊檔案有點大，我先以網路圖床夾帶。&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/261175614" width="640" height="1138" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/261175614"&gt;V_20171218_173736_vHDR_On&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://imgur.com/xosK35J"&gt;&lt;img src="https://i.imgur.com/xosK35J.jpg" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;彎道模具版
+後來發現較外圍的那一軌道沒有東西擋著不好使軌道定型，而且方線也是錯誤的，固有跟組長回報過後有換過模具了。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/hso7cAT"&gt;&lt;img src="https://i.imgur.com/hso7cAT.jpg" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;直線模具
+利用中間的空洞來進行銲錫的工作。
+兩邊用膠帶黏住進行固定。&lt;/p&gt;
+&lt;p&gt;原本完成的入口通道&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/261175748" width="640" height="1138" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/261175748"&gt;V_20180123_192617_vHDR_On&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;後來發現由於軌道外偏，用一個重物將外圍往內壓住，情況有改善。&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/261175748" width="640" height="1138" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/261175748"&gt;V_20180123_192617_vHDR_On&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;經過討論後打算在內道使用第三條軌道。&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/261175790" width="640" height="1138" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/261175790"&gt;V_20180125_140603_vHDR_On&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;也如影片中所見，要控制銲錫的手感十分難拿捏，高溫的液體也並非想改變即可以改變，於是改變作風，我們依然會用軌道，比例會變低，3D印表機的使用率則會增加。&lt;/p&gt;
+&lt;p&gt;目前是想用這作為軌道
+前端導球進入後，進入中間的洞口&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/cuoh9Vl"&gt;&lt;img src="https://i.imgur.com/cuoh9Vl.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;並從支柱中跑出來&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/aIJAhWm"&gt;&lt;img src="https://i.imgur.com/aIJAhWm.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;</content><category term="彈珠台軌道"></category></entry><entry><title>android app 插入資料進資料庫</title><link href="http://project.mde.tw/blog/android-app-cha-ru-zi-liao-jin-zi-liao-ku.html" rel="alternate"></link><published>2018-03-21T02:41:00+08:00</published><updated>2018-03-21T02:41:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2018-03-21:/blog/android-app-cha-ru-zi-liao-jin-zi-liao-ku.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
 &lt;p&gt;現在彈珠台上已經有感測器可以紀錄資料,&lt;/p&gt;
 &lt;p&gt;利用在Udemy上購買的課程學習使用php建立資料庫在以手機app手動輸入資料,&lt;/p&gt;
