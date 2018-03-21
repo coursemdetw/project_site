@@ -5,35 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://project.mde.tw/blog/</loc>
-<lastmod>2018-03-15T23:28:36-00:00</lastmod>
+<lastmod>2018-03-21T21:47:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/archives.html</loc>
-<lastmod>2018-03-15T23:28:36-00:00</lastmod>
+<lastmod>2018-03-21T21:47:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/tags.html</loc>
-<lastmod>2018-03-15T23:28:36-00:00</lastmod>
+<lastmod>2018-03-21T21:47:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/categories.html</loc>
-<lastmod>2018-03-15T23:28:36-00:00</lastmod>
+<lastmod>2018-03-21T21:47:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/pages/about/</loc>
-<lastmod>2018-03-05T21:57:40+08:00</lastmod>
+<lastmod>2018-03-21T21:36:42+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://project.mde.tw/blog/android-app-cha-ru-zi-liao-jin-zi-liao-ku.html</loc>
+<lastmod>2018-03-21T02:41:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -3148,7 +3155,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://project.mde.tw/blog/category/2017.html</loc>
-<lastmod>2018-03-15T23:00:00+08:06</lastmod>
+<lastmod>2018-03-21T02:41:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -3163,6 +3170,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://project.mde.tw/blog/category/tutorial.html</loc>
 <lastmod>2016-12-28T11:29:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://project.mde.tw/blog/tag/android.html</loc>
+<lastmod>2018-03-21T02:41:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -4051,7 +4065,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://project.mde.tw/blog/author/40423118.html</loc>
-<lastmod>2017-10-18T02:43:00+08:06</lastmod>
+<lastmod>2018-03-21T02:41:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
