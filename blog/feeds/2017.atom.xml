@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-03-27T16:00:00+08:00</updated><entry><title>Vrep 仿生獸，使用proximity sensor控制joint</title><link href="http://project.mde.tw/blog/vrep-fang-sheng-shou-shi-yong-proximity-sensorkong-zhi-joint.html" rel="alternate"></link><published>2018-03-27T16:00:00+08:00</published><updated>2018-03-27T16:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2018-03-27:/blog/vrep-fang-sheng-shou-shi-yong-proximity-sensorkong-zhi-joint.html</id><summary type="html">&lt;p&gt;用超音波感測器並編寫Scripts內部程式控制仿生獸配合道路轉彎、直走等等..&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-03-29T14:04:00+08:00</updated><entry><title>提球機構 軌道設計</title><link href="http://project.mde.tw/blog/ti-qiu-ji-gou-gui-dao-she-ji.html" rel="alternate"></link><published>2018-03-29T14:04:00+08:00</published><updated>2018-03-29T14:04:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2018-03-29:/blog/ti-qiu-ji-gou-gui-dao-she-ji.html</id><summary type="html">&lt;p&gt;關於圓形軌道以及老師選定之PDF的討論&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;關於圓形軌道以及老師選定之PDF的討論&lt;/p&gt;
+
+
+&lt;p&gt;目前已對 A-design 創新設計與機構表示法已有部分的了解，英文單字的字彙量也有增加，但目前的程度看PDF沒有太大的狀況，機構表示的方式即是用最簡單的方式來介紹誰是牽桿，誰為動力提供，誰為被動連接，誰連接地面，已一個一目了然的方式來介紹自己的想法。&lt;/p&gt;
+&lt;p&gt;A-design 即是以功能以及流程來讓設計更加完善。&lt;/p&gt;
+&lt;p&gt;在設計軌道組時，有再想畫出類似雲霄飛車軌道的螺旋狀，如下圖所示。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20180329/1a951ee5523a8dc1.jpg?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;有與製圖科畢業的同學討論過繪製法，他提到會需要用到3D空間來進行繪製，過他的演示，發覺有些的困難，於是靈機一動想起了螺旋線的部分，於是在 onshape 擠出一圓柱之後來建立螺旋線。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20180329/helix.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;將圓柱隱藏後，繪出前後端路徑，看似可用!&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20180329/helix-1.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;繪製線軌，掃略繪出，不知為何不能使用新增的選項來使用合併的功能。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20180329/helix-2.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;將此圖以 sldprt 匯出至 Solidworks 來進行檢查，卻發現接頭處被分成了兩的部分，這樣一來模擬會出現不少誤差，會再研擬下一段作法。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20180329/helix-3.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20180329/helix-4.PNG?raw=true"&gt;&lt;/p&gt;</content><category term="彈珠台軌道"></category></entry><entry><title>Vrep 仿生獸，使用proximity sensor控制joint</title><link href="http://project.mde.tw/blog/vrep-fang-sheng-shou-shi-yong-proximity-sensorkong-zhi-joint.html" rel="alternate"></link><published>2018-03-27T16:00:00+08:00</published><updated>2018-03-27T16:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2018-03-27:/blog/vrep-fang-sheng-shou-shi-yong-proximity-sensorkong-zhi-joint.html</id><summary type="html">&lt;p&gt;用超音波感測器並編寫Scripts內部程式控制仿生獸配合道路轉彎、直走等等..&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;用超音波感測器並編寫Scripts內部程式控制仿生獸配合道路轉彎、直走等等..&lt;/p&gt;
 
 
