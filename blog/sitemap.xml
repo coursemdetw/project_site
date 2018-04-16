@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://project.mde.tw/blog/</loc>
-<lastmod>2018-03-30T11:11:57-00:00</lastmod>
+<lastmod>2018-04-16T20:36:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/archives.html</loc>
-<lastmod>2018-03-30T11:11:57-00:00</lastmod>
+<lastmod>2018-04-16T20:36:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/tags.html</loc>
-<lastmod>2018-03-30T11:11:57-00:00</lastmod>
+<lastmod>2018-04-16T20:36:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/categories.html</loc>
-<lastmod>2018-03-30T11:11:57-00:00</lastmod>
+<lastmod>2018-04-16T20:36:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -34,6 +34,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://project.mde.tw/blog/pages/about/</loc>
 <lastmod>2017-01-22T20:35:35+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://project.mde.tw/blog/pyslvs_triangle_expression.html</loc>
+<lastmod>2018-04-16T21:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -3155,7 +3162,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://project.mde.tw/blog/category/2016bg2.html</loc>
-<lastmod>2017-12-12T21:00:00+08:06</lastmod>
+<lastmod>2018-04-16T21:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -3191,6 +3198,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://project.mde.tw/blog/category/tutorial.html</loc>
 <lastmod>2016-12-28T11:29:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://project.mde.tw/blog/tag/pyslvs.html</loc>
+<lastmod>2018-04-16T21:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -3310,13 +3324,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://project.mde.tw/blog/tag/virtualbox.html</loc>
 <lastmod>2017-12-17T11:11:00+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://project.mde.tw/blog/tag/pyslvs.html</loc>
-<lastmod>2017-12-12T21:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -4058,7 +4065,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://project.mde.tw/blog/author/40323230.html</loc>
-<lastmod>2017-12-12T21:00:00+08:06</lastmod>
+<lastmod>2018-04-16T21:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
