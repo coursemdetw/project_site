@@ -1,5 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-04-16T21:00:00+08:00</updated><entry><title>Pyslvs 三角形表示式</title><link href="http://project.mde.tw/blog/pyslvs_triangle_expression.html" rel="alternate"></link><published>2018-04-16T21:00:00+08:00</published><updated>2018-04-16T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2018-04-16:/blog/pyslvs_triangle_expression.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-04-18T16:00:00+08:00</updated><entry><title>40423116 專題期中整理</title><link href="http://project.mde.tw/blog/40423116-zhuan-ti-qi-zhong-zheng-li.html" rel="alternate"></link><published>2018-04-18T16:00:00+08:00</published><updated>2018-04-18T16:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2018-04-18:/blog/40423116-zhuan-ti-qi-zhong-zheng-li.html</id><summary type="html">&lt;p&gt;從本學期開學至 04/18 專題的進度(歷程)整理&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;從本學期開學至 04/18 專題的進度(歷程)整理&lt;/p&gt;
+
+
+&lt;h2&gt;kmol_level2&lt;/h2&gt;
+&lt;p&gt;下載隨身程式系統&lt;a href="https://drive.google.com/file/d/1qSVNH1052bcPyepgGfxN8dciufOM0gUu/view"&gt;kmol_level2&lt;/a&gt;來建立自己的作業環境&lt;/p&gt;
+
+&lt;p&gt;自己目前常用的工具為V-rep也包含在內&lt;/p&gt;
+
+&lt;h2&gt;&lt;a href="https://www.onshape.com/"&gt;Onshape&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0418_2/01.png?raw=true"&gt;
+&lt;p&gt;為線上3D建模平台，除了3D繪製零件以外，也可以做2D工程圖&lt;/p&gt;
+&lt;p&gt;繪製行走機構&lt;/p&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0418_2/02.png?raw=true"&gt;
+&lt;p&gt;八連桿&lt;/p&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0418_2/03.png?raw=true"&gt;
+&lt;p&gt;行走機構Body&lt;/p&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0418_2/04.png?raw=true"&gt;
+&lt;p&gt;行走機構組合&lt;/p&gt;
+&lt;p&gt;儲存stl檔，在V-rep模擬匯入模型&lt;/p&gt;&lt;/p&gt;
+&lt;h2&gt;V-REP&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0418_1/05.jpg?raw=true"&gt;
+&lt;p&gt;通用機器人模擬器開發環境，具傳感器，機構，機器人和整個系統都可以以各種方式進行建模和模擬&lt;/p&gt;
+&lt;p&gt;應用例:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://project.mde.tw/blog/v_repmo-ni-ji-jie-shou-bi-ra605_robot.html"&gt;ra605_robot&lt;/a&gt;&lt;/p&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0418_1/06.jpg?raw=true"&gt;
+&lt;iframe src="https://player.vimeo.com/video/258609486" width="640" height="332" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/258609486"&gt;虎尾科技大學機械設計系_40423116_李冠辰_vrep模擬機械手臂ra605_robot&lt;/a&gt; from &lt;a href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://project.mde.tw/blog/v_repmo-ni-fang-shen-shou-36315.html"&gt;行走機構的模擬&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0418_2/07.png?raw=true"&gt;
+&lt;p&gt;設置Joint、Dummy並建立從屬關係，決定motor參數&lt;/p&gt;
+&lt;p&gt;走路模擬&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/260241918" width="640" height="337" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/260241918"&gt;虎尾科技大學 機械設計系 40423116 李冠辰 vrep 仿身獸 兩對腳 (在修正)&lt;/a&gt; from &lt;a href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;搭配Sensor 以及導入Open Loop模擬在有障礙物或曲折的路線模擬&lt;/p&gt;&lt;/p&gt;
+&lt;h3&gt;曲折&lt;/h3&gt;
+&lt;p&gt;&lt;iframe src="https://player.vimeo.com/video/262014626" width="640" height="342" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/262014626"&gt;虎尾科技大學機械設計系 40423116 李冠辰 vrep 仿生獸，使用proximity sensor控制joint&lt;/a&gt; from &lt;a href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;/p&gt;
+&lt;h3&gt;S形&lt;/h3&gt;
+&lt;p&gt;&lt;iframe src="https://player.vimeo.com/video/265349305" width="640" height="338" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/265349305"&gt;虎尾科技大學 機械設計系 40423116 李冠辰 V-REP 行走機構模擬走路_S型&lt;/a&gt; from &lt;a href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;/p&gt;
+&lt;h3&gt;封閉&lt;/h3&gt;
+&lt;p&gt;&lt;iframe src="https://player.vimeo.com/video/265351493" width="640" height="338" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/265351493"&gt;虎尾科技大學 機械設計系 40423116 李冠辰 V-REP 行走機構模擬走路_封閉型&lt;/a&gt; from &lt;a href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;/p&gt;
+&lt;h2&gt;數學理論&lt;/h2&gt;
+&lt;p&gt;理解多連桿上某點的運動軌跡(位置方程式)的運算方法&lt;/p&gt;
+
+&lt;p&gt;目前用到的有PLAP、PLLP兩種三角形表示法&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0418_2/PLAP.png?raw=true"&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0418_2/10.jpg?raw=true"&gt;
+&lt;p&gt;已知P1,P2,L,A&lt;/p&gt;
+&lt;p&gt;P1P2連線與水平線的夾角為一增量值a，其A = ∠P2P1T1 + a&lt;/p&gt;
+&lt;p&gt;直角三角形解法求解可得 Target位置&lt;/p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0418_2/PLLP.png?raw=true"&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0418_2/11.jpg?raw=true"&gt;
+&lt;p&gt;已知P1,P2,L1,L2&lt;/p&gt;
+&lt;p&gt;P1點圓方程式與P2點圓方程式解聯立求解可得 Target位置&lt;/p&gt;&lt;/p&gt;
+&lt;h3&gt;未達成&lt;/h3&gt;
+&lt;p&gt;在理解數學運算之後，搭配張元學長開發的Pyslvs繪製不同提腳高度的八連桿並做比較及差異，這樣才能穿插到一開始八連桿的尺寸設計理由&lt;/p&gt;</content><category term="專題"></category></entry><entry><title>PLAP，PLLP 學習筆記</title><link href="http://project.mde.tw/blog/plappllp-xue-xi-bi-ji.html" rel="alternate"></link><published>2018-04-18T15:00:00+08:00</published><updated>2018-04-18T15:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2018-04-18:/blog/plappllp-xue-xi-bi-ji.html</id><summary type="html">&lt;p&gt;從三角形表示法來解 Targer 位置，以筆記呈現&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;從三角形表示法來解 Targer 位置，以筆記呈現&lt;/p&gt;
+
+
+&lt;h3&gt;PLAP&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0418_1/01.jpg?raw=true"&gt;
+&lt;p&gt;已知P1,P2,L1,A&lt;/p&gt;
+&lt;p&gt;直角三角形解法求解可得 Target位置&lt;/p&gt;
+&lt;p&gt;若P2點並未與P1成水平線而是成一斜線，則斜線與水平線夾角 A1= atan((P2.y-P1.y)/(P2.x-P1.x)) 為增量值&lt;/p&gt;&lt;/p&gt;
+&lt;h3&gt;PLLP&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0418_1/02.jpg?raw=true"&gt;
+&lt;p&gt;已知P1,P2,L1,L2&lt;/p&gt;
+&lt;p&gt;P1點圓方程式與P2點圓方程式解聯立求解可得 Target位置&lt;/p&gt;&lt;/p&gt;</content><category term="專題"></category></entry><entry><title>Pyslvs 三角形表示式</title><link href="http://project.mde.tw/blog/pyslvs_triangle_expression.html" rel="alternate"></link><published>2018-04-16T21:00:00+08:00</published><updated>2018-04-16T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2018-04-16:/blog/pyslvs_triangle_expression.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Pyslvs 中的三角形表示式&lt;/li&gt;
 &lt;li&gt;Python 版本的原始碼&lt;/li&gt;
 &lt;/ul&gt;
