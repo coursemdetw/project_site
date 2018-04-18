@@ -191,7 +191,7 @@ li {
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2018-03-27T16:00:00+08:00"> 週二 27 三月 2018</time>
+        <i class="fa fa-calendar"></i><time datetime="2018-03-27T16:00:00+08:00"> Tue 27 March 2018</time>
     </span>
             <span class="label label-default">By</span>
             <a href="http://project.mde.tw/blog/author/40423116.html"><i class="fa fa-user"></i> 40423116</a>
@@ -207,21 +207,21 @@ li {
 
 
 <h3>Proximity sensor</h3>
-<p><img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0327/3.png?raw=true">
+<p><img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0327/3.png?raw=true"></p>
 <p>新增Proximity sensor，這次我參考Vrep內建範本"pioneer p3dx.ttm"，學習並用來控制仿身獸joint的變數</p>
 <p>首先，我建立8個sensor並配置個方向。</p>
-<img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0327/1.png?raw=true">
+<p><img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0327/1.png?raw=true"></p>
 <p>Sensor的形狀可以在內部修改，可以為圓錐形、梯形，這次我用扇形來做</p>
 <p>因為感測器必須要感測到物體，所以模型設定裡有Detectable必須要勾起來，但仿身獸本身不需要被感測，則不設定。</p>
-<img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0327/12.png?raw=true">
+<p><img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0327/12.png?raw=true"></p>
 <p>點選Scripts，並設定</p>
-<img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0327/8.png?raw=true">
+<p><img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0327/8.png?raw=true">
 <img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0327/6.png?raw=true">
 <img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0327/7.png?raw=true">
 <img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0327/4.png?raw=true">
-<img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0327/2.png?raw=true">
+<img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0327/2.png?raw=true"></p>
 <p>程式</p>
-<pre class="brush: python">
+<pre class="brush: lua">
 if (sim_call_type==sim_childscriptcall_initialization) then
     usensors={-1,-1,-1}
     for i=1,8,1 do
@@ -237,72 +237,63 @@ if (sim_call_type==sim_childscriptcall_initialization) then
     v0=2.0
 end
 </pre>
-<pre class="brush: python">
+
+<pre class="brush: lua">
 if (sim_call_type==sim_childscriptcall_actuation) then
     for i=1,8,1 do
         res,dist=simReadProximitySensor(usensors[i])
-        if (res&gt;0) and (dist&lt;noDetectionDist) then
-            if (dist&lt;maxDetectionDist) then
+        if (res &gt; 0) and (dist &lt; noDetectionDist) then
+            if (dist &lt; maxDetectionDist) then
                 dist=maxDetectionDist
             end
             detect[i]=1-((dist-maxDetectionDist)/(noDetectionDist-maxDetectionDist))
         else
             detect[i]=0
         end
-    end</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>vLeft=v0
-vRight=v0
+    end
 
-for i=1,8,1 do
-    vLeft=vLeft+braitenbergL[i]*detect[i]
-    vRight=vRight+braitenbergR[i]*detect[i]
+    vLeft=v0
+    vRight=v0
+
+    for i=1,8,1 do
+        vLeft=vLeft+braitenbergL[i]*detect[i]
+        vRight=vRight+braitenbergR[i]*detect[i]
+    end
+
+    simSetJointTargetVelocity(motorLeft,vLeft)
+    simSetJointTargetVelocity(motorRight,vRight)
+end
+</pre>
+
+<pre class="brush: lua">
+if (sim_call_type==sim_childscriptcall_sensing) then
+
+    -- Put your main SENSING code here
+
 end
 
-simSetJointTargetVelocity(motorLeft,vLeft)
-simSetJointTargetVelocity(motorRight,vRight)
-</pre></div>
-</td></tr></table>
 
-<p>end
+if (sim_call_type==sim_childscriptcall_cleanup) then
+
+    -- Put some restoration code here
+
+end
 </pre>
-<pre class="brush: python">
-if (sim_call_type==sim_childscriptcall_sensing) then</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>-- Put your main SENSING code here
-</pre></div>
-</td></tr></table>
 
-<p>end</p>
-<p>if (sim_call_type==sim_childscriptcall_cleanup) then</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>-- Put some restoration code here
-</pre></div>
-</td></tr></table>
-
-<p>end
-</pre></p>
 <p>影片</p>
-
 <iframe src="https://player.vimeo.com/video/262014626" width="640" height="342" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 <p><a href="https://vimeo.com/262014626">虎尾科技大學機械設計系 40423116 李冠辰 vrep 仿生獸，使用proximity sensor控制joint</a> from <a href="https://vimeo.com/user47573583">40423116</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 <p>順便附上test版</p>
-
 <iframe src="https://player.vimeo.com/video/262019859" width="640" height="339" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 <p><a href="https://vimeo.com/262019859">虎尾科技大學機械設計系 40423116 李冠辰 Proximity sensor test</a> from <a href="https://vimeo.com/user47573583">40423116</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 <h3>檔案</h3>
-<p><p><a href="https://github.com/40423116/2017kmol/blob/master/40423116car.ttt">40423116car.ttt</a></p>
-<p><a href="https://github.com/40423116/2017kmol/blob/master/text.ttt">test.ttt</a></p></p>
+<p><a href="https://github.com/40423116/2017kmol/blob/master/40423116car.ttt">40423116car.ttt</a></p>
+
+<p><a href="https://github.com/40423116/2017kmol/blob/master/text.ttt">test.ttt</a></p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -348,6 +339,16 @@ if (sim_call_type==sim_childscriptcall_sensing) then</p>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/pyslvs_triangle_expression.html">
+                            Pyslvs 三角形表示式
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://project.mde.tw/blog/ti-qiu-ji-gou-gui-dao-she-ji.html">
+                            提球機構 軌道設計
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/vrep-fang-sheng-shou-shi-yong-proximity-sensorkong-zhi-joint.html">
                             Vrep 仿生獸，使用proximity sensor控制joint
                         </a>
@@ -360,16 +361,6 @@ if (sim_call_type==sim_childscriptcall_sensing) then</p>
                     <li class="list-group-item">
                         <a href="http://project.mde.tw/blog/android-app-cha-ru-zi-liao-jin-zi-liao-ku.html">
                             android app 插入資料進資料庫
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/v_repmo-ni-fang-shen-shou-36315.html">
-                            V_rep模擬仿身獸 3/6~3/15
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://project.mde.tw/blog/v_repmo-ni-ji-jie-shou-bi-ra605_robot.html">
-                            V_rep模擬機械手臂 ra605_robot
                         </a>
                     </li>
                 </ul>
