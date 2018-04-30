@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-02-23T09:30:00+08:00</updated><entry><title>多軸機械手臂 (V-rep)</title><link href="http://project.mde.tw/blog/duo-zhou-ji-jie-shou-bi-v-rep.html" rel="alternate"></link><published>2018-02-23T09:30:00+08:00</published><updated>2018-02-23T09:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-02-23:/blog/duo-zhou-ji-jie-shou-bi-v-rep.html</id><summary type="html">&lt;ol&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016g1</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016g1.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-04-30T23:30:00+08:00</updated><entry><title>Pyquino 2D 平面模擬</title><link href="http://project.mde.tw/blog/pyquino-2d-ping-mian-mo-ni.html" rel="alternate"></link><published>2018-04-30T23:30:00+08:00</published><updated>2018-04-30T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-04-30:/blog/pyquino-2d-ping-mian-mo-ni.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;2 link motor velocity test&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;use sensor to control velocity&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;2 link motor velocity test&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;use sensor to control velocity&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/2dsimulation/linkbar_motor.gif?raw=true"&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;將 Pyquino 主介面修改成右邊為畫布，左邊為樹狀結構圖( 尚未完成設計)，連稈為二連稈。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/bxSbDxJ8jX8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;ol&gt;
+&lt;li&gt;透過 Serialport 走 RS-232 拿取感測器的資料，這個範例使用超音波感測器測定距離&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;預計新增項目&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;或許套入 PMKS 表示式，方便樹狀圖的展開與平面模擬&lt;/li&gt;
+&lt;li&gt;加入時間以及圖表功能，方便觀察速度以及加速度&lt;/li&gt;
+&lt;li&gt;會嘗試使用反向，由虛擬得出轉速並輸出到實際的馬達看選轉&lt;/li&gt;
+&lt;/ol&gt;</content><category term="Pyquino"></category></entry><entry><title>多軸機械手臂 (V-rep)</title><link href="http://project.mde.tw/blog/duo-zhou-ji-jie-shou-bi-v-rep.html" rel="alternate"></link><published>2018-02-23T09:30:00+08:00</published><updated>2018-02-23T09:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-02-23:/blog/duo-zhou-ji-jie-shou-bi-v-rep.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;多軸機械手臂訓練調整&lt;/li&gt;
 &lt;/ol&gt;
 </summary><content type="html">&lt;ol&gt;
