@@ -1,5 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-04-16T21:00:00+08:00</updated><entry><title>Pyslvs 三角形表示式</title><link href="http://project.mde.tw/blog/pyslvs_triangle_expression.html" rel="alternate"></link><published>2018-04-16T21:00:00+08:00</published><updated>2018-04-16T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2018-04-16:/blog/pyslvs_triangle_expression.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2016bg2</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2016bg2.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-05-01T21:00:00+08:00</updated><entry><title>Cython 筆記</title><link href="http://project.mde.tw/blog/cython_notes.html" rel="alternate"></link><published>2018-05-01T21:00:00+08:00</published><updated>2018-05-01T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2018-05-01:/blog/cython_notes.html</id><summary type="html">&lt;p&gt;至今學習 Cython 語言的筆記。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;此篇文章可能需要一些 C 語言基礎。&lt;/em&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;至今學習 Cython 語言的筆記。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;此篇文章可能需要一些 C 語言基礎。&lt;/em&gt;&lt;/p&gt;
+
+
+&lt;h1&gt;前言&lt;/h1&gt;
+&lt;p&gt;Cython 是 Python 的超集 (superset) 語言，直接將 Python 腳本交給 Cython 進行編譯是可行的；正如 Type script 與 Java script 的關係。&lt;/p&gt;
+&lt;p&gt;Cython 中能夠使用 Python 全部的語法，並且支援額外模組的匯入。不過須注意的是，Cython 會不斷參照 PEP (Python Enhancement Proposals) 規則進行強化，以兼顧 Python 的撰寫風格，因此推薦升級模組時跟進 Python 版本。&lt;/p&gt;
+&lt;h1&gt;Python 語法概要&lt;/h1&gt;
+&lt;p&gt;之前提過的 &lt;a href="http://project.mde.tw/blog/python-copy-module.html"&gt;記憶體管理&lt;/a&gt; 方法，為方便再簡要介紹。&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;建立與刪除&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Python 使用「名稱綁定」的方式&lt;strong&gt;指派&lt;/strong&gt;變數。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+a = 10 #將記憶體中儲存數值 10，並給予名稱 "a"。
+b = 10 #找到已儲存數值 10，再給予名稱 "b"。
+print(a is b) #True，"a" 與 "b" 共用記憶體。
+
+del a #尋找並移除名稱 "a"，10 仍存於記憶體。
+del b #尋找並移除名稱 "b"，10 失去所有名稱，被刪除。
+&lt;/pre&gt;
+
+&lt;h2&gt;&lt;strong&gt;修改&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;使用重新綁定以使名稱中的值變化。&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+a = 10
+b = 10
+b += 1 #針對 "b" 名稱取值並進行加法運算，得 2。
+
+"""此時 "b" 名稱重新綁定到新結果 2。"""
+
+print(a is b) #False，"a" 與 "b" 使用不同記憶體。
+&lt;/pre&gt;
+
+&lt;h2&gt;&lt;strong&gt;複製與參照&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;作用域更改時（導入模組、進入類型、進出函式等），物件將會改名，前方編上作用域名稱。&lt;/p&gt;
+&lt;p&gt;Python 遵循以下方法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;字面類型 (literal) 包含 bool、Numeric (int, float, complex)、str 共五種，使用&lt;strong&gt;複製&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;其餘類型如容器 (container)、函式 (function)、自訂類型等，則為&lt;strong&gt;參照&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;複製&lt;/strong&gt;行為是創造副本，對複本修改只能在當前作用域有效（例如函式中），離開後此改動值會失去名稱，也不會存回本體。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;參照&lt;/strong&gt;相當於取別名，此名稱執行任何行為可以影響本體。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;由於多了一層「名稱綁定」，Python 的執行速度就不會如靜態語言如此高效。&lt;/p&gt;
+&lt;h1&gt;Cython 語法概要&lt;/h1&gt;
+&lt;p&gt;Python 的超高效開發速度就是因為簡單有效的名稱運用，而不必注意瑣碎的運算子操作。&lt;/p&gt;
+&lt;p&gt;當需要對 Python 程式提速時，將名稱轉為靜態類型就可以了，剩下的就如 C 語言一樣交由編譯器規劃。&lt;/p&gt;
+&lt;p&gt;直接對 Python 腳本編譯，會稍微進行提速，這得感謝你安裝的 C 語言編譯器。通常編譯器會試著找到 Python 對於名稱嘮嘮叨叨之處，試圖簡化語法。&lt;/p&gt;
+&lt;p&gt;但是越大的腳本，名稱網路就會越複雜，效果將會更不明顯。&lt;/p&gt;
+&lt;h2&gt;延伸語法：C 語言名稱&lt;/h2&gt;
+&lt;p&gt;接下來介紹全新的 Cython 關鍵字 &lt;code&gt;cdef&lt;/code&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;cdef&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0&lt;/span&gt; &lt;span class="c"&gt;#宣告靜態整數類型 &amp;quot;a&amp;quot;，規劃記憶體存入 0 值。&lt;/span&gt;
+&lt;span class="k"&gt;cdef&lt;/span&gt; &lt;span class="nf"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0&lt;/span&gt; &lt;span class="c"&gt;#建立靜態 &amp;quot;a&amp;quot; 指派 0？Cython 會自動推斷 &amp;quot;a&amp;quot; 的型別。&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;此變數會完全參照 C 語言的行為，而非靜態變數則會參照 Python 的「名稱綁定」。&lt;/p&gt;
+&lt;p&gt;同一作用域下，名稱更改時，若沒有指標或參照運算子操作，一律為&lt;strong&gt;複製&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;不同作用域時，則&lt;strong&gt;同於 Python&lt;/strong&gt;。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;cdef&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;10&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="c"&gt;#將整數綁定名稱 &amp;quot;b&amp;quot;。&lt;/span&gt;
+&lt;span class="k"&gt;cdef&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="c"&gt;#將名稱 &amp;quot;b&amp;quot; 的值轉型為整數，複製到名稱 &amp;quot;c&amp;quot;。&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;#True，兩者共用記憶體。&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;#False，兩者不共用記憶體。&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;跟 C 語言一樣，使用此關鍵字的名稱「宣告」與「定義」是可以分開的。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;cdef&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nf"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nf"&gt;c&lt;/span&gt; &lt;span class="c"&gt;#宣告三個整數類型的名稱 &amp;quot;a&amp;quot;、&amp;quot;b&amp;quot;、&amp;quot;c&amp;quot;。&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;20&lt;/span&gt; &lt;span class="c"&gt;#對 &amp;quot;a&amp;quot; 指派 20 完成定義。&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;8&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="c"&gt;#名稱 &amp;quot;b&amp;quot; 將用於取出迭代值。&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mf"&gt;5&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;#名稱 &amp;quot;c&amp;quot; 將用於判斷式區塊中。&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;即使是函式或類型也可以，當然參數 (arguments) 的簽章 (signature) 必須一致。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;cdef&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;#宣告新函式&lt;/span&gt;
+
+&lt;span class="k"&gt;cdef&lt;/span&gt; &lt;span class="kr"&gt;inline&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;10&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="c"&gt;#完成定義函式（可再加上簡單的修飾符）&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;
+
+&lt;span class="k"&gt;cdef&lt;/span&gt; &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nf"&gt;NewClass&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;OldClass&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;#宣告新類型&lt;/span&gt;
+
+&lt;span class="k"&gt;cdef&lt;/span&gt; &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nf"&gt;NewClass&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;OldClass&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="c"&gt;#完成定義類型&lt;/span&gt;
+    &lt;span class="k"&gt;pass&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;經過靜態定義的類型就像有一部份的 C 語言血統，部分功能也能加速或改變性能，可以參照這裡：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://cython.readthedocs.io/en/latest/src/userguide/extension_types.html"&gt;http://cython.readthedocs.io/en/latest/src/userguide/extension_types.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://cython.readthedocs.io/en/latest/src/userguide/special_methods.html"&gt;http://cython.readthedocs.io/en/latest/src/userguide/special_methods.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;混和 C 和 C++&lt;/h2&gt;
+&lt;p&gt;而 C 語言的類型則可以完全支援，如使用標頭檔引入 C 類型：&lt;/p&gt;
+&lt;pre class="brush: c++"&gt;
+enum class Color {red, green = 20, blue}; 
+&lt;/pre&gt;
+
+&lt;p&gt;接著透過 &lt;code&gt;extern from ... :&lt;/code&gt; 語句建立型別檢查器來引入物件：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;cdef&lt;/span&gt; &lt;span class="kr"&gt;extern&lt;/span&gt; &lt;span class="k"&gt;from&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;colors.h&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="c"&gt;#引入類型作為檢查器。&lt;/span&gt;
+  &lt;span class="k"&gt;cdef&lt;/span&gt; &lt;span class="kt"&gt;cppclass&lt;/span&gt; &lt;span class="nf"&gt;Color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;pass&lt;/span&gt;
+
+&lt;span class="k"&gt;cdef&lt;/span&gt; &lt;span class="kr"&gt;extern&lt;/span&gt; &lt;span class="k"&gt;from&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;colors.h&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;namespace&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Color&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="c"&gt;#引入數值。&lt;/span&gt;
+  &lt;span class="k"&gt;cdef&lt;/span&gt; &lt;span class="kt"&gt;Color&lt;/span&gt; &lt;span class="nf"&gt;red&lt;/span&gt;
+  &lt;span class="k"&gt;cdef&lt;/span&gt; &lt;span class="kt"&gt;Color&lt;/span&gt; &lt;span class="nf"&gt;green&lt;/span&gt;
+  &lt;span class="k"&gt;cdef&lt;/span&gt; &lt;span class="kt"&gt;Color&lt;/span&gt; &lt;span class="nf"&gt;blue&lt;/span&gt;
+
+&lt;span class="k"&gt;cdef&lt;/span&gt; &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nf"&gt;PyColor&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="c"&gt;#給 Python 透過類型方法取值。&lt;/span&gt;
+  &lt;span class="k"&gt;cdef&lt;/span&gt; &lt;span class="kt"&gt;Color&lt;/span&gt; &lt;span class="nf"&gt;thisobj&lt;/span&gt;
+
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__cinit__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;thisobj&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;Color&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;val&lt;/span&gt;
+
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_color_type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;cdef&lt;/span&gt; &lt;span class="kt"&gt;dict&lt;/span&gt; &lt;span class="nf"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;red&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;red&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;green&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;green&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;blue&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;blue&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;[&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;thisobj&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;當然這樣可以直接在 Cython 中寫 C 或 C++ 大部分的語法，但是如果這樣的話效能會減損很多，C 語言的東西還是先自己包好再引導給 Python 吧。&lt;/p&gt;
+&lt;h2&gt;端口&lt;/h2&gt;
+&lt;p&gt;必須注意的是，Python 無法從程式庫中取出靜態類型的名稱（除了類型的名稱），想要取得必須透過幾種方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;函式回傳。&lt;/li&gt;
+&lt;li&gt;使用修飾符。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;兩種函式可以給 Python 看到：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;cpdef&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;func_cpy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="c"&gt;#使用 C 語言製作的函式接口。&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;P{}&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;func_py&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="c"&gt;#使用 C 物件的純 Python 函式。&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;P{}&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;cdef&lt;/code&gt;、&lt;code&gt;cpdef&lt;/code&gt;、&lt;code&gt;def&lt;/code&gt; 三種函式中，速度最快自然是使用 &lt;code&gt;cdef&lt;/code&gt; 生成的函式，Python 的 &lt;code&gt;def&lt;/code&gt; 函式是最慢的。&lt;/p&gt;
+&lt;p&gt;不過兩種有端口的函式使用上自然有限制，例如完全不支援修飾符。&lt;/p&gt;
+&lt;p&gt;不過，Cython 可以支援使用 &lt;code&gt;def&lt;/code&gt; 生成 Python 生產器 (generator)，並且能很好的使用靜態類型的物件，至於效率自然是會因為同步迭代而提升，就視情況自行取捨。&lt;/p&gt;
+&lt;p&gt;順帶一提，Cython 編譯時也能簡單檢查 Python 的 typing 語法，不過不支援從 typing 模組匯入的類型。&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;readonly&lt;/code&gt; 和 &lt;code&gt;public&lt;/code&gt; 修飾符可以使物件被 Python 可視，不過仍有些許限制，只能給予 Python 支援的類型，指標、陣列或 vector 容器自然是不可能暴露給 Python。&lt;/p&gt;
+&lt;h2&gt;標頭檔 pxd&lt;/h2&gt;
+&lt;p&gt;由於宣告與定義可以分開，假如使用 &lt;code&gt;from ... import ...&lt;/code&gt; 語句，只能以 Python 的方式引入。不但得經過語言端口，C 語言的名稱會完全看不到。因此在 Cython 程式庫之間設計了新的語句 &lt;code&gt;from ... cimport ...&lt;/code&gt;，達成兩個 pyx 共用程式的效果。&lt;/p&gt;
+&lt;p&gt;鑒於 C 和 C++ 的原理相仿，&lt;strong&gt;相同宣告的名稱&lt;/strong&gt;使用&lt;strong&gt;相同的定義&lt;/strong&gt;，這邊就不多作介紹了，基本上這句 cimport 可以當作有 namespace 遮罩的 include 語法。&lt;/p&gt;
+&lt;p&gt;Cython 比較不一樣的是，為了避免混淆名稱，擁有該 pxd 定義的 pyx 程式庫，&lt;strong&gt;兩者必須同名&lt;/strong&gt;且&lt;strong&gt;定義不可分割&lt;/strong&gt;，而此 pyx 程式庫&lt;strong&gt;不用&lt;/strong&gt;任何 cimport 自該 pxd 的語句。&lt;/p&gt;
+&lt;p&gt;這樣，其他 pyx 程式庫就可以藉由 pxd 的宣告項目進行 cimport。&lt;/p&gt;
+&lt;h2&gt;自訂檢查器&lt;/h2&gt;
+&lt;p&gt;使用 &lt;code&gt;ctypedef fused ... :&lt;/code&gt; 語句建立客製化的檢查器，讓多種類型以供選擇。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;ctypedef&lt;/span&gt; &lt;span class="k"&gt;fused&lt;/span&gt; &lt;span class="n"&gt;sequence&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="nb"&gt;list&lt;/span&gt;
+    &lt;span class="nb"&gt;tuple&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;此表現類似於 C++ 的 template 功能。&lt;/p&gt;</content><category term="Pyslvs"></category></entry><entry><title>Pyslvs 三角形表示式</title><link href="http://project.mde.tw/blog/pyslvs_triangle_expression.html" rel="alternate"></link><published>2018-04-16T21:00:00+08:00</published><updated>2018-04-16T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2018-04-16:/blog/pyslvs_triangle_expression.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Pyslvs 中的三角形表示式&lt;/li&gt;
 &lt;li&gt;Python 版本的原始碼&lt;/li&gt;
 &lt;/ul&gt;
