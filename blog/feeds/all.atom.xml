@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-05-01T21:00:00+08:00</updated><entry><title>Cython 筆記</title><link href="http://project.mde.tw/blog/cython_notes.html" rel="alternate"></link><published>2018-05-01T21:00:00+08:00</published><updated>2018-05-01T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2018-05-01:/blog/cython_notes.html</id><summary type="html">&lt;p&gt;至今學習 Cython 語言的筆記。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-05-01T23:00:00+08:00</updated><entry><title>利用Pyslvs 調整連桿長度來改變點移動路徑</title><link href="http://project.mde.tw/blog/li-yong-pyslvs-diao-zheng-lian-gan-chang-du-lai-gai-bian-dian-yi-dong-lu-jing.html" rel="alternate"></link><published>2018-05-01T23:00:00+08:00</published><updated>2018-05-01T23:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2018-05-01:/blog/li-yong-pyslvs-diao-zheng-lian-gan-chang-du-lai-gai-bian-dian-yi-dong-lu-jing.html</id><summary type="html">&lt;p&gt;從Pyslvs修正移動路徑到由solvespace存成數據(csv)，再經由excel插入散部圖，比較每個移動路徑的提腳高度(h)，前進距離(L)&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;從Pyslvs修正移動路徑到由solvespace存成數據(csv)，再經由excel插入散部圖，比較每個移動路徑的提腳高度(h)，前進距離(L)&lt;/p&gt;
+
+
+&lt;h2&gt;過程&lt;/h2&gt;
+&lt;p&gt;&lt;div style="padding:54.17% 0 0 0;position:relative;"&gt;&lt;iframe src="https://player.vimeo.com/video/267404915" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;script src="https://player.vimeo.com/api/player.js"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/267404915"&gt;虎尾科技大學 機械設計系 40423116 李冠辰 改面連桿長來改變點位置移動路徑&lt;/a&gt; from &lt;a href="https://vimeo.com/user47573583"&gt;40423116&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;試著改變每個連桿的長度，使得提腳高度從原本的向下或向上改變&lt;/p&gt;&lt;/p&gt;
+&lt;h3&gt;Solvespace&lt;/h3&gt;
+&lt;p&gt;&lt;p&gt;Pyslve可以將多連桿匯出成slvs檔&lt;/p&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0501/05.png?raw=true"&gt;
+&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0501/10.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0501/06.png"&gt;第一種&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0501/07.png"&gt;第二種&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0501/09.png"&gt;第三種&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0501/08.png"&gt;第四種&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;Excel 路徑圖 (單位mm)&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0501/11.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0501/01.png"&gt;第一種路徑圖&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0501/02.png"&gt;第二種路徑圖&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0501/03.png"&gt;第三種路徑圖&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/40423116/project_site_files/blob/gh-pages/files/4042/40423116/0501/04.png"&gt;第四種路徑圖&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在同樣的旋轉半徑下，若要選擇走平坦路時，需要有平滑的水平線已經足夠的提腳高度，在沒有小路障的情況下，第1 2 4 都在條件內，但隨著路障出現，由低到高 4 跟 1會被排除在外&lt;/p&gt;
+
+&lt;p&gt;結論:第二種路徑 提腳高度夠高，走路時路線夠平滑&lt;/p&gt;</content><category term="專題"></category></entry><entry><title>Cython 筆記</title><link href="http://project.mde.tw/blog/cython_notes.html" rel="alternate"></link><published>2018-05-01T21:00:00+08:00</published><updated>2018-05-01T21:00:00+08:00</updated><author><name>40323230</name></author><id>tag:project.mde.tw,2018-05-01:/blog/cython_notes.html</id><summary type="html">&lt;p&gt;至今學習 Cython 語言的筆記。&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;此篇文章可能需要一些 C 語言基礎。&lt;/em&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;至今學習 Cython 語言的筆記。&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;此篇文章可能需要一些 C 語言基礎。&lt;/em&gt;&lt;/p&gt;
