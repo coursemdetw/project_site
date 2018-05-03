@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-05-01T23:00:00+08:00</updated><entry><title>利用Pyslvs 調整連桿長度來改變點移動路徑</title><link href="http://project.mde.tw/blog/li-yong-pyslvs-diao-zheng-lian-gan-chang-du-lai-gai-bian-dian-yi-dong-lu-jing.html" rel="alternate"></link><published>2018-05-01T23:00:00+08:00</published><updated>2018-05-01T23:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2018-05-01:/blog/li-yong-pyslvs-diao-zheng-lian-gan-chang-du-lai-gai-bian-dian-yi-dong-lu-jing.html</id><summary type="html">&lt;p&gt;從Pyslvs修正移動路徑到由solvespace存成數據(csv)，再經由excel插入散部圖，比較每個移動路徑的提腳高度(h)，前進距離(L)&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-05-03T23:16:00+08:00</updated><entry><title>提球機構 軌道設計 引球道</title><link href="http://project.mde.tw/blog/ti-qiu-ji-gou-gui-dao-she-ji-yin-qiu-dao.html" rel="alternate"></link><published>2018-05-03T23:16:00+08:00</published><updated>2018-05-03T23:16:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2018-05-03:/blog/ti-qiu-ji-gou-gui-dao-she-ji-yin-qiu-dao.html</id><summary type="html">&lt;p&gt;目前所發想的軌道設計&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;目前所發想的軌道設計&lt;/p&gt;
+
+
+&lt;p&gt;經過段考前與老師的討論，目前已規劃出軌道的區域，對於仿生獸的貨斗隻設計也有概念了，設計圖正在構築中，目前與 18 號共同設計，需要用他的馬達來控制球的導向，故分成兩條路線。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20180503/track.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20180503/track2.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;將球導引至此處定卸貨給貨斗。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20180503/track3.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;深藍色塊為表達可控制隻導引到的概念，一開始是以此形狀發想，可是這樣的形狀是無法順利導球的，落球時就會打到導引區塊將球撞離軌道組。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20180503/leading.PNG?raw=true"&gt;&lt;/p&gt;</content><category term="彈珠台軌道"></category></entry><entry><title>利用Pyslvs 調整連桿長度來改變點移動路徑</title><link href="http://project.mde.tw/blog/li-yong-pyslvs-diao-zheng-lian-gan-chang-du-lai-gai-bian-dian-yi-dong-lu-jing.html" rel="alternate"></link><published>2018-05-01T23:00:00+08:00</published><updated>2018-05-01T23:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2018-05-01:/blog/li-yong-pyslvs-diao-zheng-lian-gan-chang-du-lai-gai-bian-dian-yi-dong-lu-jing.html</id><summary type="html">&lt;p&gt;從Pyslvs修正移動路徑到由solvespace存成數據(csv)，再經由excel插入散部圖，比較每個移動路徑的提腳高度(h)，前進距離(L)&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;從Pyslvs修正移動路徑到由solvespace存成數據(csv)，再經由excel插入散部圖，比較每個移動路徑的提腳高度(h)，前進距離(L)&lt;/p&gt;
 
 

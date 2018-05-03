@@ -5,35 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://project.mde.tw/blog/</loc>
-<lastmod>2018-05-02T00:26:10-00:00</lastmod>
+<lastmod>2018-05-03T23:26:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/archives.html</loc>
-<lastmod>2018-05-02T00:26:10-00:00</lastmod>
+<lastmod>2018-05-03T23:26:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/tags.html</loc>
-<lastmod>2018-05-02T00:26:10-00:00</lastmod>
+<lastmod>2018-05-03T23:26:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/categories.html</loc>
-<lastmod>2018-05-02T00:26:10-00:00</lastmod>
+<lastmod>2018-05-03T23:26:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/pages/about/</loc>
-<lastmod>2017-01-22T20:35:35+08:00</lastmod>
+<lastmod>2018-03-22T02:12:27+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://project.mde.tw/blog/ti-qiu-ji-gou-gui-dao-she-ji-yin-qiu-dao.html</loc>
+<lastmod>2018-05-03T23:16:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -3218,7 +3225,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://project.mde.tw/blog/category/2017.html</loc>
-<lastmod>2018-05-01T23:00:00+08:06</lastmod>
+<lastmod>2018-05-03T23:16:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -3233,6 +3240,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://project.mde.tw/blog/category/tutorial.html</loc>
 <lastmod>2016-12-28T11:29:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://project.mde.tw/blog/tag/dan-zhu-tai-gui-dao.html</loc>
+<lastmod>2018-05-03T23:16:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -3254,13 +3268,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://project.mde.tw/blog/tag/pyquino.html</loc>
 <lastmod>2018-04-30T23:30:00+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://project.mde.tw/blog/tag/dan-zhu-tai-gui-dao.html</loc>
-<lastmod>2018-03-29T14:04:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -4142,7 +4149,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://project.mde.tw/blog/author/40423152.html</loc>
-<lastmod>2018-03-29T14:04:00+08:06</lastmod>
+<lastmod>2018-05-03T23:16:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
