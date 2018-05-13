@@ -4,8 +4,8 @@
 &lt;p&gt;使用手機來控制伺服馬達的轉動,而手機跟伺服馬達的連線方式則採用藍芽來連線&lt;/p&gt;
 &lt;p&gt;首先確定藍芽模組HC-06 是否可以正常連線傳送資料&lt;/p&gt;
 &lt;h1&gt;程式碼&lt;/h1&gt;
-&lt;h1&gt;include &lt;SoftwareSerial.h&gt;&lt;/h1&gt;
-&lt;p&gt;SoftwareSerial BT(2, 3); 
+&lt;p&gt;&amp;lt;#include &lt;SoftwareSerial.h&gt;   &lt;/p&gt;
+&lt;p&gt;&amp;lt;SoftwareSerial BT(2, 3); 
 char val;  &lt;/p&gt;
 &lt;p&gt;void setup() {
   Serial.begin(9600); &lt;br&gt;
@@ -21,7 +21,7 @@ char val;  &lt;/p&gt;
     val = BT.read();
     Serial.print(val);
   }
-}&lt;/p&gt;
+}&amp;gt;&lt;/p&gt;
 &lt;p&gt;連線成功之後開啟監控列,輸入字串發送手機,或從手機發送到電腦&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://imgur.com/Zqu5Vax"&gt;&lt;img src="https://i.imgur.com/Zqu5Vax.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://imgur.com/nbXAElB"&gt;&lt;img src="https://i.imgur.com/nbXAElB.jpg" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;

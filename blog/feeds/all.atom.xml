@@ -1,11 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-05-04T02:41:00+08:00</updated><entry><title>彈珠台軌道控制</title><link href="http://project.mde.tw/blog/dan-zhu-tai-gui-dao-kong-zhi.html" rel="alternate"></link><published>2018-05-04T02:41:00+08:00</published><updated>2018-05-04T02:41:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2018-05-04:/blog/dan-zhu-tai-gui-dao-kong-zhi.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-05-13T23:30:00+08:00</updated><entry><title>Inverted pendulum example</title><link href="http://project.mde.tw/blog/inverted-pendulum-example.html" rel="alternate"></link><published>2018-05-13T23:30:00+08:00</published><updated>2018-05-13T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-05-13:/blog/inverted-pendulum-example.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;Inverted pendulum model&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;Inverted pendulum model&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;h2&gt;model&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/2dsimulation/pendulum.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;使用 Sympy 模組中的 mechanics 去定義系統的方程式，mechanics 模組有提供多體動力學及 Lagrangian mechanics 等相關放式&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+# n = How much with the connecting rod
+q = dynamicsymbols('q:' + str(n + 1))  # Generalized coordinates
+u = dynamicsymbols('u:' + str(n + 1))  # Generalized speeds
+f = dynamicsymbols('f')                # Force applied to the cart
+
+m = symbols('m:' + str(n + 1))         # Mass of each bob
+l = symbols('l:' + str(n))             # Length of each link
+g, t = symbols('g t')                  # Gravity and time
+&lt;/pre&gt;
+
+&lt;p&gt;定義慣性&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+I = ReferenceFrame('I')                # Inertial reference frame
+O = Point('O')                         # Origin point
+O.set_vel(I, 0)                        # Origin's velocity is zero
+&lt;/pre&gt;
+
+&lt;pre class="brush: python"&gt;
+P0 = Point('P0')                       # Hinge point of top link
+P0.set_pos(O, q[0] * I.x)              # Set the position of P0    
+P0.set_vel(I, u[0] * I.x)              # Set the velocity of P0
+Pa0 = Particle('Pa0', P0, m[0])        # Define a particle at P0
+&lt;/pre&gt;
+
+&lt;p&gt;使用 Sympy 將描述完的機械系統寫成微分方程式，這部分參考 Pydy 中使用 Sympy 描述系統&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+frames = [I]                              # List to hold the n + 1 frames
+points = [P0]                             # List to hold the n + 1 points
+particles = [Pa0]                         # List to hold the n + 1 particles
+forces = [(P0, f * I.x - m[0] * g * I.y)] # List to hold the n + 1 applied forces, including the input force, f
+kindiffs = [q[0].diff(t) - u[0]]          # List to hold kinematic ODE's
+
+for i in range(n):
+    Bi = I.orientnew('B' + str(i), 'Axis', [q[i + 1], I.z])   # Create a new frame
+    Bi.set_ang_vel(I, u[i + 1] * I.z)                         # Set angular velocity
+    frames.append(Bi)                                         # Add it to the frames list
+
+    Pi = points[-1].locatenew('P' + str(i + 1), l[i] * Bi.x)  # Create a new point
+    Pi.v2pt_theory(points[-1], I, Bi)                         # Set the velocity
+    points.append(Pi)                                         # Add it to the points list
+
+    Pai = Particle('Pa' + str(i + 1), Pi, m[i + 1])           # Create a new particle
+    particles.append(Pai)                                     # Add it to the particles list
+
+    forces.append((Pi, -m[i + 1] * g * I.y))                  # Set the force applied at the point
+
+    kindiffs.append(q[i + 1].diff(t) - u[i + 1])              # Define the kinematic ODE:  dq_i / dt - u_i = 0
+
+kane = KanesMethod(I, q_ind=q, u_ind=u, kd_eqs=kindiffs) # Initialize the object
+fr, frstar = kane.kanes_equations(forces, particles)     # Generate EoM's fr + frstar = 0
+&lt;/pre&gt;
+
+&lt;p&gt;效果大概是這個樣子，控制那部份要花比較多時間作圖和描述暫時先不做&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/2dsimulation/inverted_pendulm.gif?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/2dsimulation/inverted.png?raw=true"&gt;&lt;/p&gt;
+&lt;h2&gt;問題&lt;/h2&gt;
+&lt;p&gt;因為這樣描述的方式，變成非常的複雜，我可能參考以下的方式 !(Pymbs)[http://pymbs.readthedocs.io/en/latest/], 試著使用 joint , world 等方式進行描述機械系統並導入控制。 &lt;/p&gt;</content><category term="Pyquino"></category></entry><entry><title>彈珠台軌道控制</title><link href="http://project.mde.tw/blog/dan-zhu-tai-gui-dao-kong-zhi.html" rel="alternate"></link><published>2018-05-04T02:41:00+08:00</published><updated>2018-05-04T02:41:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2018-05-04:/blog/dan-zhu-tai-gui-dao-kong-zhi.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
 &lt;p&gt;使用手機來控制伺服馬達的轉動,而手機跟伺服馬達的連線方式則採用藍芽來連線&lt;/p&gt;
 &lt;p&gt;首先確定藍芽模組HC-06 是否可以正常連線傳送資料&lt;/p&gt;
 &lt;h1&gt;程式碼&lt;/h1&gt;
-&lt;h1&gt;include &lt;SoftwareSerial.h&gt;&lt;/h1&gt;
-&lt;p&gt;SoftwareSerial BT(2, 3); 
+&lt;p&gt;&amp;lt;#include &lt;SoftwareSerial.h&gt;   &lt;/p&gt;
+&lt;p&gt;&amp;lt;SoftwareSerial BT(2, 3); 
 char val;  &lt;/p&gt;
 &lt;p&gt;void setup() {
   Serial.begin(9600); &lt;br&gt;
@@ -21,7 +89,7 @@ char val;  &lt;/p&gt;
     val = BT.read();
     Serial.print(val);
   }
-}&lt;/p&gt;
+}&amp;gt;&lt;/p&gt;
 &lt;p&gt;連線成功之後開啟監控列,輸入字串發送手機,或從手機發送到電腦&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://imgur.com/Zqu5Vax"&gt;&lt;img src="https://i.imgur.com/Zqu5Vax.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://imgur.com/nbXAElB"&gt;&lt;img src="https://i.imgur.com/nbXAElB.jpg" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
