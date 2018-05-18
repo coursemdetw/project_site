@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://project.mde.tw/blog/</loc>
-<lastmod>2018-05-15T01:11:26-00:00</lastmod>
+<lastmod>2018-05-18T08:55:58-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/archives.html</loc>
-<lastmod>2018-05-15T01:11:26-00:00</lastmod>
+<lastmod>2018-05-18T08:55:58-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/tags.html</loc>
-<lastmod>2018-05-15T01:11:26-00:00</lastmod>
+<lastmod>2018-05-18T08:55:58-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://project.mde.tw/blog/categories.html</loc>
-<lastmod>2018-05-15T01:11:26-00:00</lastmod>
+<lastmod>2018-05-18T08:55:58-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -34,6 +34,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://project.mde.tw/blog/pages/about/</loc>
 <lastmod>2018-03-22T02:12:27+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://project.mde.tw/blog/ti-qiu-ji-gou-fen-liu-mo-ni-jin-du-bao-gao.html</loc>
+<lastmod>2018-05-18T08:16:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -3246,7 +3253,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://project.mde.tw/blog/category/2017.html</loc>
-<lastmod>2018-05-15T23:16:00+08:06</lastmod>
+<lastmod>2018-05-18T08:16:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -3267,7 +3274,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://project.mde.tw/blog/tag/dan-zhu-tai-gui-dao.html</loc>
-<lastmod>2018-05-15T23:16:00+08:06</lastmod>
+<lastmod>2018-05-18T08:16:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -4177,7 +4184,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://project.mde.tw/blog/author/40423152.html</loc>
-<lastmod>2018-05-15T23:16:00+08:06</lastmod>
+<lastmod>2018-05-18T08:16:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

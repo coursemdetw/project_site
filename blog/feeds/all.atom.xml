@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-05-15T23:16:00+08:00</updated><entry><title>提球機構 軌道模擬 進度報告</title><link href="http://project.mde.tw/blog/ti-qiu-ji-gou-gui-dao-mo-ni-jin-du-bao-gao.html" rel="alternate"></link><published>2018-05-15T23:16:00+08:00</published><updated>2018-05-15T23:16:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2018-05-15:/blog/ti-qiu-ji-gou-gui-dao-mo-ni-jin-du-bao-gao.html</id><summary type="html">&lt;p&gt;軌道之模擬&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-05-18T08:16:00+08:00</updated><entry><title>提球機構 分流模擬 進度報告</title><link href="http://project.mde.tw/blog/ti-qiu-ji-gou-fen-liu-mo-ni-jin-du-bao-gao.html" rel="alternate"></link><published>2018-05-18T08:16:00+08:00</published><updated>2018-05-18T08:16:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2018-05-18:/blog/ti-qiu-ji-gou-fen-liu-mo-ni-jin-du-bao-gao.html</id><summary type="html">&lt;p&gt;分流道之模擬&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;分流道之模擬&lt;/p&gt;
+
+
+&lt;p&gt;原本構思如何組裝，才發先分流道沒有定案怎麼可以組裝...&lt;/p&gt;
+&lt;p&gt;構想是 18 號可以把把答裝在那個類似旗子的分流裝置上面，用手機調整角度時就可以直接導球。&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/270543190" width="640" height="383" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/270543190"&gt;Vrep simulation -2&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;周末有事情需要回北部一趟，如有時間會組裝並寫文檔。&lt;/p&gt;</content><category term="彈珠台軌道"></category></entry><entry><title>提球機構 軌道模擬 進度報告</title><link href="http://project.mde.tw/blog/ti-qiu-ji-gou-gui-dao-mo-ni-jin-du-bao-gao.html" rel="alternate"></link><published>2018-05-15T23:16:00+08:00</published><updated>2018-05-15T23:16:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2018-05-15:/blog/ti-qiu-ji-gou-gui-dao-mo-ni-jin-du-bao-gao.html</id><summary type="html">&lt;p&gt;軌道之模擬&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;軌道之模擬&lt;/p&gt;
 
 

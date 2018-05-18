@@ -36,6 +36,7 @@
 <v t="mars.20180329140352.1" a="M"><vh>@edit 20180329.md</vh></v>
 <v t="mars.20180503231628.1"><vh>@edit 20180503.md</vh></v>
 <v t="mars.20180515010445.1"><vh>@edit 20180515.md</vh></v>
+<v t="mars.20180518085134.1"><vh>@edit 20180518.md</vh></v>
 </v>
 </v>
 <v t="yen.20161215102513.1"><vh>@button https server</vh></v>
