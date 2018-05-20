@@ -15,6 +15,7 @@
 <v t="amd.20160106093610.1"><vh>協同網誌編寫規範</vh></v>
 <v t="amd.20151216001126.1"><vh>md 檔案範例</vh></v>
 </v>
+<v t="40323230.20180501204650.1"><vh>@button cython lexer</vh></v>
 <v t="ahshoe.20171015205656.1"><vh>@button https server</vh></v>
 <v t="ahshoe.20171015205642.1"><vh>@button ipv6 https server</vh></v>
 <v t="amd.20151215170031.1" a="E"><vh>@path ../content</vh>
@@ -45,6 +46,7 @@
 </v>
 <v t="ahshoe.20170316194819.1"><vh>@edit 40323230_20170315.md</vh></v>
 <v t="40323230.20180416192558.1"><vh>@edit 40323230_20180416.md</vh></v>
+<v t="40323230.20180501205003.1"><vh>@edit 40323230_20180501.md</vh></v>
 </v>
 <v t="40323230.20170702203721.1"><vh>pyslvs-manual-sphinx</vh>
 <v t="40323230.20170702203756.1"><vh>@edit pyslvs_setup.md</vh></v>
@@ -463,6 +465,21 @@ sudo pip3 install markdown
 <t tx="40323230.20171104203503.1"></t>
 <t tx="40323230.20171205220341.1"></t>
 <t tx="40323230.20171212223334.1"></t>
+<t tx="40323230.20180501204650.1">@language python
+try:
+    from pygments import highlight
+    from pygments.lexers import CythonLexer
+    from pygments.formatters import HtmlFormatter
+except ImportError:
+    g.es("Error! Please install pygments.")
+else:
+    code = """
+ctypedef fused sequence:
+    list
+    tuple
+"""
+    g.es(highlight(code, CythonLexer(), HtmlFormatter()))
+</t>
 <t tx="ahshoe.20160821213649.1"></t>
 <t tx="ahshoe.20160828214004.1"></t>
 <t tx="ahshoe.20160902195148.1"></t>

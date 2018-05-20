@@ -1,5 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-05-01T23:00:00+08:00</updated><entry><title>利用Pyslvs 調整連桿長度來改變點移動路徑</title><link href="http://project.mde.tw/blog/li-yong-pyslvs-diao-zheng-lian-gan-chang-du-lai-gai-bian-dian-yi-dong-lu-jing.html" rel="alternate"></link><published>2018-05-01T23:00:00+08:00</published><updated>2018-05-01T23:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2018-05-01:/blog/li-yong-pyslvs-diao-zheng-lian-gan-chang-du-lai-gai-bian-dian-yi-dong-lu-jing.html</id><summary type="html">&lt;p&gt;從Pyslvs修正移動路徑到由solvespace存成數據(csv)，再經由excel插入散部圖，比較每個移動路徑的提腳高度(h)，前進距離(L)&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE) - 2017</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/2017.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-05-18T08:16:00+08:00</updated><entry><title>提球機構 分流模擬 進度報告</title><link href="http://project.mde.tw/blog/ti-qiu-ji-gou-fen-liu-mo-ni-jin-du-bao-gao.html" rel="alternate"></link><published>2018-05-18T08:16:00+08:00</published><updated>2018-05-18T08:16:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2018-05-18:/blog/ti-qiu-ji-gou-fen-liu-mo-ni-jin-du-bao-gao.html</id><summary type="html">&lt;p&gt;分流道之模擬&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;分流道之模擬&lt;/p&gt;
+
+
+&lt;p&gt;原本構思如何組裝，才發先分流道沒有定案怎麼可以組裝...&lt;/p&gt;
+&lt;p&gt;構想是 18 號可以把把答裝在那個類似旗子的分流裝置上面，用手機調整角度時就可以直接導球。&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/270543190" width="640" height="383" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/270543190"&gt;Vrep simulation -2&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;周末有事情需要回北部一趟，如有時間會組裝並寫文檔。&lt;/p&gt;</content><category term="彈珠台軌道"></category></entry><entry><title>提球機構 軌道模擬 進度報告</title><link href="http://project.mde.tw/blog/ti-qiu-ji-gou-gui-dao-mo-ni-jin-du-bao-gao.html" rel="alternate"></link><published>2018-05-15T23:16:00+08:00</published><updated>2018-05-15T23:16:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2018-05-15:/blog/ti-qiu-ji-gou-gui-dao-mo-ni-jin-du-bao-gao.html</id><summary type="html">&lt;p&gt;軌道之模擬&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;軌道之模擬&lt;/p&gt;
+
+
+&lt;p&gt;兩條路線的設定是沒有問題的，但如何分流還是要再想想，目前正在組裝玉閱讀相關PDF文件。&lt;/p&gt;
+&lt;p&gt;上上週有急事先回桃園；離開前將 STL 檔案給 16 號，請他幫我進行模擬，當時斜度過陡，後來有進行修改。&lt;/p&gt;
+&lt;iframe width="640" height="564" src="https://player.vimeo.com/video/269681718" frameborder="0" allowFullScreen mozallowfullscreen webkitAllowFullScreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;後來經過兩次修改，軌道是可以使用的，目前正在將軌道與齒輪提求結合。
+向 16 號詢問之後知道了加球上去進行模擬的方法。&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/269681771" width="640" height="383" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/269681771"&gt;Vrep simulation -1&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;iframe src="https://player.vimeo.com/video/269681764" width="640" height="383" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/269681764"&gt;Vrep simulation -2&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;</content><category term="彈珠台軌道"></category></entry><entry><title>彈珠台軌道控制</title><link href="http://project.mde.tw/blog/dan-zhu-tai-gui-dao-kong-zhi.html" rel="alternate"></link><published>2018-05-04T02:41:00+08:00</published><updated>2018-05-04T02:41:00+08:00</updated><author><name>40423118</name></author><id>tag:project.mde.tw,2018-05-04:/blog/dan-zhu-tai-gui-dao-kong-zhi.html</id><summary type="html"></summary><content type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+&lt;p&gt;使用手機來控制伺服馬達的轉動,而手機跟伺服馬達的連線方式則採用藍芽來連線&lt;/p&gt;
+&lt;p&gt;首先確定藍芽模組HC-06 是否可以正常連線傳送資料&lt;/p&gt;
+&lt;h1&gt;程式碼&lt;/h1&gt;
+&lt;p&gt;&amp;lt;#include &lt;SoftwareSerial.h&gt;   &lt;/p&gt;
+&lt;p&gt;&amp;lt;SoftwareSerial BT(2, 3); 
+char val;  &lt;/p&gt;
+&lt;p&gt;void setup() {
+  Serial.begin(9600); &lt;br&gt;
+  Serial.println("BT is ready!");&lt;/p&gt;
+&lt;p&gt;BT.begin(9600);
+}&lt;/p&gt;
+&lt;p&gt;void loop() {&lt;/p&gt;
+&lt;p&gt;if (Serial.available()) {
+    val = Serial.read();
+    BT.print(val);
+  }&lt;/p&gt;
+&lt;p&gt;if (BT.available()) {
+    val = BT.read();
+    Serial.print(val);
+  }
+}&amp;gt;&lt;/p&gt;
+&lt;p&gt;連線成功之後開啟監控列,輸入字串發送手機,或從手機發送到電腦&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/Zqu5Vax"&gt;&lt;img src="https://i.imgur.com/Zqu5Vax.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/nbXAElB"&gt;&lt;img src="https://i.imgur.com/nbXAElB.jpg" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;手機介面&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/gL06UGI"&gt;&lt;img src="https://i.imgur.com/gL06UGI.jpg" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;按下"選取馬達"可以選擇要連線的馬達,按下左右箭頭控制軌道方向&lt;/p&gt;
+&lt;p&gt;現階段按下箭頭電腦會接收到一些字串,&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/IiVg2fc"&gt;&lt;img src="https://i.imgur.com/IiVg2fc.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;預計會安裝一顆可變電阻在旁邊控制馬達轉向,這樣除了手機也可以手動控制馬達&lt;/p&gt;</content><category term="arduino"></category></entry><entry><title>提球機構 軌道設計 引球道</title><link href="http://project.mde.tw/blog/ti-qiu-ji-gou-gui-dao-she-ji-yin-qiu-dao.html" rel="alternate"></link><published>2018-05-03T23:16:00+08:00</published><updated>2018-05-03T23:16:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2018-05-03:/blog/ti-qiu-ji-gou-gui-dao-she-ji-yin-qiu-dao.html</id><summary type="html">&lt;p&gt;目前所發想的軌道設計&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;目前所發想的軌道設計&lt;/p&gt;
+
+
+&lt;p&gt;經過段考前與老師的討論，目前已規劃出軌道的區域，對於仿生獸的貨斗隻設計也有概念了，設計圖正在構築中，目前與 18 號共同設計，需要用他的馬達來控制球的導向，故分成兩條路線。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20180503/track.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20180503/track2.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;將球導引至此處定卸貨給貨斗。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20180503/track3.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;深藍色塊為表達可控制隻導引到的概念，一開始是以此形狀發想，可是這樣的形狀是無法順利導球的，落球時就會打到導引區塊將球撞離軌道組。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20180503/leading.PNG?raw=true"&gt;&lt;/p&gt;</content><category term="彈珠台軌道"></category></entry><entry><title>利用Pyslvs 調整連桿長度來改變點移動路徑</title><link href="http://project.mde.tw/blog/li-yong-pyslvs-diao-zheng-lian-gan-chang-du-lai-gai-bian-dian-yi-dong-lu-jing.html" rel="alternate"></link><published>2018-05-01T23:00:00+08:00</published><updated>2018-05-01T23:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2018-05-01:/blog/li-yong-pyslvs-diao-zheng-lian-gan-chang-du-lai-gai-bian-dian-yi-dong-lu-jing.html</id><summary type="html">&lt;p&gt;從Pyslvs修正移動路徑到由solvespace存成數據(csv)，再經由excel插入散部圖，比較每個移動路徑的提腳高度(h)，前進距離(L)&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;從Pyslvs修正移動路徑到由solvespace存成數據(csv)，再經由excel插入散部圖，比較每個移動路徑的提腳高度(h)，前進距離(L)&lt;/p&gt;
 
 
