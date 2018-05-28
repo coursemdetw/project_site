@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-05-28T23:30:00+08:00</updated><entry><title>Pyquino</title><link href="http://project.mde.tw/blog/pyquino.html" rel="alternate"></link><published>2018-05-28T23:30:00+08:00</published><updated>2018-05-28T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-05-28:/blog/pyquino.html</id><summary type="html">&lt;ol&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-05-29T01:38:00+08:00</updated><entry><title>提球機構 模擬報告</title><link href="http://project.mde.tw/blog/ti-qiu-ji-gou-mo-ni-bao-gao.html" rel="alternate"></link><published>2018-05-29T01:38:00+08:00</published><updated>2018-05-29T01:38:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2018-05-29:/blog/ti-qiu-ji-gou-mo-ni-bao-gao.html</id><summary type="html">&lt;p&gt;提求機構模擬&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;提求機構模擬&lt;/p&gt;
+
+
+&lt;p&gt;一開始不知道為什麼只能看到很低很低的 Frame 數。&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/272236437" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/272236437"&gt;video-1527429213&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;後來得知可以利用內建的錄影機來做出順暢的影片。不過由於FPS真的很低，這樣兩秒的呈現可是算了將近20分鐘的成果。&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/272237971" width="640" height="373" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/272237971"&gt;SIM7&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;輾轉與同學討論找到解法，但軌道在設計上似乎有一些問題，導致球的運行空間有些許的障礙。&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/272236430" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/272236430"&gt;SIM4&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;發現是軌道空間不夠大，讓運算上出現了錯誤。經修正後已解決。&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/272236548" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/272236548"&gt;SIM5&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;正在準備打PPT與書面報告，打算從這裏的連桿設計下手。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20180529/link.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20180529/link2.PNG?raw=true"&gt;&lt;/p&gt;</content><category term="彈珠台軌道"></category></entry><entry><title>Pyquino</title><link href="http://project.mde.tw/blog/pyquino.html" rel="alternate"></link><published>2018-05-28T23:30:00+08:00</published><updated>2018-05-28T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-05-28:/blog/pyquino.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;讀取 Pyslvs 機構資料&lt;/p&gt;
 &lt;/li&gt;
