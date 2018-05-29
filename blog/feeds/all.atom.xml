@@ -1,5 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-05-20T23:00:00+08:00</updated><entry><title>40423116 李冠辰 專題報告 5/23</title><link href="http://project.mde.tw/blog/40423116-li-guan-chen-zhuan-ti-bao-gao-523.html" rel="alternate"></link><published>2018-05-20T23:00:00+08:00</published><updated>2018-05-20T23:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2018-05-20:/blog/40423116-li-guan-chen-zhuan-ti-bao-gao-523.html</id><summary type="html">&lt;p&gt;5/23新增檔案:書面及ppt付影片為一zip檔&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>機械設計專題 (虎尾科大MDE)</title><link href="http://project.mde.tw/blog/" rel="alternate"></link><link href="http://project.mde.tw/blog/feeds/all.atom.xml" rel="self"></link><id>http://project.mde.tw/blog/</id><updated>2018-05-29T01:38:00+08:00</updated><entry><title>提球機構 模擬報告</title><link href="http://project.mde.tw/blog/ti-qiu-ji-gou-mo-ni-bao-gao.html" rel="alternate"></link><published>2018-05-29T01:38:00+08:00</published><updated>2018-05-29T01:38:00+08:00</updated><author><name>40423152</name></author><id>tag:project.mde.tw,2018-05-29:/blog/ti-qiu-ji-gou-mo-ni-bao-gao.html</id><summary type="html">&lt;p&gt;提求機構模擬&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;提求機構模擬&lt;/p&gt;
+
+
+&lt;p&gt;一開始不知道為什麼只能看到很低很低的 Frame 數。&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/272236437" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/272236437"&gt;video-1527429213&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;後來得知可以利用內建的錄影機來做出順暢的影片。不過由於FPS真的很低，這樣兩秒的呈現可是算了將近20分鐘的成果。&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/272237971" width="640" height="373" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/272237971"&gt;SIM7&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;輾轉與同學討論找到解法，但軌道在設計上似乎有一些問題，導致球的運行空間有些許的障礙。&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/272236430" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/272236430"&gt;SIM4&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;發現是軌道空間不夠大，讓運算上出現了錯誤。經修正後已解決。&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/272236548" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/272236548"&gt;SIM5&lt;/a&gt; from &lt;a href="https://vimeo.com/user46451216"&gt;Willy Lai&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;正在準備打PPT與書面報告，打算從這裏的連桿設計下手。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20180529/link.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/4042/40423152/20180529/link2.PNG?raw=true"&gt;&lt;/p&gt;</content><category term="彈珠台軌道"></category></entry><entry><title>Pyquino</title><link href="http://project.mde.tw/blog/pyquino.html" rel="alternate"></link><published>2018-05-28T23:30:00+08:00</published><updated>2018-05-28T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-05-28:/blog/pyquino.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;讀取 Pyslvs 機構資料&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;導入 PID 控制&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;讀取 Pyslvs 機構資料&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;導入 PID 控制&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;h2&gt;讀取機構資料&lt;/h2&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;目前整體資料格式採取 PMKS 表示法，並透過小型演算法進行 ODE 模型建立，目前有個小問題是處理八連桿出了點小問題還在想辦法修正。
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;pre class="brush: python"&gt;
+# PMKS 表示式
+example, inputs = ("M[" +
+        "J[R, color[Green], P[0.0, 0.0], L[ground, link_1]], " +
+        "J[R, color[Green], P[12.92, 32.53], L[link_1, link_2]], " +
+        "J[R, color[Green], P[73.28, 67.97], L[link_2, link_3]], " +
+        "J[R, color[Green], P[33.3, 66.95], L[link_2]], " +
+        "J[R, color[Green], P[90.0, 0.0], L[ground, link_3]]" +
+        "]", {0: ('ground', 'link_1')})
+&lt;/pre&gt;
+
+&lt;p&gt;成果圖&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/2dsimulation/load_mechism.PNG?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;以可讀取 R 接頭，接下來會新增 P 接頭以及其他可用的平面連接件&lt;/p&gt;
+&lt;h2&gt;導入 PID 控制&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/2dsimulation/pyquino_sim.gif?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;透過設計一 PID 控制器，使用速度迴路控制，回授為當前角度，但是目前沒有設計一個好的速度規劃的控制方法，單純使用 P control 進行位置控制。&lt;/p&gt;
+&lt;p&gt;設計不好的控制系統，產生了極大的速度可能會有暴衝。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://github.com/coursemdetw/project_site_files/blob/gh-pages/files/pyquino/2dsimulation/bad_control.png?raw=true"&gt;&lt;/p&gt;
+&lt;h2&gt;預計新增項目&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;增加樹狀結構，讓使用者可以清楚看到目前機構的樣子&lt;/li&gt;
+&lt;li&gt;增加使用者設計控制系統的彈性&lt;/li&gt;
+&lt;li&gt;新增使用者將控制的圖畫出來&lt;/li&gt;
+&lt;/ul&gt;</content><category term="pyquino"></category></entry><entry><title>數位訊號處理</title><link href="http://project.mde.tw/blog/shu-wei-xun-hao-chu-li.html" rel="alternate"></link><published>2018-05-24T23:30:00+08:00</published><updated>2018-05-24T23:30:00+08:00</updated><author><name>40323123</name></author><id>tag:project.mde.tw,2018-05-24:/blog/shu-wei-xun-hao-chu-li.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Digital Signal Process (DSP)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fast Fourier Transform (FFT)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Digital Signal Process (DSP)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fast Fourier Transform (FFT)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;h2&gt;數位訊號處理&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;例子 : 語音信號處理&lt;/p&gt;
+&lt;p&gt;人類的聲音是由聲門產生一振幅不均勻的脈衝激發聲道而產生聲音，經由聲道的改變，可以產生出不同的聲音。我們可以設計的一個數位訊號處理系統，來抽出我們想要的資料，如發出的音、頻率、由誰發出，有許多的應用如 : 石油探勘、聲納 ……等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;訊號和系統&lt;/p&gt;
+&lt;p&gt;一般我們將系統認為非時變系統 (Time-invariant) ，指的是今天我們下的訊號得到的反應，過了一天一樣可以得到一樣的反應，系統的反應不會因為時間過了反應就不一樣&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這部分我還會再繼續補充內容&lt;/p&gt;
+&lt;h2&gt;快速傅立葉轉換&lt;/h2&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;FFT是離散傅立葉變換的快速算法，可以將一個時域信號變換到頻域。有些信號在時域上是很難看出什麼特徵的，但是如果變換到頻域之後，就很容易看出特徵了。這就是很多信號分析採用FFT變換的原因。另外，FFT可以將一個信號的頻譜提取出来，這在頻譜分析方面也是經常用的
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;實作部分&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;尚未完成&lt;/p&gt;</content><category term="FFT"></category></entry><entry><title>40423116 李冠辰 專題報告 5/23</title><link href="http://project.mde.tw/blog/40423116-li-guan-chen-zhuan-ti-bao-gao-523.html" rel="alternate"></link><published>2018-05-20T23:00:00+08:00</published><updated>2018-05-20T23:00:00+08:00</updated><author><name>40423116</name></author><id>tag:project.mde.tw,2018-05-20:/blog/40423116-li-guan-chen-zhuan-ti-bao-gao-523.html</id><summary type="html">&lt;p&gt;5/23新增檔案:書面及ppt付影片為一zip檔&lt;/p&gt;
 
 </summary><content type="html">&lt;p&gt;5/23新增檔案:書面及ppt付影片為一zip檔&lt;/p&gt;
 
